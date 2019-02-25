@@ -6,31 +6,30 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-      <div class="portlet box green">
+    <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-check-circle"></i>Clientes de tus usuarios 
             </div>
-            	<div class="tools">
-                    <asp:Button ID="btn_excel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze-stripe" />
-                    
-            	</div>
+            <div class="tools">
+                <asp:Button ID="btn_excel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze-stripe" />
+            </div>
         </div>
-         
+
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridViewExporter ID="GV_exporter" runat="server" GridViewID="GV_clientes">
                 </dx:ASPxGridViewExporter>
                 <dx:ASPxGridView ID="GV_clientes" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" EnableCallBacks="False" EnableTheming="True">
-<SettingsAdaptivity>
-<AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
-</SettingsAdaptivity>
+                    <SettingsAdaptivity>
+                        <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
+                    </SettingsAdaptivity>
 
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsBehavior AutoFilterRowInputDelay="600" />
                     <SettingsSearchPanel Visible="True" Delay="600" />
 
-<EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
+                    <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
                     <Columns>
                         <dx:GridViewDataTextColumn Caption="ID" FieldName="id_cliente" VisibleIndex="0">
                         </dx:GridViewDataTextColumn>
@@ -78,9 +77,9 @@
                         </dx:GridViewToolbar>
                     </Toolbars>
                 </dx:ASPxGridView>
-                </div>
             </div>
-          </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>

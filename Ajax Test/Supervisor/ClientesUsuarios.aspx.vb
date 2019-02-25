@@ -8,10 +8,37 @@
     End Sub
 
     Private Sub ObtenerDatosClientes()
+        Session("ActiveBinding") = True
+
         Dim ClientesSupervisor = BL.Obtener_clientesSupervisor(Usuario.id_usuario)
 
-        ViewState("ClienteSupervisor") = ClientesSupervisor
-        GV_clientes.DataSource = ClientesSupervisor
+        Dim ROWA As DataRow
+        Dim DTA As New DataTable
+
+        DTA.Columns.AddRange({New DataColumn("id_cliente"), New DataColumn("Nombre"), New DataColumn("ApellidoPaterno"), New DataColumn("ApellidoMaterno"), New DataColumn("Email"),
+                              New DataColumn("Producto"), New DataColumn("Empresa"), New DataColumn("fechaCreacion"), New DataColumn("Descripcion"), New DataColumn("Usuario"),
+                              New DataColumn("Observaciones"), New DataColumn("fotografia"), New DataColumn("fotoTpresentacion")})
+
+        For i As Integer = 0 To ClientesSupervisor.Length - 1
+            ROWA = DTA.NewRow()
+            ROWA("id_cliente") = ClientesSupervisor(i).id_cliente
+            ROWA("Nombre") = ClientesSupervisor(i).Nombre
+            ROWA("ApellidoPaterno") = ClientesSupervisor(i).ApellidoPaterno
+            ROWA("ApellidoMaterno") = ClientesSupervisor(i).ApellidoMaterno
+            ROWA("Email") = ClientesSupervisor(i).Email
+            ROWA("Producto") = ClientesSupervisor(i).Producto
+            ROWA("Empresa") = ClientesSupervisor(i).Empresa
+            ROWA("fechaCreacion") = ClientesSupervisor(i).fechaCreacion
+            ROWA("Descripcion") = ClientesSupervisor(i).Descripcion
+            ROWA("Usuario") = ClientesSupervisor(i).Usuario
+            ROWA("Observaciones") = ClientesSupervisor(i).Observaciones
+            ROWA("fotografia") = ClientesSupervisor(i).fotografia
+            ROWA("fotoTpresentacion") = ClientesSupervisor(i).fotoTpresentacion
+
+            DTA.Rows.Add(ROWA)
+        Next
+
+        ViewState("ClienteSupervisor") = DTA
         GV_clientes.DataBind()
     End Sub
 
