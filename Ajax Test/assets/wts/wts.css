@@ -1,0 +1,10 @@
+﻿.whatsbtn {
+    background-color: darkgray;
+    position: fixed;
+    border-radius: 25px !important;
+    padding: 10px;
+    z-index: 99;
+    bottom: 15px;
+    right: 15px;
+    border-collapse: separate;
+}

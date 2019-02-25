@@ -1,0 +1,184 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="cita.aspx.vb" Inherits="Ajax_Test.cita" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+    <div class="portlet box red">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Datos generales cliente
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+            <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
+            <h2>Asesor: </h2>
+            <dx:ASPxGridView ID="GV_usuario" runat="server" AutoGenerateColumns="False" DataSourceID="AsesorDS" Theme="MaterialCompact">
+                <SettingsPager Visible="False">
+                </SettingsPager>
+                <Columns>
+                    <dx:GridViewDataTextColumn FieldName="usuario" VisibleIndex="0">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="nombre" VisibleIndex="1">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="apellidoPaterno" VisibleIndex="2">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="apellidoMaterno" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>
+                </Columns>
+            </dx:ASPxGridView>
+            <asp:SqlDataSource ID="AsesorDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+dbo.usuarios.usuario,
+dbo.usuarios.nombre,
+dbo.usuarios.apellidoPaterno,
+dbo.usuarios.apellidoMaterno
+
+FROM
+dbo.clientes
+INNER JOIN dbo.usuarios ON dbo.clientes.id_usuarioOriginal = dbo.usuarios.id_usuario
+WHERE id_cliente=@idCliente
+">
+                <SelectParameters>
+                    <asp:QueryStringParameter DefaultValue="0" Name="idCliente" QueryStringField="id" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            </div>
+        </div>
+
+
+    <div class="portlet box blue-hoki">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Cita
+            </div>
+            	<div class="tools">
+                                <%-- Botones --%>
+                    
+							</div>
+        </div>
+        <div class="portlet-body">
+            Usuario:<asp:Literal ID="lbl_usuario" runat="server"></asp:Literal>
+            <br />
+            <table>
+               <tr>
+                   <td>
+                       Origen: <asp:TextBox ID="tb_origen" runat="server">CALL CENTER</asp:TextBox>
+                   </td>
+                   <td>
+                       Lugar contacto: <asp:TextBox ID="tb_lContacto" runat="server"></asp:TextBox>
+                   </td>
+               </tr>
+            </table>
+              <table>
+               <tr>
+                   <td>
+                       Proyecto que visitará: 
+                       <asp:DropDownList ID="cb_fraccinamientos" runat="server" DataSourceID="FraccDS" DataTextField="nom_fracc" DataValueField="id_cve_fracc">
+                       </asp:DropDownList>
+                       <asp:SqlDataSource ID="FraccDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+dbo.sm_fraccionamiento.id_cve_fracc,
+dbo.sm_fraccionamiento.nom_fracc
+
+FROM
+dbo.sm_fraccionamiento
+"></asp:SqlDataSource>
+                   </td>
+                   <td>
+                       Modelo: 
+                       <asp:DropDownList ID="cb_modelos" runat="server" DataSourceID="productosDs" DataTextField="NombreCorto" DataValueField="id_producto">
+                       </asp:DropDownList>
+                       <asp:SqlDataSource ID="productosDs" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
+                   </td>
+                   <td>
+                       Asesor Asignado: <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario"></asp:DropDownList>
+                       <asp:SqlDataSource ID="UsuariosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+dbo.usuarios.id_usuario,
+CONCAT(
+dbo.usuarios.nombre,' ',
+dbo.usuarios.apellidoPaterno,' ',
+dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
+
+FROM
+dbo.usuarios
+ORDER BY nombre ASC"></asp:SqlDataSource>
+                   </td>
+                   </tr>
+                    <tr>
+                   <td>
+                       Vigencia    De: <dx:ASPxDateEdit ID="dtp_finicio" runat="server"></dx:ASPxDateEdit>
+                       
+                   </td>
+                   <td>
+                       A: <dx:ASPxDateEdit ID="dtp_ffinal" runat="server"></dx:ASPxDateEdit>
+                   </td>
+                   <td>
+                       Fecha Cita: <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server"></dx:ASPxDateEdit>
+                   </td>
+               </tr>
+            </table>
+            <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Material">
+                <Image IconID="actions_right_16x16">
+                </Image>
+            </dx:ASPxButton>
+            </div>
+        </div>
+     <div class="portlet box green-dark">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Historico Citas
+            </div>
+            	<div class="tools">
+                                <%-- Botones --%>
+                    
+							</div>
+        </div>
+        <div class="portlet-body">
+            <dx:ASPxGridView ID="GV_Citas" runat="server" Width="100%" AutoGenerateColumns="False" DataSourceID="CitasCallDS" KeyFieldName="id_cita" Theme="Material">
+                <Columns>
+                    <dx:GridViewDataTextColumn FieldName="id_cita" ReadOnly="True" VisibleIndex="0">
+                        <EditFormSettings Visible="False" />
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="nom_fracc" VisibleIndex="1">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="Lugar_Contacto" VisibleIndex="2">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataDateColumn FieldName="VigenciaInicio" VisibleIndex="4">
+                    </dx:GridViewDataDateColumn>
+                    <dx:GridViewDataDateColumn FieldName="VigenciaFinal" VisibleIndex="5">
+                    </dx:GridViewDataDateColumn>
+                    <dx:GridViewDataDateColumn FieldName="FechaCita" VisibleIndex="6">
+                    </dx:GridViewDataDateColumn>
+                    <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="7">
+                    </dx:GridViewDataTextColumn>
+                </Columns>
+            </dx:ASPxGridView>
+            <asp:SqlDataSource ID="CitasCallDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+dbo.CitasCall.id_cita,
+dbo.sm_fraccionamiento.nom_fracc,
+dbo.CitasCall.Lugar_Contacto,
+dbo.productos.NombreCorto AS Modelo,
+dbo.CitasCall.VigenciaInicio,
+dbo.CitasCall.VigenciaFinal,
+dbo.CitasCall.FechaCita,
+dbo.CitasCall.Ranking
+
+FROM
+dbo.CitasCall
+INNER JOIN dbo.sm_fraccionamiento ON dbo.CitasCall.ProyectoVisita = dbo.sm_fraccionamiento.id_cve_fracc
+INNER JOIN dbo.productos ON dbo.CitasCall.Modelo = dbo.productos.id_producto
+WHERE id_cliente=@id_cliente">
+                <SelectParameters>
+                    <asp:QueryStringParameter DefaultValue="0" Name="id_cliente" QueryStringField="id" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
+         </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+</asp:Content>

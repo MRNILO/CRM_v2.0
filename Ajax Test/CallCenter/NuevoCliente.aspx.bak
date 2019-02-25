@@ -1,0 +1,100 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="NuevoCliente.aspx.vb" Inherits="Ajax_Test.NuevoCliente1" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+      <div class="portlet box purple">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-search"></i>Datos cliente
+            </div>
+            	<div class="tools">
+                    
+                    
+            	</div>
+        </div>
+         
+        <div class="portlet-body">
+            <table>
+                <tr>
+                    <td>Nombre: <asp:TextBox ID="tb_nombre" runat="server"></asp:TextBox></td>
+                   <td>Paterno,Materno: <asp:TextBox ID="tb_paterno" runat="server"></asp:TextBox><asp:TextBox ID="tb_materno" runat="server"></asp:TextBox></td>
+                    <%--<td>Nro.Persona: <asp:TextBox ID="tb_nPersona" runat="server"></asp:TextBox></td>--%>
+                    <td>Edo Civil: <asp:DropDownList ID="cb_edoCivil" runat="server">
+                        <asp:ListItem>SOLTERO</asp:ListItem>
+                        <asp:ListItem>CASADO</asp:ListItem>
+                        <asp:ListItem>DIVORCIADO</asp:ListItem>
+                        <asp:ListItem>UNION LIBRE</asp:ListItem>
+                        </asp:DropDownList></td>
+                </tr>
+                <tr>
+                    <td>Fraccionamiento:<asp:DropDownList ID="cb_fracc" runat="server" DataSourceID="fraccDS7" DataTextField="Fraccionamiento" DataValueField="Fraccionamiento" AutoPostBack="True"></asp:DropDownList> 
+                        <asp:SqlDataSource ID="fraccDS7" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT DISTINCT productos.Fraccionamiento FROM productos"></asp:SqlDataSource>
+                        <br />
+                        Modelo:<br />
+                        <asp:DropDownList ID="cb_producto" runat="server" DataSourceID="ProductosDS" DataTextField="NombreCorto" DataValueField="id_producto">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="ProductosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT productos.id_producto,productos.NombreCorto FROM productos WHERE Fraccionamiento=@Fracc">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="cb_fracc" Name="Fracc" PropertyName="SelectedValue" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </td>
+                    <td>Email:<br />
+                        <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
+                        <br />
+                        Fecha de nacimiento: <dx:ASPxDateEdit ID="dtp_fecnac" runat="server" Date="2000-01-01"></dx:ASPxDateEdit>
+                    </td>
+                    <td>Esquema financiamiento: 
+                        <asp:DropDownList ID="CB_TIPOcREDITO" runat="server">
+                            <asp:ListItem>COFINAVIT</asp:ListItem>
+                            <asp:ListItem>INFONAVIT</asp:ListItem>
+                            <asp:ListItem>INFONAVIT TOTAL</asp:ListItem>
+                            <asp:ListItem>INFONAVIT 2DO CREDITO</asp:ListItem>
+                            <asp:ListItem>SHF</asp:ListItem>
+                            <asp:ListItem>CAJA POPULAR</asp:ListItem>
+                            <asp:ListItem>ISSEG</asp:ListItem>
+                            <asp:ListItem>FOVISSSTE</asp:ListItem>
+                            <asp:ListItem>BANCARIO</asp:ListItem>
+                            <asp:ListItem>CONTADO</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>RFC: <asp:TextBox ID="tb_rfc" runat="server"></asp:TextBox></td>
+                    <td>NSS: <asp:TextBox ID="tb_nss" runat="server"></asp:TextBox></td>
+                    <td>CURP: <asp:TextBox ID="tb_curp" runat="server"></asp:TextBox></td>
+                    <td>Nro.Hijos <asp:TextBox ID="tb_nHijos" runat="server"></asp:TextBox></td>
+                    <td>Ingresos personales <asp:TextBox ID="tb_ingresosPersonales" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>telefono Lada: <asp:TextBox ID="tb_lada" runat="server"></asp:TextBox></td>
+                    <td>
+                        Telefono:<asp:TextBox ID="tb_tel" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        Origen:<asp:DropDownList ID="cb_campañas" runat="server" DataSourceID="CampañasDS" DataTextField="campañaNombre" DataValueField="id_campaña"></asp:DropDownList>
+                        <asp:SqlDataSource ID="CampañasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+dbo.[campañas].[id_campaña],
+dbo.[campañas].[campañaNombre]
+
+FROM
+dbo.[campañas]
+"></asp:SqlDataSource>
+                    </td>
+                </tr>
+            </table>
+            <dx:ASPxButton ID="btn_guardar" runat="server" Text="Guardar" Theme="Material">
+                <Image IconID="actions_open2_16x16">
+                </Image>
+            </dx:ASPxButton>
+            </div>
+          </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+</asp:Content>

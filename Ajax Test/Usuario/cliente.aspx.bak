@@ -1,0 +1,423 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="cliente.aspx.vb" Inherits="Ajax_Test.Cliente" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.Bootstrap" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
+    <ul class="nav navbar-nav pull-right">				
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
+					<span class="username username-hide-on-mobile">
+					<asp:Literal ID="lbl_nombre" runat="server"></asp:Literal> </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+                    
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="/Usuario/MisDatos.aspx">
+							<i class="icon-user"></i> Mis Datos </a>
+						</li>
+                            <%--	<li>
+							<a href="page_calendar.html">
+							<i class="icon-calendar"></i> Mi Calendario </a>
+						</li>
+						<li>
+							<a href="inbox.html">
+							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
+							3 </span>
+							</a>
+						</li>
+						
+						<li class="divider">
+						</li>				--%>	
+						<li>
+							<a href="/Account/Logoff.aspx">
+							<i class="icon-key"></i> Salir </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->				
+				<!-- END QUICK SIDEBAR TOGGLER -->
+			</ul>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                    <h4 class="modal-title">Detalles corrreo</h4>
+                                                </div>
+                                                <div class="modal-body">
+         <div id="CorreoBody" >
+
+         </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Aceptar</button>
+                                                   <%-- <div  class="btn green" onclick="agregarProductos()">Agregar a mi pedido</div>--%>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div> 
+         </div>
+
+    <asp:Literal ID="lbl_butonCambia" runat="server"></asp:Literal>
+    <br />
+    <div class="portlet box red">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Datos generales cliente
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+            <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
+            <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
+            </div>
+        </div>
+
+      					 <div class="portlet box blue-dark">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Datos empresa
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+            <asp:Literal ID="lbl_datosEmpresa" runat="server"></asp:Literal>
+
+            </div>
+                               </div>						 
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Teléfonos
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+            <asp:Literal ID="lbl_telefonos" runat="server"></asp:Literal>
+            <asp:Literal ID="lbl_botonLlamar" runat="server"></asp:Literal>
+            </div>
+        </div>
+      <div class="portlet box yellow">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Etapa
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+          
+            <br />
+            Nueva Etapa:<asp:DropDownList ID="cb_etapas" runat="server" CssClass="form-control">
+            </asp:DropDownList>
+            Observaciones:<br />
+            <asp:TextBox ID="tb_observacionesEtapa" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+            <br />
+             Seleccione un producto:
+            <br />
+           <asp:DropDownList ID="cb_productos" runat="server" CssClass="form-control">         
+            </asp:DropDownList>
+            <br />
+           
+            <asp:Button ID="btn_cambiaEtapa" runat="server" CssClass="btn green" Text="Cambiar etapa" />
+          
+        </div>
+          </div>
+     <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Ranking
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+            <h4><asp:Label ID="lbl_mensajeRanking" runat="server" Text=""></asp:Label></h4>
+            <h4>
+            <asp:Label ID="lbl_ranking" runat="server" Text="¿El Cliente tiene algún impedimento de compra?"></asp:Label></h4>
+            <asp:DropDownList ID="cb_tipoImpedimento" runat="server" CssClass="form-control" AutoPostBack="True">
+                <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                <asp:ListItem Value="1">Sí, el cliente tiene un impedimento.</asp:ListItem>
+                <asp:ListItem Value="2">No, el cliente cumple todo para su compra</asp:ListItem>
+            </asp:DropDownList>
+            <dx:BootstrapComboBox ID="cb_impedimento" runat="server" ClientInstanceName="cb_impedimento">
+                <Items>
+                    <dx:BootstrapListEditItem Text="Si, mi cliente tiene un impedimeinto de compra" Value="1">
+                    </dx:BootstrapListEditItem>
+                    <dx:BootstrapListEditItem Text="No, mi cliente esta listo para comprar" Value="2">                       
+                    </dx:BootstrapListEditItem>
+                </Items>
+                <ClientSideEvents SelectedIndexChanged="function(s, e) {
+	cb_impedimentoChange(s,e);
+}" />
+            </dx:BootstrapComboBox>
+            <br />
+             <h4>
+            <asp:Label ID="lbl_impedimentos" runat="server" Text="¿Que tipo de impedimento es?" Visible="False"></asp:Label></h4>
+            <asp:DropDownList ID="cb_impedimentos" runat="server" CssClass="form-control" AutoPostBack="True" DataSourceID="impedimentosDS" DataTextField="TipoImpedimento" DataValueField="id_tipoImpedimento" Visible="False"></asp:DropDownList>
+            <dx:BootstrapComboBox ID="Bcb_impedimentos" runat="server" ClientInstanceName="Bcb_impedimentos" DataSourceID="impedimentosDS" TextField="TipoImpedimento" ValueField="id_tipoImpedimento" ValueType="System.Int32">
+            </dx:BootstrapComboBox>
+            <br />
+            <asp:SqlDataSource ID="impedimentosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT [id_tipoImpedimento], [TipoImpedimento] FROM [TipoImpedimento]"></asp:SqlDataSource>
+            <br />
+             <h4>
+            <asp:Label ID="lbl_pregunta" runat="server" Text="¿Cual es el impedimento?" Visible="False"></asp:Label></h4>
+            <br />
+            <asp:DropDownList ID="cb_preguntas" runat="server" CssClass="form-control" DataSourceID="PreguntasDS" DataTextField="impedimento" DataValueField="ranking" Visible="False"></asp:DropDownList>
+            <dx:BootstrapComboBox ID="Bcb_preguntas" runat="server" ClientInstanceName="Bcb_preguntas" DataSourceID="PreguntasDS" TextField="impedimento" ValueField="ranking">
+            </dx:BootstrapComboBox>
+            <br />
+            <asp:SqlDataSource ID="PreguntasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
+CONCAT('(',dbo.impedimentos.ranking,') ',dbo.impedimentos.impedimento) as impedimento,
+dbo.impedimentos.ranking
+
+FROM
+dbo.impedimentos
+WHERE 
+id_tipoImpedimento=@IdImp
+">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="cb_impedimentos" DefaultValue="0" Name="IdImp" PropertyName="SelectedValue" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <br />
+            <asp:Button ID="btn_ranking" runat="server" CssClass="btn-lg green" Text="Guardar Ranking" />
+            </div>
+         </div>
+      <div class="portlet box purple">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Operaciones
+            </div>
+            	
+        </div>
+        <div class="portlet-body">
+          <div class="table-responsive">
+            <dx:ASPxGridView ID="GV_operaciones" runat="server" EnableTheming="True" Theme="MetropolisBlue" Width="100%">
+                <Settings ShowGroupPanel="True" />
+                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                <SettingsSearchPanel Visible="True" />
+            </dx:ASPxGridView>
+          </div>
+        </div>
+          </div>
+      <div class="portlet box blue-ebonyclay">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-phone"></i>Citas
+            </div>
+            	<div class="tools">
+                    <asp:Button ID="btn_CitasExcel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze" />
+                    
+            	</div>
+        </div>
+         
+        <div class="portlet-body">
+           
+            <asp:Literal ID="lbl_botonCitas" runat="server"></asp:Literal>
+            <div class="table-scrollable">
+                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False">
+                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_cita" VisibleIndex="0">
+                            <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Usuario/ObservacionesCita.aspx?idCita={0}&quot; class=&quot;btn btn-sm green&quot; &gt;Observaciones&lt;/a&gt;" EncodeHtml="False">
+                            </PropertiesTextEdit>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="1">
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Programada" FieldName="FechaProgramada" VisibleIndex="2">
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn Caption="Hora Programada" FieldName="HoraProgramacion" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Hora Termino" FieldName="HoraTermino" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Lugar" FieldName="Lugar" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Aviso Cliente" FieldName="AvisoCliente" VisibleIndex="6" Visible="False">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="AvisoUsuario" VisibleIndex="7" Caption="Aviso">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Calificación" FieldName="Calificacion" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Realizada" FieldName="realizada" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                </div>
+            </div>
+          </div>
+    <div class="portlet box blue-dark">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-envelope"></i>Correos del cliente
+            </div>
+            	<div class="tools">
+                    
+                    
+            	</div>
+        </div>
+         
+      <!--  <div class="portlet-body">
+            <div class="table-responsive">
+                <%--<asp:Literal ID="lbl_BtnNuevoCorreo" runat="server"></asp:Literal>--%>
+                <a href="/Usuario/Bandeja.aspx" class="btn btn-lg blue" target="_blank">Nuevo Correo</a>
+                <br />
+            <dx:ASPxGridView ID="GV_Emails" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableTheming="True">
+                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                <Columns>
+                    <dx:GridViewDataTextColumn Caption="ID Email" FieldName="id_email" VisibleIndex="0" SortIndex="0" SortOrder="Descending">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn Caption="DE:" FieldName="emailFrom" VisibleIndex="1">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn Caption="PARA:" FieldName="emailTo" VisibleIndex="2">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn Caption="Asunto" FieldName="subjet" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataDateColumn Caption="Recibido:" FieldName="fechaRecepcion" VisibleIndex="4" >
+                    </dx:GridViewDataDateColumn>
+                    <dx:GridViewDataTextColumn Caption="Estatus" FieldName="Desc_estatus" VisibleIndex="5">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_email" VisibleIndex="6">
+                        <PropertiesTextEdit DisplayFormatString="&lt;a href='javascript:void(0)'  class='btn btn-sm green' onclick='revisarEmail({0})'&gt;Ver correo&lt;/a&gt;" EncodeHtml="False">
+                        </PropertiesTextEdit>
+                    </dx:GridViewDataTextColumn>
+                </Columns>
+                </dx:ASPxGridView>
+                </div>
+        </div>-->
+        
+    </div>
+     <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-phone"></i>LLamadas realizadas
+            </div>
+            	<div class="tools">
+                    <asp:Button ID="btn_LlamadasAExcel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze" />
+                    
+            	</div>
+        </div>
+         
+        <div class="portlet-body">
+           
+            <asp:Literal ID="lbl_botonPrograma" runat="server"></asp:Literal>
+            <div class="table-scrollable">
+                <dx:ASPxGridViewExporter ID="GV_exporterLlamadas" runat="server" GridViewID="GV_Llamadas"></dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="GV_Llamadas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableTheming="True" KeyFieldName="id_llamada" EnableCallBacks="False">
+                    <SettingsPager PageSize="25">
+                    </SettingsPager>
+                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                    <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="Id de llamada" FieldName="id_llamada" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="usuario" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="FechaRegistro" FieldName="fechaCreacion" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Hora" FieldName="HoraProgramacion" VisibleIndex="5">
+                            <PropertiesTextEdit DisplayFormatString="t">
+                            </PropertiesTextEdit>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Programada" FieldName="Programada" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="AvisoCliente" FieldName="AvisoCliente" VisibleIndex="7" Visible="False">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Aviso" FieldName="AvisoUsuario" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Realizada" FieldName="realizada" VisibleIndex="9" Name="Realizada">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Observacion" FieldName="ObservacionUsuario" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha" FieldName="Fecha" VisibleIndex="4">
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn Caption="ObservacionCliente" FieldName="ObservacionCliente" VisibleIndex="12" Visible="False">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_llamada" VisibleIndex="0" Name="Opciones">
+                            <PropertiesTextEdit DisplayFormatString="&lt;div id=&quot;div{0}&quot;&gt;&lt;a href=&quot;javascript:void(0)&quot; id=&quot;{0}&quot; onclick=&quot;cambiarLlamada({0})&quot; class=&quot;btn btn-sm green&quot;&gt;Realizada&lt;/a&gt;&lt;/div&gt;">
+                            </PropertiesTextEdit>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Calificación" FieldName="Calificacion" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                </div>            
+        </div>
+         </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+     <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
+    <script type="text/javascript">
+       
+        function cambiarLlamada(idLlamada) {
+            $("#" + idLlamada).hide();
+            $("#div" + idLlamada).html("<strong>Espere...</strong>");
+                $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("/Usuario/cliente.aspx/PruebaAjax")%>",
+                data: '{valor: "'+idLlamada+'"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.d == 'Exito') {
+                        $("#div" + idLlamada).html("Ya realizada");
+                    } else {
+                        alert('No se cambio el estatus');
+                    }
+                },
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+      
+        function revisarEmail(PidMail) {
+            document.getElementById('CorreoBody').innerHTML = "<img src='/assets/imagenes/load.gif'/>"
+            $('#basic').modal('show');
+          $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("/Usuario/cliente.aspx/Correo")%>",
+              data: '{idEmail: "' + PidMail + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: ExitoMail,
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+       
+        function ExitoMail(response) {
+            document.getElementById('CorreoBody').innerHTML = response.d;
+            
+        }
+
+
+    </script>
+
+
+
+       <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>	
+
+
+    <script src="/assets/usuario_cliente.js"></script>
+</asp:Content>
