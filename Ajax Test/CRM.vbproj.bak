@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Ajax_Test</RootNamespace>
     <AssemblyName>Ajax Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -27,6 +27,7 @@
     <SccProvider>SAK</SccProvider>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
     <Use64BitIISExpress />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,28 +48,31 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.SpellChecker.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Bootstrap.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.1.Web, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\..\Users\Agustin Nilo\Documents\Visual Studio 2010\Projects\Edificahoy\Edificahoy\Dlls\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Web, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -82,10 +86,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -99,7 +102,6 @@
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -127,6 +129,7 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -7148,10 +7151,14 @@
     <Content Include="assets\usuario_cliente.js" />
     <Content Include="assets\wts\icon.png" />
     <Content Include="assets\wts\wts.css" />
+    <Content Include="CallCenter\Asesores.aspx" />
     <Content Include="CallCenter\cita.aspx" />
     <Content Include="CallCenter\Citas.aspx" />
     <Content Include="CallCenter\Clientes.aspx" />
+    <Content Include="CallCenter\DetalleAsesor.aspx" />
+    <Content Include="CallCenter\DetalleObservaciones.aspx" />
     <Content Include="CallCenter\InicioCCenter.aspx" />
+    <Content Include="CallCenter\ModificaCliente.aspx" />
     <Content Include="CallCenter\NuevoCliente.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
     <Content Include="packages.config" />
@@ -7631,6 +7638,7 @@
     <Content Include="Ayuda\Cambiar etapa de un cliente.pdf" />
     <Content Include="CallCenter\CallCenter.Master" />
     <None Include="My Project\PublishProfiles\Desktop.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\Publicaciones.pubxml" />
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CCampaña.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -7824,13 +7832,67 @@
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_reporte_clientesFechas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CClienteObservaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CClienteTelefonos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CClientesTipoCredito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.AsesorCallCenter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ReporteArpa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Proyectos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CancelacionesEnkontrol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.SeparacionesEnkontrol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DatosCumplimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.TotalesCumplimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ProspeccionesEnkontrol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ProspeccionesCRM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.SeparacionesCRM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.VisitasCRM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ReporteCalidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.TipoUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CDetalleSupervisor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DetallesCumplimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
-    <None Include="Service References\Servicio\Service11.disco" />
+    <None Include="Service References\Servicio\Service1.disco" />
     <Content Include="Supervisor\AcumuladosClientes.aspx" />
     <Content Include="Supervisor\agenda.aspx" />
     <Content Include="Supervisor\BIAdmin.aspx" />
@@ -7849,8 +7911,12 @@
     <Content Include="Supervisor\NuevoUsuario.aspx" />
     <Content Include="Supervisor\Oportunidades.aspx" />
     <Content Include="Supervisor\Productos.aspx" />
+    <Content Include="Supervisor\ReporteArpa.aspx" />
+    <Content Include="Supervisor\ReporteCalidad.aspx" />
     <Content Include="Supervisor\ReporteClientes.aspx" />
+    <Content Include="Supervisor\ReporteCumplimiento.aspx" />
     <Content Include="Supervisor\ReporteLlamadas.aspx" />
+    <Content Include="Supervisor\Supervisores.aspx" />
     <Content Include="Supervisor\TareaUsuario.aspx" />
     <Content Include="Supervisor\tipoCampana.aspx" />
     <Content Include="Supervisor\Usuario.aspx" />
@@ -7862,6 +7928,7 @@
     <Content Include="Usuario\CambiaUsuarioCC.aspx" />
     <Content Include="Usuario\cliente.aspx" />
     <Content Include="Usuario\clientes.aspx" />
+    <Content Include="Usuario\DetalleObservacion.aspx" />
     <Content Include="Usuario\Empresas.aspx" />
     <Content Include="Usuario\inbox.aspx" />
     <Content Include="Usuario\InicioUsuario.aspx" />
@@ -7882,14 +7949,14 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Service References\Servicio\Service11.wsdl" />
-    <None Include="Service References\Servicio\Service13.xsd">
+    <None Include="Service References\Servicio\Service1.wsdl" />
+    <None Include="Service References\Servicio\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servicio\Service131.xsd">
+    <None Include="Service References\Servicio\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servicio\Service132.xsd">
+    <None Include="Service References\Servicio\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="web.Debug.config">
@@ -7973,6 +8040,13 @@
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="CallCenter\Asesores.aspx.designer.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\Asesores.aspx.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CallCenter\CallCenter.Master.designer.vb">
       <DependentUpon>CallCenter.Master</DependentUpon>
     </Compile>
@@ -8001,11 +8075,32 @@
       <DependentUpon>Clientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CallCenter\DetalleAsesor.aspx.designer.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\DetalleAsesor.aspx.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CallCenter\InicioCCenter.aspx.designer.vb">
       <DependentUpon>InicioCCenter.aspx</DependentUpon>
     </Compile>
     <Compile Include="CallCenter\InicioCCenter.aspx.vb">
       <DependentUpon>InicioCCenter.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CallCenter\NuevoCliente.aspx.designer.vb">
@@ -8191,11 +8286,32 @@
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Supervisor\ReporteArpa.aspx.designer.vb">
+      <DependentUpon>ReporteArpa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\ReporteArpa.aspx.vb">
+      <DependentUpon>ReporteArpa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\ReporteCalidad.aspx.designer.vb">
+      <DependentUpon>ReporteCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\ReporteCalidad.aspx.vb">
+      <DependentUpon>ReporteCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Supervisor\ReporteClientes.aspx.designer.vb">
       <DependentUpon>ReporteClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Supervisor\ReporteClientes.aspx.vb">
       <DependentUpon>ReporteClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\ReporteCumplimiento.aspx.designer.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\ReporteCumplimiento.aspx.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\ReporteLlamadas.aspx.designer.vb">
@@ -8211,6 +8327,13 @@
     <Compile Include="Supervisor\Supervisor.Master.vb">
       <DependentUpon>Supervisor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\Supervisores.aspx.designer.vb">
+      <DependentUpon>Supervisores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\Supervisores.aspx.vb">
+      <DependentUpon>Supervisores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\TareaUsuario.aspx.designer.vb">
       <DependentUpon>TareaUsuario.aspx</DependentUpon>
@@ -8287,6 +8410,13 @@
     </Compile>
     <Compile Include="Usuario\clientes.aspx.vb">
       <DependentUpon>clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\DetalleObservacion.aspx.designer.vb">
+      <DependentUpon>DetalleObservacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\DetalleObservacion.aspx.vb">
+      <DependentUpon>DetalleObservacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Usuario\Empresas.aspx.designer.vb">

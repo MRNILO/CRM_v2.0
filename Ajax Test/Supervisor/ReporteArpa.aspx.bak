@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="ReporteCumplimiento.aspx.vb" Inherits="Ajax_Test.ReporteCumplimiento" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="ReporteArpa.aspx.vb" Inherits="Ajax_Test.ReporteArpa" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
     <link href="/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <style>
@@ -62,7 +63,7 @@
     <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-globe"></i>Tabla de Datos Cumplimiento
+                <i class="fa fa-globe"></i>Tabla de Datos ARPA
             </div>
             <div class="tools">
                 <asp:Button ID="btnExcel" runat="server" Text="A Excel" CssClass="btn btn-sm green" />
@@ -70,7 +71,7 @@
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="GV_CumplimientoData" runat="server" Width="100%" Theme="MaterialCompact">
+                <dx:ASPxGridView ID="GV_ArpaData" runat="server" Width="100%" Theme="MaterialCompact">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
