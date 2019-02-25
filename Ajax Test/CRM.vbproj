@@ -7904,6 +7904,7 @@
     <Content Include="Supervisor\categoriasProductos.aspx" />
     <Content Include="Supervisor\ClienteSupervisor.aspx" />
     <Content Include="Supervisor\ClientesUsuarios.aspx" />
+    <Content Include="Supervisor\Consultas.aspx" />
     <Content Include="Supervisor\etapas.aspx" />
     <Content Include="Supervisor\GrupoTrabajo.aspx" />
     <Content Include="Supervisor\InicioSupervisor.aspx" />
@@ -8223,6 +8224,13 @@
     </Compile>
     <Compile Include="Supervisor\ClientesUsuarios.aspx.vb">
       <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.designer.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\etapas.aspx.designer.vb">

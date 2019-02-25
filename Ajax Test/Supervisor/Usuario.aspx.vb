@@ -7,8 +7,6 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
 
-
-
         Try
             idUsuario = Request.QueryString("idUsuario")
         Catch ex As Exception
@@ -79,10 +77,6 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
-
-
-
 #End Region
 
 End Class
