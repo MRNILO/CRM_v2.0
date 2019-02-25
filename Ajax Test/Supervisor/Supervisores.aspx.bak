@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="Usuarios.aspx.vb" Inherits="Ajax_Test.Usuarios" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="Supervisores.aspx.vb" Inherits="Ajax_Test.Supervisores" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MenuDeActividades" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -24,25 +26,23 @@
         </li>
     </ul>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row" style="margin-bottom: 15px">
         <div class="col-lg-2">
             <a href="/Supervisor/NuevoUsuario.aspx" class="btn btn-sm btn-block purple">Nuevo Usuario</a>
         </div>
     </div>
-
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-check-circle"></i>Usuarios 
+                <i class="fa fa-check-circle"></i>Supervisores 
             </div>
             <div class="tools">
             </div>
         </div>
-
         <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" Font-Size="9pt">
+                <dx:ASPxGridView ID="GV_Supervisores" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_supervisor" Font-Size="9pt">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
@@ -59,7 +59,7 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewCommandColumn>
-                        <dx:GridViewDataTextColumn Caption="ID" FieldName="id_usuario" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn Caption="ID" FieldName="id_supervisor" VisibleIndex="1">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
@@ -100,6 +100,5 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="JSContent" runat="server"></asp:Content>
-<asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
-
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+</asp:Content>

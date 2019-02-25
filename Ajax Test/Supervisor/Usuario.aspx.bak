@@ -1,152 +1,150 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="Usuario.aspx.vb" Inherits="Ajax_Test.Usuario1" %>
-<%@ Register assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     Bienvenido Usuario
-    <br /> 
+    <br />
     <div class="row">
-                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="dashboard-stat blue">
-                                <div class="visual">
-                                    <i class="fa fa-check-circle"></i>
-                                </div>
-                                <div class="details">
-                                    <div class="number">
-                                        <span class="counter">
-                                            <asp:Literal ID="lbl_ClientesActivos" runat="server"></asp:Literal>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue">
+                <div class="visual">
+                    <i class="fa fa-check-circle"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        <span class="counter">
+                            <asp:Literal ID="lbl_ClientesActivos" runat="server"></asp:Literal>
 
-                                       </span> 
+                        </span>
 
-                                    </div>
-                                    <div class="desc"> Clientes Activos </div>
-                                </div>
-                                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
-                            </div>
-                        </div>
-                       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="dashboard-stat green">
-                                <div class="visual">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                </div>
-                                <div class="details">
-                                    <div class="number">
-                                        <span data-counter="counterup" >
-                                              <asp:Literal ID="lbl_ProspectosSemana" runat="server"></asp:Literal>
-                                      
-                                        </span> 
-
-                                    </div>
-                                    <div class="desc"> Prospectos por semana </div>
-                                </div>
-                                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="dashboard-stat red">
-                                <div class="visual">
-                                    <i class="fa fa-ban"></i>
-                                </div>
-                                <div class="details">
-                                    <div class="number">
-                                        <span data-counter="counterup">
-                                             <asp:Literal ID="lbl_ClientesCancelados" runat="server"></asp:Literal>
-
-                                        </span>
-                                    </div>
-                                    <div class="desc"> Clientes Cancelados </div>
-                                </div>
-                                <%--   <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="dashboard-stat purple">
-                                <div class="visual">
-                                    <i class="fa fa-globe"></i>
-                                </div>
-                                <div class="details">
-                                    <div class="number">
-                                        <span data-counter="counterup" >
-                                              <asp:Literal ID="lbl_clientesTotal" runat="server"></asp:Literal>
-
-                                        </span> </div>
-                                    <div class="desc"> Clientes totales </div>
-                                </div>
-                                <%--  <a class="more" href="/Reportes/Incidencias.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
-                            </div>
-                        </div>
                     </div>
+                    <div class="desc">Clientes Activos </div>
+                </div>
+                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
+                                    <i class="m-icon-swapright m-icon-white"></i>
+                                </a>--%>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat green">
+                <div class="visual">
+                    <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        <span data-counter="counterup">
+                            <asp:Literal ID="lbl_ProspectosSemana" runat="server"></asp:Literal>
+
+                        </span>
+
+                    </div>
+                    <div class="desc">Prospectos por semana </div>
+                </div>
+                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
+                                    <i class="m-icon-swapright m-icon-white"></i>
+                                </a>--%>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat red">
+                <div class="visual">
+                    <i class="fa fa-ban"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        <span data-counter="counterup">
+                            <asp:Literal ID="lbl_ClientesCancelados" runat="server"></asp:Literal>
+
+                        </span>
+                    </div>
+                    <div class="desc">Clientes Cancelados </div>
+                </div>
+                <%--   <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
+                                    <i class="m-icon-swapright m-icon-white"></i>
+                                </a>--%>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat purple">
+                <div class="visual">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        <span data-counter="counterup">
+                            <asp:Literal ID="lbl_clientesTotal" runat="server"></asp:Literal>
+
+                        </span>
+                    </div>
+                    <div class="desc">Clientes totales </div>
+                </div>
+                <%--  <a class="more" href="/Reportes/Incidencias.aspx"> Ver más
+                                    <i class="m-icon-swapright m-icon-white"></i>
+                                </a>--%>
+            </div>
+        </div>
+    </div>
 
     <asp:Button ID="btn_nuevatarea" runat="server" CssClass="btn green" Text="Nueva tarea" />
     <br />
     <br />
-     <div class="portlet box red">
+    <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-check-circle"></i>Tareas Pendientes
             </div>
-            	<div class="tools">
-                    
-                    
-            	</div>
+            <div class="tools">
+            </div>
         </div>
-         
+
         <div class="portlet-body">
             <div class="table-responsive">
-               
-             <dx:ASPxGridView ID="GV_TareasPendientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False">
-                <Settings ShowFilterRow="True" ShowGroupPanel="True" />
-                <SettingsSearchPanel Visible="True" />
-                <Columns>
-                    <dx:gridviewdatatextcolumn Caption="ID Tarea" FieldName="id_tarea" VisibleIndex="0">
-                    </dx:GridViewDataTextColumn>
-                    <dx:gridviewdatatextcolumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1">
-                    </dx:GridViewDataTextColumn>
-                    <dx:gridviewdatatextcolumn Caption="Prioridad" FieldName="Prioridad" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:gridviewdatatextcolumn Caption="Avisado" FieldName="Avisado" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                    <dx:gridviewdatadatecolumn Caption="Fecha Creada" FieldName="fechaCreacion" VisibleIndex="4">
-                        <PropertiesDateEdit DisplayFormatString="D">
-                        </PropertiesDateEdit>
-                    </dx:GridViewDataDateColumn>
-                    <dx:gridviewdatadatecolumn Caption="Fecha Programada" FieldName="fechaProgramada" VisibleIndex="5">
-                    </dx:GridViewDataDateColumn>
-                    <dx:gridviewdatatextcolumn Caption="Hora Programada" FieldName="HoraProgramada" VisibleIndex="6">
-                    </dx:GridViewDataTextColumn>             
-                </Columns>
-           </dx:ASPxGridView>
-                </div>
+
+                <dx:ASPxGridView ID="GV_TareasPendientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False">
+                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="ID Tarea" FieldName="id_tarea" VisibleIndex="0">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Prioridad" FieldName="Prioridad" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Avisado" FieldName="Avisado" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Creada" FieldName="fechaCreacion" VisibleIndex="4">
+                            <PropertiesDateEdit DisplayFormatString="D">
+                            </PropertiesDateEdit>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Programada" FieldName="fechaProgramada" VisibleIndex="5">
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn Caption="Hora Programada" FieldName="HoraProgramada" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
             </div>
-         </div>
-      <div class="portlet box blue">
+        </div>
+    </div>
+    <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-phone"></i>Llamadas para hoy
             </div>
-            	<div class="tools">
-                    
-                    
-            	</div>
+            <div class="tools">
+            </div>
         </div>
-         
+
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridView ID="GV_llamadas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False">
                     <SettingsPager Visible="False">
                     </SettingsPager>
-                    <settings showfilterrow="True" />
-                    <settingssearchpanel visible="True" />
+                    <Settings ShowFilterRow="True" />
+                    <SettingsSearchPanel Visible="True" />
                     <Columns>
                         <dx:GridViewDataTextColumn Caption="Nombre Cliente" FieldName="Nombre" VisibleIndex="1">
                         </dx:GridViewDataTextColumn>
@@ -164,9 +162,9 @@
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
-                </div>  
             </div>
-          </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>

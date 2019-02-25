@@ -9,7 +9,7 @@ Public Class ReporteCumplimiento
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
-
+    ''jorge lui smadrigal 
 #Region "Funciones"
     Public Function ValidarCampos()
         If deFechaInicial.Text = "" Then
