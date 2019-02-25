@@ -184,6 +184,8 @@ Public Class ClienteSupervisor
         HTML += "<br />"
         HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
         HTML += "<br />"
+        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
+        HTML += "<br />"
         HTML += "<strong>Tarjeta de Presentación</strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
