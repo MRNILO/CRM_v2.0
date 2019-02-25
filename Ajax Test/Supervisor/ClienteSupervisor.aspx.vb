@@ -189,7 +189,7 @@ Public Class ClienteSupervisor
         HTML += "<strong>Tarjeta de Presentación</strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
-        'HTML += "<br />"
+
         Return HTML
     End Function
     Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
