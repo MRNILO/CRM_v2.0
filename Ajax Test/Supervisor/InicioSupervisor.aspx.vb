@@ -7,6 +7,9 @@
         ValidaUsuario()
 
         If Not IsPostBack() Then
+            rangoFechas.Style.Add("display", "none")
+            rangoDias.Style.Add("display", "none")
+
             Alimentar_ComboFiltro()
             Alimentar_ComboDias()
         End If
@@ -145,6 +148,14 @@
         If (rdbFechas.Checked) Then
             cb_Dias.ClearSelection()
         End If
+
+        rangoFechas.Style.Add("display", "show")
+        rangoDias.Style.Add("display", "none")
+    End Sub
+
+    Protected Sub rdbDias_CheckedChanged(sender As Object, e As EventArgs) Handles rdbDias.CheckedChanged
+        rangoFechas.Style.Add("display", "none")
+        rangoDias.Style.Add("display", "show")
     End Sub
 
 #Region "FuncionesUsuario"
@@ -181,8 +192,5 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
-
-
 #End Region
 End Class

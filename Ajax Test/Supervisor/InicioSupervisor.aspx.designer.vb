@@ -68,6 +68,15 @@ Partial Public Class InicioSupervisor
     Protected WithEvents rdbDias As Global.DevExpress.Web.ASPxRadioButton
     
     '''<summary>
+    '''Control rangoFechas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rangoFechas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control dtp_inicio.
     '''</summary>
     '''<remarks>
@@ -84,6 +93,15 @@ Partial Public Class InicioSupervisor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dtp_Fin As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control rangoDias.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rangoDias As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control cb_Dias.

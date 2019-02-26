@@ -48,13 +48,15 @@
                     <div class="col-lg-3 form-control-static" style="margin-top: 25px">
                         <div class="row">
                             <div class="col-lg-6">
-                                <dx:ASPxRadioButton ID="rdbFechas" runat="server" Text="Por fechas" GroupName="Filtros" Theme="Office365"></dx:ASPxRadioButton>
-                                <dx:ASPxRadioButton ID="rdbDias" runat="server" Text="Por días" GroupName="Filtros" Theme="Office365"></dx:ASPxRadioButton>
+                                <dx:ASPxRadioButton ID="rdbFechas" runat="server" Text="Por fechas" GroupName="Filtros" Theme="Office365" AutoPostBack="true"></dx:ASPxRadioButton>
+                            </div>
+                            <div class="col-lg-6">
+                                <dx:ASPxRadioButton ID="rdbDias" runat="server" Text="Por días" GroupName="Filtros" Theme="Office365" AutoPostBack="true"></dx:ASPxRadioButton>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 15px">
+                <div class="row" id="rangoFechas" runat="server" style="margin-top: 15px">
                     <div class="col-lg-2">
                         <label>Fecha Inicio:</label>
                         <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
@@ -64,7 +66,7 @@
                         <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 15px">
+                <div class="row" id="rangoDias" runat="server" style="margin-top: 15px">
                     <div class="col-lg-3">
                         <label>Rango de Días</label>
                         <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
