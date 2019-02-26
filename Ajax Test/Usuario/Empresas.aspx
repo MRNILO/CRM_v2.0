@@ -6,47 +6,46 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="portlet box green-jungle">
+    <div class="portlet box green-jungle">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-car"></i>Empresas
             </div>
-            	<div class="tools">
-                    
-                    
-            	</div>
+            <div class="tools">
+            </div>
         </div>
-         
+
         <div class="portlet-body">
             <div class="table-responsive">
-            <dx:ASPxGridView ID="GV_Empresas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" DataSourceID="EmpresasDS" KeyFieldName="id_empresa">
-                <Settings ShowFilterRow="True" />
-                <Columns>
-                    <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0">
-                    </dx:GridViewCommandColumn>
-                    <dx:GridViewDataTextColumn FieldName="id_empresa" ReadOnly="True" VisibleIndex="1">
-                        <EditFormSettings Visible="False" />
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Empresa" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Razon_Social" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Direccion" VisibleIndex="4">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PaginaWEb" VisibleIndex="5">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Horario" VisibleIndex="6">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="email" VisibleIndex="7">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Observaciones" VisibleIndex="8">
-                    </dx:GridViewDataTextColumn>
-                </Columns>
+                <dx:ASPxGridView ID="GV_Empresas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" DataSourceID="EmpresasDS" KeyFieldName="id_empresa">
+                    <Settings ShowFilterRow="True" />
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="id_empresa" ReadOnly="True" VisibleIndex="1">
+                            <EditFormSettings Visible="False" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Empresa" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Razon_Social" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="PaginaWEb" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Horario" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="email" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Observaciones" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
                 </dx:ASPxGridView>
                 <asp:SqlDataSource ID="EmpresasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" DeleteCommand="DELETE FROM 
 empresas
 WHERE
-id_empresa= @id_empresa;" SelectCommand="SELECT
+id_empresa= @id_empresa;"
+                    SelectCommand="SELECT
 dbo.empresas.id_empresa,
 dbo.empresas.Empresa,
 dbo.empresas.Razon_Social,
@@ -58,7 +57,8 @@ dbo.empresas.Observaciones
 
 FROM
 dbo.empresas
-" UpdateCommand="UPDATE 
+"
+                    UpdateCommand="UPDATE 
 empresas
 SET
 Empresa=@Empresa,
@@ -84,9 +84,9 @@ id_empresa= @id_empresa;">
                         <asp:Parameter Name="id_empresa" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                </div>
             </div>
-         </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>

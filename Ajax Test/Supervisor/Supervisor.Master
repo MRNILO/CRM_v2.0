@@ -181,6 +181,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
+                                <a href="/Supervisor/Consultas.aspx">
+                                    <i class="fa fa-bar-chart"></i>Consultas CRM
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/Supervisor/AcumuladosClientes.aspx">
                                     <i class="fa fa-bar-chart"></i>Acumulados Clientes
                                 </a>

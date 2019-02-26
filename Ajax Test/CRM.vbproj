@@ -7154,6 +7154,7 @@
     <Content Include="assets\wts\icon.png" />
     <Content Include="assets\wts\wts.css" />
     <Content Include="CallCenter\Asesores.aspx" />
+    <Content Include="CallCenter\BusquedaClientes.aspx" />
     <Content Include="CallCenter\cita.aspx" />
     <Content Include="CallCenter\Citas.aspx" />
     <Content Include="CallCenter\Clientes.aspx" />
@@ -7904,6 +7905,7 @@
     <Content Include="Supervisor\categoriasProductos.aspx" />
     <Content Include="Supervisor\ClienteSupervisor.aspx" />
     <Content Include="Supervisor\ClientesUsuarios.aspx" />
+    <Content Include="Supervisor\Consultas.aspx" />
     <Content Include="Supervisor\etapas.aspx" />
     <Content Include="Supervisor\GrupoTrabajo.aspx" />
     <Content Include="Supervisor\InicioSupervisor.aspx" />
@@ -8047,6 +8049,13 @@
     </Compile>
     <Compile Include="CallCenter\Asesores.aspx.vb">
       <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CallCenter\CallCenter.Master.designer.vb">
@@ -8223,6 +8232,13 @@
     </Compile>
     <Compile Include="Supervisor\ClientesUsuarios.aspx.vb">
       <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.designer.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\etapas.aspx.designer.vb">
