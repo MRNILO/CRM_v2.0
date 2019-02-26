@@ -9,7 +9,6 @@
         If Not IsPostBack() Then
             Alimentar_ComboFiltro()
             Alimentar_ComboDias()
-
         End If
     End Sub
     Public Sub Alimentar_ComboDias()
@@ -23,6 +22,7 @@
             .SelectedIndex = 0
         End With
     End Sub
+
     Public Sub Alimentar_ComboFiltro()
         Dim Filtros() As String = {"Prospecto", "Visita", "Separacion", "SP"}
 
@@ -55,7 +55,7 @@
         Dim EsEstapa As Boolean
         Dim FechaIncio As Date
         Dim FechaFin As Date
-        Dim DiasFiltro As String
+        Dim DiasFiltro As Integer
 
         Select Case cb_tipoCliente.SelectedItem.Value
             Case "Prospecto"
@@ -82,18 +82,10 @@
         End If
 
         Select Case cb_Dias.SelectedItem.Value
-            Case "15"
-                DiasFiltro = 15
-            Case "30"
-                DiasFiltro = 30
-            Case "60"
-                DiasFiltro = 60
-            Case "90"
-                DiasFiltro = 90
-            Case "120"
-                DiasFiltro = 120
-            Case "180"
-                DiasFiltro = 180
+            Case ">180"
+                'Programacion para mas de 180 dias 
+            Case Else
+                DiasFiltro = CType(cb_Dias.SelectedValue, Int32)
         End Select
 
         Dim ROW As DataRow
@@ -138,7 +130,6 @@
         ViewState("DatosDiasST") = DTA
         GV_ClientesDias.DataBind()
     End Sub
-
 
     Protected Sub chkRangoFechas_CheckedChanged(sender As Object, e As EventArgs) Handles chkRangoFechas.CheckedChanged
         If (chkRangoFechas.Checked) Then

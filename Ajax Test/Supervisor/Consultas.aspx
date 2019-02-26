@@ -38,7 +38,7 @@
         </div>
         <div class="portlet-body">
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-3">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-lg-6">

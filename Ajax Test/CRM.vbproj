@@ -8128,6 +8128,8 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Funciones\Funciones.vb" />
+    <Compile Include="Funciones\SQL_Functions.vb" />
     <Compile Include="Generales.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>

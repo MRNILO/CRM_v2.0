@@ -18,6 +18,197 @@ Namespace Servicio
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="CUsuarios", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class CUsuarios
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EmailField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NivelField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private apellidoMaternoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private apellidoPaternoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private contraseñaField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private fechaCreacionField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private fotografiaField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private id_usuarioField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private nombreField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private usuarioField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Email() As String
+            Get
+                Return Me.EmailField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
+                    Me.EmailField = value
+                    Me.RaisePropertyChanged("Email")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Nivel() As Integer
+            Get
+                Return Me.NivelField
+            End Get
+            Set
+                If (Me.NivelField.Equals(value) <> true) Then
+                    Me.NivelField = value
+                    Me.RaisePropertyChanged("Nivel")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property apellidoMaterno() As String
+            Get
+                Return Me.apellidoMaternoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.apellidoMaternoField, value) <> true) Then
+                    Me.apellidoMaternoField = value
+                    Me.RaisePropertyChanged("apellidoMaterno")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property apellidoPaterno() As String
+            Get
+                Return Me.apellidoPaternoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.apellidoPaternoField, value) <> true) Then
+                    Me.apellidoPaternoField = value
+                    Me.RaisePropertyChanged("apellidoPaterno")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property contraseña() As String
+            Get
+                Return Me.contraseñaField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.contraseñaField, value) <> true) Then
+                    Me.contraseñaField = value
+                    Me.RaisePropertyChanged("contraseña")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property fechaCreacion() As Date
+            Get
+                Return Me.fechaCreacionField
+            End Get
+            Set
+                If (Me.fechaCreacionField.Equals(value) <> true) Then
+                    Me.fechaCreacionField = value
+                    Me.RaisePropertyChanged("fechaCreacion")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property fotografia() As String
+            Get
+                Return Me.fotografiaField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.fotografiaField, value) <> true) Then
+                    Me.fotografiaField = value
+                    Me.RaisePropertyChanged("fotografia")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property id_usuario() As Integer
+            Get
+                Return Me.id_usuarioField
+            End Get
+            Set
+                If (Me.id_usuarioField.Equals(value) <> true) Then
+                    Me.id_usuarioField = value
+                    Me.RaisePropertyChanged("id_usuario")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property nombre() As String
+            Get
+                Return Me.nombreField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.nombreField, value) <> true) Then
+                    Me.nombreField = value
+                    Me.RaisePropertyChanged("nombre")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property usuario() As String
+            Get
+                Return Me.usuarioField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.usuarioField, value) <> true) Then
+                    Me.usuarioField = value
+                    Me.RaisePropertyChanged("usuario")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="CEstados", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
      System.SerializableAttribute()>  _
     Partial Public Class CEstados
@@ -7674,197 +7865,6 @@ Namespace Servicio
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="CUsuarios", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class CUsuarios
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private EmailField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private NivelField As Integer
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private apellidoMaternoField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private apellidoPaternoField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private contraseñaField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private fechaCreacionField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private fotografiaField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private id_usuarioField As Integer
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private nombreField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private usuarioField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Email() As String
-            Get
-                Return Me.EmailField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
-                    Me.EmailField = value
-                    Me.RaisePropertyChanged("Email")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Nivel() As Integer
-            Get
-                Return Me.NivelField
-            End Get
-            Set
-                If (Me.NivelField.Equals(value) <> true) Then
-                    Me.NivelField = value
-                    Me.RaisePropertyChanged("Nivel")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property apellidoMaterno() As String
-            Get
-                Return Me.apellidoMaternoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.apellidoMaternoField, value) <> true) Then
-                    Me.apellidoMaternoField = value
-                    Me.RaisePropertyChanged("apellidoMaterno")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property apellidoPaterno() As String
-            Get
-                Return Me.apellidoPaternoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.apellidoPaternoField, value) <> true) Then
-                    Me.apellidoPaternoField = value
-                    Me.RaisePropertyChanged("apellidoPaterno")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property contraseña() As String
-            Get
-                Return Me.contraseñaField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.contraseñaField, value) <> true) Then
-                    Me.contraseñaField = value
-                    Me.RaisePropertyChanged("contraseña")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property fechaCreacion() As Date
-            Get
-                Return Me.fechaCreacionField
-            End Get
-            Set
-                If (Me.fechaCreacionField.Equals(value) <> true) Then
-                    Me.fechaCreacionField = value
-                    Me.RaisePropertyChanged("fechaCreacion")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property fotografia() As String
-            Get
-                Return Me.fotografiaField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.fotografiaField, value) <> true) Then
-                    Me.fotografiaField = value
-                    Me.RaisePropertyChanged("fotografia")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property id_usuario() As Integer
-            Get
-                Return Me.id_usuarioField
-            End Get
-            Set
-                If (Me.id_usuarioField.Equals(value) <> true) Then
-                    Me.id_usuarioField = value
-                    Me.RaisePropertyChanged("id_usuario")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property nombre() As String
-            Get
-                Return Me.nombreField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.nombreField, value) <> true) Then
-                    Me.nombreField = value
-                    Me.RaisePropertyChanged("nombre")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property usuario() As String
-            Get
-                Return Me.usuarioField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.usuarioField, value) <> true) Then
-                    Me.usuarioField = value
-                    Me.RaisePropertyChanged("usuario")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="CTotalesUsuario", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
      System.SerializableAttribute()>  _
     Partial Public Class CTotalesUsuario
@@ -11905,6 +11905,12 @@ Namespace Servicio
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="Servicio.IService1")>  _
     Public Interface IService1
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
+        Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
+        Function Obtener_usuarios_detallesAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuarios)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaUsuarioResponse")>  _
         Function Actualiza_contraseaUsuario(ByVal id_usuario As Integer, ByVal Contraseña As String) As Boolean
         
@@ -12379,6 +12385,12 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapa", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaResponse")>  _
         Function DiasSinTrabajarEtapaAsync(ByVal id_supervisor As Integer, ByVal Etapa As Integer) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>  _
+        Function DiasSinTrabajarEtapaFiltro(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.DiasSinTrabajar()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>  _
+        Function DiasSinTrabajarEtapaFiltroAsync(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>  _
         Function DiasSinTrabajarFiltro(ByVal id_supervisor As Integer, ByVal Filtro As String) As Servicio.DiasSinTrabajar()
         
@@ -12648,12 +12660,6 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
         Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios())
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
-        Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
-        Function Obtener_usuarios_detallesAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuarios)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
@@ -13230,6 +13236,14 @@ Namespace Servicio
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
+        
+        Public Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios Implements Servicio.IService1.Obtener_usuarios_detalles
+            Return MyBase.Channel.Obtener_usuarios_detalles(id_usuario)
+        End Function
+        
+        Public Function Obtener_usuarios_detallesAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuarios) Implements Servicio.IService1.Obtener_usuarios_detallesAsync
+            Return MyBase.Channel.Obtener_usuarios_detallesAsync(id_usuario)
+        End Function
         
         Public Function Actualiza_contraseaUsuario(ByVal id_usuario As Integer, ByVal Contraseña As String) As Boolean Implements Servicio.IService1.Actualiza_contraseaUsuario
             Return MyBase.Channel.Actualiza_contraseaUsuario(id_usuario, Contraseña)
@@ -13863,6 +13877,14 @@ Namespace Servicio
             Return MyBase.Channel.DiasSinTrabajarEtapaAsync(id_supervisor, Etapa)
         End Function
         
+        Public Function DiasSinTrabajarEtapaFiltro(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.DiasSinTrabajar() Implements Servicio.IService1.DiasSinTrabajarEtapaFiltro
+            Return MyBase.Channel.DiasSinTrabajarEtapaFiltro(id_supervisor, Etapa, Dias, FechaInicio, FechaFinal)
+        End Function
+        
+        Public Function DiasSinTrabajarEtapaFiltroAsync(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar()) Implements Servicio.IService1.DiasSinTrabajarEtapaFiltroAsync
+            Return MyBase.Channel.DiasSinTrabajarEtapaFiltroAsync(id_supervisor, Etapa, Dias, FechaInicio, FechaFinal)
+        End Function
+        
         Public Function DiasSinTrabajarFiltro(ByVal id_supervisor As Integer, ByVal Filtro As String) As Servicio.DiasSinTrabajar() Implements Servicio.IService1.DiasSinTrabajarFiltro
             Return MyBase.Channel.DiasSinTrabajarFiltro(id_supervisor, Filtro)
         End Function
@@ -14221,14 +14243,6 @@ Namespace Servicio
         
         Public Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios()) Implements Servicio.IService1.Obtener_usuarios_todosAsync
             Return MyBase.Channel.Obtener_usuarios_todosAsync
-        End Function
-        
-        Public Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios Implements Servicio.IService1.Obtener_usuarios_detalles
-            Return MyBase.Channel.Obtener_usuarios_detalles(id_usuario)
-        End Function
-        
-        Public Function Obtener_usuarios_detallesAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuarios) Implements Servicio.IService1.Obtener_usuarios_detallesAsync
-            Return MyBase.Channel.Obtener_usuarios_detallesAsync(id_usuario)
         End Function
         
         Public Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor() Implements Servicio.IService1.Obtener_nombreClientesAdm

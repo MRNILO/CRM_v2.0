@@ -39,41 +39,40 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <label>Tipo de Cliente:</label>
-                        <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList><table style="width: 100%;">
-                            <tr>
-                                <td style="width: 209px">
-                                    <dx:ASPxCheckBox ID="chkRangoFechas" runat="server" Text="Por fechas">
-                                    </dx:ASPxCheckBox>
-                                </td>
-                                <td class="input-medium" style="width: 176px">
-                                    <dx:ASPxLabel ID="lblFechaInicio" runat="server" Text="Fecha Inico"></dx:ASPxLabel>
-                                    <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
-                                </td>
-                                <td>
-                                    <dx:ASPxLabel ID="lblFechaFin" runat="server" Text="Fecha Inico"></dx:ASPxLabel>
-                                    <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width: 209px">
-                                    <dx:ASPxCheckBox ID="chkDias" runat="server" Text="Por días">
-                                    </dx:ASPxCheckBox>
-
-                                </td>
-
-                                <td class="input-medium" style="width: 176px">
-                                    <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
-                                </td>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </table>
-                        <div class="col-lg-2" style="margin-top: 25px">
-                            <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar Clientes" CssClass="btn btn-ms btn-block green" />
-                        </div>
+                        <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList>
 
                     </div>
-
-
+                    <div class="col-lg-2" style="margin-top: 25px">
+                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar" CssClass="btn btn-ms btn-block green" />
+                    </div>
+                    <div class="col-lg-3 form-control-static" style="margin-top: 25px">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <dx:ASPxCheckBox ID="chkRangoFechas" runat="server" Text="Por fechas" Theme="Office365">
+                                </dx:ASPxCheckBox>
+                            </div>
+                            <div class="col-lg-6">
+                                <dx:ASPxCheckBox ID="chkDias" runat="server" Text="Por días" Theme="Office365" gro>
+                                </dx:ASPxCheckBox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label>Fecha Inicio:</label>
+                        <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                    </div>
+                    <div class="col-lg-2">
+                        <label>Fecha Final:</label>
+                        <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px">
+                    <div class="col-lg-3">
+                        <label>Rango de Días</label>
+                        <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive">

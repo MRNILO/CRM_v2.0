@@ -48,10 +48,5 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
-
-
-
 #End Region
-
 End Class
