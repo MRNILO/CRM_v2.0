@@ -39,11 +39,41 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <label>Tipo de Cliente:</label>
-                        <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList>
+                        <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList><table style="width: 100%;">
+                            <tr>
+                                <td style="width: 209px">
+                                    <dx:ASPxCheckBox ID="chkRangoFechas" runat="server" Text="Por fechas">
+                                    </dx:ASPxCheckBox>
+                                </td>
+                                <td class="input-medium" style="width: 176px">
+                                    <dx:ASPxLabel ID="lblFechaInicio" runat="server" Text="Fecha Inico"></dx:ASPxLabel>
+                                    <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
+                                </td>
+                                <td>
+                                    <dx:ASPxLabel ID="lblFechaFin" runat="server" Text="Fecha Inico"></dx:ASPxLabel>
+                                    <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 209px">
+                                    <dx:ASPxCheckBox ID="chkDias" runat="server" Text="Por días">
+                                    </dx:ASPxCheckBox>
+
+                                </td>
+
+                                <td class="input-medium" style="width: 176px">
+                                    <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        <div class="col-lg-2" style="margin-top: 25px">
+                            <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar Clientes" CssClass="btn btn-ms btn-block green" />
+                        </div>
+
                     </div>
-                    <div class="col-lg-2" style="margin-top: 25px">
-                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar Clientes" CssClass="btn btn-ms btn-block green" />
-                    </div>
+
+
                 </div>
             </div>
             <div class="table-responsive">

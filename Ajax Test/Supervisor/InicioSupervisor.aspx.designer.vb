@@ -41,6 +41,69 @@ Partial Public Class InicioSupervisor
     Protected WithEvents cb_tipoCliente As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''Control chkRangoFechas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkRangoFechas As Global.DevExpress.Web.ASPxCheckBox
+    
+    '''<summary>
+    '''Control lblFechaInicio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblFechaInicio As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control dtp_inicio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_inicio As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control lblFechaFin.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblFechaFin As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control dtp_Fin.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_Fin As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control chkDias.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkDias As Global.DevExpress.Web.ASPxCheckBox
+    
+    '''<summary>
+    '''Control cb_Dias.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cb_Dias As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''Control btn_MostrarClientes.
     '''</summary>
     '''<remarks>
