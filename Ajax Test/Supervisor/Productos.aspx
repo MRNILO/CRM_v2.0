@@ -6,28 +6,27 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    
-      <div class="portlet box red">
+
+    <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Opciones
             </div>
-            	<div class="tools">
-                  
-            	</div>
+            <div class="tools">
+            </div>
         </div>
         <div class="portlet-body">
             <asp:Button ID="btn_NuevoProducto" runat="server" Text="Nuevo Producto" CssClass="btn btn-lg green" Width="173px" />
-            </div>
-          </div>
+        </div>
+    </div>
     <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Catalogo de Productos
             </div>
-            	<div class="tools">
-                    <asp:Button ID="btn_excel" runat="server" Text="A Excel" CssClass="btn green" />
-            	</div>
+            <div class="tools">
+                <asp:Button ID="btn_excel" runat="server" Text="A Excel" CssClass="btn green" />
+            </div>
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
@@ -65,9 +64,9 @@
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
-                </div>
             </div>
         </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 

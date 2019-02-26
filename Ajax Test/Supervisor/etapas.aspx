@@ -6,14 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="portlet box yellow">
+    <div class="portlet box yellow">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Etapas
             </div>
-            	<div class="tools">
-                  
-            	</div>
+            <div class="tools">
+            </div>
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
@@ -30,9 +29,9 @@
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
-                </div>
             </div>
-         </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>

@@ -6,20 +6,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    
-      <div class="portlet box blue">
+
+    <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-phone"></i>Programar Tarea
             </div>
-            	<div class="tools">
-                    
-                    
-            	</div>
+            <div class="tools">
+            </div>
         </div>
-         
+
         <div class="portlet-body">
-           
             Seleccione prioridad:
             <br />
             <asp:DropDownList ID="cb_prioridad" runat="server" CssClass="form-control"></asp:DropDownList>
@@ -37,8 +34,8 @@
             <asp:TextBox ID="tb_Tarea" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
             <br />
             <asp:Button ID="btn_guardar" runat="server" Text="Programar Tarea" CssClass="btn btn-lg green" />
-            </div>
-          </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 

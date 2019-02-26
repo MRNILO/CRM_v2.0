@@ -11,58 +11,58 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Reporte de llamadas 
             </div>
-            	
+
         </div>
         <div class="portlet-body">
             Seleccione una fecha inicial:
             <br />
             <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
             <br />
-             Seleccione una fecha final:
+            Seleccione una fecha final:
             <br />
             <dx:ASPxDateEdit ID="dtp_final" runat="server" Theme="Moderno"></dx:ASPxDateEdit>
             <br />
-            <asp:Button ID="btn_generar" runat="server" Text="Buscar llamadas"  CssClass="btn btn-lg red"/>
-            </div>
+            <asp:Button ID="btn_generar" runat="server" Text="Buscar llamadas" CssClass="btn btn-lg red" />
         </div>
+    </div>
     <div class="portlet box green-haze" id="LlamadasDiv">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Llamadas
             </div>
-            	
+
         </div>
         <div class="portlet-body">
-           <div class="table-responsive">
-               <dx:ASPxGridView ID="GV_Llamadas" runat="server" Width="100%" Theme="Moderno" AutoGenerateColumns="False" EnableCallBacks="False">
-                   <SettingsPager PageSize="500">
-                   </SettingsPager>
-                   <Settings ShowFilterRow="True" />
-                   <SettingsSearchPanel Visible="True" />
-                   <Columns>
-                       <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_llamada" Name="Opciones" VisibleIndex="0">
-                           <PropertiesTextEdit DisplayFormatString="&lt;div id=&quot;div{0}&quot;&gt;&lt;a href=&quot;javascript:void(0)&quot; id=&quot;{0}&quot; onclick=&quot;cambiarLlamada({0})&quot; class=&quot;btn btn-sm green&quot;&gt;Realizada&lt;/a&gt;&lt;/div&gt;">
-                           </PropertiesTextEdit>
-                       </dx:GridViewDataTextColumn>
-                       <dx:GridViewDataTextColumn Caption="Cliente" FieldName="Cliente" VisibleIndex="1">
-                       </dx:GridViewDataTextColumn>
-                       <dx:GridViewDataTextColumn Caption="HoraProgramacion" FieldName="HoraProgramacion" VisibleIndex="4">
-                       </dx:GridViewDataTextColumn>
-                       <dx:GridViewDataTextColumn Caption="realizada" FieldName="realizada" VisibleIndex="5" Name="realizada">
-                       </dx:GridViewDataTextColumn>
-                       <dx:GridViewDataTextColumn Caption="Observación" FieldName="ObservacionUsuario" VisibleIndex="6">
-                       </dx:GridViewDataTextColumn>
-                       <dx:GridViewDataDateColumn Caption="Fecha" FieldName="Fecha" VisibleIndex="2">
-                       </dx:GridViewDataDateColumn>
-                   </Columns>
-               </dx:ASPxGridView>
-           </div>
-            
+            <div class="table-responsive">
+                <dx:ASPxGridView ID="GV_Llamadas" runat="server" Width="100%" Theme="Moderno" AutoGenerateColumns="False" EnableCallBacks="False">
+                    <SettingsPager PageSize="500">
+                    </SettingsPager>
+                    <Settings ShowFilterRow="True" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_llamada" Name="Opciones" VisibleIndex="0">
+                            <PropertiesTextEdit DisplayFormatString="&lt;div id=&quot;div{0}&quot;&gt;&lt;a href=&quot;javascript:void(0)&quot; id=&quot;{0}&quot; onclick=&quot;cambiarLlamada({0})&quot; class=&quot;btn btn-sm green&quot;&gt;Realizada&lt;/a&gt;&lt;/div&gt;">
+                            </PropertiesTextEdit>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cliente" FieldName="Cliente" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="HoraProgramacion" FieldName="HoraProgramacion" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="realizada" FieldName="realizada" VisibleIndex="5" Name="realizada">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Observación" FieldName="ObservacionUsuario" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha" FieldName="Fecha" VisibleIndex="2">
+                        </dx:GridViewDataDateColumn>
+                    </Columns>
+                </dx:ASPxGridView>
             </div>
+
         </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-     <script type="text/javascript">
+    <script type="text/javascript">
          //jQuery(document).ready(function () {
          //    $("#LlamadasDiv").hide();
          //});
@@ -93,5 +93,5 @@
                 }
             });
         }
-         </script>
+    </script>
 </asp:Content>
