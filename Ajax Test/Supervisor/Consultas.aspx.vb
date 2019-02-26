@@ -48,7 +48,7 @@ Public Class Consultas
         Dim Input As String = ""
 
         Using Reader As New IO.StreamReader(Archivo, Encoding.ASCII, True)
-            Input = Reader.ReadToEnd
+            Input = Reader.ReadToEnd.Replace("?", "ñ")
         End Using
 
         txtBoxConsulta.Text = Input

@@ -7154,6 +7154,7 @@
     <Content Include="assets\wts\icon.png" />
     <Content Include="assets\wts\wts.css" />
     <Content Include="CallCenter\Asesores.aspx" />
+    <Content Include="CallCenter\BusquedaClientes.aspx" />
     <Content Include="CallCenter\cita.aspx" />
     <Content Include="CallCenter\Citas.aspx" />
     <Content Include="CallCenter\Clientes.aspx" />
@@ -8048,6 +8049,13 @@
     </Compile>
     <Compile Include="CallCenter\Asesores.aspx.vb">
       <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CallCenter\CallCenter.Master.designer.vb">

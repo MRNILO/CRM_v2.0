@@ -44,6 +44,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
