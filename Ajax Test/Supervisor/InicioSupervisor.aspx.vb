@@ -98,9 +98,6 @@
             End Select
         End If
 
-
-
-
         Dim ROW As DataRow
         Dim DTA As New DataTable
         DTA.Columns.AddRange({New DataColumn("ID"), New DataColumn("Cliente"), New DataColumn("Ultima"), New DataColumn("Dias")})
