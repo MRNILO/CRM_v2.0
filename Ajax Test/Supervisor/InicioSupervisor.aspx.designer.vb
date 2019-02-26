@@ -50,22 +50,22 @@ Partial Public Class InicioSupervisor
     Protected WithEvents btn_MostrarClientes As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control chkRangoFechas.
+    '''Control rdbFechas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents chkRangoFechas As Global.DevExpress.Web.ASPxCheckBox
+    Protected WithEvents rdbFechas As Global.DevExpress.Web.ASPxRadioButton
     
     '''<summary>
-    '''Control chkDias.
+    '''Control rdbDias.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents chkDias As Global.DevExpress.Web.ASPxCheckBox
+    Protected WithEvents rdbDias As Global.DevExpress.Web.ASPxRadioButton
     
     '''<summary>
     '''Control dtp_inicio.

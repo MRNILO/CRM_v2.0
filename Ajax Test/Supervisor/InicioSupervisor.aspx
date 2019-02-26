@@ -48,12 +48,8 @@
                     <div class="col-lg-3 form-control-static" style="margin-top: 25px">
                         <div class="row">
                             <div class="col-lg-6">
-                                <dx:ASPxCheckBox ID="chkRangoFechas" runat="server" Text="Por fechas" Theme="Office365">
-                                </dx:ASPxCheckBox>
-                            </div>
-                            <div class="col-lg-6">
-                                <dx:ASPxCheckBox ID="chkDias" runat="server" Text="Por días" Theme="Office365" gro>
-                                </dx:ASPxCheckBox>
+                                <dx:ASPxRadioButton ID="rdbFechas" runat="server" Text="Por fechas" GroupName="Filtros" Theme="Office365"></dx:ASPxRadioButton>
+                                <dx:ASPxRadioButton ID="rdbDias" runat="server" Text="Por días" GroupName="Filtros" Theme="Office365"></dx:ASPxRadioButton>
                             </div>
                         </div>
                     </div>
@@ -61,11 +57,11 @@
                 <div class="row" style="margin-top: 15px">
                     <div class="col-lg-2">
                         <label>Fecha Inicio:</label>
-                        <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
                     </div>
                     <div class="col-lg-2">
                         <label>Fecha Final:</label>
-                        <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 15px">

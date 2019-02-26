@@ -71,22 +71,35 @@
                 Filtro = "SP"
         End Select
 
-        If chkRangoFechas.Checked Then
-            FechaIncio = dtp_inicio.Text
-            FechaFin = dtp_Fin.Text
+        If rdbFechas.Checked Then
+            If String.IsNullOrEmpty(dtp_inicio.Text) Then
+                dtp_inicio.Date = Now.Date()
+                FechaIncio = dtp_inicio.Text
+            Else
+                FechaIncio = dtp_inicio.Text
+            End If
+            If String.IsNullOrEmpty(dtp_Fin.Text) Then
+                dtp_Fin.Date = Now.Date()
+                FechaFin = dtp_Fin.Text
+            Else
+                FechaFin = dtp_Fin.Text
+            End If
             DiasFiltro = 0
         End If
-        If chkDias.Checked Then
+
+        If rdbDias.Checked Then
             FechaIncio = "1900-01-01"
             FechaFin = "1900-01-01"
+            Select Case cb_Dias.SelectedItem.Value
+                Case ">180"
+                    'Programacion para mas de 180 dias 
+                Case Else
+                    DiasFiltro = CType(cb_Dias.SelectedValue, Int32)
+            End Select
         End If
 
-        Select Case cb_Dias.SelectedItem.Value
-            Case ">180"
-                'Programacion para mas de 180 dias 
-            Case Else
-                DiasFiltro = CType(cb_Dias.SelectedValue, Int32)
-        End Select
+
+
 
         Dim ROW As DataRow
         Dim DTA As New DataTable
@@ -94,7 +107,7 @@
 
         If EsEstapa Then
             Dim DiasSTEtapa As Servicio.DiasSinTrabajar()
-            If chkRangoFechas.Checked Or chkDias.Checked Then
+            If rdbFechas.Checked Or rdbDias.Checked Then
                 DiasSTEtapa = BL.DiasSinTrabajarEtapaFiltro(Usuario.id_usuario, Etapa, DiasFiltro, FechaIncio, FechaFin)
             Else
                 DiasSTEtapa = BL.DiasSinTrabajarEtapa(Usuario.id_usuario, Etapa)
@@ -131,18 +144,12 @@
         GV_ClientesDias.DataBind()
     End Sub
 
-    Protected Sub chkRangoFechas_CheckedChanged(sender As Object, e As EventArgs) Handles chkRangoFechas.CheckedChanged
-        If (chkRangoFechas.Checked) Then
-            chkDias.Checked = False
+    Protected Sub rdbFechas_CheckedChanged(sender As Object, e As EventArgs) Handles rdbFechas.CheckedChanged
+        If (rdbFechas.Checked) Then
             cb_Dias.ClearSelection()
         End If
     End Sub
 
-    Protected Sub chkDias_CheckedChanged(sender As Object, e As EventArgs) Handles chkDias.CheckedChanged
-        If (chkDias.Checked) Then
-            chkRangoFechas.Checked = False
-        End If
-    End Sub
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
@@ -177,6 +184,7 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+
 
 
 #End Region
