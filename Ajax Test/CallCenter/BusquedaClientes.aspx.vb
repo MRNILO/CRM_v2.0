@@ -1,4 +1,6 @@
-﻿Public Class BusquedaClientes1
+﻿Imports DevExpress.Web
+Imports Ajax_Test.Funciones
+Public Class BusquedaClientes1
     Inherits System.Web.UI.Page
 
     Dim Usuario As New Servicio.CUsuarios
@@ -10,7 +12,7 @@
         ValidaUsuario()
 
         If Not IsPostBack() Then
-
+            tb_NombreCliente.Focus()
         End If
     End Sub
 
@@ -47,12 +49,53 @@
         End Select
     End Sub
 
-    Public Function ValidarCampos()
+    Public Sub BuscarClientes()
+        Dim Cliente As New BusquedaCliente
 
-    End Function
+        With Cliente
+            .nombreCliente = tb_NombreCliente.Text
+            .apellidoPaterno = tb_ApellidoPaterno.Text
+            .apellidoMaterno = tb_ApellidoMaterno.Text
+            .RFC = tb_RFC.Text
+            .CURP = tb_CURP.Text
+            .NSS = tb_NSS.Text
+        End With
+
+        Dim DT As New DataTable
+        DT = GE_Funciones.BuscarClientes(Cliente)
+        ViewState("ListaClientes") = DT
+
+        With grdView_BusquedaCliente
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
 #End Region
 
 #Region "Eventos"
+    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        BuscarClientes()
+    End Sub
 
+    Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        tb_NombreCliente.Text = "" : tb_NombreCliente.Focus()
+        tb_ApellidoPaterno.Text = ""
+        tb_ApellidoMaterno.Text = ""
+        tb_RFC.Text = ""
+        tb_CURP.Text = ""
+        tb_NSS.Text = ""
+
+        grdView_BusquedaCliente.DataSource = Nothing
+        grdView_BusquedaCliente.DataBind()
+    End Sub
+
+    Protected Sub grdView_BusquedaCliente_DataBinding(sender As Object, e As EventArgs) Handles grdView_BusquedaCliente.DataBinding
+        grdView_BusquedaCliente.DataSource = ViewState("ListaClientes")
+    End Sub
+
+    Protected Sub grdView_BusquedaCliente_CustomCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomCallbackEventArgs) Handles grdView_BusquedaCliente.CustomCallback
+        Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.Parameters, "ID")
+        ASPxWebControl.RedirectOnCallback("../CallCenter/cita.aspx?id=" + IdCliente.ToString)
+    End Sub
 #End Region
 End Class

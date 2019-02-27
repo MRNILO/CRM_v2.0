@@ -3,6 +3,17 @@
 Public Class Funciones
     Private GE_SQL As New SQL_Functions
 
+#Region "Estructuras"
+    Public Structure BusquedaCliente
+        Dim nombreCliente As String
+        Dim apellidoMaterno As String
+        Dim apellidoPaterno As String
+        Dim RFC As String
+        Dim CURP As String
+        Dim NSS As String
+    End Structure
+#End Region
+
 #Region "Archivos"
     Public Sub EliminarArchivos(ByVal Archivos() As String)
         Try
@@ -49,6 +60,55 @@ Public Class Funciones
         End Try
 
         Return Datos
+    End Function
+
+    Public Function BuscarClientes(ByVal Cliente As BusquedaCliente) As DataTable
+        Dim Query As String = "EXEC [dbo].[BuscarClientes]
+		                            @Nombre = N'" & Cliente.nombreCliente & "',
+		                            @ApellidoPaterno = N'" & Cliente.apellidoPaterno & "',
+		                            @ApellidoMaterno = N'" & Cliente.apellidoMaterno & "',
+		                            @rfcCliente = N'" & Cliente.RFC & "',
+		                            @curpCliente = N'" & Cliente.CURP & "',
+		                            @nssCliente = N'" & Cliente.NSS & "'"
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim ROWB As DataRow
+
+        DTB.Columns.AddRange({New DataColumn("ID", GetType(Integer)), New DataColumn("Cliente", GetType(String)), New DataColumn("Asesor", GetType(String)),
+                              New DataColumn("CallCenter", GetType(String)), New DataColumn("Ranking", GetType(String)), New DataColumn("Nacimiento", GetType(Date)),
+                              New DataColumn("RFC", GetType(String)), New DataColumn("CURP", GetType(String)), New DataColumn("NSS", GetType(String))})
+
+        DTA = GE_SQL.SQLGetTable(Query)
+        If DTA.Rows.Count > 0 Then
+            For Each rowA As DataRow In DTA.Rows
+                ROWB = DTB.NewRow
+                ROWB("ID") = rowA("ID")
+                ROWB("Cliente") = rowA("Cliente")
+
+                If IsDBNull(rowA("Asesor")) Then
+                    ROWB("Asesor") = "-"
+                Else
+                    ROWB("Asesor") = rowA("Asesor")
+                End If
+
+                If IsDBNull(rowA("CallCenter")) Then
+                    ROWB("CallCenter") = "-"
+                Else
+                    ROWB("CallCenter") = rowA("CallCenter")
+                End If
+
+                ROWB("Ranking") = rowA("Ranking")
+                ROWB("Nacimiento") = rowA("Nacimiento")
+                ROWB("RFC") = rowA("RFC")
+                ROWB("CURP") = rowA("CURP")
+                ROWB("NSS") = rowA("NSS")
+
+                DTB.Rows.Add(ROWB)
+            Next
+        End If
+
+        BuscarClientes = DTB
     End Function
 #End Region
 End Class

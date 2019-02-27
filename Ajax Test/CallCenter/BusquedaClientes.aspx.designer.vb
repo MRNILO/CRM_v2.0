@@ -50,24 +50,6 @@ Partial Public Class BusquedaClientes1
     Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control tb_idcliente.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_idcliente As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control tb_NumCte.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_NumCte As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''Control tb_RFC.
     '''</summary>
     '''<remarks>
@@ -77,6 +59,15 @@ Partial Public Class BusquedaClientes1
     Protected WithEvents tb_RFC As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control tb_CURP.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_CURP As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control tb_NSS.
     '''</summary>
     '''<remarks>
@@ -84,15 +75,6 @@ Partial Public Class BusquedaClientes1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_NSS As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control dtp_FechaNacimiento.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dtp_FechaNacimiento As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
     '''Control btnBuscar.

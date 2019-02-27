@@ -123,7 +123,7 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->--%>
                     </li>
                     <li class="start active">
-                        <a href="/CallCenter/InicioCCenter.aspx">
+                        <a href="/CallCenter/BusquedaClientes.aspx">
                             <i class="icon-home"></i>
                             <span class="title">Inicio</span>
                         </a>
@@ -138,6 +138,11 @@
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
+                            <li>
+                                <a href="/CallCenter/BusquedaClientes.aspx">
+                                    <i class="fa fa-user"></i>Buscar Clientes
+                                </a>
+                            </li>
                             <li>
                                 <a href="/CallCenter/Clientes.aspx">
                                     <i class="fa fa-user"></i>Todos los clientes
