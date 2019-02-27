@@ -81,17 +81,15 @@
     End Sub
     Protected Sub GV_Usuarios_RowUpdating(sender As Object, e As DevExpress.Web.Data.ASPxDataUpdatingEventArgs) Handles GV_Usuarios.RowUpdating
         Dim Activo As Integer = 0
+        Dim Index As Integer = 0
+        Dim RowResult() As DataRow
+        Dim DTA As New DataTable
 
         If (e.NewValues("activo")) Then Activo = 1
 
         If BL.Actualiza_usuarios(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), Activo) Then
-            Dim Index As Integer = 0
-            Dim RowResult() As DataRow
-            Dim DTA As New DataTable
-
             e.Cancel = True
             DTA = ViewState("ClienteUsuarios")
-
             RowResult = DTA.Select("id_usuario = " & e.Keys(0))
 
             For Each rowR As DataRow In RowResult
