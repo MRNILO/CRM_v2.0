@@ -73,28 +73,31 @@
             Case "SP"
                 Filtro = "SP"
         End Select
-
         If rdbFechas.Checked Then
-            If String.IsNullOrEmpty(dtp_inicio.Text) Then
+            If String.IsNullOrEmpty(dtp_inicio.Text) And String.IsNullOrEmpty(dtp_Fin.Text) Then
                 dtp_inicio.Date = Now.Date()
                 FechaIncio = dtp_inicio.Text
-            Else
-                FechaIncio = dtp_inicio.Text
-            End If
-            If String.IsNullOrEmpty(dtp_Fin.Text) Then
                 dtp_Fin.Date = Now.Date()
                 FechaFin = dtp_Fin.Text
             Else
-                FechaFin = dtp_Fin.Text
+                If (dtp_inicio.Date > dtp_Fin.Date) Then
+                    FechaIncio = dtp_Fin.Text
+                    FechaFin = dtp_inicio.Text
+                    dtp_inicio.Text = FechaIncio
+                    dtp_Fin.Text = FechaFin
+                Else
+                    FechaIncio = dtp_inicio.Text
+                    FechaFin = dtp_Fin.Text
+                End If
             End If
             DiasFiltro = 0
         End If
-
         If rdbDias.Checked Then
             FechaIncio = "1900-01-01"
             FechaFin = "1900-01-01"
             Select Case cb_Dias.SelectedItem.Value
                 Case ">180"
+                    DiasFiltro = 181
                     'Programacion para mas de 180 dias 
                 Case Else
                     DiasFiltro = CType(cb_Dias.SelectedValue, Int32)
@@ -125,7 +128,13 @@
                 Next
             End If
         Else
-            Dim DiasSTFiltro = BL.DiasSinTrabajarFiltro(Usuario.id_usuario, Filtro)
+
+            Dim DiasSTFiltro As Servicio.DiasSinTrabajar()
+            If rdbFechas.Checked Or rdbDias.Checked Then
+                DiasSTFiltro = BL.DiasSinTrabajarFiltroFechasDias(Usuario.id_usuario, Filtro, DiasFiltro, FechaIncio, FechaFin)
+            Else
+                DiasSTFiltro = BL.DiasSinTrabajarFiltro(Usuario.id_usuario, Filtro)
+            End If
 
             If DiasSTFiltro.Length > 0 Then
                 For i As Integer = 0 To DiasSTFiltro.Length - 1
@@ -143,12 +152,10 @@
         ViewState("DatosDiasST") = DTA
         GV_ClientesDias.DataBind()
     End Sub
-
     Protected Sub rdbFechas_CheckedChanged(sender As Object, e As EventArgs) Handles rdbFechas.CheckedChanged
         If (rdbFechas.Checked) Then
             cb_Dias.ClearSelection()
         End If
-
         rangoFechas.Style.Add("display", "show")
         rangoDias.Style.Add("display", "none")
     End Sub
@@ -156,6 +163,20 @@
     Protected Sub rdbDias_CheckedChanged(sender As Object, e As EventArgs) Handles rdbDias.CheckedChanged
         rangoFechas.Style.Add("display", "none")
         rangoDias.Style.Add("display", "show")
+    End Sub
+    Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        Dim DTA As New DataTable
+        rangoFechas.Style.Add("display", "none")
+        rangoDias.Style.Add("display", "none")
+
+        rdbDias.Checked = False
+        rdbFechas.Checked = False
+
+        dtp_inicio.Text = ""
+        dtp_inicio.Text = ""
+
+        ViewState("DatosDiasST") = DTA
+        GV_ClientesDias.DataBind()
     End Sub
 
 #Region "FuncionesUsuario"
@@ -192,5 +213,6 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+
 #End Region
 End Class
