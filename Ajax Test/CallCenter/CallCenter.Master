@@ -123,7 +123,7 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->--%>
                     </li>
                     <li class="start active">
-                        <a href="/CallCenter/InicioCCenter.aspx">
+                        <a href="/CallCenter/BusquedaClientes.aspx">
                             <i class="icon-home"></i>
                             <span class="title">Inicio</span>
                         </a>
