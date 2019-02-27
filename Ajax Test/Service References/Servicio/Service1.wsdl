@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Obtener_usuarios_todos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_usuarios_todos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_usuarios_todos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_usuarios_todosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_usuarios_detalles_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_usuarios_detalles" />
   </wsdl:message>
@@ -499,6 +505,12 @@
   <wsdl:message name="IService1_DiasSinTrabajarFiltro_OutputMessage">
     <wsdl:part name="parameters" element="tns:DiasSinTrabajarFiltroResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_DiasSinTrabajarFiltroFechasDias_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiasSinTrabajarFiltroFechasDias" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DiasSinTrabajarFiltroFechasDias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiasSinTrabajarFiltroFechasDiasResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_supervisor_Detalles_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_supervisor_Detalles" />
   </wsdl:message>
@@ -756,12 +768,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_Actualiza_usuarios_OutputMessage">
     <wsdl:part name="parameters" element="tns:Actualiza_usuariosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Obtener_usuarios_todos_InputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_usuarios_todos" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Obtener_usuarios_todos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_usuarios_todosResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_nombreClientesAdm_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_nombreClientesAdm" />
@@ -1274,6 +1280,10 @@
     <wsdl:part name="parameters" element="tns:Obtener_llamadas_usuarioResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Obtener_usuarios_todos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_todos" message="tns:IService1_Obtener_usuarios_todos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_todosResponse" message="tns:IService1_Obtener_usuarios_todos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_usuarios_detalles">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_detalles" message="tns:IService1_Obtener_usuarios_detalles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse" message="tns:IService1_Obtener_usuarios_detalles_OutputMessage" />
@@ -1602,6 +1612,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DiasSinTrabajarFiltro" message="tns:IService1_DiasSinTrabajarFiltro_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse" message="tns:IService1_DiasSinTrabajarFiltro_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DiasSinTrabajarFiltroFechasDias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDias" message="tns:IService1_DiasSinTrabajarFiltroFechasDias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDiasResponse" message="tns:IService1_DiasSinTrabajarFiltroFechasDias_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_supervisor_Detalles">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_supervisor_Detalles" message="tns:IService1_Obtener_supervisor_Detalles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse" message="tns:IService1_Obtener_supervisor_Detalles_OutputMessage" />
@@ -1773,10 +1787,6 @@
     <wsdl:operation name="Actualiza_usuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_usuarios" message="tns:IService1_Actualiza_usuarios_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_usuariosResponse" message="tns:IService1_Actualiza_usuarios_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Obtener_usuarios_todos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_todos" message="tns:IService1_Obtener_usuarios_todos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_usuarios_todosResponse" message="tns:IService1_Obtener_usuarios_todos_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdm" message="tns:IService1_Obtener_nombreClientesAdm_InputMessage" />
@@ -2121,6 +2131,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_usuarios_todos">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_usuarios_todos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_usuarios_detalles">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_usuarios_detalles" style="document" />
       <wsdl:input>
@@ -2859,6 +2878,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DiasSinTrabajarFiltroFechasDias">
+      <soap:operation soapAction="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_supervisor_Detalles">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_supervisor_Detalles" style="document" />
       <wsdl:input>
@@ -3239,15 +3267,6 @@
     </wsdl:operation>
     <wsdl:operation name="Actualiza_usuarios">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_usuarios" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Obtener_usuarios_todos">
-      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_usuarios_todos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

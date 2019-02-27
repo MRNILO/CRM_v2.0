@@ -52,24 +52,16 @@
             </div>
             <div class="row" style="margin-top: 15px">
                 <div class="col-lg-2">
-                    <label><b><i>ID Cte:</i></b></label>
-                    <asp:TextBox ID="tb_idcliente" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-lg-2">
-                    <label><b><i>Núm. Cte:</i></b></label>
-                    <asp:TextBox ID="tb_NumCte" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-lg-2">
                     <label><b><i>RFC:</i></b></label>
                     <asp:TextBox ID="tb_RFC" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-lg-2">
+                    <label><b><i>CURP:</i></b></label>
+                    <asp:TextBox ID="tb_CURP" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col-lg-2">
                     <label><b><i>NSS:</i></b></label>
                     <asp:TextBox ID="tb_NSS" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-lg-3">
-                    <label><b><i>Fecha Nacimiento:</i></b></label>
-                    <dx:ASPxDateEdit ID="dtp_FechaNacimiento" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                 </div>
             </div>
             <div class="row" style="margin-top: 25px">
@@ -92,16 +84,60 @@
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="grdView_BusquedaCliente" runat="server" Width="100%" Theme="Moderno">
+                <dx:ASPxGridView ID="grdView_BusquedaCliente" runat="server" Width="100%" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns="False" Font-Size="9pt" KeyFieldName="ID"
+                    EnableCallBacks="False" ClientInstanceName="BusquedaClientes">
+                    <ClientSideEvents RowDblClick="function(s, e) {
+	                                                   BusquedaClientes.PerformCallback(s.GetFocusedRowIndex());;
+                                                   }" />
                     <SettingsPager Mode="ShowAllRecords">
                     </SettingsPager>
-                    <Settings VerticalScrollableHeight="450" VerticalScrollBarMode="Visible" />
+                    <Settings VerticalScrollableHeight="450" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
+                    <SettingsBehavior AllowFocusedRow="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn Name="ID" FieldName="ID" Caption="ID CRM" VisibleIndex="0" Width="100px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="Cliente" FieldName="Cliente" VisibleIndex="1" Width="350px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="Asesor" FieldName="Asesor" VisibleIndex="2" Width="350px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="CallCenter" FieldName="CallCenter" Caption="Call Center" VisibleIndex="3" Width="350px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="Ranking" FieldName="Ranking" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="Nacimiento" FieldName="Nacimiento" Caption="Fecha Nacimiento" VisibleIndex="5" Width="150px">
+                            <PropertiesTextEdit DisplayFormatString="yyyy-MM-dd">
+                            </PropertiesTextEdit>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="RFC" FieldName="RFC" VisibleIndex="6" Width="200px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="CURP" FieldName="CURP" VisibleIndex="7" Width="200px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Name="NSS" FieldName="NSS" VisibleIndex="8" Width="200px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
                 </dx:ASPxGridView>
             </div>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-    <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

@@ -139,6 +139,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
+                                <a href="/CallCenter/BusquedaClientes.aspx">
+                                    <i class="fa fa-user"></i>Buscar Clientes
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/CallCenter/Clientes.aspx">
                                     <i class="fa fa-user"></i>Todos los clientes
                                 </a>
