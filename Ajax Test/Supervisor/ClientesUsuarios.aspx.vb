@@ -4,7 +4,8 @@
     Dim Usuario As New Servicio.CUsuarios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        GV_clientes.DataBind()
+        ''GV_clientes.DataBind()
+        ObtenerDatosClientes()
     End Sub
 
     Private Sub ObtenerDatosClientes()
@@ -32,26 +33,26 @@
             ROWA("Descripcion") = ClientesSupervisor(i).Descripcion
             ROWA("Usuario") = ClientesSupervisor(i).Usuario
             ROWA("Observaciones") = ClientesSupervisor(i).Observaciones
-            ROWA("fotografia") = ClientesSupervisor(i).fotografia
-            ROWA("fotoTpresentacion") = ClientesSupervisor(i).fotoTpresentacion
-
+            'ROWA("fotografia") = ClientesSupervisor(i).fotografia
+            '  ROWA("fotoTpresentacion") = ClientesSupervisor(i).fotoTpresentacion
             DTA.Rows.Add(ROWA)
         Next
-
         ViewState("ClienteSupervisor") = DTA
         GV_clientes.DataBind()
     End Sub
-
     Protected Sub GV_clientes_DataBinding(sender As Object, e As EventArgs) Handles GV_clientes.DataBinding
-        GV_clientes.DataSource = BL.Obtener_clientesSupervisor(Usuario.id_usuario)
+        Dim ActiveBinding As Boolean = Session("ActiveBinding")
+        If ActiveBinding Then
+            GV_clientes.DataSource = ViewState("ClienteSupervisor")
+        End If
     End Sub
 
     Protected Sub btn_excel_Click(sender As Object, e As EventArgs) Handles btn_excel.Click
-        GV_clientes.Columns("fotografia").Visible = False
-        GV_clientes.Columns("TPresentación").Visible = False
+        'GV_clientes.Columns("fotografia").Visible = False
+        ' GV_clientes.Columns("TPresentación").Visible = False
         GV_exporter.WriteXlsxToResponse()
-        GV_clientes.Columns("fotografia").Visible = True
-        GV_clientes.Columns("TPresentación").Visible = True
+        ' GV_clientes.Columns("fotografia").Visible = True
+        ' GV_clientes.Columns("TPresentación").Visible = True
     End Sub
 
 

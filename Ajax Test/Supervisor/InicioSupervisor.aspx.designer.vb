@@ -41,15 +41,6 @@ Partial Public Class InicioSupervisor
     Protected WithEvents cb_tipoCliente As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control btn_MostrarClientes.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_MostrarClientes As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control rdbFechas.
     '''</summary>
     '''<remarks>
@@ -66,6 +57,15 @@ Partial Public Class InicioSupervisor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents rdbDias As Global.DevExpress.Web.ASPxRadioButton
+    
+    '''<summary>
+    '''Control btn_MostrarClientes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_MostrarClientes As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control btnLimpiar.

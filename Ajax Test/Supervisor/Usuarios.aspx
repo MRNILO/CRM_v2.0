@@ -42,7 +42,9 @@
 
         <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" Font-Size="9pt">
+                <dx:ASPxGridViewExporter ID="GV_exporter" runat="server" GridViewID="GV_Usuarios">
+                </dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" EnableCallBacks="False" Font-Size="9pt">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
@@ -64,28 +66,28 @@
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Nombre" FieldName="nombre" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="Nombre" FieldName="Nombre" VisibleIndex="2">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="apellidoPaterno" VisibleIndex="3">
+                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="3">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="apellidoMaterno" VisibleIndex="4">
+                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="ApellidoMaterno" VisibleIndex="4">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="e-mail" FieldName="Email" VisibleIndex="5">
                             <HeaderStyle HorizontalAlign="Center" />
-                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="usuario" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="Usuario" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="fechaCreacion" VisibleIndex="7">
+                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="Registrado" VisibleIndex="7">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />

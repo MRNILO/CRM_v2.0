@@ -23,6 +23,15 @@ Partial Public Class Usuarios
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Control GV_exporter.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_exporter As Global.DevExpress.Web.ASPxGridViewExporter
+    
+    '''<summary>
     '''Control GV_Usuarios.
     '''</summary>
     '''<remarks>

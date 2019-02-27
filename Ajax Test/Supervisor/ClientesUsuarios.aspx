@@ -20,7 +20,7 @@
             <div class="table-responsive">
                 <dx:ASPxGridViewExporter ID="GV_exporter" runat="server" GridViewID="GV_clientes">
                 </dx:ASPxGridViewExporter>
-                <dx:ASPxGridView ID="GV_clientes" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" EnableCallBacks="False" EnableTheming="True">
+                <dx:ASPxGridView ID="GV_clientes" runat="server" Width="100%" Theme="MaterialCompact" Font-Size="9pt" AutoGenerateColumns="False" EnableCallBacks="False" EnableTheming="True">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
@@ -32,36 +32,66 @@
                     <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
                     <Columns>
                         <dx:GridViewDataTextColumn Caption="ID" FieldName="id_cliente" VisibleIndex="0">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Nombre Cliente" FieldName="Nombre" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="ApellidoMaterno" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Email" FieldName="Email" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Producto" FieldName="Producto" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="8">
+                            <PropertiesDateEdit DisplayFormatString="g" EditFormatString="dd/MM/yyyy">
+                            </PropertiesDateEdit>
+                            <SettingsHeaderFilter>
+                                <DateRangePickerSettings EditFormatString="&quot;dd/MM/yyyy&quot;">
+                                </DateRangePickerSettings>
+                            </SettingsHeaderFilter>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
                         <dx:GridViewDataTextColumn Caption="Etapa" FieldName="Descripcion" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="Usuario" VisibleIndex="10">
+                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="Usuario" VisibleIndex="10" Width="250">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="11">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="fotografia" FieldName="fotografia" VisibleIndex="12">
+                        <%--  <dx:GridViewDataTextColumn Caption="fotografia" FieldName="fotografia" VisibleIndex="12">
                             <PropertiesTextEdit DisplayFormatString="&lt;img src=&quot;data:image/png;base64,{0}&quot;  width=&quot;150&quot;/&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="TPresentación" FieldName="fotoTpresentacion" VisibleIndex="13">
+                        </dx:GridViewDataTextColumn>--%>
+                        <%--<dx:GridViewDataTextColumn Caption="TPresentación" FieldName="fotoTpresentacion" VisibleIndex="13">
                             <PropertiesTextEdit DisplayFormatString="&lt;img src=&quot;data:image/png;base64,{0}&quot;  width=&quot;150&quot;/&gt;">
                             </PropertiesTextEdit>
-                        </dx:GridViewDataTextColumn>
+                        </dx:GridViewDataTextColumn>--%>
                         <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_cliente" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                             <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Supervisor/ClienteSupervisor.aspx?idCliente={0}&quot; class=&quot;btn btn-sm green&quot;&gt;Detalles&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>

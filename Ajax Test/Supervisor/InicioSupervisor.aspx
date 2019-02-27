@@ -41,9 +41,7 @@
                         <label>Tipo de Cliente:</label>
                         <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
-                    <div class="col-lg-2" style="margin-top: 25px">
-                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar" CssClass="btn btn-ms btn-block green" />
-                    </div>
+
                     <div class="col-lg-3 form-control-static" style="margin-top: 25px">
                         <div class="row">
                             <div class="col-lg-6">
@@ -54,12 +52,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 pull-right" style="margin-top: 25px">
+                    <div class="col-lg-2" style="margin-top: 25px">
+                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar" CssClass="btn btn-ms btn-block green" />
+                    </div>
+                    <div class="col-lg-2" style="margin-top: 25px">
                         <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-ms btn-block yellow" />
                     </div>
                 </div>
-                <div class="row" id="rangoFechas" runat="server" style="margin-top: 15px">
-                    <div class="col-lg-2">
+                <div class="row" id="rangoFechas" runat="server" style="margin-top: 20px">
+                    <div class="col-lg-2  col-lg-offset-3">
                         <label>Fecha Inicio:</label>
                         <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
                     </div>
@@ -68,8 +69,8 @@
                         <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
                     </div>
                 </div>
-                <div class="row" id="rangoDias" runat="server" style="margin-top: 15px">
-                    <div class="col-lg-3">
+                <div class="row" id="rangoDias" runat="server" style="margin-top: 20px">
+                    <div class="col-lg-3 col-lg-offset-3">
                         <label>Rango de Días</label>
                         <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>

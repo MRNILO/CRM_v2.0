@@ -155,14 +155,17 @@
     Protected Sub rdbFechas_CheckedChanged(sender As Object, e As EventArgs) Handles rdbFechas.CheckedChanged
         If (rdbFechas.Checked) Then
             cb_Dias.ClearSelection()
+            rangoFechas.Style.Add("display", "show")
+            rangoDias.Style.Add("display", "none")
         End If
-        rangoFechas.Style.Add("display", "show")
-        rangoDias.Style.Add("display", "none")
-    End Sub
 
+    End Sub
     Protected Sub rdbDias_CheckedChanged(sender As Object, e As EventArgs) Handles rdbDias.CheckedChanged
-        rangoFechas.Style.Add("display", "none")
-        rangoDias.Style.Add("display", "show")
+        If (rdbDias.Checked) Then
+            rangoFechas.Style.Add("display", "none")
+            rangoDias.Style.Add("display", "show")
+        End If
+
     End Sub
     Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         Dim DTA As New DataTable
@@ -173,8 +176,10 @@
         rdbFechas.Checked = False
 
         dtp_inicio.Text = ""
-        dtp_inicio.Text = ""
+        dtp_Fin.Text = ""
 
+        cb_tipoCliente.SelectedIndex = 0
+        cb_Dias.SelectedIndex = 0
         ViewState("DatosDiasST") = DTA
         GV_ClientesDias.DataBind()
     End Sub

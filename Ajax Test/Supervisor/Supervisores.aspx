@@ -78,7 +78,7 @@
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="e-mail" FieldName="Email" VisibleIndex="5">
                             <HeaderStyle HorizontalAlign="Center" />
-                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <CellStyle HorizontalAlign="left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Usuario" FieldName="usuario" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
