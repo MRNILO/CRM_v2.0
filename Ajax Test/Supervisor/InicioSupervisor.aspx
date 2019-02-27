@@ -40,7 +40,6 @@
                     <div class="col-lg-3">
                         <label>Tipo de Cliente:</label>
                         <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList>
-
                     </div>
                     <div class="col-lg-2" style="margin-top: 25px">
                         <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar" CssClass="btn btn-ms btn-block green" />
@@ -54,6 +53,9 @@
                                 <dx:ASPxRadioButton ID="rdbDias" runat="server" Text="Por días" GroupName="Filtros" Theme="Office365" AutoPostBack="true"></dx:ASPxRadioButton>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-2 pull-right" style="margin-top: 25px">
+                        <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-ms btn-block yellow" />
                     </div>
                 </div>
                 <div class="row" id="rangoFechas" runat="server" style="margin-top: 15px">

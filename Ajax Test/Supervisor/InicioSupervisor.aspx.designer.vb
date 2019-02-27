@@ -68,6 +68,15 @@ Partial Public Class InicioSupervisor
     Protected WithEvents rdbDias As Global.DevExpress.Web.ASPxRadioButton
     
     '''<summary>
+    '''Control btnLimpiar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control rangoFechas.
     '''</summary>
     '''<remarks>

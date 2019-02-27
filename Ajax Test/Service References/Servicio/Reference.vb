@@ -11905,6 +11905,12 @@ Namespace Servicio
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="Servicio.IService1")>  _
     Public Interface IService1
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
+        Function Obtener_usuarios_todos() As Servicio.CUsuarios()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
+        Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios())
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
         Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios
         
@@ -12397,6 +12403,12 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>  _
         Function DiasSinTrabajarFiltroAsync(ByVal id_supervisor As Integer, ByVal Filtro As String) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDias", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDiasResponse")>  _
+        Function DiasSinTrabajarFiltroFechasDias(ByVal id_supervisor As Integer, ByVal Filtro As String, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.DiasSinTrabajar()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDias", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroFechasDiasResponse")>  _
+        Function DiasSinTrabajarFiltroFechasDiasAsync(ByVal id_supervisor As Integer, ByVal Filtro As String, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse")>  _
         Function Obtener_supervisor_Detalles(ByVal id_supervisor As Integer) As Servicio.CDetallesSupervisor
         
@@ -12654,12 +12666,6 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuarios", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosResponse")>  _
         Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
-        Function Obtener_usuarios_todos() As Servicio.CUsuarios()
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
-        Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
@@ -13236,6 +13242,14 @@ Namespace Servicio
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
+        
+        Public Function Obtener_usuarios_todos() As Servicio.CUsuarios() Implements Servicio.IService1.Obtener_usuarios_todos
+            Return MyBase.Channel.Obtener_usuarios_todos
+        End Function
+        
+        Public Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios()) Implements Servicio.IService1.Obtener_usuarios_todosAsync
+            Return MyBase.Channel.Obtener_usuarios_todosAsync
+        End Function
         
         Public Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios Implements Servicio.IService1.Obtener_usuarios_detalles
             Return MyBase.Channel.Obtener_usuarios_detalles(id_usuario)
@@ -13893,6 +13907,14 @@ Namespace Servicio
             Return MyBase.Channel.DiasSinTrabajarFiltroAsync(id_supervisor, Filtro)
         End Function
         
+        Public Function DiasSinTrabajarFiltroFechasDias(ByVal id_supervisor As Integer, ByVal Filtro As String, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.DiasSinTrabajar() Implements Servicio.IService1.DiasSinTrabajarFiltroFechasDias
+            Return MyBase.Channel.DiasSinTrabajarFiltroFechasDias(id_supervisor, Filtro, Dias, FechaInicio, FechaFinal)
+        End Function
+        
+        Public Function DiasSinTrabajarFiltroFechasDiasAsync(ByVal id_supervisor As Integer, ByVal Filtro As String, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar()) Implements Servicio.IService1.DiasSinTrabajarFiltroFechasDiasAsync
+            Return MyBase.Channel.DiasSinTrabajarFiltroFechasDiasAsync(id_supervisor, Filtro, Dias, FechaInicio, FechaFinal)
+        End Function
+        
         Public Function Obtener_supervisor_Detalles(ByVal id_supervisor As Integer) As Servicio.CDetallesSupervisor Implements Servicio.IService1.Obtener_supervisor_Detalles
             Return MyBase.Channel.Obtener_supervisor_Detalles(id_supervisor)
         End Function
@@ -14235,14 +14257,6 @@ Namespace Servicio
         
         Public Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosAsync
             Return MyBase.Channel.Actualiza_usuariosAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, activo)
-        End Function
-        
-        Public Function Obtener_usuarios_todos() As Servicio.CUsuarios() Implements Servicio.IService1.Obtener_usuarios_todos
-            Return MyBase.Channel.Obtener_usuarios_todos
-        End Function
-        
-        Public Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios()) Implements Servicio.IService1.Obtener_usuarios_todosAsync
-            Return MyBase.Channel.Obtener_usuarios_todosAsync
         End Function
         
         Public Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor() Implements Servicio.IService1.Obtener_nombreClientesAdm
