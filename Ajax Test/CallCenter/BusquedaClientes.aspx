@@ -85,9 +85,9 @@
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridView ID="grdView_BusquedaCliente" runat="server" Width="100%" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns="False" Font-Size="9pt" KeyFieldName="ID"
-                    EnableCallBacks="False" ClientInstanceName="BusquedaClientes">
+                    ClientInstanceName="BusquedaClientes">
                     <ClientSideEvents RowDblClick="function(s, e) {
-	                                                   BusquedaClientes.PerformCallback(s.GetFocusedRowIndex());;
+	                                                   BusquedaClientes.PerformCallback(s.GetFocusedRowIndex());
                                                    }" />
                     <SettingsPager Mode="ShowAllRecords">
                     </SettingsPager>

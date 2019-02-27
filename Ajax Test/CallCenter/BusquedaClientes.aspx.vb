@@ -95,7 +95,7 @@ Public Class BusquedaClientes1
 
     Protected Sub grdView_BusquedaCliente_CustomCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomCallbackEventArgs) Handles grdView_BusquedaCliente.CustomCallback
         Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.Parameters, "ID")
-        ASPxWebControl.RedirectOnCallback("../CallCenter/ModificaCliente.aspx?idCliente=" + IdCliente.ToString + "&idCita=" + IdCliente.ToString)
+        ASPxWebControl.RedirectOnCallback("../CallCenter/cita.aspx?id=" + IdCliente.ToString)
     End Sub
 #End Region
 End Class
