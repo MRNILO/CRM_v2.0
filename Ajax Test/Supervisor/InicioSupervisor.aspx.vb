@@ -73,23 +73,25 @@
             Case "SP"
                 Filtro = "SP"
         End Select
-
         If rdbFechas.Checked Then
-            If String.IsNullOrEmpty(dtp_inicio.Text) Then
+            If String.IsNullOrEmpty(dtp_inicio.Text) And String.IsNullOrEmpty(dtp_Fin.Text) Then
                 dtp_inicio.Date = Now.Date()
                 FechaIncio = dtp_inicio.Text
-            Else
-                FechaIncio = dtp_inicio.Text
-            End If
-            If String.IsNullOrEmpty(dtp_Fin.Text) Then
                 dtp_Fin.Date = Now.Date()
                 FechaFin = dtp_Fin.Text
             Else
-                FechaFin = dtp_Fin.Text
+                If (dtp_inicio.Date > dtp_Fin.Date) Then
+                    FechaIncio = dtp_Fin.Text
+                    FechaFin = dtp_inicio.Text
+                    dtp_inicio.Text = FechaIncio
+                    dtp_Fin.Text = FechaFin
+                Else
+                    FechaIncio = dtp_inicio.Text
+                    FechaFin = dtp_Fin.Text
+                End If
             End If
             DiasFiltro = 0
         End If
-
         If rdbDias.Checked Then
             FechaIncio = "1900-01-01"
             FechaFin = "1900-01-01"
