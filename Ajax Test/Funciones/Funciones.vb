@@ -71,8 +71,8 @@ Public Class Funciones
 		                            @ApellidoMaterno = N'" & Cliente.apellidoMaterno & "',
 		                            @rfcCliente = N'" & Cliente.RFC & "',
 		                            @curpCliente = N'" & Cliente.CURP & "',
-		                            @nssCliente = N'" & Cliente.NSS & "'
-                                    @IdCliente = N'" & Cliente.IdCliente & "',
+		                            @nssCliente = N'" & Cliente.NSS & "',
+                                    @IdCrm = N'" & Cliente.IdCliente & "',
 	                                @NumCliente = N'" & Cliente.Numcte & "'"
 
         Dim DTA As New DataTable

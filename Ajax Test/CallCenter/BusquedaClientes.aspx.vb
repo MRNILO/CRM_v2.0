@@ -80,12 +80,14 @@ Public Class BusquedaClientes1
     End Sub
 
     Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-        tb_NombreCliente.Text = "" : tb_NombreCliente.Focus()
+        tb_NombreCliente.Text = ""
         tb_ApellidoPaterno.Text = ""
         tb_ApellidoMaterno.Text = ""
         tb_RFC.Text = ""
         tb_CURP.Text = ""
         tb_NSS.Text = ""
+        tb_IdCliente.Text = "" : tb_IdCliente.Focus()
+        tb_NumeroCliente.Text = ""
 
         grdView_BusquedaCliente.DataSource = Nothing
         grdView_BusquedaCliente.DataBind()
