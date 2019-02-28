@@ -11,11 +11,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -27,43 +24,23 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <h3 class="page-title">Nuevo <small>Prospecto</small>
     </h3>
 
-
-
     <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-globe"></i>Datos generales
             </div>
-
         </div>
         <div class="portlet-body">
             Ingrese el nombre de su prospecto
@@ -82,19 +59,12 @@
             <br />
             <asp:TextBox ID="tb_email" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
             <br />
-            <!-- Ingrese el monto:
-            <br />
-             <asp:TextBox ID="tb_monto" CssClass="form-control" TextMode="Number" runat="server"></asp:TextBox>
-            <br /> -->
             Buscar ID empresa:
             <br />
             <div class="ui-widget">
                 <label for="<%:tb_empresas.ClientID%>">Buscar: </label>
                 <asp:TextBox ID="tb_empresas" runat="server"></asp:TextBox>
-                <%--<input id="birds" name="empresa">--%>
             </div>
-
-
         </div>
     </div>
 
@@ -103,7 +73,6 @@
             <div class="caption">
                 <i class="fa fa-check-square"></i>Teléfonos
             </div>
-
         </div>
         <div class="portlet-body">
 
@@ -131,7 +100,6 @@
             <div class="caption">
                 <i class="fa fa-arrows"></i>Datos de Producto
             </div>
-
         </div>
         <div class="portlet-body">
             Seleccione un producto:
@@ -150,7 +118,6 @@
             <div class="caption">
                 <i class="fa fa-tencent-weibo"></i>Datos de campaña
             </div>
-
         </div>
         <div class="portlet-body">
             Seleccione un Campaña:
@@ -160,13 +127,11 @@
         </div>
     </div>
 
-
     <div class="portlet box purple-plum">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-instagram"></i>Fotografías
             </div>
-
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_fotocliente" runat="server"></asp:Literal>
@@ -174,18 +139,13 @@
             Fotografía del cliente (solamente JPG):
             <br />
             <asp:FileUpload ID="Fupl_Foto_Cliente" runat="server" CssClass="form-control" />
-
             <asp:Literal ID="lbl_fotoTpres" runat="server"></asp:Literal>
             <br />
-
             Fotografía de tarjeta de presentación (solamente JPG):
             <br />
             <asp:FileUpload ID="Fupl_bCard" runat="server" CssClass="form-control" />
         </div>
     </div>
-
-
-
 
     <div class="portlet box yellow-saffron">
         <div class="portlet-title">
@@ -204,25 +164,17 @@
                 </div>
             </div>
             <br />
-
             Observaciones:
             <br />
             <asp:TextBox runat="server" ID="tb_observaciones" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
         </div>
     </div>
 
-
-
-
     <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" CssClass="btn btn-lg green" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
-
     <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
-
     <script>
         $(function () {
             function log(message) {
@@ -251,5 +203,4 @@
             });
         });
     </script>
-
 </asp:Content>

@@ -12,11 +12,8 @@
 </asp:Content>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -28,34 +25,15 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <%--<div class="btn btn-lg blue" onclick="ValidaCliente()">Validar Cliente</div>--%>
     <div class="modal fade" id="NuevaEmpresa" tabindex="-1" role="basic" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -127,42 +105,27 @@
                     <asp:Button ID="btn_guardarEmpresa" runat="server" Text="Guardar Empresa" CssClass="btn btn-lg green" UseSubmitBehavior="false" />
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
-    <%--<input id="birds" name="empresa">--%><%--<div id="btnGuardar" style="display:none">--%>
     <div class="modal fade" id="Validando" tabindex="-1" role="basic" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-
                     <h4 class="modal-title">Validando información...</h4>
                 </div>
                 <div class="modal-body">
-
                     <img src="/assets/imagenes/load.gif" class="img-responsive" />
-
                 </div>
-
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
-    <%--<div class="btn btn-lg blue" onclick="ValidaCliente()">Validar Cliente</div>--%>
-
     <h3 class="page-title">Nuevo <small>Prospecto</small>
     </h3>
-
-
-
     <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-globe"></i>Datos generales
             </div>
-
         </div>
         <div class="portlet-body">
             Ingrese el nombre de su prospecto
@@ -206,11 +169,8 @@ Empresa
 FROM
 empresas"></asp:SqlDataSource>
             </div>
-
-
             <br />
             <a data-toggle="modal" href="#NuevaEmpresa" class="btn btn-sm green" id="btn_agregaEmpresa">Agregar empresa</a>
-
         </div>
     </div>
 
@@ -219,10 +179,8 @@ empresas"></asp:SqlDataSource>
             <div class="caption">
                 <i class="fa fa-check-square"></i>Teléfonos
             </div>
-
         </div>
         <div class="portlet-body">
-
             <asp:Literal ID="lbl_telefonos" runat="server"></asp:Literal>
             <br />
             Ingrese el teléfono del cliente:
@@ -234,7 +192,6 @@ empresas"></asp:SqlDataSource>
                 <asp:Button ID="btn_agregar" runat="server" Text="Agregar teléfono" CssClass="btn btn-sm green" UseSubmitBehavior="false" />
                 <asp:Button ID="btn_borrarTel" runat="server" Text="Borrar ultimo teléfono" CssClass="btn btn-sm red" UseSubmitBehavior="false" />
             </div>
-
         </div>
     </div>
 
@@ -243,7 +200,6 @@ empresas"></asp:SqlDataSource>
             <div class="caption">
                 <i class="fa fa-arrows"></i>Datos de Producto
             </div>
-
         </div>
         <div class="portlet-body">
             Fraccionamiento:
@@ -273,7 +229,6 @@ empresas"></asp:SqlDataSource>
             <div class="caption">
                 <i class="fa fa-tencent-weibo"></i>Datos de campaña
             </div>
-
         </div>
         <div class="portlet-body">
             Seleccione un Campaña:
@@ -283,13 +238,11 @@ empresas"></asp:SqlDataSource>
         </div>
     </div>
 
-
     <div class="portlet box purple-plum" style="display: none">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-instagram"></i>Fotografías
             </div>
-
         </div>
         <div class="portlet-body">
             Fotografía del cliente (solamente JPG):
@@ -302,15 +255,11 @@ empresas"></asp:SqlDataSource>
         </div>
     </div>
 
-
-
-
     <div class="portlet box yellow-saffron">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-check-square"></i>Adicionales
             </div>
-
         </div>
         <div class="portlet-body">
             Observaciones:
@@ -319,9 +268,7 @@ empresas"></asp:SqlDataSource>
         </div>
     </div>
 
-    <%--<div id="btnGuardar" style="display:none">--%>
     <asp:Button ID="btn_validarCliente" class="btn btn-lg blue" runat="server" Text="Validar Cliente" UseSubmitBehavior="false" Visible="False" />
-
     <div id="DivBtnGuarda">
         <asp:Button ID="btn_Guardar" runat="server" Text="Guardar Prospecto" OnClientClick="QuitaBoton()" CssClass="btn btn-lg green" UseSubmitBehavior="false" />
     </div>
@@ -389,6 +336,7 @@ empresas"></asp:SqlDataSource>
             });
 
         }
+
         function validaCurp() {
             var Curp = $("#<%:tb_curp.ClientID%>").val();
             $.ajax({
@@ -444,9 +392,8 @@ empresas"></asp:SqlDataSource>
                     sweetAlert("¡Algo salio mal!", response.d, "error");
                 }
             });
-
-
         }
+
         function TerminaValidacion(response) {
 
             $('#Validando').modal('hide');
@@ -458,7 +405,6 @@ empresas"></asp:SqlDataSource>
             //}else{
             //    sweetAlert("¡Cliente disponible!", "Puede continuar la captura", "success");
             $('#btnGuardar').show();
-
 
             //}            
         }
@@ -491,8 +437,6 @@ empresas"></asp:SqlDataSource>
             $("#Ciudades").html("Seleccione una ciudad:<br />" + response.d);
         }
     </script>
-
-
 
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

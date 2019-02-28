@@ -5,11 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -21,29 +18,12 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -59,12 +39,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Aceptar</button>
-                        <%-- <div  class="btn green" onclick="agregarProductos()">Agregar a mi pedido</div>--%>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
     </div>
 
@@ -252,36 +229,6 @@
             <div class="tools">
             </div>
         </div>
-
-        <!--  <div class="portlet-body">
-            <div class="table-responsive">
-                <%--<asp:Literal ID="lbl_BtnNuevoCorreo" runat="server"></asp:Literal>--%>
-                <a href="/Usuario/Bandeja.aspx" class="btn btn-lg blue" target="_blank">Nuevo Correo</a>
-                <br />
-            <dx:ASPxGridView ID="GV_Emails" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableTheming="True">
-                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
-                <Columns>
-                    <dx:GridViewDataTextColumn Caption="ID Email" FieldName="id_email" VisibleIndex="0" SortIndex="0" SortOrder="Descending">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="DE:" FieldName="emailFrom" VisibleIndex="1">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="PARA:" FieldName="emailTo" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="Asunto" FieldName="subjet" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn Caption="Recibido:" FieldName="fechaRecepcion" VisibleIndex="4" >
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn Caption="Estatus" FieldName="Desc_estatus" VisibleIndex="5">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_email" VisibleIndex="6">
-                        <PropertiesTextEdit DisplayFormatString="&lt;a href='javascript:void(0)'  class='btn btn-sm green' onclick='revisarEmail({0})'&gt;Ver correo&lt;/a&gt;" EncodeHtml="False">
-                        </PropertiesTextEdit>
-                    </dx:GridViewDataTextColumn>
-                </Columns>
-                </dx:ASPxGridView>
-                </div>
-        </div>-->
-
     </div>
     <div class="portlet box green">
         <div class="portlet-title">
@@ -342,7 +289,6 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
     <script type="text/javascript">
 
         function cambiarLlamada(idLlamada) {
@@ -393,10 +339,7 @@
             document.getElementById('CorreoBody').innerHTML = response.d;
 
         }
-
     </script>
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
-
     <script src="/assets/usuario_cliente.js"></script>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Usuario.master.vb" Inherits="Ajax_Test.UsuarioMaster" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Caseta.master.vb" Inherits="Ajax_Test.Caseta" %>
 
 <!DOCTYPE html>
 
@@ -33,11 +33,12 @@
     </asp:ContentPlaceHolder>
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
+
 <body class="page-header-fixed page-quick-sidebar-over-content">
     <div class="page-header navbar navbar-fixed-top">
         <div class="page-header-inner">
             <div class="page-logo">
-                <a href="/Usuario/InicioUsuario.aspx">
+                <a href="/">
                     <img src="/assets/imagenes/logo-mini.png" alt="logo" class="logo-default" width="50" />
                 </a>
                 <div class="menu-toggler sidebar-toggler hide">
@@ -62,7 +63,7 @@
                     </li>
                     <li class="sidebar-search-wrapper"></li>
                     <li class="start active">
-                        <a href="/Usuario/InicioUsuario.aspx">
+                        <a href="/CallCenter/BusquedaClientes.aspx">
                             <i class="icon-home"></i>
                             <span class="title">Inicio</span>
                         </a>
@@ -73,61 +74,43 @@
                     <li>
                         <a href="javascript:;">
                             <i class="icon-folder"></i>
-                            <span class="title">Mis Clientes</span>
+                            <span class="title">Clientes</span>
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="/Usuario/clientes.aspx">
-                                    <i class="fa fa-user"></i>Catalogo
+                                <a href="/CallCenter/BusquedaClientes.aspx">
+                                    <i class="fa fa-user"></i>Buscar Clientes
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/BuscarCliente.aspx">
-                                    <i class="fa fa-search"></i>Buscar Cliente
+                                <a href="/CallCenter/Clientes.aspx">
+                                    <i class="fa fa-user"></i>Todos los clientes
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/NuevoCliente.aspx">
-                                    <i class="fa fa-file"></i>Nuevo Prospecto
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Usuario/NuevaLlamada.aspx">
-                                    <i class="fa fa-phone"></i>Registrar Llamada
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Usuario/NuevaCita.aspx">
-                                    <i class="fa fa-home"></i>Registrar Cita
+                                <a href="/CallCenter/Citas.aspx">
+                                    <i class="fa fa-user"></i>Citas
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="heading">
+                        <h3 class="uppercase">Asesores</h3>
                     </li>
                     <li>
                         <a href="javascript:;">
-                            <i class="fa fa-cogs"></i>
-                            <span class="title">Herramientas</span>
-                            <span class="arrow "></span>
+                            <i class="icon-folder"></i>
+                            <span class="title">Asesores</span>
+                            <span class="arrow"></span>
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="/Usuario/Tareas.aspx">
-                                    <i class="fa fa-check-circle"></i>Tareas
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Usuario/llamadas.aspx">
-                                    <i class="fa fa-phone-square"></i>Llamadas entre fechas
+                                <a href="/CallCenter/Asesores.aspx">
+                                    <i class="fa fa-user"></i>Lista de Asesores
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="/Usuario/Ayuda.aspx" target="_blank">
-                            <i class="icon-compass"></i>
-                            <span class="title">Ayuda</span>
-                        </a>
                     </li>
                 </ul>
             </div>
@@ -180,6 +163,7 @@
     <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
     <script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
     <script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
     <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
     <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
     <script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
@@ -199,30 +183,20 @@
             $.ajax({
                 type: "POST",
                 url: "<%= ResolveUrl("/Usuario/InicioUsuario.aspx/noti")%>",
-                //data: '{id: "'+idLlamada+'"}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: Notificar,
-                failure: function (response) {
-                    // alert(response.d);
-                },
-                error: function (response) {
-                    // alert(response.d);
-                }
+                failure: function (response) { },
+                error: function (response) { }
             });
         }
-
         function Notificar(response) {
             if (response.d != '') {
-
 
                 var jsonObj = $.parseJSON('[' + response.d + ']');
 
                 for (var i = 0; i < jsonObj.length; i++) {
-
                     toastr.info(jsonObj[i].desc + '<br /><br /><a class="btn btn-sm green" href="' + jsonObj[i].url + '">Ver</a>', jsonObj[i].titulo);
-
-
                 }
             } else { }
             notificaciones();

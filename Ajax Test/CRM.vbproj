@@ -7640,6 +7640,7 @@
     <Content Include="Ayuda\Como capturar una cita.pdf" />
     <Content Include="Ayuda\Cambiar etapa de un cliente.pdf" />
     <Content Include="CallCenter\CallCenter.Master" />
+    <Content Include="Caseta\Caseta.Master" />
     <None Include="My Project\PublishProfiles\Desktop.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\Publicaciones.pubxml" />
@@ -8121,6 +8122,13 @@
       <DependentUpon>NuevoCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Caseta\Caseta.Master.designer.vb">
+      <DependentUpon>Caseta.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Caseta.Master.vb">
+      <DependentUpon>Caseta.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -8580,7 +8588,6 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="assets\global\plugins\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="Prospectadores\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -63,19 +63,19 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script type="text/javascript">
-         //jQuery(document).ready(function () {
-         //    $("#LlamadasDiv").hide();
-         //});
-         $(window).on('beforeunload', function () {
-             $("#LlamadasDiv").hide();    
-         });
+        //jQuery(document).ready(function () {
+        //    $("#LlamadasDiv").hide();
+        //});
+        $(window).on('beforeunload', function () {
+            $("#LlamadasDiv").hide();
+        });
         function cambiarLlamada(idLlamada) {
             $("#" + idLlamada).hide();
             $("#div" + idLlamada).html("<strong>Espere...</strong>");
-                $.ajax({
+            $.ajax({
                 type: "POST",
                 url: "<%= ResolveUrl("/Usuario/cliente.aspx/PruebaAjax")%>",
-                data: '{valor: "'+idLlamada+'"}',
+                data: '{valor: "' + idLlamada + '"}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {

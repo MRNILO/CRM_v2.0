@@ -7,11 +7,8 @@
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
 
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -23,29 +20,12 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -67,9 +47,7 @@
                     <a class="btn green" href="llamadas.aspx">Conocer</a>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
     Bienvenido Usuario
     <br />
@@ -105,9 +83,6 @@
                     </div>
                     <div class="desc">Clientes Activos </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -125,9 +100,6 @@
                     </div>
                     <div class="desc">Prospectos por semana </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -144,9 +116,6 @@
                     </div>
                     <div class="desc">Clientes Cancelados </div>
                 </div>
-                <%--   <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -163,9 +132,6 @@
                     </div>
                     <div class="desc">Clientes totales </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/Incidencias.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
     </div>
@@ -261,8 +227,6 @@
             // Handler for .ready() called.
             //$('#basic').modal('show');
         });
-
-
 
         function cambiarTarea(idLlamada) {
             $.ajax({

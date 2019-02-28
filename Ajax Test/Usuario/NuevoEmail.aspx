@@ -22,8 +22,6 @@
             Seleccione un cliente:
             <br />
             <asp:DropDownList ID="cb_clientes" runat="server" CssClass="form-control select2me"></asp:DropDownList>
-
-
             <br />
             Para:<br />
             <asp:TextBox ID="tb_email" runat="server" CssClass="form-control"></asp:TextBox>
@@ -41,8 +39,6 @@
             <br />
             <br />
             <asp:Button ID="btn_enviar" runat="server" CssClass="btn btn-lg green" Text="Enviar" />
-
-
         </div>
     </div>
 </asp:Content>

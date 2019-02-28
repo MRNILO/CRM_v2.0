@@ -18,12 +18,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Aceptar</button>
-                        <%-- <div  class="btn green" onclick="agregarProductos()">Agregar a mi pedido</div>--%>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
     </div>
     <a href="/Usuario/NuevoEmail.aspx" class="btn btn-lg blue">Nuevo Correo</a>
