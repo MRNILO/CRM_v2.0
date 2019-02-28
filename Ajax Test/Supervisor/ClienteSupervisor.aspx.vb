@@ -15,17 +15,9 @@ Public Class ClienteSupervisor
         If idCliente = 0 Then
             Response.Redirect("/")
         Else
-            'Verifica cliente
-            'If BL.VerificaCliente(idCliente, Usuario.id_usuario) Then
-            'Cliente si le pertenece a este usuario
-            'Mostrar información del cliente
             lbl_generales.Text = Crea_generalesCliente()
             lbl_telefonos.Text = Crea_telefonos()
-            'Crea boton para programar llamada
-            'lbl_botonPrograma.Text = " <a href=""/Usuario/ProgramarLlamada.aspx?idCliente=" + idCliente.ToString + " "" class=""btn btn-sm blue"">Programar Llamada</a>"
-            'lbl_botonLlamar.Text = "<a href=""/Usuario/NuevaLlamada.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-phone""></i>Registrar Llamada</a>"
-            'lbl_botonCitas.Text = "<a href=""/Usuario/NuevaCita.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-file""></i>Registrar Cita</a>"
-            '
+
             If Page.IsPostBack Then
 
             Else
@@ -67,10 +59,6 @@ Public Class ClienteSupervisor
 
             GV_citas.DataBind()
             GV_operaciones.DataBind()
-
-            '   Else
-            'Response.Redirect("/")
-            '   End If
         End If
 
         If Request.QueryString("msj") = "" Then
@@ -188,6 +176,7 @@ Public Class ClienteSupervisor
         HTML += "<br />"
         HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
         HTML += "<br />"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
         HTML += "<strong>Tarjeta de Presentación</strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
@@ -197,10 +186,12 @@ Public Class ClienteSupervisor
     Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
         GV_exporterLlamadas.WriteXlsxToResponse()
     End Sub
+
     Sub GridLlamadas()
         Dim DatosLlamadas = BL.Obtener_llamadasCliente(idCliente)
         Session("GridLlamadas") = DatosLlamadas
     End Sub
+
     <WebMethod()>
     Public Shared Function PruebaAjax(ByVal valor As String) As String
         If BL.Cambia_realizadaLlamada(valor) Then

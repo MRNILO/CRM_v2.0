@@ -11,6 +11,8 @@ Public Class Funciones
         Dim RFC As String
         Dim CURP As String
         Dim NSS As String
+        Dim IdCliente As String
+        Dim Numcte As String
     End Structure
 #End Region
 
@@ -69,7 +71,9 @@ Public Class Funciones
 		                            @ApellidoMaterno = N'" & Cliente.apellidoMaterno & "',
 		                            @rfcCliente = N'" & Cliente.RFC & "',
 		                            @curpCliente = N'" & Cliente.CURP & "',
-		                            @nssCliente = N'" & Cliente.NSS & "'"
+		                            @nssCliente = N'" & Cliente.NSS & "'
+                                    @IdCliente = N'" & Cliente.IdCliente & "',
+	                                @NumCliente = N'" & Cliente.Numcte & "'"
 
         Dim DTA As New DataTable
         Dim DTB As New DataTable

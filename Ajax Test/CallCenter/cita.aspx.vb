@@ -10,7 +10,6 @@
         ValidaUsuario()
 
         Try
-            'lbl_usuario.Text = Usuario.nombre + " " + Usuario.apellidoPaterno + " " + Usuario.apellidoMaterno
             lbl_generales.Text = Crea_generalesCliente()
         Catch ex As Exception
 
@@ -65,6 +64,8 @@
         HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
         HTML += "<br />"
         HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString()
         HTML += "<br />"
         HTML += "<strong>Tarjeta de Presentación: </strong>"
         HTML += "<br />"

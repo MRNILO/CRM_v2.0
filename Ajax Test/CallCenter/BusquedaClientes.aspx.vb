@@ -59,6 +59,8 @@ Public Class BusquedaClientes1
             .RFC = tb_RFC.Text
             .CURP = tb_CURP.Text
             .NSS = tb_NSS.Text
+            .IdCliente = tb_IdCliente.Text
+            .Numcte = tb_NumeroCliente.Text
         End With
 
         Dim DT As New DataTable

@@ -37,20 +37,14 @@
         </div>
         <div class="portlet-body">
             <div class="row">
-                <div class="col-lg-4">
-                    <label><b><i>Nombre:</i></b></label>
-                    <asp:TextBox ID="tb_NombreCliente" runat="server" CssClass="form-control"></asp:TextBox>
+                <div class="col-lg-2">
+                    <label><b><i>ID CRM:</i></b></label>
+                    <asp:TextBox ID="tb_IdCliente" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
-                <div class="col-lg-4">
-                    <label><b><i>Apellido Paterno:</i></b></label>
-                    <asp:TextBox ID="tb_ApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                <div class="col-lg-2">
+                    <label><b><i>Numcte EK:</i></b></label>
+                    <asp:TextBox ID="tb_NumeroCliente" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
-                <div class="col-lg-4">
-                    <label><b><i>Apellido Materno:</i></b></label>
-                    <asp:TextBox ID="tb_ApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 15px">
                 <div class="col-lg-2">
                     <label><b><i>RFC:</i></b></label>
                     <asp:TextBox ID="tb_RFC" runat="server" CssClass="form-control"></asp:TextBox>
@@ -62,6 +56,20 @@
                 <div class="col-lg-2">
                     <label><b><i>NSS:</i></b></label>
                     <asp:TextBox ID="tb_NSS" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px">
+                <div class="col-lg-4">
+                    <label><b><i>Nombre:</i></b></label>
+                    <asp:TextBox ID="tb_NombreCliente" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col-lg-4">
+                    <label><b><i>Apellido Paterno:</i></b></label>
+                    <asp:TextBox ID="tb_ApellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col-lg-4">
+                    <label><b><i>Apellido Materno:</i></b></label>
+                    <asp:TextBox ID="tb_ApellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
             <div class="row" style="margin-top: 25px">

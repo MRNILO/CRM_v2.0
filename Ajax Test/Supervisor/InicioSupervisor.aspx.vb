@@ -131,7 +131,7 @@
 
             Dim DiasSTFiltro As Servicio.DiasSinTrabajar()
             If rdbFechas.Checked Or rdbDias.Checked Then
-                DiasSTFiltro = BL.DiasSinTrabajarFiltroFechasDias(Usuario.id_usuario, Filtro, DiasFiltro, FechaIncio, FechaFin)
+                DiasSTFiltro = BL.DiasSinTrabajarEtapaFiltro(Usuario.id_usuario, Filtro, DiasFiltro, FechaIncio, FechaFin)
             Else
                 DiasSTFiltro = BL.DiasSinTrabajarFiltro(Usuario.id_usuario, Filtro)
             End If

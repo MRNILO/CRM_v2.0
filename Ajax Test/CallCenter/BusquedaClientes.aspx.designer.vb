@@ -23,31 +23,22 @@ Partial Public Class BusquedaClientes1
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control tb_NombreCliente.
+    '''Control tb_IdCliente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_NombreCliente As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents tb_IdCliente As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control tb_ApellidoPaterno.
+    '''Control tb_NumeroCliente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_ApellidoPaterno As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control tb_ApellidoMaterno.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents tb_NumeroCliente As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control tb_RFC.
@@ -75,6 +66,33 @@ Partial Public Class BusquedaClientes1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_NSS As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control tb_NombreCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_NombreCliente As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control tb_ApellidoPaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_ApellidoPaterno As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control tb_ApellidoMaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control btnBuscar.
