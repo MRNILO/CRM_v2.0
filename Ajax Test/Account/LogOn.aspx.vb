@@ -47,6 +47,8 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
             Case 4
                 Response.Redirect("~/CallCenter/BusquedaClientes.aspx", False)
+            Case 5
+                Response.Redirect("~/Caseta/BusquedaClientes.aspx", False)
                 'Response.Redirect("~/CallCenter/InicioCCenter.aspx", False)
         End Select
     End Sub
