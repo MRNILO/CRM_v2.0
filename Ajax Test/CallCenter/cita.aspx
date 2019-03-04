@@ -66,11 +66,15 @@
             <div class="row" style="margin-top: 5px">
                 <div class="col-lg-2">
                     <label><strong>Origen:</strong></label><br />
-                    <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control" Enabled="false">CALL CENTER</asp:TextBox>
+                    <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">CALL CENTER</asp:TextBox>
                 </div>
                 <div class="col-lg-2">
                     <label><strong>Lugar Contacto:</strong></label><br />
-                    <asp:TextBox ID="tb_lContacto" runat="server" CssClass="form-control"></asp:TextBox>
+                    <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                </div>
+                <div class="col-lg-2">
+                    <label><strong>Medio 2:</strong></label>
+                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-lg-4">
                     <label><strong>Proyacto que visitará:</strong></label><br />
@@ -86,7 +90,7 @@
                     <asp:SqlDataSource ID="productosDs" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
                 </div>
             </div>
-            <div class="row" style="margin-top: 5px">
+            <div class="row" style="margin-top: 10px">
                 <div class="col-lg-4">
                     <label><strong>Asesor Asignado:</strong></label><br />
                     <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
@@ -110,9 +114,9 @@
                     <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                 </div>
             </div>
-            <div class="row" style="margin-top: 15px">
-                <div class="col-lg-2">
-                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="MaterialCompact">
+            <div class="row" style="margin-top: 20px">
+                <div class="col-lg-2 pull-right">
+                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Moderno" Width="100%">
                         <Image IconID="actions_right_16x16">
                         </Image>
                     </dx:ASPxButton>

@@ -115,4 +115,22 @@ Public Class Funciones
         BuscarClientes = DTB
     End Function
 #End Region
+
+#Region "Citas"
+    Public Function ObtenerCampanas() As DataTable
+        Dim Query As String = "SELECT id_campaña, campañaNombre
+                               FROM campañas"
+
+        ObtenerCampanas = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function ObtenerTipoCampana(ByVal IdCampana As Integer) As String
+        Dim Query As String = String.Format("SELECT tipocampaña
+                                             FROM campañas CP
+                                             INNER JOIN tipocampaña TP ON TP.id_tipoCampaña = CP.id_tipoCampaña
+                                             WHERE CP.id_campaña = {0}", IdCampana)
+
+        ObtenerTipoCampana = GE_SQL.SQLGetDataStr(Query)
+    End Function
+#End Region
 End Class

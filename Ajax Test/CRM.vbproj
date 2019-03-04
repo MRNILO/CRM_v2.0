@@ -7163,6 +7163,14 @@
     <Content Include="CallCenter\InicioCCenter.aspx" />
     <Content Include="CallCenter\ModificaCliente.aspx" />
     <Content Include="CallCenter\NuevoCliente.aspx" />
+    <Content Include="Caseta\Asesores.aspx" />
+    <Content Include="Caseta\BusquedaClientes.aspx" />
+    <Content Include="Caseta\Citas.aspx" />
+    <Content Include="Caseta\Clientes.aspx" />
+    <Content Include="Caseta\DetalleAsesor.aspx" />
+    <Content Include="Caseta\DetalleObservaciones.aspx" />
+    <Content Include="Caseta\ModificaCliente.aspx" />
+    <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
@@ -8122,12 +8130,68 @@
       <DependentUpon>NuevoCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Caseta\Asesores.aspx.designer.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Asesores.aspx.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Caseta\Caseta.Master.designer.vb">
       <DependentUpon>Caseta.Master</DependentUpon>
     </Compile>
     <Compile Include="Caseta\Caseta.Master.vb">
       <DependentUpon>Caseta.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\Citas.aspx.designer.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Citas.aspx.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\DetalleAsesor.aspx.designer.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\DetalleAsesor.aspx.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\NuevoCliente.aspx.designer.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\NuevoCliente.aspx.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>

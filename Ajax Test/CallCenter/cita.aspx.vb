@@ -6,6 +6,8 @@
     Dim Id_Cliente As Integer = 0
     Dim id_Cita As Integer = 0
 
+    Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
 
@@ -15,11 +17,54 @@
 
         End Try
 
-        If Not Page.IsPostBack Then
-            dtp_finicio.Date = Now
-            dtp_ffinal.Date = Now.AddDays(30)
+        If Not IsPostBack Then
+            UI()
         End If
     End Sub
+
+#Region "Metodos"
+    Private Sub UI()
+        With dtp_finicio
+            .Date = Now
+            .Enabled = False
+        End With
+
+        With dtp_ffinal
+            .Date = Now.AddDays(30)
+            .Enabled = False
+        End With
+
+        tb_origen.Enabled = False
+        tb_TipoCampana.Enabled = False
+
+        AlimentarComboCampanas()
+        If cmBoxCampana.Items.Count > 0 Then
+            ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+        End If
+    End Sub
+
+    Private Sub AlimentarComboCampanas()
+        With cmBoxCampana
+            .DataSource = GE_Funciones.ObtenerCampanas()
+            .ValueField = "id_campaña"
+            .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub ObtenerTipoCampana(ByVal IdCampana As Integer)
+        tb_TipoCampana.Text = GE_Funciones.ObtenerTipoCampana(IdCampana)
+    End Sub
+#End Region
+
+#Region "Eventos"
+    Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
+        ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+    End Sub
+#End Region
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -86,34 +131,33 @@
         End If
 
         If AsesorCallCenter.Length = 0 Then
-            lbl_usuario.Text = "-"
+            lbl_usuario.Text = "N/A"
+            btn_asignaCita.Visible = True
         Else
             lbl_usuario.Text = AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
+            btn_asignaCita.Visible = False
         End If
 
         Return HTML
     End Function
+
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
-            If BL.Inserta_CitasCall(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, tb_lContacto.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO") Then
-                Response.Redirect("Citas.aspx", False)
-            End If
+            'If BL.Inserta_CitasCall(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, tb_lContacto.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO") Then
+            Response.Redirect("Citas.aspx", False)
+            'End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
     End Sub
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
-
-
                     Session("Usuario") = Usuario
-
-
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
@@ -139,7 +183,6 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + id_Cita.ToString, False)
     End Sub

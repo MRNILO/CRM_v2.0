@@ -126,8 +126,8 @@ Public Class Cliente
     Sub BindGVEmails(ByVal emailCliente As String, ByVal emailEmpresa As String)
         Dim Correos = BL.Obtener_correosDelCliente(emailCliente, emailEmpresa)
 
-        GV_Emails.DataSource = Correos
-        GV_Emails.DataBind()
+        'GV_Emails.DataSource = Correos
+        'GV_Emails.DataBind()
     End Sub
     Sub DatosEmpresa()
         Dim HTML As String = ""

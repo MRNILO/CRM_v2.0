@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="DetalleObservaciones.aspx.vb" Inherits="Ajax_Test.DetalleObservaciones" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Caseta/Caseta.Master" CodeBehind="DetalleObservaciones.aspx.vb" Inherits="Ajax_Test.DetalleObservaciones1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
     <link href="/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />

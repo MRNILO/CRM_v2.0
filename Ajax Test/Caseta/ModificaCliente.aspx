@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="ModificaCliente.aspx.vb" Inherits="Ajax_Test.ModificaCliente1" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Caseta/Caseta.Master" CodeBehind="ModificaCliente.aspx.vb" Inherits="Ajax_Test.ModificaCliente2" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
@@ -193,7 +193,6 @@
                 source: function (request, response) {
                     $.getJSON("/api/empresas?Query=" + request.term, function (data) {
                         response($.map(data, function (Empresa, id_empresa) {
-                            //alert(Empresa.Empresa);
                             return {
                                 label: Empresa.Empresa,
                                 value: Empresa.id_empresa
