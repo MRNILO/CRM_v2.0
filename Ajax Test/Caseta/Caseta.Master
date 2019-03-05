@@ -63,7 +63,7 @@
                     </li>
                     <li class="sidebar-search-wrapper"></li>
                     <li class="start active">
-                        <a href="/CallCenter/BusquedaClientes.aspx">
+                        <a href="/Caseta/BusquedaClientes.aspx">
                             <i class="icon-home"></i>
                             <span class="title">Inicio</span>
                         </a>
@@ -79,17 +79,17 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="/CallCenter/BusquedaClientes.aspx">
+                                <a href="/Caseta/BusquedaClientes.aspx">
                                     <i class="fa fa-user"></i>Buscar Clientes
                                 </a>
                             </li>
                             <li>
-                                <a href="/CallCenter/Clientes.aspx">
+                                <a href="/Caseta/Clientes.aspx">
                                     <i class="fa fa-user"></i>Todos los clientes
                                 </a>
                             </li>
                             <li>
-                                <a href="/CallCenter/Citas.aspx">
+                                <a href="/Caseta/Citas.aspx">
                                     <i class="fa fa-user"></i>Citas
                                 </a>
                             </li>
@@ -106,7 +106,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="/CallCenter/Asesores.aspx">
+                                <a href="/Caseta/Asesores.aspx">
                                     <i class="fa fa-user"></i>Lista de Asesores
                                 </a>
                             </li>
