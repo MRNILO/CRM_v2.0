@@ -7156,6 +7156,7 @@
     <Content Include="CallCenter\Asesores.aspx" />
     <Content Include="CallCenter\BusquedaClientes.aspx" />
     <Content Include="CallCenter\cita.aspx" />
+    <Content Include="CallCenter\CitaCte.aspx" />
     <Content Include="CallCenter\Citas.aspx" />
     <Content Include="CallCenter\Clientes.aspx" />
     <Content Include="CallCenter\DetalleAsesor.aspx" />
@@ -7898,6 +7899,9 @@
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.DetallesCumplimiento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.VigenciaCitas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -8079,6 +8083,13 @@
     </Compile>
     <Compile Include="CallCenter\cita.aspx.vb">
       <DependentUpon>cita.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CallCenter\Citas.aspx.designer.vb">

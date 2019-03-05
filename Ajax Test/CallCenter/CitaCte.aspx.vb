@@ -1,32 +1,66 @@
-﻿Public Class cita
+﻿Public Class CitaCte
     Inherits System.Web.UI.Page
+
     Dim NivelSeccion As Integer = 4
     Dim Usuario As New Servicio.CUsuarios
 
     Dim Id_Cliente As Integer = 0
-    Dim id_Cita As Integer = 0
+    Dim Id_Cita As Integer = 0
+
+    Private GE_Funciones As New Funciones
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
 
         Try
-            'lbl_usuario.Text = Usuario.nombre + " " + Usuario.apellidoPaterno + " " + Usuario.apellidoMaterno
             lbl_generales.Text = Crea_generalesCliente()
         Catch ex As Exception
 
         End Try
 
-        If Not Page.IsPostBack Then
-            dtp_finicio.Date = Now
-            dtp_ffinal.Date = Now.AddDays(30)
+        If Not IsPostBack Then
+            UI()
         End If
     End Sub
+
+#Region "Metodos"
+    Private Sub UI()
+        With dtp_finicio
+            .Date = Now
+            .Enabled = False
+        End With
+
+        With dtp_ffinal
+            .Date = Now.AddDays(30)
+            .Enabled = False
+        End With
+
+        tb_origen.Enabled = False
+        tb_TipoCampana.Enabled = False
+
+        AlimentarComboCampanas()
+        If cmBoxCampana.Items.Count > 0 Then
+            ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+        End If
+    End Sub
+
+    Private Sub AlimentarComboCampanas()
+        With cmBoxCampana
+            .DataSource = GE_Funciones.ObtenerCampanas()
+            .ValueField = "id_campaña"
+            .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
-        id_Cita = Request.QueryString("id")
+        Id_Cita = Request.QueryString("id")
 
-        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(id_Cita) : Id_Cliente = Datos(0).id_cliente
+        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(Id_Cita) : Id_Cliente = Datos(0).id_cliente
         Dim Telefonos = BL.Obtener_Clientes_Telefonos_idCliente(Id_Cliente)
         Dim TipoCredito = BL.Obtener_Clientes_TipoCredito_idCliente(Id_Cliente)
         Dim AsesorCallCenter = BL.Obtener_Clientes_AsesorCallCenter(Id_Cliente)
@@ -62,6 +96,12 @@
         HTML += "<br />"
         HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
         HTML += "<br />"
+        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString()
+        HTML += "<br />"
         HTML += "<strong>Tarjeta de Presentación: </strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
@@ -81,34 +121,67 @@
         End If
 
         If AsesorCallCenter.Length = 0 Then
-            lbl_usuario.Text = "-"
+            lbl_usuario.Text = "N/A"
+            btn_asignaCita.Visible = True
         Else
-            lbl_usuario.Text = AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
+            If AsesorCallCenter(0).id_usuario = Usuario.id_usuario Then
+                btn_asignaCita.Visible = True
+            Else
+                VerificarVigenciaCita()
+            End If
         End If
 
         Return HTML
     End Function
+
+    Private Sub ObtenerTipoCampana(ByVal IdCampana As Integer)
+        tb_TipoCampana.Text = GE_Funciones.ObtenerTipoCampana(IdCampana)
+    End Sub
+
+    Private Sub VerificarVigenciaCita()
+        Dim Vigencias = BL.Verificar_VigenciaCita(Id_Cliente)
+
+        If Vigencias.Length > 0 Then
+            If Vigencias(0).CitasVigentes > 0 Then
+                lbl_usuario.Text = Vigencias(0).UsuarioVigente
+                btn_asignaCita.Visible = False
+            Else
+                lbl_usuario.Text = "-"
+                btn_asignaCita.Visible = True
+            End If
+        Else
+            lbl_usuario.Text = "-"
+            btn_asignaCita.Visible = True
+        End If
+    End Sub
+#End Region
+
+#Region "Eventos"
+    Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
+        ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+    End Sub
+
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
-            If BL.Inserta_CitasCall(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, tb_lContacto.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO") Then
+            If BL.Insertar_CitaCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, cmBoxCampana.SelectedItem.Text,
+                                          cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO",
+                                          cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, 1) Then
+
                 Response.Redirect("Citas.aspx", False)
             End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
     End Sub
+#End Region
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
-
-
                     Session("Usuario") = Usuario
-
-
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
@@ -134,9 +207,8 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + id_Cita.ToString, False)
+        Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
 #End Region
 End Class
