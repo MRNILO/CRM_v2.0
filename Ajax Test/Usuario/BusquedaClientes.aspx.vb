@@ -1,10 +1,11 @@
 ﻿Imports DevExpress.Web
 Imports Ajax_Test.Funciones
-Public Class BusquedaClientes1
+
+Public Class BusquedaClientes2
     Inherits System.Web.UI.Page
 
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 4
+    Dim NivelSeccion As Integer = 1
 
     Private GE_Funciones As New Funciones
 
@@ -50,7 +51,7 @@ Public Class BusquedaClientes1
     End Sub
 
     Public Sub BuscarClientes()
-        Dim Cliente As New BusquedaCliente
+        Dim Cliente As New BusquedaClienteAsesor
 
         With Cliente
             .nombreCliente = tb_NombreCliente.Text
@@ -60,11 +61,12 @@ Public Class BusquedaClientes1
             .CURP = tb_CURP.Text
             .NSS = tb_NSS.Text
             .IdCliente = tb_IdCliente.Text
+            .IdUsuario = Usuario.id_usuario
             .Numcte = tb_NumeroCliente.Text
         End With
 
         Dim DT As New DataTable
-        DT = GE_Funciones.BuscarClientes(Cliente)
+        DT = GE_Funciones.BuscarClientesXAsesor(Cliente)
         ViewState("ListaClientes") = DT
 
         With grdView_BusquedaCliente
@@ -99,7 +101,7 @@ Public Class BusquedaClientes1
 
     Protected Sub grdView_BusquedaCliente_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles grdView_BusquedaCliente.CustomButtonCallback
         Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
-        ASPxWebControl.RedirectOnCallback("../CallCenter/CitaCte.aspx?id=" + IdCliente.ToString)
+        ASPxWebControl.RedirectOnCallback("../Usuario/cliente.aspx?idCliente=" + IdCliente.ToString)
     End Sub
 #End Region
 End Class

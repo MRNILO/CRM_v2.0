@@ -83,7 +83,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/BuscarCliente.aspx">
+                                <a href="/Usuario/BusquedaClientes.aspx">
                                     <i class="fa fa-search"></i>Buscar Cliente
                                 </a>
                             </li>

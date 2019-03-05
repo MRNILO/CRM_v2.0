@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class BusquedaClientes1
+Partial Public Class BusquedaClientes2
     
     '''<summary>
     '''Control lbl_nombre.

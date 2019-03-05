@@ -14,6 +14,18 @@ Public Class Funciones
         Dim IdCliente As String
         Dim Numcte As String
     End Structure
+
+    Public Structure BusquedaClienteAsesor
+        Dim nombreCliente As String
+        Dim apellidoMaterno As String
+        Dim apellidoPaterno As String
+        Dim RFC As String
+        Dim CURP As String
+        Dim NSS As String
+        Dim IdCliente As String
+        Dim IdUsuario As String
+        Dim Numcte As String
+    End Structure
 #End Region
 
 #Region "Archivos"
@@ -113,6 +125,58 @@ Public Class Funciones
         End If
 
         BuscarClientes = DTB
+    End Function
+
+    Public Function BuscarClientesXAsesor(ByVal Cliente As BusquedaClienteAsesor)
+        Dim Query As String = "EXEC [dbo].[BuscarClientesXAsesor]
+		                            @Nombre = N'" & Cliente.nombreCliente & "',
+		                            @ApellidoPaterno = N'" & Cliente.apellidoPaterno & "',
+		                            @ApellidoMaterno = N'" & Cliente.apellidoMaterno & "',
+		                            @rfcCliente = N'" & Cliente.RFC & "',
+		                            @curpCliente = N'" & Cliente.CURP & "',
+		                            @nssCliente = N'" & Cliente.NSS & "',
+                                    @IdCrm = N'" & Cliente.IdCliente & "',
+                                    @IdAsesor = N'" & Cliente.IdUsuario & "',
+	                                @NumCliente = N'" & Cliente.Numcte & "'"
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim ROWB As DataRow
+
+        DTB.Columns.AddRange({New DataColumn("ID", GetType(Integer)), New DataColumn("Cliente", GetType(String)), New DataColumn("Asesor", GetType(String)),
+                              New DataColumn("CallCenter", GetType(String)), New DataColumn("Ranking", GetType(String)), New DataColumn("Nacimiento", GetType(Date)),
+                              New DataColumn("RFC", GetType(String)), New DataColumn("CURP", GetType(String)), New DataColumn("NSS", GetType(String))})
+
+        DTA = GE_SQL.SQLGetTable(Query)
+        If DTA.Rows.Count > 0 Then
+            For Each rowA As DataRow In DTA.Rows
+                ROWB = DTB.NewRow
+                ROWB("ID") = rowA("ID")
+                ROWB("Cliente") = rowA("Cliente")
+
+                If IsDBNull(rowA("Asesor")) Then
+                    ROWB("Asesor") = "-"
+                Else
+                    ROWB("Asesor") = rowA("Asesor")
+                End If
+
+                If IsDBNull(rowA("CallCenter")) Then
+                    ROWB("CallCenter") = "-"
+                Else
+                    ROWB("CallCenter") = rowA("CallCenter")
+                End If
+
+                ROWB("Ranking") = rowA("Ranking")
+                ROWB("Nacimiento") = rowA("Nacimiento")
+                ROWB("RFC") = rowA("RFC")
+                ROWB("CURP") = rowA("CURP")
+                ROWB("NSS") = rowA("NSS")
+
+                DTB.Rows.Add(ROWB)
+            Next
+        End If
+
+        BuscarClientesXAsesor = DTB
     End Function
 #End Region
 

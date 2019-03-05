@@ -161,7 +161,6 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Operaciones
             </div>
-
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
@@ -238,9 +237,7 @@
                 <asp:Button ID="btn_LlamadasAExcel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze" />
             </div>
         </div>
-
         <div class="portlet-body">
-
             <asp:Literal ID="lbl_botonPrograma" runat="server"></asp:Literal>
             <div class="table-scrollable">
                 <dx:ASPxGridViewExporter ID="GV_exporterLlamadas" runat="server" GridViewID="GV_Llamadas"></dx:ASPxGridViewExporter>

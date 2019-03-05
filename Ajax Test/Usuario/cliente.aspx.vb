@@ -24,12 +24,11 @@ Public Class Cliente
 
                 lbl_generales.Text = Crea_generalesCliente()
                 lbl_telefonos.Text = Crea_telefonos()
+
                 'Crea boton para programar llamada
                 lbl_botonPrograma.Text = " <a href=""../Usuario/ProgramarLlamada.aspx?idCliente=" + idCliente.ToString + " "" class=""btn btn-sm blue"">Programar Llamada</a>"
-                lbl_botonLlamar.Text = "<a href=""../Usuario/NuevaLlamada.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-phone""></i>Registrar Llamada</a>"
-                lbl_botonCitas.Text = "<a href=""../Usuario/NuevaCita.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-file""></i>Registrar Cita</a>"
-                '
-                'lbl_BtnNuevoCorreo.Text = "<a href=""/Usuario/NuevoEmail.aspx?idCliente=" + idCliente.ToString + """ class=""btn-green"" target=""_blank"" >Nuevo Email</a> "
+                lbl_botonLlamar.Text = "<a href=""../Usuario/NuevaLlamada.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-phone""></i> Registrar Llamada</a>"
+                lbl_botonCitas.Text = "<a href=""../Usuario/NuevaCitaCte.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-file""></i> Registrar Cita</a>"
 
                 If Page.IsPostBack Then
                 Else
@@ -68,8 +67,8 @@ Public Class Cliente
                 lbl_butonCambia.Text = HTML
         End Select
     End Sub
-    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
 
+    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
         If Cliente.ranking = "P" Then
             lbl_ranking.Visible = True
             cb_tipoImpedimento.Visible = True
@@ -123,12 +122,14 @@ Public Class Cliente
     Public Shared Function Correo(ByVal idEmail As String) As String
         Return BL.Obtener_mensajeEmailID(idEmail)
     End Function
+
     Sub BindGVEmails(ByVal emailCliente As String, ByVal emailEmpresa As String)
         Dim Correos = BL.Obtener_correosDelCliente(emailCliente, emailEmpresa)
 
         'GV_Emails.DataSource = Correos
         'GV_Emails.DataBind()
     End Sub
+
     Sub DatosEmpresa()
         Dim HTML As String = ""
         Dim DatosEmpresa = BL.Obtener_detallesEmpresa_idCliente(idCliente)
@@ -155,8 +156,8 @@ Public Class Cliente
 
         lbl_datosEmpresa.Text = HTML
     End Sub
-    Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
 
+    Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
         cb_etapas.DataSource = BL.Obtener_etapasCliente
         cb_etapas.DataTextField = "Descripcion"
         cb_etapas.DataValueField = "id_etapa"
@@ -164,6 +165,7 @@ Public Class Cliente
 
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+
     Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -172,6 +174,7 @@ Public Class Cliente
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
     End Sub
+
     Function Crea_telefonos() As String
         Dim HTML As String = ""
         Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
@@ -182,6 +185,7 @@ Public Class Cliente
         Next
         Return HTML
     End Function
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -250,27 +254,22 @@ Public Class Cliente
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
-
-
                     Session("Usuario") = Usuario
-
-
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
                 End If
             Else
-                'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
-                'lbl_error.Text = MostrarError("Usuario o/y contraseña equivocados")
+
             End If
         Else
             Session.Clear()
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1

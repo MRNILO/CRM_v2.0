@@ -7942,6 +7942,7 @@
     <Content Include="Usuario\Ayuda.aspx" />
     <Content Include="Usuario\Bandeja.aspx" />
     <Content Include="Usuario\BuscarCliente.aspx" />
+    <Content Include="Usuario\BusquedaClientes.aspx" />
     <Content Include="Usuario\CambiaUsuarioCC.aspx" />
     <Content Include="Usuario\cliente.aspx" />
     <Content Include="Usuario\clientes.aspx" />
@@ -7953,6 +7954,7 @@
     <Content Include="Usuario\MisDatos.aspx" />
     <Content Include="Usuario\ModificaCliente.aspx" />
     <Content Include="Usuario\NuevaCita.aspx" />
+    <Content Include="Usuario\NuevaCitaCte.aspx" />
     <Content Include="Usuario\nuevaEmpresa.aspx" />
     <Content Include="Usuario\NuevaLlamada.aspx" />
     <Content Include="Usuario\NuevoCliente.aspx" />
@@ -8494,6 +8496,13 @@
       <DependentUpon>BuscarCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Usuario\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Usuario\CambiaUsuarioCC.aspx.designer.vb">
       <DependentUpon>CambiaUsuarioCC.aspx</DependentUpon>
     </Compile>
@@ -8570,6 +8579,13 @@
     </Compile>
     <Compile Include="Usuario\NuevaCita.aspx.vb">
       <DependentUpon>NuevaCita.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\NuevaCitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaCitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\NuevaCitaCte.aspx.vb">
+      <DependentUpon>NuevaCitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Usuario\nuevaEmpresa.aspx.designer.vb">

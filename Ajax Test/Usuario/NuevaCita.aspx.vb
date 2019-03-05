@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         Dim idCliente As Integer = 0
@@ -15,6 +16,7 @@
             combos(idCliente)
         End If
     End Sub
+
     Sub combos(ByVal idCliente As Integer)
         Dim Clientes = BL.Obtener_nombresClientesidUsuario(Usuario.id_usuario).ToList
         Dim Telefono As New Servicio.CNombresCliente
@@ -76,8 +78,6 @@
                 lbl_mensaje.Text = MostrarError("Error por favor verifique los datos para continuar. mensaje de error: " + ex.Message)
             End Try
         End If
-
-
     End Sub
 
 #Region "FuncionesUsuario"
