@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="cita.aspx.vb" Inherits="Ajax_Test.cita" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="CitaCte.aspx.vb" Inherits="Ajax_Test.CitaCte" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
@@ -70,7 +70,11 @@
                 </div>
                 <div class="col-lg-2">
                     <label><strong>Lugar Contacto:</strong></label><br />
-                    <asp:TextBox ID="tb_lContacto" runat="server" CssClass="form-control"></asp:TextBox>
+                    <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                </div>
+                <div class="col-lg-2">
+                    <label><strong>Medio 2:</strong></label>
+                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="col-lg-4">
                     <label><strong>Proyacto que visitará:</strong></label><br />

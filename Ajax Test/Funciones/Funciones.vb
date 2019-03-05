@@ -119,7 +119,8 @@ Public Class Funciones
 #Region "Citas"
     Public Function ObtenerCampanas() As DataTable
         Dim Query As String = "SELECT id_campaña, campañaNombre
-                               FROM campañas"
+                               FROM campañas
+                               WHERE Activa = 1"
 
         ObtenerCampanas = GE_SQL.SQLGetTable(Query)
     End Function

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class cita
+Partial Public Class CitaCte
     
     '''<summary>
     '''Control lbl_mensaje.
@@ -77,13 +77,22 @@ Partial Public Class cita
     Protected WithEvents tb_origen As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control tb_lContacto.
+    '''Control cmBoxCampana.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_lContacto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control tb_TipoCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control cb_fraccinamientos.
