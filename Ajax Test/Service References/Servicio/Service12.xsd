@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
+  <xs:element name="Inserta_usuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_usuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inserta_usuariosResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Elimina_usuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Elimina_usuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Elimina_usuariosResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Actualiza_usuarios">
     <xs:complexType>
       <xs:sequence>
@@ -648,6 +683,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Actualiza_llamadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
+        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="HoraProgramacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualiza_llamadasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualiza_llamadasResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Elimina_llamadas">
     <xs:complexType>
       <xs:sequence>
@@ -1096,6 +1156,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Cambia_usuarioClienteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cambia_usuarioClienteSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="idSupervsor" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cambia_usuarioClienteSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cambia_usuarioClienteSupervisorResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1887,41 +1963,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Inserta_usuarios">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
-        <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_usuariosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Inserta_usuariosResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Elimina_usuarios">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Elimina_usuariosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Elimina_usuariosResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Obtener_nombreClientesAdm">
     <xs:complexType>
       <xs:sequence />
@@ -2592,6 +2633,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_Cita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuarioAsignado" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCampana" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoCampana" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Origen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LugarContacto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Modelo" type="xs:int" />
+        <xs:element minOccurs="0" name="VigenciaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="VigenciaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaCita" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_CitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_CitaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Insertar_CitaCallCenter">
     <xs:complexType>
       <xs:sequence>
@@ -3254,31 +3322,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Inserta_llamadasResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Actualiza_llamadas">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
-        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
-        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="HoraProgramacion" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Actualiza_llamadasResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Actualiza_llamadasResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

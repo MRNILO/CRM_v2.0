@@ -23,31 +23,76 @@ Partial Public Class CambiaUsuario
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control cb_clientes.
+    '''Control tb_IdCliente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_clientes As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents tb_IdCliente As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control cb_usuarios.
+    '''Control tb_NombreCliente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_usuarios As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents tb_NombreCliente As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control btn_guardar.
+    '''Control tb_ApellidoPaterno.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents tb_ApellidoPaterno As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control tb_ApellidoMaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btnBuscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control btnLimpiar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control grdView_BusquedaCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents grdView_BusquedaCliente As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control Detalles.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Detalles As Global.DevExpress.Web.GridViewCommandColumnCustomButton
     
     '''<summary>
     '''Control lbl_mensaje.

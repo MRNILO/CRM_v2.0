@@ -1,70 +1,27 @@
-﻿Public Class CambiaUsuario
+﻿Imports Ajax_Test.Funciones
+Imports DevExpress.Web
+
+Public Class CambiaUsuario
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 2
     Dim idUsuario As Integer = 0
     Dim idCliente As Integer = 0
+    Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        Try
-            idCliente = Request.QueryString("idCliente")
-        Catch ex As Exception
-            idCliente = 0
-        End Try
-
-        Try
-            idUsuario = Request.QueryString("idUsuario")
-        Catch ex As Exception
-            idUsuario = 0
-        End Try
-
-        If Not Page.IsPostBack Then
-            ComboClientes()
-            ComboUsuarios()
-        End If
-
-    End Sub
-    Sub ComboClientes()
-        cb_clientes.DataSource = BL.Obtener_nombresClientesidSupervisor(Usuario.id_usuario)
-        cb_clientes.DataTextField = "Cliente"
-        cb_clientes.DataValueField = "id_cliente"
-        cb_clientes.DataBind()
-
-
-        If idCliente > 0 Then
-            cb_clientes.SelectedValue = idCliente
+        If Not IsPostBack() Then
+            tb_IdCliente.Focus()
         End If
     End Sub
-    Sub ComboUsuarios()
-        cb_usuarios.DataSource = BL.Obtener_nombresUsuariosSupervisor(Usuario.id_usuario)
-        cb_usuarios.DataTextField = "Usuario"
-        cb_usuarios.DataValueField = "id_usuario"
-        cb_usuarios.DataBind()
-        If idUsuario > 0 Then
-            cb_usuarios.SelectedValue = idUsuario
-        End If
-    End Sub
-    Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
-        Try
-            If BL.Cambia_usuarioCliente(cb_usuarios.SelectedValue, cb_clientes.SelectedValue) Then
-                lbl_mensaje.Text = MostrarExito("Cliente reasignado con exito")
-            Else
-                lbl_mensaje.Text = MostrarExito("Error por favor verifique los datos.")
-            End If
-        Catch ex As Exception
 
-        End Try
-    End Sub
-
-
-#Region "FuncionesUsuario"
+#Region "Metodos"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
                     Session("Usuario") = Usuario
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
@@ -73,7 +30,6 @@
                 'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
-                'lbl_error.Text = MostrarError("Usuario o/y contraseña equivocados")
             End If
         Else
             Session.Clear()
@@ -90,5 +46,47 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+    Public Sub BuscarClientes()
+        Dim Cliente As New BusquedaCliente
+
+        With Cliente
+            .nombreCliente = tb_NombreCliente.Text
+            .apellidoPaterno = tb_ApellidoPaterno.Text
+            .apellidoMaterno = tb_ApellidoMaterno.Text
+            .IdCliente = tb_IdCliente.Text
+        End With
+
+        Dim DT As New DataTable
+        DT = GE_Funciones.BuscarClientes(Cliente)
+        ViewState("ListaClientes") = DT
+
+        With grdView_BusquedaCliente
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
+#End Region
+#Region "Eventos"
+    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        BuscarClientes()
+    End Sub
+    Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        tb_NombreCliente.Text = ""
+        tb_ApellidoPaterno.Text = ""
+        tb_ApellidoMaterno.Text = ""
+        tb_IdCliente.Text = "" : tb_IdCliente.Focus()
+
+        grdView_BusquedaCliente.DataSource = Nothing
+        grdView_BusquedaCliente.DataBind()
+    End Sub
+    Protected Sub grdView_BusquedaCliente_DataBinding(sender As Object, e As EventArgs) Handles grdView_BusquedaCliente.DataBinding
+        grdView_BusquedaCliente.DataSource = ViewState("ListaClientes")
+    End Sub
+
+    Protected Sub grdView_BusquedaCliente_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles grdView_BusquedaCliente.CustomButtonCallback
+        Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
+        ASPxWebControl.RedirectOnCallback("../Supervisor/ClienteSupervisor.aspx?idCliente=" + IdCliente.ToString)
+    End Sub
+
 #End Region
 End Class

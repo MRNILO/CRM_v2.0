@@ -50,6 +50,9 @@ Public Class ClienteSupervisor
                 GridLlamadas()
                 ComboEtapas(Datos)
                 comboProductos(Datos)
+                ComboUsuarios(Datos)
+                cmBoxUsuarios.Value = Datos(0).id_Usuario
+                cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
                 Ranking(Datos(0))
                 lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
                 tb_numcte.Text = Obtener_numcte().ToString
@@ -66,6 +69,35 @@ Public Class ClienteSupervisor
         Else
             lbl_mensaje.Text = MostrarAviso(Request.QueryString("msj"))
         End If
+    End Sub
+
+    Private Sub ComboUsuarios(ByRef Datos As Servicio.CClientesDetalles())
+        Dim ROWA As DataRow
+        Dim DTA As New DataTable
+        Dim dtaUsuarios = BL.Obtener_usuarios_todos
+
+        If (dtaUsuarios.Length > 0) Then
+
+            DTA.Columns.AddRange({New DataColumn("clave", GetType(Integer)), New DataColumn("Asesor", GetType(String))})
+
+
+            For i = 0 To dtaUsuarios.Length - 1
+                ROWA = DTA.NewRow
+                ROWA("clave") = dtaUsuarios(i).id_usuario
+                ROWA("Asesor") = dtaUsuarios(i).nombre + " " + dtaUsuarios(i).apellidoPaterno + " " + dtaUsuarios(i).apellidoMaterno
+
+
+                DTA.Rows.Add(ROWA)
+            Next
+            With cmBoxUsuarios
+                .DataSource = DTA
+                .ValueField = "clave"
+                .TextField = "Asesor"
+                .DataBind()
+            End With
+        End If
+
+
     End Sub
     Function Obtener_numcte() As Integer
         Dim Resultado As Integer = 0
@@ -136,6 +168,7 @@ Public Class ClienteSupervisor
 
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+
     Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -177,6 +210,7 @@ Public Class ClienteSupervisor
         HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
         HTML += "<br />"
         HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
+        HTML += "<br />"
         HTML += "<strong>Tarjeta de Presentación</strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
@@ -260,7 +294,15 @@ Public Class ClienteSupervisor
     End Sub
 
     Protected Sub btn_cambiarUsuario_Click(sender As Object, e As EventArgs) Handles btn_cambiarUsuario.Click
-        Response.Redirect("../Supervisor/CambiaUsuario.aspx?idCliente=" + idCliente.ToString, False)
+        Try
+            If BL.Cambia_usuarioClienteSupervisor(CInt(cmBoxUsuarios.Value), idCliente, CInt(Usuario.id_usuario)) Then
+                lbl_mensaje.Text = MostrarExito("Cliente reasignado con exito")
+            Else
+                lbl_mensaje.Text = MostrarExito("Error por favor verifique los datos.")
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click

@@ -50,10 +50,26 @@
                 <div class="col-lg-2" style="margin-top: 25px">
                     <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
                 </div>
-                <div class="col-lg-2 pull-right" style="margin-top: 25px">
+                <br />
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+                <div class="col-lg-6">
+                    <label><b><i>Asesor Asignado:</i></b> </label>
+                    <dx:ASPxComboBox ID="cmBoxUsuarios" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="False" TextField="Asesor" ValueField="clave" Font-Size="9pt">
+                        <Columns>
+                            <dx:ListBoxColumn Caption="ID" FieldName="clave" Width="20px" />
+                            <dx:ListBoxColumn Caption="Asesor" FieldName="Asesor" Width="50px" />
+                        </Columns>
+                    </dx:ASPxComboBox>
+                </div>
+                <div class="col-lg-2" style="margin-top: 25px">
                     <asp:Button ID="btn_cambiarUsuario" runat="server" Text="Dar a otro usuario" CssClass="btn btn-sm btn-block yellow" />
                 </div>
+                <br />
             </div>
+
+
             <div class="row" style="margin-top: 15px">
                 <div class="col-lg-6">
                     <asp:Label ID="lbl_numcte" runat="server" ForeColor="Black"></asp:Label>

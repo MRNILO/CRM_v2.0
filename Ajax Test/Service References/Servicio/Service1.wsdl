@@ -7,6 +7,18 @@
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Inserta_usuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_usuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Inserta_usuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_usuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Elimina_usuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:Elimina_usuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Elimina_usuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Elimina_usuariosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Actualiza_usuarios_InputMessage">
     <wsdl:part name="parameters" element="tns:Actualiza_usuarios" />
   </wsdl:message>
@@ -265,6 +277,12 @@
   <wsdl:message name="IService1_Obtener_notificaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_notificacionesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Actualiza_llamadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualiza_llamadas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Actualiza_llamadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualiza_llamadasResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Elimina_llamadas_InputMessage">
     <wsdl:part name="parameters" element="tns:Elimina_llamadas" />
   </wsdl:message>
@@ -444,6 +462,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_Cambia_usuarioCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:Cambia_usuarioClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Cambia_usuarioClienteSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cambia_usuarioClienteSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Cambia_usuarioClienteSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Cambia_usuarioClienteSupervisorResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_UsuarioDetalleSupervisor_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_UsuarioDetalleSupervisor" />
@@ -763,18 +787,6 @@
   <wsdl:message name="IService1_Obtener_tiporeferencia_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_tiporeferenciaResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Inserta_usuarios_InputMessage">
-    <wsdl:part name="parameters" element="tns:Inserta_usuarios" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Inserta_usuarios_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Inserta_usuariosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Elimina_usuarios_InputMessage">
-    <wsdl:part name="parameters" element="tns:Elimina_usuarios" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Elimina_usuarios_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Elimina_usuariosResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_Obtener_nombreClientesAdm_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_nombreClientesAdm" />
   </wsdl:message>
@@ -1039,6 +1051,12 @@
   <wsdl:message name="IService1_Obtener_categoriasProductos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_categoriasProductosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Insertar_Cita_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Cita" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insertar_Cita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_CitaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Insertar_CitaCallCenter_InputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_CitaCallCenter" />
   </wsdl:message>
@@ -1279,13 +1297,15 @@
   <wsdl:message name="IService1_Inserta_llamadas_OutputMessage">
     <wsdl:part name="parameters" element="tns:Inserta_llamadasResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Actualiza_llamadas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Actualiza_llamadas" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Actualiza_llamadas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Actualiza_llamadasResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Inserta_usuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_usuarios" message="tns:IService1_Inserta_usuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_usuariosResponse" message="tns:IService1_Inserta_usuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Elimina_usuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_usuarios" message="tns:IService1_Elimina_usuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_usuariosResponse" message="tns:IService1_Elimina_usuarios_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_usuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_usuarios" message="tns:IService1_Actualiza_usuarios_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_usuariosResponse" message="tns:IService1_Actualiza_usuarios_OutputMessage" />
@@ -1458,6 +1478,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_notificaciones" message="tns:IService1_Obtener_notificaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_notificacionesResponse" message="tns:IService1_Obtener_notificaciones_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Actualiza_llamadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_llamadas" message="tns:IService1_Actualiza_llamadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_llamadasResponse" message="tns:IService1_Actualiza_llamadas_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Elimina_llamadas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_llamadas" message="tns:IService1_Elimina_llamadas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_llamadasResponse" message="tns:IService1_Elimina_llamadas_OutputMessage" />
@@ -1577,6 +1601,10 @@
     <wsdl:operation name="Cambia_usuarioCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Cambia_usuarioCliente" message="tns:IService1_Cambia_usuarioCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Cambia_usuarioClienteResponse" message="tns:IService1_Cambia_usuarioCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cambia_usuarioClienteSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor" message="tns:IService1_Cambia_usuarioClienteSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisorResponse" message="tns:IService1_Cambia_usuarioClienteSupervisor_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Obtener_UsuarioDetalleSupervisor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisor" message="tns:IService1_Obtener_UsuarioDetalleSupervisor_InputMessage" />
@@ -1790,14 +1818,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_tiporeferencia" message="tns:IService1_Obtener_tiporeferencia_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_tiporeferenciaResponse" message="tns:IService1_Obtener_tiporeferencia_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Inserta_usuarios">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_usuarios" message="tns:IService1_Inserta_usuarios_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_usuariosResponse" message="tns:IService1_Inserta_usuarios_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Elimina_usuarios">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_usuarios" message="tns:IService1_Elimina_usuarios_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_usuariosResponse" message="tns:IService1_Elimina_usuarios_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdm" message="tns:IService1_Obtener_nombreClientesAdm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse" message="tns:IService1_Obtener_nombreClientesAdm_OutputMessage" />
@@ -1974,6 +1994,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_categoriasProductos" message="tns:IService1_Obtener_categoriasProductos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_categoriasProductosResponse" message="tns:IService1_Obtener_categoriasProductos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Insertar_Cita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insertar_Cita" message="tns:IService1_Insertar_Cita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Insertar_CitaResponse" message="tns:IService1_Insertar_Cita_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Insertar_CitaCallCenter">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insertar_CitaCallCenter" message="tns:IService1_Insertar_CitaCallCenter_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse" message="tns:IService1_Insertar_CitaCallCenter_OutputMessage" />
@@ -2134,13 +2158,27 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_llamadas" message="tns:IService1_Inserta_llamadas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_llamadasResponse" message="tns:IService1_Inserta_llamadas_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Actualiza_llamadas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_llamadas" message="tns:IService1_Actualiza_llamadas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_llamadasResponse" message="tns:IService1_Actualiza_llamadas_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Inserta_usuarios">
+      <soap:operation soapAction="http://tempuri.org/IService1/Inserta_usuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Elimina_usuarios">
+      <soap:operation soapAction="http://tempuri.org/IService1/Elimina_usuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_usuarios">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_usuarios" style="document" />
       <wsdl:input>
@@ -2528,6 +2566,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Actualiza_llamadas">
+      <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_llamadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Elimina_llamadas">
       <soap:operation soapAction="http://tempuri.org/IService1/Elimina_llamadas" style="document" />
       <wsdl:input>
@@ -2791,6 +2838,15 @@
     </wsdl:operation>
     <wsdl:operation name="Cambia_usuarioCliente">
       <soap:operation soapAction="http://tempuri.org/IService1/Cambia_usuarioCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cambia_usuarioClienteSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3275,24 +3331,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Inserta_usuarios">
-      <soap:operation soapAction="http://tempuri.org/IService1/Inserta_usuarios" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Elimina_usuarios">
-      <soap:operation soapAction="http://tempuri.org/IService1/Elimina_usuarios" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_nombreClientesAdm" style="document" />
       <wsdl:input>
@@ -3689,6 +3727,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Insertar_Cita">
+      <soap:operation soapAction="http://tempuri.org/IService1/Insertar_Cita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Insertar_CitaCallCenter">
       <soap:operation soapAction="http://tempuri.org/IService1/Insertar_CitaCallCenter" style="document" />
       <wsdl:input>
@@ -4042,15 +4089,6 @@
     </wsdl:operation>
     <wsdl:operation name="Inserta_llamadas">
       <soap:operation soapAction="http://tempuri.org/IService1/Inserta_llamadas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Actualiza_llamadas">
-      <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_llamadas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

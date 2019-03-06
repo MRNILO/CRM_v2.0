@@ -1085,6 +1085,7 @@
       <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaCierre" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaEscritura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id_Campaña" type="xs:int" />
       <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
@@ -1096,6 +1097,7 @@
       <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
       <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_Usuario" type="xs:int" />
       <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
       <xs:element minOccurs="0" name="id_etapaActual" type="xs:int" />
       <xs:element minOccurs="0" name="id_producto" type="xs:int" />
