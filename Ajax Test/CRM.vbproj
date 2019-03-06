@@ -7174,6 +7174,7 @@
     <Content Include="Caseta\Clientes.aspx" />
     <Content Include="Caseta\DetalleAsesor.aspx" />
     <Content Include="Caseta\DetalleObservaciones.aspx" />
+    <Content Include="Caseta\InicioCaseta.aspx" />
     <Content Include="Caseta\ModificaCliente.aspx" />
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
@@ -7443,6 +7444,7 @@
     <Content Include="Prospectador\Clientes.aspx" />
     <Content Include="Prospectador\DetalleAsesor.aspx" />
     <Content Include="Prospectador\DetalleObservaciones.aspx" />
+    <Content Include="Prospectador\InicioProspectador.aspx" />
     <Content Include="Prospectador\ModificaCliente.aspx" />
     <Content Include="Prospectador\NuevoCliente.aspx" />
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CUsuarios.datasource">
@@ -8205,6 +8207,13 @@
       <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.designer.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Caseta\ModificaCliente.aspx.designer.vb">
       <DependentUpon>ModificaCliente.aspx</DependentUpon>
     </Compile>
@@ -8298,6 +8307,13 @@
     </Compile>
     <Compile Include="Prospectador\DetalleObservaciones.aspx.vb">
       <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.designer.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Prospectador\ModificaCliente.aspx.designer.vb">

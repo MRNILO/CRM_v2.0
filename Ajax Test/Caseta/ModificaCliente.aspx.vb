@@ -102,6 +102,8 @@ Public Class ModificaCliente2
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
             Case 4
                 Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
+            Case 5
+                Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
         End Select
     End Sub
 
