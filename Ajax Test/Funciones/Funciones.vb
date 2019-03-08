@@ -222,6 +222,7 @@ Public Class Funciones
                                              INNER JOIN tipocampaña TP ON TP.id_tipoCampaña = CP.id_tipoCampaña
                                              WHERE CP.id_campaña = {0}", IdCampana)
 
+
         Obtener_TipoCampana = GE_SQL.SQLGetDataStr(Query)
     End Function
 
