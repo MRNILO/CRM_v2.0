@@ -11,7 +11,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
+        Id_Cliente = Request.QueryString("idCliente")
         Try
             lbl_generales.Text = Crea_generalesCliente()
         Catch ex As Exception
@@ -38,10 +38,61 @@
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
-        AlimentarComboCampanas()
+        AlimentarComboMedios()
+        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+        AlimentarComboProyectos()
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
+        cargarCitas()
+    End Sub
+    Private Sub cargarCitas()
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
+        GV_citas.DataBind()
+    End Sub
+    Private Sub AlimentarComboMedios()
+        With cmBoxMedio
+            .DataSource = GE_Funciones.ObtenerMedios()
+            .ValueField = "Id_Medio"
+            .TextField = "NombreMedio"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
+        With cmBoxCampana
+            .DataSource = GE_Funciones.ObtenerCampanas(Id_Medio)
+            .ValueField = "id_campaña"
+            .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboProyectos()
+        With cb_fraccinamientos
+            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .DataValueField = "Proyecto"
+            .DataTextField = "Fraccionamiento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboModelos(ByVal Proyecto As String)
+        With cb_modelos
+            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .DataValueField = "id_producto"
+            .DataTextField = "Modelo"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
     End Sub
 
     Private Sub AlimentarComboCampanas()
@@ -154,6 +205,24 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
 #End Region
 
 #Region "Eventos"
@@ -163,15 +232,18 @@
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
-            'If BL.Insertar_CitaCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, cmBoxCampana.SelectedItem.Text,
-            '                              cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO",
-            '                              cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, 1) Then
 
-            '    Response.Redirect("Citas.aspx", False)
-            'End If
+            If BL.Insertar_CitasProspectador(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+                Response.Redirect("Citas.aspx", False)
+            End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
+    End Sub
+    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
 #End Region
 
@@ -206,9 +278,6 @@
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
-    End Sub
-    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
 #End Region
 End Class

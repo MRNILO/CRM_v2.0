@@ -3576,6 +3576,149 @@ Namespace Servicio
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="CLlamadasPendientesHoyUsuario", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class CLlamadasPendientesHoyUsuario
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ApellidoMaternoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ApellidoPaternoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EmailField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FechaField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private HORAField As System.TimeSpan
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NombreField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ProductoField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ApellidoMaterno() As String
+            Get
+                Return Me.ApellidoMaternoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ApellidoMaternoField, value) <> true) Then
+                    Me.ApellidoMaternoField = value
+                    Me.RaisePropertyChanged("ApellidoMaterno")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ApellidoPaterno() As String
+            Get
+                Return Me.ApellidoPaternoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ApellidoPaternoField, value) <> true) Then
+                    Me.ApellidoPaternoField = value
+                    Me.RaisePropertyChanged("ApellidoPaterno")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Email() As String
+            Get
+                Return Me.EmailField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
+                    Me.EmailField = value
+                    Me.RaisePropertyChanged("Email")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Fecha() As Date
+            Get
+                Return Me.FechaField
+            End Get
+            Set
+                If (Me.FechaField.Equals(value) <> true) Then
+                    Me.FechaField = value
+                    Me.RaisePropertyChanged("Fecha")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property HORA() As System.TimeSpan
+            Get
+                Return Me.HORAField
+            End Get
+            Set
+                If (Me.HORAField.Equals(value) <> true) Then
+                    Me.HORAField = value
+                    Me.RaisePropertyChanged("HORA")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Nombre() As String
+            Get
+                Return Me.NombreField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NombreField, value) <> true) Then
+                    Me.NombreField = value
+                    Me.RaisePropertyChanged("Nombre")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Producto() As String
+            Get
+                Return Me.ProductoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ProductoField, value) <> true) Then
+                    Me.ProductoField = value
+                    Me.RaisePropertyChanged("Producto")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="CLlamadas", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
      System.SerializableAttribute()>  _
     Partial Public Class CLlamadas
@@ -11885,152 +12028,27 @@ Namespace Servicio
         End Sub
     End Class
     
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="CLlamadasPendientesHoyUsuario", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class CLlamadasPendientesHoyUsuario
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ApellidoMaternoField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ApellidoPaternoField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private EmailField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private FechaField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private HORAField As System.TimeSpan
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private NombreField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ProductoField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ApellidoMaterno() As String
-            Get
-                Return Me.ApellidoMaternoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ApellidoMaternoField, value) <> true) Then
-                    Me.ApellidoMaternoField = value
-                    Me.RaisePropertyChanged("ApellidoMaterno")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property ApellidoPaterno() As String
-            Get
-                Return Me.ApellidoPaternoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ApellidoPaternoField, value) <> true) Then
-                    Me.ApellidoPaternoField = value
-                    Me.RaisePropertyChanged("ApellidoPaterno")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Email() As String
-            Get
-                Return Me.EmailField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
-                    Me.EmailField = value
-                    Me.RaisePropertyChanged("Email")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Fecha() As Date
-            Get
-                Return Me.FechaField
-            End Get
-            Set
-                If (Me.FechaField.Equals(value) <> true) Then
-                    Me.FechaField = value
-                    Me.RaisePropertyChanged("Fecha")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property HORA() As System.TimeSpan
-            Get
-                Return Me.HORAField
-            End Get
-            Set
-                If (Me.HORAField.Equals(value) <> true) Then
-                    Me.HORAField = value
-                    Me.RaisePropertyChanged("HORA")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Nombre() As String
-            Get
-                Return Me.NombreField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.NombreField, value) <> true) Then
-                    Me.NombreField = value
-                    Me.RaisePropertyChanged("Nombre")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Producto() As String
-            Get
-                Return Me.ProductoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ProductoField, value) <> true) Then
-                    Me.ProductoField = value
-                    Me.RaisePropertyChanged("Producto")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="Servicio.IService1")>  _
     Public Interface IService1
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_tiporeferenciaResponse")>  _
+        Function Inserta_tiporeferencia(ByVal tiporeferencia As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_tiporeferenciaResponse")>  _
+        Function Inserta_tiporeferenciaAsync(ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_tiporeferenciaResponse")>  _
+        Function Elimina_tiporeferencia(ByVal id_tiporeferencia As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_tiporeferenciaResponse")>  _
+        Function Elimina_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_tiporeferenciaResponse")>  _
+        Function Actualiza_tiporeferencia(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_tiporeferenciaResponse")>  _
+        Function Actualiza_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Obtener_tiporeferenciaResponse")>  _
         Function Obtener_tiporeferencia() As Servicio.CTipoReferencia()
@@ -12307,6 +12325,24 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
+        Function Elimina_etapasCliente(ByVal id_etapa As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
+        Function Elimina_etapasClienteAsync(ByVal id_etapa As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
+        Function Actualiza_etapasCliente(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
+        Function Actualiza_etapasClienteAsync(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
+        Function Obtener_llamadasPendientesHoyUsuario(ByVal id_usuario As Integer) As Servicio.CLlamadasPendientesHoyUsuario()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
+        Function Obtener_llamadasPendientesHoyUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasPendientesHoyUsuario())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_llamadas", ReplyAction:="http://tempuri.org/IService1/Inserta_llamadasResponse")>  _
         Function Inserta_llamadas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As Date, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As Integer
@@ -12800,24 +12836,6 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_tipocampañaResponse")>  _
         Function Obtener_tipocampañaAsync() As System.Threading.Tasks.Task(Of Servicio.CTipoCampaña())
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_tiporeferenciaResponse")>  _
-        Function Inserta_tiporeferencia(ByVal tiporeferencia As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_tiporeferenciaResponse")>  _
-        Function Inserta_tiporeferenciaAsync(ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean)
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_tiporeferenciaResponse")>  _
-        Function Elimina_tiporeferencia(ByVal id_tiporeferencia As Integer) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_tiporeferenciaResponse")>  _
-        Function Elimina_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer) As System.Threading.Tasks.Task(Of Boolean)
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_tiporeferenciaResponse")>  _
-        Function Actualiza_tiporeferencia(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tiporeferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_tiporeferenciaResponse")>  _
-        Function Actualiza_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean)
-        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
         
@@ -13122,11 +13140,29 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_Cita", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaResponse")>  _
         Function Insertar_CitaAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>  _
-        Function Insertar_CitaCallCenter(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal Id_Camapana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As Boolean
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>  _
+        Function Insertar_CitasCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>  _
+        Function Insertar_CitasCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>  _
+        Function Insertar_CitasProspectador(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>  _
+        Function Insertar_CitasProspectadorAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>  _
+        Function Insertar_CitasCaseta(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>  _
+        Function Insertar_CitasCasetaAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>  _
-        Function Insertar_CitaCallCenterAsync(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal Id_Camapana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        Function Insertar_CitaCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>  _
+        Function Insertar_CitaCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_ObservacionesCitas", ReplyAction:="http://tempuri.org/IService1/Insertar_ObservacionesCitasResponse")>  _
         Function Insertar_ObservacionesCitas(ByVal IdCita As Integer, ByVal IdUsuario As Integer, ByVal Completada As Integer, ByVal Observaciones As String) As Boolean
@@ -13343,24 +13379,6 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>  _
         Function Obtener_etapasClienteAsync() As System.Threading.Tasks.Task(Of Servicio.CEtapasCliente())
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
-        Function Elimina_etapasCliente(ByVal id_etapa As Integer) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
-        Function Elimina_etapasClienteAsync(ByVal id_etapa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
-        Function Actualiza_etapasCliente(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
-        Function Actualiza_etapasClienteAsync(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
-        Function Obtener_llamadasPendientesHoyUsuario(ByVal id_usuario As Integer) As Servicio.CLlamadasPendientesHoyUsuario()
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
-        Function Obtener_llamadasPendientesHoyUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasPendientesHoyUsuario())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -13393,6 +13411,30 @@ Namespace Servicio
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
+        
+        Public Function Inserta_tiporeferencia(ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Inserta_tiporeferencia
+            Return MyBase.Channel.Inserta_tiporeferencia(tiporeferencia)
+        End Function
+        
+        Public Function Inserta_tiporeferenciaAsync(ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_tiporeferenciaAsync
+            Return MyBase.Channel.Inserta_tiporeferenciaAsync(tiporeferencia)
+        End Function
+        
+        Public Function Elimina_tiporeferencia(ByVal id_tiporeferencia As Integer) As Boolean Implements Servicio.IService1.Elimina_tiporeferencia
+            Return MyBase.Channel.Elimina_tiporeferencia(id_tiporeferencia)
+        End Function
+        
+        Public Function Elimina_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_tiporeferenciaAsync
+            Return MyBase.Channel.Elimina_tiporeferenciaAsync(id_tiporeferencia)
+        End Function
+        
+        Public Function Actualiza_tiporeferencia(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Actualiza_tiporeferencia
+            Return MyBase.Channel.Actualiza_tiporeferencia(id_tiporeferencia, tiporeferencia)
+        End Function
+        
+        Public Function Actualiza_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tiporeferenciaAsync
+            Return MyBase.Channel.Actualiza_tiporeferenciaAsync(id_tiporeferencia, tiporeferencia)
+        End Function
         
         Public Function Obtener_tiporeferencia() As Servicio.CTipoReferencia() Implements Servicio.IService1.Obtener_tiporeferencia
             Return MyBase.Channel.Obtener_tiporeferencia
@@ -13760,6 +13802,30 @@ Namespace Servicio
         
         Public Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica()) Implements Servicio.IService1.Obtener_notificacionesAsync
             Return MyBase.Channel.Obtener_notificacionesAsync(idCliente)
+        End Function
+        
+        Public Function Elimina_etapasCliente(ByVal id_etapa As Integer) As Boolean Implements Servicio.IService1.Elimina_etapasCliente
+            Return MyBase.Channel.Elimina_etapasCliente(id_etapa)
+        End Function
+        
+        Public Function Elimina_etapasClienteAsync(ByVal id_etapa As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_etapasClienteAsync
+            Return MyBase.Channel.Elimina_etapasClienteAsync(id_etapa)
+        End Function
+        
+        Public Function Actualiza_etapasCliente(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean Implements Servicio.IService1.Actualiza_etapasCliente
+            Return MyBase.Channel.Actualiza_etapasCliente(id_etapa, nEtapa, Descripcion)
+        End Function
+        
+        Public Function Actualiza_etapasClienteAsync(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_etapasClienteAsync
+            Return MyBase.Channel.Actualiza_etapasClienteAsync(id_etapa, nEtapa, Descripcion)
+        End Function
+        
+        Public Function Obtener_llamadasPendientesHoyUsuario(ByVal id_usuario As Integer) As Servicio.CLlamadasPendientesHoyUsuario() Implements Servicio.IService1.Obtener_llamadasPendientesHoyUsuario
+            Return MyBase.Channel.Obtener_llamadasPendientesHoyUsuario(id_usuario)
+        End Function
+        
+        Public Function Obtener_llamadasPendientesHoyUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasPendientesHoyUsuario()) Implements Servicio.IService1.Obtener_llamadasPendientesHoyUsuarioAsync
+            Return MyBase.Channel.Obtener_llamadasPendientesHoyUsuarioAsync(id_usuario)
         End Function
         
         Public Function Inserta_llamadas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As Date, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As Integer Implements Servicio.IService1.Inserta_llamadas
@@ -14418,30 +14484,6 @@ Namespace Servicio
             Return MyBase.Channel.Obtener_tipocampañaAsync
         End Function
         
-        Public Function Inserta_tiporeferencia(ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Inserta_tiporeferencia
-            Return MyBase.Channel.Inserta_tiporeferencia(tiporeferencia)
-        End Function
-        
-        Public Function Inserta_tiporeferenciaAsync(ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_tiporeferenciaAsync
-            Return MyBase.Channel.Inserta_tiporeferenciaAsync(tiporeferencia)
-        End Function
-        
-        Public Function Elimina_tiporeferencia(ByVal id_tiporeferencia As Integer) As Boolean Implements Servicio.IService1.Elimina_tiporeferencia
-            Return MyBase.Channel.Elimina_tiporeferencia(id_tiporeferencia)
-        End Function
-        
-        Public Function Elimina_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_tiporeferenciaAsync
-            Return MyBase.Channel.Elimina_tiporeferenciaAsync(id_tiporeferencia)
-        End Function
-        
-        Public Function Actualiza_tiporeferencia(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Actualiza_tiporeferencia
-            Return MyBase.Channel.Actualiza_tiporeferencia(id_tiporeferencia, tiporeferencia)
-        End Function
-        
-        Public Function Actualiza_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tiporeferenciaAsync
-            Return MyBase.Channel.Actualiza_tiporeferenciaAsync(id_tiporeferencia, tiporeferencia)
-        End Function
-        
         Public Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor() Implements Servicio.IService1.Obtener_nombreClientesAdm
             Return MyBase.Channel.Obtener_nombreClientesAdm
         End Function
@@ -14836,12 +14878,36 @@ Namespace Servicio
             Return MyBase.Channel.Insertar_CitaAsync(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
         End Function
         
-        Public Function Insertar_CitaCallCenter(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal Id_Camapana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As Boolean Implements Servicio.IService1.Insertar_CitaCallCenter
-            Return MyBase.Channel.Insertar_CitaCallCenter(id_cliente, id_usuarioCC, id_usuarioAsesor, Origen, Lugar_Contacto, ProyectoVisita, Modelo, VigenciaInicio, VigenciaFinal, FechaCita, Estatus, Id_Camapana, TipoCampana, Activa)
+        Public Function Insertar_CitasCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_CitasCallCenter
+            Return MyBase.Channel.Insertar_CitasCallCenter(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
         End Function
         
-        Public Function Insertar_CitaCallCenterAsync(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal Id_Camapana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_CitaCallCenterAsync
-            Return MyBase.Channel.Insertar_CitaCallCenterAsync(id_cliente, id_usuarioCC, id_usuarioAsesor, Origen, Lugar_Contacto, ProyectoVisita, Modelo, VigenciaInicio, VigenciaFinal, FechaCita, Estatus, Id_Camapana, TipoCampana, Activa)
+        Public Function Insertar_CitasCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_CitasCallCenterAsync
+            Return MyBase.Channel.Insertar_CitasCallCenterAsync(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitasProspectador(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_CitasProspectador
+            Return MyBase.Channel.Insertar_CitasProspectador(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitasProspectadorAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_CitasProspectadorAsync
+            Return MyBase.Channel.Insertar_CitasProspectadorAsync(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitasCaseta(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_CitasCaseta
+            Return MyBase.Channel.Insertar_CitasCaseta(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitasCasetaAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_CitasCasetaAsync
+            Return MyBase.Channel.Insertar_CitasCasetaAsync(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitaCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_CitaCallCenter
+            Return MyBase.Channel.Insertar_CitaCallCenter(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
+        End Function
+        
+        Public Function Insertar_CitaCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_CitaCallCenterAsync
+            Return MyBase.Channel.Insertar_CitaCallCenterAsync(IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, TipoCampana, Origen, LugarContacto, Proyecto, Modelo, VigenciaInicial, VigenciaFinal, FechaCita, Ranking, Status)
         End Function
         
         Public Function Insertar_ObservacionesCitas(ByVal IdCita As Integer, ByVal IdUsuario As Integer, ByVal Completada As Integer, ByVal Observaciones As String) As Boolean Implements Servicio.IService1.Insertar_ObservacionesCitas
@@ -15130,30 +15196,6 @@ Namespace Servicio
         
         Public Function Obtener_etapasClienteAsync() As System.Threading.Tasks.Task(Of Servicio.CEtapasCliente()) Implements Servicio.IService1.Obtener_etapasClienteAsync
             Return MyBase.Channel.Obtener_etapasClienteAsync
-        End Function
-        
-        Public Function Elimina_etapasCliente(ByVal id_etapa As Integer) As Boolean Implements Servicio.IService1.Elimina_etapasCliente
-            Return MyBase.Channel.Elimina_etapasCliente(id_etapa)
-        End Function
-        
-        Public Function Elimina_etapasClienteAsync(ByVal id_etapa As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_etapasClienteAsync
-            Return MyBase.Channel.Elimina_etapasClienteAsync(id_etapa)
-        End Function
-        
-        Public Function Actualiza_etapasCliente(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean Implements Servicio.IService1.Actualiza_etapasCliente
-            Return MyBase.Channel.Actualiza_etapasCliente(id_etapa, nEtapa, Descripcion)
-        End Function
-        
-        Public Function Actualiza_etapasClienteAsync(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_etapasClienteAsync
-            Return MyBase.Channel.Actualiza_etapasClienteAsync(id_etapa, nEtapa, Descripcion)
-        End Function
-        
-        Public Function Obtener_llamadasPendientesHoyUsuario(ByVal id_usuario As Integer) As Servicio.CLlamadasPendientesHoyUsuario() Implements Servicio.IService1.Obtener_llamadasPendientesHoyUsuario
-            Return MyBase.Channel.Obtener_llamadasPendientesHoyUsuario(id_usuario)
-        End Function
-        
-        Public Function Obtener_llamadasPendientesHoyUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasPendientesHoyUsuario()) Implements Servicio.IService1.Obtener_llamadasPendientesHoyUsuarioAsync
-            Return MyBase.Channel.Obtener_llamadasPendientesHoyUsuarioAsync(id_usuario)
         End Function
     End Class
 End Namespace

@@ -77,13 +77,22 @@ Partial Public Class CitaCteProspectador
     Protected WithEvents tb_origen As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control txBox_AsesorAsignado.
+    '''Control cb_usuarios.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txBox_AsesorAsignado As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cb_usuarios As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control UsuariosDS.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UsuariosDS As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''Control dtp_finicio.
@@ -167,20 +176,29 @@ Partial Public Class CitaCteProspectador
     Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
-    '''Control GV_Citas.
+    '''Control lbl_botonCitas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GV_Citas As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents lbl_botonCitas As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control CitasCallDS.
+    '''Control GV_exporterCitas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents CitasCallDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
+    
+    '''<summary>
+    '''Control GV_citas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
 End Class
