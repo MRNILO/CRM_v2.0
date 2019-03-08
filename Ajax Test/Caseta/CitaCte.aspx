@@ -47,7 +47,6 @@
         </div>
     </div>
 
-
     <div class="portlet box blue-hoki">
         <div class="portlet box blue-hoki">
             <div class="portlet-title">
@@ -55,23 +54,29 @@
                     <i class="fa fa-globe"></i>Cita
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <label><strong>Usuario Call Center: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
-                </div>
-            </div>
             <div class="portlet-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label><strong>Agente de Caseta: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
+                    </div>
+                </div>
                 <div class="row" style="margin-top: 5px">
                     <div class="col-lg-2">
                         <label><strong>Origen:</strong></label><br />
-                        <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">AGENTE MOVIL</asp:TextBox>
+                        <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">AGENTE CASETA</asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group" style="margin-top: 15px">
                         <div class="col-lg-4">
                             <label><strong>Asesor Asignado:</strong></label><br />
-                            <asp:TextBox ID="txBox_AsesorAsignado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                            <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
+                            <asp:SqlDataSource ID="UsuariosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.id_usuario, 
+                                                                                                                                                                    CONCAT(dbo.usuarios.nombre,' ',
+                                                                                                                                                                          dbo.usuarios.apellidoPaterno,' ',
+                                                                                                                                                                          dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
+                                                                                                                                                                    FROM dbo.usuarios
+                                                                                                                                                                    ORDER BY nombre ASC"></asp:SqlDataSource>
                         </div>
                     </div>
                     <div class="form-group">

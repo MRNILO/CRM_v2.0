@@ -38,17 +38,54 @@
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
-        AlimentarComboCampanas()
+        AlimentarComboMedios()
+        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+        AlimentarComboProyectos()
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
+
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
     End Sub
 
-    Private Sub AlimentarComboCampanas()
+    Private Sub AlimentarComboMedios()
+        With cmBoxMedio
+            .DataSource = GE_Funciones.ObtenerMedios()
+            .ValueField = "Id_Medio"
+            .TextField = "NombreMedio"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
         With cmBoxCampana
-            .DataSource = GE_Funciones.ObtenerCampanas()
+            .DataSource = GE_Funciones.ObtenerCampanas(Id_Medio)
             .ValueField = "id_campaña"
             .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboProyectos()
+        With cb_fraccinamientos
+            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .DataValueField = "Proyecto"
+            .DataTextField = "Fraccionamiento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboModelos(ByVal Proyecto As String)
+        With cb_modelos
+            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .DataValueField = "id_producto"
+            .DataTextField = "Modelo"
             .DataBind()
 
             .SelectedIndex = 0
@@ -161,6 +198,10 @@
         ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
     End Sub
 
+    Protected Sub cmBoxMedio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMedio.SelectedIndexChanged
+        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+    End Sub
+
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
             'If BL.Insertar_CitaCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, cmBoxCampana.SelectedItem.Text,
@@ -197,6 +238,7 @@
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -207,6 +249,7 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
