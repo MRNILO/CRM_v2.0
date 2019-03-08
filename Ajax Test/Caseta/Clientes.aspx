@@ -115,7 +115,7 @@
                         <dx:GridViewDataTextColumn Caption="Cita/Visita" FieldName="id_cliente" VisibleIndex="0">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
-                            <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;cita.aspx?id={0}&quot; class=&quot;btn btn-sm green&quot;&gt;Cita&lt;/a&gt;" EncodeHtml="False">
+                            <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;CitaCte.aspx?id={0}&quot; class=&quot;btn btn-sm green&quot;&gt;Cita&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
                     </Columns>
