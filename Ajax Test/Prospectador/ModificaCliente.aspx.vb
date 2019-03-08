@@ -1,9 +1,9 @@
 ﻿Imports System.IO
 
-Public Class ModificaCliente2
+Public Class ModificaCliente_Prospectador
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 5
+    Dim NivelSeccion As Integer = 6
     Dim idCliente As Integer = 0
     Dim idCita As Integer = 0
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -29,7 +29,6 @@ Public Class ModificaCliente2
         End If
         GV_telefonos.DataBind()
     End Sub
-
     Sub Fotos(ByRef Datos As Servicio.CidCliente())
         lbl_fotocliente.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
         lbl_fotoTpres.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
@@ -70,6 +69,7 @@ Public Class ModificaCliente2
         cb_campañas.DataBind()
         cb_campañas.SelectedValue = Datos(0).id_campaña
     End Sub
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
@@ -104,9 +104,10 @@ Public Class ModificaCliente2
                 Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
             Case 5
                 Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
+            Case 6
+                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
-
 #End Region
     Protected Sub GV_telefonos_DataBinding(sender As Object, e As EventArgs) Handles GV_telefonos.DataBinding
         GV_telefonos.DataSource = BL.Obtener_telefonosModificaCliente(idCliente)

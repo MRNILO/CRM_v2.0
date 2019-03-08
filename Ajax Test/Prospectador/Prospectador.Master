@@ -1,0 +1,217 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Prospectador.Master.vb" Inherits="Ajax_Test.Caseta" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Grupo Edificasa | CRM</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link id="style_color" href="/assets/admin/layout/css/themes/light2.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/global/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="/assets/wts/wts.css" rel="stylesheet" />
+    <!-- END THEME STYLES -->
+    <link href="/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="CSSContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body class="page-header-fixed page-quick-sidebar-over-content">
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header-inner">
+            <div class="page-logo">
+                <a href="/">
+                    <img src="/assets/imagenes/logo-mini.png" alt="logo" class="logo-default" width="50" />
+                </a>
+                <div class="menu-toggler sidebar-toggler hide">
+                </div>
+            </div>
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+            <div class="top-menu">
+                <asp:ContentPlaceHolder ID="MenuDeActividades" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="page-container">
+        <div class="page-sidebar-wrapper">
+            <div class="page-sidebar navbar-collapse collapse">
+                <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    <li class="sidebar-toggler-wrapper">
+                        <div class="sidebar-toggler">
+                        </div>
+                    </li>
+                    <li class="sidebar-search-wrapper"></li>
+                    <li class="start active">
+                        <a href="/Prospectador/BusquedaClientes.aspx">
+                            <i class="icon-home"></i>
+                            <span class="title">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="heading">
+                        <h3 class="uppercase">Clientes</h3>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
+                            <span class="title">Clientes</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/Prospectador/BusquedaClientes.aspx">
+                                    <i class="fa fa-user"></i>Buscar Clientes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Prospectador/Clientes.aspx">
+                                    <i class="fa fa-user"></i>Todos los clientes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Prospectador/Citas.aspx">
+                                    <i class="fa fa-user"></i>Citas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="heading">
+                        <h3 class="uppercase">Asesores</h3>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
+                            <span class="title">Asesores</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/Prospectador/Asesores.aspx">
+                                    <i class="fa fa-user"></i>Lista de Asesores
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                Widget settings form goes here
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn blue">Save changes</button>
+                                <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form runat="server" id="Forma">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            2018 &copy; Grupo Edificasa
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
+    <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+    <script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+    <script src="/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+    <script src="/assets/global/plugins/sweetalert/sweetalert.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init(); // init metronic core components
+            Layout.init(); // init current layout
+            // notificaciones();
+        });
+    </script>
+    <script type="text/javascript">
+
+        function notificaciones() {
+            $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("/Usuario/InicioUsuario.aspx/noti")%>",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: Notificar,
+                failure: function (response) { },
+                error: function (response) { }
+            });
+        }
+        function Notificar(response) {
+            if (response.d != '') {
+
+                var jsonObj = $.parseJSON('[' + response.d + ']');
+
+                for (var i = 0; i < jsonObj.length; i++) {
+                    toastr.info(jsonObj[i].desc + '<br /><br /><a class="btn btn-sm green" href="' + jsonObj[i].url + '">Ver</a>', jsonObj[i].titulo);
+                }
+            } else { }
+            notificaciones();
+        }
+    </script>
+
+    <script type="text/javascript">
+        window.smartlook || (function (d) {
+            var o = smartlook = function () { o.api.push(arguments) }, h = d.getElementsByTagName('head')[0];
+            var c = d.createElement('script'); o.api = new Array(); c.async = true; c.type = 'text/javascript';
+            c.charset = 'utf-8'; c.src = 'https://rec.smartlook.com/recorder.js'; h.appendChild(c);
+        })(document);
+        smartlook('init', '1eb103cf27380618c7d5478cf56cf254861e2bfc');
+    </script>
+
+    <asp:ContentPlaceHolder ID="JSContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

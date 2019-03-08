@@ -11,8 +11,8 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class CambiaUsuario
-    
+Partial Public Class BusquedaClientes_Prospectador
+
     '''<summary>
     '''Control lbl_nombre.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
-    
+
     '''<summary>
     '''Control tb_IdCliente.
     '''</summary>
@@ -30,7 +30,43 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_IdCliente As Global.System.Web.UI.WebControls.TextBox
-    
+
+    '''<summary>
+    '''Control tb_NumeroCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_NumeroCliente As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control tb_RFC.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_RFC As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control tb_CURP.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_CURP As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control tb_NSS.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_NSS As Global.System.Web.UI.WebControls.TextBox
+
     '''<summary>
     '''Control tb_NombreCliente.
     '''</summary>
@@ -39,7 +75,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_NombreCliente As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Control tb_ApellidoPaterno.
     '''</summary>
@@ -48,7 +84,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_ApellidoPaterno As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Control tb_ApellidoMaterno.
     '''</summary>
@@ -57,7 +93,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Control btnBuscar.
     '''</summary>
@@ -66,7 +102,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''Control btnLimpiar.
     '''</summary>
@@ -75,7 +111,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''Control grdView_BusquedaCliente.
     '''</summary>
@@ -84,16 +120,7 @@ Partial Public Class CambiaUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents grdView_BusquedaCliente As Global.DevExpress.Web.ASPxGridView
-    
-    '''<summary>
-    '''Control Detalles.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Detalles As Global.DevExpress.Web.GridViewCommandColumnCustomButton
-    
+
     '''<summary>
     '''Control lbl_mensaje.
     '''</summary>

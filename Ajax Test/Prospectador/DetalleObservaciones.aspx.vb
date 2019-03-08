@@ -1,14 +1,32 @@
-﻿Public Class Citas1
+﻿Public Class DetalleObservaciones_Prospectador
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 5
+    Dim NivelSeccion As Integer = 6
+    Dim idCliente As Integer = 0
+
+    Dim HTML As String = ""
 
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
+        idCliente = Request.QueryString("idCliente")
 
-        If Not IsPostBack() Then
+        If idCliente = 0 Then
+            Response.Redirect("/")
+        Else
+            If Page.IsPostBack Then
 
+            Else
+                Dim Datos = BL.Obtener_ClienteObservaciones(idCliente)
+                If Not Page.IsPostBack Then
+                    For i As Integer = 0 To Datos.Length - 1
+                        HTML += "<label><strong><em> Observación - " & Datos(i).Fecha_Registro & "</em></strong></label><br>
+                                 <p>" & Datos(i).Observacion & "</p><br>"
+                    Next
+
+                    lbl_Observaciones.Text = HTML
+                End If
+            End If
         End If
     End Sub
 #Region "Metodos"
@@ -44,6 +62,8 @@
                 Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
             Case 5
                 Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
+            Case 6
+                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
 #End Region

@@ -1,9 +1,9 @@
-﻿Public Class DetalleAsesor1
+﻿Public Class DetalleAsesor_Prospectador
     Inherits System.Web.UI.Page
 
     Dim Usuario As New Servicio.CUsuarios
 
-    Dim NivelSeccion As Integer = 5
+    Dim NivelSeccion As Integer = 6
     Dim ID_Usuario As Integer = 0
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
@@ -15,7 +15,6 @@
 
         End Try
     End Sub
-
     Public Function Crea_GeneraUsuario()
         ID_Usuario = Request.QueryString("id")
 
@@ -67,7 +66,6 @@
 
         Return HTML
     End Function
-
 #Region "Eventos"
     Protected Sub GV_Clientes_DataBinding(sender As Object, e As EventArgs) Handles GV_Clientes.DataBinding
         Try
@@ -118,6 +116,8 @@
                 Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
             Case 5
                 Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
+            Case 6
+                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
 #End Region

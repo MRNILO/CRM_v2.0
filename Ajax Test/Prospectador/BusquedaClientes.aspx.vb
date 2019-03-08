@@ -1,17 +1,17 @@
 ﻿Imports Ajax_Test.Funciones
-Imports DevExpress.Web
 
-Public Class CambiaUsuario
+Public Class BusquedaClientes_Prospectador
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 2
-    Dim idUsuario As Integer = 0
-    Dim idCliente As Integer = 0
+    Dim NivelSeccion As Integer = 6
+
     Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
+
         If Not IsPostBack() Then
-            tb_IdCliente.Focus()
+            tb_NombreCliente.Focus()
         End If
     End Sub
 
@@ -27,9 +27,9 @@ Public Class CambiaUsuario
                     RedirigirSegunNivel(Usuario.Nivel)
                 End If
             Else
-                'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
+
             End If
         Else
             Session.Clear()
@@ -44,16 +44,26 @@ Public Class CambiaUsuario
                 Response.Redirect("~/Supervisor/InicioSupervisor.aspx", False)
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
+            Case 4
+                Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
+            Case 5
+                Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
+            Case 6
+                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
     Public Sub BuscarClientes()
         Dim Cliente As New BusquedaCliente
 
         With Cliente
-            .nombreCliente = tb_NombreCliente.Text
-            .apellidoPaterno = tb_ApellidoPaterno.Text
-            .apellidoMaterno = tb_ApellidoMaterno.Text
+            .nombreCliente = tb_NombreCliente.Text.ToUpper
+            .apellidoPaterno = tb_ApellidoPaterno.Text.ToUpper
+            .apellidoMaterno = tb_ApellidoMaterno.Text.ToUpper
+            .RFC = tb_RFC.Text.ToUpper
+            .CURP = tb_CURP.Text.ToUpper
+            .NSS = tb_NSS.Text.ToUpper
             .IdCliente = tb_IdCliente.Text
+            .Numcte = tb_NumeroCliente.Text
         End With
 
         Dim DT As New DataTable
@@ -66,27 +76,24 @@ Public Class CambiaUsuario
         End With
     End Sub
 #End Region
+
 #Region "Eventos"
-    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Protected Sub BuscarClientes(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarClientes()
     End Sub
     Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         tb_NombreCliente.Text = ""
         tb_ApellidoPaterno.Text = ""
         tb_ApellidoMaterno.Text = ""
+        tb_RFC.Text = ""
+        tb_CURP.Text = ""
+        tb_NSS.Text = ""
         tb_IdCliente.Text = "" : tb_IdCliente.Focus()
+        tb_NumeroCliente.Text = ""
 
         grdView_BusquedaCliente.DataSource = Nothing
         grdView_BusquedaCliente.DataBind()
     End Sub
-    Protected Sub grdView_BusquedaCliente_DataBinding(sender As Object, e As EventArgs) Handles grdView_BusquedaCliente.DataBinding
-        grdView_BusquedaCliente.DataSource = ViewState("ListaClientes")
-    End Sub
-
-    Protected Sub grdView_BusquedaCliente_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles grdView_BusquedaCliente.CustomButtonCallback
-        Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
-        ASPxWebControl.RedirectOnCallback("../Supervisor/ClienteSupervisor.aspx?idCliente=" + IdCliente.ToString)
-    End Sub
-
 #End Region
+
 End Class

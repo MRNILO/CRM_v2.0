@@ -7174,6 +7174,7 @@
     <Content Include="Caseta\Clientes.aspx" />
     <Content Include="Caseta\DetalleAsesor.aspx" />
     <Content Include="Caseta\DetalleObservaciones.aspx" />
+    <Content Include="Caseta\InicioCaseta.aspx" />
     <Content Include="Caseta\ModificaCliente.aspx" />
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
@@ -7437,6 +7438,15 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Prospectador\Asesores.aspx" />
+    <Content Include="Prospectador\BusquedaClientes.aspx" />
+    <Content Include="Prospectador\Citas.aspx" />
+    <Content Include="Prospectador\Clientes.aspx" />
+    <Content Include="Prospectador\DetalleAsesor.aspx" />
+    <Content Include="Prospectador\DetalleObservaciones.aspx" />
+    <Content Include="Prospectador\InicioProspectador.aspx" />
+    <Content Include="Prospectador\ModificaCliente.aspx" />
+    <Content Include="Prospectador\NuevoCliente.aspx" />
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CUsuarios.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -7906,6 +7916,7 @@
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.VigenciaCitas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Prospectador\Prospectador.Master" />
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -8152,7 +8163,7 @@
     </Compile>
     <Compile Include="Caseta\Asesores.aspx.vb">
       <DependentUpon>Asesores.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Caseta\BusquedaClientes.aspx.designer.vb">
       <DependentUpon>BusquedaClientes.aspx</DependentUpon>
@@ -8194,6 +8205,13 @@
     </Compile>
     <Compile Include="Caseta\DetalleObservaciones.aspx.vb">
       <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.designer.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Caseta\ModificaCliente.aspx.designer.vb">
@@ -8248,6 +8266,76 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Prospectador\Asesores.aspx.designer.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Asesores.aspx.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Citas.aspx.designer.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Citas.aspx.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\DetalleAsesor.aspx.designer.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\DetalleAsesor.aspx.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.designer.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\NuevoCliente.aspx.designer.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\NuevoCliente.aspx.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Prospectador.Master.designer.vb">
+      <DependentUpon>Prospectador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Prospectador.Master.vb">
+      <DependentUpon>Prospectador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service References\Servicio\Reference.vb">
       <AutoGen>True</AutoGen>

@@ -1,7 +1,7 @@
-﻿Public Class Citas1
+﻿Public Class Asesores_Prospectador
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 5
+    Dim NivelSeccion As Integer = 6
 
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -44,7 +44,10 @@
                 Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
             Case 5
                 Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
+            Case 6
+                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
 #End Region
+
 End Class
