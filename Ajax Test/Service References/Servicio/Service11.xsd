@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_CRM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_CRM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCTipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTipoReferencia" nillable="true" type="tns:ArrayOfCTipoReferencia" />
+  <xs:complexType name="CTipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_tiporeferencia" type="xs:int" />
+      <xs:element minOccurs="0" name="tiporeferencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
   <xs:complexType name="ArrayOfCUsuarios">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CUsuarios" nillable="true" type="tns:CUsuarios" />
@@ -965,19 +978,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CTipoCampaña" nillable="true" type="tns:CTipoCampaña" />
-  <xs:complexType name="ArrayOfCTipoReferencia">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCTipoReferencia" nillable="true" type="tns:ArrayOfCTipoReferencia" />
-  <xs:complexType name="CTipoReferencia">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id_tiporeferencia" type="xs:int" />
-      <xs:element minOccurs="0" name="tiporeferencia" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
   <xs:complexType name="CTotalesUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="ClientesActivos" type="xs:int" />
@@ -1085,6 +1085,7 @@
       <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaCierre" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaEscritura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id_Campaña" type="xs:int" />
       <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
@@ -1096,6 +1097,7 @@
       <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
       <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_Usuario" type="xs:int" />
       <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
       <xs:element minOccurs="0" name="id_etapaActual" type="xs:int" />
       <xs:element minOccurs="0" name="id_producto" type="xs:int" />

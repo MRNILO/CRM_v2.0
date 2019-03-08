@@ -32,60 +32,6 @@ Partial Public Class NuevaCitaCte
     Protected WithEvents tb_origen As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control cmBoxCampana.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
-    
-    '''<summary>
-    '''Control tb_TipoCampana.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control cb_fraccinamientos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cb_fraccinamientos As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control FraccDS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents FraccDS As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control cb_modelos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cb_modelos As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control productosDs.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents productosDs As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control txBox_AsesorAsignado.
     '''</summary>
     '''<remarks>
@@ -122,6 +68,51 @@ Partial Public Class NuevaCitaCte
     Protected WithEvents dtp_fechaCita As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
+    '''Control cmBoxMedio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxMedio As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control cmBoxCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control tb_TipoCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control cb_fraccinamientos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cb_fraccinamientos As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control cb_modelos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cb_modelos As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''Control btn_asignaCita.
     '''</summary>
     '''<remarks>
@@ -129,6 +120,15 @@ Partial Public Class NuevaCitaCte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
+    
+    '''<summary>
+    '''Control grdViewCitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents grdViewCitas As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
     '''Control lbl_mensaje.

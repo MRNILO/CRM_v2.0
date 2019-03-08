@@ -159,6 +159,7 @@ Public Class SQL_Functions
             With SQL_CMD
                 .Connection = SQLCon_B
                 .CommandText = LocalSQL
+                .Transaction = SQLTran
                 .ExecuteNonQuery()
             End With
 

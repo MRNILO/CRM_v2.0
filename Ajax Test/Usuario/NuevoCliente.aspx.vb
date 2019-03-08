@@ -5,17 +5,28 @@ Public Class NuevoCliente
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
+
+    Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        If Not Page.IsPostBack Then
 
+        If Not Page.IsPostBack Then
+            UI()
             Combos()
-            ' Session("ListaDeTelefonos") = Nothing
         Else
 
         End If
-        '  Crea_listaTelefonos()
     End Sub
+
+#Region "Metodos"
+    Public Sub UI()
+        Dim NSSAleatorio As String = GE_Funciones.Generar_NSSAleatorio()
+        tb_email.Text = "corrigeme@por.favor"
+        tb_nss.Text = NSSAleatorio & NSSAleatorio
+    End Sub
+#End Region
+
 #Region "Trabajo Fotos"
     Function TrabajoFotos() As CFotos
         Dim MaximoWidth As Integer = 400
@@ -64,14 +75,11 @@ Public Class NuevoCliente
 
         Return Resultado
     End Function
+
     Function resizeImage(ByVal Imagen As System.Drawing.Image, ByVal MaximoLargo As Integer)
         Dim original As Drawing.Bitmap, resizedImage As Drawing.Bitmap
 
         Try
-            'Using fs As FileStream = New System.IO.FileStream(, System.IO.FileMode.Open)
-            '    original = New Drawing.Bitmap(fs)
-            'End Using
-
             original = Imagen
 
             Dim rectHeight As Integer = 100
@@ -107,6 +115,7 @@ Public Class NuevoCliente
         End Try
         Return resizedImage
     End Function
+
     Public Function ImageToBase64(image As System.Drawing.Image, format As System.Drawing.Imaging.ImageFormat) As String
         Using ms As New MemoryStream()
             ' Convert Image to byte[]
@@ -124,36 +133,19 @@ Public Class NuevoCliente
         Dim IdCliente As Integer = 0
         lbl_mensaje.Text = ""
 
-        'Dim Fotos = TrabajoFotos()
-        'Verifica Errores
         If lbl_mensaje.Text <> "" Then
-            'Existen errores no se puede insertar el cliente
+
         Else
-            'If IsNothing(Session("ListaDeTelefonos")) Then
-            '    lbl_mensaje.Text += MostrarError("Debe ingresar al menos un teléfono")
-            'Else
-            '  listaTel = Session("ListaDeTelefonos")
-            'If listaTel.Count = 0 Then
-            '        ' no existen telefonos
-            '        lbl_mensaje.Text += MostrarError("Debe ingresar al menos un teléfono")
-            '    Else
             If BL.ValidaEmail(tb_email.Text) Then
-                'Email repedito
                 lbl_mensaje.Text = MostrarError("El Correo ya se habia capturado previamente en otro cliente.")
             Else
                 btn_validarCliente.Visible = False
                 btn_Guardar.Visible = True
             End If
-
-            ' End If
-
-            ' End If
         End If
     End Sub
     Sub Combos()
-
         Dim Estados = BL.Obtener_estados.ToList
-
         Dim estado = New Servicio.CEstados
 
         estado.id = 0
@@ -164,7 +156,6 @@ Public Class NuevoCliente
         cb_estados.DataTextField = "nombre"
         cb_estados.DataValueField = "id"
         cb_estados.DataBind()
-
 
         cb_rubros.DataSource = BL.Obtener_rubros
         cb_rubros.DataTextField = "rubro"
@@ -177,16 +168,10 @@ Public Class NuevoCliente
         cb_nivelInteres.DataValueField = "id_nivelInteres"
         cb_nivelInteres.DataBind()
 
-        'cb_empresas.DataSource = BL.Obtener_combo_empresas
-        'cb_empresas.DataTextField = "Empresa"
-        'cb_empresas.DataValueField = "id_empresa"
-        'cb_empresas.DataBind()
-
         cb_campañas.DataSource = BL.Obtener_combo_campañas
         cb_campañas.DataTextField = "Campaña"
         cb_campañas.DataValueField = "id_campaña"
         cb_campañas.DataBind()
-
     End Sub
 
     <WebMethod()>
@@ -199,6 +184,7 @@ Public Class NuevoCliente
         End If
         Return HTML
     End Function
+
     <WebMethod()>
     Public Shared Function ValidaNSS(ByVal nss As String) As String
         Dim HTML As String = ""
@@ -209,6 +195,7 @@ Public Class NuevoCliente
         End If
         Return HTML
     End Function
+
     <WebMethod()>
     Public Shared Function ValidaCURP(ByVal curp As String) As String
         Dim HTML As String = ""
@@ -219,6 +206,7 @@ Public Class NuevoCliente
         End If
         Return HTML
     End Function
+
     <WebMethod()>
     Public Shared Function EmpresasBusqueda(ByVal QUERY) As String
         Dim JS As String = ""
@@ -254,22 +242,21 @@ Public Class NuevoCliente
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
                     Session("Usuario") = Usuario
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
                 End If
             Else
-                'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
-                'lbl_error.Text = MostrarError("Usuario o/y contraseña equivocados")
+
             End If
         Else
             Session.Clear()
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -284,58 +271,22 @@ Public Class NuevoCliente
 
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Dim listaTel As New List(Of CTelefonos)
-
         Dim IdCliente As Integer = 0
+
         lbl_mensaje.Text = ""
 
-
-        'Valida empresa
-        'If tb_empresas.Text = "" Then
-        '    lbl_mensaje.Text += MostrarError("Debe ingresar el ID de la empresa")
-        'Else
-        '    Try
-        '        If CInt(tb_empresas.Text) > 0 Then
-        '        Else
-        '            lbl_mensaje.Text += MostrarError("Debe ingresar el ID de la empresa")
-        '            Exit Sub
-        '        End If
-        '    Catch ex As Exception
-        '        lbl_mensaje.Text += MostrarError("Debe ingresar el ID de la empresa")
-        '        Exit Sub
-        '    End Try
-
-        'End If
-
         'Valida Campaña
-
         If cb_campañas.SelectedValue = 14 Then
             lbl_mensaje.Text += MostrarError("Por favor seleccione una campaña valida.")
             Exit Sub
         End If
 
-        'Dim Fotos = TrabajoFotos()
         'Verifica Errores
         If lbl_mensaje.Text <> "" Then
-            'Existen errores no se puede insertar el cliente
-        Else
-            'If IsNothing(Session("ListaDeTelefonos")) Then
-            '    lbl_mensaje.Text += MostrarError("Debe ingresar al menos un teléfono")
-            'Else
-            '    listaTel = Session("ListaDeTelefonos")
-            '    If listaTel.Count = 0 Then
-            '        ' no existen telefonos
-            '        lbl_mensaje.Text += MostrarError("Debe ingresar al menos un teléfono")
-            '    Else
-            'No tiene monto capturado
-            ' Existe al menos un telefono
 
-            ' If BL.ValidaEmail(tb_email.Text) Then
-            'Email repedito
-            ' lbl_mensaje.Text = MostrarError("El Correo ya se habia capturado previamente en otro cliente.")
-            'Else
+        Else
             'ValidaNombre() 'Verifica campos de nombre
             Try
-                'valida fecha nacimiento
                 If IsNothing(dtp_fechaNacimiento.Date) Then
                     dtp_fechaNacimiento.Date = New Date
                 End If
@@ -355,22 +306,13 @@ Public Class NuevoCliente
 
             If IdCliente > 0 Then
                 'Agregar telefonos
-
-                ' For I = 0 To listaTel.Count - 1
                 BL.Inserta_telefonoCliente(1, IdCliente, tb_telefono.Text)
-                '  Next
 
                 Response.Redirect("../Usuario/clientes.aspx", False)
             Else
                 lbl_mensaje.Text += MostrarError("Error al insertar cliente, verifique los datos e intente de nuevo")
             End If
-            ' End If
-
-            ' End If
-
-            'End If
         End If
-
     End Sub
 
     Protected Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
@@ -397,9 +339,9 @@ Public Class NuevoCliente
             Session("ListaDeTelefonos") = listaTel
         End If
 
-
         Crea_listaTelefonos()
     End Sub
+
     Sub Crea_listaTelefonos()
         Dim HTML As String = ""
         Dim listaTel As New List(Of CTelefonos)
@@ -418,16 +360,13 @@ Public Class NuevoCliente
             Next
         End If
 
-
-
         lbl_telefonos.Text = HTML
 
     End Sub
+
 #Region "Nueva Empresa"
     Protected Sub btn_guardarEmpresa_Click(sender As Object, e As EventArgs) Handles btn_guardarEmpresa.Click
         Dim idCiudad As String = Request("idCiudad")
-
-
 
         Dim MaximoWidth As Integer = 100
         Dim Resultado As New CFotos
@@ -464,8 +403,8 @@ Public Class NuevoCliente
             End If
         End If
         Combos()
-
     End Sub
+
     <WebMethod()>
     Public Shared Function PruebaAjax(ByVal valor As String) As String
         Dim HTML As String = ""
@@ -490,14 +429,15 @@ Public Class NuevoCliente
         Catch ex As Exception
 
         End Try
-
     End Sub
 #End Region
 End Class
+
 Public Class CTelefonos
     Public Telefono As String
     Public Principal As Boolean
 End Class
+
 Public Class CFotos
     Public Cliente As String = "-"
     Public TarjetaP As String = "-"

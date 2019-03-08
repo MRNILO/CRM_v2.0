@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="ObservacionesCita.aspx.vb" Inherits="Ajax_Test.ObservacionesCita" %>
 
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
@@ -9,25 +11,41 @@
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-phone"></i>Cita
+                <i class="fa fa-users"></i>Cita
             </div>
         </div>
         <div class="portlet-body">
-            ¿Ya fue realizada la cita?
+            <label><b><i>¿Ya fue realizada la cita?</i></b></label>
             <br />
-            <asp:RadioButtonList ID="rb_realizada" runat="server">
-                <asp:ListItem Value="Si">Realizada</asp:ListItem>
-                <asp:ListItem Value="No">Sin realizar</asp:ListItem>
-            </asp:RadioButtonList>
+            <dx:ASPxRadioButtonList ID="rBtnRealizada" runat="server" Theme="Office365" ValueType="System.Int32">
+                <Items>
+                    <dx:ListEditItem Text="Sin Completar" Value="0" />
+                    <dx:ListEditItem Text="Completada" Value="1" />
+                </Items>
+            </dx:ASPxRadioButtonList>
             <br />
-            Observaciones:
+            <label><b><i>Observaciones:</i></b></label>
             <br />
-            <asp:TextBox ID="tb_observaciones" runat="server" CssClass="form-control"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="btn_guardar" runat="server" Text="Guardar Cita" CssClass="btn btn-lg blue" />
+            <asp:TextBox ID="tb_observaciones" runat="server" CssClass="form-control" Height="150px" TextMode="MultiLine"></asp:TextBox>
             <br />
             <br />
+            <asp:Button ID="btn_guardar" runat="server" Text="Guardar Observaciones" CssClass="btn btn-lg btn-sm blue" />
+            <br />
+            <br />
+        </div>
+    </div>
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-users"></i>Observaciones de la Cita
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:Literal ID="lbHtml" runat="server"></asp:Literal>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

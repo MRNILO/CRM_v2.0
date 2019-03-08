@@ -67,6 +67,7 @@ Public Class ClienteSupervisor
             lbl_mensaje.Text = MostrarAviso(Request.QueryString("msj"))
         End If
     End Sub
+
     Function Obtener_numcte() As Integer
         Dim Resultado As Integer = 0
         Dim cmd As New SqlCommand("SELECT numcte FROM clientes WHERE id_cliente=@id_cliente", Conexion)
@@ -84,6 +85,7 @@ Public Class ClienteSupervisor
         Conexion.Close()
         Return Resultado
     End Function
+
     Function Guarda_numcte() As Boolean
         Dim FechaCierre As Date
         Dim FechaEscrituracion As Date
@@ -127,6 +129,7 @@ Public Class ClienteSupervisor
 
         Return False
     End Function
+
     Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_etapas.DataSource = BL.Obtener_etapasCliente
@@ -136,6 +139,7 @@ Public Class ClienteSupervisor
 
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+
     Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -144,6 +148,7 @@ Public Class ClienteSupervisor
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
     End Sub
+
     Function Crea_telefonos() As String
         Dim HTML As String = ""
         Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
@@ -154,6 +159,7 @@ Public Class ClienteSupervisor
         Next
         Return HTML
     End Function
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -174,6 +180,8 @@ Public Class ClienteSupervisor
         HTML += "<br />"
         HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
         HTML += "<br />"
+        HTML += "<strong>ID Campaña: </strong>" + Datos(0).Id_Campaña.ToString()
+        HTML += "<br />"
         HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
         HTML += "<br />"
         HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
@@ -183,6 +191,7 @@ Public Class ClienteSupervisor
 
         Return HTML
     End Function
+
     Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
         GV_exporterLlamadas.WriteXlsxToResponse()
     End Sub
@@ -207,22 +216,20 @@ Public Class ClienteSupervisor
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
                     Session("Usuario") = Usuario
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
                 End If
             Else
-                'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
-                'lbl_error.Text = MostrarError("Usuario o/y contraseña equivocados")
             End If
         Else
             Session.Clear()
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -289,7 +296,6 @@ Public Class ClienteSupervisor
 
 #Region "Ranking"
     Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
-
         If Cliente.ranking = "P" Then
             lbl_ranking.Visible = True
             cb_tipoImpedimento.Visible = True

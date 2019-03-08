@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class ObservacionesCita
     
     '''<summary>
-    '''Control rb_realizada.
+    '''Control rBtnRealizada.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents rb_realizada As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents rBtnRealizada As Global.DevExpress.Web.ASPxRadioButtonList
     
     '''<summary>
     '''Control tb_observaciones.
@@ -39,6 +39,15 @@ Partial Public Class ObservacionesCita
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_guardar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control lbHtml.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbHtml As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
     '''Control lbl_mensaje.

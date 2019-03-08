@@ -40,44 +40,65 @@
                     <label><strong>Origen:</strong></label><br />
                     <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">AGENTE MOVIL</asp:TextBox>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Lugar Contacto:</strong></label><br />
-                    <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+            </div>
+            <div class="row">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-4">
+                        <label><strong>Asesor Asignado:</strong></label><br />
+                        <asp:TextBox ID="txBox_AsesorAsignado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Medio 2:</strong></label>
-                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Vigencia De:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <label><strong>Proyacto que visitará:</strong></label><br />
-                    <asp:DropDownList ID="cb_fraccinamientos" runat="server" DataSourceID="FraccDS" DataTextField="nom_fracc" DataValueField="id_cve_fracc" CssClass="form-control">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="FraccDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.sm_fraccionamiento.id_cve_fracc, dbo.sm_fraccionamiento.nom_fracc
-                                                                                                                                                         FROM dbo.sm_fraccionamiento where status_fracc = 'A'"></asp:SqlDataSource>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>A:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Modelo:</strong></label><br />
-                    <asp:DropDownList ID="cb_modelos" runat="server" DataSourceID="productosDs" DataTextField="NombreCorto" DataValueField="id_producto" CssClass="form-control">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="productosDs" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Fecha Cita:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 10px">
-                <div class="col-lg-4">
-                    <label><strong>Asesor Asignado:</strong></label><br />
-                    <asp:TextBox ID="txBox_AsesorAsignado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+            <div class="row">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label><strong>Medio:</strong></label><br />
+                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Vigencia De:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Lugar Contacto:</strong></label><br />
+                        <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>A:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Medio 2:</strong></label>
+                        <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Fecha Cita:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label><strong>Proyacto que visitará:</strong></label><br />
+                        <asp:DropDownList ID="cb_fraccinamientos" runat="server" CssClass="form-control" AutoPostBack="True">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Modelo:</strong></label><br />
+                        <asp:DropDownList ID="cb_modelos" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
@@ -87,6 +108,47 @@
                         </Image>
                     </dx:ASPxButton>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box blue-hoki">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-users"></i>Citas Registradas
+            </div>
+        </div>
+
+        <div class="portlet-body">
+            <div class="table-scrollable">
+                <dx:ASPxGridView ID="grdViewCitas" runat="server" Width="100%" Theme="Moderno" AutoGenerateColumns="False" Font-Size="9pt" KeyFieldName="Id_Cita">
+                    <SettingsPager Mode="ShowAllRecords">
+                    </SettingsPager>
+                    <Settings VerticalScrollableHeight="350" VerticalScrollBarMode="Visible" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="Id_Cita" VisibleIndex="0" Visible="false">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cliente" FieldName="Cliente" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Origen" FieldName="Origen" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Fraccionamiento" FieldName="Fraccionamiento" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Cita" FieldName="FechaCita" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn Caption="Estatus" FieldName="Status" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
             </div>
         </div>
     </div>

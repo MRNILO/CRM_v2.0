@@ -2,20 +2,26 @@
 
 Public Class Cliente
     Inherits System.Web.UI.Page
+
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
     Dim idCliente As Integer = 0
+
+    Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         idCliente = Request.QueryString("idCliente")
+
+        If Not IsPostBack Then
+            GE_Funciones.Verificar_VigenciaCitas(idCliente)
+        End If
+
         If idCliente = 0 Then
             Response.Redirect("/")
         Else
             'Verifica cliente
             If BL.VerificaCliente(idCliente, Usuario.id_usuario) Then
-                '     If True Then
-                'Cliente si le pertenece a este usuario
-                'Mostrar información del cliente
                 Try
                     BL.Actualiza_ultimafecha(idCliente)
                 Catch ex As Exception
@@ -58,78 +64,8 @@ Public Class Cliente
             lbl_mensaje.Text = MostrarAviso(Request.QueryString("msj"))
         End If
     End Sub
-    Sub BotonCambiaUsuario()
-        Dim HTML As String = ""
-        Select Case Usuario.id_usuario
-            Case 1152, 1153, 1154, 1155
-                'Permite cambia usuario
-                HTML = "<a href=""CambiaUsuarioCC.aspx?idCliente=" + idCliente.ToString + """ class=""btn btn-lg blue"" >Asignar asesor</a>"
-                lbl_butonCambia.Text = HTML
-        End Select
-    End Sub
 
-    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
-        If Cliente.ranking = "P" Then
-            lbl_ranking.Visible = True
-            cb_tipoImpedimento.Visible = True
-
-            btnCambiar.Visible = False
-            btnActualizar.Visible = False
-            btnCancelar.Visible = False
-        Else
-            lbl_ranking.Visible = False
-            cb_tipoImpedimento.Visible = False
-            btn_ranking.Visible = False
-
-            btnCambiar.Visible = False
-            btnActualizar.Visible = False
-            btnCancelar.Visible = False
-        End If
-    End Sub
-
-    Protected Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
-        lbl_ranking.Visible = True
-        cb_tipoImpedimento.Visible = True
-        btn_ranking.Visible = True
-
-        btn_ranking.Visible = False
-        btnActualizar.Visible = True
-        btnCancelar.Visible = True
-    End Sub
-
-    Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim Ranking_Nuevo As String = ""
-        If cb_tipoImpedimento.SelectedValue = 1 Then Ranking_Nuevo = cb_preguntas.SelectedValue Else Ranking_Nuevo = "A"
-
-        If BL.Actualizar_Ranking(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo) Then
-            Response.Redirect("../Usuario/cliente.aspx?idCliente=" + idCliente.ToString, False)
-        Else
-            lbl_mensaje.Text += MostrarError("Ocurrio un error al actualizar el Ranking, intentalo nuevamente")
-        End If
-    End Sub
-
-    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        lbl_ranking.Visible = False
-        cb_tipoImpedimento.Visible = False
-        btn_ranking.Visible = False
-
-        btnCambiar.Visible = True
-        btnActualizar.Visible = False
-        btnCancelar.Visible = False
-    End Sub
-
-    <WebMethod()>
-    Public Shared Function Correo(ByVal idEmail As String) As String
-        Return BL.Obtener_mensajeEmailID(idEmail)
-    End Function
-
-    Sub BindGVEmails(ByVal emailCliente As String, ByVal emailEmpresa As String)
-        Dim Correos = BL.Obtener_correosDelCliente(emailCliente, emailEmpresa)
-
-        'GV_Emails.DataSource = Correos
-        'GV_Emails.DataBind()
-    End Sub
-
+#Region "Funciones"
     Sub DatosEmpresa()
         Dim HTML As String = ""
         Dim DatosEmpresa = BL.Obtener_detallesEmpresa_idCliente(idCliente)
@@ -157,22 +93,19 @@ Public Class Cliente
         lbl_datosEmpresa.Text = HTML
     End Sub
 
-    Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
-        cb_etapas.DataSource = BL.Obtener_etapasCliente
-        cb_etapas.DataTextField = "Descripcion"
-        cb_etapas.DataValueField = "id_etapa"
-        cb_etapas.DataBind()
-
-        cb_etapas.SelectedValue = Datos(0).id_etapaActual
+    Sub GridLlamadas()
+        Dim DatosLlamadas = BL.Obtener_llamadasCliente(idCliente)
+        Session("GridLlamadas") = DatosLlamadas
     End Sub
 
-    Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
-
-        cb_productos.DataSource = BL.Obtener_datos_comboProductos
-        cb_productos.DataTextField = "NombreCorto"
-        cb_productos.DataValueField = "id_producto"
-        cb_productos.DataBind()
-        cb_productos.SelectedValue = Datos(0).id_producto
+    Sub BotonCambiaUsuario()
+        Dim HTML As String = ""
+        Select Case Usuario.id_usuario
+            Case 1152, 1153, 1154, 1155
+                'Permite cambia usuario
+                HTML = "<a href=""CambiaUsuarioCC.aspx?idCliente=" + idCliente.ToString + """ class=""btn btn-lg blue"" >Asignar asesor</a>"
+                lbl_butonCambia.Text = HTML
+        End Select
     End Sub
 
     Function Crea_telefonos() As String
@@ -210,26 +143,71 @@ Public Class Cliente
         HTML += "<br />"
         HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
         HTML += "<br />"
+        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
+        HTML += "<br />"
+        HTML += "<strong>ID Campaña: </strong>" + Datos(0).Id_Campaña.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString
+        HTML += "<br />"
         HTML += "<strong>Tarjeta de Presentación</strong>"
         HTML += "<br />"
         HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
         HTML += "<br />"
         HTML += "<strong>Observaciones:</strong>" + Datos(0).Observaciones
-        'HTML += "<br />"
+
         Return HTML
     End Function
-    Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
-        GV_exporterLlamadas.WriteXlsxToResponse()
+
+    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
+        If Cliente.ranking = "P" Then
+            lbl_ranking.Visible = True
+            cb_tipoImpedimento.Visible = True
+
+            btnCambiar.Visible = False
+            btnActualizar.Visible = False
+            btnCancelar.Visible = False
+        Else
+            lbl_ranking.Visible = False
+            cb_tipoImpedimento.Visible = False
+            btn_ranking.Visible = False
+
+            btnCambiar.Visible = False
+            btnActualizar.Visible = False
+            btnCancelar.Visible = False
+        End If
     End Sub
 
-    Protected Sub btn_CitasExcel_Click(sender As Object, e As EventArgs) Handles btn_CitasExcel.Click
-        GV_exporterCitas.WriteXlsxToResponse()
+    Sub BindGVEmails(ByVal emailCliente As String, ByVal emailEmpresa As String)
+        Dim Correos = BL.Obtener_correosDelCliente(emailCliente, emailEmpresa)
     End Sub
 
-    Sub GridLlamadas()
-        Dim DatosLlamadas = BL.Obtener_llamadasCliente(idCliente)
-        Session("GridLlamadas") = DatosLlamadas
+    Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
+        cb_etapas.DataSource = BL.Obtener_etapasCliente
+        cb_etapas.DataTextField = "Descripcion"
+        cb_etapas.DataValueField = "id_etapa"
+        cb_etapas.DataBind()
+
+        cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+
+    Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
+
+        cb_productos.DataSource = BL.Obtener_datos_comboProductos
+        cb_productos.DataTextField = "NombreCorto"
+        cb_productos.DataValueField = "id_producto"
+        cb_productos.DataBind()
+        cb_productos.SelectedValue = Datos(0).id_producto
+    End Sub
+#End Region
+
+#Region "WebMethods"
+    <WebMethod()>
+    Public Shared Function Correo(ByVal idEmail As String) As String
+        Return BL.Obtener_mensajeEmailID(idEmail)
+    End Function
+
     <WebMethod()>
     Public Shared Function PruebaAjax(ByVal valor As String) As String
         If BL.Cambia_realizadaLlamada(valor) Then
@@ -237,6 +215,10 @@ Public Class Cliente
         End If
         Return "No"
     End Function
+#End Region
+
+#Region "Eventos"
+    '==== RANKING ===='
     Protected Sub btn_ranking_Click(sender As Object, e As EventArgs) Handles btn_ranking.Click
         Dim Ranking As String = ""
         If cb_tipoImpedimento.SelectedValue = 1 Then Ranking = cb_preguntas.SelectedValue Else Ranking = "A"
@@ -247,6 +229,119 @@ Public Class Cliente
             lbl_mensaje.Text += MostrarError("Ocurrio un error al registrar el Ranking, intentalo nuevamente")
         End If
     End Sub
+
+    Protected Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
+        lbl_ranking.Visible = True
+        cb_tipoImpedimento.Visible = True
+        btn_ranking.Visible = True
+
+        btn_ranking.Visible = False
+        btnActualizar.Visible = True
+        btnCancelar.Visible = True
+    End Sub
+
+    Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim Ranking_Nuevo As String = ""
+        If cb_tipoImpedimento.SelectedValue = 1 Then Ranking_Nuevo = cb_preguntas.SelectedValue Else Ranking_Nuevo = "A"
+
+        If BL.Actualizar_Ranking(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo) Then
+            Response.Redirect("../Usuario/cliente.aspx?idCliente=" + idCliente.ToString, False)
+        Else
+            lbl_mensaje.Text += MostrarError("Ocurrio un error al actualizar el Ranking, intentalo nuevamente")
+        End If
+    End Sub
+
+    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        lbl_ranking.Visible = False
+        cb_tipoImpedimento.Visible = False
+        btn_ranking.Visible = False
+
+        btnCambiar.Visible = True
+        btnActualizar.Visible = False
+        btnCancelar.Visible = False
+    End Sub
+    '================='
+
+    Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
+        GV_exporterLlamadas.WriteXlsxToResponse()
+    End Sub
+
+    Protected Sub btn_CitasExcel_Click(sender As Object, e As EventArgs) Handles btn_CitasExcel.Click
+        GV_exporterCitas.WriteXlsxToResponse()
+    End Sub
+
+    Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
+        Try
+            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                GV_operaciones.DataBind()
+                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+            Else
+                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        Response.Redirect("../Usuario/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
+    End Sub
+
+    Protected Sub cb_tipoImpedimento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_tipoImpedimento.SelectedIndexChanged
+        If cb_tipoImpedimento.SelectedValue = 1 Then
+            cb_impedimentos.Visible = True
+            lbl_impedimentos.Visible = True
+
+            cb_preguntas.Visible = True
+            lbl_pregunta.Visible = True
+        Else
+            cb_impedimentos.Visible = False
+            lbl_impedimentos.Visible = False
+
+            cb_preguntas.Visible = False
+            lbl_pregunta.Visible = False
+        End If
+
+        If cb_tipoImpedimento.SelectedValue = 2 Then
+            'Ranking A
+            lbl_mensajeRanking.Text = "RANKING: A (Apto para venta)"
+        End If
+    End Sub
+
+    Protected Sub GV_operaciones_DataBinding(sender As Object, e As EventArgs) Handles GV_operaciones.DataBinding
+        GV_operaciones.DataSource = BL.Obtener_operacionesIdCliente(idCliente)
+    End Sub
+
+    Protected Sub GV_citas_DataBinding(sender As Object, e As EventArgs) Handles GV_citas.DataBinding
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(idCliente)
+    End Sub
+
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
+    Protected Sub GV_Llamadas_CustomColumnDisplayText(sender As Object, e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs) Handles GV_Llamadas.CustomColumnDisplayText
+        If e.Column.Name = "Opciones" Then
+            If GV_Llamadas.GetRowValues(e.VisibleRowIndex, "realizada") = "REALIZADA" Then
+                e.DisplayText = "Ya realizada"
+            End If
+        End If
+    End Sub
+#End Region
 
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
@@ -279,72 +374,6 @@ Public Class Cliente
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
-    End Sub
-
-    Protected Sub GV_operaciones_DataBinding(sender As Object, e As EventArgs) Handles GV_operaciones.DataBinding
-        GV_operaciones.DataSource = BL.Obtener_operacionesIdCliente(idCliente)
-    End Sub
-
-    Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
-        Try
-            '            If cb_etapas.SelectedValue = 9 Then GoTo CAMBIO_ETAPA
-
-            '            If BL.Valida_EtapaCliente(idCliente, cb_etapas.SelectedValue, Usuario.id_usuario, cb_productos.SelectedValue) Then
-            'CAMBIO_ETAPA:
-            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                GV_operaciones.DataBind()
-                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
-            Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
-            End If
-            '            Else
-            '                lbl_mensaje.Text = MostrarError("El cliente ya tiene registrada la etapa " & cb_etapas.SelectedValue)
-            '            End If
-        Catch ex As Exception
-            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
-        End Try
-    End Sub
-
-    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../Usuario/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
-    End Sub
-
-    Protected Sub GV_citas_DataBinding(sender As Object, e As EventArgs) Handles GV_citas.DataBinding
-        GV_citas.DataSource = BL.Obtener_citasCliente(idCliente)
-
-    End Sub
-
-    Protected Sub GV_Llamadas_CustomColumnDisplayText(sender As Object, e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs) Handles GV_Llamadas.CustomColumnDisplayText
-        If e.Column.Name = "Opciones" Then
-            If GV_Llamadas.GetRowValues(e.VisibleRowIndex, "realizada") = "REALIZADA" Then
-                e.DisplayText = "Ya realizada"
-            Else
-
-            End If
-
-        End If
-    End Sub
-
-    Protected Sub cb_tipoImpedimento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_tipoImpedimento.SelectedIndexChanged
-        If cb_tipoImpedimento.SelectedValue = 1 Then
-            cb_impedimentos.Visible = True
-            lbl_impedimentos.Visible = True
-
-            cb_preguntas.Visible = True
-            lbl_pregunta.Visible = True
-        Else
-            cb_impedimentos.Visible = False
-            lbl_impedimentos.Visible = False
-
-            cb_preguntas.Visible = False
-            lbl_pregunta.Visible = False
-        End If
-
-        If cb_tipoImpedimento.SelectedValue = 2 Then
-            'Ranking A
-            lbl_mensajeRanking.Text = "RANKING: A (Apto para venta)"
-        End If
-
     End Sub
 #End Region
 End Class

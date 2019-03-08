@@ -181,29 +181,124 @@ Public Class Funciones
 #End Region
 
 #Region "Citas"
-    Public Function ObtenerCampanas() As DataTable
+    Public Function ObtenerMedios() As DataTable
+        Dim Query As String = "SELECT Id_Medio, NombreMedio 
+                               FROM CampanasMedios"
+
+        ObtenerMedios = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function ObtenerCampanas(Optional ByVal Id_Medio As Integer = 0) As DataTable
         Dim Query As String = "SELECT id_campaña, campañaNombre
                                FROM campañas
                                WHERE Activa = 1"
 
+        If Id_Medio > 0 Then Query += " AND Id_Medio = " & Id_Medio
+        Query += "ORDER BY campañaNombre"
+
         ObtenerCampanas = GE_SQL.SQLGetTable(Query)
     End Function
 
-    Public Function ObtenerTipoCampana(ByVal IdCampana As Integer) As String
+    Public Function Obtener_Proyectos() As DataTable
+        Dim Query As String = "SELECT DISTINCT(abrev_fracc) Proyecto, Fraccionamiento
+                               FROM productos
+                               ORDER BY Proyecto"
+
+        Obtener_Proyectos = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function Obtener_ModelosXProyecto(ByVal Proyecto As String) As DataTable
+        Dim Query As String = "SELECT id_producto, NombreCorto Modelo
+                               FROM productos 
+                               WHERE abrev_fracc = '" & Proyecto & "'
+                               ORDER BY Modelo"
+
+        Obtener_ModelosXProyecto = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function Obtener_TipoCampana(ByVal IdCampana As Integer) As String
         Dim Query As String = String.Format("SELECT tipocampaña
                                              FROM campañas CP
                                              INNER JOIN tipocampaña TP ON TP.id_tipoCampaña = CP.id_tipoCampaña
                                              WHERE CP.id_campaña = {0}", IdCampana)
 
-        ObtenerTipoCampana = GE_SQL.SQLGetDataStr(Query)
+        Obtener_TipoCampana = GE_SQL.SQLGetDataStr(Query)
+    End Function
+
+    Public Function Obtener_CitasCliente(ByVal IdCliente As Integer) As DataTable
+        Dim Query As String = "SELECT CCL.Id_Cita, CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto, 
+	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status
+                               FROM Clientes CL
+                               INNER JOIN CitasClientes CCL ON CCL.Id_Cliente = CL.id_cliente
+                               INNER JOIN campañas CP ON CP.id_campaña =  CCL.Id_Campana
+                               INNER JOIN productos PR ON PR.id_producto =  CCL.Modelo
+                               WHERE CCL.Id_Cliente = " & IdCliente
+
+        Obtener_CitasCliente = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function Obtener_EstatusCita(ByVal IdCita As Integer) As Integer
+        Dim Query As String = String.Format("SELECT Status FROM CitasClientes WHERE Id_Cita = {0}", IdCita)
+        Obtener_EstatusCita = GE_SQL.SQLGetDataDbl(Query)
+    End Function
+
+    Public Function Obtener_ObservacionesCitas(ByVal IdCita As Integer) As DataTable
+        Dim Query As String = "SELECT CONCAT(US.nombre, ' ', US.apellidoPaterno, ' ', US.apellidoMaterno) Usuario, CO.Observaciones, CO.Creacion
+                               FROM CitasObservaciones CO
+                               INNER JOIN usuarios US ON US.id_usuario = CO.Id_Usuario
+                               WHERE CO.Id_Cita = " & IdCita
+
+        Obtener_ObservacionesCitas = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Sub Verificar_VigenciaCitas(ByVal IdCliente As Integer)
+        Dim Query As String = ""
+        Dim DT As New DataTable
+
+        DT = Obtener_CitasCliente(IdCliente)
+        For Each Row As DataRow In DT.Rows
+            Query += "EXEC [dbo].[Verificar_VigenciaCitas]
+                        @pId_Cita = " & Row("Id_Cita") & ";"
+        Next
+
+        GE_SQL.SQLExecSQL(Query, SQL_Functions.TipoTransaccion.UniqueTransaction)
+    End Sub
+#End Region
+
+#Region "Clientes"
+    Public Function Generar_NSSAleatorio() As String
+        Dim RND As New Random()
+        Dim Digito As Integer
+        Dim Numeros(5) As Integer
+        Dim Codigo As String = ""
+
+        For x As Integer = 0 To 5
+Inicio:
+            Digito = RND.Next(10)
+            For y As Integer = 0 To 5
+                If Digito = Numeros(y) Then GoTo Inicio
+            Next y
+            Numeros(x) = Digito
+        Next x
+
+        For i As Integer = 0 To 5
+            Codigo = Codigo & (Numeros(i))
+        Next
+
+        Generar_NSSAleatorio = Codigo
+    End Function
+
+    Public Function ObtenerRankingCliente(ByVal IdCliente As Integer) As String
+        Dim Query As String = String.Format("SELECT Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
+        ObtenerRankingCliente = GE_SQL.SQLGetDataStr(Query)
     End Function
 #End Region
+
 #Region "Reportes"
     Public Function Obtener_ReporteCalidad(ByVal FechaInicial As Date, ByVal FechaFin As Date) As DataTable
+        Dim ROWA As DataRow
         Dim DTA As New DataTable
         Dim DTB As New DataTable
-
-        Dim ROWA As DataRow
 
         Dim Query As String = "EXEC [dbo].[Reporte_Calidad]
 		                            @FechaInicio = N'" & FechaInicial & "',
@@ -217,7 +312,6 @@ Public Class Funciones
                               New DataColumn("FechaEntrega", GetType(String)), New DataColumn("Telefono1", GetType(String)), New DataColumn("Telefono2", GetType(String)), New DataColumn("Empresa", GetType(String)),
                               New DataColumn("Departamento", GetType(String)), New DataColumn("Conyuge", GetType(String)), New DataColumn("Asesor", GetType(String)), New DataColumn("Integrador", GetType(String)),
                               New DataColumn("Titular", GetType(String)), New DataColumn("Responsable", GetType(String)), New DataColumn("Ranqueo", GetType(String)), New DataColumn("Visita", GetType(Date))})
-
 
         If DTA.Rows.Count <> 0 Then
             For j As Integer = 0 To DTA.Rows.Count - 1
@@ -257,33 +351,35 @@ Public Class Funciones
     Public Function Obtener_ReporteCumplimiento(ByVal FechaInicial As Date, ByVal FechaFin As Date) As DataSet
         Dim ROW As DataRow
         Dim DTA As New DataTable
-        Dim DTA_Proyectos As New DataTable
-        Dim DTA_DatosCumplimiento As New DataTable
-        Dim DTA_DetalleCumplimiento As New DataTable
-        Dim DTS As New DataSet
+        Dim DTB As New DataTable
+        Dim DTC As New DataTable
+        Dim DTD As New DataTable
+
+        Dim DSR As New DataSet
+
         Dim Query As String = ""
 
         Query = "EXEC [dbo].[Obtener_Proyectos]"
-        DTA_Proyectos = GE_SQL.SQLGetTable(Query)
+        DTB = GE_SQL.SQLGetTable(Query)
 
         DTA.Columns.AddRange({New DataColumn("Proyecto", GetType(String)), New DataColumn("Cantidad", GetType(Integer)),
                               New DataColumn("Campana", GetType(String)), New DataColumn("TipoCampana", GetType(String))})
 
-        If DTA_Proyectos.Rows.Count <> 0 Then
-            For i As Integer = 0 To DTA_Proyectos.Rows.Count - 1
+        If DTB.Rows.Count <> 0 Then
+            For i As Integer = 0 To DTB.Rows.Count - 1
                 Query = "EXEC [dbo].[Reporte_CumplimientoProyectoCampaña]
-                                    @Proyecto = N'" & DTA_Proyectos.Rows(i).Item("abrev_fracc") & "',
+                                    @Proyecto = N'" & DTB.Rows(i).Item("abrev_fracc") & "',
 		                            @FechaInicio = N'" & FechaInicial & "',
 	                                @FechaFin = N'" & FechaFin & "'"
-                DTA_DatosCumplimiento = GE_SQL.SQLGetTable(Query)
+                DTC = GE_SQL.SQLGetTable(Query)
 
-                If DTA_DatosCumplimiento.Rows.Count <> 0 Then
-                    For j As Integer = 0 To DTA_DatosCumplimiento.Rows.Count - 1
+                If DTC.Rows.Count <> 0 Then
+                    For j As Integer = 0 To DTC.Rows.Count - 1
                         ROW = DTA.NewRow
-                        ROW("Proyecto") = DTA_Proyectos.Rows(i).Item("abrev_fracc")
-                        ROW("Cantidad") = DTA_DatosCumplimiento.Rows(j).Item("Cantidad").ToString().Trim
-                        ROW("Campana") = DTA_DatosCumplimiento.Rows(j).Item("Campana").ToString().Trim
-                        ROW("TipoCampana") = DTA_DatosCumplimiento.Rows(j).Item("TipoCampana").ToString().Trim
+                        ROW("Proyecto") = DTB.Rows(i).Item("abrev_fracc")
+                        ROW("Cantidad") = DTC.Rows(j).Item("Cantidad").ToString().Trim
+                        ROW("Campana") = DTC.Rows(j).Item("Campana").ToString().Trim
+                        ROW("TipoCampana") = DTC.Rows(j).Item("TipoCampana").ToString().Trim
 
                         DTA.Rows.Add(ROW)
                     Next
@@ -292,42 +388,42 @@ Public Class Funciones
         End If
         DTA.TableName = "DTA_DatosCumplimiento"
 
-        Dim DTB As New DataTable
+        Dim DTE As New DataTable
 
-        DTB.Columns.AddRange({New DataColumn("Semana", GetType(Integer)), New DataColumn("Asesor", GetType(String)), New DataColumn("Cliente", GetType(String)), New DataColumn("Ranking", GetType(String)),
+        DTE.Columns.AddRange({New DataColumn("Semana", GetType(Integer)), New DataColumn("Asesor", GetType(String)), New DataColumn("Cliente", GetType(String)), New DataColumn("Ranking", GetType(String)),
                               New DataColumn("Prototipo", GetType(String)), New DataColumn("Fraccionamiento", GetType(String)), New DataColumn("FechaInicio", GetType(Date)),
                               New DataColumn("Etapa", GetType(String)), New DataColumn("campanaNombre", GetType(String))})
 
-        For i As Integer = 0 To DTA_Proyectos.Rows.Count - 1
+        For i As Integer = 0 To DTB.Rows.Count - 1
             Query = "EXEC [dbo].[Reporte_CumplimientoProyectoDetalles]
-                                    @Proyecto = N'" & DTA_Proyectos.Rows(i).Item("abrev_fracc") & "',
+                                    @Proyecto = N'" & DTB.Rows(i).Item("abrev_fracc") & "',
 		                            @FechaInicio = N'" & FechaInicial & "',
 	                                @FechaFin = N'" & FechaFin & "'"
-            DTA_DetalleCumplimiento = GE_SQL.SQLGetTable(Query)
+            DTD = GE_SQL.SQLGetTable(Query)
 
-            If DTA_DetalleCumplimiento.Rows.Count <> 0 Then
-                For j As Integer = 0 To DTA_DetalleCumplimiento.Rows.Count - 1
-                    ROW = DTB.NewRow
-                    ROW("Semana") = DTA_DetalleCumplimiento.Rows(j).Item("semana")
-                    ROW("Asesor") = DTA_DetalleCumplimiento.Rows(j).Item("asesor")
-                    ROW("Cliente") = DTA_DetalleCumplimiento.Rows(j).Item("cliente")
-                    ROW("Ranking") = DTA_DetalleCumplimiento.Rows(j).Item("Ranking")
-                    ROW("Prototipo") = DTA_DetalleCumplimiento.Rows(j).Item("prototipo")
-                    ROW("Fraccionamiento") = DTA_DetalleCumplimiento.Rows(j).Item("fraccionamiento")
-                    ROW("FechaInicio") = DTA_DetalleCumplimiento.Rows(j).Item("fechaInicio")
-                    ROW("Etapa") = DTA_DetalleCumplimiento.Rows(j).Item("etapa")
-                    ROW("campanaNombre") = DTA_DetalleCumplimiento.Rows(j).Item("campañaNombre")
+            If DTD.Rows.Count <> 0 Then
+                For j As Integer = 0 To DTD.Rows.Count - 1
+                    ROW = DTE.NewRow
+                    ROW("Semana") = DTD.Rows(j).Item("semana")
+                    ROW("Asesor") = DTD.Rows(j).Item("asesor")
+                    ROW("Cliente") = DTD.Rows(j).Item("cliente")
+                    ROW("Ranking") = DTD.Rows(j).Item("Ranking")
+                    ROW("Prototipo") = DTD.Rows(j).Item("prototipo")
+                    ROW("Fraccionamiento") = DTD.Rows(j).Item("fraccionamiento")
+                    ROW("FechaInicio") = DTD.Rows(j).Item("fechaInicio")
+                    ROW("Etapa") = DTD.Rows(j).Item("etapa")
+                    ROW("campanaNombre") = DTD.Rows(j).Item("campañaNombre")
 
-                    DTB.Rows.Add(ROW)
+                    DTE.Rows.Add(ROW)
                 Next
             End If
         Next
-        DTB.TableName = "DTB_CumplimientoProyectoDetalles"
-        DTS.Tables.Add(DTA)
-        DTS.Tables.Add(DTB)
 
-        Return DTS
+        DTE.TableName = "DTB_CumplimientoProyectoDetalles"
+        DSR.Tables.Add(DTA)
+        DSR.Tables.Add(DTE)
 
+        Return DSR
     End Function
 #End Region
 End Class

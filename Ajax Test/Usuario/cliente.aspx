@@ -186,33 +186,51 @@
             <asp:Literal ID="lbl_botonCitas" runat="server"></asp:Literal>
             <div class="table-scrollable">
                 <dx:ASPxGridViewExporter ID="GV_exporterCitas" runat="server" GridViewID="GV_citas"></dx:ASPxGridViewExporter>
-                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False">
+                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsSearchPanel Visible="True" />
                     <Columns>
-                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_cita" VisibleIndex="0">
+                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="Id_Cita" VisibleIndex="0">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                             <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Usuario/ObservacionesCita.aspx?idCita={0}&quot; class=&quot;btn btn-sm green&quot; &gt;Observaciones&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="LugarContacto" Caption="Lugar Contacto" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Fraccionamiento" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn Caption="Fecha Programada" FieldName="FechaProgramada" VisibleIndex="2">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="Hora Programada" FieldName="HoraProgramacion" VisibleIndex="3">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Hora Termino" FieldName="HoraTermino" VisibleIndex="4">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Lugar" FieldName="Lugar" VisibleIndex="5">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Aviso Cliente" FieldName="AvisoCliente" VisibleIndex="6" Visible="False">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="AvisoUsuario" VisibleIndex="7" Caption="Aviso">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Calificación" FieldName="Calificacion" VisibleIndex="9">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Realizada" FieldName="realizada" VisibleIndex="8">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="10">
+                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Cita" VisibleIndex="8">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>

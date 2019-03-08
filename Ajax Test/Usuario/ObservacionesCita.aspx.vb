@@ -1,8 +1,12 @@
 ﻿Public Class ObservacionesCita
     Inherits System.Web.UI.Page
+
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
     Dim idCita As Integer = 0
+
+    Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         Try
@@ -13,43 +17,67 @@
 
         If idCita > 0 Then
             If Page.IsPostBack Then
+
             Else
-                Dim Datos = BL.Obtener_observacionesCita(idCita)
-
-                If Datos.Realizada = 1 Then
-                    rb_realizada.SelectedValue = "Si"
-                Else
-                    rb_realizada.SelectedValue = "No"
-                End If
-
-                tb_observaciones.Text = Datos.Observaciones
+                UI()
             End If
         Else
             Response.Redirect("/", False)
         End If
     End Sub
+
+    Public Sub UI()
+        tb_observaciones.Text = ""
+        rBtnRealizada.SelectedIndex = 0
+
+        If GE_Funciones.Obtener_EstatusCita(idCita) Then
+            btn_guardar.Enabled = False
+            btn_guardar.Visible = False
+        Else
+            btn_guardar.Enabled = True
+            btn_guardar.Visible = True
+        End If
+
+        ObtenerObservacionesCitas()
+    End Sub
+
+    Private Sub ObtenerObservacionesCitas()
+        Dim HTML As String = ""
+
+        Dim DTA As New DataTable
+        DTA = GE_Funciones.Obtener_ObservacionesCitas(idCita)
+
+        For Each rowA As DataRow In DTA.Rows
+            HTML += "<div class=""form-group""> " &
+                    "   <label><b><i>" & rowA("Usuario") & "</i></b></label> - " & rowA("Creacion") & "" &
+                    "</div> " &
+                    "<div class=""form-group""> " &
+                    "   <label><b>Observaciones:</b></label> " &
+                    "   <textarea class=""form-control"" rows=""3"" placeholder=""" & rowA("Observaciones") & """ disabled></textarea> " &
+                    "</div>"
+        Next
+
+        lbHtml.Text = HTML
+    End Sub
+
+#Region "Eventos"
     Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
         If Trim(tb_observaciones.Text) = "" Then
-
-            lbl_mensaje.Text = MostrarError("No existe ningún comentario")
+            lbl_mensaje.Text = MostrarAviso("¡No existe ningún comentario para guardar!")
         Else
             Try
-                If BL.ObservacionesCita(idCita, tb_observaciones.Text, If(rb_realizada.SelectedValue = "Si", 1, 0)) Then
-                    Try
-                        BL.Enviar_CorreoCitaCliente(idCita)
-                    Catch ex As Exception
-
-                    End Try
-
-                    lbl_mensaje.Text = MostrarExito("Comentarios guardados")
+                If BL.Insertar_ObservacionesCitas(idCita, Usuario.id_usuario, rBtnRealizada.SelectedItem.Value, tb_observaciones.Text) Then
+                    UI()
+                    lbl_mensaje.Text = MostrarExito("¡Comentarios Guardados Exitosamente!")
                 Else
-                    lbl_mensaje.Text = MostrarError("Ocurrió un problema por favor verifique los datos ingresados ")
+                    lbl_mensaje.Text = MostrarError("¡No fue posible guardar los comentarios! ")
                 End If
             Catch ex As Exception
-                lbl_mensaje.Text = MostrarError("Ocurrió un problema por favor verifique los datos ingresados " + ex.Message)
+                lbl_mensaje.Text = MostrarError("¡Ocurrio un error al guardar las observaciones! <br />" + ex.Message)
             End Try
         End If
     End Sub
+#End Region
 
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
@@ -74,6 +102,7 @@
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1

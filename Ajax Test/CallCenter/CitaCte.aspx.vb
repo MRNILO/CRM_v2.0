@@ -135,7 +135,7 @@
     End Function
 
     Private Sub ObtenerTipoCampana(ByVal IdCampana As Integer)
-        tb_TipoCampana.Text = GE_Funciones.ObtenerTipoCampana(IdCampana)
+        tb_TipoCampana.Text = GE_Funciones.Obtener_TipoCampana(IdCampana)
     End Sub
 
     Private Sub VerificarVigenciaCita()
@@ -164,14 +164,17 @@
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
             If BL.Insertar_CitaCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, cmBoxCampana.SelectedItem.Text,
-                                          cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO",
-                                          cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, 1) Then
+                              cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "VIGENTE",
+                              cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, 1) Then
 
                 Response.Redirect("Citas.aspx", False)
+            Else
+                lbl_mensaje.Text = "<strong>No se pudo guardar la cita</strong>"
             End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
+
     End Sub
 #End Region
 

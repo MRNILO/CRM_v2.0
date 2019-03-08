@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
+  <xs:element name="Obtener_tiporeferencia">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_tiporeferenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tiporeferenciaResult" nillable="true" type="q1:ArrayOfCTipoReferencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_usuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_usuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inserta_usuariosResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Elimina_usuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Elimina_usuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Elimina_usuariosResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Actualiza_usuarios">
     <xs:complexType>
       <xs:sequence>
@@ -28,7 +75,7 @@
   <xs:element name="Obtener_usuarios_todosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuarios_todosResult" nillable="true" type="q1:ArrayOfCUsuarios" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuarios_todosResult" nillable="true" type="q2:ArrayOfCUsuarios" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +89,7 @@
   <xs:element name="Obtener_usuarios_detallesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuarios_detallesResult" nillable="true" type="q2:CUsuarios" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuarios_detallesResult" nillable="true" type="q3:CUsuarios" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,7 +130,7 @@
   <xs:element name="Obtener_estadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_estadosResult" nillable="true" type="q3:ArrayOfCEstados" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_estadosResult" nillable="true" type="q4:ArrayOfCEstados" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -97,7 +144,7 @@
   <xs:element name="Obtener_ciudadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ciudadResult" nillable="true" type="q4:ArrayOfCCiudades" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ciudadResult" nillable="true" type="q5:ArrayOfCCiudades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -146,7 +193,7 @@
   <xs:element name="Obtener_etapasClienteDetallesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_etapasClienteDetallesResult" nillable="true" type="q5:ArrayOfCEtapasDetalles" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_etapasClienteDetallesResult" nillable="true" type="q6:ArrayOfCEtapasDetalles" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -213,7 +260,7 @@
   <xs:element name="Obtener_tareas_prioridadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareas_prioridadResult" nillable="true" type="q6:ArrayOfCTareasPrioridad" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareas_prioridadResult" nillable="true" type="q7:ArrayOfCTareasPrioridad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -227,7 +274,7 @@
   <xs:element name="Obtener_tareasPendientesUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareasPendientesUsuarioResult" nillable="true" type="q7:ArrayOfCTareasPendientes" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareasPendientesUsuarioResult" nillable="true" type="q8:ArrayOfCTareasPendientes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -241,7 +288,7 @@
   <xs:element name="Obtener_tareasTerminadasUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareasTerminadasUsuarioResult" nillable="true" type="q8:ArrayOfCTareasPendientes" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tareasTerminadasUsuarioResult" nillable="true" type="q9:ArrayOfCTareasPendientes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -269,7 +316,7 @@
   <xs:element name="Obtener_detallesEmailLlamadaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_detallesEmailLlamadaResult" nillable="true" type="q9:CDetallesEmail" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_detallesEmailLlamadaResult" nillable="true" type="q10:CDetallesEmail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -283,7 +330,7 @@
   <xs:element name="ObtenerDetallesCitaEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="ObtenerDetallesCitaEmailResult" nillable="true" type="q10:CDetallesEmailCita" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="ObtenerDetallesCitaEmailResult" nillable="true" type="q11:CDetallesEmailCita" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -326,7 +373,7 @@
   <xs:element name="Obtener_correosDelClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_correosDelClienteResult" nillable="true" type="q11:ArrayOfCCorreosCliente" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_correosDelClienteResult" nillable="true" type="q12:ArrayOfCCorreosCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -409,7 +456,7 @@
   <xs:element name="Obtener_emailsUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_emailsUsuarioResult" nillable="true" type="q12:ArrayOfCEmailsUsuario" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_emailsUsuarioResult" nillable="true" type="q13:ArrayOfCEmailsUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -423,7 +470,7 @@
   <xs:element name="Obtener_enviadosUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_enviadosUsuarioResult" nillable="true" type="q13:ArrayOfCEmailsUsuario" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_enviadosUsuarioResult" nillable="true" type="q14:ArrayOfCEmailsUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +484,7 @@
   <xs:element name="Obtener_configuracionEmailUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_configuracionEmailUsuarioResult" nillable="true" type="q14:CConfiguracionEmail" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_configuracionEmailUsuarioResult" nillable="true" type="q15:CConfiguracionEmail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -452,7 +499,7 @@
   <xs:element name="Obtener_CancelacionesEnkontrolResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_CancelacionesEnkontrolResult" nillable="true" type="q15:ArrayOfCancelacionesEnkontrol" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_CancelacionesEnkontrolResult" nillable="true" type="q16:ArrayOfCancelacionesEnkontrol" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -467,7 +514,7 @@
   <xs:element name="Obtener_SeparacionesEnkontrolResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_SeparacionesEnkontrolResult" nillable="true" type="q16:ArrayOfSeparacionesEnkontrol" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_SeparacionesEnkontrolResult" nillable="true" type="q17:ArrayOfSeparacionesEnkontrol" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -482,7 +529,7 @@
   <xs:element name="Obtener_ProspeccionesEnkontrolResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProspeccionesEnkontrolResult" nillable="true" type="q17:ArrayOfProspeccionesEnkontrol" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProspeccionesEnkontrolResult" nillable="true" type="q18:ArrayOfProspeccionesEnkontrol" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -497,7 +544,7 @@
   <xs:element name="Obtener_ProspeccionesCRMResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProspeccionesCRMResult" nillable="true" type="q18:ArrayOfProspeccionesCRM" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProspeccionesCRMResult" nillable="true" type="q19:ArrayOfProspeccionesCRM" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -512,7 +559,7 @@
   <xs:element name="Obtener_VisitasCRMResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_VisitasCRMResult" nillable="true" type="q19:ArrayOfVisitasCRM" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_VisitasCRMResult" nillable="true" type="q20:ArrayOfVisitasCRM" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -527,7 +574,7 @@
   <xs:element name="Obtener_SeparacionesCRMResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_SeparacionesCRMResult" nillable="true" type="q20:ArrayOfSeparacionesCRM" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_SeparacionesCRMResult" nillable="true" type="q21:ArrayOfSeparacionesCRM" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -543,7 +590,7 @@
   <xs:element name="Obtener_DatosARPAResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosARPAResult" nillable="true" type="q21:ArrayOfReporteArpa" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosARPAResult" nillable="true" type="q22:ArrayOfReporteArpa" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -558,7 +605,7 @@
   <xs:element name="Obtener_DatosCalidadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosCalidadResult" nillable="true" type="q22:ArrayOfReporteCalidad" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosCalidadResult" nillable="true" type="q23:ArrayOfReporteCalidad" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -574,7 +621,7 @@
   <xs:element name="Obtener_DetallesCumplimientoProyectoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DetallesCumplimientoProyectoResult" nillable="true" type="q23:ArrayOfDetallesCumplimiento" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DetallesCumplimientoProyectoResult" nillable="true" type="q24:ArrayOfDetallesCumplimiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -590,7 +637,7 @@
   <xs:element name="Obtener_DatosCumplimientoProyectoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosCumplimientoProyectoResult" nillable="true" type="q24:ArrayOfDatosCumplimiento" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DatosCumplimientoProyectoResult" nillable="true" type="q25:ArrayOfDatosCumplimiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -606,7 +653,7 @@
   <xs:element name="Obtener_TotalesCumplimientoProyectoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TotalesCumplimientoProyectoResult" nillable="true" type="q25:ArrayOfTotalesCumplimiento" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TotalesCumplimientoProyectoResult" nillable="true" type="q26:ArrayOfTotalesCumplimiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -618,7 +665,7 @@
   <xs:element name="Obtener_ProyectosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProyectosResult" nillable="true" type="q26:ArrayOfProyectos" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_ProyectosResult" nillable="true" type="q27:ArrayOfProyectos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -630,7 +677,7 @@
   <xs:element name="Obtener_TipoUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TipoUsuarioResult" nillable="true" type="q27:ArrayOfTipoUsuario" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TipoUsuarioResult" nillable="true" type="q28:ArrayOfTipoUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -644,7 +691,55 @@
   <xs:element name="Obtener_notificacionesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_notificacionesResult" nillable="true" type="q28:ArrayOfCNotifica" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_notificacionesResult" nillable="true" type="q29:ArrayOfCNotifica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_llamadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="HoraProgramacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_llamadasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inserta_llamadasResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualiza_llamadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
+        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="HoraProgramacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualiza_llamadasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualiza_llamadasResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -672,7 +767,7 @@
   <xs:element name="Obtener_llamadas_usuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadas_usuarioResult" nillable="true" type="q29:ArrayOfCLlamadas" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadas_usuarioResult" nillable="true" type="q30:ArrayOfCLlamadas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -686,7 +781,7 @@
   <xs:element name="Obtener_llamadas_clienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadas_clienteResult" nillable="true" type="q30:ArrayOfCLlamadas" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadas_clienteResult" nillable="true" type="q31:ArrayOfCLlamadas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -700,7 +795,7 @@
   <xs:element name="Obtener_llamadasClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadasClienteResult" nillable="true" type="q31:ArrayOfCLlamadasCliente" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadasClienteResult" nillable="true" type="q32:ArrayOfCLlamadasCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -745,7 +840,7 @@
   <xs:element name="Obtener_llamadasFechaUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadasFechaUsuarioResult" nillable="true" type="q32:ArrayOfCLlamadasFechas" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadasFechaUsuarioResult" nillable="true" type="q33:ArrayOfCLlamadasFechas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -800,7 +895,7 @@
   <xs:element name="Obtener_nivelinteresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nivelinteresResult" nillable="true" type="q33:ArrayOfCNivelInteres" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nivelinteresResult" nillable="true" type="q34:ArrayOfCNivelInteres" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -812,7 +907,7 @@
   <xs:element name="Obtener_datos_comboProductosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_datos_comboProductosResult" nillable="true" type="q34:ArrayOfCComboProductos" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_datos_comboProductosResult" nillable="true" type="q35:ArrayOfCComboProductos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -881,7 +976,7 @@
   <xs:element name="Obtener_productosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_productosResult" nillable="true" type="q35:ArrayOfCProductos" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_productosResult" nillable="true" type="q36:ArrayOfCProductos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -893,7 +988,7 @@
   <xs:element name="Obtener_Productos_DetallesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_Productos_DetallesResult" nillable="true" type="q36:ArrayOfCProductosDetalles" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_Productos_DetallesResult" nillable="true" type="q37:ArrayOfCProductosDetalles" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -907,7 +1002,7 @@
   <xs:element name="Obtener_detallesProductoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_detallesProductoResult" nillable="true" type="q37:CDetallesProducto" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_detallesProductoResult" nillable="true" type="q38:CDetallesProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -984,7 +1079,7 @@
   <xs:element name="Obtener_referencias_clienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_referencias_clienteResult" nillable="true" type="q38:ArrayOfCReferenciasCliente" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_referencias_clienteResult" nillable="true" type="q39:ArrayOfCReferenciasCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1039,7 +1134,7 @@
   <xs:element name="Obtener_rubrosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_rubrosResult" nillable="true" type="q39:ArrayOfCRubros" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_rubrosResult" nillable="true" type="q40:ArrayOfCRubros" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1051,7 +1146,7 @@
   <xs:element name="Obtener_oportunidadesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_oportunidadesResult" nillable="true" type="q40:ArrayOfCOportunidades" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_oportunidadesResult" nillable="true" type="q41:ArrayOfCOportunidades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1066,7 +1161,7 @@
   <xs:element name="Obtener_reporte_clientesFechasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_reporte_clientesFechasResult" nillable="true" type="q41:ArrayOfObtener_reporte_clientesFechas" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_reporte_clientesFechasResult" nillable="true" type="q42:ArrayOfObtener_reporte_clientesFechas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1080,7 +1175,7 @@
   <xs:element name="Obtener_nombresClientesidSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nombresClientesidSupervisorResult" nillable="true" type="q42:ArrayOfCCLientesSupervisor" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nombresClientesidSupervisorResult" nillable="true" type="q43:ArrayOfCCLientesSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1099,6 +1194,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Cambia_usuarioClienteSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="idSupervsor" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cambia_usuarioClienteSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cambia_usuarioClienteSupervisorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_UsuarioDetalleSupervisor">
     <xs:complexType>
       <xs:sequence>
@@ -1109,7 +1220,7 @@
   <xs:element name="Obtener_UsuarioDetalleSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_UsuarioDetalleSupervisorResult" nillable="true" type="q43:ArrayOfCUsuariosDetalleSup" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_UsuarioDetalleSupervisorResult" nillable="true" type="q44:ArrayOfCUsuariosDetalleSup" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1121,7 +1232,7 @@
   <xs:element name="Obtener_DetalleSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DetalleSupervisorResult" nillable="true" type="q44:ArrayOfCDetalleSupervisor" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_DetalleSupervisorResult" nillable="true" type="q45:ArrayOfCDetalleSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1168,7 +1279,7 @@
   <xs:element name="Obtener_supervisoresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_supervisoresResult" nillable="true" type="q45:ArrayOfCSupervisores" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_supervisoresResult" nillable="true" type="q46:ArrayOfCSupervisores" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1182,7 +1293,7 @@
   <xs:element name="Obtener_clientesSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_clientesSupervisorResult" nillable="true" type="q46:ArrayOfClientesSupervisor" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_clientesSupervisorResult" nillable="true" type="q47:ArrayOfClientesSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1196,7 +1307,7 @@
   <xs:element name="Obtener_usuariosSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuariosSupervisorResult" nillable="true" type="q47:ArrayOfCUsuariosSupervisor" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_usuariosSupervisorResult" nillable="true" type="q48:ArrayOfCUsuariosSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1212,7 +1323,7 @@
   <xs:element name="Obtener_AcumuladosSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_AcumuladosSupervisorResult" nillable="true" type="q48:ArrayOfCAcumuladosSupervisor" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_AcumuladosSupervisorResult" nillable="true" type="q49:ArrayOfCAcumuladosSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1226,7 +1337,7 @@
   <xs:element name="Obtener_nombresUsuariosSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nombresUsuariosSupervisorResult" nillable="true" type="q49:ArrayOfCSupervisorUsuarios" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_nombresUsuariosSupervisorResult" nillable="true" type="q50:ArrayOfCSupervisorUsuarios" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1240,7 +1351,7 @@
   <xs:element name="DiasSinTrabajarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarResult" nillable="true" type="q50:ArrayOfDiasSinTrabajar" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarResult" nillable="true" type="q51:ArrayOfDiasSinTrabajar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1255,7 +1366,7 @@
   <xs:element name="DiasSinTrabajarEtapaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarEtapaResult" nillable="true" type="q51:ArrayOfDiasSinTrabajar" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarEtapaResult" nillable="true" type="q52:ArrayOfDiasSinTrabajar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1273,7 +1384,7 @@
   <xs:element name="DiasSinTrabajarEtapaFiltroResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarEtapaFiltroResult" nillable="true" type="q52:ArrayOfDiasSinTrabajar" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarEtapaFiltroResult" nillable="true" type="q53:ArrayOfDiasSinTrabajar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1288,7 +1399,7 @@
   <xs:element name="DiasSinTrabajarFiltroResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarFiltroResult" nillable="true" type="q53:ArrayOfDiasSinTrabajar" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="DiasSinTrabajarFiltroResult" nillable="true" type="q54:ArrayOfDiasSinTrabajar" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1302,7 +1413,7 @@
   <xs:element name="Obtener_supervisor_DetallesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_supervisor_DetallesResult" nillable="true" type="q54:CDetallesSupervisor" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_supervisor_DetallesResult" nillable="true" type="q55:CDetallesSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1393,7 +1504,7 @@
   <xs:element name="Obtener_relacion_supervisorUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_relacion_supervisorUsuarioResult" nillable="true" type="q55:ArrayOfCRelacionSupervisorUsuario" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_relacion_supervisorUsuarioResult" nillable="true" type="q56:ArrayOfCRelacionSupervisorUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1407,7 +1518,7 @@
   <xs:element name="Obtener_telefonosModificaClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonosModificaClienteResult" nillable="true" type="q56:ArrayOfCTelefonosmodifica" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonosModificaClienteResult" nillable="true" type="q57:ArrayOfCTelefonosmodifica" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1468,7 +1579,7 @@
   <xs:element name="Obtener_telefonoClienteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoClienteResult" nillable="true" type="q57:ArrayOfCTelefonoCliente" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoClienteResult" nillable="true" type="q58:ArrayOfCTelefonoCliente" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1529,7 +1640,7 @@
   <xs:element name="Obtener_telefonoContactoEmpresaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoContactoEmpresaResult" nillable="true" type="q58:ArrayOfCTelefonoContactoEmpresa" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoContactoEmpresaResult" nillable="true" type="q59:ArrayOfCTelefonoContactoEmpresa" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1590,7 +1701,7 @@
   <xs:element name="Obtener_TelefonoEmpresaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TelefonoEmpresaResult" nillable="true" type="q59:ArrayOfCTelefonoEmpresa" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TelefonoEmpresaResult" nillable="true" type="q60:ArrayOfCTelefonoEmpresa" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1651,7 +1762,7 @@
   <xs:element name="Obtener_telefonoReferenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoReferenciaResult" nillable="true" type="q60:ArrayOfCTelefonoReferencia" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoReferenciaResult" nillable="true" type="q61:ArrayOfCTelefonoReferencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1712,7 +1823,7 @@
   <xs:element name="Obtener_telefonoSupervisorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoSupervisorResult" nillable="true" type="q61:ArrayOfCTelefonoSupervisor" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoSupervisorResult" nillable="true" type="q62:ArrayOfCTelefonoSupervisor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1773,7 +1884,7 @@
   <xs:element name="Obtener_telefonoUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoUsuarioResult" nillable="true" type="q62:ArrayOfCTelefonoUsuario" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_telefonoUsuarioResult" nillable="true" type="q63:ArrayOfCTelefonoUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1828,7 +1939,7 @@
   <xs:element name="Obtener_tipocampañaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tipocampañaResult" nillable="true" type="q63:ArrayOfCTipoCampaña" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tipocampañaResult" nillable="true" type="q64:ArrayOfCTipoCampaña" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1872,53 +1983,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Actualiza_tiporeferenciaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Obtener_tiporeferencia">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Obtener_tiporeferenciaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_tiporeferenciaResult" nillable="true" type="q64:ArrayOfCTipoReferencia" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_usuarios">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
-        <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_usuariosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Inserta_usuariosResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Elimina_usuarios">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Elimina_usuariosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Elimina_usuariosResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2592,6 +2656,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_Cita">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuarioAsignado" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCampana" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoCampana" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Origen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LugarContacto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Modelo" type="xs:int" />
+        <xs:element minOccurs="0" name="VigenciaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="VigenciaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaCita" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_CitaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_CitaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Insertar_CitaCallCenter">
     <xs:complexType>
       <xs:sequence>
@@ -2616,6 +2707,23 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Insertar_CitaCallCenterResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_ObservacionesCitas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCita" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="Completada" type="xs:int" />
+        <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_ObservacionesCitasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_ObservacionesCitasResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3231,54 +3339,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_llamadasPendientesHoyUsuarioResult" nillable="true" type="q105:ArrayOfCLlamadasPendientesHoyUsuario" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_llamadas">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
-        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="HoraProgramacion" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_llamadasResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Inserta_llamadasResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Actualiza_llamadas">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
-        <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
-        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-        <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="HoraProgramacion" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Actualiza_llamadasResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Actualiza_llamadasResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
