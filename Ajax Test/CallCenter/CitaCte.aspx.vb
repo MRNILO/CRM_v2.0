@@ -11,7 +11,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
+        Id_Cliente = Request.QueryString("idCliente")
         Try
             lbl_generales.Text = Crea_generalesCliente()
         Catch ex As Exception
@@ -45,10 +45,10 @@
         cargarCitas()
     End Sub
     Private Sub cargarCitas()
-        GV_Citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
-        GV_Citas.DataBind()
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
+        GV_citas.DataBind()
     End Sub
-    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_Citas.HtmlDataCellPrepared
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
                 Case 0
@@ -185,9 +185,9 @@
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
-            If BL.Insertar_CitasProspectador(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
-                                                    tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
-                                                    dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+            If BL.Insertar_CitasCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
                 Response.Redirect("Citas.aspx", False)
             End If
         Catch ex As Exception
