@@ -176,20 +176,20 @@ Partial Public Class CitaCteCaseta
     Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
-    '''Control GV_Citas.
+    '''Control GV_exporterCitas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GV_Citas As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
     
     '''<summary>
-    '''Control CitasCallDS.
+    '''Control GV_citas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents CitasCallDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
 End Class
