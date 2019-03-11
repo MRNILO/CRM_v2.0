@@ -119,6 +119,7 @@ Public Class ClienteSupervisor
     Function Guarda_numcte() As Boolean
         Dim FechaCierre As Date
         Dim FechaEscrituracion As Date
+        Dim FechaCancelacion As Date
 
         Dim NumeroClienteEK As Integer = tb_numcte.Text
 
@@ -142,6 +143,13 @@ Public Class ClienteSupervisor
         Else
             FechaEscrituracion = dtp_FechaEscrituracion.Text
             cmd.Parameters.AddWithValue("@FechaEscritura", FechaEscrituracion)
+        End If
+
+        If dtp_FechaCancelacion.Text = "" Then
+            cmd.Parameters.AddWithValue("@FechaCancelacion", "")
+        Else
+            FechaCancelacion = dtp_FechaCancelacion.Text
+            cmd.Parameters.AddWithValue("@FechaCancelacion", FechaCancelacion)
         End If
 
         Conexion.Close()

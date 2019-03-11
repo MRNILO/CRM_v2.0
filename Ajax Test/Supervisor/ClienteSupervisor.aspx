@@ -47,6 +47,10 @@
                     <label>Escrituracion EK</label>
                     <dx:ASPxDateEdit ID="dtp_FechaEscrituracion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
                 </div>
+                <div class="col-lg-2">
+                    <label>Fecha Cancelación</label>
+                    <dx:ASPxDateEdit ID="dtp_FechaCancelacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                </div>
                 <div class="col-lg-2" style="margin-top: 25px">
                     <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
                 </div>
