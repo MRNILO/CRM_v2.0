@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Prospectador.Master.vb" Inherits="Ajax_Test.Caseta" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Prospectador.Master.vb" Inherits="Ajax_Test.Prospectador" %>
 
 <!DOCTYPE html>
 
@@ -81,11 +81,6 @@
                             <li>
                                 <a href="/Prospectador/BusquedaClientes.aspx">
                                     <i class="fa fa-user"></i>Buscar Clientes
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/Prospectador/Clientes.aspx">
-                                    <i class="fa fa-user"></i>Todos los clientes
                                 </a>
                             </li>
                             <li>

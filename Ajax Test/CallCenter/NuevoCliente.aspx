@@ -114,7 +114,6 @@
                 </div>
             </div>
 
-            <%--<td>Nro.Persona: <asp:TextBox ID="tb_nPersona" runat="server"></asp:TextBox></td>--%>
             <div id="DivBtnGuarda" class="row" style="margin-top: 15px">
                 <div class="col-lg-2">
                     <dx:ASPxButton ID="btn_guardar" runat="server" Text="Guardar" Theme="Material" Width="100%">
@@ -135,24 +134,8 @@
                 $("<div>").text(message).prependTo("#log");
                 $("#log").scrollTop(0);
             }
-
-           <%-- $("#<%:tb_empresas.ClientID%>").autocomplete({
-                source: function (request, response) {
-                    $.getJSON("/api/empresas?Query=" + request.term, function (data) {
-                        response($.map(data, function (Empresa, id_empresa) {
-                            //alert(Empresa.Empresa);
-                            return {
-                                label: Empresa.Empresa,
-                                value: Empresa.id_empresa
-                            };
-                        }));
-                    });
-                },
-                minLength: 3,          
-            });--%>
         });
     </script>
-
 
     <script type="text/javascript">
         function validaNSS() {

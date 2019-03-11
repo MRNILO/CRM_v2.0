@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class BusquedaClientes
+Partial Public Class BusquedaClientesCaseta
     
     '''<summary>
     '''Control lbl_nombre.
@@ -120,6 +120,15 @@ Partial Public Class BusquedaClientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents grdView_BusquedaCliente As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control Detalles.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Detalles As Global.DevExpress.Web.GridViewCommandColumnCustomButton
     
     '''<summary>
     '''Control lbl_mensaje.

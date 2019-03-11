@@ -441,6 +441,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CNotifica" nillable="true" type="tns:CNotifica" />
+  <xs:complexType name="ArrayOfCLlamadasPendientesHoyUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLlamadasPendientesHoyUsuario" nillable="true" type="tns:ArrayOfCLlamadasPendientesHoyUsuario" />
+  <xs:complexType name="CLlamadasPendientesHoyUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORA" type="ser:duration" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
   <xs:complexType name="ArrayOfCLlamadas">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadas" nillable="true" type="tns:CLlamadas" />
@@ -1447,22 +1465,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CEtapasCliente" nillable="true" type="tns:CEtapasCliente" />
-  <xs:complexType name="ArrayOfCLlamadasPendientesHoyUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCLlamadasPendientesHoyUsuario" nillable="true" type="tns:ArrayOfCLlamadasPendientesHoyUsuario" />
-  <xs:complexType name="CLlamadasPendientesHoyUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="HORA" type="ser:duration" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
 </xs:schema>

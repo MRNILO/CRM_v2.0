@@ -22,7 +22,7 @@ Public Class NuevoCliente
 #Region "Metodos"
     Public Sub UI()
         Dim NSSAleatorio As String = GE_Funciones.Generar_NSSAleatorio()
-        tb_email.Text = "corrigeme@por.favor"
+        tb_email.Text = "corrigeme@micliente" & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
         tb_nss.Text = NSSAleatorio & NSSAleatorio
     End Sub
 #End Region
@@ -35,7 +35,6 @@ Public Class NuevoCliente
         If Path.GetExtension(Fupl_Foto_Cliente.FileName).ToLower() = "" Then
             'Sin imagen
         Else
-
             If Path.GetExtension(Fupl_Foto_Cliente.FileName).ToLower() = ".jpg" Then
                 Dim Arreglo As Byte()
                 Dim StrImg As String = ""
@@ -128,6 +127,7 @@ Public Class NuevoCliente
         End Using
     End Function
 #End Region
+
     Protected Sub btn_validarCliente_Click(sender As Object, e As EventArgs) Handles btn_validarCliente.Click
         Dim listaTel As New List(Of CTelefonos)
         Dim IdCliente As Integer = 0
@@ -136,14 +136,17 @@ Public Class NuevoCliente
         If lbl_mensaje.Text <> "" Then
 
         Else
-            If BL.ValidaEmail(tb_email.Text) Then
-                lbl_mensaje.Text = MostrarError("El Correo ya se habia capturado previamente en otro cliente.")
-            Else
-                btn_validarCliente.Visible = False
-                btn_Guardar.Visible = True
+            If Not tb_email.Text.Contains("corrigeme") Then
+                If BL.ValidaEmail(tb_email.Text) Then
+                    lbl_mensaje.Text = MostrarError("El Correo ya se habia capturado previamente en otro cliente.")
+                Else
+                    btn_validarCliente.Visible = False
+                    btn_Guardar.Visible = True
+                End If
             End If
         End If
     End Sub
+
     Sub Combos()
         Dim Estados = BL.Obtener_estados.ToList
         Dim estado = New Servicio.CEstados
@@ -285,14 +288,15 @@ Public Class NuevoCliente
         If lbl_mensaje.Text <> "" Then
 
         Else
-            'ValidaNombre() 'Verifica campos de nombre
             Try
                 If IsNothing(dtp_fechaNacimiento.Date) Then
                     dtp_fechaNacimiento.Date = New Date
                 End If
+
                 If tb_curp.Text = "" Then
                     tb_curp.Text = "-"
                 End If
+
                 If tb_nss.Text = "" Then
                     tb_nss.Text = "-"
                 End If
@@ -326,7 +330,6 @@ Public Class NuevoCliente
                 Session("ListaDeTelefonos") = listaTel
             Else
                 listaTel = Session("ListaDeTelefonos")
-
             End If
 
             Telefono.Telefono = tb_telefono.Text

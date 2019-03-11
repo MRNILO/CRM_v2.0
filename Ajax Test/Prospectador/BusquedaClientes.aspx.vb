@@ -1,6 +1,7 @@
-﻿Imports Ajax_Test.Funciones
+﻿Imports DevExpress.Web
+Imports Ajax_Test.Funciones
 
-Public Class BusquedaClientes_Prospectador
+Public Class BusquedaClientesProspectador
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 6
@@ -11,7 +12,7 @@ Public Class BusquedaClientes_Prospectador
         ValidaUsuario()
 
         If Not IsPostBack() Then
-            tb_NombreCliente.Focus()
+
         End If
     End Sub
 
@@ -36,6 +37,7 @@ Public Class BusquedaClientes_Prospectador
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -44,24 +46,19 @@ Public Class BusquedaClientes_Prospectador
                 Response.Redirect("~/Supervisor/InicioSupervisor.aspx", False)
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
-            Case 4
-                Response.Redirect("~/Callcenter/InicioCCenter.aspx", False)
-            Case 5
-                Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
-            Case 6
-                Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
     End Sub
+
     Public Sub BuscarClientes()
         Dim Cliente As New BusquedaCliente
 
         With Cliente
-            .nombreCliente = tb_NombreCliente.Text.ToUpper
-            .apellidoPaterno = tb_ApellidoPaterno.Text.ToUpper
-            .apellidoMaterno = tb_ApellidoMaterno.Text.ToUpper
-            .RFC = tb_RFC.Text.ToUpper
-            .CURP = tb_CURP.Text.ToUpper
-            .NSS = tb_NSS.Text.ToUpper
+            .nombreCliente = tb_NombreCliente.Text
+            .apellidoPaterno = tb_ApellidoPaterno.Text
+            .apellidoMaterno = tb_ApellidoMaterno.Text
+            .RFC = tb_RFC.Text
+            .CURP = tb_CURP.Text
+            .NSS = tb_NSS.Text
             .IdCliente = tb_IdCliente.Text
             .Numcte = tb_NumeroCliente.Text
         End With
@@ -78,9 +75,10 @@ Public Class BusquedaClientes_Prospectador
 #End Region
 
 #Region "Eventos"
-    Protected Sub BuscarClientes(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarClientes()
     End Sub
+
     Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         tb_NombreCliente.Text = ""
         tb_ApellidoPaterno.Text = ""
@@ -94,6 +92,14 @@ Public Class BusquedaClientes_Prospectador
         grdView_BusquedaCliente.DataSource = Nothing
         grdView_BusquedaCliente.DataBind()
     End Sub
-#End Region
 
+    Protected Sub grdView_BusquedaCliente_DataBinding(sender As Object, e As EventArgs) Handles grdView_BusquedaCliente.DataBinding
+        grdView_BusquedaCliente.DataSource = ViewState("ListaClientes")
+    End Sub
+
+    Protected Sub grdView_BusquedaCliente_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles grdView_BusquedaCliente.CustomButtonCallback
+        Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
+        ASPxWebControl.RedirectOnCallback("../Caseta/CitaCte.aspx?id=" + IdCliente.ToString)
+    End Sub
+#End Region
 End Class

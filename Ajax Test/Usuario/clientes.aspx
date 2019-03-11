@@ -2,8 +2,6 @@
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-
-
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
@@ -37,7 +35,6 @@
             </div>
         </div>
         <div class="portlet-body">
-            <br />
             <a href="/Usuario/NuevoCliente.aspx" class="btn btn-lg blue">Nuevo Prospecto</a>
             <br />
         </div>
@@ -56,44 +53,57 @@
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridViewExporter ID="GV_exporterClientes" runat="server" GridViewID="GV_Clientes"></dx:ASPxGridViewExporter>
-                <dx:ASPxGridView ID="GV_Clientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False">
+                <dx:ASPxGridView ID="GV_Clientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" Font-Size="9pt">
                     <SettingsSearchPanel Visible="True" />
                     <Columns>
-                        <dx:GridViewDataTextColumn Caption="NombreCliente" FieldName="Nombre" VisibleIndex="4">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="5">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="ApellidoMaterno" VisibleIndex="6">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Producto" FieldName="NombreCorto" VisibleIndex="9">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="8">
-                            <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
-                            </PropertiesHyperLinkEdit>
-                        </dx:GridViewDataHyperLinkColumn>
-                        <dx:GridViewDataTextColumn Caption="Nivel Interes" FieldName="nivelinteres" VisibleIndex="10">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="11">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Campaña" FieldName="campañaNombre" VisibleIndex="12">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="13">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Fotografía" FieldName="fotografia" VisibleIndex="0">
+                        <dx:GridViewDataTextColumn Caption="Fotografía" FieldName="fotografia" VisibleIndex="0" Visible="false">
                             <PropertiesTextEdit DisplayFormatString="&lt;img src=&quot;data:image/jpg;base64,{0}&quot; width=&quot;80&quot;/&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="14">
-                        </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Etapa" VisibleIndex="15">
+                        <dx:GridViewDataTextColumn Caption="TPresentacion" FieldName="fotoTpresentacion" VisibleIndex="2" Visible="false">
+                            <PropertiesTextEdit DisplayFormatString="&lt;img src=&quot;data:image/jpg;base64,{0}&quot; width=&quot;80&quot;/&gt;" EncodeHtml="False">
+                            </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_cliente" VisibleIndex="3">
                             <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Usuario/cliente.aspx?idCliente={0}&quot; class=&quot;btn btn-sm green&quot; &gt;Detalles&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="TPresentacion" FieldName="fotoTpresentacion" VisibleIndex="2">
-                            <PropertiesTextEdit DisplayFormatString="&lt;img src=&quot;data:image/jpg;base64,{0}&quot; width=&quot;80&quot;/&gt;" EncodeHtml="False">
-                            </PropertiesTextEdit>
+                        <dx:GridViewDataTextColumn Caption="NombreCliente" FieldName="Nombre" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="ApellidoMaterno" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Producto" FieldName="NombreCorto" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="8">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
+                            </PropertiesHyperLinkEdit>
+                        </dx:GridViewDataHyperLinkColumn>
+                        <dx:GridViewDataTextColumn Caption="Nivel Interes" FieldName="nivelinteres" VisibleIndex="10">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="11">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Campaña" FieldName="campañaNombre" VisibleIndex="12">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="13">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="14">
+                            <HeaderStyle HorizontalAlign="Center" />
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Etapa" VisibleIndex="15">
+                            <HeaderStyle HorizontalAlign="Center" />
                         </dx:GridViewDataTextColumn>
                     </Columns>
                     <SettingsPager PageSize="20">

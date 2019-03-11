@@ -78,13 +78,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="/Usuario/clientes.aspx">
-                                    <i class="fa fa-user"></i>Catalogo
+                                <a href="/Usuario/BusquedaClientes.aspx">
+                                    <i class="fa fa-search"></i>Buscar Clientes
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/BusquedaClientes.aspx">
-                                    <i class="fa fa-search"></i>Buscar Cliente
+                                <a href="/Usuario/clientes.aspx">
+                                    <i class="fa fa-user"></i>Catálogo
                                 </a>
                             </li>
                             <li>
@@ -93,13 +93,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/NuevaLlamada.aspx">
-                                    <i class="fa fa-phone"></i>Registrar Llamada
+                                <a href="/Usuario/BusquedaClientes.aspx">
+                                    <i class="fa fa-home"></i>Registrar Cita
                                 </a>
                             </li>
                             <li>
-                                <a href="/Usuario/NuevaCita.aspx">
-                                    <i class="fa fa-home"></i>Registrar Cita
+                                <a href="/Usuario/NuevaLlamada.aspx">
+                                    <i class="fa fa-phone"></i>Registrar Llamada
                                 </a>
                             </li>
                         </ul>
@@ -214,15 +214,10 @@
 
         function Notificar(response) {
             if (response.d != '') {
-
-
                 var jsonObj = $.parseJSON('[' + response.d + ']');
 
                 for (var i = 0; i < jsonObj.length; i++) {
-
                     toastr.info(jsonObj[i].desc + '<br /><br /><a class="btn btn-sm green" href="' + jsonObj[i].url + '">Ver</a>', jsonObj[i].titulo);
-
-
                 }
             } else { }
             notificaciones();
