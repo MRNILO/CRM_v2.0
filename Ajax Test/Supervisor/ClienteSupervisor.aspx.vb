@@ -86,9 +86,9 @@ Public Class ClienteSupervisor
                 ROWA("clave") = dtaUsuarios(i).id_usuario
                 ROWA("Asesor") = dtaUsuarios(i).nombre + " " + dtaUsuarios(i).apellidoPaterno + " " + dtaUsuarios(i).apellidoMaterno
 
-
                 DTA.Rows.Add(ROWA)
             Next
+
             With cmBoxUsuarios
                 .DataSource = DTA
                 .ValueField = "clave"
@@ -96,9 +96,8 @@ Public Class ClienteSupervisor
                 .DataBind()
             End With
         End If
-
-
     End Sub
+
     Function Obtener_numcte() As Integer
         Dim Resultado As Integer = 0
         Dim cmd As New SqlCommand("SELECT numcte FROM clientes WHERE id_cliente=@id_cliente", Conexion)
@@ -116,6 +115,7 @@ Public Class ClienteSupervisor
         Conexion.Close()
         Return Resultado
     End Function
+
     Function Guarda_numcte() As Boolean
         Dim FechaCierre As Date
         Dim FechaEscrituracion As Date
@@ -185,6 +185,7 @@ Public Class ClienteSupervisor
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
     End Sub
+
     Function Crea_telefonos() As String
         Dim HTML As String = ""
         Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
@@ -265,6 +266,7 @@ Public Class ClienteSupervisor
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
