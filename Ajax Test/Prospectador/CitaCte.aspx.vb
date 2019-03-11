@@ -47,10 +47,12 @@
         End If
         cargarCitas()
     End Sub
+
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
     End Sub
+
     Private Sub AlimentarComboMedios()
         With cmBoxMedio
             .DataSource = GE_Funciones.ObtenerMedios()
@@ -166,20 +168,22 @@
         HTML += "<strong>Fecha Escrituración Enkontrol: </strong>" + Datos(0).FechaEscritura
         HTML += "<br />"
 
-        If AsesorCallCenter.Length > 0 Then
-            HTML += "<br /><h5><strong>Asesor Call Center</strong></h5>"
-            HTML += "<label>" + AsesorCallCenter(0).id_usuario.ToString + " - " + AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno + "</label>"
-        End If
+        Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
 
-        If AsesorCallCenter.Length = 0 Then
-            lbl_usuario.Text = "N/A"
-            btn_asignaCita.Visible = True
-        Else
-            If AsesorCallCenter(0).id_usuario = Usuario.id_usuario Then
-                btn_asignaCita.Visible = True
+        If Vigencias.Length > 0 Then
+            If Vigencias(0).CitasVigentes > 0 Then
+                HTML += "<br /><h5><strong>Agente de Prospección</strong></h5>"
+                HTML += "<label>(" + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
+
+                lbl_usuario.Text = Vigencias(0).UsuarioVigente
+                btn_asignaCita.Visible = False
             Else
-                VerificarVigenciaCita()
+                lbl_usuario.Text = "-"
+                btn_asignaCita.Visible = True
             End If
+        Else
+            lbl_usuario.Text = "-"
+            btn_asignaCita.Visible = True
         End If
 
         Return HTML
@@ -205,6 +209,7 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
+
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
@@ -242,6 +247,7 @@
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
     End Sub
+
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
@@ -269,6 +275,7 @@
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
