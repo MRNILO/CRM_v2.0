@@ -50,6 +50,15 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents dtp_FechaEscrituracion As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
+    '''Control dtp_FechaCancelacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_FechaCancelacion As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
     '''Control btn_guardaNumcte.
     '''</summary>
     '''<remarks>

@@ -11,7 +11,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
+        Id_Cliente = Request.QueryString("idCliente")
         Try
             lbl_generales.Text = Crea_generalesCliente()
         Catch ex As Exception
@@ -42,12 +42,15 @@
         AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
-
+        cargarCitas()
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
     End Sub
-
+    Private Sub cargarCitas()
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
+        GV_citas.DataBind()
+    End Sub
     Private Sub AlimentarComboMedios()
         With cmBoxMedio
             .DataSource = GE_Funciones.ObtenerMedios()
@@ -191,6 +194,23 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
 #End Region
 
 #Region "Eventos"
@@ -204,12 +224,12 @@
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
-            'If BL.Insertar_CitaCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, cmBoxCampana.SelectedItem.Text,
-            '                              cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO",
-            '                              cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, 1) Then
 
-            '    Response.Redirect("Citas.aspx", False)
-            'End If
+            If BL.Insertar_CitasCaseta(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+                Response.Redirect("Citas.aspx", False)
+            End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
