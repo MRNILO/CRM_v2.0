@@ -310,6 +310,7 @@ Public Class ClienteSupervisor
             Else
                 lbl_mensaje.Text = MostrarExito("Error por favor verifique los datos.")
             End If
+
         Catch ex As Exception
 
         End Try
