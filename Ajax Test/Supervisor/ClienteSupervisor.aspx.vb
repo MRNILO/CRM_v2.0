@@ -64,7 +64,7 @@ Public Class ClienteSupervisor
                 comboProductos(Datos)
                 ComboUsuarios(Datos)
                 cmBoxUsuarios.Value = Datos(0).id_Usuario
-                'cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
+                cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
                 cmBoxEmpresa.Value = Datos(0).EmpresaEK
 
                 Ranking(Datos(0))
