@@ -11,8 +11,8 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Citas_Prospectador
-
+Partial Public Class Citas1
+    
     '''<summary>
     '''Control GE_Citas.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Citas_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GE_Citas As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control btn_exportar.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class Citas_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_exportar As Global.DevExpress.Web.ASPxButton
-
+    
     '''<summary>
     '''Control GV_Citas.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class Citas_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Citas As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control CitasDS.
     '''</summary>

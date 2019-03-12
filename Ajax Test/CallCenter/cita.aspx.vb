@@ -21,6 +21,7 @@
             dtp_ffinal.Date = Now.AddDays(30)
         End If
     End Sub
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -88,6 +89,7 @@
 
         Return HTML
     End Function
+
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
             If BL.Inserta_CitasCall(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, tb_origen.Text, tb_lContacto.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, "ACTIVO") Then
@@ -97,6 +99,7 @@
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
     End Sub
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
@@ -124,6 +127,7 @@
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
