@@ -70,10 +70,12 @@
                             <dx:ListBoxColumn Caption="Asesor" FieldName="Asesor" Width="50px" />
                         </Columns>
                     </dx:ASPxComboBox>
+                    <asp:Label ID="lbl_CitasVigentes" runat="server" Text="Cliente con citas vigentes" ForeColor="Red" Visible="false"></asp:Label>
                 </div>
                 <div class="col-lg-2" style="margin-top: 25px">
                     <asp:Button ID="btn_cambiarUsuario" runat="server" Text="Dar a otro usuario" CssClass="btn btn-sm btn-block yellow" />
                 </div>
+
                 <br />
             </div>
 

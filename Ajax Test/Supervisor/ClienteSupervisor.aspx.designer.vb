@@ -86,6 +86,15 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents cmBoxUsuarios As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
+    '''Control lbl_CitasVigentes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_CitasVigentes As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control btn_cambiarUsuario.
     '''</summary>
     '''<remarks>
