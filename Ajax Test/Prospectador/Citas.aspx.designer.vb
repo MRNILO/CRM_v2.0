@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Citas1
+Partial Public Class Citas_Prospectador
     
     '''<summary>
     '''Control GE_Citas.

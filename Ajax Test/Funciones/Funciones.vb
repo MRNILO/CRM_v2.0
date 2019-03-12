@@ -2,6 +2,7 @@
 
 Public Class Funciones
     Private GE_SQL As New SQL_Functions
+    Private ROOT_GESQL As String = ConfigurationManager.ConnectionStrings("RutaSQLS").ConnectionString
 
 #Region "Estructuras"
     Public Structure BusquedaCliente
@@ -26,6 +27,7 @@ Public Class Funciones
         Dim IdUsuario As String
         Dim Numcte As String
     End Structure
+
     Public Structure BusquedaUsuarios
         Dim nombreUsuario As String
         Dim apellidoMaterno As String
@@ -36,7 +38,9 @@ Public Class Funciones
         Dim IdUsuario As String
     End Structure
 
-
+    Public Structure ArchivosSQL
+        Dim NombreDocumento As String
+    End Structure
 #End Region
 
 #Region "Archivos"
@@ -49,6 +53,26 @@ Public Class Funciones
             Exit Sub
         End Try
     End Sub
+
+    Public Function Obtener_DocumentosSQL() As List(Of ArchivosSQL)
+        Dim Result As New List(Of ArchivosSQL)
+
+        Try
+            Dim Documentos() As String = Directory.GetFiles(ROOT_GESQL)
+            Dim Docs As ArchivosSQL
+
+            For i As Integer = 0 To Documentos.Length - 1
+                Docs = New ArchivosSQL
+
+                Docs.NombreDocumento = Documentos(i).ToUpper
+                Result.Add(Docs)
+            Next
+        Catch ex As Exception
+            Result = Nothing
+        End Try
+
+        Return Result
+    End Function
 #End Region
 
 #Region "Consultas"
@@ -190,7 +214,6 @@ Public Class Funciones
         BuscarClientesXAsesor = DTB
     End Function
 
-
     Public Function BuscarUsuario(ByVal Usuario As BusquedaUsuarios) As DataTable
         Dim Query As String = "EXEC [dbo].[BuscarUsuario]
 		                            @Nombre = N'" & Usuario.nombreUsuario & "',
@@ -221,6 +244,7 @@ Public Class Funciones
 
         BuscarUsuario = DTB
     End Function
+
     Public Function BuscarSupervisores() As DataTable
         Dim Query As String = "EXEC [dbo].[Obtener_supervisores]"
 
@@ -247,9 +271,6 @@ Public Class Funciones
 
         BuscarSupervisores = DTB
     End Function
-
-
-
 #End Region
 
 #Region "Citas"
@@ -502,8 +523,6 @@ Inicio:
 
 #Region "Usuarios"
     Public Function Asignar_Supervisor(ByVal idUsuario As Integer, ByVal idSupervisor As Integer) As Boolean
-
-
         Dim Query As String = " EXEC [dbo].[Inserta_Asignacion_supervisorUsuario]
                                    @Pid_usuario = N'" & idUsuario & "',
                                    @Pid_supervisor = N'" & idSupervisor & "'"
@@ -513,8 +532,6 @@ Inicio:
         Else
             Return True
         End If
-
-
     End Function
 #End Region
 End Class
