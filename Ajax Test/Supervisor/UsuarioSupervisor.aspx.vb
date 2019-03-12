@@ -11,9 +11,9 @@ Public Class UsuarioSupervisor
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        CargaSupervisores()
         If Not IsPostBack() Then
             tb_IdUsuario.Focus()
+            CargaSupervisores()
         End If
     End Sub
 #Region "Metodos"
@@ -61,7 +61,7 @@ Public Class UsuarioSupervisor
         Dim Usuario As New BusquedaUsuarios
 
         With Usuario
-            .nombreCliente = tb_NombreUsuario.Text
+            .nombreUsuario = tb_NombreUsuario.Text
             .apellidoPaterno = tb_ApellidoPaterno.Text
             .apellidoMaterno = tb_ApellidoMaterno.Text
             .IdUsuario = tb_IdUsuario.Text
@@ -96,7 +96,28 @@ Public Class UsuarioSupervisor
 
         lblId_Usuario.Text = Id_Usuario.ToString()
         lblNombre_usuario.Text = Nombre.ToString()
+        cmBoxSupervisores.SelectedIndex = 0
+    End Sub
 
+    Protected Sub cmBoxSupervisores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxSupervisores.SelectedIndexChanged
+        If (cmBoxSupervisores.SelectedIndex <> 0) Then
+            btnAsignar.Enabled = True
+        End If
+    End Sub
+    Protected Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
+        Try
+            If (GE_Funciones.Asignar_Supervisor(CInt(lblId_Usuario.Text), CInt(cmBoxSupervisores.SelectedItem.Value))) Then
+                lbl_mensaje.Text = MostrarExito("Asignación exitosa")
+                lblId_Usuario.Text = ""
+                lblNombre_usuario.Text = ""
+                cmBoxSupervisores.SelectedIndex = 0
+            Else
+                lbl_mensaje.Text = MostrarError("No se pudo realizar la asignación")
+            End If
+
+        Catch ex As Exception
+            lbl_mensaje.Text = MostrarError(ex.ToString())
+        End Try
     End Sub
 #End Region
 End Class
