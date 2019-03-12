@@ -11,7 +11,6 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Reporte de llamadas 
             </div>
-
         </div>
         <div class="portlet-body">
             Seleccione una fecha inicial:
@@ -63,9 +62,6 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script type="text/javascript">
-        //jQuery(document).ready(function () {
-        //    $("#LlamadasDiv").hide();
-        //});
         $(window).on('beforeunload', function () {
             $("#LlamadasDiv").hide();
         });

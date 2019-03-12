@@ -11,15 +11,12 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description" />
     <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN THEME STYLES -->
     <link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
     <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
@@ -27,7 +24,6 @@
     <link href="/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
     <link href="/assets/global/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
     <link href="/assets/wts/wts.css" rel="stylesheet" />
-    <!-- END THEME STYLES -->
     <link href="/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="CSSContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -222,15 +218,6 @@
             } else { }
             notificaciones();
         }
-    </script>
-
-    <script type="text/javascript">
-        window.smartlook || (function (d) {
-            var o = smartlook = function () { o.api.push(arguments) }, h = d.getElementsByTagName('head')[0];
-            var c = d.createElement('script'); o.api = new Array(); c.async = true; c.type = 'text/javascript';
-            c.charset = 'utf-8'; c.src = 'https://rec.smartlook.com/recorder.js'; h.appendChild(c);
-        })(document);
-        smartlook('init', '1eb103cf27380618c7d5478cf56cf254861e2bfc');
     </script>
 
     <asp:ContentPlaceHolder ID="JSContent" runat="server"></asp:ContentPlaceHolder>

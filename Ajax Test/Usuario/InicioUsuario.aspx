@@ -77,9 +77,7 @@
                     <div class="number">
                         <span class="counter">
                             <asp:Literal ID="lbl_ClientesActivos" runat="server"></asp:Literal>
-
                         </span>
-
                     </div>
                     <div class="desc">Clientes Activos </div>
                 </div>
@@ -94,9 +92,7 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_ProspectosSemana" runat="server"></asp:Literal>
-
                         </span>
-
                     </div>
                     <div class="desc">Prospectos por semana </div>
                 </div>
@@ -111,7 +107,6 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_ClientesCancelados" runat="server"></asp:Literal>
-
                         </span>
                     </div>
                     <div class="desc">Clientes Cancelados </div>
@@ -127,7 +122,6 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_clientesTotal" runat="server"></asp:Literal>
-
                         </span>
                     </div>
                     <div class="desc">Clientes totales </div>
@@ -150,7 +144,6 @@
 
         <div class="portlet-body">
             <div class="table-responsive">
-
                 <dx:ASPxGridView ID="GV_TareasPendientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsSearchPanel Visible="True" />
@@ -224,8 +217,7 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            // Handler for .ready() called.
-            //$('#basic').modal('show');
+
         });
 
         function cambiarTarea(idLlamada) {

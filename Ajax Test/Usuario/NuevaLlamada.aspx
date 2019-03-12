@@ -106,7 +106,6 @@
             });
         }
         function OnSuccess(response) {
-            //alert("Si se pudo " + response.d);
             $("#Telefonos").html("Seleccione un teléfono:<br />" + response.d);
         }
     </script>

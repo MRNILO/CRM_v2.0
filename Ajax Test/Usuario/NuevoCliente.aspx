@@ -2,7 +2,6 @@
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server">
-    <!-- BEGIN PAGE LEVEL STYLES -->
     <link href="/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <style>
         .ui-autocomplete-loading {
@@ -282,32 +281,10 @@ empresas"></asp:SqlDataSource>
                 $("<div>").text(message).prependTo("#log");
                 $("#log").scrollTop(0);
             }
-
-           <%-- $("#<%:tb_empresas.ClientID%>").autocomplete({
-                source: function (request, response) {
-                    $.getJSON("/api/empresas?Query=" + request.term, function (data) {
-                        response($.map(data, function (Empresa, id_empresa) {
-                            //alert(Empresa.Empresa);
-                            return {
-                                label: Empresa.Empresa,
-                                value: Empresa.id_empresa
-                            };
-                        }));
-
-                        
-
-
-                    });
-                },
-                minLength: 3,
-              
-            });--%>
         });
     </script>
 
-
     <script type="text/javascript">
-
         function validaNSS() {
             var NSS = $("#<%:tb_nss.ClientID%>").val();
             $.ajax({
@@ -334,7 +311,6 @@ empresas"></asp:SqlDataSource>
                     sweetAlert("¡Algo salio mal!", response.d, "error");
                 }
             });
-
         }
 
         function validaCurp() {
@@ -363,20 +339,14 @@ empresas"></asp:SqlDataSource>
                     sweetAlert("¡Algo salio mal!", response.d, "error");
                 }
             });
-
         }
 
         function ValidaCliente() {
-
             $('#Validando').modal('show');
-
 
             var nombreCliente = document.getElementById("<%:tb_NombreCliente.ClientID%>").value;
             var apellidoCliente = document.getElementById("<%:tb_ApellidoPaterno.ClientID%>").value;
             var apellido2Cliente = document.getElementById("<%:tb_ApellidoMaterno.ClientID%>").value;
-            //var email = document.getElementById("<%:tb_email.ClientID%>").value
-
-
 
             $.ajax({
                 type: "POST",
@@ -395,18 +365,8 @@ empresas"></asp:SqlDataSource>
         }
 
         function TerminaValidacion(response) {
-
             $('#Validando').modal('hide');
-
-            //if (response.d == 'duplicado') {
-            //    sweetAlert("¡Cliente ya capturado!", "Cliente duplicado", "error");
-            //    $('#btnGuardar').hide();
-
-            //}else{
-            //    sweetAlert("¡Cliente disponible!", "Puede continuar la captura", "success");
             $('#btnGuardar').show();
-
-            //}            
         }
     </script>
     <script type="text/javascript">
@@ -433,10 +393,8 @@ empresas"></asp:SqlDataSource>
             });
         }
         function OnSuccess(response) {
-            //alert("Si se pudo " + response.d);
             $("#Ciudades").html("Seleccione una ciudad:<br />" + response.d);
         }
     </script>
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
