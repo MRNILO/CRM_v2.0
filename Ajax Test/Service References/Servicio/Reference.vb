@@ -8926,7 +8926,13 @@ Namespace Servicio
         Private EmpresaField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EmpresaEKField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EtapaField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FechaCancelacionField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private FechaCierreField As Date
@@ -9080,6 +9086,19 @@ Namespace Servicio
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property EmpresaEK() As Integer
+            Get
+                Return Me.EmpresaEKField
+            End Get
+            Set
+                If (Me.EmpresaEKField.Equals(value) <> true) Then
+                    Me.EmpresaEKField = value
+                    Me.RaisePropertyChanged("EmpresaEK")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Etapa() As String
             Get
                 Return Me.EtapaField
@@ -9088,6 +9107,19 @@ Namespace Servicio
                 If (Object.ReferenceEquals(Me.EtapaField, value) <> true) Then
                     Me.EtapaField = value
                     Me.RaisePropertyChanged("Etapa")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FechaCancelacion() As Date
+            Get
+                Return Me.FechaCancelacionField
+            End Get
+            Set
+                If (Me.FechaCancelacionField.Equals(value) <> true) Then
+                    Me.FechaCancelacionField = value
+                    Me.RaisePropertyChanged("FechaCancelacion")
                 End If
             End Set
         End Property

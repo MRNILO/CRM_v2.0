@@ -1114,7 +1114,9 @@
       <xs:element minOccurs="0" name="CURP" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpresaEK" type="xs:int" />
       <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCancelacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaCierre" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaEscritura" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id_Campaña" type="xs:int" />

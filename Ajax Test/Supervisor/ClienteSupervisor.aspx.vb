@@ -47,12 +47,24 @@ Public Class ClienteSupervisor
                     dtp_FechaEscrituracion.Enabled = False
                 End If
 
+                If Datos(0).FechaCancelacion = "1900-01-01" Then
+                    dtp_FechaCancelacion.Text = ""
+                    dtp_FechaCancelacion.Enabled = True
+                Else
+                    dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
+                    dtp_FechaCancelacion.Enabled = False
+                End If
+
+
                 GridLlamadas()
                 ComboEtapas(Datos)
+                ComboEmpresas()
                 comboProductos(Datos)
                 ComboUsuarios(Datos)
                 cmBoxUsuarios.Value = Datos(0).id_Usuario
-                cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
+                'cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
+                cmBoxEmpresa.Value = Datos(0).EmpresaEK
+
                 Ranking(Datos(0))
                 lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
                 tb_numcte.Text = Obtener_numcte().ToString
@@ -152,6 +164,8 @@ Public Class ClienteSupervisor
             cmd.Parameters.AddWithValue("@FechaCancelacion", FechaCancelacion)
         End If
 
+        cmd.Parameters.AddWithValue("@EmpresaEK", cmBoxEmpresa.SelectedItem.Value)
+
         Conexion.Close()
         Try
             Conexion.Open()
@@ -184,6 +198,35 @@ Public Class ClienteSupervisor
         cb_productos.DataValueField = "id_producto"
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
+    End Sub
+    Private Sub ComboEmpresas()
+        Dim ROWA As DataRow
+        Dim DTA As New DataTable
+
+        DTA.Columns.AddRange({New DataColumn("idEmpresa", GetType(Integer)), New DataColumn("Empresa", GetType(String))})
+
+        ROWA = DTA.NewRow
+        ROWA("idEmpresa") = 0
+        ROWA("Empresa") = "SELECCIONE EMPRESA"
+        DTA.Rows.Add(ROWA)
+
+        ROWA = DTA.NewRow
+        ROWA("idEmpresa") = 11
+        ROWA("Empresa") = "VILLA MAGNA"
+        DTA.Rows.Add(ROWA)
+
+        ROWA = DTA.NewRow
+        ROWA("idEmpresa") = 18
+        ROWA("Empresa") = "EDIFICASA-GPV"
+        DTA.Rows.Add(ROWA)
+
+        With cmBoxEmpresa
+            .DataSource = DTA
+            .ValueField = "idEmpresa"
+            .TextField = "Empresa"
+            .DataBind()
+        End With
+        cmBoxEmpresa.Value = 0
     End Sub
 
     Function Crea_telefonos() As String

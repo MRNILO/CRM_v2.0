@@ -51,6 +51,10 @@
                     <label>Fecha Cancelación</label>
                     <dx:ASPxDateEdit ID="dtp_FechaCancelacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
                 </div>
+                <div class="col-lg-2">
+                    <label>Empresa</label>
+                    <dx:ASPxComboBox ID="cmBoxEmpresa" runat="server" AutoPostBack="true" Theme="MaterialCompact" TextField="Empresa" ValueField="idEmpresa" Font-Size="9pt" Width="100%" ValueType="System.Int32"></dx:ASPxComboBox>
+                </div>
                 <div class="col-lg-2" style="margin-top: 25px">
                     <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
                 </div>
@@ -60,7 +64,7 @@
             <div class="row" style="margin-top: 10px">
                 <div class="col-lg-6">
                     <label><b><i>Asesor Asignado:</i></b> </label>
-                    <dx:ASPxComboBox ID="cmBoxUsuarios" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="False" TextField="Asesor" ValueField="clave" Font-Size="9pt">
+                    <dx:ASPxComboBox ID="cmBoxUsuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="False" TextField="Asesor" ValueField="clave" Font-Size="9pt" ValueType="System.Int32">
                         <Columns>
                             <dx:ListBoxColumn Caption="ID" FieldName="clave" Width="20px" />
                             <dx:ListBoxColumn Caption="Asesor" FieldName="Asesor" Width="50px" />
