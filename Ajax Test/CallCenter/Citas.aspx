@@ -58,28 +58,29 @@
             </dx:ASPxGridView>
             <asp:SqlDataSource ID="CitasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>"
                 SelectCommand="SELECT
-                                    dbo.clientes.Nombre,
-                                    dbo.clientes.ApellidoPaterno,
-                                    dbo.clientes.ApellidoMaterno,
-                                    dbo.clientes.Email,
-                                    dbo.CitasCall.FechaCita,
-                                    dbo.etapasCliente.Descripcion AS Etapa,
-                                    dbo.clientes.NSS,
-                                    dbo.clientes.CURP,
-                                    dbo.clientes.ranking,
-                                    dbo.clientes.NPersona,
-                                    dbo.clientes.NContrato,
-                                    dbo.clientes.RFC,
-                                    dbo.clientes.NHijos,
-                                    dbo.clientes.IngresosPersonales,
-                                    dbo.usuarios.nombre As NombreUsuario,
-                                    dbo.usuarios.apellidoPaterno as ApUsuario,
-                                    dbo.usuarios.apellidoMaterno as ApMUsuario
+                                  clientes.Nombre,
+                                  clientes.ApellidoPaterno,
+                                  clientes.ApellidoMaterno,
+                                  clientes.Email,
+                                  CitasClientes.FechaCita,
+                                  etapasCliente.Descripcion AS Etapa,
+                                  clientes.NSS,
+                                  clientes.CURP,
+                                  clientes.ranking,
+                                  clientes.NPersona,
+                                  clientes.NContrato,
+                                  clientes.RFC,
+                                  clientes.NHijos,
+                                  clientes.IngresosPersonales,
+                                  usuarios.nombre As NombreUsuario,
+                                  usuarios.apellidoPaterno as ApUsuario,
+                                  usuarios.apellidoMaterno as ApMUsuario
                                FROM
-                                    dbo.CitasCall
-                               INNER JOIN dbo.clientes ON dbo.CitasCall.id_cliente = dbo.clientes.id_cliente
-                               INNER JOIN dbo.etapasCliente ON dbo.clientes.id_etapaActual = dbo.etapasCliente.id_etapa
-                               INNER JOIN dbo.usuarios ON dbo.CitasCall.id_usuarioCC = dbo.usuarios.id_usuario
+                                  CitasClientes 
+                               INNER JOIN clientes ON CitasClientes.Id_Cliente = clientes.id_cliente
+                               INNER JOIN etapasCliente ON clientes.id_etapaActual = etapasCliente.id_etapa
+                               INNER JOIN usuarios ON CitasClientes.Id_Usuario = usuarios.id_usuario
+                               WHERE CitasClientes.Origen = 'CALL CENTER'
                                ORDER BY
                                Etapa ASC"></asp:SqlDataSource>
         </div>
