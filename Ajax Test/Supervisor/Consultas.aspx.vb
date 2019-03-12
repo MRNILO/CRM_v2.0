@@ -18,13 +18,28 @@ Public Class Consultas
         ValidaUsuario()
 
         If Not IsPostBack() Then
-            ConfigurarFileuploaders()
-        Else
-            ConfigurarFileuploaders()
+            AlimentarComboArchivos()
         End If
     End Sub
 
 #Region "Metodos"
+    Public Sub AlimentarComboArchivos()
+        Try
+            Dim documentos = GE_Funciones.Obtener_DocumentosSQL()
+
+            If documentos.Count > 0 Then
+                For i As Integer = 0 To documentos.Count - 1
+
+                    cmBoxArchivos.Items.Add(documentos(i).NombreDocumento.Substring(documentos(i).NombreDocumento.LastIndexOf("\") + 1), documentos(i).NombreDocumento)
+                Next
+
+                cmBoxArchivos.SelectedIndex = 0
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub LimpiarUI()
         txtBoxConsulta.Text = ""
 
@@ -32,14 +47,6 @@ Public Class Consultas
             .Columns.Clear()
             .DataSource = Nothing
             .DataBind()
-        End With
-    End Sub
-
-    Public Sub ConfigurarFileuploaders()
-        With uplControlDAT
-            .ValidationSettings.AllowedFileExtensions = New String() {GESQL}
-            .UploadStorage = DevExpress.Web.UploadControlUploadStorage.FileSystem
-            .FileSystemSettings.UploadFolder = Ruta
         End With
     End Sub
 
@@ -80,6 +87,7 @@ Public Class Consultas
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -93,6 +101,10 @@ Public Class Consultas
 #End Region
 
 #Region "Eventos"
+    Protected Sub btnAbrirArchivo_Click(sender As Object, e As EventArgs) Handles btnAbrirArchivo.Click
+        ObtenerDatos(cmBoxArchivos.SelectedItem.Value)
+    End Sub
+
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim Consulta As String = txtBoxConsulta.Text
 
@@ -138,21 +150,6 @@ Public Class Consultas
         HttpContext.Current.Response.WriteFile(Ruta & "ConsultaCRM" & Excel_Extencion)
         Session("ConjuntoDatos") = Nothing
         HttpContext.Current.Response.End()
-    End Sub
-
-    Protected Sub uplControlDAT_FileUploadComplete(sender As Object, e As DevExpress.Web.FileUploadCompleteEventArgs) Handles uplControlDAT.FileUploadComplete
-        Dim upload_Batch As String = e.UploadedFile.FileNameInStorage
-
-        If File.Exists(Ruta & upload_Batch) Then
-            Session("Ruta_GESQL") = Ruta & upload_Batch
-        End If
-    End Sub
-
-    Protected Sub CallbackPanelCarga_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles CallbackPanelCarga.Callback
-        FileSystem.Rename(Session("Ruta_GESQL"), Ruta & "ConsultaEK_" & GESQL) : Session("Ruta_GESQL") = Ruta & "ConsultaEK_" & GESQL
-        ObtenerDatos(Session("Ruta_GESQL"))
-
-        GE_Funciones.EliminarArchivos({Session("Ruta_GESQL")}) : Session("Ruta_GESQL") = Nothing
     End Sub
 #End Region
 End Class

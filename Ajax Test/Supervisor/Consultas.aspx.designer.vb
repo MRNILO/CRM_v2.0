@@ -50,31 +50,22 @@ Partial Public Class Consultas
     Protected WithEvents btnExcel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control uplControlDAT.
+    '''Control cmBoxArchivos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents uplControlDAT As Global.DevExpress.Web.ASPxUploadControl
+    Protected WithEvents cmBoxArchivos As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control btnCargar.
+    '''Control btnAbrirArchivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCargar As Global.DevExpress.Web.ASPxButton
-    
-    '''<summary>
-    '''Control CallbackPanelCarga.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents CallbackPanelCarga As Global.DevExpress.Web.ASPxCallbackPanel
+    Protected WithEvents btnAbrirArchivo As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control txtBoxConsulta.

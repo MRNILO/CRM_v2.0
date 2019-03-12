@@ -59,42 +59,18 @@
                 </div>
                 <div class="col-lg-5" style="margin-top: 20px">
                     <label>Archivo de Consulta</label>
-                    <dx:ASPxUploadControl ID="uplControlDAT" runat="server" UploadMode="Auto" Width="100%"
-                        Theme="MaterialCompact" Font-Names="Microsoft Sans Serif" Font-Size="8pt" NullText="Archivo de Consulta"
-                        ShowProgressPanel="True" ClientInstanceName="uploaderADD">
-                        <ValidationSettings MaxFileCount="10" MaxFileCountErrorText="Has exedido el limite de archivos a subir">
-                        </ValidationSettings>
-                        <ClientSideEvents FilesUploadComplete="function(s, e) {
-                                                                    PanelCarga.PerformCallback();	
-                                                               }" />
-                        <AdvancedModeSettings EnableMultiSelect="True">
-                        </AdvancedModeSettings>
-                    </dx:ASPxUploadControl>
+                    <dx:ASPxComboBox ID="cmBoxArchivos" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                 </div>
                 <div class="col-lg-1" style="margin-top: 45px">
-                    <dx:ASPxButton ID="btnCargar" runat="server" CssClass="btn btn-xs btn-default btn-block"
-                        Width="100%" Height="30px" ToolTip="Cargar" AutoPostBack="False">
-                        <ClientSideEvents Click="function(s, e) {
-	                                                 uploaderADD.Upload();
-                                                 }" />
-                        <Image IconID="actions_up2_16x16">
-                        </Image>
-                    </dx:ASPxButton>
+                    <asp:Button ID="btnAbrirArchivo" runat="server" Text="Abrir" Width="100%" Height="30px" CssClass="btn btn-sm btn-block green" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <label>
                         Consulta de Datos</label>
-                    <dx:ASPxCallbackPanel ID="CallbackPanelCarga" runat="server" Width="100%" ClientInstanceName="PanelCarga"
-                        Theme="MaterialCompact">
-                        <PanelCollection>
-                            <dx:PanelContent>
-                                <asp:TextBox ID="txtBoxConsulta" runat="server" Width="100%" Height="200px" CssClass="form-control"
-                                    TextMode="MultiLine"></asp:TextBox>
-                            </dx:PanelContent>
-                        </PanelCollection>
-                    </dx:ASPxCallbackPanel>
+                    <asp:TextBox ID="txtBoxConsulta" runat="server" Width="100%" Height="200px" CssClass="form-control"
+                        TextMode="MultiLine"></asp:TextBox>
                 </div>
             </div>
         </div>
