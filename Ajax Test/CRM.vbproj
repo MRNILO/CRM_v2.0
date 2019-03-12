@@ -7955,6 +7955,7 @@
     <Content Include="Supervisor\tipoCampana.aspx" />
     <Content Include="Supervisor\Usuario.aspx" />
     <Content Include="Supervisor\Usuarios.aspx" />
+    <Content Include="Supervisor\UsuarioSupervisor.aspx" />
     <Content Include="Todos\calificaLlamada.aspx" />
     <Content Include="Usuario\Ayuda.aspx" />
     <Content Include="Usuario\Bandeja.aspx" />
@@ -8574,6 +8575,13 @@
     </Compile>
     <Compile Include="Supervisor\Usuarios.aspx.vb">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\UsuarioSupervisor.aspx.designer.vb">
+      <DependentUpon>UsuarioSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\UsuarioSupervisor.aspx.vb">
+      <DependentUpon>UsuarioSupervisor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Todos\calificaLlamada.aspx.designer.vb">

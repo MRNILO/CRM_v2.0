@@ -137,6 +137,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
+                                <a href="/Supervisor/UsuarioSupervisor.aspx">
+                                    <i class="fa fa-user"></i>Asignar Supervisor
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/Supervisor/Usuarios.aspx">
                                     <i class="fa fa-users"></i>Catalogo Usuarios
                                 </a>

@@ -26,6 +26,17 @@ Public Class Funciones
         Dim IdUsuario As String
         Dim Numcte As String
     End Structure
+    Public Structure BusquedaUsuarios
+        Dim nombreCliente As String
+        Dim apellidoMaterno As String
+        Dim apellidoPaterno As String
+        Dim Email As String
+        Dim fecahCreacion As Date
+        Dim Usuario As String
+        Dim IdUsuario As String
+    End Structure
+
+
 #End Region
 
 #Region "Archivos"
@@ -178,6 +189,63 @@ Public Class Funciones
 
         BuscarClientesXAsesor = DTB
     End Function
+
+
+    Public Function BuscarUsuario(ByVal Usuario As BusquedaUsuarios) As DataTable
+        Dim Query As String = "EXEC [dbo].[BuscarUsuario]
+		                            @Nombre = N'" & Usuario.nombreCliente & "',
+		                            @ApellidoPaterno = N'" & Usuario.apellidoPaterno & "',
+		                            @ApellidoMaterno = N'" & Usuario.apellidoMaterno & "',
+                                    @IdCrm = N'" & Usuario.Usuario & "'"
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim ROWB As DataRow
+
+        DTB.Columns.AddRange({New DataColumn("ID", GetType(Integer)), New DataColumn("UsuarioNombre", GetType(String)), New DataColumn("Email", GetType(String)),
+                               New DataColumn("Usuario", GetType(String)), New DataColumn("fechaCreacion", GetType(Date))})
+
+        DTA = GE_SQL.SQLGetTable(Query)
+        If DTA.Rows.Count > 0 Then
+            For Each rowA As DataRow In DTA.Rows
+                ROWB = DTB.NewRow
+                ROWB("ID") = rowA("ID")
+                ROWB("UsuarioNombre") = rowA("UsuarioNombre")
+                ROWB("Email") = rowA("Email")
+                ROWB("Usuario") = rowA("Usuario")
+                ROWB("fechaCreacion") = rowA("fechaCreacion")
+
+                DTB.Rows.Add(ROWB)
+            Next
+        End If
+
+        BuscarUsuario = DTB
+    End Function
+    Public Function BuscarSupervisores() As DataTable
+        Dim Query As String = "EXEC [dbo].[Obtener_supervisores]"
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim ROWB As DataRow
+
+        DTB.Columns.AddRange({New DataColumn("id_supervisor", GetType(Integer)), New DataColumn("supervisor", GetType(String))})
+
+        DTA = GE_SQL.SQLGetTable(Query)
+        If DTA.Rows.Count > 0 Then
+            For Each rowA As DataRow In DTA.Rows
+                ROWB = DTB.NewRow
+                ROWB("id_supervisor") = rowA("id_supervisor")
+                ROWB("supervisor") = rowA("supervisor")
+
+                DTB.Rows.Add(ROWB)
+            Next
+        End If
+
+        BuscarSupervisores = DTB
+    End Function
+
+
+
 #End Region
 
 #Region "Citas"
