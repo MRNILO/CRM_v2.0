@@ -42,6 +42,7 @@ Public Class Consultas
 
     Private Sub LimpiarUI()
         txtBoxConsulta.Text = ""
+        cmBoxArchivos.SelectedIndex = 0
 
         With grdViewConsulta
             .Columns.Clear()
