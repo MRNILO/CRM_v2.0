@@ -27,7 +27,7 @@ Public Class Funciones
         Dim Numcte As String
     End Structure
     Public Structure BusquedaUsuarios
-        Dim nombreCliente As String
+        Dim nombreUsuario As String
         Dim apellidoMaterno As String
         Dim apellidoPaterno As String
         Dim Email As String
@@ -193,7 +193,7 @@ Public Class Funciones
 
     Public Function BuscarUsuario(ByVal Usuario As BusquedaUsuarios) As DataTable
         Dim Query As String = "EXEC [dbo].[BuscarUsuario]
-		                            @Nombre = N'" & Usuario.nombreCliente & "',
+		                            @Nombre = N'" & Usuario.nombreUsuario & "',
 		                            @ApellidoPaterno = N'" & Usuario.apellidoPaterno & "',
 		                            @ApellidoMaterno = N'" & Usuario.apellidoMaterno & "',
                                     @IdCrm = N'" & Usuario.Usuario & "'"
@@ -232,6 +232,10 @@ Public Class Funciones
 
         DTA = GE_SQL.SQLGetTable(Query)
         If DTA.Rows.Count > 0 Then
+            ROWB = DTB.NewRow
+            ROWB("id_supervisor") = "0"
+            ROWB("supervisor") = "Seleccione supervisor"
+            DTB.Rows.Add(ROWB)
             For Each rowA As DataRow In DTA.Rows
                 ROWB = DTB.NewRow
                 ROWB("id_supervisor") = rowA("id_supervisor")
@@ -493,6 +497,24 @@ Inicio:
         DSR.Tables.Add(DTE)
 
         Return DSR
+    End Function
+#End Region
+
+#Region "Usuarios"
+    Public Function Asignar_Supervisor(ByVal idUsuario As Integer, ByVal idSupervisor As Integer) As Boolean
+
+
+        Dim Query As String = " EXEC [dbo].[Inserta_Asignacion_supervisorUsuario]
+                                   @Pid_usuario = N'" & idUsuario & "',
+                                   @Pid_supervisor = N'" & idSupervisor & "'"
+
+        If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
+            Return False
+        Else
+            Return True
+        End If
+
+
     End Function
 #End Region
 End Class

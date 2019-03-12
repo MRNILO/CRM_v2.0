@@ -136,7 +136,7 @@
                         <asp:Label ID="lblNombre_usuario" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="col-lg-2">
-                        <dx:ASPxComboBox ID="cmBoxSupervisores" runat="server"></dx:ASPxComboBox>
+                        <dx:ASPxComboBox ID="cmBoxSupervisores" runat="server" AutoPostBack="true"></dx:ASPxComboBox>
                     </div>
                     <div class="col-lg-2">
                         <asp:Button ID="btnAsignar" runat="server" Text="Asignar" CssClass="btn btn-sm btn-block blue" Enabled="false" />

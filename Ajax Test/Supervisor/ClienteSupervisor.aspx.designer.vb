@@ -59,6 +59,15 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents dtp_FechaCancelacion As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
+    '''Control cmBoxEmpresa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxEmpresa As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
     '''Control btn_guardaNumcte.
     '''</summary>
     '''<remarks>
