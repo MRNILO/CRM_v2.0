@@ -7975,6 +7975,7 @@
     <Content Include="Usuario\NuevaCitaCte.aspx" />
     <Content Include="Usuario\nuevaEmpresa.aspx" />
     <Content Include="Usuario\NuevaLlamada.aspx" />
+    <Content Include="Usuario\NuevaVisitaCte.aspx" />
     <Content Include="Usuario\NuevoCliente.aspx" />
     <Content Include="Supervisor\Supervisor.Master" />
     <Content Include="Usuario\NuevoEmail.aspx" />
@@ -8716,6 +8717,13 @@
     </Compile>
     <Compile Include="Usuario\NuevaLlamada.aspx.vb">
       <DependentUpon>NuevaLlamada.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\NuevaVisitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\NuevaVisitaCte.aspx.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Usuario\NuevoCliente.aspx.designer.vb">
