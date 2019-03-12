@@ -186,20 +186,14 @@
                 source: function (request, response) {
                     $.getJSON("/api/empresas?Query=" + request.term, function (data) {
                         response($.map(data, function (Empresa, id_empresa) {
-                            //alert(Empresa.Empresa);
                             return {
                                 label: Empresa.Empresa,
                                 value: Empresa.id_empresa
                             };
                         }));
-
-
-
-
                     });
                 },
                 minLength: 3,
-
             });
         });
     </script>

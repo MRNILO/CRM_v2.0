@@ -88,7 +88,6 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script type="text/javascript">
-
         function cambiarTarea(idTarea) {
             $.ajax({
                 type: "POST",

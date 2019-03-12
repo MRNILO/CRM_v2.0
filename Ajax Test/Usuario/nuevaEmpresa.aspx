@@ -83,7 +83,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script type="text/javascript">   
-      function EjecutaAjax() {
+        function EjecutaAjax() {
             $.ajax({
                 type: "POST",
                 url: "<%= ResolveUrl("nuevaEmpresa.aspx/PruebaAjax")%>",
@@ -100,8 +100,7 @@
             });
         }
         function OnSuccess(response) {
-            //alert("Si se pudo " + response.d);
-            $("#Ciudades").html("Seleccione una ciudad:<br />"+response.d);
+            $("#Ciudades").html("Seleccione una ciudad:<br />" + response.d);
         }
     </script>
 

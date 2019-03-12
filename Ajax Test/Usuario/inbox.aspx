@@ -24,7 +24,6 @@
         </div>
     </div>
     <a href="/Usuario/NuevoEmail.aspx" class="btn btn-lg blue">Nuevo Correo</a>
-
     <div class="portlet box green-jungle">
         <div class="portlet-title">
             <div class="caption">
@@ -106,7 +105,6 @@
 
         function ExitoMail(response) {
             document.getElementById('CorreoBody').innerHTML = response.d;
-
         }
     </script>
 </asp:Content>
