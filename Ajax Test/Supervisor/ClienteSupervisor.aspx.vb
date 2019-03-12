@@ -8,6 +8,7 @@ Public Class ClienteSupervisor
     Dim idCliente As Integer = 0
     Dim Conexion As New SqlConnection("Data Source=192.168.1.13\CRM;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=Sistemas1245")
     Dim Conexion1 As New SqlConnection("Data Source=altaircloud.mx\SQLSERVER,5696;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=octy#1992.A")
+    Private GE_Funciones As New Funciones
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
@@ -21,6 +22,7 @@ Public Class ClienteSupervisor
             If Page.IsPostBack Then
 
             Else
+                BuscaCitasActivas()
                 Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
 
                 If Datos(0).Numcte = 0 Then
@@ -190,7 +192,21 @@ Public Class ClienteSupervisor
 
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+    Sub BuscaCitasActivas()
+        Dim DTCitas = GE_Funciones.Obtener_CitasCliente(idCliente)
 
+        For Each Row As DataRow In DTCitas.Rows
+            If (Row("Status") = 1) Then
+                btn_cambiarUsuario.Enabled = False
+                cmBoxUsuarios.Enabled = False
+                lbl_CitasVigentes.Visible = True
+                Exit Sub
+            End If
+        Next
+        btn_cambiarUsuario.Enabled = True
+        cmBoxUsuarios.Enabled = True
+        lbl_CitasVigentes.Visible = False
+    End Sub
     Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -199,6 +215,7 @@ Public Class ClienteSupervisor
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
     End Sub
+
     Private Sub ComboEmpresas()
         Dim ROWA As DataRow
         Dim DTA As New DataTable
