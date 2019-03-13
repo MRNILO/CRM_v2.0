@@ -41,6 +41,51 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents txBox_AsesorAsignado As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control dtp_finicio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_finicio As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control dtp_ffinal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_ffinal As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control dtp_fechaCita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_fechaCita As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control cmBoxMedio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxMedio As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control cmBoxCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
     '''Control tb_TipoCampana.
     '''</summary>
     '''<remarks>
@@ -66,6 +111,15 @@ Partial Public Class NuevaVisitaCte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_modelos As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control btn_asignaCita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control lbl_mensaje.

@@ -79,6 +79,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
+                                <a href="../CallCenter/NuevoCliente.aspx">
+                                    <i class="fa fa-user"></i>Registrar Prospecto
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/Prospectador/BusquedaClientes.aspx">
                                     <i class="fa fa-user"></i>Buscar Clientes
                                 </a>
@@ -86,23 +91,6 @@
                             <li>
                                 <a href="/Prospectador/Citas.aspx">
                                     <i class="fa fa-user"></i>Citas
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="heading">
-                        <h3 class="uppercase">Asesores</h3>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-folder"></i>
-                            <span class="title">Asesores</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="/Prospectador/Asesores.aspx">
-                                    <i class="fa fa-user"></i>Lista de Asesores
                                 </a>
                             </li>
                         </ul>

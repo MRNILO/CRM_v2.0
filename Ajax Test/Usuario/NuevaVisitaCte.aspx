@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="NuevaVisitaCte.aspx.vb" Inherits="Ajax_Test.NuevaVisitaCte" %>
 
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
@@ -49,19 +50,19 @@
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>Vigencia De:</strong></label><br />
-                        <dx:aspxdateedit id="dtp_finicio" runat="server" width="100%" theme="Mulberry"></dx:aspxdateedit>
+                        <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>A:</strong></label><br />
-                        <dx:aspxdateedit id="dtp_ffinal" runat="server" width="100%" theme="Mulberry"></dx:aspxdateedit>
+                        <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>Fecha Cita:</strong></label><br />
-                        <dx:aspxdateedit id="dtp_fechaCita" runat="server" width="100%" theme="Mulberry"></dx:aspxdateedit>
+                        <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                     </div>
                 </div>
             </div>
@@ -69,13 +70,13 @@
                 <div class="form-group" style="margin-top: 15px">
                     <div class="col-lg-2">
                         <label><strong>Medio:</strong></label><br />
-                        <dx:aspxcombobox id="cmBoxMedio" runat="server" valuetype="System.String" width="100%" theme="MaterialCompact" autopostback="True"></dx:aspxcombobox>
+                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>Lugar Contacto:</strong></label><br />
-                        <dx:aspxcombobox id="cmBoxCampana" runat="server" valuetype="System.String" width="100%" theme="MaterialCompact" autopostback="True"></dx:aspxcombobox>
+                        <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -101,10 +102,10 @@
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col-lg-2 pull-right">
-                    <dx:aspxbutton id="btn_asignaCita" runat="server" text="Asigna Cita" theme="Moderno" width="100%">
+                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Moderno" Width="100%">
                         <Image IconID="actions_save_16x16devav">
                         </Image>
-                    </dx:aspxbutton>
+                    </dx:ASPxButton>
                 </div>
             </div>
         </div>
