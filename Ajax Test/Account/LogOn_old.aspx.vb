@@ -1,4 +1,4 @@
-﻿Public Class LogOn
+﻿Public Class LogOn_old
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -6,6 +6,7 @@
     End Sub
 
     Protected Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+
         Dim userName As String = Request.Form("username")
         Dim Contraseña As String = Request.Form("password")
 
