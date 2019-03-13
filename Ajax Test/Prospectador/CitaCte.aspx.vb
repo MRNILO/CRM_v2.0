@@ -37,6 +37,7 @@
 
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
+        cmBoxMedio.Enabled = False
 
         AlimentarComboMedios()
         AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
@@ -54,14 +55,23 @@
     End Sub
 
     Private Sub AlimentarComboMedios()
+        Dim da_Medios As DataTable
+        da_Medios = GE_Funciones.ObtenerMedios()
         With cmBoxMedio
-            .DataSource = GE_Funciones.ObtenerMedios()
+            .DataSource = da_Medios
             .ValueField = "Id_Medio"
             .TextField = "NombreMedio"
             .DataBind()
 
             .SelectedIndex = 0
         End With
+        For i = 0 To da_Medios.Rows.Count - 1
+            If da_Medios.Rows(i).Item("NombreMedio") = "PROSPECTACION" Then
+                cmBoxMedio.SelectedIndex = i
+
+                Exit Sub
+            End If
+        Next
     End Sub
 
     Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
@@ -249,7 +259,10 @@
     End Sub
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
+        Response.Redirect("../Prospectador/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
+    End Sub
+    Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
     End Sub
 #End Region
 
@@ -286,5 +299,7 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+
+
 #End Region
 End Class

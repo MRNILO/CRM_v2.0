@@ -38,7 +38,10 @@
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
-        AlimentarComboCampanas()
+        AlimentarComboMedios()
+        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+        AlimentarComboProyectos()
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
@@ -49,7 +52,68 @@
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
     End Sub
+    Private Sub AlimentarComboMedios()
+        Dim da_Medios As DataTable
+        da_Medios = GE_Funciones.ObtenerMedios()
+        With cmBoxMedio
+            .DataSource = da_Medios
+            .ValueField = "Id_Medio"
+            .TextField = "NombreMedio"
+            .DataBind()
 
+            .SelectedIndex = 0
+        End With
+        For i = 0 To da_Medios.Rows.Count - 1
+            If da_Medios.Rows(i).Item("NombreMedio") = "PROSPECTACION" Then
+                cmBoxMedio.SelectedIndex = i
+
+                Exit Sub
+            End If
+        Next
+    End Sub
+
+    Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
+        With cmBoxCampana
+            .DataSource = GE_Funciones.ObtenerCampanas(Id_Medio)
+            .ValueField = "id_campaña"
+            .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboProyectos()
+        With cb_fraccinamientos
+            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .DataValueField = "Proyecto"
+            .DataTextField = "Fraccionamiento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub AlimentarComboModelos(ByVal Proyecto As String)
+        With cb_modelos
+            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .DataValueField = "id_producto"
+            .DataTextField = "Modelo"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+    Private Sub AlimentarComboCampanas()
+        With cmBoxCampana
+            .DataSource = GE_Funciones.ObtenerCampanas()
+            .ValueField = "id_campaña"
+            .TextField = "campañaNombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
@@ -66,17 +130,6 @@
                     e.Cell.Text = "COMPLETADA"
             End Select
         End If
-    End Sub
-
-    Private Sub AlimentarComboCampanas()
-        With cmBoxCampana
-            .DataSource = GE_Funciones.ObtenerCampanas()
-            .ValueField = "id_campaña"
-            .TextField = "campañaNombre"
-            .DataBind()
-
-            .SelectedIndex = 0
-        End With
     End Sub
 
     Function Crea_generalesCliente() As String
@@ -197,6 +250,9 @@
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
         End Try
 
+    End Sub
+    Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
     End Sub
 #End Region
 

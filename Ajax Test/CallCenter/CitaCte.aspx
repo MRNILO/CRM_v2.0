@@ -47,14 +47,10 @@
         </div>
     </div>
 
-
     <div class="portlet box blue-hoki">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-globe"></i>Cita
-            </div>
-            <div class="tools">
-                <%-- Botones --%>
             </div>
         </div>
         <div class="portlet-body">
@@ -68,62 +64,84 @@
                     <label><strong>Origen:</strong></label><br />
                     <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">CALL CENTER</asp:TextBox>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Lugar Contacto:</strong></label><br />
-                    <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
-                </div>
-                <div class="col-lg-2">
-                    <label><strong>Medio 2:</strong></label>
-                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
-                <div class="col-lg-4">
-                    <label><strong>Proyacto que visitará:</strong></label><br />
-                    <asp:DropDownList ID="cb_fraccinamientos" runat="server" DataSourceID="FraccDS" DataTextField="nom_fracc" DataValueField="id_cve_fracc" CssClass="form-control">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="FraccDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.sm_fraccionamiento.id_cve_fracc, dbo.sm_fraccionamiento.nom_fracc
-                                                                                                                                                         FROM dbo.sm_fraccionamiento where status_fracc = 'A'"></asp:SqlDataSource>
-                </div>
-                <div class="col-lg-2">
-                    <label><strong>Modelo:</strong></label><br />
-                    <asp:DropDownList ID="cb_modelos" runat="server" DataSourceID="productosDs" DataTextField="NombreCorto" DataValueField="id_producto" CssClass="form-control">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="productosDs" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
-                </div>
             </div>
-            <div class="row" style="margin-top: 10px">
-                <div class="col-lg-4">
-                    <label><strong>Asesor Asignado:</strong></label><br />
-                    <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
-                    <asp:SqlDataSource ID="UsuariosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.id_usuario, 
-                                                                                                                                                                   CONCAT(dbo.usuarios.nombre,' ',
+            <div class="row">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-4">
+                        <label><strong>Asesor Asignado:</strong></label><br />
+                        <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
+                        <asp:SqlDataSource ID="UsuariosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.id_usuario, 
+                                                                                                                                                                    CONCAT(dbo.usuarios.nombre,' ',
                                                                                                                                                                           dbo.usuarios.apellidoPaterno,' ',
                                                                                                                                                                           dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
-                                                                                                                                                            FROM dbo.usuarios
-                                                                                                                                                            ORDER BY nombre ASC"></asp:SqlDataSource>
+                                                                                                                                                                    FROM dbo.usuarios
+                                                                                                                                                                    ORDER BY nombre ASC"></asp:SqlDataSource>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Vigencia De:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Vigencia De:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>A:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>A:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label><strong>Fecha Cita:</strong></label><br />
-                    <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Fecha Cita:</strong></label><br />
+                        <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label><strong>Medio:</strong></label><br />
+                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True" CssClass="form-control"></dx:ASPxComboBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Lugar Contacto:</strong></label><br />
+                        <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Medio 2:</strong></label>
+                        <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label><strong>Proyacto que visitará:</strong></label><br />
+                        <asp:DropDownList ID="cb_fraccinamientos" runat="server" CssClass="form-control" AutoPostBack="True">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Modelo:</strong></label><br />
+                        <asp:DropDownList ID="cb_modelos" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col-lg-2 pull-right">
                     <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Moderno" Width="100%">
-                        <Image IconID="actions_right_16x16">
+                        <Image IconID="actions_save_16x16devav">
                         </Image>
                     </dx:ASPxButton>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="portlet box green-dark">
         <div class="portlet-title">
             <div class="caption">

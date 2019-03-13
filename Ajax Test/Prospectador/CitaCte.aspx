@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Prospectador/Prospectador.Master" CodeBehind="CitaCte.aspx.vb" Inherits="Ajax_Test.CitaCteProspectador" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
@@ -47,7 +48,6 @@
         </div>
     </div>
 
-
     <div class="portlet box blue-hoki">
         <div class="portlet-title">
             <div class="caption">
@@ -57,7 +57,7 @@
         <div class="portlet-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <label><strong>Agente de Caseta: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
+                    <label><strong>Prospectador: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
                 </div>
             </div>
             <div class="row" style="margin-top: 5px">
@@ -103,7 +103,7 @@
                 <div class="form-group" style="margin-top: 15px">
                     <div class="col-lg-2">
                         <label><strong>Medio:</strong></label><br />
-                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True" CssClass="form-control"></dx:ASPxComboBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -143,6 +143,7 @@
             </div>
         </div>
     </div>
+
     <div class="portlet box green-dark">
         <div class="portlet-title">
             <div class="caption">
@@ -201,6 +202,7 @@
             </div>
         </div>
     </div>
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>
