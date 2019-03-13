@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-lg-5" style="margin-top: 20px">
                     <label>Archivo de Consulta</label>
-                    <dx:ASPxComboBox ID="cmBoxArchivos" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    <dx:ASPxComboBox ID="cmBoxArchivos" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact"></dx:ASPxComboBox>
                 </div>
                 <div class="col-lg-1" style="margin-top: 45px">
                     <asp:Button ID="btnAbrirArchivo" runat="server" Text="Abrir" Width="100%" Height="30px" CssClass="btn btn-sm btn-block green" />
