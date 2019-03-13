@@ -227,8 +227,9 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Logoff.aspx" />
     <Content Include="Account\LogOn.aspx" />
+    <Content Include="Account\Logoff.aspx" />
+    <Content Include="Account\LogOn_old.aspx" />
     <Content Include="Administrativo\AcumuladoAdm.aspx" />
     <Content Include="Administrativo\AsignaOportunidad.aspx" />
     <Content Include="Administrativo\Configuraciones.aspx" />
@@ -8005,6 +8006,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\LogOn.aspx.designer.vb">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LogOn.aspx.vb">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Account\Logoff.aspx.designer.vb">
       <DependentUpon>Logoff.aspx</DependentUpon>
     </Compile>
@@ -8012,11 +8020,11 @@
       <DependentUpon>Logoff.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\LogOn.aspx.designer.vb">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="Account\LogOn_old.aspx.designer.vb">
+      <DependentUpon>LogOn_old.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\LogOn.aspx.vb">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="Account\LogOn_old.aspx.vb">
+      <DependentUpon>LogOn_old.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Administrativo\AcumuladoAdm.aspx.designer.vb">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="LogOn.aspx.vb" Inherits="Ajax_Test.LogOn" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="LogOn_old.aspx.vb" Inherits="Ajax_Test.LogOn_old" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,47 +57,52 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
+<!-- END HEAD -->
+
 <body class=" login">
-    <form id="form1" runat="server" class="user-login-5">
-        <div>
-            <div class="row bs-reset">
-                <div class="col-md-6 login-container bs-reset">
-                    <img class="login-logo login-6" src="/assets/imagenes/logo.png" width="150" />
-                    <div class="login-content">
-                        <h1>Grupo Edificasa | CRM</h1>
-                        <p>
-                            <asp:Literal ID="lbl_error" runat="server"></asp:Literal>
-                        </p>
+    <!-- BEGIN : LOGIN PAGE 5-2 -->
+    <div class="user-login-5">
+        <div class="row bs-reset">
+            <div class="col-md-6 login-container bs-reset">
+                <img class="login-logo login-6" src="/assets/imagenes/logo.png" width="150" />
+                <div class="login-content">
+                    <h1>Grupo Edificasa | CRM</h1>
+                    <p>
+                        <asp:Literal ID="lbl_error" runat="server"></asp:Literal>
+                    </p>
+                    <form class="login-form" runat="server">
+                        <div class="alert alert-danger display-hide">
+                            <button class="close" data-close="alert"></button>
+                            <span>Ingrese sus datos para comenzar </span>
+                        </div>
                         <div class="row">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <input id="usuario" class="form-control form-control-solid placeholder-no-fix form-group" type="text"
-                                        autocomplete="off" placeholder="Usuario" name="username" required />
-                                </div>
-                                <div class="col-xs-6">
-                                    <input id="password" class="form-control form-control-solid placeholder-no-fix form-group" type="password"
-                                        autocomplete="off" placeholder="Contraseña" name="password" required />
-                                </div>
+                            <div class="col-xs-6">
+                                <input id="usuario" class="form-control form-control-solid placeholder-no-fix form-group" type="text"
+                                    autocomplete="off" placeholder="Usuario" name="username" required />
+                            </div>
+                            <div class="col-xs-6">
+                                <input id="password" class="form-control form-control-solid placeholder-no-fix form-group" type="password"
+                                    autocomplete="off" placeholder="Contraseña" name="password" required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-8 text-right">
-                                <asp:Button ID="btn_login" runat="server" Text="Entrar" CssClass="btn btn-sm blue" OnClick="btn_login_Click" />
+                                <asp:Button ID="btn_login" runat="server" Text="Entrar" CssClass="btn btn-sm blue" UseSubmitBehavior="False" />
                             </div>
                         </div>
-                    </div>
+                    </form>
 
-                    <div class="login-footer">
-                        <div class="row bs-reset">
-                            <div class="col-xs-5 bs-reset">
-                                <ul class="login-social">
-                                    <li>
-                                        <a href="http://facebook.com/altairsoft">
-                                            <i class="icon-social-facebook"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                </div>
+                <div class="login-footer">
+                    <div class="row bs-reset">
+                        <div class="col-xs-5 bs-reset">
+                            <ul class="login-social">
+                                <li>
+                                    <a href="http://facebook.com/altairsoft">
+                                        <i class="icon-social-facebook"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="col-xs-7 bs-reset">
                             <div class="login-copyright text-right">
@@ -106,11 +111,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 bs-reset">
-                    <div class="login-bg"></div>
-                </div>
+            </div>
+            <div class="col-md-6 bs-reset">
+                <div class="login-bg"></div>
             </div>
         </div>
-    </form>
+    </div>
 </body>
+
 </html>
