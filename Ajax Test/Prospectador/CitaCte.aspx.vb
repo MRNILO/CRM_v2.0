@@ -237,7 +237,6 @@
             End Select
         End If
     End Sub
-
 #End Region
 
 #Region "Eventos"
@@ -251,7 +250,7 @@
             If BL.Insertar_CitasProspectador(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
                                            tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
                                            dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
-                Response.Redirect("Citas.aspx", False)
+                Response.Redirect("../Prospectador/Citas.aspx", False)
             End If
         Catch ex As Exception
             lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
@@ -261,6 +260,7 @@
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../Prospectador/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
+
     Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
     End Sub
@@ -299,7 +299,5 @@
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
-
-
 #End Region
 End Class

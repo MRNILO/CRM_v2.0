@@ -23,22 +23,85 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control tb_origen.
+    '''Control txBoxProyecto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_origen As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txBoxProyecto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control txBox_AsesorAsignado.
+    '''Control txBoxModelo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txBox_AsesorAsignado As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txBoxModelo As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxEsquemaFinanciero.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxEsquemaFinanciero As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxMedio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxMedio As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxCual.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxCual As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxUsuario As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxAsesor.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxAsesor As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxFechaCita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxFechaCita As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control txBoxTipoCamapana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxTipoCamapana As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control dtp_finicio.
@@ -57,60 +120,6 @@ Partial Public Class NuevaVisitaCte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dtp_ffinal As Global.DevExpress.Web.ASPxDateEdit
-    
-    '''<summary>
-    '''Control dtp_fechaCita.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dtp_fechaCita As Global.DevExpress.Web.ASPxDateEdit
-    
-    '''<summary>
-    '''Control cmBoxMedio.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cmBoxMedio As Global.DevExpress.Web.ASPxComboBox
-    
-    '''<summary>
-    '''Control cmBoxCampana.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
-    
-    '''<summary>
-    '''Control tb_TipoCampana.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control cb_fraccinamientos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cb_fraccinamientos As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control cb_modelos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cb_modelos As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''Control btn_asignaCita.

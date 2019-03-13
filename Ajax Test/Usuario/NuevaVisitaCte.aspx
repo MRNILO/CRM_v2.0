@@ -34,17 +34,63 @@
             </div>
         </div>
         <div class="portlet-body">
-            <div class="row" style="margin-top: 5px">
-                <div class="col-lg-2">
-                    <label><strong>Origen:</strong></label><br />
-                    <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">AGENTE MOVIL</asp:TextBox>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-2" style="margin-top: 15px">
+                        <label><strong>Proyecto:</strong></label>
+                        <asp:TextBox ID="txBoxProyecto" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label><strong>Modelo:</strong></label>
+                        <asp:TextBox ID="txBoxModelo" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label><strong>Esq. Financiero:</strong></label>
+                        <asp:TextBox ID="txBoxEsquemaFinanciero" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Medio:</strong></label>
+                        <asp:TextBox ID="txBoxMedio" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Cual:</strong></label>
+                        <asp:TextBox ID="txBoxCual" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 5px">
                 <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-4">
-                        <label><strong>Asesor Asignado:</strong></label><br />
-                        <asp:TextBox ID="txBox_AsesorAsignado" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                    <div class="col-lg-5">
+                        <label><strong>Usuario:</strong></label>
+                        <asp:TextBox ID="txBoxUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5">
+                        <label><strong>Asesor:</strong></label>
+                        <asp:TextBox ID="txBoxAsesor" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Fecha Cita:</strong></label>
+                        <asp:TextBox ID="txBoxFechaCita" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5px">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label><strong>Tipo Campaña:</strong></label>
+                        <asp:TextBox ID="txBoxTipoCamapana" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,46 +103,6 @@
                     <div class="col-lg-2">
                         <label><strong>A:</strong></label><br />
                         <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <label><strong>Fecha Cita:</strong></label><br />
-                        <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-2">
-                        <label><strong>Medio:</strong></label><br />
-                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <label><strong>Lugar Contacto:</strong></label><br />
-                        <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <label><strong>Medio 2:</strong></label>
-                        <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-4">
-                        <label><strong>Proyacto que visitará:</strong></label><br />
-                        <asp:DropDownList ID="cb_fraccinamientos" runat="server" CssClass="form-control" AutoPostBack="True">
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <label><strong>Modelo:</strong></label><br />
-                        <asp:DropDownList ID="cb_modelos" runat="server" CssClass="form-control">
-                        </asp:DropDownList>
                     </div>
                 </div>
             </div>

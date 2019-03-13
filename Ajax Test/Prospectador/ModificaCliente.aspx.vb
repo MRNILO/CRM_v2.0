@@ -29,10 +29,12 @@ Public Class ModificaCliente_Prospectador
         End If
         GV_telefonos.DataBind()
     End Sub
+
     Sub Fotos(ByRef Datos As Servicio.CidCliente())
         lbl_fotocliente.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
         lbl_fotoTpres.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
     End Sub
+
     Sub datosCliente(ByRef Datos As Servicio.CidCliente())
         tb_NombreCliente.Text = Datos(0).Nombre
         tb_ApellidoMaterno.Text = Datos(0).ApellidoMaterno
@@ -44,6 +46,7 @@ Public Class ModificaCliente_Prospectador
         tb_FechaNacimiento.Text = Datos(0).fechaNacimiento.ToString("yyyy-MM-dd")
         ' tb_monto.Text = Datos(0).Monto.ToString
     End Sub
+
     Sub Combos(ByRef Datos As Servicio.CidCliente())
 
         Dim Estados = BL.Obtener_estados.ToList
@@ -92,6 +95,7 @@ Public Class ModificaCliente_Prospectador
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -109,6 +113,7 @@ Public Class ModificaCliente_Prospectador
         End Select
     End Sub
 #End Region
+
     Protected Sub GV_telefonos_DataBinding(sender As Object, e As EventArgs) Handles GV_telefonos.DataBinding
         GV_telefonos.DataSource = BL.Obtener_telefonosModificaCliente(idCliente)
     End Sub
@@ -158,15 +163,17 @@ Public Class ModificaCliente_Prospectador
 
             ' Existe al menos un telefono
             If BL.Actualiza_clientes_callcenter(idCliente, tb_NombreCliente.Text, tb_ApellidoPaterno.Text, tb_ApellidoMaterno.Text, tb_email.Text, cb_productos.SelectedValue, cb_nivelInteres.SelectedValue, tb_empresas.Text, cb_campañas.SelectedValue, tb_observaciones.Text, Fotos.Cliente, Fotos.TarjetaP, 0, tb_NSS.Text, tb_FechaNacimiento.Text) Then
-                Response.Redirect("../Caseta/Citas.aspx?id=" + idCita.ToString, False)
+                Response.Redirect("../Prospectador/Citas.aspx?id=" + idCita.ToString, False)
             Else
                 lbl_mensaje.Text += MostrarError("Error al insertar cliente, verifique los datos e intente de nuevo")
             End If
         End If
     End Sub
+
     Protected Sub btn_verobservacion_Click(sender As Object, e As EventArgs) Handles btn_verobservacion.Click
-        Response.Redirect("../Caseta/DetalleObservaciones.aspx?idCliente=" + idCliente.ToString, False)
+        Response.Redirect("../Prospectador/DetalleObservaciones.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
+
 #Region "Trabajo Fotos"
     Function TrabajoFotos() As CFotos
         Dim MaximoWidth As Integer = 400

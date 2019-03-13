@@ -6,6 +6,7 @@ Public Class ModificaCliente2
     Dim NivelSeccion As Integer = 5
     Dim idCliente As Integer = 0
     Dim idCita As Integer = 0
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
 
@@ -34,6 +35,7 @@ Public Class ModificaCliente2
         lbl_fotocliente.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
         lbl_fotoTpres.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
     End Sub
+
     Sub datosCliente(ByRef Datos As Servicio.CidCliente())
         tb_NombreCliente.Text = Datos(0).Nombre
         tb_ApellidoMaterno.Text = Datos(0).ApellidoMaterno
@@ -45,8 +47,8 @@ Public Class ModificaCliente2
         tb_FechaNacimiento.Text = Datos(0).fechaNacimiento.ToString("yyyy-MM-dd")
         ' tb_monto.Text = Datos(0).Monto.ToString
     End Sub
-    Sub Combos(ByRef Datos As Servicio.CidCliente())
 
+    Sub Combos(ByRef Datos As Servicio.CidCliente())
         Dim Estados = BL.Obtener_estados.ToList
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -70,6 +72,7 @@ Public Class ModificaCliente2
         cb_campañas.DataBind()
         cb_campañas.SelectedValue = Datos(0).id_campaña
     End Sub
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
@@ -92,6 +95,7 @@ Public Class ModificaCliente2
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -106,8 +110,8 @@ Public Class ModificaCliente2
                 Response.Redirect("~/Caseta/InicioCaseta.aspx", False)
         End Select
     End Sub
-
 #End Region
+
     Protected Sub GV_telefonos_DataBinding(sender As Object, e As EventArgs) Handles GV_telefonos.DataBinding
         GV_telefonos.DataSource = BL.Obtener_telefonosModificaCliente(idCliente)
     End Sub
@@ -163,9 +167,11 @@ Public Class ModificaCliente2
             End If
         End If
     End Sub
+
     Protected Sub btn_verobservacion_Click(sender As Object, e As EventArgs) Handles btn_verobservacion.Click
         Response.Redirect("../Caseta/DetalleObservaciones.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
+
 #Region "Trabajo Fotos"
     Function TrabajoFotos() As CFotos
         Dim MaximoWidth As Integer = 400
@@ -216,6 +222,7 @@ Public Class ModificaCliente2
 
         Return Resultado
     End Function
+
     Function resizeImage(ByVal Imagen As System.Drawing.Image, ByVal MaximoLargo As Integer)
         Dim original As Drawing.Bitmap, resizedImage As Drawing.Bitmap
 
@@ -259,6 +266,7 @@ Public Class ModificaCliente2
         End Try
         Return resizedImage
     End Function
+
     Public Function ImageToBase64(image As System.Drawing.Image, format As System.Drawing.Imaging.ImageFormat) As String
         Using ms As New MemoryStream()
             ' Convert Image to byte[]

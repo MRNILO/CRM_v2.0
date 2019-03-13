@@ -12,7 +12,6 @@ Public Class NuevoCliente2
 
         Dim IDCliente As Integer = 0
 
-
         If cb_campañas.SelectedValue = 14 Then
             lbl_mensaje.Text += "<strong style='color:red'>DEBE SELECCIONAR UN ORIGEN/CAMPAÑA VALIDO</strong>"
             Exit Sub
@@ -60,17 +59,11 @@ Public Class NuevoCliente2
 
                 BL.CompletaCliente(IDCliente, 0, "-", tb_rfc.Text, tb_nHijos.Text, tb_ingresosPersonales.Text, cb_edoCivil.SelectedValue)
             End If
-
-            Try
-                BL.Inserta_ClientesCC(IDCliente, Usuario.id_usuario, CB_TIPOcREDITO.SelectedValue)
-            Catch ex As Exception
-
-            End Try
-            '' Response.Redirect("cita.aspx?id=" + IDCliente.ToString, False)
         Catch ex As Exception
             lbl_mensaje.Text += "<strong style='color:red'>Por favor complete todos los campos </strong>"
         End Try
     End Sub
+
 #Region "Funciones de Usuario"
     <WebMethod()>
     Public Shared Function ValidaNSS(ByVal nss As String) As String
@@ -93,6 +86,7 @@ Public Class NuevoCliente2
         End If
         Return HTML
     End Function
+
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
@@ -113,6 +107,7 @@ Public Class NuevoCliente2
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1

@@ -7440,7 +7440,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Prospectador\Asesores.aspx" />
     <Content Include="Prospectador\BusquedaClientes.aspx" />
     <Content Include="Prospectador\CitaCte.aspx" />
     <Content Include="Prospectador\Citas.aspx" />
@@ -8285,13 +8284,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Prospectador\Asesores.aspx.designer.vb">
-      <DependentUpon>Asesores.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Prospectador\Asesores.aspx.vb">
-      <DependentUpon>Asesores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Prospectador\BusquedaClientes.aspx.designer.vb">
       <DependentUpon>BusquedaClientes.aspx</DependentUpon>

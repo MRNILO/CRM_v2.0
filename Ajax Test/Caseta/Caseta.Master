@@ -75,7 +75,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="../CallCenter/NuevoCliente.aspx">
+                                <a href="../Caseta/NuevoCliente.aspx">
                                     <i class="fa fa-user"></i>Registrar Prospecto
                                 </a>
                             </li>

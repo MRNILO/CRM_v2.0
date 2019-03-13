@@ -5,6 +5,25 @@ Public Class Funciones
     Private ROOT_GESQL As String = ConfigurationManager.ConnectionStrings("RutaSQLS").ConnectionString
 
 #Region "Estructuras"
+    Public Structure DatosCita
+        Dim IdCita As Integer
+        Dim IdCliente As Integer
+        Dim IdUsuario As Integer
+        Dim IdUsuarioAsignado As Integer
+        Dim IdCampana As Integer
+        Dim Origen As String
+        Dim LugarContacto As String
+        Dim Medio As String
+        Dim TipoCampana As String
+        Dim Fraccionamiento As String
+        Dim Modelo As String
+        Dim Proyecto As String
+        Dim FechaCita As Date
+        Dim Asesor As String
+        Dim AsesorAsignado As String
+        Dim TipoCredito As String
+    End Structure
+
     Public Structure BusquedaCliente
         Dim nombreCliente As String
         Dim apellidoMaterno As String
@@ -357,6 +376,38 @@ Public Class Funciones
 
         GE_SQL.SQLExecSQL(Query, SQL_Functions.TipoTransaccion.UniqueTransaction)
     End Sub
+#End Region
+
+#Region "Visitas"
+    Public Function Obtener_DatosCita(ByVal Id_Cliente As Integer) As DatosCita
+        Dim Query As String = String.Format("EXEC [dbo].Obtener_DetallesCitas
+                                                   @pIdCliente = {0}", Id_Cliente)
+
+        Dim DTA As New DataTable
+        DTA = GE_SQL.SQLGetTable(Query)
+
+        Dim Resultado As New DatosCita
+        For Each row As DataRow In DTA.Rows
+            Resultado.IdCita = row("Id_Cita")
+            Resultado.IdCliente = row("Id_Cliente")
+            Resultado.IdUsuario = row("Id_Usuario")
+            Resultado.IdUsuarioAsignado = row("Id_UsuarioAsignado")
+            Resultado.IdCampana = row("Id_Campana")
+            Resultado.Origen = row("Origen")
+            Resultado.LugarContacto = row("LugarContacto")
+            Resultado.Medio = row("Medio")
+            Resultado.TipoCampana = row("TipoCampana")
+            Resultado.Fraccionamiento = row("Fraccionamiento")
+            Resultado.Modelo = row("Modelo")
+            Resultado.Proyecto = row("Proyecto")
+            Resultado.FechaCita = row("FechaCita")
+            Resultado.Asesor = row("Asesor")
+            Resultado.AsesorAsignado = row("AsesorAsignado")
+            Resultado.TipoCredito = row("tipocredito")
+        Next
+
+        Return Resultado
+    End Function
 #End Region
 
 #Region "Clientes"
