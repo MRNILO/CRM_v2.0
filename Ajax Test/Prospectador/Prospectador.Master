@@ -79,7 +79,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="../Proespectador/NuevoCliente.aspx">
+                                <a href="../Prospectador/NuevoCliente.aspx">
                                     <i class="fa fa-user"></i>Registrar Prospecto
                                 </a>
                             </li>
