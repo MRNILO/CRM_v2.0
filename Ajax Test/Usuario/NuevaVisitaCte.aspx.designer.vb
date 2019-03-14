@@ -86,13 +86,13 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents txBoxAsesor As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control txBoxFechaCita.
+    '''Control dtFechaVisita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txBoxFechaCita As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents dtFechaVisita As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
     '''Control txBoxTipoCamapana.

@@ -7,11 +7,12 @@ Public Class NuevaVisitaCte
     Dim NivelSeccion As Integer = 1
 
     Dim IDCliente As Integer = 0
+    Dim DatosCitas As DatosCita
 
     Private GE_Funciones As New Funciones
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'ValidaUsuario()
+        ValidaUsuario()
 
         Try
             IDCliente = Request.QueryString("idCliente")
@@ -26,7 +27,7 @@ Public Class NuevaVisitaCte
 
 #Region "Metodos"
     Private Sub UI()
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        DatosCitas = GE_Funciones.Obtener_DatosCita(IDCliente)
 
         With txBoxProyecto : .Enabled = False : .Text = DatosCitas.Proyecto : End With
         With txBoxModelo : .Enabled = False : .Text = DatosCitas.Modelo : End With
@@ -35,7 +36,6 @@ Public Class NuevaVisitaCte
         With txBoxCual : .Enabled = False : .Text = DatosCitas.LugarContacto : End With
         With txBoxUsuario : .Enabled = False : .Text = DatosCitas.Asesor : End With
         With txBoxAsesor : .Enabled = False : .Text = DatosCitas.AsesorAsignado : End With
-        With txBoxFechaCita : .Enabled = False : .Text = DatosCitas.FechaCita : End With
         With txBoxTipoCamapana : .Enabled = False : .Text = DatosCitas.TipoCampana : End With
         With dtp_finicio : .Enabled = False : .Date = Now() : End With
         With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
@@ -121,6 +121,17 @@ Public Class NuevaVisitaCte
 
     Protected Sub cmBoxMotivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMotivo.SelectedIndexChanged
         Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+    End Sub
+
+    Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
+        With DatosCitas
+            If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
+                    0, cmBoxClasificacion.SelectedItem.Value, .Origen, .Proyecto, .Modelo, .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
+                lbl_mensaje.Text = MostrarError("¡Visita registrada correctamente!")
+            Else
+                lbl_mensaje.Text = MostrarError("¡Ocurrio un error al registrar la visita!")
+            End If
+        End With
     End Sub
 #End Region
 End Class

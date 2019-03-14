@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
+  <xs:element name="Actualiza_tipocampaña">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_tipoCampaña" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoCampaña" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualiza_tipocampañaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualiza_tipocampañaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_tipocampaña">
     <xs:complexType>
       <xs:sequence />
@@ -747,6 +762,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_notificacionesResult" nillable="true" type="q30:ArrayOfCNotifica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_etapasCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nEtapa" type="xs:int" />
+        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Inserta_etapasClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Inserta_etapasClienteResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2027,21 +2057,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Actualiza_tipocampaña">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id_tipoCampaña" type="xs:int" />
-        <xs:element minOccurs="0" name="TipoCampaña" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Actualiza_tipocampañaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Actualiza_tipocampañaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Obtener_nombreClientesAdm">
     <xs:complexType>
       <xs:sequence />
@@ -3085,6 +3100,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_VisitasClientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCita" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuarioAsignado" type="xs:int" />
+        <xs:element minOccurs="0" name="IdCampana" type="xs:int" />
+        <xs:element minOccurs="0" name="IdImpedimento" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoCredito" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Monto" type="xs:double" />
+        <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Origen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoCampana" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VigenciaIncial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="VigenciaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaVisita" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_VisitasClientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_VisitasClientesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Actualiza_configuraciones">
     <xs:complexType>
       <xs:sequence>
@@ -3419,21 +3464,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_operacionesIdClienteResult" nillable="true" type="q106:ArrayOfCOperacionesCliente" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_etapasCliente">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="nEtapa" type="xs:int" />
-        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Inserta_etapasClienteResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Inserta_etapasClienteResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

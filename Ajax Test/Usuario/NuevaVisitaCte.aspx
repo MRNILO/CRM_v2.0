@@ -81,8 +81,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
-                        <label><strong>Fecha Cita:</strong></label>
-                        <asp:TextBox ID="txBoxFechaCita" runat="server" CssClass="form-control"></asp:TextBox>
+                        <label><strong>Fecha Visita:</strong></label>
+                        <dx:ASPxDateEdit ID="dtFechaVisita" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
                     </div>
                 </div>
             </div>

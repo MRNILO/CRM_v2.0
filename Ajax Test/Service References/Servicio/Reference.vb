@@ -12080,6 +12080,12 @@ Namespace Servicio
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="Servicio.IService1")>  _
     Public Interface IService1
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Actualiza_tipocampañaResponse")>  _
+        Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Actualiza_tipocampañaResponse")>  _
+        Function Actualiza_tipocampañaAsync(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_tipocampañaResponse")>  _
         Function Obtener_tipocampaña() As Servicio.CTipoCampaña()
         
@@ -12379,6 +12385,12 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
+        Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
+        Function Inserta_etapasClienteAsync(ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>  _
         Function Obtener_etapasCliente() As Servicio.CEtapasCliente()
@@ -12884,12 +12896,6 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
         Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Actualiza_tipocampañaResponse")>  _
-        Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Actualiza_tipocampañaResponse")>  _
-        Function Actualiza_tipocampañaAsync(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean)
-        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
         
@@ -13302,6 +13308,46 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citasClienteResponse")>  _
         Function Obtener_citasClienteAsync(ByVal idCLiente As Integer) As System.Threading.Tasks.Task(Of Servicio.CCitasDetallesCliente())
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>  _
+        Function Insertar_VisitasClientes( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As String,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
+                    ByVal Status As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>  _
+        Function Insertar_VisitasClientesAsync( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As String,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
+                    ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_configuraciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_configuracionesResponse")>  _
         Function Actualiza_configuraciones(ByVal id_configuracion As Integer, ByVal diasDeGracias As Integer, ByVal emailSistema As String, ByVal contraseñaEmail As String, ByVal smtpServer As String, ByVal puertoEmail As Integer, ByVal SSL As String, ByVal EnviarEmails As String) As Boolean
         
@@ -13427,12 +13473,6 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
         Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente())
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
-        Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
-        Function Inserta_etapasClienteAsync(ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -13465,6 +13505,14 @@ Namespace Servicio
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
+        
+        Public Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean Implements Servicio.IService1.Actualiza_tipocampaña
+            Return MyBase.Channel.Actualiza_tipocampaña(id_tipoCampaña, TipoCampaña)
+        End Function
+        
+        Public Function Actualiza_tipocampañaAsync(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tipocampañaAsync
+            Return MyBase.Channel.Actualiza_tipocampañaAsync(id_tipoCampaña, TipoCampaña)
+        End Function
         
         Public Function Obtener_tipocampaña() As Servicio.CTipoCampaña() Implements Servicio.IService1.Obtener_tipocampaña
             Return MyBase.Channel.Obtener_tipocampaña
@@ -13864,6 +13912,14 @@ Namespace Servicio
         
         Public Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica()) Implements Servicio.IService1.Obtener_notificacionesAsync
             Return MyBase.Channel.Obtener_notificacionesAsync(idCliente)
+        End Function
+        
+        Public Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean Implements Servicio.IService1.Inserta_etapasCliente
+            Return MyBase.Channel.Inserta_etapasCliente(nEtapa, Descripcion)
+        End Function
+        
+        Public Function Inserta_etapasClienteAsync(ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_etapasClienteAsync
+            Return MyBase.Channel.Inserta_etapasClienteAsync(nEtapa, Descripcion)
         End Function
         
         Public Function Obtener_etapasCliente() As Servicio.CEtapasCliente() Implements Servicio.IService1.Obtener_etapasCliente
@@ -14538,14 +14594,6 @@ Namespace Servicio
             Return MyBase.Channel.Elimina_tipocampañaAsync(id_tipoCampaña)
         End Function
         
-        Public Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean Implements Servicio.IService1.Actualiza_tipocampaña
-            Return MyBase.Channel.Actualiza_tipocampaña(id_tipoCampaña, TipoCampaña)
-        End Function
-        
-        Public Function Actualiza_tipocampañaAsync(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tipocampañaAsync
-            Return MyBase.Channel.Actualiza_tipocampañaAsync(id_tipoCampaña, TipoCampaña)
-        End Function
-        
         Public Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor() Implements Servicio.IService1.Obtener_nombreClientesAdm
             Return MyBase.Channel.Obtener_nombreClientesAdm
         End Function
@@ -15084,6 +15132,48 @@ Namespace Servicio
             Return MyBase.Channel.Obtener_citasClienteAsync(idCLiente)
         End Function
         
+        Public Function Insertar_VisitasClientes( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As String,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
+                    ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_VisitasClientes
+            Return MyBase.Channel.Insertar_VisitasClientes(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
+        End Function
+        
+        Public Function Insertar_VisitasClientesAsync( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As String,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
+                    ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_VisitasClientesAsync
+            Return MyBase.Channel.Insertar_VisitasClientesAsync(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
+        End Function
+        
         Public Function Actualiza_configuraciones(ByVal id_configuracion As Integer, ByVal diasDeGracias As Integer, ByVal emailSistema As String, ByVal contraseñaEmail As String, ByVal smtpServer As String, ByVal puertoEmail As Integer, ByVal SSL As String, ByVal EnviarEmails As String) As Boolean Implements Servicio.IService1.Actualiza_configuraciones
             Return MyBase.Channel.Actualiza_configuraciones(id_configuracion, diasDeGracias, emailSistema, contraseñaEmail, smtpServer, puertoEmail, SSL, EnviarEmails)
         End Function
@@ -15250,14 +15340,6 @@ Namespace Servicio
         
         Public Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente()) Implements Servicio.IService1.Obtener_operacionesIdClienteAsync
             Return MyBase.Channel.Obtener_operacionesIdClienteAsync(idCliente)
-        End Function
-        
-        Public Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean Implements Servicio.IService1.Inserta_etapasCliente
-            Return MyBase.Channel.Inserta_etapasCliente(nEtapa, Descripcion)
-        End Function
-        
-        Public Function Inserta_etapasClienteAsync(ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_etapasClienteAsync
-            Return MyBase.Channel.Inserta_etapasClienteAsync(nEtapa, Descripcion)
         End Function
     End Class
 End Namespace

@@ -376,6 +376,7 @@ Public Class Funciones
 
         GE_SQL.SQLExecSQL(Query, SQL_Functions.TipoTransaccion.UniqueTransaction)
     End Sub
+
     Public Function Obtener_ListadoCitas(ByVal IdUsuario As Integer) As DataTable
         Dim Query As String = ""
 
@@ -384,6 +385,7 @@ Public Class Funciones
 
         Obtener_ListadoCitas = GE_SQL.SQLGetTable(Query)
     End Function
+
     Public Function Obtener_ListadoCitasAsignadas(ByVal IdUsuario As Integer) As DataTable
         Dim Query As String = ""
 
