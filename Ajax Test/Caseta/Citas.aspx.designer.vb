@@ -14,22 +14,22 @@ Option Explicit On
 Partial Public Class Citas1
     
     '''<summary>
-    '''Control GE_Citas.
+    '''Control btn_excel.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GE_Citas As Global.DevExpress.Web.ASPxGridViewExporter
+    Protected WithEvents btn_excel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control btn_exportar.
+    '''Control GV_exporterCitas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_exportar As Global.DevExpress.Web.ASPxButton
+    Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
     
     '''<summary>
     '''Control GV_Citas.
@@ -41,11 +41,47 @@ Partial Public Class Citas1
     Protected WithEvents GV_Citas As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control CitasDS.
+    '''Control GV_Exporter.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents CitasDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents GV_Exporter As Global.DevExpress.Web.ASPxGridViewExporter
+    
+    '''<summary>
+    '''Control btn_excelAsignadas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_excelAsignadas As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control GV_exporterCitasAsignadas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_exporterCitasAsignadas As Global.DevExpress.Web.ASPxGridViewExporter
+    
+    '''<summary>
+    '''Control GV_CitasAsignadas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_CitasAsignadas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control GV_ExporterAsignadas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_ExporterAsignadas As Global.DevExpress.Web.ASPxGridViewExporter
 End Class

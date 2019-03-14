@@ -2,13 +2,12 @@
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 6
-
+    Dim Id_Usuario As Integer = 0
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
         If Not IsPostBack() Then
-
+            CargarCitas()
         End If
     End Sub
 #Region "Metodos"
@@ -47,6 +46,13 @@
             Case 6
                 Response.Redirect("~/Prospectador/InicioProspectador.aspx", False)
         End Select
+    End Sub
+    Sub CargarCitas()
+        Dim DA_Citas As DataTable
+        DA_Citas = GE_Funciones.Obtener_ListadoCitas(Usuario.id_usuario)
+
+        GV_Citas.DataSource = DA_Citas
+        GV_Citas.DataBind()
     End Sub
 #End Region
 End Class

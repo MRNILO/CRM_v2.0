@@ -311,22 +311,13 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents GV_operaciones As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control btn_CitasExcel.
+    '''Control GV_exporterCitas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_CitasExcel As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control lbl_botonCitas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_botonCitas As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
     
     '''<summary>
     '''Control GV_citas.
