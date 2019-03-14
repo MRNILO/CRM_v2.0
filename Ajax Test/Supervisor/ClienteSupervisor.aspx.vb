@@ -74,7 +74,7 @@ Public Class ClienteSupervisor
             GV_Llamadas.DataSource = Session("GridLlamadas")
             GV_Llamadas.DataBind()
 
-            GV_citas.DataBind()
+            CargarCitas()
             GV_operaciones.DataBind()
         End If
 
@@ -122,8 +122,6 @@ Public Class ClienteSupervisor
         Dim reader As SqlDataReader = cmd.ExecuteReader
 
         While reader.Read
-
-
             Resultado = DirectCast(reader.Item("numcte"), Integer)
         End While
         Conexion.Close()
@@ -354,15 +352,13 @@ Public Class ClienteSupervisor
             lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
         End Try
     End Sub
-
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../Usuario/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
-
-    Protected Sub GV_citas_DataBinding(sender As Object, e As EventArgs) Handles GV_citas.DataBinding
-        GV_citas.DataSource = BL.Obtener_citas_detalles_idCliente(idCliente)
+    Sub CargarCitas()
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(idCliente)
+        GV_citas.DataBind()
     End Sub
-
     Protected Sub btn_cambiarUsuario_Click(sender As Object, e As EventArgs) Handles btn_cambiarUsuario.Click
         Try
             If BL.Cambia_usuarioClienteSupervisor(CInt(cmBoxUsuarios.Value), idCliente, CInt(Usuario.id_usuario)) Then
@@ -375,7 +371,6 @@ Public Class ClienteSupervisor
 
         End Try
     End Sub
-
     Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
         Dim NumeroCliente As Integer
 
@@ -461,6 +456,23 @@ Public Class ClienteSupervisor
         btnCambiar.Visible = True
         btnActualizar.Visible = False
         btnCancelar.Visible = False
+    End Sub
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
     End Sub
 #End Region
 End Class

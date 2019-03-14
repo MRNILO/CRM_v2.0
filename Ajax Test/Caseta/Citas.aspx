@@ -6,84 +6,133 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="portlet-body">
 
-        <div class="table-responsive">
-            <br />
-            <dx:ASPxGridViewExporter ID="GE_Citas" runat="server">
-            </dx:ASPxGridViewExporter>
-            <dx:ASPxButton ID="btn_exportar" runat="server" Text="Exportar a excel" Theme="Material">
-                <Image IconID="actions_loadfrom_16x16">
-                </Image>
-            </dx:ASPxButton>
-            <dx:ASPxGridView ID="GV_Citas" runat="server" Theme="MaterialCompact" AutoGenerateColumns="False" DataSourceID="CitasDS" Width="100%">
-                <Settings ShowFilterRow="True" ShowGroupPanel="True" />
-                <SettingsSearchPanel Visible="True" />
-                <Columns>
-                    <dx:GridViewDataTextColumn FieldName="Nombre" VisibleIndex="0">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ApellidoPaterno" VisibleIndex="1">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ApellidoMaterno" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn FieldName="FechaCita" VisibleIndex="4">
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="Etapa" VisibleIndex="5">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NSS" VisibleIndex="6">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="CURP" VisibleIndex="7">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ranking" VisibleIndex="8">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NPersona" VisibleIndex="9">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NContrato" VisibleIndex="10">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="RFC" VisibleIndex="11">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NHijos" VisibleIndex="12">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="IngresosPersonales" VisibleIndex="13">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NombreUsuario" VisibleIndex="14">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ApUsuario" VisibleIndex="15">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ApMUsuario" VisibleIndex="16">
-                    </dx:GridViewDataTextColumn>
-                </Columns>
-            </dx:ASPxGridView>
-            <asp:SqlDataSource ID="CitasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>"
-                SelectCommand="SELECT
-                                  clientes.Nombre,
-                                  clientes.ApellidoPaterno,
-                                  clientes.ApellidoMaterno,
-                                  clientes.Email,
-                                  CitasClientes.FechaCita,
-                                  etapasCliente.Descripcion AS Etapa,
-                                  clientes.NSS,
-                                  clientes.CURP,
-                                  clientes.ranking,
-                                  clientes.NPersona,
-                                  clientes.NContrato,
-                                  clientes.RFC,
-                                  clientes.NHijos,
-                                  clientes.IngresosPersonales,
-                                  usuarios.nombre As NombreUsuario,
-                                  usuarios.apellidoPaterno as ApUsuario,
-                                  usuarios.apellidoMaterno as ApMUsuario
-                               FROM
-                                  CitasClientes 
-                               INNER JOIN clientes ON CitasClientes.Id_Cliente = clientes.id_cliente
-                               INNER JOIN etapasCliente ON clientes.id_etapaActual = etapasCliente.id_etapa
-                               INNER JOIN usuarios ON CitasClientes.Id_Usuario = usuarios.id_usuario
-                               WHERE CitasClientes.Origen = 'AGENTE CASETA'
-                               ORDER BY
-                               Etapa ASC"></asp:SqlDataSource>
+    <div class="portlet-body">
+        <div class="portlet box blue-hoki">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>Mis Citas
+                </div>
+                <div class="tools">
+                    <asp:Button ID="btn_excel" runat="server" Text="A Excel" CssClass="btn btn-sm green" />
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-responsive">
+                    <dx:ASPxGridViewExporter ID="GV_exporterCitas" runat="server" GridViewID="GV_Citas"></dx:ASPxGridViewExporter>
+                    <dx:ASPxGridView ID="GV_Citas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" Font-Size="9pt">
+                        <SettingsSearchPanel Visible="True" />
+                        <Columns>
+                            <dx:GridViewDataTextColumn Caption="Nombre" FieldName="Nombre" VisibleIndex="1">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="2">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="Apellidomaterno" VisibleIndex="3">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="4">
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
+                                </PropertiesHyperLinkEdit>
+                            </dx:GridViewDataHyperLinkColumn>
+                            <dx:GridViewDataTextColumn Caption="Fraccionamiento" FieldName="Fraccionamiento" VisibleIndex="5">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Nivel Interes" FieldName="nivelinteres" VisibleIndex="6">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="7">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="campañaNombre" FieldName="campañaNombre" VisibleIndex="8">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="9">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="10">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataDateColumn>
+                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="11">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                        <SettingsPager PageSize="20">
+                        </SettingsPager>
+                        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                    </dx:ASPxGridView>
+                    <dx:ASPxGridViewExporter ID="GV_Exporter" runat="server" GridViewID="GV_Citas"></dx:ASPxGridViewExporter>
+                </div>
+            </div>
         </div>
+
+    </div>
+
+    <div class="portlet-body">
+        <div class="portlet box blue-hoki">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>Citas Asignadas
+                </div>
+                <div class="tools">
+                    <asp:Button ID="btn_excelAsignadas" runat="server" Text="A Excel" CssClass="btn btn-sm green" />
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-responsive">
+                    <dx:ASPxGridViewExporter ID="GV_exporterCitasAsignadas" runat="server" GridViewID="GV_CitasAsignadas"></dx:ASPxGridViewExporter>
+                    <dx:ASPxGridView ID="GV_CitasAsignadas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" Font-Size="9pt">
+                        <SettingsSearchPanel Visible="True" />
+                        <Columns>
+                            <dx:GridViewDataTextColumn Caption="Nombre" FieldName="Nombre" VisibleIndex="1">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="2">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="Apellidomaterno" VisibleIndex="3">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="4">
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
+                                </PropertiesHyperLinkEdit>
+                            </dx:GridViewDataHyperLinkColumn>
+                            <dx:GridViewDataTextColumn Caption="Fraccionamiento" FieldName="Fraccionamiento" VisibleIndex="5">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Nivel Interes" FieldName="nivelinteres" VisibleIndex="6">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="7">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="campañaNombre" FieldName="campañaNombre" VisibleIndex="8">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="9">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="10">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataDateColumn>
+                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="11">
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                        <SettingsPager PageSize="20">
+                        </SettingsPager>
+                        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                    </dx:ASPxGridView>
+                    <dx:ASPxGridViewExporter ID="GV_ExporterAsignadas" runat="server" GridViewID="GV_CitasAsignadas"></dx:ASPxGridViewExporter>
+                </div>
+            </div>
+        </div>
+
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
