@@ -122,6 +122,33 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents dtp_ffinal As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
+    '''Control cmBoxClasificacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxClasificacion As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control cmBoxMotivo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxMotivo As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control cmBoxSubMotivo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxSubMotivo As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
     '''Control btn_asignaCita.
     '''</summary>
     '''<remarks>

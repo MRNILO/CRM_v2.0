@@ -271,16 +271,20 @@ Public Class Cliente
     End Sub
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
-        Try
-            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                GV_operaciones.DataBind()
-                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
-            Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
-            End If
-        Catch ex As Exception
-            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
-        End Try
+        'Try
+        '    If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+        If cb_etapas.SelectedItem.Text = "Visita" Then
+            Response.Redirect("../Usuario/NuevaVisitaCte.aspx?idCliente=" & idCliente)
+        End If
+
+        '        GV_operaciones.DataBind()
+        '        lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+        '    Else
+        '        lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+        '    End If
+        'Catch ex As Exception
+        '    lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+        'End Try
     End Sub
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click

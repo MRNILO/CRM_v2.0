@@ -30,7 +30,7 @@
     <div class="portlet box blue-hoki">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-globe"></i>Cita
+                <i class="fa fa-globe"></i>Visita
             </div>
         </div>
         <div class="portlet-body">
@@ -88,7 +88,7 @@
             </div>
             <div class="row" style="margin-top: 5px">
                 <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-2">
+                    <div class="col-lg-3">
                         <label><strong>Tipo Campaña:</strong></label>
                         <asp:TextBox ID="txBoxTipoCamapana" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
@@ -96,19 +96,39 @@
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>Vigencia De:</strong></label><br />
-                        <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                        <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>A:</strong></label><br />
-                        <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
+                        <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <label><strong>Clasificación:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxClasificacion" runat="server" Width="100%" Height="35px" Theme="MaterialCompact" AutoPostBack="true"></dx:ASPxComboBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label><strong>Motivo:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxMotivo" runat="server" Width="100%" Height="35px" Theme="MaterialCompact" AutoPostBack="true"></dx:ASPxComboBox>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5px">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-10">
+                        <label><strong>SubMotivo:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxSubMotivo" runat="server" Width="100%" Height="35px" Theme="MaterialCompact"></dx:ASPxComboBox>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col-lg-2 pull-right">
-                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Moderno" Width="100%">
+                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Visita" Theme="Moderno" Width="100%">
                         <Image IconID="actions_save_16x16devav">
                         </Image>
                     </dx:ASPxButton>

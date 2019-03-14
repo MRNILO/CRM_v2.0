@@ -380,33 +380,59 @@ Public Class Funciones
 
 #Region "Visitas"
     Public Function Obtener_DatosCita(ByVal Id_Cliente As Integer) As DatosCita
-        Dim Query As String = String.Format("EXEC [dbo].Obtener_DetallesCitas
+        Dim Query As String = String.Format("EXEC [dbo].[Obtener_DetallesCitas]
                                                    @pIdCliente = {0}", Id_Cliente)
 
         Dim DTA As New DataTable
         DTA = GE_SQL.SQLGetTable(Query)
 
         Dim Resultado As New DatosCita
-        For Each row As DataRow In DTA.Rows
-            Resultado.IdCita = row("Id_Cita")
-            Resultado.IdCliente = row("Id_Cliente")
-            Resultado.IdUsuario = row("Id_Usuario")
-            Resultado.IdUsuarioAsignado = row("Id_UsuarioAsignado")
-            Resultado.IdCampana = row("Id_Campana")
-            Resultado.Origen = row("Origen")
-            Resultado.LugarContacto = row("LugarContacto")
-            Resultado.Medio = row("Medio")
-            Resultado.TipoCampana = row("TipoCampana")
-            Resultado.Fraccionamiento = row("Fraccionamiento")
-            Resultado.Modelo = row("Modelo")
-            Resultado.Proyecto = row("Proyecto")
-            Resultado.FechaCita = row("FechaCita")
-            Resultado.Asesor = row("Asesor")
-            Resultado.AsesorAsignado = row("AsesorAsignado")
-            Resultado.TipoCredito = row("tipocredito")
-        Next
+        Try
+            For Each row As DataRow In DTA.Rows
+                Resultado.IdCita = row("Id_Cita")
+                Resultado.IdCliente = row("Id_Cliente")
+                Resultado.IdUsuario = row("Id_Usuario")
+                Resultado.IdUsuarioAsignado = row("Id_UsuarioAsignado")
+                Resultado.IdCampana = row("Id_Campana")
+                Resultado.Origen = row("Origen")
+                Resultado.LugarContacto = row("LugarContacto")
+                Resultado.Medio = row("Medio")
+                Resultado.TipoCampana = row("TipoCampana")
+                Resultado.Fraccionamiento = row("Fraccionamiento")
+                Resultado.Modelo = row("Modelo")
+                Resultado.Proyecto = row("Proyecto")
+                Resultado.FechaCita = row("FechaCita")
+                Resultado.Asesor = row("Asesor")
+                Resultado.AsesorAsignado = row("AsesorAsignado")
+                Resultado.TipoCredito = row("tipocredito")
+            Next
+        Catch ex As Exception
+            Resultado = Nothing
+        End Try
 
         Return Resultado
+    End Function
+
+    Public Function Obtener_Clasificacion() As DataTable
+        Dim Query As String = "SELECT DISTINCT(ranking) Ranking FROM impedimentos"
+        Obtener_Clasificacion = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function Obtener_Motivos(ByVal Clasificacion As String) As DataTable
+        Dim Query As String = String.Format("SELECT DISTINCT(TI.TipoImpedimento)TipoImpedimento, IP.id_tipoImpedimento
+                                             FROM impedimentos IP 
+                                             INNER JOIN TipoImpedimento TI ON TI.id_tipoImpedimento = IP.id_tipoImpedimento 
+                                             WHERE IP.ranking = '{0}'", Clasificacion)
+
+        Obtener_Motivos = GE_SQL.SQLGetTable(Query)
+    End Function
+
+    Public Function Obtener_Submotivos(ByVal Clasificacion As String, ByVal IdMotivo As Integer) As DataTable
+        Dim Query As String = String.Format("SELECT id_impedimento, impedimento  
+                                             FROM impedimentos
+                                             WHERE ranking = '{0}' AND id_tipoImpedimento = {1}", Clasificacion, IdMotivo)
+
+        Obtener_Submotivos = GE_SQL.SQLGetTable(Query)
     End Function
 #End Region
 

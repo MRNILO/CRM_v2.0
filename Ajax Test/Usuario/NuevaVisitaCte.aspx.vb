@@ -37,9 +37,45 @@ Public Class NuevaVisitaCte
         With txBoxAsesor : .Enabled = False : .Text = DatosCitas.AsesorAsignado : End With
         With txBoxFechaCita : .Enabled = False : .Text = DatosCitas.FechaCita : End With
         With txBoxTipoCamapana : .Enabled = False : .Text = DatosCitas.TipoCampana : End With
-        With dtp_finicio : .Enabled = False : .Text = dtp_finicio.Date = Now() : End With
-        With dtp_ffinal : .Enabled = False : .Text = dtp_ffinal.Date = Now.AddDays(30) : End With
+        With dtp_finicio : .Enabled = False : .Date = Now() : End With
+        With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
 
+        Alimentar_ComboClasificacion()
+        Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+        Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+    End Sub
+
+    Private Sub Alimentar_ComboClasificacion()
+        With cmBoxClasificacion
+            .DataSource = GE_Funciones.Obtener_Clasificacion()
+            .ValueField = "Ranking"
+            .TextField = "Ranking"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_ComboMotivos(ByVal Clasificacion As String)
+        With cmBoxMotivo
+            .DataSource = GE_Funciones.Obtener_Motivos(Clasificacion)
+            .ValueField = "id_tipoImpedimento"
+            .TextField = "TipoImpedimento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_ComboSubmotivos(ByVal Clasificacion As String, ByVal IdMotivo As Integer)
+        With cmBoxSubMotivo
+            .DataSource = GE_Funciones.Obtener_Submotivos(Clasificacion, IdMotivo)
+            .ValueField = "id_impedimento"
+            .TextField = "impedimento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
     End Sub
 #End Region
 
@@ -79,6 +115,12 @@ Public Class NuevaVisitaCte
 #End Region
 
 #Region "Eventos"
+    Protected Sub cmBoxClasificacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxClasificacion.SelectedIndexChanged
+        Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+    End Sub
 
+    Protected Sub cmBoxMotivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMotivo.SelectedIndexChanged
+        Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+    End Sub
 #End Region
 End Class
