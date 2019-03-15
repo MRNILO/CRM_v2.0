@@ -49,8 +49,6 @@
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
 
-                    <SettingsEditing Mode="Batch">
-                    </SettingsEditing>
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsBehavior AutoFilterRowInputDelay="600" />
                     <SettingsSearchPanel Visible="True" Delay="600" />
@@ -85,14 +83,21 @@
                         <dx:GridViewDataTextColumn Caption="Usuario" FieldName="Usuario" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
-                            <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="Registrado" VisibleIndex="7">
+                        <dx:GridViewDataTextColumn Caption="Contraseña" FieldName="Contrasena" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <PropertiesTextEdit Password="True">
+                                <MaskSettings PromptChar="*" />
+                            </PropertiesTextEdit>
+                            <EditFormSettings Visible="True" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="Registrado" VisibleIndex="8">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="8">
+                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="9">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataCheckColumn>

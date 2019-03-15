@@ -5,14 +5,10 @@
     Dim DTA As New DataTable
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        ''GV_Usuarios.DataBind()
         If Not IsPostBack() Then
             ObtenerDatosUsuarios()
         End If
     End Sub
-    'Private Sub GV_Usuarios_DataBinding(sender As Object, e As EventArgs) Handles GV_Usuarios.DataBinding
-    '    GV_Usuarios.DataSource = BL.Obtener_UsuarioDetalleSupervisor(Usuario.id_usuario)
-    'End Sub
     Private Sub GV_Usuarios_DataBinding(sender As Object, e As EventArgs) Handles GV_Usuarios.DataBinding
         Dim ActiveBinding As Boolean = Session("ActiveBinding")
         If ActiveBinding Then
@@ -27,7 +23,7 @@
         Dim DTA As New DataTable
 
         DTA.Columns.AddRange({New DataColumn("id_usuario"), New DataColumn("Nombre"), New DataColumn("ApellidoPaterno"), New DataColumn("ApellidoMaterno"), New DataColumn("Email"),
-                              New DataColumn("Usuario"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean))})
+                              New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean))})
 
         For i As Integer = 0 To ClientesSupervisor.Length - 1
             ROWA = DTA.NewRow()
@@ -39,7 +35,7 @@
             ROWA("Usuario") = ClientesSupervisor(i).usuario
             ROWA("Registrado") = ClientesSupervisor(i).fechaCreacion.ToString("dd/MM/yyyy")
             ROWA("activo") = ClientesSupervisor(i).activo
-
+            ROWA("Contrasena") = ClientesSupervisor(i).contraseña
             DTA.Rows.Add(ROWA)
         Next
 
@@ -84,8 +80,12 @@
         Dim Index As Integer = 0
         Dim RowResult() As DataRow
         Dim DTA As New DataTable
+        Dim Contrasena As String
 
         If (e.NewValues("activo")) Then Activo = 1
+
+        If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
+
 
         If BL.Actualiza_usuarios(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), Activo) Then
             e.Cancel = True
@@ -99,6 +99,8 @@
                 DTA.Rows(Index).Item("ApellidoMaterno") = e.NewValues("ApellidoMaterno")
                 DTA.Rows(Index).Item("Email") = e.NewValues("Email")
                 DTA.Rows(Index).Item("activo") = e.NewValues("activo")
+                DTA.Rows(Index).Item("Contrasena") = e.NewValues("contraseña")
+                DTA.Rows(Index).Item("Usuario") = e.NewValues("usuario")
             Next
 
             ViewState("ClienteUsuarios") = DTA
@@ -106,5 +108,19 @@
 
         End If
     End Sub
+    Public Function CalculateMD5Hash(input As String) As String
+
+        Dim md5 = System.Security.Cryptography.MD5.Create()
+        Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
+        Dim hash = md5.ComputeHash(inputBytes)
+
+
+        Dim sb = New StringBuilder()
+
+        For I = 0 To hash.Length - 1
+            sb.Append(hash(I).ToString("X2"))
+        Next
+        Return sb.ToString()
+    End Function
 #End Region
 End Class

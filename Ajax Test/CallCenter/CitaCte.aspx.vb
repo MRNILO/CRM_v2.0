@@ -46,11 +46,15 @@
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
         cargarCitas()
+        CargarVisitas()
     End Sub
-
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
+    End Sub
+    Private Sub CargarVisitas()
+        GV_Visitas.DataSource = GE_Funciones.Obtener_VisitasCliente(Id_Cliente)
+        GV_Visitas.DataBind()
     End Sub
     Private Sub AlimentarComboMedios()
         Dim da_Medios As DataTable
@@ -71,7 +75,6 @@
             End If
         Next
     End Sub
-
     Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
         With cmBoxCampana
             .DataSource = GE_Funciones.ObtenerCampanas(Id_Medio)
@@ -82,7 +85,6 @@
             .SelectedIndex = 0
         End With
     End Sub
-
     Private Sub AlimentarComboProyectos()
         With cb_fraccinamientos
             .DataSource = GE_Funciones.Obtener_Proyectos()
@@ -93,7 +95,6 @@
             .SelectedIndex = 0
         End With
     End Sub
-
     Private Sub AlimentarComboModelos(ByVal Proyecto As String)
         With cb_modelos
             .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
@@ -132,6 +133,23 @@
         End If
     End Sub
 
+    Protected Sub GV_Visitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_Visitas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -211,11 +229,9 @@
 
         Return HTML
     End Function
-
     Private Sub ObtenerTipoCampana(ByVal IdCampana As Integer)
         tb_TipoCampana.Text = GE_Funciones.Obtener_TipoCampana(IdCampana)
     End Sub
-
     Private Sub VerificarVigenciaCitas()
         Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
 
