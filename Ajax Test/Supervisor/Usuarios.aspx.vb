@@ -87,7 +87,7 @@
         If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
 
 
-        If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("usuario"), Contrasena, Activo) Then
+        If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo) Then
             e.Cancel = True
             DTA = ViewState("ClienteUsuarios")
             RowResult = DTA.Select("id_usuario = " & e.Keys(0))
@@ -109,11 +109,9 @@
         End If
     End Sub
     Public Function CalculateMD5Hash(input As String) As String
-
         Dim md5 = System.Security.Cryptography.MD5.Create()
         Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
         Dim hash = md5.ComputeHash(inputBytes)
-
 
         Dim sb = New StringBuilder()
 
