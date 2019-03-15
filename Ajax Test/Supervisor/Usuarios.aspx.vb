@@ -76,37 +76,42 @@
         End Select
     End Sub
     Protected Sub GV_Usuarios_RowUpdating(sender As Object, e As DevExpress.Web.Data.ASPxDataUpdatingEventArgs) Handles GV_Usuarios.RowUpdating
-        Dim Activo As Integer = 0
-        Dim Index As Integer = 0
-        Dim RowResult() As DataRow
-        Dim DTA As New DataTable
-        Dim Contrasena As String
+        Try
+            Dim Activo As Integer = 0
+            Dim Index As Integer = 0
+            Dim RowResult() As DataRow
+            Dim DTA As New DataTable
+            Dim Contrasena As String
 
-        If (e.NewValues("activo")) Then Activo = 1
+            If (e.NewValues("activo")) Then Activo = 1
 
-        If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
+            If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
 
 
-        If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo) Then
-            e.Cancel = True
-            DTA = ViewState("ClienteUsuarios")
-            RowResult = DTA.Select("id_usuario = " & e.Keys(0))
+            If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo) Then
+                e.Cancel = True
+                DTA = ViewState("ClienteUsuarios")
+                RowResult = DTA.Select("id_usuario = " & e.Keys(0))
 
-            For Each rowR As DataRow In RowResult
-                Index = DTA.Rows.IndexOf(rowR)
-                DTA.Rows(Index).Item("Nombre") = e.NewValues("Nombre")
-                DTA.Rows(Index).Item("ApellidoPaterno") = e.NewValues("ApellidoPaterno")
-                DTA.Rows(Index).Item("ApellidoMaterno") = e.NewValues("ApellidoMaterno")
-                DTA.Rows(Index).Item("Email") = e.NewValues("Email")
-                DTA.Rows(Index).Item("activo") = e.NewValues("activo")
-                DTA.Rows(Index).Item("Contrasena") = e.NewValues("contraseña")
-                DTA.Rows(Index).Item("Usuario") = e.NewValues("usuario")
-            Next
+                For Each rowR As DataRow In RowResult
+                    Index = DTA.Rows.IndexOf(rowR)
+                    DTA.Rows(Index).Item("Nombre") = e.NewValues("Nombre")
+                    DTA.Rows(Index).Item("ApellidoPaterno") = e.NewValues("ApellidoPaterno")
+                    DTA.Rows(Index).Item("ApellidoMaterno") = e.NewValues("ApellidoMaterno")
+                    DTA.Rows(Index).Item("Email") = e.NewValues("Email")
+                    DTA.Rows(Index).Item("activo") = e.NewValues("activo")
+                    DTA.Rows(Index).Item("Contrasena") = e.NewValues("contraseña")
+                    DTA.Rows(Index).Item("Usuario") = e.NewValues("usuario")
+                Next
 
-            ViewState("ClienteUsuarios") = DTA
-            GV_Usuarios.DataBind()
+                ViewState("ClienteUsuarios") = DTA
+                GV_Usuarios.DataBind()
+                lbl_mensaje.Text = MostrarExito("Datos del cliente actualizados con éxito.")
+            End If
+        Catch ex As Exception
 
-        End If
+            lbl_mensaje.Text = MostrarExito("Error por favor verifique los datos.")
+        End Try
     End Sub
     Public Function CalculateMD5Hash(input As String) As String
         Dim md5 = System.Security.Cryptography.MD5.Create()

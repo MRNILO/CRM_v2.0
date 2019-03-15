@@ -107,6 +107,35 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="JSContent" runat="server"></asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
+    <script type="text/javascript">
+
+        function cambiarLlamada(idLlamada) {
+            $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("/Usuario/cliente.aspx/PruebaAjax")%>",
+                data: '{valor: "' + idLlamada + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        function OnSuccess(response) {
+            if (response.d == 'Exito') {
+                location.reload();
+            } else {
+                alert('No se cambio el estatus');
+            }
+        }
+    </script>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+</asp:Content>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
 
