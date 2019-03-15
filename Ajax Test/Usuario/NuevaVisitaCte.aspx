@@ -137,17 +137,15 @@
             </div>
         </div>
     </div>
-    <div class="portlet box orange">
+    <div class="portlet box yellow-casablanca">
         <div class="portlet-title">
-            <div class="title">
+            <div class="caption">
                 <i class="fa fa-globe"></i>Visitas
             </div>
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
-                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
-                    <SettingsSearchPanel Visible="True" />
                     <Columns>
                         <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="1">
                             <HeaderStyle HorizontalAlign="Center" />

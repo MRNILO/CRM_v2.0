@@ -126,8 +126,6 @@
         <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="activo" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
