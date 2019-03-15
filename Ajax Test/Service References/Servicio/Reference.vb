@@ -12134,6 +12134,12 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuarios", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosResponse")>  _
         Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
+        Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
+        Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
         Function Obtener_usuarios_todos() As Servicio.CUsuarios()
         
@@ -13578,6 +13584,14 @@ Namespace Servicio
         
         Public Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosAsync
             Return MyBase.Channel.Actualiza_usuariosAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, activo)
+        End Function
+        
+        Public Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuariosPass
+            Return MyBase.Channel.Actualiza_usuariosPass(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
+        End Function
+        
+        Public Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosPassAsync
+            Return MyBase.Channel.Actualiza_usuariosPassAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
         End Function
         
         Public Function Obtener_usuarios_todos() As Servicio.CUsuarios() Implements Servicio.IService1.Obtener_usuarios_todos

@@ -137,6 +137,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Actualiza_usuariosPass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualiza_usuariosPassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualiza_usuariosPassResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_usuarios_todos">
     <xs:complexType>
       <xs:sequence />

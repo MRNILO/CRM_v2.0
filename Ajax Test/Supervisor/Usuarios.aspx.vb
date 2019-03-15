@@ -87,7 +87,7 @@
         If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
 
 
-        If BL.Actualiza_usuarios(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), Activo) Then
+        If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("usuario"), Contrasena, Activo) Then
             e.Cancel = True
             DTA = ViewState("ClienteUsuarios")
             RowResult = DTA.Select("id_usuario = " & e.Keys(0))
