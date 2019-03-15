@@ -43,6 +43,7 @@
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
         cargarCitas()
+        CargarVisitas()
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
@@ -51,6 +52,11 @@
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
+    End Sub
+
+    Private Sub CargarVisitas()
+        GV_Visitas.DataSource = GE_Funciones.Obtener_VisitasCliente(Id_Cliente)
+        GV_Visitas.DataBind()
     End Sub
 
     Private Sub AlimentarComboMedios()
@@ -216,6 +222,25 @@
             End Select
         End If
     End Sub
+
+    Protected Sub GV_Visitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_Visitas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
 #End Region
 
 #Region "Eventos"

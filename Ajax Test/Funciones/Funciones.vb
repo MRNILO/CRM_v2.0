@@ -629,4 +629,15 @@ Inicio:
         End If
     End Function
 #End Region
+
+#Region "Visitas"
+    Public Function Obtener_VisitasCliente(ByVal IdCLiente As Integer) As DataTable
+        Dim Query As String = ""
+
+        Query = "EXEC [dbo].[Obtener_Visitas_Cliente]
+                            @PidCliente = " & IdCLiente & ";"
+
+        Obtener_VisitasCliente = GE_SQL.SQLGetTable(Query)
+    End Function
+#End Region
 End Class

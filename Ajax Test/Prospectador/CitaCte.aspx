@@ -203,6 +203,54 @@
         </div>
     </div>
 
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Historico Visitas
+            </div>
+        </div>
+        <div class="portlet-body">
+            <asp:Literal ID="lbl_botonVisitas" runat="server"></asp:Literal>
+            <div class="table-scrollable">
+                <dx:ASPxGridViewExporter ID="GV_exporterVisitas" runat="server" GridViewID="GV_Visitas"></dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="GV_Visitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
+                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="TipoCredito" Caption="Tipo Crédito" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Origen" FieldName="Origen" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Proyecto" FieldName="Proyecto" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Modelo" FieldName="Modelo" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="FechaVisita" Caption="Fecha Visita" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>

@@ -201,4 +201,31 @@ Partial Public Class CitaCteProspectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control lbl_botonVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_botonVisitas As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Control GV_exporterVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_exporterVisitas As Global.DevExpress.Web.ASPxGridViewExporter
+    
+    '''<summary>
+    '''Control GV_Visitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_Visitas As Global.DevExpress.Web.ASPxGridView
 End Class
