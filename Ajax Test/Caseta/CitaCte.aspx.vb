@@ -204,6 +204,33 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
+#End Region
+
+#Region "Eventos"
+    Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
+        ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+    End Sub
+
+    Protected Sub cmBoxMedio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMedio.SelectedIndexChanged
+        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+    End Sub
+
+    Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
+        Try
+
+            If BL.Insertar_CitasCaseta(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+                Response.Redirect("../Caseta/Citas.aspx", False)
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
+        End Try
+    End Sub
+
+    Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
+        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
+    End Sub
 
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
@@ -239,34 +266,6 @@
                     e.Cell.Text = "COMPLETADA"
             End Select
         End If
-    End Sub
-
-#End Region
-
-#Region "Eventos"
-    Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
-        ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
-    End Sub
-
-    Protected Sub cmBoxMedio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMedio.SelectedIndexChanged
-        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
-    End Sub
-
-    Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
-        Try
-
-            If BL.Insertar_CitasCaseta(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
-                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
-                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
-                Response.Redirect("../Caseta/Citas.aspx", False)
-            End If
-        Catch ex As Exception
-            lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
-        End Try
-    End Sub
-
-    Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
-        AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
     End Sub
 #End Region
 

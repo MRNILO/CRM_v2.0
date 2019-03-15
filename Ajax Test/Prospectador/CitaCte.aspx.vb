@@ -49,10 +49,12 @@
         cargarCitas()
         CargarVisitas()
     End Sub
+
     Private Sub CargarVisitas()
         GV_citas.DataSource = GE_Funciones.Obtener_VisitasCliente(Id_Cliente)
         GV_citas.DataBind()
     End Sub
+
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
@@ -223,24 +225,6 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
-
-    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
-        If e.DataColumn.Caption = "Estatus" Then
-            Select Case e.CellValue
-                Case 0
-                    e.Cell.BackColor = Drawing.Color.OrangeRed
-                    e.Cell.ForeColor = Drawing.Color.White
-                    e.Cell.Text = "VENCIDA"
-                Case 1
-                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
-                    e.Cell.Text = "VIGENTE"
-                Case 2
-                    e.Cell.BackColor = Drawing.Color.Green
-                    e.Cell.ForeColor = Drawing.Color.White
-                    e.Cell.Text = "COMPLETADA"
-            End Select
-        End If
-    End Sub
 #End Region
 
 #Region "Eventos"
@@ -267,6 +251,24 @@
 
     Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
+    End Sub
+
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
     End Sub
 #End Region
 
