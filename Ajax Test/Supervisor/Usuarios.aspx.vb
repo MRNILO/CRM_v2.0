@@ -109,11 +109,9 @@
         End If
     End Sub
     Public Function CalculateMD5Hash(input As String) As String
-
         Dim md5 = System.Security.Cryptography.MD5.Create()
         Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
         Dim hash = md5.ComputeHash(inputBytes)
-
 
         Dim sb = New StringBuilder()
 
