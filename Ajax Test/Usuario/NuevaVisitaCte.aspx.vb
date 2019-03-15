@@ -7,7 +7,6 @@ Public Class NuevaVisitaCte
     Dim NivelSeccion As Integer = 1
 
     Dim IDCliente As Integer = 0
-    Dim DatosCitas As DatosCita
 
     Private GE_Funciones As New Funciones
 
@@ -27,18 +26,20 @@ Public Class NuevaVisitaCte
 
 #Region "Metodos"
     Private Sub UI()
-        DatosCitas = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
 
-        With txBoxProyecto : .Enabled = False : .Text = DatosCitas.Proyecto : End With
-        With txBoxModelo : .Enabled = False : .Text = DatosCitas.Modelo : End With
         With txBoxEsquemaFinanciero : .Enabled = False : .Text = DatosCitas.TipoCredito : End With
         With txBoxMedio : .Enabled = False : .Text = DatosCitas.Origen : End With
         With txBoxCual : .Enabled = False : .Text = DatosCitas.LugarContacto : End With
         With txBoxUsuario : .Enabled = False : .Text = DatosCitas.Asesor : End With
         With txBoxAsesor : .Enabled = False : .Text = DatosCitas.AsesorAsignado : End With
         With txBoxTipoCamapana : .Enabled = False : .Text = DatosCitas.TipoCampana : End With
+        With dtFechaVisita : .Enabled = False : .Date = Now() : End With
         With dtp_finicio : .Enabled = False : .Date = Now() : End With
         With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
+
+        Alimentar_ComboProyectos()
+        Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
 
         Alimentar_ComboClasificacion()
         Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
@@ -72,6 +73,28 @@ Public Class NuevaVisitaCte
             .DataSource = GE_Funciones.Obtener_Submotivos(Clasificacion, IdMotivo)
             .ValueField = "id_impedimento"
             .TextField = "impedimento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_ComboProyectos()
+        With cmBoxProyecto
+            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .ValueField = "Proyecto"
+            .TextField = "Fraccionamiento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_ComboModelos(ByVal Proyecto As String)
+        With cmBoxModelo
+            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .ValueField = "id_producto"
+            .TextField = "Modelo"
             .DataBind()
 
             .SelectedIndex = 0
@@ -123,15 +146,25 @@ Public Class NuevaVisitaCte
         Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
     End Sub
 
-    Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
+    Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+
         With DatosCitas
-            If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
-                    0, cmBoxClasificacion.SelectedItem.Value, .Origen, .Proyecto, .Modelo, .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
-                lbl_mensaje.Text = MostrarError("¡Visita registrada correctamente!")
+            If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
+                    0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
+                    .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
+
+                Session("DatosCitas") = Nothing
+                lbl_mensaje.Text = MostrarExito("¡Visita registrada correctamente!")
             Else
+                Session("DatosCitas") = Nothing
                 lbl_mensaje.Text = MostrarError("¡Ocurrio un error al registrar la visita!")
             End If
         End With
+    End Sub
+
+    Protected Sub cmBoxProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxProyecto.SelectedIndexChanged
+        Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
     End Sub
 #End Region
 End Class

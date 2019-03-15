@@ -13314,6 +13314,7 @@ Namespace Servicio
                     ByVal IdCliente As Integer,  _
                     ByVal IdUsuario As Integer,  _
                     ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
                     ByVal IdCampana As Integer,  _
                     ByVal IdImpedimento As Integer,  _
                     ByVal TipoCredito As String,  _
@@ -13321,7 +13322,7 @@ Namespace Servicio
                     ByVal Ranking As String,  _
                     ByVal Origen As String,  _
                     ByVal Proyecto As String,  _
-                    ByVal Modelo As String,  _
+                    ByVal Modelo As Integer,  _
                     ByVal TipoCampana As String,  _
                     ByVal VigenciaIncial As Date,  _
                     ByVal VigenciaFinal As Date,  _
@@ -13334,6 +13335,7 @@ Namespace Servicio
                     ByVal IdCliente As Integer,  _
                     ByVal IdUsuario As Integer,  _
                     ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
                     ByVal IdCampana As Integer,  _
                     ByVal IdImpedimento As Integer,  _
                     ByVal TipoCredito As String,  _
@@ -13341,7 +13343,7 @@ Namespace Servicio
                     ByVal Ranking As String,  _
                     ByVal Origen As String,  _
                     ByVal Proyecto As String,  _
-                    ByVal Modelo As String,  _
+                    ByVal Modelo As Integer,  _
                     ByVal TipoCampana As String,  _
                     ByVal VigenciaIncial As Date,  _
                     ByVal VigenciaFinal As Date,  _
@@ -15137,6 +15139,7 @@ Namespace Servicio
                     ByVal IdCliente As Integer,  _
                     ByVal IdUsuario As Integer,  _
                     ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
                     ByVal IdCampana As Integer,  _
                     ByVal IdImpedimento As Integer,  _
                     ByVal TipoCredito As String,  _
@@ -15144,13 +15147,13 @@ Namespace Servicio
                     ByVal Ranking As String,  _
                     ByVal Origen As String,  _
                     ByVal Proyecto As String,  _
-                    ByVal Modelo As String,  _
+                    ByVal Modelo As Integer,  _
                     ByVal TipoCampana As String,  _
                     ByVal VigenciaIncial As Date,  _
                     ByVal VigenciaFinal As Date,  _
                     ByVal FechaVisita As Date,  _
                     ByVal Status As Integer) As Boolean Implements Servicio.IService1.Insertar_VisitasClientes
-            Return MyBase.Channel.Insertar_VisitasClientes(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
+            Return MyBase.Channel.Insertar_VisitasClientes(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdUsuarioVisita, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
         End Function
         
         Public Function Insertar_VisitasClientesAsync( _
@@ -15158,6 +15161,7 @@ Namespace Servicio
                     ByVal IdCliente As Integer,  _
                     ByVal IdUsuario As Integer,  _
                     ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
                     ByVal IdCampana As Integer,  _
                     ByVal IdImpedimento As Integer,  _
                     ByVal TipoCredito As String,  _
@@ -15165,13 +15169,13 @@ Namespace Servicio
                     ByVal Ranking As String,  _
                     ByVal Origen As String,  _
                     ByVal Proyecto As String,  _
-                    ByVal Modelo As String,  _
+                    ByVal Modelo As Integer,  _
                     ByVal TipoCampana As String,  _
                     ByVal VigenciaIncial As Date,  _
                     ByVal VigenciaFinal As Date,  _
                     ByVal FechaVisita As Date,  _
                     ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Insertar_VisitasClientesAsync
-            Return MyBase.Channel.Insertar_VisitasClientesAsync(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
+            Return MyBase.Channel.Insertar_VisitasClientesAsync(IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdUsuarioVisita, IdCampana, IdImpedimento, TipoCredito, Monto, Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial, VigenciaFinal, FechaVisita, Status)
         End Function
         
         Public Function Actualiza_configuraciones(ByVal id_configuracion As Integer, ByVal diasDeGracias As Integer, ByVal emailSistema As String, ByVal contraseñaEmail As String, ByVal smtpServer As String, ByVal puertoEmail As Integer, ByVal SSL As String, ByVal EnviarEmails As String) As Boolean Implements Servicio.IService1.Actualiza_configuraciones

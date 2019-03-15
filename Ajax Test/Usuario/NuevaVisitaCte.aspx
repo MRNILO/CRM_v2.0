@@ -38,13 +38,13 @@
                 <div class="form-group">
                     <div class="col-lg-2" style="margin-top: 15px">
                         <label><strong>Proyecto:</strong></label>
-                        <asp:TextBox ID="txBoxProyecto" runat="server" CssClass="form-control"></asp:TextBox>
+                        <dx:ASPxComboBox ID="cmBoxProyecto" runat="server" Width="100%" Height="35px" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-3">
                         <label><strong>Modelo:</strong></label>
-                        <asp:TextBox ID="txBoxModelo" runat="server" CssClass="form-control"></asp:TextBox>
+                        <dx:ASPxComboBox ID="cmBoxModelo" runat="server" Width="100%" Height="35px" Theme="MaterialCompact"></dx:ASPxComboBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -68,6 +68,12 @@
             </div>
             <div class="row" style="margin-top: 5px">
                 <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label><strong>Fecha Visita:</strong></label>
+                        <dx:ASPxDateEdit ID="dtFechaVisita" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+                <div class="form-group">
                     <div class="col-lg-5">
                         <label><strong>Usuario:</strong></label>
                         <asp:TextBox ID="txBoxUsuario" runat="server" CssClass="form-control"></asp:TextBox>
@@ -75,25 +81,14 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-5">
-                        <label><strong>Asesor:</strong></label>
+                        <label><strong>Asesor Asignado:</strong></label>
                         <asp:TextBox ID="txBoxAsesor" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <label><strong>Fecha Visita:</strong></label>
-                        <dx:ASPxDateEdit ID="dtFechaVisita" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
-                    </div>
-                </div>
+
             </div>
             <div class="row" style="margin-top: 5px">
                 <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-3">
-                        <label><strong>Tipo Campaña:</strong></label>
-                        <asp:TextBox ID="txBoxTipoCamapana" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="form-group">
                     <div class="col-lg-2">
                         <label><strong>Vigencia De:</strong></label><br />
                         <dx:ASPxDateEdit ID="dtp_finicio" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
@@ -103,6 +98,12 @@
                     <div class="col-lg-2">
                         <label><strong>A:</strong></label><br />
                         <dx:ASPxDateEdit ID="dtp_ffinal" runat="server" Width="100%" Height="35px" Theme="Mulberry"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label><strong>Tipo Campaña:</strong></label>
+                        <asp:TextBox ID="txBoxTipoCamapana" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
@@ -127,8 +128,8 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
-                <div class="col-lg-2 pull-right">
-                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Visita" Theme="Moderno" Width="100%">
+                <div class="col-lg-2 col-lg-offset-10">
+                    <dx:ASPxButton ID="btnAsignaVisita" runat="server" Text="Asigna Visita" Theme="Moderno" Width="100%">
                         <Image IconID="actions_save_16x16devav">
                         </Image>
                     </dx:ASPxButton>

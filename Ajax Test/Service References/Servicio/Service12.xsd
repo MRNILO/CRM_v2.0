@@ -3107,6 +3107,7 @@
         <xs:element minOccurs="0" name="IdCliente" type="xs:int" />
         <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
         <xs:element minOccurs="0" name="IdUsuarioAsignado" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuarioVisita" type="xs:int" />
         <xs:element minOccurs="0" name="IdCampana" type="xs:int" />
         <xs:element minOccurs="0" name="IdImpedimento" type="xs:int" />
         <xs:element minOccurs="0" name="TipoCredito" nillable="true" type="xs:string" />
@@ -3114,7 +3115,7 @@
         <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Origen" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Modelo" type="xs:int" />
         <xs:element minOccurs="0" name="TipoCampana" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="VigenciaIncial" type="xs:dateTime" />
         <xs:element minOccurs="0" name="VigenciaFinal" type="xs:dateTime" />

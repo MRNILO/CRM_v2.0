@@ -23,22 +23,22 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control txBoxProyecto.
+    '''Control cmBoxProyecto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txBoxProyecto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cmBoxProyecto As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control txBoxModelo.
+    '''Control cmBoxModelo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txBoxModelo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cmBoxModelo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
     '''Control txBoxEsquemaFinanciero.
@@ -68,6 +68,15 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents txBoxCual As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control dtFechaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtFechaVisita As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
     '''Control txBoxUsuario.
     '''</summary>
     '''<remarks>
@@ -86,24 +95,6 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents txBoxAsesor As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control dtFechaVisita.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dtFechaVisita As Global.DevExpress.Web.ASPxDateEdit
-    
-    '''<summary>
-    '''Control txBoxTipoCamapana.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txBoxTipoCamapana As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''Control dtp_finicio.
     '''</summary>
     '''<remarks>
@@ -120,6 +111,15 @@ Partial Public Class NuevaVisitaCte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dtp_ffinal As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control txBoxTipoCamapana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txBoxTipoCamapana As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control cmBoxClasificacion.
@@ -149,13 +149,13 @@ Partial Public Class NuevaVisitaCte
     Protected WithEvents cmBoxSubMotivo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control btn_asignaCita.
+    '''Control btnAsignaVisita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
+    Protected WithEvents btnAsignaVisita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control lbl_mensaje.
