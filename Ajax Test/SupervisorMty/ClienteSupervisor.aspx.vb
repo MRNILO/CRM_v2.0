@@ -1,10 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
 
-Public Class ClienteSupervisor
+Public Class ClienteSupervisor1
     Inherits System.Web.UI.Page
+
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 2
+    Dim NivelSeccion As Integer = 7
     Dim idCliente As Integer = 0
     Dim Conexion As New SqlConnection("Data Source=192.168.1.13\CRM;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=Sistemas1245")
     Dim Conexion1 As New SqlConnection("Data Source=altaircloud.mx\SQLSERVER,5696;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=octy#1992.A")
@@ -357,13 +358,16 @@ Public Class ClienteSupervisor
             lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
         End Try
     End Sub
+
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../Usuario/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
+
     Sub CargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(idCliente)
         GV_citas.DataBind()
     End Sub
+
     Protected Sub btn_cambiarUsuario_Click(sender As Object, e As EventArgs) Handles btn_cambiarUsuario.Click
         Try
             If BL.Cambia_usuarioClienteSupervisor(CInt(cmBoxUsuarios.Value), idCliente, CInt(Usuario.id_usuario)) Then
@@ -376,6 +380,7 @@ Public Class ClienteSupervisor
 
         End Try
     End Sub
+
     Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
         Dim NumeroCliente As Integer
 
@@ -462,6 +467,7 @@ Public Class ClienteSupervisor
         btnActualizar.Visible = False
         btnCancelar.Visible = False
     End Sub
+
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue

@@ -7930,6 +7930,7 @@
     <None Include="Service References\Servicio\Service1.disco" />
     <Content Include="SupervisorMty\BusquedaClientes.aspx" />
     <Content Include="SupervisorMty\CambiaUsuario.aspx" />
+    <Content Include="SupervisorMty\ClienteSupervisor.aspx" />
     <Content Include="SupervisorMty\ClientesUsuarios.aspx" />
     <Content Include="SupervisorMty\Consultas.aspx" />
     <Content Include="SupervisorMty\InicioSupervisor.aspx" />
@@ -8405,6 +8406,13 @@
     </Compile>
     <Compile Include="SupervisorMty\CambiaUsuario.aspx.vb">
       <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ClienteSupervisor.aspx.designer.vb">
+      <DependentUpon>ClienteSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ClienteSupervisor.aspx.vb">
+      <DependentUpon>ClienteSupervisor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SupervisorMty\ClientesUsuarios.aspx.designer.vb">
