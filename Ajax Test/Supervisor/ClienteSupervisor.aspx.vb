@@ -181,6 +181,7 @@ Public Class ClienteSupervisor
 
         Return False
     End Function
+
     Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_etapas.DataSource = BL.Obtener_etapasCliente
@@ -190,6 +191,7 @@ Public Class ClienteSupervisor
 
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
+
     Sub BuscaCitasActivas()
         Dim DTCitas = GE_Funciones.Obtener_CitasCliente(idCliente)
 
@@ -205,6 +207,7 @@ Public Class ClienteSupervisor
         cmBoxUsuarios.Enabled = True
         lbl_CitasVigentes.Visible = False
     End Sub
+
     Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_productos.DataSource = BL.Obtener_datos_comboProductos
@@ -254,6 +257,7 @@ Public Class ClienteSupervisor
         Next
         Return HTML
     End Function
+
     Function Crea_generalesCliente() As String
         Dim HTML As String = ""
 
@@ -284,6 +288,7 @@ Public Class ClienteSupervisor
 
         Return HTML
     End Function
+
     Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
         GV_exporterLlamadas.WriteXlsxToResponse()
     End Sub
