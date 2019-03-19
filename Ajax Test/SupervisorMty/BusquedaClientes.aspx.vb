@@ -4,7 +4,7 @@ Public Class BusquedaClientesMty
     Inherits System.Web.UI.Page
 
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 4
+    Dim NivelSeccion As Integer = 7
 
     Private GE_Funciones As New Funciones
 
