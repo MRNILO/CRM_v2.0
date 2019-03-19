@@ -196,42 +196,50 @@
                             <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Usuario/ObservacionesCita.aspx?idCita={0}&quot; class=&quot;btn btn-sm green&quot; &gt;Observaciones&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="2">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="LugarContacto" Caption="Lugar Contacto" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="Lugar Contacto" FieldName="LugarContacto" VisibleIndex="3">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="3">
+                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="4">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="4">
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="5">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Fraccionamiento" VisibleIndex="5">
+                        <dx:GridViewDataTextColumn FieldName="Fraccionamiento" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="6">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="7">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="7">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="8">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Cita" VisibleIndex="8">
+                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Cita" VisibleIndex="9">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="9">
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="10">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
+                        <dx:GridViewCommandColumn VisibleIndex="1" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="btnVisita" Text="Visita">
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewCommandColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>
