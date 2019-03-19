@@ -130,6 +130,11 @@ Public Class Funciones
         Return Datos
     End Function
 
+    Public Class DatosConsulta
+        Public DT As DataTable
+        Public Resultado As String
+    End Class
+
     Public Function BuscarClientes(ByVal Cliente As BusquedaCliente) As DataTable
         Dim Query As String = "EXEC [dbo].[BuscarClientes]
 		                            @Nombre = N'" & Cliente.nombreCliente & "',

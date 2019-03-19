@@ -166,6 +166,11 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
+                                <a href="/Supervisor/BusquedaClientes.aspx">
+                                    <i class="fa fa-users"></i>Buscar Clientes
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/Supervisor/ClientesUsuarios.aspx">
                                     <i class="fa fa-users"></i>Todos los clientes de mi grupo
                                 </a>
@@ -175,7 +180,6 @@
                                     <i class="fa fa-users"></i>Re asignar clientes
                                 </a>
                             </li>
-
                         </ul>
                     </li>
                     <li>

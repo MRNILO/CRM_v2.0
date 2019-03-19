@@ -50,6 +50,8 @@
                 Response.Redirect("~/Caseta/BusquedaClientes.aspx", False)
             Case 6
                 Response.Redirect("~/Prospectador/BusquedaClientes.aspx", False)
+            Case 7
+                Response.Redirect("~/SupervisorMty/InicioSupervisor.aspx", False)
         End Select
     End Sub
     Public Function CalculateMD5Hash(input As String) As String
