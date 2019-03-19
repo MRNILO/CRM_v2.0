@@ -29,6 +29,8 @@ Public Class Cliente
 
                 End Try
 
+                Alimentar_TablaVisitas(idCliente)
+
                 lbl_generales.Text = Crea_generalesCliente()
                 lbl_telefonos.Text = Crea_telefonos()
 
@@ -217,6 +219,16 @@ Public Class Cliente
         cb_productos.DataBind()
         cb_productos.SelectedValue = Datos(0).id_producto
     End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
 #End Region
 
 #Region "WebMethods"
@@ -334,6 +346,24 @@ Public Class Cliente
     End Sub
 
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
                 Case 0
