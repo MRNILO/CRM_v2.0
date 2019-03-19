@@ -99,7 +99,7 @@ Public Class BusquedaClientesMty
 
     Protected Sub grdView_BusquedaCliente_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles grdView_BusquedaCliente.CustomButtonCallback
         Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
-        ASPxWebControl.RedirectOnCallback("../CallCenter/CitaCte.aspx?id=" + IdCliente.ToString)
+        ASPxWebControl.RedirectOnCallback("../SupervisorMty/CitaCte.aspx?id=" + IdCliente.ToString)
     End Sub
 #End Region
 End Class
