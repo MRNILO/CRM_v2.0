@@ -4,7 +4,7 @@ Imports DevExpress.Web
 Public Class CambiaUsuarioMty
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 2
+    Dim NivelSeccion As Integer = 7
     Dim idUsuario As Integer = 0
     Dim idCliente As Integer = 0
     Private GE_Funciones As New Funciones
