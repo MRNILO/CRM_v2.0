@@ -436,6 +436,13 @@ Public Class Funciones
         Obtener_Clasificacion = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Public Function Obtener_VisitasCliente(ByVal IdCliente As Integer) As DataTable
+        Dim Query As String = String.Format("EXEC [dbo].[Obtener_VisitasClientes]
+                                                @PidCliente = {0}", IdCliente)
+
+        Obtener_VisitasCliente = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function Obtener_Motivos(ByVal Clasificacion As String) As DataTable
         Dim Query As String = String.Format("SELECT DISTINCT(TI.TipoImpedimento)TipoImpedimento, IP.id_tipoImpedimento
                                              FROM impedimentos IP 
@@ -630,14 +637,4 @@ Inicio:
     End Function
 #End Region
 
-#Region "Visitas"
-    Public Function Obtener_VisitasCliente(ByVal IdCLiente As Integer) As DataTable
-        Dim Query As String = ""
-
-        Query = "EXEC [dbo].[Obtener_Visitas_Cliente]
-                            @PidCliente = " & IdCLiente & ";"
-
-        Obtener_VisitasCliente = GE_SQL.SQLGetTable(Query)
-    End Function
-#End Region
 End Class
