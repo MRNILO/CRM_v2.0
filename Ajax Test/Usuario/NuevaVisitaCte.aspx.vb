@@ -6,6 +6,7 @@ Public Class NuevaVisitaCte
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
 
+    Dim IDCita As Integer = 0
     Dim IDCliente As Integer = 0
 
     Private GE_Funciones As New Funciones
@@ -15,6 +16,7 @@ Public Class NuevaVisitaCte
 
         Try
             IDCliente = Request.QueryString("idCliente")
+            IDCita = Request.QueryString("idCita")
         Catch ex As Exception
             IDCliente = 0
         End Try
@@ -26,7 +28,7 @@ Public Class NuevaVisitaCte
 
 #Region "Metodos"
     Private Sub UI()
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With txBoxEsquemaFinanciero : .Enabled = False : .Text = DatosCitas.TipoCredito : End With
         With txBoxMedio : .Enabled = False : .Text = DatosCitas.Origen : End With
@@ -147,7 +149,7 @@ Public Class NuevaVisitaCte
     End Sub
 
     Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With DatosCitas
             If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,

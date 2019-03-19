@@ -100,12 +100,6 @@
             <div class="row">
                 <div class="form-group" style="margin-top: 15px">
                     <div class="col-lg-2">
-                        <label><strong>Medio:</strong></label><br />
-                        <dx:ASPxComboBox ID="cmBoxMedio" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True" CssClass="form-control"></dx:ASPxComboBox>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
                         <label><strong>Lugar Contacto:</strong></label><br />
                         <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                     </div>

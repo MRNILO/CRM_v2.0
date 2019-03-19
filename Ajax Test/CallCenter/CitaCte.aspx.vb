@@ -38,8 +38,7 @@
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
-        AlimentarComboMedios()
-        AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+        AlimentarComboCampanas()
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
 
@@ -52,37 +51,6 @@
     Private Sub Cargar_Citas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
-    End Sub
-
-    Private Sub AlimentarComboMedios()
-        Dim da_Medios As DataTable
-        da_Medios = GE_Funciones.ObtenerMedios()
-        With cmBoxMedio
-            .DataSource = da_Medios
-            .ValueField = "Id_Medio"
-            .TextField = "NombreMedio"
-            .DataBind()
-
-            .SelectedIndex = 0
-        End With
-        For i = 0 To da_Medios.Rows.Count - 1
-            If da_Medios.Rows(i).Item("NombreMedio") = "PROSPECTACION" Then
-                cmBoxMedio.SelectedIndex = i
-
-                Exit Sub
-            End If
-        Next
-    End Sub
-
-    Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer)
-        With cmBoxCampana
-            .DataSource = GE_Funciones.ObtenerCampanas(Id_Medio)
-            .ValueField = "id_campaña"
-            .TextField = "campañaNombre"
-            .DataBind()
-
-            .SelectedIndex = 0
-        End With
     End Sub
 
     Private Sub AlimentarComboProyectos()

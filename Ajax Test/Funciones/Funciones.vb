@@ -397,9 +397,9 @@ Public Class Funciones
 #End Region
 
 #Region "Visitas"
-    Public Function Obtener_DatosCita(ByVal Id_Cliente As Integer) As DatosCita
+    Public Function Obtener_DatosCita(ByVal Id_Cita As Integer) As DatosCita
         Dim Query As String = String.Format("EXEC [dbo].[Obtener_DetallesCitas]
-                                                   @pIdCliente = {0}", Id_Cliente)
+                                                   @pIdCliente = {0}", Id_Cita)
 
         Dim DTA As New DataTable
         DTA = GE_SQL.SQLGetTable(Query)

@@ -122,15 +122,6 @@ Partial Public Class CitaCte
     Protected WithEvents dtp_fechaCita As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control cmBoxMedio.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents cmBoxMedio As Global.DevExpress.Web.ASPxComboBox
-    
-    '''<summary>
     '''Control cmBoxCampana.
     '''</summary>
     '''<remarks>
