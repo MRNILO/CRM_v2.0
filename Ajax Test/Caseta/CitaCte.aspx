@@ -196,6 +196,14 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
+                        <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="btnVisita" Text="Visita">
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewCommandColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>

@@ -1,4 +1,6 @@
-﻿Public Class CitaCteCaseta
+﻿Imports DevExpress.Web
+
+Public Class CitaCteCaseta
     Inherits System.Web.UI.Page
 
     Dim NivelSeccion As Integer = 4
@@ -305,6 +307,21 @@
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../Caseta/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
+    End Sub
+    Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+
+    End Sub
+    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
+        ASPxWebControl.RedirectOnCallback("../Caseta/NuevaVisitaCte.aspx?idCliente=" + Id_Cliente.ToString)
     End Sub
 #End Region
 End Class

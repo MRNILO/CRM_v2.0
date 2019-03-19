@@ -7178,6 +7178,7 @@
     <Content Include="Caseta\DetalleObservaciones.aspx" />
     <Content Include="Caseta\InicioCaseta.aspx" />
     <Content Include="Caseta\ModificaCliente.aspx" />
+    <Content Include="Caseta\NuevaVisitaCte.aspx" />
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
@@ -8239,6 +8240,13 @@
     <Compile Include="Caseta\ModificaCliente.aspx.vb">
       <DependentUpon>ModificaCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\NuevaVisitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\NuevaVisitaCte.aspx.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Caseta\NuevoCliente.aspx.designer.vb">
       <DependentUpon>NuevoCliente.aspx</DependentUpon>

@@ -194,6 +194,15 @@ Partial Public Class CitaCteCaseta
     Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
+    '''Control btnVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnVisita As Global.DevExpress.Web.GridViewCommandColumnCustomButton
+    
+    '''<summary>
     '''Control lbl_botonVisitas.
     '''</summary>
     '''<remarks>

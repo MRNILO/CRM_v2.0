@@ -1,4 +1,5 @@
 ﻿Imports System.Web.Services
+Imports DevExpress.Web
 
 Public Class Cliente
     Inherits System.Web.UI.Page
@@ -184,7 +185,23 @@ Public Class Cliente
     End Sub
 
     Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
-        cb_etapas.DataSource = BL.Obtener_etapasCliente
+        Dim Dt_Etapas As New DataTable
+        Dim ROWA As DataRow
+        Dim DT = BL.Obtener_etapasCliente
+
+        Dt_Etapas.Columns.AddRange({New DataColumn("Descripcion", GetType(String)), New DataColumn("id_etapa", GetType(Integer))})
+
+        For i = 0 To DT.Count - 1
+            If DT(i).Descripcion.ToUpper <> "VISITA" Then
+                ROWA = Dt_Etapas.NewRow
+                ROWA("Descripcion") = DT(i).Descripcion
+                ROWA("id_etapa") = DT(i).id_etapa
+
+                Dt_Etapas.Rows.Add(ROWA)
+            End If
+        Next
+
+        cb_etapas.DataSource = Dt_Etapas
         cb_etapas.DataTextField = "Descripcion"
         cb_etapas.DataValueField = "id_etapa"
         cb_etapas.DataBind()
@@ -338,6 +355,19 @@ Public Class Cliente
         End If
     End Sub
 
+    Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+
+    End Sub
+
     Protected Sub GV_Llamadas_CustomColumnDisplayText(sender As Object, e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs) Handles GV_Llamadas.CustomColumnDisplayText
         If e.Column.Name = "Opciones" Then
             If GV_Llamadas.GetRowValues(e.VisibleRowIndex, "realizada") = "REALIZADA" Then
@@ -378,6 +408,10 @@ Public Class Cliente
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
+    End Sub
+
+    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
+        ASPxWebControl.RedirectOnCallback("../Usuario/NuevaVisitaCte.aspx?idCliente=" + idCliente.ToString)
     End Sub
 #End Region
 End Class
