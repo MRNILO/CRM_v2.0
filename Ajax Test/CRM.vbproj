@@ -7930,10 +7930,14 @@
     <None Include="Service References\Servicio\Service1.disco" />
     <Content Include="SupervisorMty\BusquedaClientes.aspx" />
     <Content Include="SupervisorMty\CambiaUsuario.aspx" />
+    <Content Include="SupervisorMty\cita.aspx" />
+    <Content Include="SupervisorMty\CitaCte.aspx" />
     <Content Include="SupervisorMty\ClienteSupervisor.aspx" />
     <Content Include="SupervisorMty\ClientesUsuarios.aspx" />
     <Content Include="SupervisorMty\Consultas.aspx" />
+    <Content Include="SupervisorMty\DetalleObservaciones.aspx" />
     <Content Include="SupervisorMty\InicioSupervisor.aspx" />
+    <Content Include="SupervisorMty\ModificaCliente.aspx" />
     <Content Include="SupervisorMty\Oportunidades.aspx" />
     <Content Include="SupervisorMty\ReporteCumplimiento.aspx" />
     <Content Include="Supervisor\AcumuladosClientes.aspx" />
@@ -8408,6 +8412,20 @@
       <DependentUpon>CambiaUsuario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="SupervisorMty\cita.aspx.designer.vb">
+      <DependentUpon>cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\cita.aspx.vb">
+      <DependentUpon>cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SupervisorMty\ClienteSupervisor.aspx.designer.vb">
       <DependentUpon>ClienteSupervisor.aspx</DependentUpon>
     </Compile>
@@ -8429,12 +8447,26 @@
       <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="SupervisorMty\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SupervisorMty\InicioSupervisor.aspx.designer.vb">
       <DependentUpon>InicioSupervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupervisorMty\InicioSupervisor.aspx.vb">
       <DependentUpon>InicioSupervisor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SupervisorMty\Oportunidades.aspx.designer.vb">
       <DependentUpon>Oportunidades.aspx</DependentUpon>
