@@ -40,25 +40,22 @@ Public Class CitaCteCaseta
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
+        Alimentar_TablaVisitas(Id_Cliente)
         AlimentarComboMedios()
         AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
-        cargarCitas()
-        CargarVisitas()
+
         If cmBoxCampana.Items.Count > 0 Then
             ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
         End If
+
+        cargarCitas()
     End Sub
 
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
         GV_citas.DataBind()
-    End Sub
-
-    Private Sub CargarVisitas()
-        GV_Visitas.DataSource = GE_Funciones.Obtener_VisitasCliente(Id_Cliente)
-        GV_Visitas.DataBind()
     End Sub
 
     Private Sub AlimentarComboMedios()
@@ -206,6 +203,16 @@ Public Class CitaCteCaseta
             btn_asignaCita.Visible = True
         End If
     End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
 #End Region
 
 #Region "Eventos"
@@ -234,6 +241,20 @@ Public Class CitaCteCaseta
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
     End Sub
 
+    Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+    End Sub
+
+    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
+        ASPxWebControl.RedirectOnCallback("../Caseta/NuevaVisitaCte.aspx?idCliente=" + Id_Cliente.ToString)
+    End Sub
+
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
@@ -252,7 +273,7 @@ Public Class CitaCteCaseta
         End If
     End Sub
 
-    Protected Sub GV_Visitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_Visitas.HtmlDataCellPrepared
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
                 Case 0
@@ -307,21 +328,6 @@ Public Class CitaCteCaseta
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../Caseta/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
-    End Sub
-    Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
-
-        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
-            e.Visible = DevExpress.Utils.DefaultBoolean.False
-        End If
-
-
-        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
-            e.Visible = DevExpress.Utils.DefaultBoolean.False
-        End If
-
-    End Sub
-    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
-        ASPxWebControl.RedirectOnCallback("../Caseta/NuevaVisitaCte.aspx?idCliente=" + Id_Cliente.ToString)
     End Sub
 #End Region
 End Class
