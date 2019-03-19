@@ -6,6 +6,7 @@ Public Class NuevaVisitaCte
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
 
+    Dim IDCita As Integer = 0
     Dim IDCliente As Integer = 0
 
     Private GE_Funciones As New Funciones
@@ -15,6 +16,7 @@ Public Class NuevaVisitaCte
 
         Try
             IDCliente = Request.QueryString("idCliente")
+            IDCita = Request.QueryString("idCita")
         Catch ex As Exception
             IDCliente = 0
         End Try
@@ -26,7 +28,7 @@ Public Class NuevaVisitaCte
 
 #Region "Metodos"
     Private Sub UI()
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With txBoxEsquemaFinanciero : .Enabled = False : .Text = DatosCitas.TipoCredito : End With
         With txBoxMedio : .Enabled = False : .Text = DatosCitas.Origen : End With
@@ -39,6 +41,7 @@ Public Class NuevaVisitaCte
         With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
 
         Alimentar_ComboProyectos()
+        Alimentar_TablaVisitas(IDCliente)
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
 
         Alimentar_ComboClasificacion()
@@ -100,6 +103,16 @@ Public Class NuevaVisitaCte
             .SelectedIndex = 0
         End With
     End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
 #End Region
 
 #Region "FuncionesUsuario"
@@ -147,7 +160,7 @@ Public Class NuevaVisitaCte
     End Sub
 
     Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With DatosCitas
             If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
@@ -155,6 +168,8 @@ Public Class NuevaVisitaCte
                     .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
 
                 Session("DatosCitas") = Nothing
+                Alimentar_TablaVisitas(IDCliente)
+
                 lbl_mensaje.Text = MostrarExito("¡Visita registrada correctamente!")
             Else
                 Session("DatosCitas") = Nothing
@@ -165,6 +180,24 @@ Public Class NuevaVisitaCte
 
     Protected Sub cmBoxProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxProyecto.SelectedIndexChanged
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
+    End Sub
+
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
     End Sub
 #End Region
 End Class

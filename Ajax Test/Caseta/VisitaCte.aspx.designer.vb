@@ -11,88 +11,88 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class CitaCte
+Partial Public Class VisitaCte
     
     '''<summary>
-    '''Control lbl_mensaje.
+    '''Control lbl_nombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control btn_modificar.
+    '''Control cmBoxProyecto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_modificar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents cmBoxProyecto As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control lbl_generales.
+    '''Control cmBoxModelo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_generales As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents cmBoxModelo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control GV_usuario.
+    '''Control txBoxEsquemaFinanciero.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GV_usuario As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents txBoxEsquemaFinanciero As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control AsesorDS.
+    '''Control txBoxMedio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents AsesorDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents txBoxMedio As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control lbl_usuario.
+    '''Control txBoxCual.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_usuario As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents txBoxCual As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control tb_origen.
+    '''Control dtFechaVisita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_origen As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents dtFechaVisita As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control cb_usuarios.
+    '''Control txBoxUsuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_usuarios As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txBoxUsuario As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control UsuariosDS.
+    '''Control txBoxAsesor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents UsuariosDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents txBoxAsesor As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control dtp_finicio.
@@ -113,85 +113,49 @@ Partial Public Class CitaCte
     Protected WithEvents dtp_ffinal As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control dtp_fechaCita.
+    '''Control txBoxTipoCamapana.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents dtp_fechaCita As Global.DevExpress.Web.ASPxDateEdit
+    Protected WithEvents txBoxTipoCamapana As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control cmBoxCampana.
+    '''Control cmBoxClasificacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
+    Protected WithEvents cmBoxClasificacion As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control tb_TipoCampana.
+    '''Control cmBoxMotivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cmBoxMotivo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control cb_fraccinamientos.
+    '''Control cmBoxSubMotivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_fraccinamientos As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cmBoxSubMotivo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control cb_modelos.
+    '''Control btnAsignaVisita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_modelos As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control btn_asignaCita.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_asignaCita As Global.DevExpress.Web.ASPxButton
-    
-    '''<summary>
-    '''Control GV_exporterCitas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
-    
-    '''<summary>
-    '''Control GV_citas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
-    
-    '''<summary>
-    '''Control lbl_botonVisitas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_botonVisitas As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents btnAsignaVisita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control grdViewVisitas.
@@ -201,4 +165,13 @@ Partial Public Class CitaCte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents grdViewVisitas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control lbl_mensaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
 End Class
