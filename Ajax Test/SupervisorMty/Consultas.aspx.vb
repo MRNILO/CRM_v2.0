@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports ClosedXML.Excel
 
-Public Class Consultas
+Public Class ConsultasMty
     Inherits System.Web.UI.Page
 
     Const Excel_Extencion As String = ".xlsx"

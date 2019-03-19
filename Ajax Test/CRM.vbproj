@@ -7928,9 +7928,17 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Service References\Servicio\Service1.disco" />
+    <Content Include="SupervisorMty\BusquedaClientes.aspx" />
+    <Content Include="SupervisorMty\CambiaUsuario.aspx" />
+    <Content Include="SupervisorMty\ClientesUsuarios.aspx" />
+    <Content Include="SupervisorMty\Consultas.aspx" />
+    <Content Include="SupervisorMty\InicioSupervisor.aspx" />
+    <Content Include="SupervisorMty\Oportunidades.aspx" />
+    <Content Include="SupervisorMty\ReporteCumplimiento.aspx" />
     <Content Include="Supervisor\AcumuladosClientes.aspx" />
     <Content Include="Supervisor\agenda.aspx" />
     <Content Include="Supervisor\BIAdmin.aspx" />
+    <Content Include="Supervisor\BusquedaClientes.aspx" />
     <Content Include="Supervisor\cambiaProducto.aspx" />
     <Content Include="Supervisor\CambiaUsuario.aspx" />
     <Content Include="Supervisor\campanas.aspx" />
@@ -7999,6 +8007,7 @@
     <None Include="Service References\Servicio\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="SupervisorMty\SupervisorMty.master" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -8384,6 +8393,62 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Startup.vb" />
+    <Compile Include="SupervisorMty\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\CambiaUsuario.aspx.designer.vb">
+      <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\CambiaUsuario.aspx.vb">
+      <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ClientesUsuarios.aspx.designer.vb">
+      <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ClientesUsuarios.aspx.vb">
+      <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\Consultas.aspx.designer.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\Consultas.aspx.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\InicioSupervisor.aspx.designer.vb">
+      <DependentUpon>InicioSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\InicioSupervisor.aspx.vb">
+      <DependentUpon>InicioSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\Oportunidades.aspx.designer.vb">
+      <DependentUpon>Oportunidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\Oportunidades.aspx.vb">
+      <DependentUpon>Oportunidades.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ReporteCumplimiento.aspx.designer.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ReporteCumplimiento.aspx.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\SupervisorMty.master.designer.vb">
+      <DependentUpon>SupervisorMty.master</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\SupervisorMty.master.vb">
+      <DependentUpon>SupervisorMty.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Supervisor\AcumuladosClientes.aspx.designer.vb">
       <DependentUpon>AcumuladosClientes.aspx</DependentUpon>
     </Compile>
@@ -8403,6 +8468,13 @@
     </Compile>
     <Compile Include="Supervisor\BIAdmin.aspx.vb">
       <DependentUpon>BIAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\cambiaProducto.aspx.designer.vb">
