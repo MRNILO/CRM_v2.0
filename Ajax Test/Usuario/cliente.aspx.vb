@@ -288,20 +288,16 @@ Public Class Cliente
     End Sub
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
-        'Try
-        '    If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-        If cb_etapas.SelectedItem.Text = "Visita" Then
-            Response.Redirect("../Usuario/NuevaVisitaCte.aspx?idCliente=" & idCliente)
-        End If
-
-        '        GV_operaciones.DataBind()
-        '        lbl_mensaje.Text = MostrarExito("Etapa actualizada")
-        '    Else
-        '        lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
-        '    End If
-        'Catch ex As Exception
-        '    lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
-        'End Try
+        Try
+            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                GV_operaciones.DataBind()
+                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+            Else
+                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+        End Try
     End Sub
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
@@ -375,6 +371,11 @@ Public Class Cliente
             End If
         End If
     End Sub
+
+    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
+        Dim IdCita As Integer = GV_citas.GetRowValues(e.VisibleIndex, "Id_Cita")
+        ASPxWebControl.RedirectOnCallback("../Usuario/NuevaVisitaCte.aspx?idCliente=" + idCliente.ToString + "&idCita=" + IdCita.ToString)
+    End Sub
 #End Region
 
 #Region "FuncionesUsuario"
@@ -408,10 +409,6 @@ Public Class Cliente
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
-    End Sub
-
-    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
-        ASPxWebControl.RedirectOnCallback("../Usuario/NuevaVisitaCte.aspx?idCliente=" + idCliente.ToString)
     End Sub
 #End Region
 End Class

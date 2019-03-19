@@ -38,6 +38,7 @@
         tb_origen.Enabled = False
         tb_TipoCampana.Enabled = False
 
+        Alimentar_TablaVisitas(Id_Cliente)
         AlimentarComboCampanas()
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
@@ -149,7 +150,7 @@
 
         If Vigencias.Length > 0 Then
             If Vigencias(0).CitasVigentes > 0 Then
-                HTML += "<br /><h5><strong>Asesor Call Center</strong></h5>"
+                HTML += "<br /><h5><strong>Agente en Vigencia:</strong></h5>"
                 HTML += "<label>(" + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
                 lbl_usuario.Text = Vigencias(0).UsuarioVigente
@@ -186,6 +187,16 @@
             btn_asignaCita.Visible = True
         End If
     End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
 #End Region
 
 #Region "Eventos"
@@ -211,6 +222,24 @@
     End Sub
 
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
                 Case 0
