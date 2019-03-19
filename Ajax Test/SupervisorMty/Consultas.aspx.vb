@@ -11,7 +11,7 @@ Public Class ConsultasMty
     Private Ruta As String = ConfigurationManager.ConnectionStrings("RutaXLS").ConnectionString
 
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 2
+    Dim NivelSeccion As Integer = 7
     Dim idUsuario As Integer = 0
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

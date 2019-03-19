@@ -1,6 +1,6 @@
 ﻿Public Class ClientesUsuariosMty
     Inherits System.Web.UI.Page
-    Dim NivelSeccion As Integer = 2
+    Dim NivelSeccion As Integer = 7
     Dim Usuario As New Servicio.CUsuarios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
