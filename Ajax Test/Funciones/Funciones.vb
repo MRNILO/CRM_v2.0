@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Ajax_Test.SQL_Functions
 
 Public Class Funciones
     Private GE_SQL As New SQL_Functions
@@ -355,6 +356,18 @@ Public Class Funciones
         Obtener_CitasCliente = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Private Function Obtener_CitasActivasCliente(ByVal IdCliente As Integer) As DataTable
+        Dim Query As String = "SELECT CCL.Id_Cita, CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto, 
+	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status
+                               FROM Clientes CL
+                               INNER JOIN CitasClientes CCL ON CCL.Id_Cliente = CL.id_cliente
+                               INNER JOIN campañas CP ON CP.id_campaña =  CCL.Id_Campana
+                               INNER JOIN productos PR ON PR.id_producto =  CCL.Modelo
+                               WHERE CCL.Id_Cliente = " & IdCliente & " AND CCL.Status = 1"
+
+        Obtener_CitasActivasCliente = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function Obtener_EstatusCita(ByVal IdCita As Integer) As Integer
         Dim Query As String = String.Format("SELECT Status FROM CitasClientes WHERE Id_Cita = {0}", IdCita)
         Obtener_EstatusCita = GE_SQL.SQLGetDataDbl(Query)
@@ -453,6 +466,13 @@ Public Class Funciones
         Obtener_VisitasCliente = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Private Function Obtener_VisitasActivasCliente(ByVal IdCliente As Integer) As DataTable
+        Dim Query As String = String.Format("EXEC [dbo].[Obtener_VisitasActivasCliente]
+                                                @PidCliente = {0}", IdCliente)
+
+        Obtener_VisitasActivasCliente = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function Obtener_Motivos(ByVal Clasificacion As String) As DataTable
         Dim Query As String = String.Format("SELECT DISTINCT(TI.TipoImpedimento)TipoImpedimento, IP.id_tipoImpedimento
                                              FROM impedimentos IP 
@@ -468,6 +488,28 @@ Public Class Funciones
                                              WHERE ranking = '{0}' AND id_tipoImpedimento = {1}", Clasificacion, IdMotivo)
 
         Obtener_Submotivos = GE_SQL.SQLGetTable(Query)
+    End Function
+#End Region
+
+#Region "Cierre"
+    Public Function Cierre_CitasVisitas(ByVal Id_Cliente As Integer) As Boolean
+        Dim Query As String = ""
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+
+        DTA = Obtener_CitasActivasCliente(Id_Cliente)
+        DTB = Obtener_VisitasActivasCliente(Id_Cliente)
+
+        For Each rowA As DataRow In DTA.Rows
+            Query += "UPDATE CitasClientes SET Status = 2 WHERE Id_Cita = " & rowA("Id_Cita") & ";"
+        Next
+
+        For Each rowB As DataRow In DTB.Rows
+            Query += "UPDATE VisitasClientes SET Status = 2 WHERE Id_Visita = " & rowB("Id_Visita") & ";"
+        Next
+
+        Cierre_CitasVisitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 #End Region
 

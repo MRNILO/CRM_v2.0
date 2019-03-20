@@ -301,6 +301,13 @@ Public Class Cliente
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
+            If cb_etapas.SelectedValue = 5 Then
+                If Not GE_Funciones.Cierre_CitasVisitas(idCliente) Then
+                    lbl_mensaje.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                    Exit Sub
+                End If
+            End If
+
             If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
                 GV_operaciones.DataBind()
                 lbl_mensaje.Text = MostrarExito("Etapa actualizada")
@@ -382,16 +389,9 @@ Public Class Cliente
     End Sub
 
     Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
-
-        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
-            e.Visible = DevExpress.Utils.DefaultBoolean.False
-        End If
-
-
         If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
             e.Visible = DevExpress.Utils.DefaultBoolean.False
         End If
-
     End Sub
 
     Protected Sub GV_Llamadas_CustomColumnDisplayText(sender As Object, e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs) Handles GV_Llamadas.CustomColumnDisplayText

@@ -242,10 +242,6 @@ Public Class CitaCteCaseta
     End Sub
 
     Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize
-        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
-            e.Visible = DevExpress.Utils.DefaultBoolean.False
-        End If
-
         If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
             e.Visible = DevExpress.Utils.DefaultBoolean.False
         End If
