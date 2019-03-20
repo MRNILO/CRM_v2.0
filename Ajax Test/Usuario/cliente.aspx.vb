@@ -392,6 +392,10 @@ Public Class Cliente
         If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
             e.Visible = DevExpress.Utils.DefaultBoolean.False
         End If
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
     End Sub
 
     Protected Sub GV_Llamadas_CustomColumnDisplayText(sender As Object, e As DevExpress.Web.ASPxGridViewColumnDisplayTextEventArgs) Handles GV_Llamadas.CustomColumnDisplayText
