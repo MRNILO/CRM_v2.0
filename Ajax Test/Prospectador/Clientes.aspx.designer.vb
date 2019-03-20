@@ -12,7 +12,16 @@ Option Explicit On
 
 
 Partial Public Class Clientes_Prospectador
-
+    
+    '''<summary>
+    '''Control lbl_nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
+    
     '''<summary>
     '''Control GE_Clientes.
     '''</summary>
@@ -21,7 +30,7 @@ Partial Public Class Clientes_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GE_Clientes As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control btn_exportar.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class Clientes_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_exportar As Global.DevExpress.Web.ASPxButton
-
+    
     '''<summary>
     '''Control GV_Clientes.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class Clientes_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Clientes As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control ClientesDS.
     '''</summary>

@@ -15,7 +15,7 @@
 
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="#">
+                    <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

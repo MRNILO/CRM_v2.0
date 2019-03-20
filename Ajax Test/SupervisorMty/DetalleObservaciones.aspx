@@ -17,10 +17,9 @@
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
-
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="/Usuario/MisDatos.aspx">
+                    <a href="#">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

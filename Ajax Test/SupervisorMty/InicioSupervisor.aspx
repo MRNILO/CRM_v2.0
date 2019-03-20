@@ -12,7 +12,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="/Supervisor/MisDatos.aspx">
+                    <a href="#">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

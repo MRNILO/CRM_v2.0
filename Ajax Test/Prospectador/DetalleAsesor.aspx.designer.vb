@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class DetalleAsesor_Prospectador
-
+    
     '''<summary>
     '''Control lbl_nombre.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control lbl_general.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_general As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control lbl_nombreUsuario.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombreUsuario As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control GV_exporterClientes.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_exporterClientes As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control GV_Clientes.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Clientes As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control GV_Exporter.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class DetalleAsesor_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Exporter As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control lbl_mensaje.
     '''</summary>

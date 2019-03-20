@@ -13,13 +13,11 @@
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
-
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
                     <a href="#">

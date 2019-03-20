@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Prospectador/Prospectador.Master" CodeBehind="DetalleObservaciones.aspx.vb" Inherits="Ajax_Test.DetalleObservaciones1" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Prospectador/Prospectador.Master" CodeBehind="DetalleObservaciones.aspx.vb" Inherits="Ajax_Test.DetalleObservaciones_Prospectador" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
     <link href="/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="/Usuario/MisDatos.aspx">
+                    <a href="#">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

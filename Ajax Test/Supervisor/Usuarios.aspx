@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="Usuarios.aspx.vb" Inherits="Ajax_Test.Usuarios" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MenuDeActividades" runat="server">
+<asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -10,10 +10,9 @@
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
-
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="#">
+                    <a href="/Supervisor/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

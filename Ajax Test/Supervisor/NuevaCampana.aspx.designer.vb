@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class NuevaCampana
     
     '''<summary>
+    '''Control lbl_nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Control tb_NombreCampaña.
     '''</summary>
     '''<remarks>

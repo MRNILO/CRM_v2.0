@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Prospectador/Prospectador.Master" CodeBehind="ModificaCliente.aspx.vb" Inherits="Ajax_Test.ModificaCliente2" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Prospectador/Prospectador.Master" CodeBehind="ModificaCliente.aspx.vb" Inherits="Ajax_Test.ModificaCliente_Prospectador" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
@@ -21,7 +21,7 @@
 
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="/Usuario/MisDatos.aspx">
+                    <a href="#">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

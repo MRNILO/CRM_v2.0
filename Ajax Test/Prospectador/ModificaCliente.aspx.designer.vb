@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ModificaCliente_Prospectador
-
+    
     '''<summary>
     '''Control lbl_nombre.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control tb_NombreCliente.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_NombreCliente As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_ApellidoPaterno.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_ApellidoPaterno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_ApellidoMaterno.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_ApellidoMaterno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_email.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_email As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_NSS.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_NSS As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_FechaNacimiento.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_FechaNacimiento As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control tb_empresas.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_empresas As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control GV_telefonos.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_telefonos As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control cb_productos.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_productos As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''Control cb_nivelInteres.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_nivelInteres As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''Control cb_campañas.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_campañas As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''Control lbl_fotocliente.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_fotocliente As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control Fupl_Foto_Cliente.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Fupl_Foto_Cliente As Global.System.Web.UI.WebControls.FileUpload
-
+    
     '''<summary>
     '''Control lbl_fotoTpres.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_fotoTpres As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control Fupl_bCard.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Fupl_bCard As Global.System.Web.UI.WebControls.FileUpload
-
+    
     '''<summary>
     '''Control btn_verobservacion.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_verobservacion As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control lbl_Observaciones.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_Observaciones As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control tb_observaciones.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tb_observaciones As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control btn_Guardar.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class ModificaCliente_Prospectador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_Guardar As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control lbl_mensaje.
     '''</summary>

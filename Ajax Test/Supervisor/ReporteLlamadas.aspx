@@ -1,17 +1,37 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="ReporteLlamadas.aspx.vb" Inherits="Ajax_Test.ReporteLlamadas" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register assembly="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPivotGrid" tagprefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
+<asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
+    <ul class="nav navbar-nav pull-right">
+        <li class="dropdown dropdown-user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <span class="username username-hide-on-mobile">
+                    <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
+                </span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-default">
+                <li>
+                    <a href="/Supervisor/MisDatos.aspx">
+                        <i class="icon-user"></i>Mis Datos </a>
+                </li>
+                <li>
+                    <a href="/Account/Logoff.aspx">
+                        <i class="icon-key"></i>Salir </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Reporte de llamadas</h2>
     Fecha Inicio:
     <br />
     <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="MaterialCompact"></dx:ASPxDateEdit>
-     Fecha Final:
+    Fecha Final:
     <br />
     <dx:ASPxDateEdit ID="dtp_final" runat="server" Theme="MaterialCompact"></dx:ASPxDateEdit>
     <br />
@@ -25,15 +45,15 @@
             <div class="caption">
                 <i class="fa fa-check-circle"></i>Reporte de llamadas
             </div>
-            	<div class="tools">
-                    
-    <dx:ASPxButton ID="btn_excel" runat="server" Text="Exportar a Excel" Theme="Material">
-        <Image IconID="export_exporttoxls_16x16">
-        </Image>
-    </dx:ASPxButton>
-            	</div>
+            <div class="tools">
+
+                <dx:ASPxButton ID="btn_excel" runat="server" Text="Exportar a Excel" Theme="Material">
+                    <Image IconID="export_exporttoxls_16x16">
+                    </Image>
+                </dx:ASPxButton>
+            </div>
         </div>
-         
+
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxPivotGrid ID="PV_llamadas" runat="server" Theme="Material" ClientIDMode="AutoID" DataSourceID="LlamadasDS" Width="100%">
@@ -49,8 +69,8 @@
                         <dx:PivotGridField ID="fieldusuario" Area="RowArea" AreaIndex="0" FieldName="usuario" Name="fieldusuario">
                         </dx:PivotGridField>
                     </Fields>
-        <optionsdata dataprocessingengine="LegacyOptimized" />
-    </dx:ASPxPivotGrid>
+                    <OptionsData DataProcessingEngine="LegacyOptimized" />
+                </dx:ASPxPivotGrid>
                 <asp:SqlDataSource ID="LlamadasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
 1 as Cantidad,
 dbo.empresas.Empresa,
@@ -75,10 +95,10 @@ Fecha BETWEEN @finicio AND @ffinal
                 <br />
                 <dx:ASPxPivotGridExporter ID="PE_exporter" runat="server" ASPxPivotGridID="PV_llamadas">
                 </dx:ASPxPivotGridExporter>
-                </div>
             </div>
+        </div>
     </div>
 
-    </asp:Content>
+</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 </asp:Content>
