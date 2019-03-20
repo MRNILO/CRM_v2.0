@@ -245,6 +245,10 @@ Public Class CitaCteCaseta
         If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 0 Then
             e.Visible = DevExpress.Utils.DefaultBoolean.False
         End If
+
+        If GV_citas.GetRowValues(e.VisibleIndex, "Status") = 2 Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
     End Sub
 
     Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_citas.CustomButtonCallback
