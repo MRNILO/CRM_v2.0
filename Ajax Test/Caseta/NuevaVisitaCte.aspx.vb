@@ -4,9 +4,10 @@ Public Class NuevaVisitaCteCaseta
     Inherits System.Web.UI.Page
 
     Dim Usuario As New Servicio.CUsuarios
-    Dim NivelSeccion As Integer = 1
+    Dim NivelSeccion As Integer = 5
 
     Dim IDCliente As Integer = 0
+    Dim IDCita As Integer = 0
 
     Private GE_Funciones As New Funciones
 
@@ -15,6 +16,7 @@ Public Class NuevaVisitaCteCaseta
 
         Try
             IDCliente = Request.QueryString("idCliente")
+            IDCita = Request.QueryString("idCita")
         Catch ex As Exception
             IDCliente = 0
         End Try
@@ -26,7 +28,7 @@ Public Class NuevaVisitaCteCaseta
 
 #Region "Metodos"
     Private Sub UI()
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With txBoxEsquemaFinanciero : .Enabled = False : .Text = DatosCitas.TipoCredito : End With
         With txBoxMedio : .Enabled = False : .Text = DatosCitas.Origen : End With
@@ -39,6 +41,7 @@ Public Class NuevaVisitaCteCaseta
         With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
 
         Alimentar_ComboProyectos()
+        Alimentar_TablaVisitas(IDCliente)
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
 
         Alimentar_ComboClasificacion()
@@ -98,6 +101,15 @@ Public Class NuevaVisitaCteCaseta
             .DataBind()
 
             .SelectedIndex = 0
+        End With
+    End Sub
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
         End With
     End Sub
 #End Region

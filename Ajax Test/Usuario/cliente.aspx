@@ -52,11 +52,13 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Datos generales cliente
             </div>
+            <div class="tools">
+                <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
+            </div>
 
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
-            <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
         </div>
     </div>
 
@@ -253,7 +255,7 @@
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
- <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
+                <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
                     <Columns>
                         <dx:GridViewDataTextColumn FieldName="Id_Visita" VisibleIndex="0" Visible="false">
                             <HeaderStyle HorizontalAlign="Center" />

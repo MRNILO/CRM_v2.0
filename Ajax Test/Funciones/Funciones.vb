@@ -467,7 +467,7 @@ Public Class Funciones
     End Function
 
     Private Function Obtener_VisitasActivasCliente(ByVal IdCliente As Integer) As DataTable
-        Dim Query As String = String.Format("EXEC [dbo].[Obtener_VisitasActivasCliente]
+        Dim Query As String = String.Format("EXEC [dbo].[Obtener_VisitasActivasClientes]
                                                 @PidCliente = {0}", IdCliente)
 
         Obtener_VisitasActivasCliente = GE_SQL.SQLGetTable(Query)

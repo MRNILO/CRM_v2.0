@@ -1,4 +1,6 @@
-﻿Public Class Citas1
+﻿Imports DevExpress.Web
+
+Public Class Citas1
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 5
@@ -6,12 +8,44 @@
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        Id_Cliente = Request.QueryString("idCliente")
         If Not IsPostBack() Then
             CargarCitas()
             CargarCitasAsignadas()
         End If
     End Sub
+    Protected Sub GV_Citas_DataBinding(sender As Object, e As EventArgs) Handles GV_Citas.DataBinding
+        Dim ActiveBinding As Boolean = Session("ActiveBinding")
+        If ActiveBinding Then
+            GV_Citas.DataSource = ViewState("Citas")
+        End If
+    End Sub
+    Protected Sub GV_CitasAsignadas_DataBinding(sender As Object, e As EventArgs) Handles GV_CitasAsignadas.DataBinding
+        Dim ActiveBinding As Boolean = Session("ActiveBinding")
+        If ActiveBinding Then
+            GV_CitasAsignadas.DataSource = ViewState("CitasAsignadas")
+        End If
+    End Sub
+    Protected Sub GV_Citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_Citas.CustomButtonInitialize
+        If GV_Citas.GetRowValues(e.VisibleIndex, "Descripcion") = "Separación/Cierre" Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+    End Sub
+    Protected Sub GV_CitasAsignadas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_CitasAsignadas.CustomButtonInitialize
+        If GV_CitasAsignadas.GetRowValues(e.VisibleIndex, "Descripcion") = "Separación/Cierre" Then
+            e.Visible = DevExpress.Utils.DefaultBoolean.False
+        End If
+    End Sub
+    Protected Sub GV_citas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_Citas.CustomButtonCallback
+        Dim IdCita As Integer = GV_Citas.GetRowValues(e.VisibleIndex, "Id_Cita")
+        Id_Cliente = GV_Citas.GetRowValues(e.VisibleIndex, "id_cliente")
+        ASPxWebControl.RedirectOnCallback("../Caseta/NuevaVisitaCte.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + IdCita.ToString)
+    End Sub
+    Protected Sub GV_CitasAsignadas_CustomButtonCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs) Handles GV_CitasAsignadas.CustomButtonCallback
+        Dim IdCita As Integer = GV_CitasAsignadas.GetRowValues(e.VisibleIndex, "Id_Cita")
+        Id_Cliente = GV_CitasAsignadas.GetRowValues(e.VisibleIndex, "id_cliente")
+        ASPxWebControl.RedirectOnCallback("../Caseta/NuevaVisitaCte.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + IdCita.ToString)
+    End Sub
+
 #Region "Metodos"
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
@@ -49,16 +83,19 @@
     End Sub
     Sub CargarCitas()
         Dim DA_Citas As DataTable
-        DA_Citas = GE_Funciones.Obtener_ListadoCitas(Usuario.id_usuario)
+        Session("ActiveBinding") = True
 
-        GV_Citas.DataSource = DA_Citas
+        DA_Citas = GE_Funciones.Obtener_ListadoCitas(Usuario.id_usuario)
+        ViewState("Citas") = DA_Citas
+        GV_Citas.DataSource = ViewState("Citas")
         GV_Citas.DataBind()
     End Sub
     Sub CargarCitasAsignadas()
         Dim DA_CitasAsigandas As DataTable
+        Session("ActiveBinding") = True
         DA_CitasAsigandas = GE_Funciones.Obtener_ListadoCitasAsignadas(Usuario.id_usuario)
-
-        GV_CitasAsignadas.DataSource = DA_CitasAsigandas
+        ViewState("CitasAsignadas") = DA_CitasAsigandas
+        GV_CitasAsignadas.DataSource = ViewState("CitasAsignadas")
         GV_CitasAsignadas.DataBind()
     End Sub
 #End Region

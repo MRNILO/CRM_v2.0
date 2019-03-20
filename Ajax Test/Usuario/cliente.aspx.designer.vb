@@ -32,15 +32,6 @@ Partial Public Class Cliente
     Protected WithEvents lbl_butonCambia As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control lbl_generales.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_generales As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
     '''Control btn_modificar.
     '''</summary>
     '''<remarks>
@@ -48,6 +39,15 @@ Partial Public Class Cliente
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_modificar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control lbl_generales.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_generales As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
     '''Control lbl_datosEmpresa.
