@@ -68,6 +68,42 @@ Partial Public Class CitaCteCaseta
     Protected WithEvents AsesorDS As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
+    '''Control cb_etapas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cb_etapas As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control tb_observacionesEtapa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_observacionesEtapa As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control cb_productos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cb_productos As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control btn_cambiaEtapa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_cambiaEtapa As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control lbl_usuario.
     '''</summary>
     '''<remarks>
@@ -228,4 +264,13 @@ Partial Public Class CitaCteCaseta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents grdViewVisitas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control lbl_mensaje_Alert.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_mensaje_Alert As Global.System.Web.UI.WebControls.Literal
 End Class

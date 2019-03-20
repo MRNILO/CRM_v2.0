@@ -1,7 +1,7 @@
 ﻿Public Class CitaCteProspectador
     Inherits System.Web.UI.Page
 
-    Dim NivelSeccion As Integer = 4
+    Dim NivelSeccion As Integer = 6
     Dim Usuario As New Servicio.CUsuarios
 
     Dim Id_Cliente As Integer = 0

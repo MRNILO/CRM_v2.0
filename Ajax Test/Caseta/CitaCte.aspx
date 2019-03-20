@@ -67,7 +67,30 @@
             </asp:SqlDataSource>
         </div>
     </div>
+    <div class="portlet box yellow">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Etapa
+            </div>
+        </div>
+        <div class="portlet-body">
 
+            <br />
+            Nueva Etapa:<asp:DropDownList ID="cb_etapas" runat="server" CssClass="form-control">
+            </asp:DropDownList>
+            Observaciones:<br />
+            <asp:TextBox ID="tb_observacionesEtapa" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+            <br />
+            Seleccione un producto:
+            <br />
+            <asp:DropDownList ID="cb_productos" runat="server" CssClass="form-control">
+            </asp:DropDownList>
+            <br />
+
+            <asp:Button ID="btn_cambiaEtapa" runat="server" CssClass="btn green" Text="Cambiar etapa" />
+
+        </div>
+    </div>
     <div class="portlet box blue-hoki">
         <div class="portlet box blue-hoki">
             <div class="portlet-title">
@@ -289,4 +312,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+
+    <asp:Literal ID="lbl_mensaje_Alert" runat="server"></asp:Literal>
+    <script src="/assets/usuario_cliente.js"></script>
 </asp:Content>

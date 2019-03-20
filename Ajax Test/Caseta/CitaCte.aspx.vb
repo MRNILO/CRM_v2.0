@@ -13,9 +13,15 @@ Public Class CitaCteCaseta
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        Id_Cliente = Request.QueryString("idCliente")
+        Id_Cliente = Request.QueryString("id")
         Try
             lbl_generales.Text = Crea_generalesCliente()
+            If Page.IsPostBack Then
+            Else
+                Dim Datos = BL.Obtener_Clientes_detalles_idCliente(Id_Cliente)
+                ComboEtapas(Datos)
+                comboProductos(Datos)
+            End If
         Catch ex As Exception
 
         End Try
@@ -290,9 +296,65 @@ Public Class CitaCteCaseta
             End Select
         End If
     End Sub
+    Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
+        Try
+            If cb_etapas.SelectedValue = 5 Then
+                If GE_Funciones.Cierre_Valida(Id_Cliente) Then
+                    If Not GE_Funciones.Cierre_CitasVisitas(Id_Cliente) Then
+                        lbl_mensaje_Alert.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                        Exit Sub
+                    End If
+                Else
+                    lbl_mensaje_Alert.Text = MostrarError("¡Existe una operacion de cierre previa!")
+                    Exit Sub
+                End If
+            End If
+
+            If BL.Avanza_EtapaCliente(Id_Cliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                lbl_mensaje_Alert.Text = MostrarExito("Etapa actualizada")
+            Else
+                lbl_mensaje_Alert.Text = MostrarError("Error al cambiar etapa")
+            End If
+        Catch ex As Exception
+            lbl_mensaje_Alert.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+        End Try
+    End Sub
 #End Region
 
 #Region "FuncionesUsuario"
+    Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
+        Dim Dt_Etapas As New DataTable
+        Dim ROWA As DataRow
+        Dim DT = BL.Obtener_etapasCliente
+
+        Dt_Etapas.Columns.AddRange({New DataColumn("Descripcion", GetType(String)), New DataColumn("id_etapa", GetType(Integer))})
+
+        For i = 0 To DT.Count - 1
+            If DT(i).Descripcion.ToUpper <> "VISITA" Then
+                ROWA = Dt_Etapas.NewRow
+                ROWA("Descripcion") = DT(i).Descripcion
+                ROWA("id_etapa") = DT(i).id_etapa
+
+                Dt_Etapas.Rows.Add(ROWA)
+            End If
+        Next
+
+        cb_etapas.DataSource = Dt_Etapas
+        cb_etapas.DataTextField = "Descripcion"
+        cb_etapas.DataValueField = "id_etapa"
+        cb_etapas.DataBind()
+
+        cb_etapas.SelectedValue = Datos(0).id_etapaActual
+    End Sub
+
+    Sub comboProductos(ByRef Datos As Servicio.CClientesDetalles())
+
+        cb_productos.DataSource = BL.Obtener_datos_comboProductos
+        cb_productos.DataTextField = "NombreCorto"
+        cb_productos.DataValueField = "id_producto"
+        cb_productos.DataBind()
+        cb_productos.SelectedValue = Datos(0).id_producto
+    End Sub
     Sub ValidaUsuario()
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
