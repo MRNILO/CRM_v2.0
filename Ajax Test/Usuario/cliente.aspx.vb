@@ -302,8 +302,13 @@ Public Class Cliente
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
             If cb_etapas.SelectedValue = 5 Then
-                If Not GE_Funciones.Cierre_CitasVisitas(idCliente) Then
-                    lbl_mensaje.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                If GE_Funciones.Cierre_Valida(idCliente) Then
+                    If Not GE_Funciones.Cierre_CitasVisitas(idCliente) Then
+                        lbl_mensaje.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                        Exit Sub
+                    End If
+                Else
+                    lbl_mensaje.Text = MostrarError("¡Existe una operacion de cierre previa!")
                     Exit Sub
                 End If
             End If

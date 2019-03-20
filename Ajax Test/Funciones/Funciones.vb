@@ -367,6 +367,11 @@ Public Class Funciones
 
         Obtener_CitasActivasCliente = GE_SQL.SQLGetTable(Query)
     End Function
+    Public Function Obtener_OperacionesCierre(ByVal IdCliente As Integer) As Integer
+        Dim Query As String = String.Format("SELECT id_operacion FROM operaciones  WHERE id_cliente = {0} AND id_etapa= 5", IdCliente)
+        Obtener_OperacionesCierre = GE_SQL.SQLGetDataDbl(Query)
+    End Function
+
 
     Public Function Obtener_EstatusCita(ByVal IdCita As Integer) As Integer
         Dim Query As String = String.Format("SELECT Status FROM CitasClientes WHERE Id_Cita = {0}", IdCita)
@@ -511,6 +516,20 @@ Public Class Funciones
 
         Cierre_CitasVisitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
+    Public Function Cierre_Valida(ByVal Id_Cliente As Integer) As Boolean
+        Dim Query As String = ""
+        Dim idOperacionCierre As Integer = 0
+
+        idOperacionCierre = Obtener_OperacionesCierre(Id_Cliente)
+
+        If (idOperacionCierre = 0) Then
+            Cierre_Valida = True
+        Else
+            Cierre_Valida = False
+        End If
+    End Function
+
 #End Region
 
 #Region "Clientes"

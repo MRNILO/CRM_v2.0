@@ -19,7 +19,7 @@ Public Class Clientes_Prospectador
     End Sub
     Protected Sub GV_Clientes_CustomCallback(sender As Object, e As DevExpress.Web.ASPxGridViewCustomCallbackEventArgs) Handles GV_Clientes.CustomCallback
         Dim Id_Cliente As Integer = GV_Clientes.GetRowValues(e.Parameters, "id_cliente")
-        ASPxWebControl.RedirectOnCallback("../Caseta/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cliente.ToString)
+        ASPxWebControl.RedirectOnCallback("../Prospectador/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cliente.ToString)
     End Sub
 
 #Region "Metodos"
