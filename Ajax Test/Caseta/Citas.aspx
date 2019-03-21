@@ -44,6 +44,14 @@
                     <dx:ASPxGridView ID="GV_Citas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" Font-Size="9pt">
                         <SettingsSearchPanel Visible="True" />
                         <Columns>
+                            <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
+                                <CustomButtons>
+                                    <dx:GridViewCommandColumnCustomButton ID="btnVisita" Text="Visita">
+                                    </dx:GridViewCommandColumnCustomButton>
+                                </CustomButtons>
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <CellStyle HorizontalAlign="Center"></CellStyle>
+                            </dx:GridViewCommandColumn>
                             <dx:GridViewDataTextColumn Caption="cita" FieldName="Id_Cita" VisibleIndex="1" Visible="false">
                                 <HeaderStyle HorizontalAlign="Center" />
                                 <CellStyle HorizontalAlign="Center"></CellStyle>
@@ -61,11 +69,6 @@
                             <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="Apellidomaterno" VisibleIndex="5">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="6">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
-                                </PropertiesHyperLinkEdit>
-                            </dx:GridViewDataHyperLinkColumn>
                             <dx:GridViewDataTextColumn Caption="Fraccionamiento" FieldName="Fraccionamiento" VisibleIndex="7">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
@@ -75,23 +78,16 @@
                             <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="9">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="campañaNombre" FieldName="campañaNombre" VisibleIndex="10">
+                            <dx:GridViewDataTextColumn Caption="Camapaña" FieldName="campañaNombre" VisibleIndex="10">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="11">
+                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="11">
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <CellStyle HorizontalAlign ="Center"></CellStyle>
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="12">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataDateColumn>
-                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="12">
-                                <HeaderStyle HorizontalAlign="Center" />
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
-                                <CustomButtons>
-                                    <dx:GridViewCommandColumnCustomButton ID="btnVisita" Text="Visita">
-                                    </dx:GridViewCommandColumnCustomButton>
-                                </CustomButtons>
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Center"></CellStyle>
-                            </dx:GridViewCommandColumn>
                         </Columns>
                         <SettingsPager PageSize="10">
                         </SettingsPager>
@@ -121,6 +117,14 @@
                     <dx:ASPxGridView ID="GV_CitasAsignadas" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" Font-Size="9pt">
                         <SettingsSearchPanel Visible="True" />
                         <Columns>
+                            <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
+                                <CustomButtons>
+                                    <dx:GridViewCommandColumnCustomButton ID="btnVisitaAsignadas" Text="Visita">
+                                    </dx:GridViewCommandColumnCustomButton>
+                                </CustomButtons>
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <CellStyle HorizontalAlign="Center"></CellStyle>
+                            </dx:GridViewCommandColumn>
                             <dx:GridViewDataTextColumn Caption="cita" FieldName="Id_Cita" VisibleIndex="1" Visible="false">
                                 <HeaderStyle HorizontalAlign="Center" />
                                 <CellStyle HorizontalAlign="Center"></CellStyle>
@@ -138,11 +142,6 @@
                             <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="Apellidomaterno" VisibleIndex="5">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Email" FieldName="Email" VisibleIndex="6">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <PropertiesHyperLinkEdit NavigateUrlFormatString="mailto:{0}">
-                                </PropertiesHyperLinkEdit>
-                            </dx:GridViewDataHyperLinkColumn>
                             <dx:GridViewDataTextColumn Caption="Fraccionamiento" FieldName="Fraccionamiento" VisibleIndex="7">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
@@ -152,23 +151,17 @@
                             <dx:GridViewDataTextColumn Caption="Empresa" FieldName="Empresa" VisibleIndex="9">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn Caption="campañaNombre" FieldName="campañaNombre" VisibleIndex="10">
+                            <dx:GridViewDataTextColumn Caption="Camapaña" FieldName="campañaNombre" VisibleIndex="10">
                                 <HeaderStyle HorizontalAlign="Center" />
                             </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="11">
-                                <HeaderStyle HorizontalAlign="Center" />
-                            </dx:GridViewDataDateColumn>
-                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="12">
-                                <HeaderStyle HorizontalAlign="Center" />
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
-                                <CustomButtons>
-                                    <dx:GridViewCommandColumnCustomButton ID="btnVisitaAsignadas" Text="Visita">
-                                    </dx:GridViewCommandColumnCustomButton>
-                                </CustomButtons>
+                            <dx:GridViewDataTextColumn Caption="Etapa Actual" FieldName="Descripcion" VisibleIndex="11">
                                 <HeaderStyle HorizontalAlign="Center" />
                                 <CellStyle HorizontalAlign="Center"></CellStyle>
-                            </dx:GridViewCommandColumn>
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="Creacion" VisibleIndex="12">
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <CellStyle HorizontalAlign="Center"></CellStyle>
+                            </dx:GridViewDataDateColumn>
                         </Columns>
                         <SettingsPager PageSize="10">
                         </SettingsPager>

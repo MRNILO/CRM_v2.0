@@ -345,10 +345,15 @@ Public Class Funciones
     End Function
 
     Public Function Obtener_CitasCliente(ByVal IdCliente As Integer) As DataTable
-        Dim Query As String = "SELECT CCL.Id_Cita, CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto, 
-	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status
+        Dim Query As String = "SELECT CCL.Id_Cita, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto,
+	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status,
+	                                  CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente,
+	                                  CONCAT(US.Nombre, ' ', US.ApellidoPaterno, ' ', US.ApellidoMaterno) Asesor,
+	                                  CONCAT(UA.Nombre, ' ', UA.ApellidoPaterno, ' ', UA.ApellidoMaterno) AsesorAsignado                                   
                                FROM Clientes CL
                                INNER JOIN CitasClientes CCL ON CCL.Id_Cliente = CL.id_cliente
+                               INNER JOIN usuarios US ON US.id_usuario =  CCL.Id_Usuario
+                               INNER JOIN usuarios UA ON UA.id_usuario =  CCL.Id_UsuarioAsignado
                                INNER JOIN campañas CP ON CP.id_campaña =  CCL.Id_Campana
                                INNER JOIN productos PR ON PR.id_producto =  CCL.Modelo
                                WHERE CCL.Id_Cliente = " & IdCliente
@@ -367,11 +372,11 @@ Public Class Funciones
 
         Obtener_CitasActivasCliente = GE_SQL.SQLGetTable(Query)
     End Function
+
     Public Function Obtener_OperacionesCierre(ByVal IdCliente As Integer) As Integer
         Dim Query As String = String.Format("SELECT id_operacion FROM operaciones  WHERE id_cliente = {0} AND id_etapa= 5", IdCliente)
         Obtener_OperacionesCierre = GE_SQL.SQLGetDataDbl(Query)
     End Function
-
 
     Public Function Obtener_EstatusCita(ByVal IdCita As Integer) As Integer
         Dim Query As String = String.Format("SELECT Status FROM CitasClientes WHERE Id_Cita = {0}", IdCita)
@@ -457,6 +462,36 @@ Public Class Funciones
         End Try
 
         Return Resultado
+    End Function
+
+    Public Function Insertar_VisitasClientes(ByVal IdCita As Integer, ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdUsuarioVisita As Integer,
+                                      ByVal IdCampana As Integer, ByVal IdImpedimento As Integer, ByVal TipoCredito As String, ByVal Monto As Double, ByVal Ranking As String,
+                                      ByVal Origen As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal TipoCampana As String, ByVal VigenciaIncial As Date,
+                                      ByVal VigenciaFinal As Date, ByVal FechaVisita As Date, ByVal Status As Integer) As Boolean
+
+        Dim Query As String = String.Format("EXEC [dbo].[Insertar_VisitasClientes]
+                                                   @pIdCita = {0},
+                                                   @pIdCliente = {1},
+                                                   @pIdUsuario = {2},
+                                                   @pIdUsuarioAsignado = {3},
+                                                   @pIdUsuarioVisita = {4},
+                                                   @pIdCampana = {5},
+                                                   @pIdImpedimento = {6},
+                                                   @pTipoCredito = N'{7}',
+                                                   @pMonto = {8},
+                                                   @pRanking = N'{9}',
+                                                   @pOrigen = N'{10}',
+                                                   @pProyecto = N'{11}',
+                                                   @pModelo = {12},
+                                                   @pTipoCampana = N'{13}',
+                                                   @pVigenciaInicial = '{14}',
+                                                   @pVigenciaFinal = '{15}',
+                                                   @pFechaVisita = '{16}',
+                                                   @pStatus = {17}", IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdUsuarioVisita, IdCampana, IdImpedimento, TipoCredito, Monto,
+                                                                     Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial.ToString("yyyy-MM-dd"),
+                                                                     VigenciaFinal.ToString("yyyy-MM-dd"), FechaVisita.ToString("yyyy-MM-dd"), Status)
+
+        Insertar_VisitasClientes = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
     Public Function Obtener_Clasificacion() As DataTable

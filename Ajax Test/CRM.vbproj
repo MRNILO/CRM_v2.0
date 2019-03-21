@@ -8002,6 +8002,7 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="SupervisorMty\SupervisorMty.master" />
     <None Include="Service References\Servicio\Service1.wsdl" />
     <None Include="Service References\Servicio\Service1.xsd">
       <SubType>Designer</SubType>
@@ -8012,7 +8013,6 @@
     <None Include="Service References\Servicio\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="SupervisorMty\SupervisorMty.master" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

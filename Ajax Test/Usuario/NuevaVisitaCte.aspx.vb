@@ -23,6 +23,8 @@ Public Class NuevaVisitaCte
 
         If Not IsPostBack() Then
             UI()
+        Else
+            lbl_mensaje.Text = ""
         End If
     End Sub
 
@@ -163,7 +165,7 @@ Public Class NuevaVisitaCte
         Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With DatosCitas
-            If BL.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
+            If GE_Funciones.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
                     0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
                     .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
 

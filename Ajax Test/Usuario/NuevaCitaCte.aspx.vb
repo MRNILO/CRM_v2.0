@@ -104,6 +104,13 @@
             .DataSource = DT
             .DataBind()
         End With
+
+        For Each Row As DataRow In DT.Rows
+            If Row("Status") = 1 Then
+                btn_asignaCita.Visible = False
+                Exit For
+            End If
+        Next
     End Sub
 
     Private Sub ObtenerTipoCampana(ByVal IdCampana As Integer)

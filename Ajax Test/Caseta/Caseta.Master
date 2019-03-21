@@ -75,18 +75,18 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="../Caseta/NuevoCliente.aspx">
-                                    <i class="fa fa-user"></i>Registrar Prospecto
-                                </a>
-                            </li>
-                            <li>
                                 <a href="/Caseta/BusquedaClientes.aspx">
-                                    <i class="fa fa-user"></i>Buscar Clientes
+                                    <i class="fa fa-search"></i>Buscar Clientes
                                 </a>
                             </li>
                             <li>
                                 <a href="/Caseta/Citas.aspx">
-                                    <i class="fa fa-user"></i>Citas
+                                    <i class="fa fa-users"></i>Citas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../Caseta/NuevoCliente.aspx">
+                                    <i class="fa fa-user"></i>Registrar Prospecto
                                 </a>
                             </li>
                         </ul>

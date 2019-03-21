@@ -6,12 +6,15 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         Dim idCliente As Integer = 0
+
         Try
             idCliente = Request.QueryString("idCliente")
         Catch ex As Exception
             idCliente = 0
         End Try
+
         If Page.IsPostBack Then
+
         Else
             combos(idCliente)
         End If
@@ -121,6 +124,5 @@
     Protected Sub cb_clientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_clientes.SelectedIndexChanged
         Response.Redirect("../Usuario/cliente.aspx?idCliente=" + cb_clientes.SelectedValue.ToString, False)
     End Sub
-
 #End Region
 End Class

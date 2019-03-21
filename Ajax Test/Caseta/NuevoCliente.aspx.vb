@@ -7,7 +7,19 @@ Public Class NuevoCliente2
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
+
+        If Not IsPostBack() Then
+            UI()
+        End If
     End Sub
+#Region "Metodos"
+    Public Sub UI()
+        Dim NSSAleatorio As String = GE_Funciones.Generar_NSSAleatorio()
+        tb_email.Text = "corrigeme@micliente" & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
+        tb_nss.Text = NSSAleatorio & NSSAleatorio
+    End Sub
+#End Region
+
     Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
         Dim IDCliente As Integer = 0

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Citas1
-
+    
     '''<summary>
     '''Control lbl_nombre.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Control btn_excel.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_excel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control GV_exporterCitas.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_exporterCitas As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control GV_Citas.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Citas As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control btnVisita.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnVisita As Global.DevExpress.Web.GridViewCommandColumnCustomButton
-
+    
     '''<summary>
     '''Control GV_Exporter.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_Exporter As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control btn_excelAsignadas.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_excelAsignadas As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control GV_exporterCitasAsignadas.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_exporterCitasAsignadas As Global.DevExpress.Web.ASPxGridViewExporter
-
+    
     '''<summary>
     '''Control GV_CitasAsignadas.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_CitasAsignadas As Global.DevExpress.Web.ASPxGridView
-
+    
     '''<summary>
     '''Control btnVisitaAsignadas.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class Citas1
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnVisitaAsignadas As Global.DevExpress.Web.GridViewCommandColumnCustomButton
-
+    
     '''<summary>
     '''Control GV_ExporterAsignadas.
     '''</summary>
