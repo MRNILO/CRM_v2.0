@@ -43,7 +43,7 @@
             <div class="table-responsive">
                 <dx:ASPxGridViewExporter ID="GV_exporter" runat="server" GridViewID="GV_Usuarios">
                 </dx:ASPxGridViewExporter>
-                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" EnableCallBacks="False" Font-Size="9pt">
+                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" EnableCallBacks="False" Font-Size="9pt" EnableTheming="True">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
@@ -100,6 +100,18 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataCheckColumn>
+                        <dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="11">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                            <EditFormSettings Visible="False" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataComboBoxColumn Caption="Perfil" FieldName="Perfil" Name="Perfil" VisibleIndex="10" Visible="false">
+                            <PropertiesComboBox TextField="Tipo" ValueField="id_tipoUsuario" ValueType="System.Int32">
+                            </PropertiesComboBox>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center">
+                            </CellStyle>
+                        </dx:GridViewDataComboBoxColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>

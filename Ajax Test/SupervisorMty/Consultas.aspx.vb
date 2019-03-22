@@ -9,7 +9,6 @@ Public Class ConsultasMty
 
     Private GE_Funciones As New Funciones
     Private Ruta As String = ConfigurationManager.ConnectionStrings("RutaXLS").ConnectionString
-
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 7
     Dim idUsuario As Integer = 0
@@ -19,6 +18,7 @@ Public Class ConsultasMty
 
         If Not IsPostBack() Then
             AlimentarComboArchivos()
+            RangoFechas.Style.Add("display", "none")
         End If
     End Sub
 
@@ -26,13 +26,10 @@ Public Class ConsultasMty
     Public Sub AlimentarComboArchivos()
         Try
             Dim documentos = GE_Funciones.Obtener_DocumentosSQL()
-
             If documentos.Count > 0 Then
                 For i As Integer = 0 To documentos.Count - 1
-
                     cmBoxArchivos.Items.Add(documentos(i).NombreDocumento.Substring(documentos(i).NombreDocumento.LastIndexOf("\") + 1), documentos(i).NombreDocumento)
                 Next
-
                 cmBoxArchivos.SelectedIndex = 0
             End If
         Catch ex As Exception
@@ -41,8 +38,10 @@ Public Class ConsultasMty
     End Sub
 
     Private Sub LimpiarUI()
-        txtBoxConsulta.Text = ""
+        ViewState("Consulta") = ""
         cmBoxArchivos.SelectedIndex = 0
+        lbl_ConsultaAbierta.Text = ""
+        RangoFechas.Style.Add("display", "none")
 
         With grdViewConsulta
             .Columns.Clear()
@@ -58,7 +57,15 @@ Public Class ConsultasMty
             Input = Reader.ReadToEnd.Replace("?", "ñ")
         End Using
 
-        txtBoxConsulta.Text = Input
+        If (Input.ToString.ToUpper.Contains("BETWEEN")) Then
+            RangoFechas.Style.Add("display", "show")
+        Else
+            RangoFechas.Style.Add("display", "none")
+        End If
+
+        lbl_ConsultaAbierta.Text = Input.ToUpper.Substring(0, Input.IndexOf("-- BD:") - 1)
+
+        ViewState("Consulta") = Input
     End Sub
 
     Sub ValidaUsuario()
@@ -67,11 +74,7 @@ Public Class ConsultasMty
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
-
-
                     Session("Usuario") = Usuario
-
-
                     'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
@@ -107,32 +110,46 @@ Public Class ConsultasMty
     End Sub
 
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim Consulta As String = txtBoxConsulta.Text
-
+        Dim Consulta As String = ViewState("Consulta")
         If Consulta <> "" Then
-            If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
-                Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
-
-                If Datos.Count > 0 Then
-                    If Datos(0).Resultado = "Success" Then
-                        With grdViewConsulta
-                            .AutoGenerateColumns = True
-                            .DataSource = Datos(0).DT
-                            .DataBind()
-                        End With
-
-                        ViewState("ConjuntoDatos") = Datos(0).DT
-                    Else
-                        MostrarError("¡Conjunto de datos vacio!" & vbCrLf & Datos(0).Resultado)
-                    End If
+            If (String.IsNullOrEmpty(dtp_inicio.Text) Or String.IsNullOrEmpty(dtp_Fin.Text)) Then
+                lbl_mensaje.Text = MostrarExito("¡Te faltan datos para trabajar!" & vbCrLf & "Los datos de fecha Inicio y fecha fin no pueden ir vacios")
+                If (String.IsNullOrEmpty(dtp_inicio.Text)) Then
+                    dtp_inicio.Focus()
+                Else
+                    dtp_Fin.Focus()
                 End If
+            ElseIf (dtp_inicio.Date > dtp_Fin.Date) Then
+                lbl_mensaje.Text = MostrarError("¡Te faltan datos para trabajar!" & vbCrLf & "La fecha de inicio no puede ser posterior a la fecha de fin")
+                dtp_inicio.Focus()
             Else
-                MostrarAviso("Cuidado . . . Consulta de datos no valida")
-                txtBoxConsulta.Focus()
+                Consulta = Consulta.Replace("$FecInicio", Convert.ToString(dtp_inicio.Date.Year & "-" & dtp_inicio.Date.Month.ToString("00") & "-" & dtp_inicio.Date.Day.ToString("00")))
+                Consulta = Consulta.Replace("$FecFin", Convert.ToString(dtp_Fin.Date.Year & "-" & dtp_Fin.Date.Month.ToString("00") & "-" & dtp_Fin.Date.Day.ToString("00")))
+
+                If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
+                    Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
+
+                    If Datos.Count > 0 Then
+                        If Datos(0).Resultado = "Success" Then
+                            With grdViewConsulta
+                                .AutoGenerateColumns = True
+                                .DataSource = Datos(0).DT
+                                .DataBind()
+                            End With
+
+                            ViewState("ConjuntoDatos") = Datos(0).DT
+                        Else
+                            lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio!" & vbCrLf & Datos(0).Resultado)
+                        End If
+                    End If
+                Else
+                    lbl_mensaje.Text = MostrarAviso("Cuidado . . . Consulta de datos no valida")
+                    ' txtBoxConsulta.Focus()
+                End If
             End If
         Else
-            MostrarAviso("¡Te faltan datos para trabajar!" & vbCrLf & "No existen consultas para ejecutar")
-            txtBoxConsulta.Focus()
+            lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar!" & vbCrLf & "No existen consultas para ejecutar")
+            'txtBoxConsulta.Focus()
         End If
     End Sub
 
