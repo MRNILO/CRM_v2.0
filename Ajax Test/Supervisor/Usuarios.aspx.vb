@@ -26,8 +26,12 @@ Public Class Usuarios
         Dim ROWA As DataRow
         Dim DTA As New DataTable
 
+        'DTA.Columns.AddRange({New DataColumn("id_usuario"), New DataColumn("Nombre"), New DataColumn("ApellidoPaterno"), New DataColumn("ApellidoMaterno"), New DataColumn("Email"),
+        '                      New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean)), New DataColumn("Perfil"), New DataColumn("PerfilDes")})
+
         DTA.Columns.AddRange({New DataColumn("id_usuario"), New DataColumn("Nombre"), New DataColumn("ApellidoPaterno"), New DataColumn("ApellidoMaterno"), New DataColumn("Email"),
-                              New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean)), New DataColumn("Perfil"), New DataColumn("PerfilDes")})
+                              New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean))})
+
 
         For i As Integer = 0 To ClientesSupervisor.Length - 1
             ROWA = DTA.NewRow()
@@ -40,8 +44,8 @@ Public Class Usuarios
             ROWA("Registrado") = ClientesSupervisor(i).fechaCreacion.ToString("dd/MM/yyyy")
             ROWA("activo") = ClientesSupervisor(i).activo
             ROWA("Contrasena") = ClientesSupervisor(i).contraseña
-            ROWA("Perfil") = ClientesSupervisor(i).id_TipoUsuario
-            ROWA("PerfilDes") = "test"
+            'ROWA("Perfil") = ClientesSupervisor(i).id_TipoUsuario
+            'ROWA("PerfilDes") = "test"
             DTA.Rows.Add(ROWA)
         Next
 
@@ -94,7 +98,8 @@ Public Class Usuarios
 
             If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
 
-            If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo, e.NewValues("Perfil")) Then
+            If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo) Then
+                'If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo, e.NewValues("Perfil")) Then
                 e.Cancel = True
                 DTA = ViewState("ClienteUsuarios")
                 RowResult = DTA.Select("id_usuario = " & e.Keys(0))
@@ -108,7 +113,7 @@ Public Class Usuarios
                     DTA.Rows(Index).Item("activo") = e.NewValues("activo")
                     DTA.Rows(Index).Item("Contrasena") = e.NewValues("contraseña")
                     DTA.Rows(Index).Item("Usuario") = e.NewValues("usuario")
-                    DTA.Rows(Index).Item("Perfil") = e.NewValues("Perfil")
+                    ' DTA.Rows(Index).Item("Perfil") = e.NewValues("Perfil")
                 Next
 
                 ViewState("ClienteUsuarios") = DTA
@@ -132,15 +137,15 @@ Public Class Usuarios
         Next
         Return sb.ToString()
     End Function
-    Protected Sub GV_Usuarios_CellEditorInitialize1(sender As Object, e As ASPxGridViewEditorEventArgs) Handles GV_Usuarios.CellEditorInitialize
-        If (e.Column.FieldName = "Perfil") Then
-            Dim DT As New DataTable
-            Dim cb_Perfiles As ASPxComboBox = TryCast(e.Editor, ASPxComboBox)
-            With cb_Perfiles
-                .DataSource = BL.Obtener_TipoUsuario()
-                .DataBindItems()
-            End With
-        End If
-    End Sub
+    'Protected Sub GV_Usuarios_CellEditorInitialize1(sender As Object, e As ASPxGridViewEditorEventArgs) Handles GV_Usuarios.CellEditorInitialize
+    '    If (e.Column.FieldName = "Perfil") Then
+    '        Dim DT As New DataTable
+    '        Dim cb_Perfiles As ASPxComboBox = TryCast(e.Editor, ASPxComboBox)
+    '        With cb_Perfiles
+    '            .DataSource = BL.Obtener_TipoUsuario()
+    '            .DataBindItems()
+    '        End With
+    '    End If
+    'End Sub
 #End Region
 End Class

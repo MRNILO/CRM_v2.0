@@ -12149,1465 +12149,1465 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuarios", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosResponse")>  _
         Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>
-        Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>
-        Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
+        Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
+        Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
         Function Obtener_usuarios_todos() As Servicio.CUsuarios()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
         Function Obtener_usuarios_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CUsuarios())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
         Function Obtener_usuarios_detalles(ByVal id_usuario As Integer) As Servicio.CUsuarios
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_detallesResponse")>  _
         Function Obtener_usuarios_detallesAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuarios)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaUsuarioResponse")>  _
         Function Actualiza_contraseaUsuario(ByVal id_usuario As Integer, ByVal Contraseña As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaUsuarioResponse")>  _
         Function Actualiza_contraseaUsuarioAsync(ByVal id_usuario As Integer, ByVal Contraseña As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaUsuario", ReplyAction:="http://tempuri.org/IService1/VerificaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaUsuario", ReplyAction:="http://tempuri.org/IService1/VerificaUsuarioResponse")>  _
         Function VerificaUsuario(ByVal Usuario As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaUsuario", ReplyAction:="http://tempuri.org/IService1/VerificaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaUsuario", ReplyAction:="http://tempuri.org/IService1/VerificaUsuarioResponse")>  _
         Function VerificaUsuarioAsync(ByVal Usuario As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_estados", ReplyAction:="http://tempuri.org/IService1/Obtener_estadosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_estados", ReplyAction:="http://tempuri.org/IService1/Obtener_estadosResponse")>  _
         Function Obtener_estados() As Servicio.CEstados()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_estados", ReplyAction:="http://tempuri.org/IService1/Obtener_estadosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_estados", ReplyAction:="http://tempuri.org/IService1/Obtener_estadosResponse")>  _
         Function Obtener_estadosAsync() As System.Threading.Tasks.Task(Of Servicio.CEstados())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ciudad", ReplyAction:="http://tempuri.org/IService1/Obtener_ciudadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ciudad", ReplyAction:="http://tempuri.org/IService1/Obtener_ciudadResponse")>  _
         Function Obtener_ciudad(ByVal id_estado As Integer) As Servicio.CCiudades()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ciudad", ReplyAction:="http://tempuri.org/IService1/Obtener_ciudadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ciudad", ReplyAction:="http://tempuri.org/IService1/Obtener_ciudadResponse")>  _
         Function Obtener_ciudadAsync(ByVal id_estado As Integer) As System.Threading.Tasks.Task(Of Servicio.CCiudades())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Valida_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Valida_EtapaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Valida_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Valida_EtapaClienteResponse")>  _
         Function Valida_EtapaCliente(ByVal IdCliente As Integer, ByVal IdEtapa As Integer, ByVal IdUsuario As Integer, ByVal IdProducto As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Valida_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Valida_EtapaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Valida_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Valida_EtapaClienteResponse")>  _
         Function Valida_EtapaClienteAsync(ByVal IdCliente As Integer, ByVal IdEtapa As Integer, ByVal IdUsuario As Integer, ByVal IdProducto As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Avanza_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Avanza_EtapaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Avanza_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Avanza_EtapaClienteResponse")>  _
         Function Avanza_EtapaCliente(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal Observaciones As String, ByVal id_productoRegistro As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Avanza_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Avanza_EtapaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Avanza_EtapaCliente", ReplyAction:="http://tempuri.org/IService1/Avanza_EtapaClienteResponse")>  _
         Function Avanza_EtapaClienteAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal Observaciones As String, ByVal id_productoRegistro As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasClienteDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteDetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasClienteDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteDetallesResponse")>  _
         Function Obtener_etapasClienteDetalles(ByVal id_cliente As Integer) As Servicio.CEtapasDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasClienteDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteDetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasClienteDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteDetallesResponse")>  _
         Function Obtener_etapasClienteDetallesAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CEtapasDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tareas", ReplyAction:="http://tempuri.org/IService1/Inserta_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tareas", ReplyAction:="http://tempuri.org/IService1/Inserta_tareasResponse")>  _
         Function Inserta_tareas(ByVal descripcion As String, ByVal id_prioridad As Integer, ByVal id_usuario As Integer, ByVal avisado As String, ByVal fechaCreacion As Date, ByVal fechaProgramada As Date, ByVal HoraProgramada As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tareas", ReplyAction:="http://tempuri.org/IService1/Inserta_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tareas", ReplyAction:="http://tempuri.org/IService1/Inserta_tareasResponse")>  _
         Function Inserta_tareasAsync(ByVal descripcion As String, ByVal id_prioridad As Integer, ByVal id_usuario As Integer, ByVal avisado As String, ByVal fechaCreacion As Date, ByVal fechaProgramada As Date, ByVal HoraProgramada As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tareas", ReplyAction:="http://tempuri.org/IService1/Actualiza_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tareas", ReplyAction:="http://tempuri.org/IService1/Actualiza_tareasResponse")>  _
         Function Actualiza_tareas(ByVal id_tarea As Integer, ByVal descripcion As String, ByVal id_prioridad As Integer, ByVal id_usuario As Integer, ByVal avisado As String, ByVal fechaCreacion As Date, ByVal fechaProgramada As Date, ByVal HoraProgramada As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tareas", ReplyAction:="http://tempuri.org/IService1/Actualiza_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tareas", ReplyAction:="http://tempuri.org/IService1/Actualiza_tareasResponse")>  _
         Function Actualiza_tareasAsync(ByVal id_tarea As Integer, ByVal descripcion As String, ByVal id_prioridad As Integer, ByVal id_usuario As Integer, ByVal avisado As String, ByVal fechaCreacion As Date, ByVal fechaProgramada As Date, ByVal HoraProgramada As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tareas", ReplyAction:="http://tempuri.org/IService1/Elimina_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tareas", ReplyAction:="http://tempuri.org/IService1/Elimina_tareasResponse")>  _
         Function Elimina_tareas(ByVal id_tarea As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tareas", ReplyAction:="http://tempuri.org/IService1/Elimina_tareasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tareas", ReplyAction:="http://tempuri.org/IService1/Elimina_tareasResponse")>  _
         Function Elimina_tareasAsync(ByVal id_tarea As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareas_prioridad", ReplyAction:="http://tempuri.org/IService1/Obtener_tareas_prioridadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareas_prioridad", ReplyAction:="http://tempuri.org/IService1/Obtener_tareas_prioridadResponse")>  _
         Function Obtener_tareas_prioridad() As Servicio.CTareasPrioridad()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareas_prioridad", ReplyAction:="http://tempuri.org/IService1/Obtener_tareas_prioridadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareas_prioridad", ReplyAction:="http://tempuri.org/IService1/Obtener_tareas_prioridadResponse")>  _
         Function Obtener_tareas_prioridadAsync() As System.Threading.Tasks.Task(Of Servicio.CTareasPrioridad())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuarioResponse")>  _
         Function Obtener_tareasPendientesUsuario(ByVal id_usuario As Integer) As Servicio.CTareasPendientes()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasPendientesUsuarioResponse")>  _
         Function Obtener_tareasPendientesUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CTareasPendientes())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuarioResponse")>  _
         Function Obtener_tareasTerminadasUsuario(ByVal id_usuario As Integer) As Servicio.CTareasPendientes()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_tareasTerminadasUsuarioResponse")>  _
         Function Obtener_tareasTerminadasUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CTareasPendientes())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/TerminarTarea", ReplyAction:="http://tempuri.org/IService1/TerminarTareaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/TerminarTarea", ReplyAction:="http://tempuri.org/IService1/TerminarTareaResponse")>  _
         Function TerminarTarea(ByVal id_tarea As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/TerminarTarea", ReplyAction:="http://tempuri.org/IService1/TerminarTareaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/TerminarTarea", ReplyAction:="http://tempuri.org/IService1/TerminarTareaResponse")>  _
         Function TerminarTareaAsync(ByVal id_tarea As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmailLlamada", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmailLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmailLlamada", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmailLlamadaResponse")>  _
         Function Obtener_detallesEmailLlamada(ByVal idLlamada As Integer) As Servicio.CDetallesEmail
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmailLlamada", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmailLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmailLlamada", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmailLlamadaResponse")>  _
         Function Obtener_detallesEmailLlamadaAsync(ByVal idLlamada As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesEmail)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObtenerDetallesCitaEmail", ReplyAction:="http://tempuri.org/IService1/ObtenerDetallesCitaEmailResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObtenerDetallesCitaEmail", ReplyAction:="http://tempuri.org/IService1/ObtenerDetallesCitaEmailResponse")>  _
         Function ObtenerDetallesCitaEmail(ByVal idCita As Integer) As Servicio.CDetallesEmailCita
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObtenerDetallesCitaEmail", ReplyAction:="http://tempuri.org/IService1/ObtenerDetallesCitaEmailResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObtenerDetallesCitaEmail", ReplyAction:="http://tempuri.org/IService1/ObtenerDetallesCitaEmailResponse")>  _
         Function ObtenerDetallesCitaEmailAsync(ByVal idCita As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesEmailCita)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoLlamadaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoLlamadaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoLlamadaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoLlamadaClienteResponse")>  _
         Function Enviar_CorreoLlamadaCliente(ByVal id_llamada As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoLlamadaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoLlamadaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoLlamadaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoLlamadaClienteResponse")>  _
         Function Enviar_CorreoLlamadaClienteAsync(ByVal id_llamada As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoCitaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoCitaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoCitaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoCitaClienteResponse")>  _
         Function Enviar_CorreoCitaCliente(ByVal idCita As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoCitaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoCitaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Enviar_CorreoCitaCliente", ReplyAction:="http://tempuri.org/IService1/Enviar_CorreoCitaClienteResponse")>  _
         Function Enviar_CorreoCitaClienteAsync(ByVal idCita As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_correosDelCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_correosDelClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_correosDelCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_correosDelClienteResponse")>  _
         Function Obtener_correosDelCliente(ByVal emailCliente As String, ByVal emailEmpresa As String) As Servicio.CCorreosCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_correosDelCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_correosDelClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_correosDelCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_correosDelClienteResponse")>  _
         Function Obtener_correosDelClienteAsync(ByVal emailCliente As String, ByVal emailEmpresa As String) As System.Threading.Tasks.Task(Of Servicio.CCorreosCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_mensajeEmailID", ReplyAction:="http://tempuri.org/IService1/Obtener_mensajeEmailIDResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_mensajeEmailID", ReplyAction:="http://tempuri.org/IService1/Obtener_mensajeEmailIDResponse")>  _
         Function Obtener_mensajeEmailID(ByVal id_email As Integer) As String
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_mensajeEmailID", ReplyAction:="http://tempuri.org/IService1/Obtener_mensajeEmailIDResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_mensajeEmailID", ReplyAction:="http://tempuri.org/IService1/Obtener_mensajeEmailIDResponse")>  _
         Function Obtener_mensajeEmailIDAsync(ByVal id_email As Integer) As System.Threading.Tasks.Task(Of String)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/EnviarEmailSendGrid", ReplyAction:="http://tempuri.org/IService1/EnviarEmailSendGridResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/EnviarEmailSendGrid", ReplyAction:="http://tempuri.org/IService1/EnviarEmailSendGridResponse")>  _
         Function EnviarEmailSendGrid(ByVal emailFrom As String, ByVal emailTo As String, ByVal subjet As String, ByVal htmlMensaje As String, ByVal NAdjuntos As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/EnviarEmailSendGrid", ReplyAction:="http://tempuri.org/IService1/EnviarEmailSendGridResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/EnviarEmailSendGrid", ReplyAction:="http://tempuri.org/IService1/EnviarEmailSendGridResponse")>  _
         Function EnviarEmailSendGridAsync(ByVal emailFrom As String, ByVal emailTo As String, ByVal subjet As String, ByVal htmlMensaje As String, ByVal NAdjuntos As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_emails", ReplyAction:="http://tempuri.org/IService1/Inserta_emailsResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_emails", ReplyAction:="http://tempuri.org/IService1/Inserta_emailsResponse")>  _
         Function Inserta_emails(ByVal emailFrom As String, ByVal htmlMessage As String, ByVal emailTo As String, ByVal subjet As String, ByVal id_estatus As Integer, ByVal FechaRecepcion As Date, ByVal NAdjuntos As Integer) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_emails", ReplyAction:="http://tempuri.org/IService1/Inserta_emailsResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_emails", ReplyAction:="http://tempuri.org/IService1/Inserta_emailsResponse")>  _
         Function Inserta_emailsAsync(ByVal emailFrom As String, ByVal htmlMessage As String, ByVal emailTo As String, ByVal subjet As String, ByVal id_estatus As Integer, ByVal FechaRecepcion As Date, ByVal NAdjuntos As Integer) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_email_adjuntos", ReplyAction:="http://tempuri.org/IService1/Inserta_email_adjuntosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_email_adjuntos", ReplyAction:="http://tempuri.org/IService1/Inserta_email_adjuntosResponse")>  _
         Function Inserta_email_adjuntos(ByVal filename As String, ByVal MediaType As String, ByVal id_email As Integer, ByVal Body64Str As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_email_adjuntos", ReplyAction:="http://tempuri.org/IService1/Inserta_email_adjuntosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_email_adjuntos", ReplyAction:="http://tempuri.org/IService1/Inserta_email_adjuntosResponse")>  _
         Function Inserta_email_adjuntosAsync(ByVal filename As String, ByVal MediaType As String, ByVal id_email As Integer, ByVal Body64Str As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_emailsUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_emailsUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_emailsUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_emailsUsuarioResponse")>  _
         Function Obtener_emailsUsuario(ByVal Email As String) As Servicio.CEmailsUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_emailsUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_emailsUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_emailsUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_emailsUsuarioResponse")>  _
         Function Obtener_emailsUsuarioAsync(ByVal Email As String) As System.Threading.Tasks.Task(Of Servicio.CEmailsUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_enviadosUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_enviadosUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_enviadosUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_enviadosUsuarioResponse")>  _
         Function Obtener_enviadosUsuario(ByVal Email As String) As Servicio.CEmailsUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_enviadosUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_enviadosUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_enviadosUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_enviadosUsuarioResponse")>  _
         Function Obtener_enviadosUsuarioAsync(ByVal Email As String) As System.Threading.Tasks.Task(Of Servicio.CEmailsUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuarioResponse")>  _
         Function Obtener_configuracionEmailUsuario(ByVal id_usuario As Integer) As Servicio.CConfiguracionEmail
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionEmailUsuarioResponse")>  _
         Function Obtener_configuracionEmailUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CConfiguracionEmail)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrolResponse")>  _
         Function Obtener_CancelacionesEnkontrol(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.CancelacionesEnkontrol()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrolResponse")>  _
         Function Obtener_CancelacionesEnkontrolAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.CancelacionesEnkontrol())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrolResponse")>  _
         Function Obtener_SeparacionesEnkontrol(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.SeparacionesEnkontrol()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesEnkontrolResponse")>  _
         Function Obtener_SeparacionesEnkontrolAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.SeparacionesEnkontrol())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrolResponse")>  _
         Function Obtener_ProspeccionesEnkontrol(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.ProspeccionesEnkontrol()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrolResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrol", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesEnkontrolResponse")>  _
         Function Obtener_ProspeccionesEnkontrolAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.ProspeccionesEnkontrol())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesCRMResponse")>  _
         Function Obtener_ProspeccionesCRM(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.ProspeccionesCRM()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ProspeccionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_ProspeccionesCRMResponse")>  _
         Function Obtener_ProspeccionesCRMAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.ProspeccionesCRM())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_VisitasCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_VisitasCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_VisitasCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_VisitasCRMResponse")>  _
         Function Obtener_VisitasCRM(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.VisitasCRM()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_VisitasCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_VisitasCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_VisitasCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_VisitasCRMResponse")>  _
         Function Obtener_VisitasCRMAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.VisitasCRM())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesCRMResponse")>  _
         Function Obtener_SeparacionesCRM(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.SeparacionesCRM()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesCRMResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_SeparacionesCRM", ReplyAction:="http://tempuri.org/IService1/Obtener_SeparacionesCRMResponse")>  _
         Function Obtener_SeparacionesCRMAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.SeparacionesCRM())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosARPA", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosARPAResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosARPA", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosARPAResponse")>  _
         Function Obtener_DatosARPA(ByVal ID_Usuario As Integer, ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.ReporteArpa()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosARPA", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosARPAResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosARPA", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosARPAResponse")>  _
         Function Obtener_DatosARPAAsync(ByVal ID_Usuario As Integer, ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.ReporteArpa())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCalidad", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCalidadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCalidad", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCalidadResponse")>  _
         Function Obtener_DatosCalidad(ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.ReporteCalidad()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCalidad", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCalidadResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCalidad", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCalidadResponse")>  _
         Function Obtener_DatosCalidadAsync(ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.ReporteCalidad())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyectoResponse")>  _
         Function Obtener_DetallesCumplimientoProyecto(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.DetallesCumplimiento()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DetallesCumplimientoProyectoResponse")>  _
         Function Obtener_DetallesCumplimientoProyectoAsync(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.DetallesCumplimiento())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyectoResponse")>  _
         Function Obtener_DatosCumplimientoProyecto(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.DatosCumplimiento()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_DatosCumplimientoProyectoResponse")>  _
         Function Obtener_DatosCumplimientoProyectoAsync(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.DatosCumplimiento())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyectoResponse")>  _
         Function Obtener_TotalesCumplimientoProyecto(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As Servicio.TotalesCumplimiento()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyectoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyecto", ReplyAction:="http://tempuri.org/IService1/Obtener_TotalesCumplimientoProyectoResponse")>  _
         Function Obtener_TotalesCumplimientoProyectoAsync(ByVal Proyecto As String, ByVal FechaInicio As Date, ByVal FechaFin As Date) As System.Threading.Tasks.Task(Of Servicio.TotalesCumplimiento())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Proyectos", ReplyAction:="http://tempuri.org/IService1/Obtener_ProyectosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Proyectos", ReplyAction:="http://tempuri.org/IService1/Obtener_ProyectosResponse")>  _
         Function Obtener_Proyectos() As Servicio.Proyectos()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Proyectos", ReplyAction:="http://tempuri.org/IService1/Obtener_ProyectosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Proyectos", ReplyAction:="http://tempuri.org/IService1/Obtener_ProyectosResponse")>  _
         Function Obtener_ProyectosAsync() As System.Threading.Tasks.Task(Of Servicio.Proyectos())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TipoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TipoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse")>  _
         Function Obtener_TipoUsuario() As Servicio.TipoUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TipoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TipoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse")>  _
         Function Obtener_TipoUsuarioAsync() As System.Threading.Tasks.Task(Of Servicio.TipoUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificaciones(ByVal idCliente As Integer) As Servicio.CNotifica()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
         Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
         Function Inserta_etapasClienteAsync(ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>  _
         Function Obtener_etapasCliente() As Servicio.CEtapasCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_etapasClienteResponse")>  _
         Function Obtener_etapasClienteAsync() As System.Threading.Tasks.Task(Of Servicio.CEtapasCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
         Function Elimina_etapasCliente(ByVal id_etapa As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_etapasClienteResponse")>  _
         Function Elimina_etapasClienteAsync(ByVal id_etapa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
         Function Actualiza_etapasCliente(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_etapasClienteResponse")>  _
         Function Actualiza_etapasClienteAsync(ByVal id_etapa As Integer, ByVal nEtapa As Integer, ByVal Descripcion As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
         Function Obtener_llamadasPendientesHoyUsuario(ByVal id_usuario As Integer) As Servicio.CLlamadasPendientesHoyUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasPendientesHoyUsuarioResponse")>  _
         Function Obtener_llamadasPendientesHoyUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasPendientesHoyUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_llamadas", ReplyAction:="http://tempuri.org/IService1/Inserta_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_llamadas", ReplyAction:="http://tempuri.org/IService1/Inserta_llamadasResponse")>  _
         Function Inserta_llamadas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As Date, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_llamadas", ReplyAction:="http://tempuri.org/IService1/Inserta_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_llamadas", ReplyAction:="http://tempuri.org/IService1/Inserta_llamadasResponse")>  _
         Function Inserta_llamadasAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As Date, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_llamadas", ReplyAction:="http://tempuri.org/IService1/Actualiza_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_llamadas", ReplyAction:="http://tempuri.org/IService1/Actualiza_llamadasResponse")>  _
         Function Actualiza_llamadas(ByVal id_llamada As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal fechaCreacion As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_llamadas", ReplyAction:="http://tempuri.org/IService1/Actualiza_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_llamadas", ReplyAction:="http://tempuri.org/IService1/Actualiza_llamadasResponse")>  _
         Function Actualiza_llamadasAsync(ByVal id_llamada As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal fechaCreacion As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_llamadas", ReplyAction:="http://tempuri.org/IService1/Elimina_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_llamadas", ReplyAction:="http://tempuri.org/IService1/Elimina_llamadasResponse")>  _
         Function Elimina_llamadas(ByVal id_llamada As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_llamadas", ReplyAction:="http://tempuri.org/IService1/Elimina_llamadasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_llamadas", ReplyAction:="http://tempuri.org/IService1/Elimina_llamadasResponse")>  _
         Function Elimina_llamadasAsync(ByVal id_llamada As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_usuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_usuarioResponse")>  _
         Function Obtener_llamadas_usuario(ByVal id_usuario As Integer) As Servicio.CLlamadas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_usuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_usuarioResponse")>  _
         Function Obtener_llamadas_usuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_clienteResponse")>  _
         Function Obtener_llamadas_cliente(ByVal id_cliente As Integer) As Servicio.CLlamadas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadas_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadas_clienteResponse")>  _
         Function Obtener_llamadas_clienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasClienteResponse")>  _
         Function Obtener_llamadasCliente(ByVal idCliente As Integer) As Servicio.CLlamadasCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasClienteResponse")>  _
         Function Obtener_llamadasClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CLlamadasCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_realizadaLlamada", ReplyAction:="http://tempuri.org/IService1/Cambia_realizadaLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_realizadaLlamada", ReplyAction:="http://tempuri.org/IService1/Cambia_realizadaLlamadaResponse")>  _
         Function Cambia_realizadaLlamada(ByVal id_llamada As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_realizadaLlamada", ReplyAction:="http://tempuri.org/IService1/Cambia_realizadaLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_realizadaLlamada", ReplyAction:="http://tempuri.org/IService1/Cambia_realizadaLlamadaResponse")>  _
         Function Cambia_realizadaLlamadaAsync(ByVal id_llamada As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaLlamada", ReplyAction:="http://tempuri.org/IService1/CalificaLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaLlamada", ReplyAction:="http://tempuri.org/IService1/CalificaLlamadaResponse")>  _
         Function CalificaLlamada(ByVal id_llamada As Integer, ByVal Calificacion As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaLlamada", ReplyAction:="http://tempuri.org/IService1/CalificaLlamadaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaLlamada", ReplyAction:="http://tempuri.org/IService1/CalificaLlamadaResponse")>  _
         Function CalificaLlamadaAsync(ByVal id_llamada As Integer, ByVal Calificacion As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuarioResponse")>  _
         Function Obtener_llamadasFechaUsuario(ByVal idUsuario As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.CLlamadasFechas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_llamadasFechaUsuarioResponse")>  _
         Function Obtener_llamadasFechaUsuarioAsync(ByVal idUsuario As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.CLlamadasFechas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Inserta_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Inserta_nivelinteresResponse")>  _
         Function Inserta_nivelinteres(ByVal nivelinteres As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Inserta_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Inserta_nivelinteresResponse")>  _
         Function Inserta_nivelinteresAsync(ByVal nivelinteres As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Elimina_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Elimina_nivelinteresResponse")>  _
         Function Elimina_nivelinteres(ByVal id_nivelInteres As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Elimina_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Elimina_nivelinteresResponse")>  _
         Function Elimina_nivelinteresAsync(ByVal id_nivelInteres As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Actualiza_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Actualiza_nivelinteresResponse")>  _
         Function Actualiza_nivelinteres(ByVal id_nivelInteres As Integer, ByVal nivelinteres As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Actualiza_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Actualiza_nivelinteresResponse")>  _
         Function Actualiza_nivelinteresAsync(ByVal id_nivelInteres As Integer, ByVal nivelinteres As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Obtener_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Obtener_nivelinteresResponse")>  _
         Function Obtener_nivelinteres() As Servicio.CNivelInteres()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Obtener_nivelinteresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nivelinteres", ReplyAction:="http://tempuri.org/IService1/Obtener_nivelinteresResponse")>  _
         Function Obtener_nivelinteresAsync() As System.Threading.Tasks.Task(Of Servicio.CNivelInteres())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_datos_comboProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_datos_comboProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_datos_comboProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_datos_comboProductosResponse")>  _
         Function Obtener_datos_comboProductos() As Servicio.CComboProductos()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_datos_comboProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_datos_comboProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_datos_comboProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_datos_comboProductosResponse")>  _
         Function Obtener_datos_comboProductosAsync() As System.Threading.Tasks.Task(Of Servicio.CComboProductos())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_productos", ReplyAction:="http://tempuri.org/IService1/Inserta_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_productos", ReplyAction:="http://tempuri.org/IService1/Inserta_productosResponse")>  _
         Function Inserta_productos(ByVal NombreCorto As String, ByVal NombreCompleto As String, ByVal Descripcion As String, ByVal PrecioNormal As Integer, ByVal PrecioDescuento As Integer, ByVal id_categoria As Integer, ByVal fechaCreacion As Date, ByVal Observaciones As String, ByVal fotografia As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_productos", ReplyAction:="http://tempuri.org/IService1/Inserta_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_productos", ReplyAction:="http://tempuri.org/IService1/Inserta_productosResponse")>  _
         Function Inserta_productosAsync(ByVal NombreCorto As String, ByVal NombreCompleto As String, ByVal Descripcion As String, ByVal PrecioNormal As Integer, ByVal PrecioDescuento As Integer, ByVal id_categoria As Integer, ByVal fechaCreacion As Date, ByVal Observaciones As String, ByVal fotografia As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_productos", ReplyAction:="http://tempuri.org/IService1/Elimina_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_productos", ReplyAction:="http://tempuri.org/IService1/Elimina_productosResponse")>  _
         Function Elimina_productos(ByVal id_producto As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_productos", ReplyAction:="http://tempuri.org/IService1/Elimina_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_productos", ReplyAction:="http://tempuri.org/IService1/Elimina_productosResponse")>  _
         Function Elimina_productosAsync(ByVal id_producto As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_productos", ReplyAction:="http://tempuri.org/IService1/Actualiza_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_productos", ReplyAction:="http://tempuri.org/IService1/Actualiza_productosResponse")>  _
         Function Actualiza_productos(ByVal id_producto As Integer, ByVal NombreCorto As String, ByVal NombreCompleto As String, ByVal Descripcion As String, ByVal PrecioNormal As Integer, ByVal PrecioDescuento As Integer, ByVal id_Categoria As Integer, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_productos", ReplyAction:="http://tempuri.org/IService1/Actualiza_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_productos", ReplyAction:="http://tempuri.org/IService1/Actualiza_productosResponse")>  _
         Function Actualiza_productosAsync(ByVal id_producto As Integer, ByVal NombreCorto As String, ByVal NombreCompleto As String, ByVal Descripcion As String, ByVal PrecioNormal As Integer, ByVal PrecioDescuento As Integer, ByVal id_Categoria As Integer, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_productos", ReplyAction:="http://tempuri.org/IService1/Obtener_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_productos", ReplyAction:="http://tempuri.org/IService1/Obtener_productosResponse")>  _
         Function Obtener_productos() As Servicio.CProductos()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_productos", ReplyAction:="http://tempuri.org/IService1/Obtener_productosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_productos", ReplyAction:="http://tempuri.org/IService1/Obtener_productosResponse")>  _
         Function Obtener_productosAsync() As System.Threading.Tasks.Task(Of Servicio.CProductos())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Productos_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_Productos_DetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Productos_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_Productos_DetallesResponse")>  _
         Function Obtener_Productos_Detalles() As Servicio.CProductosDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Productos_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_Productos_DetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Productos_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_Productos_DetallesResponse")>  _
         Function Obtener_Productos_DetallesAsync() As System.Threading.Tasks.Task(Of Servicio.CProductosDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesProducto", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesProductoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesProducto", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesProductoResponse")>  _
         Function Obtener_detallesProducto(ByVal idProducto As Integer) As Servicio.CDetallesProducto
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesProducto", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesProductoResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesProducto", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesProductoResponse")>  _
         Function Obtener_detallesProductoAsync(ByVal idProducto As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesProducto)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_referencias", ReplyAction:="http://tempuri.org/IService1/Inserta_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_referencias", ReplyAction:="http://tempuri.org/IService1/Inserta_referenciasResponse")>  _
         Function Inserta_referencias(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal email As String, ByVal fechaCreacion As Date, ByVal id_tiporeferencia As Integer, ByVal id_usuario As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTPresentacion As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_referencias", ReplyAction:="http://tempuri.org/IService1/Inserta_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_referencias", ReplyAction:="http://tempuri.org/IService1/Inserta_referenciasResponse")>  _
         Function Inserta_referenciasAsync(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal email As String, ByVal fechaCreacion As Date, ByVal id_tiporeferencia As Integer, ByVal id_usuario As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTPresentacion As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_referencias", ReplyAction:="http://tempuri.org/IService1/Elimina_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_referencias", ReplyAction:="http://tempuri.org/IService1/Elimina_referenciasResponse")>  _
         Function Elimina_referencias(ByVal id_referencia As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_referencias", ReplyAction:="http://tempuri.org/IService1/Elimina_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_referencias", ReplyAction:="http://tempuri.org/IService1/Elimina_referenciasResponse")>  _
         Function Elimina_referenciasAsync(ByVal id_referencia As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_referencias", ReplyAction:="http://tempuri.org/IService1/Actualiza_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_referencias", ReplyAction:="http://tempuri.org/IService1/Actualiza_referenciasResponse")>  _
         Function Actualiza_referencias(ByVal id_referencia As Integer, ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal email As String, ByVal fechaCreacion As Date, ByVal id_tiporeferencia As Integer, ByVal id_usuario As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTPresentacion As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_referencias", ReplyAction:="http://tempuri.org/IService1/Actualiza_referenciasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_referencias", ReplyAction:="http://tempuri.org/IService1/Actualiza_referenciasResponse")>  _
         Function Actualiza_referenciasAsync(ByVal id_referencia As Integer, ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal email As String, ByVal fechaCreacion As Date, ByVal id_tiporeferencia As Integer, ByVal id_usuario As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTPresentacion As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_referencias_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_referencias_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_referencias_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_referencias_clienteResponse")>  _
         Function Obtener_referencias_cliente(ByVal id_cliente As Integer) As Servicio.CReferenciasCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_referencias_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_referencias_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_referencias_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_referencias_clienteResponse")>  _
         Function Obtener_referencias_clienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CReferenciasCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_rubros", ReplyAction:="http://tempuri.org/IService1/Inserta_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_rubros", ReplyAction:="http://tempuri.org/IService1/Inserta_rubrosResponse")>  _
         Function Inserta_rubros(ByVal rubro As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_rubros", ReplyAction:="http://tempuri.org/IService1/Inserta_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_rubros", ReplyAction:="http://tempuri.org/IService1/Inserta_rubrosResponse")>  _
         Function Inserta_rubrosAsync(ByVal rubro As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_rubros", ReplyAction:="http://tempuri.org/IService1/Elimina_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_rubros", ReplyAction:="http://tempuri.org/IService1/Elimina_rubrosResponse")>  _
         Function Elimina_rubros(ByVal id_rubro As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_rubros", ReplyAction:="http://tempuri.org/IService1/Elimina_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_rubros", ReplyAction:="http://tempuri.org/IService1/Elimina_rubrosResponse")>  _
         Function Elimina_rubrosAsync(ByVal id_rubro As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rubros", ReplyAction:="http://tempuri.org/IService1/Actualiza_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rubros", ReplyAction:="http://tempuri.org/IService1/Actualiza_rubrosResponse")>  _
         Function Actualiza_rubros(ByVal id_rubro As Integer, ByVal rubro As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rubros", ReplyAction:="http://tempuri.org/IService1/Actualiza_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rubros", ReplyAction:="http://tempuri.org/IService1/Actualiza_rubrosResponse")>  _
         Function Actualiza_rubrosAsync(ByVal id_rubro As Integer, ByVal rubro As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_rubros", ReplyAction:="http://tempuri.org/IService1/Obtener_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_rubros", ReplyAction:="http://tempuri.org/IService1/Obtener_rubrosResponse")>  _
         Function Obtener_rubros() As Servicio.CRubros()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_rubros", ReplyAction:="http://tempuri.org/IService1/Obtener_rubrosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_rubros", ReplyAction:="http://tempuri.org/IService1/Obtener_rubrosResponse")>  _
         Function Obtener_rubrosAsync() As System.Threading.Tasks.Task(Of Servicio.CRubros())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_oportunidades", ReplyAction:="http://tempuri.org/IService1/Obtener_oportunidadesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_oportunidades", ReplyAction:="http://tempuri.org/IService1/Obtener_oportunidadesResponse")>  _
         Function Obtener_oportunidades() As Servicio.COportunidades()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_oportunidades", ReplyAction:="http://tempuri.org/IService1/Obtener_oportunidadesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_oportunidades", ReplyAction:="http://tempuri.org/IService1/Obtener_oportunidadesResponse")>  _
         Function Obtener_oportunidadesAsync() As System.Threading.Tasks.Task(Of Servicio.COportunidades())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_reporte_clientesFechas", ReplyAction:="http://tempuri.org/IService1/Obtener_reporte_clientesFechasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_reporte_clientesFechas", ReplyAction:="http://tempuri.org/IService1/Obtener_reporte_clientesFechasResponse")>  _
         Function Obtener_reporte_clientesFechas(ByVal FInicio As Date, ByVal FFinal As Date) As Servicio.Obtener_reporte_clientesFechas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_reporte_clientesFechas", ReplyAction:="http://tempuri.org/IService1/Obtener_reporte_clientesFechasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_reporte_clientesFechas", ReplyAction:="http://tempuri.org/IService1/Obtener_reporte_clientesFechasResponse")>  _
         Function Obtener_reporte_clientesFechasAsync(ByVal FInicio As Date, ByVal FFinal As Date) As System.Threading.Tasks.Task(Of Servicio.Obtener_reporte_clientesFechas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisorResponse")>  _
         Function Obtener_nombresClientesidSupervisor(ByVal id_supervisor As Integer) As Servicio.CCLientesSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidSupervisorResponse")>  _
         Function Obtener_nombresClientesidSupervisorAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CCLientesSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioCliente", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioCliente", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteResponse")>  _
         Function Cambia_usuarioCliente(ByVal id_usuario As Integer, ByVal idCliente As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioCliente", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioCliente", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteResponse")>  _
         Function Cambia_usuarioClienteAsync(ByVal id_usuario As Integer, ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisorResponse")>  _
         Function Cambia_usuarioClienteSupervisor(ByVal id_usuario As Integer, ByVal idCliente As Integer, ByVal idSupervsor As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisor", ReplyAction:="http://tempuri.org/IService1/Cambia_usuarioClienteSupervisorResponse")>  _
         Function Cambia_usuarioClienteSupervisorAsync(ByVal id_usuario As Integer, ByVal idCliente As Integer, ByVal idSupervsor As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisorResponse")>  _
         Function Obtener_UsuarioDetalleSupervisor(ByVal id_supervisor As Integer) As Servicio.CUsuariosDetalleSup()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_UsuarioDetalleSupervisorResponse")>  _
         Function Obtener_UsuarioDetalleSupervisorAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuariosDetalleSup())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_DetalleSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_DetalleSupervisorResponse")>  _
         Function Obtener_DetalleSupervisor() As Servicio.CDetalleSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_DetalleSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_DetalleSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_DetalleSupervisorResponse")>  _
         Function Obtener_DetalleSupervisorAsync() As System.Threading.Tasks.Task(Of Servicio.CDetalleSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisores", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisores", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisoresResponse")>  _
         Function Inserta_supervisores(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal email As String, ByVal usuario As String, ByVal contraseña As String, ByVal fechaCreacion As Date, ByVal fotografia As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisores", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisores", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisoresResponse")>  _
         Function Inserta_supervisoresAsync(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal email As String, ByVal usuario As String, ByVal contraseña As String, ByVal fechaCreacion As Date, ByVal fotografia As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisores", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisores", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisoresResponse")>  _
         Function Elimina_supervisores(ByVal id_supervisor As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisores", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisores", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisoresResponse")>  _
         Function Elimina_supervisoresAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisores", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisores", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisoresResponse")>  _
         Function Obtener_supervisores() As Servicio.CSupervisores()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisores", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisores", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisoresResponse")>  _
         Function Obtener_supervisoresAsync() As System.Threading.Tasks.Task(Of Servicio.CSupervisores())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesSupervisorResponse")>  _
         Function Obtener_clientesSupervisor(ByVal idSupervisor As Integer) As Servicio.ClientesSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesSupervisorResponse")>  _
         Function Obtener_clientesSupervisorAsync(ByVal idSupervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.ClientesSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_usuariosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_usuariosSupervisorResponse")>  _
         Function Obtener_usuariosSupervisor(ByVal id_supervisor As Integer) As Servicio.CUsuariosSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_usuariosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_usuariosSupervisorResponse")>  _
         Function Obtener_usuariosSupervisorAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CUsuariosSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisorResponse")>  _
         Function Obtener_AcumuladosSupervisor(ByVal id_supervisor As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.CAcumuladosSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosSupervisorResponse")>  _
         Function Obtener_AcumuladosSupervisorAsync(ByVal id_supervisor As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.CAcumuladosSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisorResponse")>  _
         Function Obtener_nombresUsuariosSupervisor(ByVal id_supervisor As Integer) As Servicio.CSupervisorUsuarios()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosSupervisorResponse")>  _
         Function Obtener_nombresUsuariosSupervisorAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CSupervisorUsuarios())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajar", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajar", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarResponse")>  _
         Function DiasSinTrabajar(ByVal id_supervisor As Integer) As Servicio.DiasSinTrabajar()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajar", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajar", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarResponse")>  _
         Function DiasSinTrabajarAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapa", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapa", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaResponse")>  _
         Function DiasSinTrabajarEtapa(ByVal id_supervisor As Integer, ByVal Etapa As Integer) As Servicio.DiasSinTrabajar()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapa", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapa", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaResponse")>  _
         Function DiasSinTrabajarEtapaAsync(ByVal id_supervisor As Integer, ByVal Etapa As Integer) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>  _
         Function DiasSinTrabajarEtapaFiltro(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.DiasSinTrabajar()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarEtapaFiltroResponse")>  _
         Function DiasSinTrabajarEtapaFiltroAsync(ByVal id_supervisor As Integer, ByVal Etapa As Integer, ByVal Dias As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>  _
         Function DiasSinTrabajarFiltro(ByVal id_supervisor As Integer, ByVal Filtro As String) As Servicio.DiasSinTrabajar()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/DiasSinTrabajarFiltro", ReplyAction:="http://tempuri.org/IService1/DiasSinTrabajarFiltroResponse")>  _
         Function DiasSinTrabajarFiltroAsync(ByVal id_supervisor As Integer, ByVal Filtro As String) As System.Threading.Tasks.Task(Of Servicio.DiasSinTrabajar())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse")>  _
         Function Obtener_supervisor_Detalles(ByVal id_supervisor As Integer) As Servicio.CDetallesSupervisor
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Detalles", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_DetallesResponse")>  _
         Function Obtener_supervisor_DetallesAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesSupervisor)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaSupervisorResponse")>  _
         Function Actualiza_contraseaSupervisor(ByVal id_usuario As Integer, ByVal Contraseña As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseaSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseaSupervisorResponse")>  _
         Function Actualiza_contraseaSupervisorAsync(ByVal id_usuario As Integer, ByVal Contraseña As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisores", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisores", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisoresResponse")>  _
         Function Actualiza_supervisores(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal Activo As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisores", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisoresResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisores", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisoresResponse")>  _
         Function Actualiza_supervisoresAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal Activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisorUsuarioResponse")>  _
         Function Inserta_supervisorUsuario(ByVal id_usuario As Integer, ByVal id_supervisor As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_supervisorUsuarioResponse")>  _
         Function Inserta_supervisorUsuarioAsync(ByVal id_usuario As Integer, ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisorUsuarioResponse")>  _
         Function Elimina_supervisorUsuario(ByVal id_supervisorusuario As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_supervisorUsuarioResponse")>  _
         Function Elimina_supervisorUsuarioAsync(ByVal id_supervisorusuario As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisorUsuarioResponse")>  _
         Function Actualiza_supervisorUsuario(ByVal id_supervisorusuario As Integer, ByVal id_usuario As Integer, ByVal id_supervisor As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_supervisorUsuarioResponse")>  _
         Function Actualiza_supervisorUsuarioAsync(ByVal id_supervisorusuario As Integer, ByVal id_usuario As Integer, ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuarioResponse")>  _
         Function Obtener_relacion_supervisorUsuario() As Servicio.CRelacionSupervisorUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_relacion_supervisorUsuarioResponse")>  _
         Function Obtener_relacion_supervisorUsuarioAsync() As System.Threading.Tasks.Task(Of Servicio.CRelacionSupervisorUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonosModificaCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonosModificaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonosModificaCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonosModificaClienteResponse")>  _
         Function Obtener_telefonosModificaCliente(ByVal idCliente As Integer) As Servicio.CTelefonosmodifica()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonosModificaCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonosModificaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonosModificaCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonosModificaClienteResponse")>  _
         Function Obtener_telefonosModificaClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonosmodifica())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoClienteResponse")>  _
         Function Inserta_telefonoCliente(ByVal Principal As String, ByVal id_cliente As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoClienteResponse")>  _
         Function Inserta_telefonoClienteAsync(ByVal Principal As String, ByVal id_cliente As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoClienteResponse")>  _
         Function Elimina_telefonoCliente(ByVal id_telefonoCliente As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoClienteResponse")>  _
         Function Elimina_telefonoClienteAsync(ByVal id_telefonoCliente As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoClienteResponse")>  _
         Function Actualiza_telefonoCliente(ByVal id_telefonoCliente As Integer, ByVal Principal As String, ByVal id_cliente As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoClienteResponse")>  _
         Function Actualiza_telefonoClienteAsync(ByVal id_telefonoCliente As Integer, ByVal Principal As String, ByVal id_cliente As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoClienteResponse")>  _
         Function Obtener_telefonoCliente(ByVal id_cliente As Integer) As Servicio.CTelefonoCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoClienteResponse")>  _
         Function Obtener_telefonoClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresaResponse")>  _
         Function Inserta_telefonoContactoEmpresa(ByVal id_contactoEmpresa As Integer, ByVal principal As String, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoContactoEmpresaResponse")>  _
         Function Inserta_telefonoContactoEmpresaAsync(ByVal id_contactoEmpresa As Integer, ByVal principal As String, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresaResponse")>  _
         Function Actualiza_telefonoContactoEmpresa(ByVal id_telefonoContacto As Integer, ByVal id_contactoEmpresa As Integer, ByVal principal As String, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoContactoEmpresaResponse")>  _
         Function Actualiza_telefonoContactoEmpresaAsync(ByVal id_telefonoContacto As Integer, ByVal id_contactoEmpresa As Integer, ByVal principal As String, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresaResponse")>  _
         Function Elimina_telefonoContactoEmpresa(ByVal id_telefonoContacto As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoContactoEmpresaResponse")>  _
         Function Elimina_telefonoContactoEmpresaAsync(ByVal id_telefonoContacto As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresaResponse")>  _
         Function Obtener_telefonoContactoEmpresa(ByVal id_contactoempresa As Integer) As Servicio.CTelefonoContactoEmpresa()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoContactoEmpresaResponse")>  _
         Function Obtener_telefonoContactoEmpresaAsync(ByVal id_contactoempresa As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoContactoEmpresa())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_TelefonoEmpresaResponse")>  _
         Function Inserta_TelefonoEmpresa(ByVal Principal As String, ByVal id_empresa As Integer, ByVal telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_TelefonoEmpresaResponse")>  _
         Function Inserta_TelefonoEmpresaAsync(ByVal Principal As String, ByVal id_empresa As Integer, ByVal telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_TelefonoEmpresaResponse")>  _
         Function Elimina_TelefonoEmpresa(ByVal id_telefonoEmpresa As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_TelefonoEmpresaResponse")>  _
         Function Elimina_TelefonoEmpresaAsync(ByVal id_telefonoEmpresa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresaResponse")>  _
         Function Actualiza_TelefonoEmpresa(ByVal id_telefonoEmpresa As Integer, ByVal Principal As String, ByVal id_empresa As Integer, ByVal telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_TelefonoEmpresaResponse")>  _
         Function Actualiza_TelefonoEmpresaAsync(ByVal id_telefonoEmpresa As Integer, ByVal Principal As String, ByVal id_empresa As Integer, ByVal telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_TelefonoEmpresaResponse")>  _
         Function Obtener_TelefonoEmpresa(ByVal id_empresa As Integer) As Servicio.CTelefonoEmpresa()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_TelefonoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TelefonoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_TelefonoEmpresaResponse")>  _
         Function Obtener_TelefonoEmpresaAsync(ByVal id_empresa As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoEmpresa())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoReferenciaResponse")>  _
         Function Inserta_telefonoReferencia(ByVal Principal As String, ByVal id_referencia As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoReferenciaResponse")>  _
         Function Inserta_telefonoReferenciaAsync(ByVal Principal As String, ByVal id_referencia As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoReferenciaResponse")>  _
         Function Elimina_telefonoReferencia(ByVal id_telefonoReferencia As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoReferenciaResponse")>  _
         Function Elimina_telefonoReferenciaAsync(ByVal id_telefonoReferencia As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoReferenciaResponse")>  _
         Function Actualiza_telefonoReferencia(ByVal id_telefonoReferencia As Integer, ByVal Principal As String, ByVal id_referencia As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoReferenciaResponse")>  _
         Function Actualiza_telefonoReferenciaAsync(ByVal id_telefonoReferencia As Integer, ByVal Principal As String, ByVal id_referencia As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoReferenciaResponse")>  _
         Function Obtener_telefonoReferencia(ByVal id_referencia As Integer) As Servicio.CTelefonoReferencia()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoReferenciaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoReferencia", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoReferenciaResponse")>  _
         Function Obtener_telefonoReferenciaAsync(ByVal id_referencia As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoReferencia())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoSupervisorResponse")>  _
         Function Inserta_telefonoSupervisor(ByVal Principal As String, ByVal id_supervisor As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoSupervisorResponse")>  _
         Function Inserta_telefonoSupervisorAsync(ByVal Principal As String, ByVal id_supervisor As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoSupervisorResponse")>  _
         Function Elimina_telefonoSupervisor(ByVal id_telefonoSupervisor As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoSupervisorResponse")>  _
         Function Elimina_telefonoSupervisorAsync(ByVal id_telefonoSupervisor As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoSupervisorResponse")>  _
         Function Actualiza_telefonoSupervisor(ByVal id_telefonoSupervisor As Integer, ByVal Principal As String, ByVal id_supervisor As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoSupervisorResponse")>  _
         Function Actualiza_telefonoSupervisorAsync(ByVal id_telefonoSupervisor As Integer, ByVal Principal As String, ByVal id_supervisor As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoSupervisorResponse")>  _
         Function Obtener_telefonoSupervisor(ByVal id_supervisor As Integer) As Servicio.CTelefonoSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoSupervisorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoSupervisor", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoSupervisorResponse")>  _
         Function Obtener_telefonoSupervisorAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoUsuarioResponse")>  _
         Function Inserta_telefonoUsuario(ByVal Principal As String, ByVal id_usuario As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Inserta_telefonoUsuarioResponse")>  _
         Function Inserta_telefonoUsuarioAsync(ByVal Principal As String, ByVal id_usuario As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoUsuarioResponse")>  _
         Function Elimina_telefonoUsuario(ByVal id_telefonoUsuario As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Elimina_telefonoUsuarioResponse")>  _
         Function Elimina_telefonoUsuarioAsync(ByVal id_telefonoUsuario As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoUsuarioResponse")>  _
         Function Actualiza_telefonoUsuario(ByVal id_telefonoUsuario As Integer, ByVal Principal As String, ByVal id_usuario As Integer, ByVal Telefono As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Actualiza_telefonoUsuarioResponse")>  _
         Function Actualiza_telefonoUsuarioAsync(ByVal id_telefonoUsuario As Integer, ByVal Principal As String, ByVal id_usuario As Integer, ByVal Telefono As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoUsuarioResponse")>  _
         Function Obtener_telefonoUsuario(ByVal id_usuario As Integer) As Servicio.CTelefonoUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_telefonoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_telefonoUsuarioResponse")>  _
         Function Obtener_telefonoUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CTelefonoUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Inserta_tipocampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Inserta_tipocampañaResponse")>  _
         Function Inserta_tipocampaña(ByVal TipoCampaña As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Inserta_tipocampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Inserta_tipocampañaResponse")>  _
         Function Inserta_tipocampañaAsync(ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
         Function Elimina_tipocampaña(ByVal id_tipoCampaña As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
         Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdmAsync() As System.Threading.Tasks.Task(Of Servicio.CCLientesSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdmResponse")>  _
         Function Obtener_nombresUsuariosAdm() As Servicio.CSupervisorUsuarios()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresUsuariosAdmResponse")>  _
         Function Obtener_nombresUsuariosAdmAsync() As System.Threading.Tasks.Task(Of Servicio.CSupervisorUsuarios())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Adm", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_AdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Adm", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_AdmResponse")>  _
         Function Obtener_supervisor_Adm(ByVal id_supervisor As Integer) As Servicio.CDetallesSupervisor
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Adm", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_AdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_supervisor_Adm", ReplyAction:="http://tempuri.org/IService1/Obtener_supervisor_AdmResponse")>  _
         Function Obtener_supervisor_AdmAsync(ByVal id_supervisor As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesSupervisor)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseña_Admin", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseña_AdminResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseña_Admin", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseña_AdminResponse")>  _
         Function Actualiza_contraseña_Admin(ByVal id_usuario As Integer, ByVal Contraseña As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseña_Admin", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseña_AdminResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_contraseña_Admin", ReplyAction:="http://tempuri.org/IService1/Actualiza_contraseña_AdminResponse")>  _
         Function Actualiza_contraseña_AdminAsync(ByVal id_usuario As Integer, ByVal Contraseña As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesAdmResponse")>  _
         Function Obtener_clientesAdm() As Servicio.ClientesSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_clientesAdmResponse")>  _
         Function Obtener_clientesAdmAsync() As System.Threading.Tasks.Task(Of Servicio.ClientesSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosAdmResponse")>  _
         Function Obtener_AcumuladosAdm(ByVal FechaInicio As Date, ByVal FechaFinal As Date) As Servicio.CAcumuladosSupervisor()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosAdmResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_AcumuladosAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_AcumuladosAdmResponse")>  _
         Function Obtener_AcumuladosAdmAsync(ByVal FechaInicio As Date, ByVal FechaFinal As Date) As System.Threading.Tasks.Task(Of Servicio.CAcumuladosSupervisor())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_totalesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_totalesUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_totalesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_totalesUsuarioResponse")>  _
         Function Obtener_totalesUsuario(ByVal idUsuario As Integer) As Servicio.CTotalesUsuario
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_totalesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_totalesUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_totalesUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_totalesUsuarioResponse")>  _
         Function Obtener_totalesUsuarioAsync(ByVal idUsuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CTotalesUsuario)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_error", ReplyAction:="http://tempuri.org/IService1/Inserta_errorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_error", ReplyAction:="http://tempuri.org/IService1/Inserta_errorResponse")>  _
         Function Inserta_error(ByVal Mensaje As String, ByVal Operacion As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_error", ReplyAction:="http://tempuri.org/IService1/Inserta_errorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_error", ReplyAction:="http://tempuri.org/IService1/Inserta_errorResponse")>  _
         Function Inserta_errorAsync(ByVal Mensaje As String, ByVal Operacion As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/LogIN", ReplyAction:="http://tempuri.org/IService1/LogINResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/LogIN", ReplyAction:="http://tempuri.org/IService1/LogINResponse")>  _
         Function LogIN(ByVal Usuario As String, ByVal ConstraseñaMD5 As String) As Servicio.CUsuarios
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/LogIN", ReplyAction:="http://tempuri.org/IService1/LogINResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/LogIN", ReplyAction:="http://tempuri.org/IService1/LogINResponse")>  _
         Function LogINAsync(ByVal Usuario As String, ByVal ConstraseñaMD5 As String) As System.Threading.Tasks.Task(Of Servicio.CUsuarios)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ClientesCC", ReplyAction:="http://tempuri.org/IService1/Inserta_ClientesCCResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ClientesCC", ReplyAction:="http://tempuri.org/IService1/Inserta_ClientesCCResponse")>  _
         Function Inserta_ClientesCC(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal tipoCredito As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ClientesCC", ReplyAction:="http://tempuri.org/IService1/Inserta_ClientesCCResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ClientesCC", ReplyAction:="http://tempuri.org/IService1/Inserta_ClientesCCResponse")>  _
         Function Inserta_ClientesCCAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal tipoCredito As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CompletaCliente", ReplyAction:="http://tempuri.org/IService1/CompletaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CompletaCliente", ReplyAction:="http://tempuri.org/IService1/CompletaClienteResponse")>  _
         Function CompletaCliente(ByVal id_cliente As Integer, ByVal NPersona As String, ByVal NContrato As String, ByVal RFC As String, ByVal NHijos As Integer, ByVal IngresosPersonales As Integer, ByVal Edo_Civil As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CompletaCliente", ReplyAction:="http://tempuri.org/IService1/CompletaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CompletaCliente", ReplyAction:="http://tempuri.org/IService1/CompletaClienteResponse")>  _
         Function CompletaClienteAsync(ByVal id_cliente As Integer, ByVal NPersona As String, ByVal NContrato As String, ByVal RFC As String, ByVal NHijos As Integer, ByVal IngresosPersonales As Integer, ByVal Edo_Civil As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rankingCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_rankingClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rankingCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_rankingClienteResponse")>  _
         Function Actualiza_rankingCliente(ByVal id_cliente As Integer, ByVal ranking As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rankingCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_rankingClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_rankingCliente", ReplyAction:="http://tempuri.org/IService1/Actualiza_rankingClienteResponse")>  _
         Function Actualiza_rankingClienteAsync(ByVal id_cliente As Integer, ByVal ranking As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking", ReplyAction:="http://tempuri.org/IService1/Actualizar_RankingResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking", ReplyAction:="http://tempuri.org/IService1/Actualizar_RankingResponse")>  _
         Function Actualizar_Ranking(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking", ReplyAction:="http://tempuri.org/IService1/Actualizar_RankingResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking", ReplyAction:="http://tempuri.org/IService1/Actualizar_RankingResponse")>  _
         Function Actualizar_RankingAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaEmail", ReplyAction:="http://tempuri.org/IService1/ValidaEmailResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaEmail", ReplyAction:="http://tempuri.org/IService1/ValidaEmailResponse")>  _
         Function ValidaEmail(ByVal Email As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaEmail", ReplyAction:="http://tempuri.org/IService1/ValidaEmailResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaEmail", ReplyAction:="http://tempuri.org/IService1/ValidaEmailResponse")>  _
         Function ValidaEmailAsync(ByVal Email As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaCliente", ReplyAction:="http://tempuri.org/IService1/ValidaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaCliente", ReplyAction:="http://tempuri.org/IService1/ValidaClienteResponse")>  _
         Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaCliente", ReplyAction:="http://tempuri.org/IService1/ValidaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaCliente", ReplyAction:="http://tempuri.org/IService1/ValidaClienteResponse")>  _
         Function ValidaClienteAsync(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ids_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_ids_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ids_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_ids_clienteResponse")>  _
         Function Obtener_ids_cliente(ByVal id_cliente As Integer) As Servicio.CidCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ids_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_ids_clienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ids_cliente", ReplyAction:="http://tempuri.org/IService1/Obtener_ids_clienteResponse")>  _
         Function Obtener_ids_clienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CidCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuarioResponse")>  _
         Function Obtener_nombresClientesidUsuario(ByVal id_usuario As Integer) As Servicio.CNombresCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_nombresClientesidUsuarioResponse")>  _
         Function Obtener_nombresClientesidUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CNombresCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaCliente", ReplyAction:="http://tempuri.org/IService1/VerificaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaCliente", ReplyAction:="http://tempuri.org/IService1/VerificaClienteResponse")>  _
         Function VerificaCliente(ByVal idcliente As Integer, ByVal idusuario As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaCliente", ReplyAction:="http://tempuri.org/IService1/VerificaClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/VerificaCliente", ReplyAction:="http://tempuri.org/IService1/VerificaClienteResponse")>  _
         Function VerificaClienteAsync(ByVal idcliente As Integer, ByVal idusuario As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_clientes", ReplyAction:="http://tempuri.org/IService1/Inserta_clientesResponse")>
-        Function Inserta_clientes(
-                    ByVal Nombre As String,
-                    ByVal ApellidoPaterno As String,
-                    ByVal ApellidoMaterno As String,
-                    ByVal Email As String,
-                    ByVal id_producto As Integer,
-                    ByVal id_nivel As Integer,
-                    ByVal id_empresa As Integer,
-                    ByVal id_etapaActual As Integer,
-                    ByVal id_campaña As Integer,
-                    ByVal id_usuarioOriginal As Integer,
-                    ByVal Observaciones As String,
-                    ByVal fotografia As String,
-                    ByVal fotoTpresentacion As String,
-                    ByVal NSS As String,
-                    ByVal CURP As String,
-                    ByVal FechaNacimiento As Date,
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_clientes", ReplyAction:="http://tempuri.org/IService1/Inserta_clientesResponse")>  _
+        Function Inserta_clientes( _
+                    ByVal Nombre As String,  _
+                    ByVal ApellidoPaterno As String,  _
+                    ByVal ApellidoMaterno As String,  _
+                    ByVal Email As String,  _
+                    ByVal id_producto As Integer,  _
+                    ByVal id_nivel As Integer,  _
+                    ByVal id_empresa As Integer,  _
+                    ByVal id_etapaActual As Integer,  _
+                    ByVal id_campaña As Integer,  _
+                    ByVal id_usuarioOriginal As Integer,  _
+                    ByVal Observaciones As String,  _
+                    ByVal fotografia As String,  _
+                    ByVal fotoTpresentacion As String,  _
+                    ByVal NSS As String,  _
+                    ByVal CURP As String,  _
+                    ByVal FechaNacimiento As Date,  _
                     ByVal id_cve_fracc As String) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_clientes", ReplyAction:="http://tempuri.org/IService1/Inserta_clientesResponse")>
-        Function Inserta_clientesAsync(
-                    ByVal Nombre As String,
-                    ByVal ApellidoPaterno As String,
-                    ByVal ApellidoMaterno As String,
-                    ByVal Email As String,
-                    ByVal id_producto As Integer,
-                    ByVal id_nivel As Integer,
-                    ByVal id_empresa As Integer,
-                    ByVal id_etapaActual As Integer,
-                    ByVal id_campaña As Integer,
-                    ByVal id_usuarioOriginal As Integer,
-                    ByVal Observaciones As String,
-                    ByVal fotografia As String,
-                    ByVal fotoTpresentacion As String,
-                    ByVal NSS As String,
-                    ByVal CURP As String,
-                    ByVal FechaNacimiento As Date,
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_clientes", ReplyAction:="http://tempuri.org/IService1/Inserta_clientesResponse")>  _
+        Function Inserta_clientesAsync( _
+                    ByVal Nombre As String,  _
+                    ByVal ApellidoPaterno As String,  _
+                    ByVal ApellidoMaterno As String,  _
+                    ByVal Email As String,  _
+                    ByVal id_producto As Integer,  _
+                    ByVal id_nivel As Integer,  _
+                    ByVal id_empresa As Integer,  _
+                    ByVal id_etapaActual As Integer,  _
+                    ByVal id_campaña As Integer,  _
+                    ByVal id_usuarioOriginal As Integer,  _
+                    ByVal Observaciones As String,  _
+                    ByVal fotografia As String,  _
+                    ByVal fotoTpresentacion As String,  _
+                    ByVal NSS As String,  _
+                    ByVal CURP As String,  _
+                    ByVal FechaNacimiento As Date,  _
                     ByVal id_cve_fracc As String) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_clientes", ReplyAction:="http://tempuri.org/IService1/Elimina_clientesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_clientes", ReplyAction:="http://tempuri.org/IService1/Elimina_clientesResponse")>  _
         Function Elimina_clientes(ByVal id_cliente As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_clientes", ReplyAction:="http://tempuri.org/IService1/Elimina_clientesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_clientes", ReplyAction:="http://tempuri.org/IService1/Elimina_clientesResponse")>  _
         Function Elimina_clientesAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientesResponse")>  _
         Function Actualiza_clientes(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal id_producto As Integer, ByVal id_nivel As Integer, ByVal id_empresa As Integer, ByVal id_campaña As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTpresentacion As String, ByVal Monto As Decimal) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientesResponse")>  _
         Function Actualiza_clientesAsync(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal id_producto As Integer, ByVal id_nivel As Integer, ByVal id_empresa As Integer, ByVal id_campaña As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTpresentacion As String, ByVal Monto As Decimal) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes_callcenter", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientes_callcenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes_callcenter", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientes_callcenterResponse")>  _
         Function Actualiza_clientes_callcenter(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal id_producto As Integer, ByVal id_nivel As Integer, ByVal id_empresa As Integer, ByVal id_campaña As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTpresentacion As String, ByVal Monto As Decimal, ByVal NSS As String, ByVal FechaNacimiento As Date) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes_callcenter", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientes_callcenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_clientes_callcenter", ReplyAction:="http://tempuri.org/IService1/Actualiza_clientes_callcenterResponse")>  _
         Function Actualiza_clientes_callcenterAsync(ByVal id_cliente As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal id_producto As Integer, ByVal id_nivel As Integer, ByVal id_empresa As Integer, ByVal id_campaña As Integer, ByVal Observaciones As String, ByVal fotografia As String, ByVal fotoTpresentacion As String, ByVal Monto As Decimal, ByVal NSS As String, ByVal FechaNacimiento As Date) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ClienteObservaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_ClienteObservacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ClienteObservaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_ClienteObservacionesResponse")>  _
         Function Obtener_ClienteObservaciones(ByVal idCliente As Integer) As Servicio.CClienteObservaciones()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ClienteObservaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_ClienteObservacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ClienteObservaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_ClienteObservacionesResponse")>  _
         Function Obtener_ClienteObservacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CClienteObservaciones())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_Todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_TodosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_Todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_TodosResponse")>  _
         Function Obtener_clientes_Todos() As Servicio.CClientes()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_Todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_TodosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_Todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_TodosResponse")>  _
         Function Obtener_clientes_TodosAsync() As System.Threading.Tasks.Task(Of Servicio.CClientes())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_todosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_todosResponse")>  _
         Function Obtener_clientes_detalles_todos() As Servicio.CClientesDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_todosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_todosResponse")>  _
         Function Obtener_clientes_detalles_todosAsync() As System.Threading.Tasks.Task(Of Servicio.CClientesDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuarioResponse")>  _
         Function Obtener_clientes_detalles_idUsuario(ByVal id_usuario As Integer) As Servicio.CClientesDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_clientes_detalles_idUsuarioResponse")>  _
         Function Obtener_clientes_detalles_idUsuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CClientesDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idClienteResponse")>  _
         Function Obtener_Clientes_Telefonos_idCliente(ByVal id_cliente As Integer) As Servicio.CClienteTelefonos()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_Telefonos_idClienteResponse")>  _
         Function Obtener_Clientes_Telefonos_idClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CClienteTelefonos())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idClienteResponse")>  _
         Function Obtener_Clientes_detalles_idCliente(ByVal id_cliente As Integer) As Servicio.CClientesDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_detalles_idClienteResponse")>  _
         Function Obtener_Clientes_detalles_idClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CClientesDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenter", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenter", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenterResponse")>  _
         Function Obtener_Clientes_AsesorCallCenter(ByVal id_cliente As Integer) As Servicio.AsesorCallCenter()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenter", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenter", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_AsesorCallCenterResponse")>  _
         Function Obtener_Clientes_AsesorCallCenterAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.AsesorCallCenter())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idClienteResponse")>  _
         Function Obtener_Clientes_TipoCredito_idCliente(ByVal id_cliente As Integer) As Servicio.CClientesTipoCredito()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_Clientes_TipoCredito_idClienteResponse")>  _
         Function Obtener_Clientes_TipoCredito_idClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CClientesTipoCredito())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ultimafecha", ReplyAction:="http://tempuri.org/IService1/Actualiza_ultimafechaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ultimafecha", ReplyAction:="http://tempuri.org/IService1/Actualiza_ultimafechaResponse")>  _
         Function Actualiza_ultimafecha(ByVal idcliente As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ultimafecha", ReplyAction:="http://tempuri.org/IService1/Actualiza_ultimafechaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ultimafecha", ReplyAction:="http://tempuri.org/IService1/Actualiza_ultimafechaResponse")>  _
         Function Actualiza_ultimafechaAsync(ByVal idcliente As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarNSS", ReplyAction:="http://tempuri.org/IService1/ComprobarNSSResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarNSS", ReplyAction:="http://tempuri.org/IService1/ComprobarNSSResponse")>  _
         Function ComprobarNSS(ByVal NSS As String) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarNSS", ReplyAction:="http://tempuri.org/IService1/ComprobarNSSResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarNSS", ReplyAction:="http://tempuri.org/IService1/ComprobarNSSResponse")>  _
         Function ComprobarNSSAsync(ByVal NSS As String) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarCURP", ReplyAction:="http://tempuri.org/IService1/ComprobarCURPResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarCURP", ReplyAction:="http://tempuri.org/IService1/ComprobarCURPResponse")>  _
         Function ComprobarCURP(ByVal CURP As String) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarCURP", ReplyAction:="http://tempuri.org/IService1/ComprobarCURPResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ComprobarCURP", ReplyAction:="http://tempuri.org/IService1/ComprobarCURPResponse")>  _
         Function ComprobarCURPAsync(ByVal CURP As String) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_campañasResponse")>  _
         Function Obtener_combo_campañas() As Servicio.CComboCampañas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_campañasResponse")>  _
         Function Obtener_combo_campañasAsync() As System.Threading.Tasks.Task(Of Servicio.CComboCampañas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>  _
         Function Inserta_campañas(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>  _
         Function Inserta_campañasAsync(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_campañas", ReplyAction:="http://tempuri.org/IService1/Elimina_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_campañas", ReplyAction:="http://tempuri.org/IService1/Elimina_campañasResponse")>  _
         Function Elimina_campañas(ByVal id_campaña As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_campañas", ReplyAction:="http://tempuri.org/IService1/Elimina_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_campañas", ReplyAction:="http://tempuri.org/IService1/Elimina_campañasResponse")>  _
         Function Elimina_campañasAsync(ByVal id_campaña As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_campañas", ReplyAction:="http://tempuri.org/IService1/Actualiza_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_campañas", ReplyAction:="http://tempuri.org/IService1/Actualiza_campañasResponse")>  _
         Function Actualiza_campañas(ByVal id_campaña As Integer, ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaCreacion As Date, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_campañas", ReplyAction:="http://tempuri.org/IService1/Actualiza_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_campañas", ReplyAction:="http://tempuri.org/IService1/Actualiza_campañasResponse")>  _
         Function Actualiza_campañasAsync(ByVal id_campaña As Integer, ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaCreacion As Date, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasResponse")>  _
         Function Obtener_campañas() As Servicio.CCampaña()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasResponse")>  _
         Function Obtener_campañasAsync() As System.Threading.Tasks.Task(Of Servicio.CCampaña())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas_idCampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_campañas_idCampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas_idCampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_campañas_idCampañaResponse")>  _
         Function Obtener_campañas_idCampaña(ByVal id_campaña As Integer) As Servicio.CCampaña
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas_idCampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_campañas_idCampañaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañas_idCampaña", ReplyAction:="http://tempuri.org/IService1/Obtener_campañas_idCampañaResponse")>  _
         Function Obtener_campañas_idCampañaAsync(ByVal id_campaña As Integer) As System.Threading.Tasks.Task(Of Servicio.CCampaña)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañasDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasDetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañasDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasDetallesResponse")>  _
         Function Obtener_campañasDetalles() As Servicio.CCampañaDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañasDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasDetallesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_campañasDetalles", ReplyAction:="http://tempuri.org/IService1/Obtener_campañasDetallesResponse")>  _
         Function Obtener_campañasDetallesAsync() As System.Threading.Tasks.Task(Of Servicio.CCampañaDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Inserta_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Inserta_categoriasProductosResponse")>  _
         Function Inserta_categoriasProductos(ByVal categoria As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Inserta_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Inserta_categoriasProductosResponse")>  _
         Function Inserta_categoriasProductosAsync(ByVal categoria As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Elimina_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Elimina_categoriasProductosResponse")>  _
         Function Elimina_categoriasProductos(ByVal id_categoria As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Elimina_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Elimina_categoriasProductosResponse")>  _
         Function Elimina_categoriasProductosAsync(ByVal id_categoria As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Actualiza_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Actualiza_categoriasProductosResponse")>  _
         Function Actualiza_categoriasProductos(ByVal id_categoria As Integer, ByVal categoria As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Actualiza_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Actualiza_categoriasProductosResponse")>  _
         Function Actualiza_categoriasProductosAsync(ByVal id_categoria As Integer, ByVal categoria As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_categoriasProductosResponse")>  _
         Function Obtener_categoriasProductos() As Servicio.CCategoriasProducto()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_categoriasProductosResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_categoriasProductos", ReplyAction:="http://tempuri.org/IService1/Obtener_categoriasProductosResponse")>  _
         Function Obtener_categoriasProductosAsync() As System.Threading.Tasks.Task(Of Servicio.CCategoriasProducto())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_Cita", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_Cita", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaResponse")>  _
         Function Insertar_Cita(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_Cita", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_Cita", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaResponse")>  _
         Function Insertar_CitaAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>  _
         Function Insertar_CitasCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCallCenterResponse")>  _
         Function Insertar_CitasCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>  _
         Function Insertar_CitasProspectador(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasProspectador", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasProspectadorResponse")>  _
         Function Insertar_CitasProspectadorAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>  _
         Function Insertar_CitasCaseta(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitasCaseta", ReplyAction:="http://tempuri.org/IService1/Insertar_CitasCasetaResponse")>  _
         Function Insertar_CitasCasetaAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Ranking As String, ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>  _
         Function Insertar_CitaCallCenter(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_CitaCallCenter", ReplyAction:="http://tempuri.org/IService1/Insertar_CitaCallCenterResponse")>  _
         Function Insertar_CitaCallCenterAsync(ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal Origen As String, ByVal LugarContacto As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal VigenciaInicial As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String, ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Activa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_ObservacionesCitas", ReplyAction:="http://tempuri.org/IService1/Insertar_ObservacionesCitasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_ObservacionesCitas", ReplyAction:="http://tempuri.org/IService1/Insertar_ObservacionesCitasResponse")>  _
         Function Insertar_ObservacionesCitas(ByVal IdCita As Integer, ByVal IdUsuario As Integer, ByVal Completada As Integer, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_ObservacionesCitas", ReplyAction:="http://tempuri.org/IService1/Insertar_ObservacionesCitasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_ObservacionesCitas", ReplyAction:="http://tempuri.org/IService1/Insertar_ObservacionesCitasResponse")>  _
         Function Insertar_ObservacionesCitasAsync(ByVal IdCita As Integer, ByVal IdUsuario As Integer, ByVal Completada As Integer, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_CitasCall", ReplyAction:="http://tempuri.org/IService1/Inserta_CitasCallResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_CitasCall", ReplyAction:="http://tempuri.org/IService1/Inserta_CitasCallResponse")>  _
         Function Inserta_CitasCall(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_CitasCall", ReplyAction:="http://tempuri.org/IService1/Inserta_CitasCallResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_CitasCall", ReplyAction:="http://tempuri.org/IService1/Inserta_CitasCallResponse")>  _
         Function Inserta_CitasCallAsync(ByVal id_cliente As Integer, ByVal id_usuarioCC As Integer, ByVal id_usuarioAsesor As Integer, ByVal Origen As String, ByVal Lugar_Contacto As String, ByVal ProyectoVisita As String, ByVal Modelo As String, ByVal VigenciaInicio As Date, ByVal VigenciaFinal As Date, ByVal FechaCita As Date, ByVal Estatus As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCitas", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCitas", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitasResponse")>  _
         Function Verificar_VigenciaCitas(ByVal Id_Cliente As Integer) As Servicio.VigenciaCitas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCitas", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCitas", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitasResponse")>  _
         Function Verificar_VigenciaCitasAsync(ByVal Id_Cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.VigenciaCitas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCita", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCita", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitaResponse")>  _
         Function Verificar_VigenciaCita(ByVal Id_Cliente As Integer) As Servicio.VigenciaCitas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCita", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Verificar_VigenciaCita", ReplyAction:="http://tempuri.org/IService1/Verificar_VigenciaCitaResponse")>  _
         Function Verificar_VigenciaCitaAsync(ByVal Id_Cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.VigenciaCitas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_citas", ReplyAction:="http://tempuri.org/IService1/Inserta_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_citas", ReplyAction:="http://tempuri.org/IService1/Inserta_citasResponse")>  _
         Function Inserta_citas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String, ByVal HoraTermino As String, ByVal Lugar As String, ByVal ConfimacionCliente As String) As Integer
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_citas", ReplyAction:="http://tempuri.org/IService1/Inserta_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_citas", ReplyAction:="http://tempuri.org/IService1/Inserta_citasResponse")>  _
         Function Inserta_citasAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String, ByVal HoraTermino As String, ByVal Lugar As String, ByVal ConfimacionCliente As String) As System.Threading.Tasks.Task(Of Integer)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_citas", ReplyAction:="http://tempuri.org/IService1/Elimina_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_citas", ReplyAction:="http://tempuri.org/IService1/Elimina_citasResponse")>  _
         Function Elimina_citas(ByVal id_cita As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_citas", ReplyAction:="http://tempuri.org/IService1/Elimina_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_citas", ReplyAction:="http://tempuri.org/IService1/Elimina_citasResponse")>  _
         Function Elimina_citasAsync(ByVal id_cita As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_citas", ReplyAction:="http://tempuri.org/IService1/Actualiza_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_citas", ReplyAction:="http://tempuri.org/IService1/Actualiza_citasResponse")>  _
         Function Actualiza_citas(ByVal id_cita As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal fechaCreacion As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String, ByVal HoraTermino As String, ByVal Lugar As String, ByVal ConfimacionCliente As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_citas", ReplyAction:="http://tempuri.org/IService1/Actualiza_citasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_citas", ReplyAction:="http://tempuri.org/IService1/Actualiza_citasResponse")>  _
         Function Actualiza_citasAsync(ByVal id_cita As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal Fecha As Date, ByVal fechaCreacion As Date, ByVal HoraProgramacion As String, ByVal Programada As String, ByVal AvisoCliente As String, ByVal AvisoUsuario As String, ByVal realizada As String, ByVal ObservacionUsuario As String, ByVal ObservacionCliente As String, ByVal HoraTermino As String, ByVal Lugar As String, ByVal ConfimacionCliente As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuarioResponse")>  _
         Function Obtener_citas_detalles_idusuario(ByVal id_usuario As Integer) As Servicio.CDetallesCitaUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idusuarioResponse")>  _
         Function Obtener_citas_detalles_idusuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesCitaUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_id_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_id_usuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_id_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_id_usuarioResponse")>  _
         Function Obtener_citas_id_usuario(ByVal id_usuario As Integer) As Servicio.CCitas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_id_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_id_usuarioResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_id_usuario", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_id_usuarioResponse")>  _
         Function Obtener_citas_id_usuarioAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Servicio.CCitas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idClienteResponse")>  _
         Function Obtener_citas_detalles_idCliente(ByVal id_cliente As Integer) As Servicio.CDetallesCitaUsuario()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citas_detalles_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citas_detalles_idClienteResponse")>  _
         Function Obtener_citas_detalles_idClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CDetallesCitaUsuario())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaCita", ReplyAction:="http://tempuri.org/IService1/CalificaCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaCita", ReplyAction:="http://tempuri.org/IService1/CalificaCitaResponse")>  _
         Function CalificaCita(ByVal id_llamada As Integer, ByVal Calificacion As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaCita", ReplyAction:="http://tempuri.org/IService1/CalificaCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/CalificaCita", ReplyAction:="http://tempuri.org/IService1/CalificaCitaResponse")>  _
         Function CalificaCitaAsync(ByVal id_llamada As Integer, ByVal Calificacion As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObservacionesCita", ReplyAction:="http://tempuri.org/IService1/ObservacionesCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObservacionesCita", ReplyAction:="http://tempuri.org/IService1/ObservacionesCitaResponse")>  _
         Function ObservacionesCita(ByVal idCita As Integer, ByVal Observaciones As String, ByVal Realizada As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObservacionesCita", ReplyAction:="http://tempuri.org/IService1/ObservacionesCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ObservacionesCita", ReplyAction:="http://tempuri.org/IService1/ObservacionesCitaResponse")>  _
         Function ObservacionesCitaAsync(ByVal idCita As Integer, ByVal Observaciones As String, ByVal Realizada As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_observacionesCita", ReplyAction:="http://tempuri.org/IService1/Obtener_observacionesCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_observacionesCita", ReplyAction:="http://tempuri.org/IService1/Obtener_observacionesCitaResponse")>  _
         Function Obtener_observacionesCita(ByVal idCita As Integer) As Servicio.CObservacionesCita
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_observacionesCita", ReplyAction:="http://tempuri.org/IService1/Obtener_observacionesCitaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_observacionesCita", ReplyAction:="http://tempuri.org/IService1/Obtener_observacionesCitaResponse")>  _
         Function Obtener_observacionesCitaAsync(ByVal idCita As Integer) As System.Threading.Tasks.Task(Of Servicio.CObservacionesCita)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citasClienteResponse")>  _
         Function Obtener_citasCliente(ByVal idCLiente As Integer) As Servicio.CCitasDetallesCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citasClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_citasCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_citasClienteResponse")>  _
         Function Obtener_citasClienteAsync(ByVal idCLiente As Integer) As System.Threading.Tasks.Task(Of Servicio.CCitasDetallesCliente())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>
-        Function Insertar_VisitasClientes(
-                    ByVal IdCita As Integer,
-                    ByVal IdCliente As Integer,
-                    ByVal IdUsuario As Integer,
-                    ByVal IdUsuarioAsignado As Integer,
-                    ByVal IdUsuarioVisita As Integer,
-                    ByVal IdCampana As Integer,
-                    ByVal IdImpedimento As Integer,
-                    ByVal TipoCredito As String,
-                    ByVal Monto As Double,
-                    ByVal Ranking As String,
-                    ByVal Origen As String,
-                    ByVal Proyecto As String,
-                    ByVal Modelo As Integer,
-                    ByVal TipoCampana As String,
-                    ByVal VigenciaIncial As Date,
-                    ByVal VigenciaFinal As Date,
-                    ByVal FechaVisita As Date,
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>  _
+        Function Insertar_VisitasClientes( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As Integer,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
                     ByVal Status As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>
-        Function Insertar_VisitasClientesAsync(
-                    ByVal IdCita As Integer,
-                    ByVal IdCliente As Integer,
-                    ByVal IdUsuario As Integer,
-                    ByVal IdUsuarioAsignado As Integer,
-                    ByVal IdUsuarioVisita As Integer,
-                    ByVal IdCampana As Integer,
-                    ByVal IdImpedimento As Integer,
-                    ByVal TipoCredito As String,
-                    ByVal Monto As Double,
-                    ByVal Ranking As String,
-                    ByVal Origen As String,
-                    ByVal Proyecto As String,
-                    ByVal Modelo As Integer,
-                    ByVal TipoCampana As String,
-                    ByVal VigenciaIncial As Date,
-                    ByVal VigenciaFinal As Date,
-                    ByVal FechaVisita As Date,
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Insertar_VisitasClientes", ReplyAction:="http://tempuri.org/IService1/Insertar_VisitasClientesResponse")>  _
+        Function Insertar_VisitasClientesAsync( _
+                    ByVal IdCita As Integer,  _
+                    ByVal IdCliente As Integer,  _
+                    ByVal IdUsuario As Integer,  _
+                    ByVal IdUsuarioAsignado As Integer,  _
+                    ByVal IdUsuarioVisita As Integer,  _
+                    ByVal IdCampana As Integer,  _
+                    ByVal IdImpedimento As Integer,  _
+                    ByVal TipoCredito As String,  _
+                    ByVal Monto As Double,  _
+                    ByVal Ranking As String,  _
+                    ByVal Origen As String,  _
+                    ByVal Proyecto As String,  _
+                    ByVal Modelo As Integer,  _
+                    ByVal TipoCampana As String,  _
+                    ByVal VigenciaIncial As Date,  _
+                    ByVal VigenciaFinal As Date,  _
+                    ByVal FechaVisita As Date,  _
                     ByVal Status As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_configuraciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_configuracionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_configuraciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_configuracionesResponse")>  _
         Function Actualiza_configuraciones(ByVal id_configuracion As Integer, ByVal diasDeGracias As Integer, ByVal emailSistema As String, ByVal contraseñaEmail As String, ByVal smtpServer As String, ByVal puertoEmail As Integer, ByVal SSL As String, ByVal EnviarEmails As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_configuraciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_configuracionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_configuraciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_configuracionesResponse")>  _
         Function Actualiza_configuracionesAsync(ByVal id_configuracion As Integer, ByVal diasDeGracias As Integer, ByVal emailSistema As String, ByVal contraseñaEmail As String, ByVal smtpServer As String, ByVal puertoEmail As Integer, ByVal SSL As String, ByVal EnviarEmails As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuraciones", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuraciones", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionesResponse")>  _
         Function Obtener_configuraciones() As Servicio.CConfiguraciones
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuraciones", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_configuraciones", ReplyAction:="http://tempuri.org/IService1/Obtener_configuracionesResponse")>  _
         Function Obtener_configuracionesAsync() As System.Threading.Tasks.Task(Of Servicio.CConfiguraciones)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_ContactoEmpresaResponse")>  _
         Function Inserta_ContactoEmpresa(ByVal id_empresa As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal Observaciones As String, ByVal fotografia As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Inserta_ContactoEmpresaResponse")>  _
         Function Inserta_ContactoEmpresaAsync(ByVal id_empresa As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal Observaciones As String, ByVal fotografia As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_ContactoEmpresaResponse")>  _
         Function Elimina_ContactoEmpresa(ByVal id_contactoEmpresa As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Elimina_ContactoEmpresaResponse")>  _
         Function Elimina_ContactoEmpresaAsync(ByVal id_contactoEmpresa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_ContactoEmpresaResponse")>  _
         Function Actualiza_ContactoEmpresa(ByVal id_contactoEmpresa As Integer, ByVal id_empresa As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal Observaciones As String, ByVal fotografia As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Actualiza_ContactoEmpresaResponse")>  _
         Function Actualiza_ContactoEmpresaAsync(ByVal id_contactoEmpresa As Integer, ByVal id_empresa As Integer, ByVal Nombre As String, ByVal ApellidoPaterno As String, ByVal ApellidoMaterno As String, ByVal Email As String, ByVal Observaciones As String, ByVal fotografia As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_ContactoEmpresaResponse")>  _
         Function Obtener_ContactoEmpresa(ByVal id_empresa As Integer) As Servicio.CContactoEmpresa()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_ContactoEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_ContactoEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_ContactoEmpresaResponse")>  _
         Function Obtener_ContactoEmpresaAsync(ByVal id_empresa As Integer) As System.Threading.Tasks.Task(Of Servicio.CContactoEmpresa())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresaResponse")>  _
         Function Obtener_detalles_empresa_idEmpresa(ByVal id_contactoEmpresa As Integer) As Servicio.CContactoEmpresa
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresa_idEmpresaResponse")>  _
         Function Obtener_detalles_empresa_idEmpresaAsync(ByVal id_contactoEmpresa As Integer) As System.Threading.Tasks.Task(Of Servicio.CContactoEmpresa)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresasComboBusqueda", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasComboBusquedaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresasComboBusqueda", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasComboBusquedaResponse")>  _
         Function Obtener_empresasComboBusqueda(ByVal Query As String) As Servicio.CComboEmpresas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresasComboBusqueda", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasComboBusquedaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresasComboBusqueda", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasComboBusquedaResponse")>  _
         Function Obtener_empresasComboBusquedaAsync(ByVal Query As String) As System.Threading.Tasks.Task(Of Servicio.CComboEmpresas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_empresasResponse")>  _
         Function Obtener_combo_empresas() As Servicio.CComboEmpresas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_combo_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_combo_empresasResponse")>  _
         Function Obtener_combo_empresasAsync() As System.Threading.Tasks.Task(Of Servicio.CComboEmpresas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_empresas", ReplyAction:="http://tempuri.org/IService1/Inserta_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_empresas", ReplyAction:="http://tempuri.org/IService1/Inserta_empresasResponse")>  _
         Function Inserta_empresas(ByVal Empresa As String, ByVal Razon_Social As String, ByVal Direccion As String, ByVal PaginaWEb As String, ByVal Horario As String, ByVal id_rubro As Integer, ByVal id_ciudad As Integer, ByVal email As String, ByVal Observaciones As String, ByVal logotipo As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_empresas", ReplyAction:="http://tempuri.org/IService1/Inserta_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_empresas", ReplyAction:="http://tempuri.org/IService1/Inserta_empresasResponse")>  _
         Function Inserta_empresasAsync(ByVal Empresa As String, ByVal Razon_Social As String, ByVal Direccion As String, ByVal PaginaWEb As String, ByVal Horario As String, ByVal id_rubro As Integer, ByVal id_ciudad As Integer, ByVal email As String, ByVal Observaciones As String, ByVal logotipo As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_empresas", ReplyAction:="http://tempuri.org/IService1/Elimina_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_empresas", ReplyAction:="http://tempuri.org/IService1/Elimina_empresasResponse")>  _
         Function Elimina_empresas(ByVal id_empresa As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_empresas", ReplyAction:="http://tempuri.org/IService1/Elimina_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_empresas", ReplyAction:="http://tempuri.org/IService1/Elimina_empresasResponse")>  _
         Function Elimina_empresasAsync(ByVal id_empresa As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_empresas", ReplyAction:="http://tempuri.org/IService1/Actualiza_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_empresas", ReplyAction:="http://tempuri.org/IService1/Actualiza_empresasResponse")>  _
         Function Actualiza_empresas(ByVal id_empresa As Integer, ByVal Empresa As String, ByVal Razon_Social As String, ByVal Direccion As String, ByVal PaginaWEb As String, ByVal fechaCreacion As Date, ByVal Horario As String, ByVal id_rubro As Integer, ByVal id_ciudad As Integer, ByVal email As String, ByVal Observaciones As String, ByVal logotipo As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_empresas", ReplyAction:="http://tempuri.org/IService1/Actualiza_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_empresas", ReplyAction:="http://tempuri.org/IService1/Actualiza_empresasResponse")>  _
         Function Actualiza_empresasAsync(ByVal id_empresa As Integer, ByVal Empresa As String, ByVal Razon_Social As String, ByVal Direccion As String, ByVal PaginaWEb As String, ByVal fechaCreacion As Date, ByVal Horario As String, ByVal id_rubro As Integer, ByVal id_ciudad As Integer, ByVal email As String, ByVal Observaciones As String, ByVal logotipo As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasResponse")>  _
         Function Obtener_empresas() As Servicio.CEmpresas()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_empresasResponse")>  _
         Function Obtener_empresasAsync() As System.Threading.Tasks.Task(Of Servicio.CEmpresas())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresasResponse")>  _
         Function Obtener_detalles_empresas() As Servicio.CEmpresasDetalles()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresasResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresasResponse")>  _
         Function Obtener_detalles_empresasAsync() As System.Threading.Tasks.Task(Of Servicio.CEmpresasDetalles())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresaResponse")>  _
         Function Obtener_detalles_empresas_idEmpresa(ByVal id_empresa As Integer) As Servicio.CEmpresasDetalles
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresaResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresa", ReplyAction:="http://tempuri.org/IService1/Obtener_detalles_empresas_idEmpresaResponse")>  _
         Function Obtener_detalles_empresas_idEmpresaAsync(ByVal id_empresa As Integer) As System.Threading.Tasks.Task(Of Servicio.CEmpresasDetalles)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idClienteResponse")>  _
         Function Obtener_detallesEmpresa_idCliente(ByVal id_cliente As Integer) As Servicio.CEmpresasDetalles
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_detallesEmpresa_idClienteResponse")>  _
         Function Obtener_detallesEmpresa_idClienteAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CEmpresasDetalles)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_operaciones", ReplyAction:="http://tempuri.org/IService1/Inserta_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_operaciones", ReplyAction:="http://tempuri.org/IService1/Inserta_operacionesResponse")>  _
         Function Inserta_operaciones(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_operaciones", ReplyAction:="http://tempuri.org/IService1/Inserta_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_operaciones", ReplyAction:="http://tempuri.org/IService1/Inserta_operacionesResponse")>  _
         Function Inserta_operacionesAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_operaciones", ReplyAction:="http://tempuri.org/IService1/Elimina_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_operaciones", ReplyAction:="http://tempuri.org/IService1/Elimina_operacionesResponse")>  _
         Function Elimina_operaciones(ByVal id_operacion As Integer) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_operaciones", ReplyAction:="http://tempuri.org/IService1/Elimina_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_operaciones", ReplyAction:="http://tempuri.org/IService1/Elimina_operacionesResponse")>  _
         Function Elimina_operacionesAsync(ByVal id_operacion As Integer) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_operaciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_operaciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_operacionesResponse")>  _
         Function Actualiza_operaciones(ByVal id_operacion As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date, ByVal Observaciones As String) As Boolean
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_operaciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_operaciones", ReplyAction:="http://tempuri.org/IService1/Actualiza_operacionesResponse")>  _
         Function Actualiza_operacionesAsync(ByVal id_operacion As Integer, ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal id_etapa As Integer, ByVal FechaInicio As Date, ByVal FechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesResponse")>  _
         Function Obtener_operaciones(ByVal id_cliente As Integer) As Servicio.COperaciones()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesResponse")>  _
         Function Obtener_operacionesAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperaciones())
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
         Function Obtener_operacionesIdCliente(ByVal idCliente As Integer) As Servicio.COperacionesCliente()
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
         Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente())
     End Interface
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>
+    
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface IService1Channel
         Inherits Servicio.IService1, System.ServiceModel.IClientChannel
     End Interface
-
-    <System.Diagnostics.DebuggerStepThroughAttribute(),
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Partial Public Class Service1Client
         Inherits System.ServiceModel.ClientBase(Of Servicio.IService1)
         Implements Servicio.IService1
-
+        
         Public Sub New()
             MyBase.New
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String)
             MyBase.New(endpointConfigurationName)
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String, ByVal remoteAddress As String)
             MyBase.New(endpointConfigurationName, remoteAddress)
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(endpointConfigurationName, remoteAddress)
         End Sub
-
+        
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
-
+        
         Public Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean Implements Servicio.IService1.Actualiza_tipocampaña
             Return MyBase.Channel.Actualiza_tipocampaña(id_tipoCampaña, TipoCampaña)
         End Function
-
+        
         Public Function Actualiza_tipocampañaAsync(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tipocampañaAsync
             Return MyBase.Channel.Actualiza_tipocampañaAsync(id_tipoCampaña, TipoCampaña)
         End Function
-
+        
         Public Function Obtener_tipocampaña() As Servicio.CTipoCampaña() Implements Servicio.IService1.Obtener_tipocampaña
             Return MyBase.Channel.Obtener_tipocampaña
         End Function
-
+        
         Public Function Obtener_tipocampañaAsync() As System.Threading.Tasks.Task(Of Servicio.CTipoCampaña()) Implements Servicio.IService1.Obtener_tipocampañaAsync
             Return MyBase.Channel.Obtener_tipocampañaAsync
         End Function
-
+        
         Public Function Inserta_tiporeferencia(ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Inserta_tiporeferencia
             Return MyBase.Channel.Inserta_tiporeferencia(tiporeferencia)
         End Function
-
+        
         Public Function Inserta_tiporeferenciaAsync(ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_tiporeferenciaAsync
             Return MyBase.Channel.Inserta_tiporeferenciaAsync(tiporeferencia)
         End Function
-
+        
         Public Function Elimina_tiporeferencia(ByVal id_tiporeferencia As Integer) As Boolean Implements Servicio.IService1.Elimina_tiporeferencia
             Return MyBase.Channel.Elimina_tiporeferencia(id_tiporeferencia)
         End Function
-
+        
         Public Function Elimina_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_tiporeferenciaAsync
             Return MyBase.Channel.Elimina_tiporeferenciaAsync(id_tiporeferencia)
         End Function
-
+        
         Public Function Actualiza_tiporeferencia(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As Boolean Implements Servicio.IService1.Actualiza_tiporeferencia
             Return MyBase.Channel.Actualiza_tiporeferencia(id_tiporeferencia, tiporeferencia)
         End Function
-
+        
         Public Function Actualiza_tiporeferenciaAsync(ByVal id_tiporeferencia As Integer, ByVal tiporeferencia As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_tiporeferenciaAsync
             Return MyBase.Channel.Actualiza_tiporeferenciaAsync(id_tiporeferencia, tiporeferencia)
         End Function
-
+        
         Public Function Obtener_tiporeferencia() As Servicio.CTipoReferencia() Implements Servicio.IService1.Obtener_tiporeferencia
             Return MyBase.Channel.Obtener_tiporeferencia
         End Function
-
+        
         Public Function Obtener_tiporeferenciaAsync() As System.Threading.Tasks.Task(Of Servicio.CTipoReferencia()) Implements Servicio.IService1.Obtener_tiporeferenciaAsync
             Return MyBase.Channel.Obtener_tiporeferenciaAsync
         End Function
-
+        
         Public Function Inserta_usuarios(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal TipoUsuario As Integer, ByVal fotografia As String) As Integer Implements Servicio.IService1.Inserta_usuarios
             Return MyBase.Channel.Inserta_usuarios(nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, TipoUsuario, fotografia)
         End Function
-
+        
         Public Function Inserta_usuariosAsync(ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal TipoUsuario As Integer, ByVal fotografia As String) As System.Threading.Tasks.Task(Of Integer) Implements Servicio.IService1.Inserta_usuariosAsync
             Return MyBase.Channel.Inserta_usuariosAsync(nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, TipoUsuario, fotografia)
         End Function
-
+        
         Public Function Elimina_usuarios(ByVal id_usuario As Integer) As Boolean Implements Servicio.IService1.Elimina_usuarios
             Return MyBase.Channel.Elimina_usuarios(id_usuario)
         End Function
-
+        
         Public Function Elimina_usuariosAsync(ByVal id_usuario As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_usuariosAsync
             Return MyBase.Channel.Elimina_usuariosAsync(id_usuario)
         End Function
-
+        
         Public Function Actualiza_usuarios(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuarios
             Return MyBase.Channel.Actualiza_usuarios(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, activo)
         End Function
-
+        
         Public Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosAsync
             Return MyBase.Channel.Actualiza_usuariosAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, activo)
         End Function
-
-        Public Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuariosPass
-            Return MyBase.Channel.Actualiza_usuariosPass(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo, TipoUsuario)
+        
+        Public Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuariosPass
+            Return MyBase.Channel.Actualiza_usuariosPass(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
         End Function
-
-        Public Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosPassAsync
-            Return MyBase.Channel.Actualiza_usuariosPassAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo, TipoUsuario)
+        
+        Public Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosPassAsync
+            Return MyBase.Channel.Actualiza_usuariosPassAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
         End Function
         
         Public Function Obtener_usuarios_todos() As Servicio.CUsuarios() Implements Servicio.IService1.Obtener_usuarios_todos
