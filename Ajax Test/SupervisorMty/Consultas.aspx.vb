@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports ClosedXML.Excel
-
 Public Class ConsultasMty
     Inherits System.Web.UI.Page
 
@@ -42,6 +41,9 @@ Public Class ConsultasMty
         cmBoxArchivos.SelectedIndex = 0
         lbl_ConsultaAbierta.Text = ""
         RangoFechas.Style.Add("display", "none")
+        dtp_inicio.Text = ""
+        dtp_Fin.Text = ""
+        lbl_mensaje.Text = ""
 
         With grdViewConsulta
             .Columns.Clear()
@@ -107,20 +109,22 @@ Public Class ConsultasMty
 #Region "Eventos"
     Protected Sub btnAbrirArchivo_Click(sender As Object, e As EventArgs) Handles btnAbrirArchivo.Click
         ObtenerDatos(cmBoxArchivos.SelectedItem.Value)
+        lbl_mensaje.Text = ""
     End Sub
 
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim Consulta As String = ViewState("Consulta")
+
         If Consulta <> "" Then
             If (String.IsNullOrEmpty(dtp_inicio.Text) Or String.IsNullOrEmpty(dtp_Fin.Text)) Then
-                lbl_mensaje.Text = MostrarExito("¡Te faltan datos para trabajar!" & vbCrLf & "Los datos de fecha Inicio y fecha fin no pueden ir vacios")
+                lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "Los datos de fecha Inicio y fecha fin no pueden ir vacíos")
                 If (String.IsNullOrEmpty(dtp_inicio.Text)) Then
                     dtp_inicio.Focus()
                 Else
                     dtp_Fin.Focus()
                 End If
             ElseIf (dtp_inicio.Date > dtp_Fin.Date) Then
-                lbl_mensaje.Text = MostrarError("¡Te faltan datos para trabajar!" & vbCrLf & "La fecha de inicio no puede ser posterior a la fecha de fin")
+                lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "La fecha de inicio no puede ser posterior a la fecha de fin")
                 dtp_inicio.Focus()
             Else
                 Consulta = Consulta.Replace("$FecInicio", Convert.ToString(dtp_inicio.Date.Year & "-" & dtp_inicio.Date.Month.ToString("00") & "-" & dtp_inicio.Date.Day.ToString("00")))
@@ -138,18 +142,17 @@ Public Class ConsultasMty
                             End With
 
                             ViewState("ConjuntoDatos") = Datos(0).DT
+                            lbl_mensaje.Text = ""
                         Else
-                            lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio!" & vbCrLf & Datos(0).Resultado)
+                            lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio! \n" & Datos(0).Resultado)
                         End If
                     End If
                 Else
                     lbl_mensaje.Text = MostrarAviso("Cuidado . . . Consulta de datos no valida")
-                    ' txtBoxConsulta.Focus()
                 End If
             End If
         Else
-            lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar!" & vbCrLf & "No existen consultas para ejecutar")
-            'txtBoxConsulta.Focus()
+            lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "No existen consultas para ejecutar")
         End If
     End Sub
 
@@ -168,6 +171,7 @@ Public Class ConsultasMty
         HttpContext.Current.Response.WriteFile(Ruta & "ConsultaCRM" & Excel_Extencion)
         Session("ConjuntoDatos") = Nothing
         HttpContext.Current.Response.End()
+        lbl_mensaje.Text = ""
     End Sub
 #End Region
 End Class

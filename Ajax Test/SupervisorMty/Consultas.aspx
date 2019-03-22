@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SupervisorMty/SupervisorMty.master" CodeBehind="Consultas.aspx.vb" Inherits="Ajax_Test.ConsultasMty" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
+</asp:Content>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
@@ -23,7 +26,7 @@
         </li>
     </ul>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
@@ -34,7 +37,7 @@
         </div>
         <div class="portlet-body">
             <div class="row">
-                <div class="col-lg-5" style="margin-top: 30px">
+                <div class="col-lg-5" style="margin-top: 20px">
                     <label>Archivo de Consulta</label>
                     <dx:ASPxComboBox ID="cmBoxArchivos" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" TabIndex="1"></dx:ASPxComboBox>
                 </div>
@@ -93,8 +96,6 @@
         </div>
     </div>
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="JSContent" runat="server">
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
-
