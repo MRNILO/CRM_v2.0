@@ -61,6 +61,14 @@ Public Class Funciones
     Public Structure ArchivosSQL
         Dim NombreDocumento As String
     End Structure
+
+    Public Structure CitaVigente
+        Dim ExisteCitaVigente As String
+    End Structure
+
+    Public Structure VisitaVigente
+        Dim ExisteVisitaVigente As Boolean
+    End Structure
 #End Region
 
 #Region "Archivos"
@@ -405,6 +413,23 @@ Public Class Funciones
         GE_SQL.SQLExecSQL(Query, SQL_Functions.TipoTransaccion.UniqueTransaction)
     End Sub
 
+    Public Function Citas_Vigentes(ByVal IdCliente As Integer) As CitaVigente
+        Dim CitaVigente As New CitaVigente
+        Dim DTA As DataTable = New DataTable
+
+        Dim Query As String = "SELECT Id_Cita FROM CitasClientes WHERE Status = 1 AND Id_Cliente=" & IdCliente
+
+        DTA = GE_SQL.SQLGetTable(Query)
+
+        If DTA.Rows.Count > 0 Then
+            CitaVigente.ExisteCitaVigente = True
+        Else
+            CitaVigente.ExisteCitaVigente = False
+        End If
+
+        Return CitaVigente
+    End Function
+
     Public Function Obtener_ListadoCitas(ByVal IdUsuario As Integer) As DataTable
         Dim Query As String = ""
 
@@ -425,6 +450,21 @@ Public Class Funciones
 #End Region
 
 #Region "Visitas"
+    Public Function Visitas_Vigentes(ByVal IdCliente As Integer) As VisitaVigente
+        Dim VisitaVigente As New VisitaVigente
+        Dim DTA As DataTable = New DataTable
+
+        Dim Query As String = "SELECT Id_Visita FROM VisitasClientes WHERE Status = 1  AND Id_Cliente = " & IdCliente
+
+        DTA = GE_SQL.SQLGetTable(Query)
+
+        If DTA.Rows.Count > 0 Then
+            VisitaVigente.ExisteVisitaVigente = True
+        Else
+            VisitaVigente.ExisteVisitaVigente = False
+        End If
+        Return VisitaVigente
+    End Function
     Public Function Obtener_DatosCita(ByVal Id_Cita As Integer) As DatosCita
         Dim Query As String = String.Format("EXEC [dbo].[Obtener_DetallesCitas]
                                                    @pIdCita = {0}", Id_Cita)
@@ -548,7 +588,6 @@ Public Class Funciones
         For Each rowB As DataRow In DTB.Rows
             Query += "UPDATE VisitasClientes SET Status = 2 WHERE Id_Visita = " & rowB("Id_Visita") & ";"
         Next
-
         Cierre_CitasVisitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 

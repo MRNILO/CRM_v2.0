@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Web
+﻿Imports Ajax_Test.Funciones
+Imports DevExpress.Web
 
 Public Class CitaCteCaseta
     Inherits System.Web.UI.Page
@@ -335,13 +336,28 @@ Public Class CitaCteCaseta
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
             If cb_etapas.SelectedValue = 5 Then
-                If GE_Funciones.Cierre_Valida(Id_Cliente) Then
-                    If Not GE_Funciones.Cierre_CitasVisitas(Id_Cliente) Then
-                        lbl_mensaje_Alert.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+
+                Dim DatosCita As CitaVigente = GE_Funciones.Citas_Vigentes(Id_Cliente)
+                If DatosCita.ExisteCitaVigente Then
+
+                    Dim DatosVisita As VisitaVigente = GE_Funciones.Visitas_Vigentes(Id_Cliente)
+                    If DatosVisita.ExisteVisitaVigente Then
+
+                        If GE_Funciones.Cierre_Valida(Id_Cliente) Then
+                            If Not GE_Funciones.Cierre_CitasVisitas(Id_Cliente) Then
+                                lbl_mensaje_Alert.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                                Exit Sub
+                            End If
+                        Else
+                            lbl_mensaje_Alert.Text = MostrarError("¡Existe una operacion de cierre previa!")
+                            Exit Sub
+                        End If
+                    Else
+                        lbl_mensaje_Alert.Text = MostrarError("Falta registrar visita")
                         Exit Sub
                     End If
                 Else
-                    lbl_mensaje_Alert.Text = MostrarError("¡Existe una operacion de cierre previa!")
+                    lbl_mensaje_Alert.Text = MostrarError("Falta registrar cita.")
                     Exit Sub
                 End If
             End If
