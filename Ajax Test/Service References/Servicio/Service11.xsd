@@ -1254,6 +1254,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CitasVigentes" type="xs:int" />
       <xs:element minOccurs="0" name="Id_Usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoUsuario" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TotalCitas" type="xs:int" />
       <xs:element minOccurs="0" name="UsuarioVigente" nillable="true" type="xs:string" />
     </xs:sequence>

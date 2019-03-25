@@ -10058,6 +10058,9 @@ Namespace Servicio
         Private Id_UsuarioField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private TipoUsuarioField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private TotalCitasField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -10095,6 +10098,19 @@ Namespace Servicio
                 If (Me.Id_UsuarioField.Equals(value) <> true) Then
                     Me.Id_UsuarioField = value
                     Me.RaisePropertyChanged("Id_Usuario")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property TipoUsuario() As String
+            Get
+                Return Me.TipoUsuarioField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.TipoUsuarioField, value) <> true) Then
+                    Me.TipoUsuarioField = value
+                    Me.RaisePropertyChanged("TipoUsuario")
                 End If
             End Set
         End Property
