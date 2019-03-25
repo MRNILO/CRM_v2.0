@@ -107,6 +107,10 @@ Public Class Consultas
 #End Region
 
 #Region "Eventos"
+
+    Protected Sub grdViewConsulta_DataBinding(sender As Object, e As EventArgs) Handles grdViewConsulta.DataBinding
+        grdViewConsulta.DataSource = ViewState("ConjuntoDatos")
+    End Sub
     Protected Sub btnAbrirArchivo_Click(sender As Object, e As EventArgs) Handles btnAbrirArchivo.Click
         ObtenerDatos(cmBoxArchivos.SelectedItem.Value)
         lbl_mensaje.Text = ""
