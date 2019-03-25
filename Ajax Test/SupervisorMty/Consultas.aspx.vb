@@ -71,7 +71,6 @@ Public Class ConsultasMty
     End Sub
 
     Sub ValidaUsuario()
-
         If Not IsNothing(Session("Usuario")) Then
             Usuario = Session("Usuario")
             If Usuario.Nivel >= NivelSeccion Then

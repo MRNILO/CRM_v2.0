@@ -32,24 +32,6 @@ Partial Public Class ConsultasMty
     Protected WithEvents cmBoxArchivos As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control btnAbrirArchivo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAbrirArchivo As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control Mensaje.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Mensaje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
-    '''<summary>
     '''Control lbl_ConsultaAbierta.
     '''</summary>
     '''<remarks>
@@ -57,6 +39,15 @@ Partial Public Class ConsultasMty
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_ConsultaAbierta As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control btnAbrirArchivo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAbrirArchivo As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control btnBuscar.
@@ -75,6 +66,15 @@ Partial Public Class ConsultasMty
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control Mensaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Mensaje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control RangoFechas.
