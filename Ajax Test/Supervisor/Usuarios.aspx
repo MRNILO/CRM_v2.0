@@ -100,7 +100,7 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataCheckColumn>
-                        <%--<dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="11">
+                        <dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="11">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                             <EditFormSettings Visible="False" />
@@ -112,7 +112,7 @@
                             <CellStyle HorizontalAlign="Center">
                             </CellStyle>
                             <EditFormSettings Visible="true" />
-                        </dx:GridViewDataComboBoxColumn>--%>
+                        </dx:GridViewDataComboBoxColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>

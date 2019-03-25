@@ -5909,6 +5909,9 @@ Namespace Servicio
         Private EmailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private TipousuarioDesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private activoField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -5954,6 +5957,19 @@ Namespace Servicio
                 If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
                     Me.EmailField = value
                     Me.RaisePropertyChanged("Email")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property TipousuarioDes() As String
+            Get
+                Return Me.TipousuarioDesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.TipousuarioDesField, value) <> true) Then
+                    Me.TipousuarioDesField = value
+                    Me.RaisePropertyChanged("TipousuarioDes")
                 End If
             End Set
         End Property
@@ -12151,10 +12167,10 @@ Namespace Servicio
         Function Actualiza_usuariosAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
-        Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean
+        Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As Boolean
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_usuariosPass", ReplyAction:="http://tempuri.org/IService1/Actualiza_usuariosPassResponse")>  _
-        Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean)
+        Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_usuarios_todos", ReplyAction:="http://tempuri.org/IService1/Obtener_usuarios_todosResponse")>  _
         Function Obtener_usuarios_todos() As Servicio.CUsuarios()
@@ -13602,12 +13618,12 @@ Namespace Servicio
             Return MyBase.Channel.Actualiza_usuariosAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, activo)
         End Function
         
-        Public Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuariosPass
-            Return MyBase.Channel.Actualiza_usuariosPass(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
+        Public Function Actualiza_usuariosPass(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As Boolean Implements Servicio.IService1.Actualiza_usuariosPass
+            Return MyBase.Channel.Actualiza_usuariosPass(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo, TipoUsuario)
         End Function
         
-        Public Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosPassAsync
-            Return MyBase.Channel.Actualiza_usuariosPassAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo)
+        Public Function Actualiza_usuariosPassAsync(ByVal id_usuario As Integer, ByVal nombre As String, ByVal apellidoPaterno As String, ByVal apellidoMaterno As String, ByVal Email As String, ByVal usuario As String, ByVal contraseña As String, ByVal activo As Integer, ByVal TipoUsuario As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualiza_usuariosPassAsync
+            Return MyBase.Channel.Actualiza_usuariosPassAsync(id_usuario, nombre, apellidoPaterno, apellidoMaterno, Email, usuario, contraseña, activo, TipoUsuario)
         End Function
         
         Public Function Obtener_usuarios_todos() As Servicio.CUsuarios() Implements Servicio.IService1.Obtener_usuarios_todos
