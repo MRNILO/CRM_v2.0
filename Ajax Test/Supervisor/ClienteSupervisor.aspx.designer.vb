@@ -167,85 +167,67 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents lbl_mensajeRanking As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_ranking.
+    '''Control Clasificacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_ranking As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Clasificacion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control cb_tipoImpedimento.
+    '''Control cmBoxClasificacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_tipoImpedimento As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cmBoxClasificacion As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control lbl_impedimentos.
+    '''Control cmBoxMotivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_impedimentos As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents cmBoxMotivo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control cb_impedimentos.
+    '''Control Submotivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_impedimentos As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Submotivo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control impedimentosDS.
+    '''Control cmBoxSubMotivo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents impedimentosDS As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents cmBoxSubMotivo As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control lbl_pregunta.
+    '''Control Controles.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_pregunta As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Controles As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control cb_preguntas.
+    '''Control btnGuardar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cb_preguntas As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control PreguntasDS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents PreguntasDS As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control btn_ranking.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_ranking As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control btnActualizar.

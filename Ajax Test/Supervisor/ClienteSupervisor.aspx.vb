@@ -30,7 +30,8 @@ Public Class ClienteSupervisor
                     tb_numcte.Enabled = True
                 Else
                     tb_numcte.Text = Datos(0).Numcte
-                    tb_numcte.Enabled = False
+                    'CAMBIOS
+                    tb_numcte.Enabled = True
                 End If
 
                 If Datos(0).FechaCierre = "1900-01-01" Then
@@ -38,7 +39,8 @@ Public Class ClienteSupervisor
                     dtp_FechaCierre.Enabled = True
                 Else
                     dtp_FechaCierre.Text = Datos(0).FechaCierre
-                    dtp_FechaCierre.Enabled = False
+                    'CAMBIOS
+                    dtp_FechaCierre.Enabled = True
                 End If
 
                 If Datos(0).FechaEscritura = "1900-01-01" Then
@@ -46,7 +48,8 @@ Public Class ClienteSupervisor
                     dtp_FechaEscrituracion.Enabled = True
                 Else
                     dtp_FechaEscrituracion.Text = Datos(0).FechaEscritura
-                    dtp_FechaEscrituracion.Enabled = False
+                    'CAMBIOS
+                    dtp_FechaEscrituracion.Enabled = True
                 End If
 
                 If Datos(0).FechaCancelacion = "1900-01-01" Then
@@ -54,9 +57,13 @@ Public Class ClienteSupervisor
                     dtp_FechaCancelacion.Enabled = True
                 Else
                     dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
-                    dtp_FechaCancelacion.Enabled = False
+                    'CAMBIOS
+                    dtp_FechaCancelacion.Enabled = True
                 End If
 
+                Alimentar_ComboClasificacion()
+                Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+                Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
 
                 GridLlamadas()
                 ComboEtapas(Datos)
@@ -85,32 +92,67 @@ Public Class ClienteSupervisor
         End If
     End Sub
 
-    Private Sub ComboUsuarios(ByRef Datos As Servicio.CClientesDetalles())
-        Dim ROWA As DataRow
-        Dim DTA As New DataTable
-        Dim dtaUsuarios = BL.Obtener_usuarios_todos
+#Region "Metodos"
+    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
+        If Cliente.ranking = "P" Then
+            Clasificacion.Style.Add("display", "show")
+            Submotivo.Style.Add("display", "show")
+            Controles.Style.Add("display", "show")
 
-        If (dtaUsuarios.Length > 0) Then
+            btnCambiar.Visible = False
+            btnGuardar.Visible = True
+            btnActualizar.Visible = False
+            btnCambiar.Visible = False
+        Else
+            Clasificacion.Style.Add("display", "none")
+            Submotivo.Style.Add("display", "none")
+            Controles.Style.Add("display", "none")
 
-            DTA.Columns.AddRange({New DataColumn("clave", GetType(Integer)), New DataColumn("Asesor", GetType(String))})
-
-
-            For i = 0 To dtaUsuarios.Length - 1
-                ROWA = DTA.NewRow
-                ROWA("clave") = dtaUsuarios(i).id_usuario
-                ROWA("Asesor") = dtaUsuarios(i).nombre + " " + dtaUsuarios(i).apellidoPaterno + " " + dtaUsuarios(i).apellidoMaterno
-
-                DTA.Rows.Add(ROWA)
-            Next
-
-            With cmBoxUsuarios
-                .DataSource = DTA
-                .ValueField = "clave"
-                .TextField = "Asesor"
-                .DataBind()
-            End With
+            btnCambiar.Visible = True
         End If
     End Sub
+
+    Function Crea_telefonos() As String
+        Dim HTML As String = ""
+        Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
+
+        For I = 0 To telefonos.Count - 1
+            HTML += "<a href=""tel:" + telefonos(I).Telefono + """>" + telefonos(I).Telefono + If(telefonos(I).Principal = 1, "(PRINCIPAL)", "") + "</a>"
+            HTML += "<br />"
+        Next
+        Return HTML
+    End Function
+
+    Function Crea_generalesCliente() As String
+        Dim HTML As String = ""
+
+        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
+        HTML += "<br />"
+        HTML += "<strong>Apellido Materno </strong>" + Datos(0).ApellidoMaterno
+        HTML += "<br />"
+        HTML += "<strong>Apellido Paterno </strong>" + Datos(0).ApellidoPaterno
+        HTML += "<br />"
+        HTML += "<strong>Nombre(s) </strong>" + Datos(0).Nombre
+        HTML += "<br />"
+        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
+        HTML += "<br />"
+        HTML += "<strong>Empresa </strong>" + Datos(0).Empresa
+        HTML += "<br />"
+        HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
+        HTML += "<br />"
+        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
+        HTML += "<br />"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
+        HTML += "<br />"
+        HTML += "<strong>Tarjeta de Presentación</strong>"
+        HTML += "<br />"
+        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
+
+        Return HTML
+    End Function
 
     Function Obtener_numcte() As Integer
         Dim Resultado As Integer = 0
@@ -182,6 +224,65 @@ Public Class ClienteSupervisor
         Return False
     End Function
 
+    Public Sub Alimentar_ComboClasificacion()
+        With cmBoxClasificacion
+            .DataSource = GE_Funciones.Obtener_Clasificacion()
+            .ValueField = "Ranking"
+            .TextField = "Ranking"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Public Sub Alimentar_ComboMotivos(ByVal Clasificacion As String)
+        With cmBoxMotivo
+            .DataSource = GE_Funciones.Obtener_Motivos(Clasificacion)
+            .ValueField = "id_tipoImpedimento"
+            .TextField = "TipoImpedimento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Public Sub Alimentar_ComboSubmotivos(ByVal Clasificacion As String, ByVal IdMotivo As Integer)
+        With cmBoxSubMotivo
+            .DataSource = GE_Funciones.Obtener_Submotivos(Clasificacion, IdMotivo)
+            .ValueField = "id_impedimento"
+            .TextField = "impedimento"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub ComboUsuarios(ByRef Datos As Servicio.CClientesDetalles())
+        Dim ROWA As DataRow
+        Dim DTA As New DataTable
+        Dim dtaUsuarios = BL.Obtener_usuarios_todos
+
+        If (dtaUsuarios.Length > 0) Then
+
+            DTA.Columns.AddRange({New DataColumn("clave", GetType(Integer)), New DataColumn("Asesor", GetType(String))})
+
+            For i = 0 To dtaUsuarios.Length - 1
+                ROWA = DTA.NewRow
+                ROWA("clave") = dtaUsuarios(i).id_usuario
+                ROWA("Asesor") = dtaUsuarios(i).nombre + " " + dtaUsuarios(i).apellidoPaterno + " " + dtaUsuarios(i).apellidoMaterno
+
+                DTA.Rows.Add(ROWA)
+            Next
+
+            With cmBoxUsuarios
+                .DataSource = DTA
+                .ValueField = "clave"
+                .TextField = "Asesor"
+                .DataBind()
+            End With
+        End If
+    End Sub
+
     Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
 
         cb_etapas.DataSource = BL.Obtener_etapasCliente
@@ -247,52 +348,6 @@ Public Class ClienteSupervisor
         cmBoxEmpresa.Value = 0
     End Sub
 
-    Function Crea_telefonos() As String
-        Dim HTML As String = ""
-        Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
-
-        For I = 0 To telefonos.Count - 1
-            HTML += "<a href=""tel:" + telefonos(I).Telefono + """>" + telefonos(I).Telefono + If(telefonos(I).Principal = 1, "(PRINCIPAL)", "") + "</a>"
-            HTML += "<br />"
-        Next
-        Return HTML
-    End Function
-
-    Function Crea_generalesCliente() As String
-        Dim HTML As String = ""
-
-        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Apellido Materno </strong>" + Datos(0).ApellidoMaterno
-        HTML += "<br />"
-        HTML += "<strong>Apellido Paterno </strong>" + Datos(0).ApellidoPaterno
-        HTML += "<br />"
-        HTML += "<strong>Nombre(s) </strong>" + Datos(0).Nombre
-        HTML += "<br />"
-        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
-        HTML += "<br />"
-        HTML += "<strong>Empresa </strong>" + Datos(0).Empresa
-        HTML += "<br />"
-        HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
-        HTML += "<br />"
-        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
-        HTML += "<br />"
-        HTML += "<strong>Tarjeta de Presentación</strong>"
-        HTML += "<br />"
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
-
-        Return HTML
-    End Function
-
-    Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
-        GV_exporterLlamadas.WriteXlsxToResponse()
-    End Sub
-
     Sub GridLlamadas()
         Dim DatosLlamadas = BL.Obtener_llamadasCliente(idCliente)
         Session("GridLlamadas") = DatosLlamadas
@@ -305,6 +360,126 @@ Public Class ClienteSupervisor
         End If
         Return "No"
     End Function
+#End Region
+
+#Region "Eventos"
+    Protected Sub cmBoxClasificacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxClasificacion.SelectedIndexChanged
+        Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+    End Sub
+
+    Protected Sub cmBoxMotivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMotivo.SelectedIndexChanged
+        Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+    End Sub
+
+    Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
+        Try
+            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                GV_operaciones.DataBind()
+                lbl_mensaje.Text = MostrarAviso("Etapa actualizada")
+            Else
+                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+        End Try
+    End Sub
+
+    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        Response.Redirect("../Supervisor/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
+    End Sub
+
+    Protected Sub btn_cambiarUsuario_Click(sender As Object, e As EventArgs) Handles btn_cambiarUsuario.Click
+        Try
+            If BL.Cambia_usuarioClienteSupervisor(CInt(cmBoxUsuarios.Value), idCliente, CInt(Usuario.id_usuario)) Then
+                lbl_mensaje.Text = MostrarExito("¡El Cliente se reasigno exitosamente!")
+            Else
+                lbl_mensaje.Text = MostrarExito("¡Ocurrio un error al tratar de reaginar el cliente!")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text = MostrarExito("¡Ocurrio un error al procesar la operación!")
+        End Try
+    End Sub
+
+    Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
+        Dim NumeroCliente As Integer
+
+        Try
+            NumeroCliente = Convert.ToInt32(tb_numcte.Text)
+        Catch ex As Exception
+            tb_numcte.Focus()
+            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "err_msg", "alert('¡El campo solamente puede aceptar números!')", True)
+
+            Exit Sub
+        End Try
+
+        If NumeroCliente <> 0 Then
+            If Guarda_numcte() Then
+                lbl_numcte.ForeColor = Drawing.Color.Green
+                lbl_numcte.Text = "¡Los datos se guardaron exitosamente!."
+            Else
+                lbl_numcte.ForeColor = Drawing.Color.Red
+                lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente'"
+            End If
+        End If
+    End Sub
+
+    Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
+        GV_exporterLlamadas.WriteXlsxToResponse()
+    End Sub
+
+    Protected Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
+        Clasificacion.Style.Add("display", "show")
+        Submotivo.Style.Add("display", "show")
+        Controles.Style.Add("display", "show")
+
+        btnGuardar.Visible = False
+        btnActualizar.Visible = True
+        btnCancelar.Visible = True
+    End Sub
+
+    Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim Ranking_Nuevo As String = cmBoxClasificacion.SelectedItem.Value
+
+        If BL.Actualizar_Ranking(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo) Then
+            Response.Redirect("../Supervisor/ClienteSupervisor.aspx?idCliente=" + idCliente.ToString, False)
+        Else
+            lbl_mensaje.Text += MostrarError("¡Ocurrio un error al actualizar el Ranking!")
+        End If
+    End Sub
+
+    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Clasificacion.Style.Add("display", "none")
+        Submotivo.Style.Add("display", "none")
+        Controles.Style.Add("display", "none")
+
+        btnCambiar.Visible = True
+        btnGuardar.Visible = False
+        btnActualizar.Visible = False
+        btnCancelar.Visible = False
+    End Sub
+
+    Protected Sub GV_operaciones_DataBinding(sender As Object, e As EventArgs) Handles GV_operaciones.DataBinding
+        GV_operaciones.DataSource = BL.Obtener_operacionesIdCliente(idCliente)
+    End Sub
+
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+#End Region
 
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
@@ -341,143 +516,9 @@ Public Class ClienteSupervisor
         End Select
     End Sub
 
-    Protected Sub GV_operaciones_DataBinding(sender As Object, e As EventArgs) Handles GV_operaciones.DataBinding
-        GV_operaciones.DataSource = BL.Obtener_operacionesIdCliente(idCliente)
-    End Sub
-
-    Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
-        Try
-            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                GV_operaciones.DataBind()
-                lbl_mensaje.Text = MostrarAviso("Etapa actualizada")
-            Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
-            End If
-        Catch ex As Exception
-            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
-        End Try
-    End Sub
-    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../Usuario/ModificaCliente.aspx?idCliente=" + idCliente.ToString, False)
-    End Sub
     Sub CargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(idCliente)
         GV_citas.DataBind()
-    End Sub
-    Protected Sub btn_cambiarUsuario_Click(sender As Object, e As EventArgs) Handles btn_cambiarUsuario.Click
-        Try
-            If BL.Cambia_usuarioClienteSupervisor(CInt(cmBoxUsuarios.Value), idCliente, CInt(Usuario.id_usuario)) Then
-                lbl_mensaje.Text = MostrarExito("Cliente reasignado con exito")
-            Else
-                lbl_mensaje.Text = MostrarExito("Error por favor verifique los datos.")
-            End If
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-    Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
-        Dim NumeroCliente As Integer
-
-        Try
-            NumeroCliente = Convert.ToInt32(tb_numcte.Text)
-        Catch ex As Exception
-            tb_numcte.Focus()
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "err_msg", "alert('¡El campo solamente puede aceptar números!')", True)
-
-            Exit Sub
-        End Try
-
-        If NumeroCliente <> 0 Then
-            If Guarda_numcte() Then
-                lbl_numcte.ForeColor = Drawing.Color.Green
-                lbl_numcte.Text = "¡Los datos se guardaron exitosamente!."
-            Else
-                lbl_numcte.ForeColor = Drawing.Color.Red
-                lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente'"
-            End If
-        End If
-    End Sub
-#End Region
-
-#Region "Ranking"
-    Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
-
-        If Cliente.ranking = "P" Then
-            lbl_ranking.Visible = True
-            cb_tipoImpedimento.Visible = True
-
-            btnCambiar.Visible = False
-            btnActualizar.Visible = False
-            btnCancelar.Visible = False
-        Else
-            lbl_ranking.Visible = False
-            cb_tipoImpedimento.Visible = False
-            btn_ranking.Visible = False
-
-            btnCambiar.Visible = True
-            btnActualizar.Visible = False
-            btnCancelar.Visible = False
-        End If
-    End Sub
-
-    Protected Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
-        lbl_ranking.Visible = True
-        cb_tipoImpedimento.Visible = True
-        btn_ranking.Visible = True
-
-        btn_ranking.Visible = False
-        btnActualizar.Visible = True
-        btnCancelar.Visible = True
-    End Sub
-
-    Protected Sub btn_ranking_Click(sender As Object, e As EventArgs) Handles btn_ranking.Click
-        Dim Ranking As String = ""
-        If cb_tipoImpedimento.SelectedValue = 1 Then Ranking = cb_preguntas.SelectedValue Else Ranking = "A"
-
-        If BL.Actualiza_rankingCliente(idCliente, Ranking) Then
-            Response.Redirect("../Usuario/cliente.aspx?idCliente=" + idCliente.ToString, False)
-        Else
-            lbl_mensaje.Text += MostrarError("Ocurrio un error al registrar el Ranking, intentalo nuevamente")
-        End If
-    End Sub
-
-    Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim Ranking_Nuevo As String = ""
-        If cb_tipoImpedimento.SelectedValue = 1 Then Ranking_Nuevo = cb_preguntas.SelectedValue Else Ranking_Nuevo = "A"
-
-        If BL.Actualizar_Ranking(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo) Then
-            Response.Redirect("../Usuario/cliente.aspx?idCliente=" + idCliente.ToString, False)
-        Else
-            lbl_mensaje.Text += MostrarError("Ocurrio un error al actualizar el Ranking, intentalo nuevamente")
-        End If
-    End Sub
-
-    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        lbl_ranking.Visible = False
-        cb_tipoImpedimento.Visible = False
-        btn_ranking.Visible = False
-
-        btnCambiar.Visible = True
-        btnActualizar.Visible = False
-        btnCancelar.Visible = False
-    End Sub
-    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
-        If e.DataColumn.Caption = "Estatus" Then
-            Select Case e.CellValue
-                Case 0
-                    e.Cell.BackColor = Drawing.Color.OrangeRed
-                    e.Cell.ForeColor = Drawing.Color.White
-                    e.Cell.Text = "VENCIDA"
-                Case 1
-                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
-                    e.Cell.Text = "VIGENTE"
-                Case 2
-                    e.Cell.BackColor = Drawing.Color.Green
-                    e.Cell.ForeColor = Drawing.Color.White
-                    e.Cell.Text = "COMPLETADA"
-            End Select
-        End If
     End Sub
 #End Region
 End Class

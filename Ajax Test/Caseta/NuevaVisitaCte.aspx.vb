@@ -162,7 +162,7 @@ Public Class NuevaVisitaCteCaseta
     End Sub
 
     Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCliente)
+        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
         With DatosCitas
             If GE_Funciones.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
@@ -170,6 +170,7 @@ Public Class NuevaVisitaCteCaseta
                     .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
 
                 Session("DatosCitas") = Nothing
+                Alimentar_TablaVisitas(IDCliente)
                 lbl_mensaje.Text = MostrarExito("¡Visita registrada correctamente!")
             Else
                 Session("DatosCitas") = Nothing
@@ -180,6 +181,24 @@ Public Class NuevaVisitaCteCaseta
 
     Protected Sub cmBoxProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxProyecto.SelectedIndexChanged
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
+    End Sub
+
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
     End Sub
 #End Region
 End Class

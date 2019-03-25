@@ -7955,6 +7955,7 @@
     <Content Include="Supervisor\GrupoTrabajo.aspx" />
     <Content Include="Supervisor\InicioSupervisor.aspx" />
     <Content Include="Supervisor\MisDatos.aspx" />
+    <Content Include="Supervisor\ModificaCliente.aspx" />
     <Content Include="Supervisor\NuevaCampana.aspx" />
     <Content Include="Supervisor\NuevoProducto.aspx" />
     <Content Include="Supervisor\NuevoUsuario.aspx" />
@@ -8592,6 +8593,13 @@
     </Compile>
     <Compile Include="Supervisor\MisDatos.aspx.vb">
       <DependentUpon>MisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\NuevaCampana.aspx.designer.vb">

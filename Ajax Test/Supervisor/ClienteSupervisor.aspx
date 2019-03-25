@@ -118,10 +118,54 @@
             </div>
         </div>
         <div class="portlet-body">
-            <h4>
-                <asp:Label ID="lbl_mensajeRanking" runat="server" Text=""></asp:Label></h4>
-            <h4>
-                <asp:Label ID="lbl_ranking" runat="server" Text="¿El Cliente tiene algún impedimento de compra?"></asp:Label></h4>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label><strong><i>Ranking Actual:</i></strong></label>
+                    &nbsp
+                    <asp:Label ID="lbl_mensajeRanking" runat="server" Text="" Font-Size="16pt"></asp:Label>
+                </div>
+            </div>
+            <div id="Clasificacion" runat="server" class="row" style="margin-top: 15px">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <label><strong>Clasificación:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxClasificacion" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <label><strong>Motivo:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxMotivo" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                    </div>
+                </div>
+            </div>
+            <div id="Submotivo" runat="server" class="row" style="margin-top: 15px">
+                <div class="form-group">
+                    <div class="col-lg-10">
+                        <label><strong>Submotivo:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxSubMotivo" runat="server" Width="100%" Theme="MaterialCompact"></dx:ASPxComboBox>
+                    </div>
+                </div>
+            </div>
+            <div id="Controles" runat="server" class="row" style="margin-top: 15px">
+                <div class="form-group" style="margin-top: 15px">
+                    <div class="col-lg-2">
+                        <asp:Button ID="btnGuardar" runat="server" Width="100%" CssClass="btn btn-block btn-sm green" Text="Guardar" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <asp:Button ID="btnActualizar" runat="server" Width="100%" CssClass="btn btn-block btn-sm blue-dark" Text="Actualizar" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <asp:Button ID="btnCancelar" runat="server" Width="100%" CssClass="btn btn-block btn-sm yellow-casablanca" Text="Cancelar" />
+                    </div>
+                </div>
+            </div>
+
+            <%--            <asp:Label ID="lbl_ranking" runat="server" Text="¿El Cliente tiene algún impedimento de compra?"></asp:Label></h4>
             <asp:DropDownList ID="cb_tipoImpedimento" runat="server" CssClass="form-control" AutoPostBack="True">
                 <asp:ListItem Value="0">Seleccione...</asp:ListItem>
                 <asp:ListItem Value="1">Sí, el cliente tiene un impedimento.</asp:ListItem>
@@ -149,10 +193,10 @@
                     <asp:ControlParameter ControlID="cb_impedimentos" DefaultValue="0" Name="IdImp" PropertyName="SelectedValue" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <br />
-            <asp:Button ID="btn_ranking" runat="server" CssClass="btn-lg green" Text="Guardar Ranking" />
+            <br />--%>
+            <%--            <asp:Button ID="btn_ranking" runat="server" CssClass="btn-lg green" Text="Guardar Ranking" />
             <asp:Button ID="btnActualizar" runat="server" CssClass="btn-lg green" Text="Actualizar Ranking" />
-            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-lg green" Text="Cancelar" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-lg green" Text="Cancelar" />--%>
         </div>
     </div>
 
