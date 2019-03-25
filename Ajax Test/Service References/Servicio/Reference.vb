@@ -5924,6 +5924,9 @@ Namespace Servicio
         Private fechaCreacionField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private id_TipoUsuarioField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private id_usuarioField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -6016,6 +6019,19 @@ Namespace Servicio
                 If (Me.fechaCreacionField.Equals(value) <> true) Then
                     Me.fechaCreacionField = value
                     Me.RaisePropertyChanged("fechaCreacion")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property id_TipoUsuario() As Integer
+            Get
+                Return Me.id_TipoUsuarioField
+            End Get
+            Set
+                If (Me.id_TipoUsuarioField.Equals(value) <> true) Then
+                    Me.id_TipoUsuarioField = value
+                    Me.RaisePropertyChanged("id_TipoUsuario")
                 End If
             End Set
         End Property

@@ -739,6 +739,7 @@
       <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_TipoUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />

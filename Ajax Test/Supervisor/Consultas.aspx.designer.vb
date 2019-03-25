@@ -23,33 +23,6 @@ Partial Public Class Consultas
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control btnBuscar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control btnLimpiar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control btnExcel.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnExcel As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control cmBoxArchivos.
     '''</summary>
     '''<remarks>
@@ -68,13 +41,76 @@ Partial Public Class Consultas
     Protected WithEvents btnAbrirArchivo As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control txtBoxConsulta.
+    '''Control Mensaje.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtBoxConsulta As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Mensaje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control lbl_ConsultaAbierta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_ConsultaAbierta As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control btnBuscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control btnLimpiar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnLimpiar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control RangoFechas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RangoFechas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control dtp_inicio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_inicio As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control dtp_Fin.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_Fin As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control btnExcel.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnExcel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control grdViewConsulta.
