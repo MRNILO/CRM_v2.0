@@ -5909,6 +5909,9 @@ Namespace Servicio
         Private EmailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private TipousuarioDesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private activoField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -5954,6 +5957,19 @@ Namespace Servicio
                 If (Object.ReferenceEquals(Me.EmailField, value) <> true) Then
                     Me.EmailField = value
                     Me.RaisePropertyChanged("Email")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property TipousuarioDes() As String
+            Get
+                Return Me.TipousuarioDesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.TipousuarioDesField, value) <> true) Then
+                    Me.TipousuarioDesField = value
+                    Me.RaisePropertyChanged("TipousuarioDes")
                 End If
             End Set
         End Property

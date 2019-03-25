@@ -734,6 +734,7 @@
   <xs:complexType name="CUsuariosDetalleSup">
     <xs:sequence>
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipousuarioDes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="activo" type="xs:int" />
       <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />

@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="row" id="Mensaje" runat="server">
-                <div class="col-lg" style="margin-top: 20px">
+                <div class="col-lg-12" style="margin-top: 20px">
                     <div class="col-lg" style="margin-top: 20px">
                         <asp:Label ID="lbl_ConsultaAbierta" runat="server" BackColor="#99ff99"></asp:Label>
                     </div>
