@@ -281,7 +281,7 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn FieldName="Cliente" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>

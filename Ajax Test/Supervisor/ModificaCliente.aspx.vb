@@ -68,16 +68,9 @@ Public Class ModificaCliente3
         cb_nivelInteres.DataBind()
         cb_nivelInteres.SelectedValue = Datos(0).id_nivel
 
-        'cb_empresas.DataSource = BL.Obtener_combo_empresas
-        'cb_empresas.DataTextField = "Empresa"
-        'cb_empresas.DataValueField = "id_empresa"
-        'cb_empresas.DataBind()
-
-        'cb_empresas.SelectedValue = Datos(0).id_empresa
-
         tb_empresas.Text = Datos(0).id_empresa.ToString
 
-
+        cb_campañas.Enabled = False
         cb_campañas.DataSource = BL.Obtener_combo_campañas
         cb_campañas.DataTextField = "Campaña"
         cb_campañas.DataValueField = "id_campaña"
@@ -115,6 +108,7 @@ Public Class ModificaCliente3
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -137,7 +131,6 @@ Public Class ModificaCliente3
     '        lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
     '    End Try
     'End Sub
-
 #End Region
 
     Protected Sub GV_telefonos_DataBinding(sender As Object, e As EventArgs) Handles GV_telefonos.DataBinding
@@ -199,6 +192,7 @@ Public Class ModificaCliente3
     Protected Sub btn_verobservacion_Click(sender As Object, e As EventArgs) Handles btn_verobservacion.Click
         Response.Redirect("../Supervisor/DetalleObservacion.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
+
 #Region "Trabajo Fotos"
     Function TrabajoFotos() As CFotos
         Dim MaximoWidth As Integer = 400
@@ -249,6 +243,7 @@ Public Class ModificaCliente3
 
         Return Resultado
     End Function
+
     Function resizeImage(ByVal Imagen As System.Drawing.Image, ByVal MaximoLargo As Integer)
         Dim original As Drawing.Bitmap, resizedImage As Drawing.Bitmap
 
@@ -292,6 +287,7 @@ Public Class ModificaCliente3
         End Try
         Return resizedImage
     End Function
+
     Public Function ImageToBase64(image As System.Drawing.Image, format As System.Drawing.Imaging.ImageFormat) As String
         Using ms As New MemoryStream()
             ' Convert Image to byte[]

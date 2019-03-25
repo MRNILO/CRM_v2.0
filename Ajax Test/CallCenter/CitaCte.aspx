@@ -77,7 +77,7 @@
         <div class="portlet-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <label><strong>Usuario Call Center: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
+                    <label><strong>Usuario en Vigencia: &nbsp</strong></label><i><asp:Literal ID="lbl_usuario" runat="server"></asp:Literal></i>
                 </div>
             </div>
             <div class="row" style="margin-top: 5px">
@@ -257,7 +257,7 @@
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn FieldName="Cliente" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
