@@ -66,6 +66,7 @@ Public Class ModificaCliente_Prospectador
 
         tb_empresas.Text = Datos(0).id_empresa.ToString
 
+        cb_campañas.Enabled = False
         cb_campañas.DataSource = BL.Obtener_combo_campañas
         cb_campañas.DataTextField = "Campaña"
         cb_campañas.DataValueField = "id_campaña"

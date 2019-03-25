@@ -207,10 +207,10 @@ Public Class CitaCteCaseta
 
         If Vigencias.Length > 0 Then
             If Vigencias(0).CitasVigentes > 0 Then
-                HTML += "<br /><h5><strong>Agente de Caseta</strong></h5>"
-                HTML += "<label>(" + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
+                HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
+                HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
-                lbl_usuario.Text = Vigencias(0).UsuarioVigente
+                lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
                 btn_asignaCita.Visible = False
             Else
                 lbl_usuario.Text = "-"
@@ -371,6 +371,10 @@ Public Class CitaCteCaseta
             lbl_mensaje_Alert.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
         End Try
     End Sub
+
+    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        Response.Redirect("../Caseta/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
+    End Sub
 #End Region
 
 #Region "FuncionesUsuario"
@@ -405,10 +409,6 @@ Public Class CitaCteCaseta
             Case 3
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
-    End Sub
-
-    Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
-        Response.Redirect("../Caseta/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + Id_Cita.ToString, False)
     End Sub
 #End Region
 End Class

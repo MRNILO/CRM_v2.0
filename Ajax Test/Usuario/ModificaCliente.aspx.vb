@@ -5,17 +5,13 @@ Public Class ModificaCliente
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
     Dim idCliente As Integer = 0
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         idCliente = Request.QueryString("idCliente")
         If idCliente = 0 Then
             Response.Redirect("/")
         Else
-            'Verifica cliente
-            'If BL.VerificaCliente(idCliente, Usuario.id_usuario) Then
-            'Cliente si le pertenece a este usuario
-            'Mostrar información del cliente
-
             If Page.IsPostBack Then
             Else
                 Dim Datos = BL.Obtener_ids_cliente(idCliente)
@@ -26,17 +22,15 @@ Public Class ModificaCliente
                     Session("ListaDeTelefonos") = Nothing
                 End If
             End If
-
-            'Else
-            '    Response.Redirect("/")
-            'End If
         End If
         GV_telefonos.DataBind()
     End Sub
+
     Sub Fotos(ByRef Datos As Servicio.CidCliente())
         lbl_fotocliente.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
         lbl_fotoTpres.Text = "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
     End Sub
+
     Sub datosCliente(ByRef Datos As Servicio.CidCliente())
         tb_NombreCliente.Text = Datos(0).Nombre
         tb_ApellidoMaterno.Text = Datos(0).ApellidoMaterno
@@ -46,6 +40,7 @@ Public Class ModificaCliente
         'tb_observaciones.Text = Datos(0).Observaciones
         ' tb_monto.Text = Datos(0).Monto.ToString
     End Sub
+
     Sub Combos(ByRef Datos As Servicio.CidCliente())
 
         Dim Estados = BL.Obtener_estados.ToList
@@ -63,15 +58,9 @@ Public Class ModificaCliente
         cb_nivelInteres.DataBind()
         cb_nivelInteres.SelectedValue = Datos(0).id_nivel
 
-        'cb_empresas.DataSource = BL.Obtener_combo_empresas
-        'cb_empresas.DataTextField = "Empresa"
-        'cb_empresas.DataValueField = "id_empresa"
-        'cb_empresas.DataBind()
-
-        'cb_empresas.SelectedValue = Datos(0).id_empresa
-
         tb_empresas.Text = Datos(0).id_empresa.ToString
 
+        cb_campañas.Enabled = False
 
         cb_campañas.DataSource = BL.Obtener_combo_campañas
         cb_campañas.DataTextField = "Campaña"
@@ -79,6 +68,7 @@ Public Class ModificaCliente
         cb_campañas.DataBind()
         cb_campañas.SelectedValue = Datos(0).id_campaña
     End Sub
+
 #Region "FuncionesUsuario"
     Sub ValidaUsuario()
 
@@ -109,6 +99,7 @@ Public Class ModificaCliente
             Response.Redirect("/Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -131,8 +122,8 @@ Public Class ModificaCliente
     '        lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
     '    End Try
     'End Sub
-
 #End Region
+
     Protected Sub GV_telefonos_DataBinding(sender As Object, e As EventArgs) Handles GV_telefonos.DataBinding
         GV_telefonos.DataSource = BL.Obtener_telefonosModificaCliente(idCliente)
     End Sub
@@ -192,6 +183,7 @@ Public Class ModificaCliente
     Protected Sub btn_verobservacion_Click(sender As Object, e As EventArgs) Handles btn_verobservacion.Click
         Response.Redirect("../Usuario/DetalleObservacion.aspx?idCliente=" + idCliente.ToString, False)
     End Sub
+
 #Region "Trabajo Fotos"
     Function TrabajoFotos() As CFotos
         Dim MaximoWidth As Integer = 400
@@ -242,14 +234,11 @@ Public Class ModificaCliente
 
         Return Resultado
     End Function
+
     Function resizeImage(ByVal Imagen As System.Drawing.Image, ByVal MaximoLargo As Integer)
         Dim original As Drawing.Bitmap, resizedImage As Drawing.Bitmap
 
         Try
-            'Using fs As FileStream = New System.IO.FileStream(, System.IO.FileMode.Open)
-            '    original = New Drawing.Bitmap(fs)
-            'End Using
-
             original = Imagen
 
             Dim rectHeight As Integer = 100
@@ -285,6 +274,7 @@ Public Class ModificaCliente
         End Try
         Return resizedImage
     End Function
+
     Public Function ImageToBase64(image As System.Drawing.Image, format As System.Drawing.Imaging.ImageFormat) As String
         Using ms As New MemoryStream()
             ' Convert Image to byte[]

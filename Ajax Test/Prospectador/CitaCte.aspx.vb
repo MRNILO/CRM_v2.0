@@ -185,10 +185,10 @@
 
         If Vigencias.Length > 0 Then
             If Vigencias(0).CitasVigentes > 0 Then
-                HTML += "<br /><h5><strong>Agente de Prospección</strong></h5>"
-                HTML += "<label>(" + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
+                HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
+                HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
-                lbl_usuario.Text = Vigencias(0).UsuarioVigente
+                lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
                 btn_asignaCita.Visible = False
             Else
                 lbl_usuario.Text = "-"
