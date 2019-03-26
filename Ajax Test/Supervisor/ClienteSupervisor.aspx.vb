@@ -61,6 +61,7 @@ Public Class ClienteSupervisor
                     dtp_FechaCancelacion.Enabled = True
                 End If
 
+                Alimentar_TablaVisitas(idCliente)
                 Alimentar_ComboClasificacion()
                 Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
                 Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
@@ -232,6 +233,16 @@ Public Class ClienteSupervisor
             .DataBind()
 
             .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
         End With
     End Sub
 
@@ -463,6 +474,24 @@ Public Class ClienteSupervisor
     End Sub
 
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
+    End Sub
+
+    Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared
         If e.DataColumn.Caption = "Estatus" Then
             Select Case e.CellValue
                 Case 0

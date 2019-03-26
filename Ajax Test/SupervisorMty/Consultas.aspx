@@ -81,7 +81,7 @@
         <div class="portlet-body">
             <dx:ASPxGridView ID="grdViewConsulta" Width="100%" runat="server" Theme="Moderno"
                 Font-Size="9pt" Font-Names="Microsoft Sans Serif">
-                <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Auto" />
+                <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Auto" ShowFooter="True" />
             </dx:ASPxGridView>
         </div>
     </div>

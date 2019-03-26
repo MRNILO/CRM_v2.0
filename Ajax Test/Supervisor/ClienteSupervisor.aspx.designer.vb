@@ -311,6 +311,15 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents GV_citas As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
+    '''Control grdViewVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents grdViewVisitas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
     '''Control btn_LlamadasAExcel.
     '''</summary>
     '''<remarks>
