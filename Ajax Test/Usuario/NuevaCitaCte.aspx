@@ -31,7 +31,7 @@
     <div class="portlet box blue-hoki">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-globe"></i>Cita
+                <i class="fa fa-globe"></i>Registrar Nueva Cita
             </div>
         </div>
         <div class="portlet-body">
