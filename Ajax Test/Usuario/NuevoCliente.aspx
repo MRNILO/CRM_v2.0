@@ -366,12 +366,12 @@ empresas"></asp:SqlDataSource>
 
         function TerminaValidacion(response) {
             $('#Validando').modal('hide');
-            $('#btnGuardar').show();
+            $('#DivBtnGuarda').show();
         }
     </script>
     <script type="text/javascript">
         function QuitaBoton() {
-            $('#btnGuardar').hide();
+            $('#DivBtnGuarda').hide();
             $('#Validando').modal('show');
         }
     </script>
