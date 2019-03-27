@@ -48,12 +48,36 @@ Public Class NuevaVisitaCte
 
         Alimentar_ComboClasificacion()
         Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
-        Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+        'Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
     End Sub
 
     Private Sub Alimentar_ComboClasificacion()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Clasificacion()
+        DTB.Columns.AddRange({New DataColumn("Ranking")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("Ranking") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("Ranking") = Row("Ranking")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxClasificacion
-            .DataSource = GE_Funciones.Obtener_Clasificacion()
+            .DataSource = DTB
             .ValueField = "Ranking"
             .TextField = "Ranking"
             .DataBind()
@@ -63,8 +87,34 @@ Public Class NuevaVisitaCte
     End Sub
 
     Private Sub Alimentar_ComboMotivos(ByVal Clasificacion As String)
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Motivos(Clasificacion)
+        DTB = DTA.Clone()
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_tipoImpedimento") = 0
+                RowB("TipoImpedimento") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_tipoImpedimento") = Row("id_tipoImpedimento")
+            RowB("TipoImpedimento") = Row("TipoImpedimento")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxMotivo
-            .DataSource = GE_Funciones.Obtener_Motivos(Clasificacion)
+            .DataSource = DTB
             .ValueField = "id_tipoImpedimento"
             .TextField = "TipoImpedimento"
             .DataBind()
@@ -74,8 +124,34 @@ Public Class NuevaVisitaCte
     End Sub
 
     Private Sub Alimentar_ComboSubmotivos(ByVal Clasificacion As String, ByVal IdMotivo As Integer)
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Submotivos(Clasificacion, IdMotivo)
+        DTB = DTA.Clone()
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_impedimento") = 0
+                RowB("impedimento") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_impedimento") = Row("id_impedimento")
+            RowB("impedimento") = Row("impedimento")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxSubMotivo
-            .DataSource = GE_Funciones.Obtener_Submotivos(Clasificacion, IdMotivo)
+            .DataSource = DTB
             .ValueField = "id_impedimento"
             .TextField = "impedimento"
             .DataBind()
@@ -85,8 +161,34 @@ Public Class NuevaVisitaCte
     End Sub
 
     Private Sub Alimentar_ComboProyectos()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Proyectos()
+        DTB = DTA.Clone()
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("Proyecto") = "-"
+                RowB("Fraccionamiento") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("Proyecto") = Row("Proyecto")
+            RowB("Fraccionamiento") = Row("Fraccionamiento")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxProyecto
-            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .DataSource = DTB
             .ValueField = "Proyecto"
             .TextField = "Fraccionamiento"
             .DataBind()
@@ -96,8 +198,34 @@ Public Class NuevaVisitaCte
     End Sub
 
     Private Sub Alimentar_ComboModelos(ByVal Proyecto As String)
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+        DTB = DTA.Clone()
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_producto") = 0
+                RowB("Modelo") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_producto") = Row("id_producto")
+            RowB("Modelo") = Row("Modelo")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxModelo
-            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .DataSource = DTB
             .ValueField = "id_producto"
             .TextField = "Modelo"
             .DataBind()
@@ -115,6 +243,23 @@ Public Class NuevaVisitaCte
             .DataBind()
         End With
     End Sub
+
+    Public Function Validar_Campos()
+        If cmBoxClasificacion.SelectedIndex = 0 Then Return False
+
+        If cmBoxMotivo.Items.Count = 0 Then Return False
+        If cmBoxMotivo.SelectedIndex = 0 Then Return False
+
+        If cmBoxSubMotivo.Items.Count = 0 Then Return False
+        If cmBoxSubMotivo.SelectedIndex = 0 Then Return False
+
+        If cmBoxProyecto.SelectedIndex = 0 Then Return False
+
+        If cmBoxModelo.Items.Count = 0 Then Return False
+        If cmBoxModelo.SelectedIndex = 0 Then Return False
+
+        Return True
+    End Function
 #End Region
 
 #Region "FuncionesUsuario"
@@ -162,22 +307,26 @@ Public Class NuevaVisitaCte
     End Sub
 
     Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
-        Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
+        If Validar_Campos() Then
+            Dim DatosCitas As DatosCita = GE_Funciones.Obtener_DatosCita(IDCita)
 
-        With DatosCitas
-            If GE_Funciones.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
-                    0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
-                    .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
+            With DatosCitas
+                If GE_Funciones.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
+                        0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
+                        .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
 
-                Session("DatosCitas") = Nothing
-                Alimentar_TablaVisitas(IDCliente)
+                    Session("DatosCitas") = Nothing
+                    Alimentar_TablaVisitas(IDCliente)
 
-                lbl_mensaje.Text = MostrarExito("¡Visita registrada correctamente!")
-            Else
-                Session("DatosCitas") = Nothing
-                lbl_mensaje.Text = MostrarError("¡Ocurrio un error al registrar la visita!")
-            End If
-        End With
+                    lbl_mensaje.Text = MostrarExito("¡Visita registrada correctamente!")
+                Else
+                    Session("DatosCitas") = Nothing
+                    lbl_mensaje.Text = MostrarError("¡Ocurrio un error al registrar la visita!")
+                End If
+            End With
+        Else
+            lbl_mensaje.Text = MostrarAviso("¡Te falta capturar información para la cita, revisa los datos capturados!")
+        End If
     End Sub
 
     Protected Sub cmBoxProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxProyecto.SelectedIndexChanged

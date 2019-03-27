@@ -23,44 +23,44 @@ Public Class Cliente
             Response.Redirect("/")
         Else
             'Verifica cliente
-            If BL.VerificaCliente(idCliente, Usuario.id_usuario) Then
-                Try
-                    BL.Actualiza_ultimafecha(idCliente)
-                Catch ex As Exception
+            'If BL.VerificaCliente(idCliente, Usuario.id_usuario) Then
+            Try
+                BL.Actualiza_ultimafecha(idCliente)
+            Catch ex As Exception
 
-                End Try
+            End Try
 
-                Alimentar_TablaVisitas(idCliente)
+            Alimentar_TablaVisitas(idCliente)
 
-                lbl_generales.Text = Crea_generalesCliente()
-                lbl_telefonos.Text = Crea_telefonos()
+            lbl_generales.Text = Crea_generalesCliente()
+            lbl_telefonos.Text = Crea_telefonos()
 
-                'Crea boton para programar llamada
-                lbl_botonPrograma.Text = " <a href=""../Usuario/ProgramarLlamada.aspx?idCliente=" + idCliente.ToString + " "" class=""btn btn-sm blue"">Programar Llamada</a>"
-                lbl_botonLlamar.Text = "<a href=""../Usuario/NuevaLlamada.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-phone""></i> Registrar Llamada</a>"
-                lbl_botonCitas.Text = "<a href=""../Usuario/NuevaCitaCte.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-file""></i> Registrar Cita</a>"
+            'Crea boton para programar llamada
+            lbl_botonPrograma.Text = " <a href=""../Usuario/ProgramarLlamada.aspx?idCliente=" + idCliente.ToString + " "" class=""btn btn-sm blue"">Programar Llamada</a>"
+            lbl_botonLlamar.Text = "<a href=""../Usuario/NuevaLlamada.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-phone""></i> Registrar Llamada</a>"
+            lbl_botonCitas.Text = "<a href=""../Usuario/NuevaCitaCte.aspx?idCliente=" + idCliente.ToString + """ class=""btn green""><i class=""fa fa-file""></i> Registrar Cita</a>"
 
-                If Page.IsPostBack Then
-                Else
-                    Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
-                    GridLlamadas()
-                    ComboEtapas(Datos)
-                    comboProductos(Datos)
-                    BindGVEmails(Datos(0).Email, Datos(0).Email)
-                    Ranking(Datos(0))
-                    lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
-                    BotonCambiaUsuario()
-                End If
-                GV_Llamadas.DataSource = Session("GridLlamadas")
-                GV_Llamadas.DataBind()
-
-                GV_citas.DataBind()
-                GV_operaciones.DataBind()
-
-                DatosEmpresa()
+            If Page.IsPostBack Then
             Else
-                Response.Redirect("/")
+                Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+                GridLlamadas()
+                ComboEtapas(Datos)
+                comboProductos(Datos)
+                BindGVEmails(Datos(0).Email, Datos(0).Email)
+                Ranking(Datos(0))
+                lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
+                BotonCambiaUsuario()
             End If
+            GV_Llamadas.DataSource = Session("GridLlamadas")
+            GV_Llamadas.DataBind()
+
+            GV_citas.DataBind()
+            GV_operaciones.DataBind()
+
+            DatosEmpresa()
+            'Else
+            '    Response.Redirect("/")
+            'End If
         End If
 
         If Request.QueryString("msj") = "" Then

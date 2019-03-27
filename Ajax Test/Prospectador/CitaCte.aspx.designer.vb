@@ -95,15 +95,6 @@ Partial Public Class CitaCteProspectador
     Protected WithEvents cb_usuarios As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control UsuariosDS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UsuariosDS As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control dtp_finicio.
     '''</summary>
     '''<remarks>

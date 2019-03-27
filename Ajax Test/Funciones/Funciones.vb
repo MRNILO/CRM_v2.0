@@ -307,6 +307,18 @@ Public Class Funciones
 #End Region
 
 #Region "Citas"
+    Public Function Obtener_Usuarios() As DataTable
+        Dim Query As String = "SELECT dbo.usuarios.id_usuario, 
+                                      CONCAT(dbo.usuarios.nombre,' ',
+                                             dbo.usuarios.apellidoPaterno,' ',
+                                             dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
+                               FROM dbo.usuarios
+                               WHERE activo = 1
+                               ORDER BY nombre ASC"
+
+        Obtener_Usuarios = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function ObtenerMedios() As DataTable
         Dim Query As String = "SELECT Id_Medio, NombreMedio 
                                FROM CampanasMedios"

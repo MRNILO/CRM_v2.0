@@ -20,6 +20,8 @@
 
         If Not IsPostBack Then
             UI()
+        Else
+            lbl_mensaje.Text = ""
         End If
     End Sub
 
@@ -39,6 +41,7 @@
         tb_TipoCampana.Enabled = False
 
         Alimentar_TablaVisitas(Id_Cliente)
+        AlimentarComboUsuarios()
         AlimentarComboCampanas()
         AlimentarComboProyectos()
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
@@ -55,8 +58,34 @@
     End Sub
 
     Private Sub AlimentarComboProyectos()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Proyectos()
+        DTB.Columns.AddRange({New DataColumn("Proyecto"), New DataColumn("Fraccionamiento")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow()
+                RowB("Proyecto") = "-"
+                RowB("Fraccionamiento") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow()
+            RowB("Proyecto") = Row("Proyecto")
+            RowB("Fraccionamiento") = Row("Fraccionamiento")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cb_fraccinamientos
-            .DataSource = GE_Funciones.Obtener_Proyectos()
+            .DataSource = DTB
             .DataValueField = "Proyecto"
             .DataTextField = "Fraccionamiento"
             .DataBind()
@@ -66,8 +95,34 @@
     End Sub
 
     Private Sub AlimentarComboModelos(ByVal Proyecto As String)
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+        DTB.Columns.AddRange({New DataColumn("id_producto"), New DataColumn("Modelo")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_producto") = "0"
+                RowB("Modelo") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_producto") = Row("id_producto")
+            RowB("Modelo") = Row("Modelo")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cb_modelos
-            .DataSource = GE_Funciones.Obtener_ModelosXProyecto(Proyecto)
+            .DataSource = DTB
             .DataValueField = "id_producto"
             .DataTextField = "Modelo"
             .DataBind()
@@ -77,13 +132,84 @@
     End Sub
 
     Private Sub AlimentarComboCampanas()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.ObtenerCampanas()
+        DTB.Columns.AddRange({New DataColumn("id_campaña"), New DataColumn("campañaNombre")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_campaña") = "0"
+                RowB("campañaNombre") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_campaña") = Row("id_campaña")
+            RowB("campañaNombre") = Row("campañaNombre")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
         With cmBoxCampana
-            .DataSource = GE_Funciones.ObtenerCampanas()
+            .DataSource = DTB
             .ValueField = "id_campaña"
             .TextField = "campañaNombre"
             .DataBind()
 
             .SelectedIndex = 0
+        End With
+    End Sub
+
+    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
+        Dim DT As New DataTable
+        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+
+        With grdViewVisitas
+            .DataSource = DT
+            .DataBind()
+        End With
+    End Sub
+
+    Private Sub AlimentarComboUsuarios()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.Obtener_Usuarios()
+        DTB.Columns.AddRange({New DataColumn("id_usuario"), New DataColumn("nombre")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_usuario") = 0
+                RowB("nombre") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_usuario") = Row("id_usuario")
+            RowB("nombre") = Row("nombre")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
+        With cb_usuarios
+            .DataSource = DTB
+            .DataBind()
+            .DataValueField = "id_usuario"
+            .DataTextField = "nombre"
         End With
     End Sub
 
@@ -188,15 +314,16 @@
         End If
     End Sub
 
-    Private Sub Alimentar_TablaVisitas(ByVal Id_Cliente As Integer)
-        Dim DT As New DataTable
-        DT = GE_Funciones.Obtener_VisitasCliente(Id_Cliente) : ViewState("VisitasCliente") = DT
+    Public Function Validar_Campos()
+        If cb_usuarios.SelectedIndex = 0 Then Return False
+        If cmBoxCampana.SelectedIndex = 0 Then Return False
+        If cb_fraccinamientos.SelectedIndex = 0 Then Return False
+        If cb_modelos.Items.Count = 0 Then Return False
+        If cb_modelos.SelectedIndex = 0 Then Return False
+        If dtp_fechaCita.Text = "" Then Return False
 
-        With grdViewVisitas
-            .DataSource = DT
-            .DataBind()
-        End With
-    End Sub
+        Return True
+    End Function
 #End Region
 
 #Region "Eventos"
@@ -205,16 +332,19 @@
     End Sub
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
-        Try
-            If BL.Insertar_CitasCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
-                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
-                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
-                Response.Redirect("Citas.aspx", False)
-            End If
-        Catch ex As Exception
-            lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
-        End Try
-
+        If Validar_Campos() Then
+            Try
+                If BL.Insertar_CitasCallCenter(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                               tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                               dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+                    Response.Redirect("Citas.aspx", False)
+                End If
+            Catch ex As Exception
+                lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
+            End Try
+        Else
+            lbl_mensaje.Text = MostrarAviso("¡Te falta capturar información para la cita, revisa los datos capturados!")
+        End If
     End Sub
 
     Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged

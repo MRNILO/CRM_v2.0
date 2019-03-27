@@ -27,7 +27,6 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
     <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
@@ -71,7 +70,7 @@
     <div class="portlet box blue-hoki">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-globe"></i>Cita
+                <i class="fa fa-globe"></i>Registrar Nueva Cita
             </div>
         </div>
         <div class="portlet-body">
@@ -90,13 +89,7 @@
                 <div class="form-group" style="margin-top: 15px">
                     <div class="col-lg-4">
                         <label><strong>Asesor Asignado:</strong></label><br />
-                        <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
-                        <asp:SqlDataSource ID="UsuariosDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.id_usuario, 
-                                                                                                                                                                    CONCAT(dbo.usuarios.nombre,' ',
-                                                                                                                                                                          dbo.usuarios.apellidoPaterno,' ',
-                                                                                                                                                                          dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
-                                                                                                                                                                    FROM dbo.usuarios
-                                                                                                                                                                    ORDER BY nombre ASC"></asp:SqlDataSource>
+                        <asp:DropDownList ID="cb_usuarios" runat="server" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
@@ -280,4 +273,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

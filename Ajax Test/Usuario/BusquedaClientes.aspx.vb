@@ -51,7 +51,7 @@ Public Class BusquedaClientes2
     End Sub
 
     Public Sub BuscarClientes()
-        Dim Cliente As New BusquedaClienteAsesor
+        Dim Cliente As New BusquedaCliente
 
         With Cliente
             .nombreCliente = tb_NombreCliente.Text
@@ -61,12 +61,11 @@ Public Class BusquedaClientes2
             .CURP = tb_CURP.Text
             .NSS = tb_NSS.Text
             .IdCliente = tb_IdCliente.Text
-            .IdUsuario = Usuario.id_usuario
             .Numcte = tb_NumeroCliente.Text
         End With
 
         Dim DT As New DataTable
-        DT = GE_Funciones.BuscarClientesXAsesor(Cliente)
+        DT = GE_Funciones.BuscarClientes(Cliente)
         ViewState("ListaClientes") = DT
 
         With grdView_BusquedaCliente
