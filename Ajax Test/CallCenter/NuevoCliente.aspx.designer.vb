@@ -23,15 +23,6 @@ Partial Public Class NuevoCliente1
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control lbl_mensaje.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
     '''Control tb_nombre.
     '''</summary>
     '''<remarks>
@@ -212,13 +203,22 @@ Partial Public Class NuevoCliente1
     Protected WithEvents CampañasDS As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control btn_guardar.
+    '''Control btn_Guardar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.DevExpress.Web.ASPxButton
+    Protected WithEvents btn_Guardar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control lbl_mensaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
     '''Control Literal1.

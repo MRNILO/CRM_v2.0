@@ -7,17 +7,15 @@ Public Class NuevoCliente1
         ValidaUsuario()
     End Sub
 
-    Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
-
+    Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Dim IDCliente As Integer = 0
-
 
         If cb_campañas.SelectedValue = 14 Then
             lbl_mensaje.Text += "<strong style='color:red'>DEBE SELECCIONAR UN ORIGEN/CAMPAÑA VALIDO</strong>"
             Exit Sub
         End If
-        Try
 
+        Try
             If Trim(tb_email.Text) = "" Then
                 tb_email.Text = "-"
             End If
@@ -74,6 +72,17 @@ Public Class NuevoCliente1
 
 #Region "FuncionesUsuario"
     <WebMethod()>
+    Public Shared Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String) As String
+        Dim HTML As String = ""
+        If BL.ValidaCliente(nombre, app1, app2) Then
+            HTML = "duplicado"
+        Else
+            HTML = "si"
+        End If
+        Return HTML
+    End Function
+
+    <WebMethod()>
     Public Shared Function ValidaNSS(ByVal nss As String) As String
         Dim HTML As String = ""
         If BL.ComprobarNSS(nss) > 0 Then
@@ -117,6 +126,7 @@ Public Class NuevoCliente1
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1

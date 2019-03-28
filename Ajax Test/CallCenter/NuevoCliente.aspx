@@ -34,7 +34,19 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+    <div class="modal fade" id="Validando" tabindex="-1" role="basic" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Validando información...</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/assets/imagenes/load.gif" class="img-responsive" />
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="portlet box purple">
         <div class="portlet-title">
             <div class="caption">
@@ -137,10 +149,7 @@
 
             <div id="DivBtnGuarda" class="row" style="margin-top: 15px">
                 <div class="col-lg-2">
-                    <dx:ASPxButton ID="btn_guardar" runat="server" Text="Guardar" Theme="Material" Width="100%">
-                        <Image IconID="actions_open2_16x16">
-                        </Image>
-                    </dx:ASPxButton>
+                    <asp:Button ID="btn_Guardar" runat="server" Text="Guardar Prospecto" OnClientClick="QuitaBoton()" CssClass="btn btn-lg green" UseSubmitBehavior="false" />
                 </div>
             </div>
         </div>
@@ -148,7 +157,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
-
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
     <script>
         $(function () {
             function log(message) {
@@ -219,8 +228,36 @@
 
     <script type="text/javascript">
         function QuitaBoton() {
-            $('#btnGuardar').hide();
+            $('#DivBtnGuarda').hide();
             $('#Validando').modal('show');
+        }
+
+        function ValidaCliente() {
+            $('#Validando').modal('show');
+
+            var nombreCliente = document.getElementById("<%:tb_nombre.ClientID%>").value;
+            var apellidoCliente = document.getElementById("<%:tb_paterno.ClientID%>").value;
+            var apellido2Cliente = document.getElementById("<%:tb_materno.ClientID%>").value;
+
+            $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("NuevoCliente.aspx/ValidaCliente")%>",
+                data: '{nombre: "' + nombreCliente + '", app1: "' + apellidoCliente + '",app2:"' + apellido2Cliente + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: TerminaValidacion,
+                failure: function (response) {
+                    sweetAlert("¡Algo salio mal!", response.d, "error");
+                },
+                error: function (response) {
+                    sweetAlert("¡Algo salio mal!", response.d, "error");
+                }
+            });
+        }
+
+        function TerminaValidacion(response) {
+            $('#Validando').modal('hide');
+            $('#DivBtnGuarda').show();
         }
     </script>
     <asp:Literal ID="Literal1" runat="server"></asp:Literal>

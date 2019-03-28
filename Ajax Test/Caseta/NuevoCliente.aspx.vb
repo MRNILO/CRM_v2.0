@@ -20,7 +20,7 @@ Public Class NuevoCliente2
     End Sub
 #End Region
 
-    Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
+    Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
 
         Dim IDCliente As Integer = 0
 
@@ -77,6 +77,17 @@ Public Class NuevoCliente2
     End Sub
 
 #Region "Funciones de Usuario"
+    <WebMethod()>
+    Public Shared Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String) As String
+        Dim HTML As String = ""
+        If BL.ValidaCliente(nombre, app1, app2) Then
+            HTML = "duplicado"
+        Else
+            HTML = "si"
+        End If
+        Return HTML
+    End Function
+
     <WebMethod()>
     Public Shared Function ValidaNSS(ByVal nss As String) As String
         Dim HTML As String = ""
