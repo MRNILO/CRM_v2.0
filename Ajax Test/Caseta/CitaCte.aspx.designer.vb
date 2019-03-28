@@ -23,15 +23,6 @@ Partial Public Class CitaCteCaseta
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control lbl_mensaje.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
     '''Control btn_modificar.
     '''</summary>
     '''<remarks>
@@ -129,15 +120,6 @@ Partial Public Class CitaCteCaseta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_usuarios As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control UsuariosDS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents UsuariosDS As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''Control dtp_finicio.
@@ -266,11 +248,11 @@ Partial Public Class CitaCteCaseta
     Protected WithEvents grdViewVisitas As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control lbl_mensaje_Alert.
+    '''Control lbl_mensaje.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_mensaje_Alert As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
 End Class

@@ -144,7 +144,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-lg-2">
-                            <label><strong>Lugar Contacto:</strong></label><br />
+                            <label><strong>Submedio:</strong></label><br />
                             <dx:ASPxComboBox ID="cmBoxCampana" runat="server" ValueType="System.String" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
                         </div>
                     </div>
