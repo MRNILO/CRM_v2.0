@@ -454,6 +454,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CNotifica" nillable="true" type="tns:CNotifica" />
+  <xs:complexType name="ArrayOfCOperacionesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOperacionesCliente" nillable="true" type="tns:ArrayOfCOperacionesCliente" />
+  <xs:complexType name="COperacionesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
   <xs:complexType name="ArrayOfCEtapasCliente">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CEtapasCliente" nillable="true" type="tns:CEtapasCliente" />
@@ -1454,21 +1471,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="COperaciones" nillable="true" type="tns:COperaciones" />
-  <xs:complexType name="ArrayOfCOperacionesCliente">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCOperacionesCliente" nillable="true" type="tns:ArrayOfCOperacionesCliente" />
-  <xs:complexType name="COperacionesCliente">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
-      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
 </xs:schema>

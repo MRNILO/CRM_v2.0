@@ -3639,6 +3639,133 @@ Namespace Servicio
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="COperacionesCliente", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class COperacionesCliente
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EtapaField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FechaInicioField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ObservacionesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ProductoField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private id_etapaField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private usuarioField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Etapa() As String
+            Get
+                Return Me.EtapaField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EtapaField, value) <> true) Then
+                    Me.EtapaField = value
+                    Me.RaisePropertyChanged("Etapa")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FechaInicio() As Date
+            Get
+                Return Me.FechaInicioField
+            End Get
+            Set
+                If (Me.FechaInicioField.Equals(value) <> true) Then
+                    Me.FechaInicioField = value
+                    Me.RaisePropertyChanged("FechaInicio")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Observaciones() As String
+            Get
+                Return Me.ObservacionesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ObservacionesField, value) <> true) Then
+                    Me.ObservacionesField = value
+                    Me.RaisePropertyChanged("Observaciones")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Producto() As String
+            Get
+                Return Me.ProductoField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ProductoField, value) <> true) Then
+                    Me.ProductoField = value
+                    Me.RaisePropertyChanged("Producto")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property id_etapa() As Integer
+            Get
+                Return Me.id_etapaField
+            End Get
+            Set
+                If (Me.id_etapaField.Equals(value) <> true) Then
+                    Me.id_etapaField = value
+                    Me.RaisePropertyChanged("id_etapa")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property usuario() As String
+            Get
+                Return Me.usuarioField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.usuarioField, value) <> true) Then
+                    Me.usuarioField = value
+                    Me.RaisePropertyChanged("usuario")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="CEtapasCliente", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
      System.SerializableAttribute()>  _
     Partial Public Class CEtapasCliente
@@ -11997,136 +12124,15 @@ Namespace Servicio
         End Sub
     End Class
     
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute(Name:="COperacionesCliente", [Namespace]:="http://schemas.datacontract.org/2004/07/WCF_CRM"),  _
-     System.SerializableAttribute()>  _
-    Partial Public Class COperacionesCliente
-        Inherits Object
-        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
-        
-        <System.NonSerializedAttribute()>  _
-        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private EtapaField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private FechaInicioField As Date
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ObservacionesField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private ProductoField As String
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private id_etapaField As Integer
-        
-        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
-        Private usuarioField As String
-        
-        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
-        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
-            Get
-                Return Me.extensionDataField
-            End Get
-            Set
-                Me.extensionDataField = value
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Etapa() As String
-            Get
-                Return Me.EtapaField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.EtapaField, value) <> true) Then
-                    Me.EtapaField = value
-                    Me.RaisePropertyChanged("Etapa")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property FechaInicio() As Date
-            Get
-                Return Me.FechaInicioField
-            End Get
-            Set
-                If (Me.FechaInicioField.Equals(value) <> true) Then
-                    Me.FechaInicioField = value
-                    Me.RaisePropertyChanged("FechaInicio")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Observaciones() As String
-            Get
-                Return Me.ObservacionesField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ObservacionesField, value) <> true) Then
-                    Me.ObservacionesField = value
-                    Me.RaisePropertyChanged("Observaciones")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property Producto() As String
-            Get
-                Return Me.ProductoField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.ProductoField, value) <> true) Then
-                    Me.ProductoField = value
-                    Me.RaisePropertyChanged("Producto")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property id_etapa() As Integer
-            Get
-                Return Me.id_etapaField
-            End Get
-            Set
-                If (Me.id_etapaField.Equals(value) <> true) Then
-                    Me.id_etapaField = value
-                    Me.RaisePropertyChanged("id_etapa")
-                End If
-            End Set
-        End Property
-        
-        <System.Runtime.Serialization.DataMemberAttribute()>  _
-        Public Property usuario() As String
-            Get
-                Return Me.usuarioField
-            End Get
-            Set
-                If (Object.ReferenceEquals(Me.usuarioField, value) <> true) Then
-                    Me.usuarioField = value
-                    Me.RaisePropertyChanged("usuario")
-                End If
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="Servicio.IService1")>  _
     Public Interface IService1
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
+        Function Elimina_tipocampaña(ByVal id_tipoCampaña As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
+        Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualiza_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Actualiza_tipocampañaResponse")>  _
         Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean
@@ -12439,6 +12445,12 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
+        Function Obtener_operacionesIdCliente(ByVal idCliente As Integer) As Servicio.COperacionesCliente()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
+        Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_etapasCliente", ReplyAction:="http://tempuri.org/IService1/Inserta_etapasClienteResponse")>  _
         Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean
@@ -12944,12 +12956,6 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Inserta_tipocampañaResponse")>  _
         Function Inserta_tipocampañaAsync(ByVal TipoCampaña As String) As System.Threading.Tasks.Task(Of Boolean)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
-        Function Elimina_tipocampaña(ByVal id_tipoCampaña As Integer) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_tipocampaña", ReplyAction:="http://tempuri.org/IService1/Elimina_tipocampañaResponse")>  _
-        Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean)
-        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_nombreClientesAdm", ReplyAction:="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse")>  _
         Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor()
         
@@ -13027,6 +13033,12 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking", ReplyAction:="http://tempuri.org/IService1/Actualizar_RankingResponse")>  _
         Function Actualizar_RankingAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking_Visitas", ReplyAction:="http://tempuri.org/IService1/Actualizar_Ranking_VisitasResponse")>  _
+        Function Actualizar_Ranking_Visitas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String, ByVal id_Visita As Integer, ByVal id_Impedimento As Integer) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Ranking_Visitas", ReplyAction:="http://tempuri.org/IService1/Actualizar_Ranking_VisitasResponse")>  _
+        Function Actualizar_Ranking_VisitasAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String, ByVal id_Visita As Integer, ByVal id_Impedimento As Integer) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/ValidaEmail", ReplyAction:="http://tempuri.org/IService1/ValidaEmailResponse")>  _
         Function ValidaEmail(ByVal Email As String) As Boolean
@@ -13523,12 +13535,6 @@ Namespace Servicio
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesResponse")>  _
         Function Obtener_operacionesAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperaciones())
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
-        Function Obtener_operacionesIdCliente(ByVal idCliente As Integer) As Servicio.COperacionesCliente()
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_operacionesIdCliente", ReplyAction:="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse")>  _
-        Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -13561,6 +13567,14 @@ Namespace Servicio
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
+        
+        Public Function Elimina_tipocampaña(ByVal id_tipoCampaña As Integer) As Boolean Implements Servicio.IService1.Elimina_tipocampaña
+            Return MyBase.Channel.Elimina_tipocampaña(id_tipoCampaña)
+        End Function
+        
+        Public Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_tipocampañaAsync
+            Return MyBase.Channel.Elimina_tipocampañaAsync(id_tipoCampaña)
+        End Function
         
         Public Function Actualiza_tipocampaña(ByVal id_tipoCampaña As Integer, ByVal TipoCampaña As String) As Boolean Implements Servicio.IService1.Actualiza_tipocampaña
             Return MyBase.Channel.Actualiza_tipocampaña(id_tipoCampaña, TipoCampaña)
@@ -13976,6 +13990,14 @@ Namespace Servicio
         
         Public Function Obtener_notificacionesAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.CNotifica()) Implements Servicio.IService1.Obtener_notificacionesAsync
             Return MyBase.Channel.Obtener_notificacionesAsync(idCliente)
+        End Function
+        
+        Public Function Obtener_operacionesIdCliente(ByVal idCliente As Integer) As Servicio.COperacionesCliente() Implements Servicio.IService1.Obtener_operacionesIdCliente
+            Return MyBase.Channel.Obtener_operacionesIdCliente(idCliente)
+        End Function
+        
+        Public Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente()) Implements Servicio.IService1.Obtener_operacionesIdClienteAsync
+            Return MyBase.Channel.Obtener_operacionesIdClienteAsync(idCliente)
         End Function
         
         Public Function Inserta_etapasCliente(ByVal nEtapa As Integer, ByVal Descripcion As String) As Boolean Implements Servicio.IService1.Inserta_etapasCliente
@@ -14650,14 +14672,6 @@ Namespace Servicio
             Return MyBase.Channel.Inserta_tipocampañaAsync(TipoCampaña)
         End Function
         
-        Public Function Elimina_tipocampaña(ByVal id_tipoCampaña As Integer) As Boolean Implements Servicio.IService1.Elimina_tipocampaña
-            Return MyBase.Channel.Elimina_tipocampaña(id_tipoCampaña)
-        End Function
-        
-        Public Function Elimina_tipocampañaAsync(ByVal id_tipoCampaña As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Elimina_tipocampañaAsync
-            Return MyBase.Channel.Elimina_tipocampañaAsync(id_tipoCampaña)
-        End Function
-        
         Public Function Obtener_nombreClientesAdm() As Servicio.CCLientesSupervisor() Implements Servicio.IService1.Obtener_nombreClientesAdm
             Return MyBase.Channel.Obtener_nombreClientesAdm
         End Function
@@ -14760,6 +14774,14 @@ Namespace Servicio
         
         Public Function Actualizar_RankingAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualizar_RankingAsync
             Return MyBase.Channel.Actualizar_RankingAsync(id_cliente, id_usuario, ranking_org, ranking_nvo)
+        End Function
+        
+        Public Function Actualizar_Ranking_Visitas(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String, ByVal id_Visita As Integer, ByVal id_Impedimento As Integer) As Boolean Implements Servicio.IService1.Actualizar_Ranking_Visitas
+            Return MyBase.Channel.Actualizar_Ranking_Visitas(id_cliente, id_usuario, ranking_org, ranking_nvo, id_Visita, id_Impedimento)
+        End Function
+        
+        Public Function Actualizar_Ranking_VisitasAsync(ByVal id_cliente As Integer, ByVal id_usuario As Integer, ByVal ranking_org As String, ByVal ranking_nvo As String, ByVal id_Visita As Integer, ByVal id_Impedimento As Integer) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualizar_Ranking_VisitasAsync
+            Return MyBase.Channel.Actualizar_Ranking_VisitasAsync(id_cliente, id_usuario, ranking_org, ranking_nvo, id_Visita, id_Impedimento)
         End Function
         
         Public Function ValidaEmail(ByVal Email As String) As Boolean Implements Servicio.IService1.ValidaEmail
@@ -15398,14 +15420,6 @@ Namespace Servicio
         
         Public Function Obtener_operacionesAsync(ByVal id_cliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperaciones()) Implements Servicio.IService1.Obtener_operacionesAsync
             Return MyBase.Channel.Obtener_operacionesAsync(id_cliente)
-        End Function
-        
-        Public Function Obtener_operacionesIdCliente(ByVal idCliente As Integer) As Servicio.COperacionesCliente() Implements Servicio.IService1.Obtener_operacionesIdCliente
-            Return MyBase.Channel.Obtener_operacionesIdCliente(idCliente)
-        End Function
-        
-        Public Function Obtener_operacionesIdClienteAsync(ByVal idCliente As Integer) As System.Threading.Tasks.Task(Of Servicio.COperacionesCliente()) Implements Servicio.IService1.Obtener_operacionesIdClienteAsync
-            Return MyBase.Channel.Obtener_operacionesIdClienteAsync(idCliente)
         End Function
     End Class
 End Namespace

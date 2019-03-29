@@ -107,72 +107,77 @@
             <asp:Literal ID="lbl_botonLlamar" runat="server"></asp:Literal>
         </div>
     </div>
-
-    <div class="portlet box green">
-        <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-file"></i>Ranking
-            </div>
-            <div class="tools">
-                <asp:Button ID="btnCambiar" runat="server" Text="Cambiar Ranking" CssClass="btn btn-sm yellow-haze" />
-            </div>
-        </div>
-        <div class="portlet-body">
-            <div class="row">
-                <div class="col-lg-12">
-                    <label><strong><i>Ranking Actual:</i></strong></label>
-                    &nbsp
+    <dx:ASPxCallbackPanel ID="cbPanelRanking" runat="server" Width="100%" ClientInstanceName="PanelRanking">
+        <PanelCollection>
+            <dx:PanelContent>
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file"></i>Ranking
+                        </div>
+                        <div class="tools">
+                            <asp:Label ID="idVisita" Text="" runat="server"></asp:Label>
+                            <%--  <asp:Button ID="btnCambiar" runat="server" Text="Cambiar Ranking" CssClass="btn btn-sm yellow-haze" Visible="false" />--%>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label><strong><i>Ranking Actual:</i></strong></label>
+                                &nbsp
                     <asp:Label ID="lbl_mensajeRanking" runat="server" Text="" Font-Size="16pt"></asp:Label>
-                </div>
-            </div>
-            <div id="Clasificacion" runat="server" class="row" style="margin-top: 15px">
-                <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-2">
-                        <label><strong>Clasificación:</strong></label>
-                        <dx:ASPxComboBox ID="cmBoxClasificacion" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                            </div>
+                        </div>
+                        <div id="Clasificacion" runat="server" class="row" style="margin-top: 15px">
+                            <div class="form-group" style="margin-top: 15px">
+                                <div class="col-lg-2">
+                                    <label><strong>Clasificación:</strong></label>
+                                    <dx:ASPxComboBox ID="cmBoxClasificacion" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-3">
+                                    <label><strong>Motivo:</strong></label>
+                                    <dx:ASPxComboBox ID="cmBoxMotivo" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Submotivo" runat="server" class="row" style="margin-top: 15px">
+                            <div class="form-group">
+                                <div class="col-lg-10">
+                                    <label><strong>Submotivo:</strong></label>
+                                    <dx:ASPxComboBox ID="cmBoxSubMotivo" runat="server" Width="100%" Theme="MaterialCompact"></dx:ASPxComboBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Controles" runat="server" class="row" style="margin-top: 15px">
+                            <div class="form-group" style="margin-top: 15px">
+                                <div class="col-lg-2">
+                                    <asp:Button ID="btnGuardar" runat="server" Width="100%" CssClass="btn btn-block btn-sm green" Text="Guardar" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <asp:Button ID="btnActualizar" runat="server" Width="100%" CssClass="btn btn-block btn-sm blue-dark" Text="Actualizar" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <asp:Button ID="btnCancelar" runat="server" Width="100%" CssClass="btn btn-block btn-sm yellow-casablanca" Text="Cancelar" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-3">
-                        <label><strong>Motivo:</strong></label>
-                        <dx:ASPxComboBox ID="cmBoxMotivo" runat="server" Width="100%" Theme="MaterialCompact" AutoPostBack="True"></dx:ASPxComboBox>
-                    </div>
-                </div>
-            </div>
-            <div id="Submotivo" runat="server" class="row" style="margin-top: 15px">
-                <div class="form-group">
-                    <div class="col-lg-10">
-                        <label><strong>Submotivo:</strong></label>
-                        <dx:ASPxComboBox ID="cmBoxSubMotivo" runat="server" Width="100%" Theme="MaterialCompact"></dx:ASPxComboBox>
-                    </div>
-                </div>
-            </div>
-            <div id="Controles" runat="server" class="row" style="margin-top: 15px">
-                <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-2">
-                        <asp:Button ID="btnGuardar" runat="server" Width="100%" CssClass="btn btn-block btn-sm green" Text="Guardar" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <asp:Button ID="btnActualizar" runat="server" Width="100%" CssClass="btn btn-block btn-sm blue-dark" Text="Actualizar" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-2">
-                        <asp:Button ID="btnCancelar" runat="server" Width="100%" CssClass="btn btn-block btn-sm yellow-casablanca" Text="Cancelar" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            </dx:PanelContent>
+        </PanelCollection>
+    </dx:ASPxCallbackPanel>
 
     <div class="portlet box yellow">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Etapa
             </div>
-
         </div>
         <div class="portlet-body">
             <br />
@@ -221,47 +226,47 @@
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" HorizontalScrollBarMode="Visible" />
                     <SettingsSearchPanel Visible="True" />
                     <Columns>
-                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="0" Width="100px">
+                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="1" Width="100px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="1" Width="100px">
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="2" Width="100px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="2" Width="150px">
+                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="3" Width="150px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Asesor" Caption="Asesor Cita" VisibleIndex="3" Width="300px">
+                        <dx:GridViewDataTextColumn FieldName="Asesor" Caption="Asesor Cita" VisibleIndex="4" Width="300px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="AsesorAsignado" Caption="Asesor Asignado" VisibleIndex="4" Width="300px">
+                        <dx:GridViewDataTextColumn FieldName="AsesorAsignado" Caption="Asesor Asignado" VisibleIndex="5" Width="300px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="LugarContacto" Caption="Lugar Contacto" VisibleIndex="5" Width="200px">
+                        <dx:GridViewDataTextColumn FieldName="LugarContacto" Caption="Lugar Contacto" VisibleIndex="6" Width="200px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="6" Width="200px">
+                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="7" Width="200px">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="7">
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="8">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="8">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="9">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="9">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="10">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Fecha Cita" VisibleIndex="10">
+                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Fecha Cita" VisibleIndex="11">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
@@ -279,44 +284,56 @@
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
+                    <ClientSideEvents CustomButtonClick="function(s, e) {
+                                                             PanelRanking.PerformCallback(s.GetFocusedRowIndex());
+                                                          }" />
+                    <SettingsBehavior AllowFocusedRow="True" />
                     <Columns>
-                        <dx:GridViewDataTextColumn FieldName="Id_Visita" VisibleIndex="0" Visible="false">
+                        <dx:GridViewCommandColumn VisibleIndex="0" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Ranking">
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="btnRanking" Text="Cambiar">
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="Id_Visita" VisibleIndex="1" Visible="false">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="2">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="3">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="3">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="4">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="4">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="5">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn FieldName="FechaVisita" Caption="Visita" VisibleIndex="5">
+                        <dx:GridViewDataDateColumn FieldName="FechaVisita" Caption="Visita" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="7">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="AgenteAsignado" VisibleIndex="7">
+                        <dx:GridViewDataTextColumn FieldName="AgenteAsignado" VisibleIndex="8">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="AgenteVisita" VisibleIndex="8">
+                        <dx:GridViewDataTextColumn FieldName="AgenteVisita" VisibleIndex="9">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="9">
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="10">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>

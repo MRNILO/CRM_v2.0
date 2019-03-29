@@ -502,30 +502,30 @@ Public Class CitaCteCaseta
 
                         If GE_Funciones.Cierre_Valida(Id_Cliente) Then
                             If Not GE_Funciones.Cierre_CitasVisitas(Id_Cliente) Then
-                                lbl_mensaje_Alert.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                                lbl_mensaje.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
                                 Exit Sub
                             End If
                         Else
-                            lbl_mensaje_Alert.Text = MostrarError("¡Existe una operacion de cierre previa!")
+                            lbl_mensaje.Text = MostrarError("¡Existe una operacion de cierre previa!")
                             Exit Sub
                         End If
                     Else
-                        lbl_mensaje_Alert.Text = MostrarError("Falta registrar visita")
+                        lbl_mensaje.Text = MostrarError("Falta registrar visita")
                         Exit Sub
                     End If
                 Else
-                    lbl_mensaje_Alert.Text = MostrarError("Falta registrar cita.")
+                    lbl_mensaje.Text = MostrarError("Falta registrar cita.")
                     Exit Sub
                 End If
             End If
 
             If BL.Avanza_EtapaCliente(Id_Cliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                lbl_mensaje_Alert.Text = MostrarExito("Etapa actualizada")
+                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
             Else
-                lbl_mensaje_Alert.Text = MostrarError("Error al cambiar etapa")
+                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
             End If
         Catch ex As Exception
-            lbl_mensaje_Alert.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
+            lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)
         End Try
     End Sub
 
