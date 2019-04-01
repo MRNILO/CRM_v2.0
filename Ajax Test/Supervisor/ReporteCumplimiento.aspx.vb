@@ -63,7 +63,8 @@ Public Class ReporteCumplimiento
 
         Using wb As New XLWorkbook
             wb.Worksheets.Add(DSG.Tables(0).Copy, "Totales_Cumplimiento")
-            wb.Worksheets.Add(DSG.Tables(1).Copy, "Detalle_Cumplimiento")
+            wb.Worksheets.Add(DSG.Tables(1).Copy, "Detalle_ProspectoCierre")
+            wb.Worksheets.Add(DSG.Tables(2).Copy, "Detalle_Visitas")
 
             wb.SaveAs(Ruta & "DatosCumplimiento" & XLS)
         End Using

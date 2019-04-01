@@ -707,6 +707,7 @@ Inicio:
         Dim DTB As New DataTable
         Dim DTC As New DataTable
         Dim DTD As New DataTable
+        Dim DTF As New DataTable
 
         Dim DSR As New DataSet
 
@@ -771,10 +772,17 @@ Inicio:
                 Next
             End If
         Next
-
         DTE.TableName = "DTB_CumplimientoProyectoDetalles"
+
+        Query = "EXEC [dbo].[Reporte_CumplimientoProyectoVisitas]
+		                       @FechaInicio = N'" & FechaInicial & "',
+	                           @FechaFin = N'" & FechaFin & "'"
+        DTF = GE_SQL.SQLGetTable(Query)
+        DTF.TableName = "DTF_ProyectosVisitas"
+
         DSR.Tables.Add(DTA)
         DSR.Tables.Add(DTE)
+        DSR.Tables.Add(DTF)
 
         Return DSR
     End Function
