@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Elimina_tipocampaña_InputMessage">
+    <wsdl:part name="parameters" element="tns:Elimina_tipocampaña" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Elimina_tipocampaña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Elimina_tipocampañaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Actualiza_tipocampaña_InputMessage">
     <wsdl:part name="parameters" element="tns:Actualiza_tipocampaña" />
   </wsdl:message>
@@ -318,6 +324,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_notificaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_notificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_operacionesIdCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_operacionesIdCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_operacionesIdCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_operacionesIdClienteResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Inserta_etapasCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:Inserta_etapasCliente" />
@@ -823,12 +835,6 @@
   <wsdl:message name="IService1_Inserta_tipocampaña_OutputMessage">
     <wsdl:part name="parameters" element="tns:Inserta_tipocampañaResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Elimina_tipocampaña_InputMessage">
-    <wsdl:part name="parameters" element="tns:Elimina_tipocampaña" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Elimina_tipocampaña_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Elimina_tipocampañaResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_Obtener_nombreClientesAdm_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_nombreClientesAdm" />
   </wsdl:message>
@@ -906,6 +912,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_Actualizar_Ranking_OutputMessage">
     <wsdl:part name="parameters" element="tns:Actualizar_RankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Actualizar_Ranking_Visitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_Ranking_Visitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Actualizar_Ranking_Visitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_Ranking_VisitasResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_ValidaEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:ValidaEmail" />
@@ -1333,13 +1345,11 @@
   <wsdl:message name="IService1_Obtener_operaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_operacionesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Obtener_operacionesIdCliente_InputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_operacionesIdCliente" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Obtener_operacionesIdCliente_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_operacionesIdClienteResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Elimina_tipocampaña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampaña" message="tns:IService1_Elimina_tipocampaña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampañaResponse" message="tns:IService1_Elimina_tipocampaña_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_tipocampaña">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_tipocampaña" message="tns:IService1_Actualiza_tipocampaña_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_tipocampañaResponse" message="tns:IService1_Actualiza_tipocampaña_OutputMessage" />
@@ -1547,6 +1557,10 @@
     <wsdl:operation name="Obtener_notificaciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_notificaciones" message="tns:IService1_Obtener_notificaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_notificacionesResponse" message="tns:IService1_Obtener_notificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_operacionesIdCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesIdCliente" message="tns:IService1_Obtener_operacionesIdCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse" message="tns:IService1_Obtener_operacionesIdCliente_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Inserta_etapasCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_etapasCliente" message="tns:IService1_Inserta_etapasCliente_InputMessage" />
@@ -1884,10 +1898,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampaña" message="tns:IService1_Inserta_tipocampaña_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampañaResponse" message="tns:IService1_Inserta_tipocampaña_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Elimina_tipocampaña">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampaña" message="tns:IService1_Elimina_tipocampaña_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampañaResponse" message="tns:IService1_Elimina_tipocampaña_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdm" message="tns:IService1_Obtener_nombreClientesAdm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse" message="tns:IService1_Obtener_nombreClientesAdm_OutputMessage" />
@@ -1939,6 +1949,10 @@
     <wsdl:operation name="Actualizar_Ranking">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualizar_Ranking" message="tns:IService1_Actualizar_Ranking_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualizar_RankingResponse" message="tns:IService1_Actualizar_Ranking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Ranking_Visitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualizar_Ranking_Visitas" message="tns:IService1_Actualizar_Ranking_Visitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualizar_Ranking_VisitasResponse" message="tns:IService1_Actualizar_Ranking_Visitas_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ValidaEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidaEmail" message="tns:IService1_ValidaEmail_InputMessage" />
@@ -2224,13 +2238,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operaciones" message="tns:IService1_Obtener_operaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesResponse" message="tns:IService1_Obtener_operaciones_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Obtener_operacionesIdCliente">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesIdCliente" message="tns:IService1_Obtener_operacionesIdCliente_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesIdClienteResponse" message="tns:IService1_Obtener_operacionesIdCliente_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Elimina_tipocampaña">
+      <soap:operation soapAction="http://tempuri.org/IService1/Elimina_tipocampaña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_tipocampaña">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_tipocampaña" style="document" />
       <wsdl:input>
@@ -2692,6 +2711,15 @@
     </wsdl:operation>
     <wsdl:operation name="Obtener_notificaciones">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_notificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_operacionesIdCliente">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_operacionesIdCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3455,15 +3483,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Elimina_tipocampaña">
-      <soap:operation soapAction="http://tempuri.org/IService1/Elimina_tipocampaña" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_nombreClientesAdm" style="document" />
       <wsdl:input>
@@ -3574,6 +3593,15 @@
     </wsdl:operation>
     <wsdl:operation name="Actualizar_Ranking">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualizar_Ranking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Ranking_Visitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/Actualizar_Ranking_Visitas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4213,15 +4241,6 @@
     </wsdl:operation>
     <wsdl:operation name="Obtener_operaciones">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_operaciones" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Obtener_operacionesIdCliente">
-      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_operacionesIdCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

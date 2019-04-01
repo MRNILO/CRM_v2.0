@@ -149,13 +149,22 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents lbl_botonLlamar As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control btnCambiar.
+    '''Control cbPanelRanking.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCambiar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents cbPanelRanking As Global.DevExpress.Web.ASPxCallbackPanel
+    
+    '''<summary>
+    '''Control idVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents idVisita As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control lbl_mensajeRanking.
@@ -318,6 +327,15 @@ Partial Public Class ClienteSupervisor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents grdViewVisitas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control btnRanking.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnRanking As Global.DevExpress.Web.GridViewCommandColumnCustomButton
     
     '''<summary>
     '''Control btn_LlamadasAExcel.

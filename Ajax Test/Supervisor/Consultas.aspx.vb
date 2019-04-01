@@ -137,6 +137,12 @@ Public Class Consultas
                 If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
                     Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
 
+                    With grdViewConsulta
+                        .Columns.Clear()
+                        .DataSource = Nothing
+                        .DataBind()
+                    End With
+
                     If Datos.Count > 0 Then
                         If Datos(0).Resultado = "Success" Then
                             With grdViewConsulta

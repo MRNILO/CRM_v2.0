@@ -12,6 +12,7 @@ Public Class ClienteSupervisor
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
+
         idCliente = Request.QueryString("idCliente")
         If idCliente = 0 Then
             Response.Redirect("/")
@@ -19,66 +20,20 @@ Public Class ClienteSupervisor
             lbl_generales.Text = Crea_generalesCliente()
             lbl_telefonos.Text = Crea_telefonos()
 
-            If Page.IsPostBack Then
 
+
+            If Not Page.IsPostBack Then
+                UI()
             Else
-                BuscaCitasActivas()
-                Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
 
-                If Datos(0).Numcte = 0 Then
-                    tb_numcte.Text = Datos(0).Numcte
-                    tb_numcte.Enabled = True
-                Else
-                    tb_numcte.Text = Datos(0).Numcte
-                    'CAMBIOS
-                    tb_numcte.Enabled = True
+                If String.IsNullOrEmpty(Session("Visita")) = False Then
+                    Clasificacion.Style.Add("display", "show")
+                    Submotivo.Style.Add("display", "show")
+                    Controles.Style.Add("display", "show")
                 End If
 
-                If Datos(0).FechaCierre = "1900-01-01" Then
-                    dtp_FechaCierre.Text = ""
-                    dtp_FechaCierre.Enabled = True
-                Else
-                    dtp_FechaCierre.Text = Datos(0).FechaCierre
-                    'CAMBIOS
-                    dtp_FechaCierre.Enabled = True
-                End If
-
-                If Datos(0).FechaEscritura = "1900-01-01" Then
-                    dtp_FechaEscrituracion.Text = ""
-                    dtp_FechaEscrituracion.Enabled = True
-                Else
-                    dtp_FechaEscrituracion.Text = Datos(0).FechaEscritura
-                    'CAMBIOS
-                    dtp_FechaEscrituracion.Enabled = True
-                End If
-
-                If Datos(0).FechaCancelacion = "1900-01-01" Then
-                    dtp_FechaCancelacion.Text = ""
-                    dtp_FechaCancelacion.Enabled = True
-                Else
-                    dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
-                    'CAMBIOS
-                    dtp_FechaCancelacion.Enabled = True
-                End If
-
-                Alimentar_TablaVisitas(idCliente)
-                Alimentar_ComboClasificacion()
-                Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
-                Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
-
-                GridLlamadas()
-                ComboEtapas(Datos)
-                ComboEmpresas()
-                comboProductos(Datos)
-                ComboUsuarios(Datos)
-                cmBoxUsuarios.Value = Datos(0).id_Usuario
-                cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
-                cmBoxEmpresa.Value = Datos(0).EmpresaEK
-
-                Ranking(Datos(0))
-                lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
-                tb_numcte.Text = Obtener_numcte().ToString
             End If
+
             GV_Llamadas.DataSource = Session("GridLlamadas")
             GV_Llamadas.DataBind()
 
@@ -94,22 +49,79 @@ Public Class ClienteSupervisor
     End Sub
 
 #Region "Metodos"
+
+    Public Sub UI()
+        BuscaCitasActivas()
+        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+
+        If Datos(0).Numcte = 0 Then
+            tb_numcte.Text = Datos(0).Numcte
+            tb_numcte.Enabled = True
+        Else
+            tb_numcte.Text = Datos(0).Numcte
+            'CAMBIOS
+            tb_numcte.Enabled = True
+        End If
+
+        If Datos(0).FechaCierre = "1900-01-01" Then
+            dtp_FechaCierre.Text = ""
+            dtp_FechaCierre.Enabled = True
+        Else
+            dtp_FechaCierre.Text = Datos(0).FechaCierre
+            'CAMBIOS
+            dtp_FechaCierre.Enabled = True
+        End If
+
+        If Datos(0).FechaEscritura = "1900-01-01" Then
+            dtp_FechaEscrituracion.Text = ""
+            dtp_FechaEscrituracion.Enabled = True
+        Else
+            dtp_FechaEscrituracion.Text = Datos(0).FechaEscritura
+            'CAMBIOS
+            dtp_FechaEscrituracion.Enabled = True
+        End If
+
+        If Datos(0).FechaCancelacion = "1900-01-01" Then
+            dtp_FechaCancelacion.Text = ""
+            dtp_FechaCancelacion.Enabled = True
+        Else
+            dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
+            'CAMBIOS
+            dtp_FechaCancelacion.Enabled = True
+        End If
+
+        Alimentar_TablaVisitas(idCliente)
+        Alimentar_ComboClasificacion()
+        Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+        Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+
+        GridLlamadas()
+        ComboEtapas(Datos)
+        ComboEmpresas()
+        comboProductos(Datos)
+        ComboUsuarios(Datos)
+        cmBoxUsuarios.Value = Datos(0).id_Usuario
+        cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
+        cmBoxEmpresa.Value = Datos(0).EmpresaEK
+
+        Ranking(Datos(0))
+        lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
+        tb_numcte.Text = Obtener_numcte().ToString
+    End Sub
+
+
     Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
         If Cliente.ranking = "P" Then
             Clasificacion.Style.Add("display", "show")
             Submotivo.Style.Add("display", "show")
             Controles.Style.Add("display", "show")
-
-            btnCambiar.Visible = False
             btnGuardar.Visible = True
             btnActualizar.Visible = False
-            btnCambiar.Visible = False
         Else
             Clasificacion.Style.Add("display", "none")
             Submotivo.Style.Add("display", "none")
             Controles.Style.Add("display", "none")
-
-            btnCambiar.Visible = True
+            'lbl_idVisita.Text = ""
         End If
     End Sub
 
@@ -118,8 +130,8 @@ Public Class ClienteSupervisor
         Dim telefonos = BL.Obtener_telefonoCliente(idCliente)
 
         For I = 0 To telefonos.Count - 1
-            HTML += "<a href=""tel:" + telefonos(I).Telefono + """>" + telefonos(I).Telefono + If(telefonos(I).Principal = 1, "(PRINCIPAL)", "") + "</a>"
-            HTML += "<br />"
+            HTML += "<a href="" tel:" + telefonos(I).Telefono + """>" + telefonos(I).Telefono + If(telefonos(I).Principal = 1, "(PRINCIPAL)", "") + "</a>"
+            HTML += "<br/>"
         Next
         Return HTML
     End Function
@@ -128,29 +140,29 @@ Public Class ClienteSupervisor
         Dim HTML As String = ""
 
         Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
-        HTML += "<br />"
+        HTML += "<img src="" data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
+        HTML += "<br/>"
         HTML += "<strong>Apellido Materno </strong>" + Datos(0).ApellidoMaterno
-        HTML += "<br />"
+        HTML += "<br/>"
         HTML += "<strong>Apellido Paterno </strong>" + Datos(0).ApellidoPaterno
-        HTML += "<br />"
+        HTML += "<br/>"
         HTML += "<strong>Nombre(s) </strong>" + Datos(0).Nombre
-        HTML += "<br />"
-        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
-        HTML += "<br />"
+        HTML += "<br/>"
+        HTML += "<strong>Email: </strong><a href="" mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
+        HTML += "<br/>"
         HTML += "<strong>Empresa </strong>" + Datos(0).Empresa
-        HTML += "<br />"
+        HTML += "<br/>"
         HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
-        HTML += "<br />"
+        HTML += "<br/>"
         HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
-        HTML += "<br />"
+        HTML += "<br/>"
         HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
-        HTML += "<br />"
+        HTML += "<br/>"
+        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br/>"
+        HTML += "<br/>"
         HTML += "<strong>Tarjeta de Presentación</strong>"
-        HTML += "<br />"
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
+        HTML += "<br/>"
+        HTML += "<img src="" data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
 
         Return HTML
     End Function
@@ -255,6 +267,8 @@ Public Class ClienteSupervisor
 
             .SelectedIndex = 0
         End With
+
+
     End Sub
 
     Public Sub Alimentar_ComboSubmotivos(ByVal Clasificacion As String, ByVal IdMotivo As Integer)
@@ -438,20 +452,10 @@ Public Class ClienteSupervisor
         GV_exporterLlamadas.WriteXlsxToResponse()
     End Sub
 
-    Protected Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
-        Clasificacion.Style.Add("display", "show")
-        Submotivo.Style.Add("display", "show")
-        Controles.Style.Add("display", "show")
-
-        btnGuardar.Visible = False
-        btnActualizar.Visible = True
-        btnCancelar.Visible = True
-    End Sub
-
     Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim Ranking_Nuevo As String = cmBoxClasificacion.SelectedItem.Value
 
-        If BL.Actualizar_Ranking(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo) Then
+        If BL.Actualizar_Ranking_Visitas(idCliente, Usuario.id_usuario, Session("Ranking_Org"), Ranking_Nuevo, Session("Visita"), cmBoxSubMotivo.Value) Then
             Response.Redirect("../Supervisor/ClienteSupervisor.aspx?idCliente=" + idCliente.ToString, False)
         Else
             lbl_mensaje.Text += MostrarError("¡Ocurrio un error al actualizar el Ranking!")
@@ -462,8 +466,6 @@ Public Class ClienteSupervisor
         Clasificacion.Style.Add("display", "none")
         Submotivo.Style.Add("display", "none")
         Controles.Style.Add("display", "none")
-
-        btnCambiar.Visible = True
         btnGuardar.Visible = False
         btnActualizar.Visible = False
         btnCancelar.Visible = False
@@ -548,6 +550,19 @@ Public Class ClienteSupervisor
     Sub CargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(idCliente)
         GV_citas.DataBind()
+    End Sub
+
+    Protected Sub cbPanelRanking_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelRanking.Callback
+        Session("Visita") = grdViewVisitas.GetRowValues(e.Parameter, "Id_Visita")
+
+        Clasificacion.Style.Add("display", "show")
+        Submotivo.Style.Add("display", "show")
+        Controles.Style.Add("display", "show")
+
+        btnGuardar.Visible = False
+        btnActualizar.Visible = True
+        btnCancelar.Visible = True
+
     End Sub
 #End Region
 End Class

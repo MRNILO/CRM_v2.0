@@ -95,6 +95,24 @@ Partial Public Class UsuarioSupervisor
     Protected WithEvents Detalles As Global.DevExpress.Web.GridViewCommandColumnCustomButton
     
     '''<summary>
+    '''Control ScriptManager1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    
+    '''<summary>
+    '''Control UpdatePanel0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdatePanel0 As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
     '''Control lblId_Usuario.
     '''</summary>
     '''<remarks>

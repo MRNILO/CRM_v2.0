@@ -63,86 +63,90 @@
                 </div>
             </div>
         </div>
-
-        <div class="portlet box green">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-file"></i>Busqueda
-                </div>
-                <div class="tools">
-                </div>
+    </div>
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Busqueda
             </div>
-            <div class="portlet-body">
-                <div class="table-responsive">
-                    <dx:ASPxGridView ID="grdView_BusquedaUsuarios" runat="server" Width="100%" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns="False" Font-Size="9pt" KeyFieldName="ID"
-                        ClientInstanceName="BusquedaUsuarios" EnableCallBacks="false">
-                        <SettingsAdaptivity AdaptivityMode="HideDataCells">
-                        </SettingsAdaptivity>
-                        <SettingsPager Mode="ShowAllRecords">
-                        </SettingsPager>
-                        <Settings VerticalScrollableHeight="450" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
-                        <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
-                        <Columns>
-                            <dx:GridViewCommandColumn ButtonRenderMode="Image" ButtonType="Image" Caption="Detalles" VisibleIndex="0" Name="Detalles">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Center"></CellStyle>
-                                <CustomButtons>
-                                    <dx:GridViewCommandColumnCustomButton ID="Detalles">
-                                        <Image IconID="mail_contact_16x16office2013" ToolTip="Detalle">
-                                        </Image>
-                                    </dx:GridViewCommandColumnCustomButton>
-                                </CustomButtons>
-                            </dx:GridViewCommandColumn>
-                            <dx:GridViewDataTextColumn FieldName="ID" Caption="ID CRM" VisibleIndex="1" Width="100px">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Center"></CellStyle>
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="UsuarioNombre" VisibleIndex="2" Width="300px">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Left"></CellStyle>
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="5" Width="150px">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Left"></CellStyle>
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="Usuario" Caption="Usuario" VisibleIndex="4" Width="100px">
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Left"></CellStyle>
-                            </dx:GridViewDataTextColumn>
-                            <dx:GridViewDataTextColumn FieldName="fechaCreacion" Caption="Fecha Registro" VisibleIndex="6" Width="150px">
-                                <PropertiesTextEdit DisplayFormatString="yyyy-MM-dd">
-                                </PropertiesTextEdit>
-                                <HeaderStyle HorizontalAlign="Center" />
-                                <CellStyle HorizontalAlign="Center"></CellStyle>
-                            </dx:GridViewDataTextColumn>
-                        </Columns>
-                    </dx:ASPxGridView>
-                </div>
+            <div class="tools">
             </div>
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-file"></i>Asignar Supervisor
-                </div>
-                <div class="tools">
-                </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-responsive">
+                <dx:ASPxGridView ID="grdView_BusquedaUsuarios" runat="server" Width="100%" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns="False" Font-Size="9pt" KeyFieldName="ID"
+                    ClientInstanceName="BusquedaUsuarios" EnableCallBacks="false">
+                    <SettingsAdaptivity AdaptivityMode="HideDataCells">
+                    </SettingsAdaptivity>
+                    <SettingsPager Mode="ShowAllRecords">
+                    </SettingsPager>
+                    <Settings VerticalScrollableHeight="450" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
+                    <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+                    <Columns>
+                        <dx:GridViewCommandColumn ButtonRenderMode="Image" ButtonType="Image" Caption="Detalles" VisibleIndex="0" Name="Detalles">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="Detalles">
+                                    <Image IconID="mail_contact_16x16office2013" ToolTip="Detalle">
+                                    </Image>
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" Caption="ID CRM" VisibleIndex="1" Width="100px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="UsuarioNombre" VisibleIndex="2" Width="300px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="5" Width="150px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario" Caption="Usuario" VisibleIndex="4" Width="100px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="fechaCreacion" Caption="Fecha Registro" VisibleIndex="6" Width="150px">
+                            <PropertiesTextEdit DisplayFormatString="yyyy-MM-dd">
+                            </PropertiesTextEdit>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
             </div>
-            <div class="portlet-body">
-                <div class="row">
-                    <div class="col-lg-1">
-                        <asp:Label ID="lblId_Usuario" runat="server" Text=""></asp:Label>
-                    </div>
-                    <div class="col-lg-3">
-                        <asp:Label ID="lblNombre_usuario" runat="server" Text=""></asp:Label>
-                    </div>
-                    <div class="col-lg-2">
-                        <dx:ASPxComboBox ID="cmBoxSupervisores" runat="server" AutoPostBack="true"></dx:ASPxComboBox>
-                    </div>
-                    <div class="col-lg-2">
-                        <asp:Button ID="btnAsignar" runat="server" Text="Asignar" CssClass="btn btn-sm btn-block blue" Enabled="false" />
-                    </div>
-                </div>
-
+        </div>
+    </div>
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Asignar Supervisor
             </div>
+        </div>
+        <div class="portlet-body">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel0" runat="server">
+                <ContentTemplate>
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <asp:Label ID="lblId_Usuario" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="col-lg-3">
+                            <asp:Label ID="lblNombre_usuario" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="col-lg-2">
+                            <dx:ASPxComboBox ID="cmBoxSupervisores" runat="server" AutoPostBack="true"></dx:ASPxComboBox>
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Button ID="btnAsignar" runat="server" Text="Asignar" CssClass="btn btn-sm btn-block blue" Enabled="false" />
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
 </asp:Content>
