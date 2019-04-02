@@ -11,6 +11,7 @@ Public Class Usuarios
         If Not IsPostBack() Then
             ObtenerDatosUsuarios()
         End If
+        lbl_mensaje.Text = ""
     End Sub
     Private Sub GV_Usuarios_DataBinding(sender As Object, e As EventArgs) Handles GV_Usuarios.DataBinding
         Dim ActiveBinding As Boolean = Session("ActiveBinding")
@@ -107,7 +108,7 @@ Public Class Usuarios
                     DTA.Rows(Index).Item("Email") = e.NewValues("Email")
                     DTA.Rows(Index).Item("activo") = e.NewValues("activo")
                     DTA.Rows(Index).Item("Contrasena") = e.NewValues("contraseña")
-                    DTA.Rows(Index).Item("Usuario") = e.NewValues("usuario")
+                    DTA.Rows(Index).Item("Usuario") = e.NewValues("Usuario")
                     DTA.Rows(Index).Item("Perfil") = e.NewValues("Perfil")
                     DTA.Rows(Index).Item("PerfilDes") = BuscarDesPerfil(e.NewValues("Perfil"))
 
