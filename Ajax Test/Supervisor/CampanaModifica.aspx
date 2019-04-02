@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="NuevaCampana.aspx.vb" Inherits="Ajax_Test.NuevaCampana" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="CampanaModifica.aspx.vb" Inherits="Ajax_Test.CampanaModifica" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
@@ -26,13 +26,10 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="portlet box purple">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-file"></i>Nueva Campaña
-            </div>
-            <div class="tools">
+                <i class="fa fa-file"></i>Datos Campaña
             </div>
         </div>
         <div class="portlet-body">
@@ -42,15 +39,20 @@
                         <label>Nombre Campaña</label>
                         <asp:TextBox ID="tb_NombreCampaña" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <label>Tipo Campaña</label>
                         <br />
                         <asp:DropDownList ID="cb_tiposCampañas" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <label>Medio Campaña</label>
                         <br />
                         <asp:DropDownList ID="cb_MedioCampañas" runat="server" CssClass="form-control"></asp:DropDownList>
+                    </div>
+                    <div class="col-lg-2">
+                        <label>Activa</label>
+                        <br />
+                        <asp:CheckBox ID="chkActivo" runat="server" />
                     </div>
                 </div>
             </div>
@@ -85,5 +87,8 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
+    <script type="text/javascript">
+</script>
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

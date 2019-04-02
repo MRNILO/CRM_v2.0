@@ -50,19 +50,29 @@
             <div class="table-responsive">
                 <dx:ASPxGridView ID="GV_campañas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False">
                     <Columns>
-                        <dx:GridViewDataTextColumn Caption="ID" FieldName="id_campaña" VisibleIndex="0">
+                        <dx:GridViewCommandColumn ButtonRenderMode="Image" ButtonType="Image" Caption="Detalles" VisibleIndex="0" Name="Detalles">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="Detalles">
+                                    <Image IconID="mail_contact_16x16office2013" ToolTip="Detalle">
+                                    </Image>
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn Caption="ID" FieldName="id_campaña" VisibleIndex="1">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Nombre campaña" FieldName="campañaNombre" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn Caption="Nombre campaña" FieldName="campañaNombre" VisibleIndex="2">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="tipo Campaña" FieldName="tipoCampaña" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="tipo Campaña" FieldName="tipoCampaña" VisibleIndex="3">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="fechaCreacion" FieldName="fechaCreacion" VisibleIndex="3">
+                        <dx:GridViewDataDateColumn Caption="fechaCreacion" FieldName="fechaCreacion" VisibleIndex="4">
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn Caption="fechaInicio" FieldName="fechaInicio" VisibleIndex="4">
+                        <dx:GridViewDataDateColumn Caption="fechaInicio" FieldName="fechaInicio" VisibleIndex="5">
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn Caption="fechaFinal" FieldName="fechaFinal" VisibleIndex="5">
+                        <dx:GridViewDataDateColumn Caption="fechaFinal" FieldName="fechaFinal" VisibleIndex="6">
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="7">
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>

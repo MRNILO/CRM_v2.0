@@ -30,4 +30,13 @@ Partial Public Class campanas
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_campañas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control Detalles.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Detalles As Global.DevExpress.Web.GridViewCommandColumnCustomButton
 End Class

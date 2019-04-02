@@ -337,6 +337,36 @@ Public Class Funciones
         ObtenerCampanas = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Public Function ObtenerCampanasId(ByVal Id_Campana As Integer) As DataTable
+        Dim Query As String = "SELECT  id_campaña, campañaNombre,id_tipoCampaña, fechaCreacion,
+                                       Observaciones, Activa, FechaInic, FechaFin, Id_Medio 
+                               FROM campañas WHERE id_campaña= " & Id_Campana
+
+        ObtenerCampanasId = GE_SQL.SQLGetTable(Query)
+    End Function
+
+
+    Public Function Actualiza_Campanas(ByVal id_campaña As Integer, ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal Activa As Integer,
+                                       ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
+
+        Dim Query As String = " EXEC [dbo].[Actualiza_Campanas]
+                                   @Pid_campaña = N'" & id_campaña & "',
+                                   @PcampañaNombre = N'" & campañaNombre & "',
+                                   @Pid_tipoCampaña = N'" & id_tipoCampaña & "',
+                                   @Pid_MedioCampaña = N'" & id_MedioCampaña & "',
+                                   @PActiva = N'" & Activa & "',
+                                   @PfechaInicio = N'" & fechaInicio & "',
+                                   @PfechaFinal = N'" & fechaFinal & "',
+                                   @PObservaciones = N'" & Observaciones & "'"
+
+        If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
     Public Function Obtener_Proyectos() As DataTable
         Dim Query As String = "SELECT DISTINCT(abrev_fracc) Proyecto, Fraccionamiento
                                FROM productos

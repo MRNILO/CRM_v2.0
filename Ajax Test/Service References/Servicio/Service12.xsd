@@ -2642,6 +2642,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="id_tipoCampaña" type="xs:int" />
+        <xs:element minOccurs="0" name="id_MedioCampaña" type="xs:int" />
         <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
         <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
         <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />

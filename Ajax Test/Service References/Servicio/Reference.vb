@@ -13201,10 +13201,10 @@ Namespace Servicio
         Function Obtener_combo_campañasAsync() As System.Threading.Tasks.Task(Of Servicio.CComboCampañas())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>  _
-        Function Inserta_campañas(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
+        Function Inserta_campañas(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Inserta_campañas", ReplyAction:="http://tempuri.org/IService1/Inserta_campañasResponse")>  _
-        Function Inserta_campañasAsync(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
+        Function Inserta_campañasAsync(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Elimina_campañas", ReplyAction:="http://tempuri.org/IService1/Elimina_campañasResponse")>  _
         Function Elimina_campañas(ByVal id_campaña As Integer) As Boolean
@@ -14986,12 +14986,12 @@ Namespace Servicio
             Return MyBase.Channel.Obtener_combo_campañasAsync
         End Function
         
-        Public Function Inserta_campañas(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean Implements Servicio.IService1.Inserta_campañas
-            Return MyBase.Channel.Inserta_campañas(campañaNombre, id_tipoCampaña, fechaInicio, fechaFinal, Observaciones)
+        Public Function Inserta_campañas(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean Implements Servicio.IService1.Inserta_campañas
+            Return MyBase.Channel.Inserta_campañas(campañaNombre, id_tipoCampaña, id_MedioCampaña, fechaInicio, fechaFinal, Observaciones)
         End Function
         
-        Public Function Inserta_campañasAsync(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_campañasAsync
-            Return MyBase.Channel.Inserta_campañasAsync(campañaNombre, id_tipoCampaña, fechaInicio, fechaFinal, Observaciones)
+        Public Function Inserta_campañasAsync(ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Inserta_campañasAsync
+            Return MyBase.Channel.Inserta_campañasAsync(campañaNombre, id_tipoCampaña, id_MedioCampaña, fechaInicio, fechaFinal, Observaciones)
         End Function
         
         Public Function Elimina_campañas(ByVal id_campaña As Integer) As Boolean Implements Servicio.IService1.Elimina_campañas

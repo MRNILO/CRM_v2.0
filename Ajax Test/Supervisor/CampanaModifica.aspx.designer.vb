@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class NuevaCampana
+Partial Public Class CampanaModifica
     
     '''<summary>
     '''Control lbl_nombre.
@@ -48,6 +48,15 @@ Partial Public Class NuevaCampana
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cb_MedioCampañas As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control chkActivo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkActivo As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
     '''Control dtp_inicio.

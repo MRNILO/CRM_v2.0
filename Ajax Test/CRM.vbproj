@@ -7946,6 +7946,7 @@
     <Content Include="Supervisor\BusquedaClientes.aspx" />
     <Content Include="Supervisor\cambiaProducto.aspx" />
     <Content Include="Supervisor\CambiaUsuario.aspx" />
+    <Content Include="Supervisor\CampanaModifica.aspx" />
     <Content Include="Supervisor\campanas.aspx" />
     <Content Include="Supervisor\categoriasProductos.aspx" />
     <Content Include="Supervisor\ClienteSupervisor.aspx" />
@@ -8530,6 +8531,13 @@
     </Compile>
     <Compile Include="Supervisor\CambiaUsuario.aspx.vb">
       <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\CampanaModifica.aspx.designer.vb">
+      <DependentUpon>CampanaModifica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\CampanaModifica.aspx.vb">
+      <DependentUpon>CampanaModifica.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\campanas.aspx.designer.vb">
