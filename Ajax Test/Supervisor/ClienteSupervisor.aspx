@@ -117,7 +117,6 @@
                         </div>
                         <div class="tools">
                             <asp:Label ID="idVisita" Text="" runat="server"></asp:Label>
-                            <%--  <asp:Button ID="btnCambiar" runat="server" Text="Cambiar Ranking" CssClass="btn btn-sm yellow-haze" Visible="false" />--%>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -125,7 +124,7 @@
                             <div class="col-lg-12">
                                 <label><strong><i>Ranking Actual:</i></strong></label>
                                 &nbsp
-                    <asp:Label ID="lbl_mensajeRanking" runat="server" Text="" Font-Size="16pt"></asp:Label>
+                                <asp:Label ID="lbl_mensajeRanking" runat="server" Text="" Font-Size="16pt"></asp:Label>
                             </div>
                         </div>
                         <div id="Clasificacion" runat="server" class="row" style="margin-top: 15px">
@@ -286,6 +285,7 @@
                 <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
                     <ClientSideEvents CustomButtonClick="function(s, e) {
                                                              PanelRanking.PerformCallback(s.GetFocusedRowIndex());
+                                                             window.scrollTo(0, 800);
                                                           }" />
                     <SettingsBehavior AllowFocusedRow="True" />
                     <Columns>
