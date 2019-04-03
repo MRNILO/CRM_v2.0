@@ -43,11 +43,16 @@ Public Class Consultas
         RangoFechas.Style.Add("display", "none")
         dtp_inicio.Text = ""
         dtp_Fin.Text = ""
+        lbl_Total.Text = ""
         lbl_mensaje.Text = ""
 
+        LimpiaGrid()
+    End Sub
+    Sub LimpiaGrid()
+        lbl_Total.Text = ""
         With grdViewConsulta
             .Columns.Clear()
-            .DataSource = Nothing
+            .Dispose()
             .DataBind()
         End With
     End Sub
@@ -112,6 +117,7 @@ Public Class Consultas
         grdViewConsulta.DataSource = ViewState("ConjuntoDatos")
     End Sub
     Protected Sub btnAbrirArchivo_Click(sender As Object, e As EventArgs) Handles btnAbrirArchivo.Click
+        LimpiaGrid()
         ObtenerDatos(cmBoxArchivos.SelectedItem.Value)
         lbl_mensaje.Text = ""
     End Sub
@@ -137,22 +143,18 @@ Public Class Consultas
                 If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
                     Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
 
-                    With grdViewConsulta
-                        .Columns.Clear()
-                        .DataSource = Nothing
-                        .DataBind()
-                    End With
+                    LimpiaGrid()
 
                     If Datos.Count > 0 Then
+                        ViewState("ConjuntoDatos") = Datos(0).DT
                         If Datos(0).Resultado = "Success" Then
                             With grdViewConsulta
                                 .AutoGenerateColumns = True
-                                .DataSource = Datos(0).DT
+                                .DataSource = ViewState("ConjuntoDatos")
                                 .DataBind()
                             End With
-
-                            ViewState("ConjuntoDatos") = Datos(0).DT
                             lbl_mensaje.Text = ""
+                            lbl_Total.Text = "Total registros: " & Datos(0).DT.Rows.Count
                         Else
                             lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio! \n" & Datos(0).Resultado)
                         End If
