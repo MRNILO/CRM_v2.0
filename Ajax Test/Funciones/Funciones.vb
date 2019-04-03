@@ -252,7 +252,7 @@ Public Class Funciones
 		                            @Nombre = N'" & Usuario.nombreUsuario & "',
 		                            @ApellidoPaterno = N'" & Usuario.apellidoPaterno & "',
 		                            @ApellidoMaterno = N'" & Usuario.apellidoMaterno & "',
-                                    @IdCrm = N'" & Usuario.Usuario & "'"
+                                    @IdCrm = N'" & Usuario.IdUsuario & "'"
 
         Dim DTA As New DataTable
         Dim DTB As New DataTable
