@@ -4,7 +4,6 @@
     Dim Usuario As New Servicio.CUsuarios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-        ''GV_clientes.DataBind()
         ObtenerDatosClientes()
     End Sub
 
@@ -33,8 +32,6 @@
             ROWA("Descripcion") = ClientesSupervisor(i).Descripcion
             ROWA("Usuario") = ClientesSupervisor(i).Usuario
             ROWA("Observaciones") = ClientesSupervisor(i).Observaciones
-            'ROWA("fotografia") = ClientesSupervisor(i).fotografia
-            '  ROWA("fotoTpresentacion") = ClientesSupervisor(i).fotoTpresentacion
             DTA.Rows.Add(ROWA)
         Next
         ViewState("ClienteSupervisor") = DTA
@@ -48,11 +45,7 @@
     End Sub
 
     Protected Sub btn_excel_Click(sender As Object, e As EventArgs) Handles btn_excel.Click
-        'GV_clientes.Columns("fotografia").Visible = False
-        ' GV_clientes.Columns("TPresentación").Visible = False
         GV_exporter.WriteXlsxToResponse()
-        ' GV_clientes.Columns("fotografia").Visible = True
-        ' GV_clientes.Columns("TPresentación").Visible = True
     End Sub
 
 
@@ -64,16 +57,13 @@
             If Usuario.Nivel >= NivelSeccion Then
                 If String.IsNullOrEmpty(Request.QueryString("ReturnUrl")) Then
                     Session("Usuario") = Usuario
-                    'Response.Redirect("~/", False)
                 Else
                     Session("Usuario") = Usuario
                     RedirigirSegunNivel(Usuario.Nivel)
                 End If
             Else
-                'No valido
                 Session("Usuario") = Usuario
                 RedirigirSegunNivel(Usuario.Nivel)
-                'lbl_error.Text = MostrarError("Usuario o/y contraseña equivocados")
             End If
         Else
             Session.Clear()
