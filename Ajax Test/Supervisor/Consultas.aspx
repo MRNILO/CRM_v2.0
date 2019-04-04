@@ -88,7 +88,6 @@
                 </SettingsPager>
                 <Settings VerticalScrollableHeight="350" VerticalScrollBarMode="Visible" />
             </dx:ASPxGridView>
-
         </div>
     </div>
 </asp:Content>

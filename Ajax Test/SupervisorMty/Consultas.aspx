@@ -79,9 +79,14 @@
             </div>
         </div>
         <div class="portlet-body">
-            <dx:ASPxGridView ID="grdViewConsulta" Width="100%" runat="server" Theme="Moderno"
+            <div class="col-lg-5" style="margin-top: 10px">
+                <asp:Label ID="lbl_Total" CssClass="font-dark " runat="server" Font-Bold="true" Font-Size="Medium"></asp:Label>
+            </div>
+            <dx:ASPxGridView ID="grdViewConsulta" Width="100%" runat="server" Theme="MaterialCompact"
                 Font-Size="9pt" Font-Names="Microsoft Sans Serif">
-                <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Auto" ShowFooter="True" />
+                <SettingsPager Mode="ShowAllRecords" Visible="False">
+                </SettingsPager>
+                <Settings VerticalScrollableHeight="350" VerticalScrollBarMode="Visible" />
             </dx:ASPxGridView>
         </div>
     </div>

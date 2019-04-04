@@ -113,6 +113,15 @@ Partial Public Class ConsultasMty
     Protected WithEvents btnExcel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Control lbl_Total.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Total As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control grdViewConsulta.
     '''</summary>
     '''<remarks>
