@@ -411,7 +411,7 @@ Public Class Funciones
         Obtener_CitasCliente = GE_SQL.SQLGetTable(Query)
     End Function
 
-    Private Function Obtener_CitasActivasCliente(ByVal IdCliente As Integer) As DataTable
+    Public Function Obtener_CitasActivasCliente(ByVal IdCliente As Integer) As DataTable
         Dim Query As String = "SELECT CCL.Id_Cita, CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto, 
 	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status
                                FROM Clientes CL
@@ -489,6 +489,54 @@ Public Class Funciones
 
         Obtener_ListadoCitasAsignadas = GE_SQL.SQLGetTable(Query)
     End Function
+
+    Public Function Valida_PrimerCita(ByVal NivelUsuario As Integer, ByVal idCliente As Integer) As Boolean
+        Dim dta_CitasCliente As DataTable = New DataTable
+        Dim dta_TipoUsuario As DataTable = New DataTable
+        Dim UsuarioRegistroCliente As Integer = 0
+        dta_CitasCliente = Obtener_CitasCliente(idCliente)
+
+        If dta_CitasCliente.Rows.Count > 0 Then
+            Return True
+        Else
+            UsuarioRegistroCliente = Obtener_TipoUsuarioRegCliente(idCliente)
+            If UsuarioRegistroCliente = 4 Then
+                If NivelUsuario = UsuarioRegistroCliente Then '' valida que el usuario que desea registrar la primer cita sea un call center
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                Return True
+            End If
+        End If
+    End Function
+
+    Public Function Obtener_TipoUsuarioRegCliente(ByVal IdCliente As Integer) As Integer
+        ' obtiene el tipo de ususario que registro por primera ves al cliente
+        ' si el cliente tiene un  fecha de creacion menor de 2019-03-19(fecha creacion de esa tabla)
+        ' se toma en cuenta el  campo de usuario original del  registro del cliente
+        ' no existe otra forma de saber que tipo de usuario dio de alta a ese registro
+
+
+        Dim Query As String = "SELECT  fechaCreacion FROM  clientes WHERE id_cliente=" & IdCliente
+        If CDate(GE_SQL.SQLGetTable(Query).Rows(0).Item(0)) < CDate("2019-03-19") Then
+            Query = "SELECT  usuarios.id_tipoUsuario
+                    FROM  clientes 
+                    INNER JOIN  usuarios ON usuarios.id_usuario= clientes.id_usuarioOriginal
+                    WHERE clientes.id_cliente =" & IdCliente
+        Else
+            Query = "SELECT usuarios.id_tipoUsuario
+                     FROM  Clientes_RegistroLog
+                     INNER JOIN usuarios ON usuarios.id_usuario= Clientes_RegistroLog.Id_Usuario
+                     INNER JOIN TipoUsuarios ON TipoUsuarios.id_tipoUsuario= usuarios.id_tipoUsuario
+                     WHERE Id_Cliente =" & IdCliente
+        End If
+        Obtener_TipoUsuarioRegCliente = GE_SQL.SQLGetDataDbl(Query)
+
+    End Function
+
+
 #End Region
 
 #Region "Visitas"
