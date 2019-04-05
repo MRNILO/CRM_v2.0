@@ -466,7 +466,7 @@ Public Class ClienteSupervisor
                         NumeroClienteEk2 = Convert.ToInt32(tb_numcte2.Text)
                         If dtp_FechaRecuperacion.Text = "" Then
                             dtp_FechaRecuperacion.Focus()
-                            lbl_mensaje.Text = MostrarError("¡El campo fecha de recueparción no debe ir vacio!")
+                            lbl_mensaje.Text = MostrarError("¡El campo fecha de recuperación no debe ir vacio!")
                             Exit Sub
                         End If
                     Else
