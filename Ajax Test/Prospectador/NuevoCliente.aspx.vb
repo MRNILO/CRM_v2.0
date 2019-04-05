@@ -7,6 +7,46 @@ Public Class NuevoCliente_Prospectador
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
+
+        If Not Page.IsPostBack Then
+            AlimentarComboCampanas()
+        Else
+        End If
+    End Sub
+    Private Sub AlimentarComboCampanas()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.ObtenerCampanasTipoCampana()
+
+        DTB.Columns.AddRange({New DataColumn("id_Campana"), New DataColumn("Campana")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_Campana") = 0
+                RowB("Campana") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_Campana") = Row("id_campaña")
+            RowB("Campana") = Row("campañaNombre") & "  | " & Row("TipoCampaña")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
+        With cb_campañas
+            .DataSource = DTB
+            .DataBind()
+            .DataValueField = "id_Campana"
+            .DataTextField = "Campana"
+        End With
     End Sub
 
     Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click

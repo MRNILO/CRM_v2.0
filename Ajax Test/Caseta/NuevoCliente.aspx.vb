@@ -10,6 +10,7 @@ Public Class NuevoCliente2
 
         If Not IsPostBack() Then
             UI()
+            AlimentarComboCampanas()
         End If
     End Sub
 #Region "Metodos"
@@ -17,6 +18,41 @@ Public Class NuevoCliente2
         Dim NSSAleatorio As String = GE_Funciones.Generar_NSSAleatorio()
         tb_email.Text = "corrigeme@micliente" & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
         tb_nss.Text = NSSAleatorio & NSSAleatorio
+    End Sub
+    Private Sub AlimentarComboCampanas()
+        Dim Aux As Integer = 0
+
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.ObtenerCampanasTipoCampana()
+
+        DTB.Columns.AddRange({New DataColumn("id_Campana"), New DataColumn("Campana")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_Campana") = 0
+                RowB("Campana") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_Campana") = Row("id_campaña")
+            RowB("Campana") = Row("campañaNombre") & "  | " & Row("TipoCampaña")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
+        With cb_campañas
+            .DataSource = DTB
+            .DataBind()
+            .DataValueField = "id_Campana"
+            .DataTextField = "Campana"
+        End With
     End Sub
 #End Region
 

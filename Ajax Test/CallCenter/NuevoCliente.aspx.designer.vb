@@ -194,15 +194,6 @@ Partial Public Class NuevoCliente1
     Protected WithEvents cb_campañas As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control CampañasDS.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents CampañasDS As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control btn_Guardar.
     '''</summary>
     '''<remarks>

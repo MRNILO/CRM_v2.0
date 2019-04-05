@@ -171,12 +171,43 @@ Public Class NuevoCliente
         cb_nivelInteres.DataValueField = "id_nivelInteres"
         cb_nivelInteres.DataBind()
 
-        cb_campañas.DataSource = BL.Obtener_combo_campañas
-        cb_campañas.DataTextField = "Campaña"
-        cb_campañas.DataValueField = "id_campaña"
-        cb_campañas.DataBind()
+        AlimentarComboCampanas()
     End Sub
+    Private Sub AlimentarComboCampanas()
+        Dim Aux As Integer = 0
 
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.ObtenerCampanasTipoCampana()
+
+        DTB.Columns.AddRange({New DataColumn("id_Campana"), New DataColumn("Campana")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("id_Campana") = 0
+                RowB("Campana") = "SELECCIONA"
+
+                DTB.Rows.Add(RowB)
+            End If
+
+            RowB = DTB.NewRow
+            RowB("id_Campana") = Row("id_campaña")
+            RowB("Campana") = Row("campañaNombre") & "  | " & Row("TipoCampaña")
+
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+
+        With cb_campañas
+            .DataSource = DTB
+            .DataBind()
+            .DataValueField = "id_Campana"
+            .DataTextField = "Campana"
+        End With
+    End Sub
     <WebMethod()>
     Public Shared Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String) As String
         Dim HTML As String = ""

@@ -337,6 +337,20 @@ Public Class Funciones
         ObtenerCampanas = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Public Function ObtenerCampanasTipoCampana(Optional ByVal Id_Medio As Integer = 0) As DataTable
+        Dim Query As String = "SELECT  campañas.id_campaña, campañas.campañaNombre, tipocampaña.TipoCampaña
+                                FROM campañas  
+                                INNER JOIN tipocampaña ON tipocampaña.id_tipoCampaña = campañas.id_tipoCampaña
+                                WHERE Activa= 1"
+
+        If Id_Medio > 0 Then Query += " AND Id_Medio = " & Id_Medio
+        Query += "ORDER BY campañaNombre"
+
+        ObtenerCampanasTipoCampana = GE_SQL.SQLGetTable(Query)
+    End Function
+
+
+
     Public Function ObtenerCampanasId(ByVal Id_Campana As Integer) As DataTable
         Dim Query As String = "SELECT  id_campaña, campañaNombre,id_tipoCampaña, fechaCreacion,
                                        Observaciones, Activa, FechaInic, FechaFin, Id_Medio 

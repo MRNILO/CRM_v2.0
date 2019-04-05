@@ -141,9 +141,8 @@
                 </div>
                 <div class="col-lg-3">
                     <label>Origen:</label><br />
-                    <asp:DropDownList ID="cb_campañas" runat="server" DataSourceID="CampañasDS" DataTextField="campañaNombre" DataValueField="id_campaña" CssClass="form-control"></asp:DropDownList>
-                    <asp:SqlDataSource ID="CampañasDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.[campañas].[id_campaña], dbo.[campañas].[campañaNombre]
-                                                                                                                                                            FROM dbo.[campañas]"></asp:SqlDataSource>
+                    <asp:DropDownList ID="cb_campañas" runat="server" DataTextField="Campana" DataValueField="id_Campana" CssClass="form-control">
+                    </asp:DropDownList>
                 </div>
             </div>
 

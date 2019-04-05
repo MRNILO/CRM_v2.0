@@ -232,7 +232,7 @@ empresas"></asp:SqlDataSource>
         <div class="portlet-body">
             Seleccione un Campaña:
             <br />
-            <asp:DropDownList ID="cb_campañas" runat="server" CssClass="form-control select2me">
+            <asp:DropDownList ID="cb_campañas" runat="server" DataTextField="Campana" DataValueField="id_Campana" CssClass="form-control">
             </asp:DropDownList>
         </div>
     </div>
