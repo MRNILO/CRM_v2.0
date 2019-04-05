@@ -32,6 +32,15 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents tb_numcte As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control tb_numcte2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_numcte2 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control dtp_FechaCierre.
     '''</summary>
     '''<remarks>
@@ -57,6 +66,15 @@ Partial Public Class ClienteSupervisor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dtp_FechaCancelacion As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control dtp_FechaRecuperacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_FechaRecuperacion As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
     '''Control cmBoxEmpresa.

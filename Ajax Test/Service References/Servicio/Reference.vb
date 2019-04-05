@@ -9100,6 +9100,9 @@ Namespace Servicio
         Private FechaEscrituraField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Fecha_RecuperacionField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private Id_CampañaField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -9116,6 +9119,9 @@ Namespace Servicio
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private NumcteField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Numcte2Field As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ObservacionesField As String
@@ -9310,6 +9316,19 @@ Namespace Servicio
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Fecha_Recuperacion() As Date
+            Get
+                Return Me.Fecha_RecuperacionField
+            End Get
+            Set
+                If (Me.Fecha_RecuperacionField.Equals(value) <> true) Then
+                    Me.Fecha_RecuperacionField = value
+                    Me.RaisePropertyChanged("Fecha_Recuperacion")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Id_Campaña() As Integer
             Get
                 Return Me.Id_CampañaField
@@ -9383,6 +9402,19 @@ Namespace Servicio
                 If (Me.NumcteField.Equals(value) <> true) Then
                     Me.NumcteField = value
                     Me.RaisePropertyChanged("Numcte")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Numcte2() As Integer
+            Get
+                Return Me.Numcte2Field
+            End Get
+            Set
+                If (Me.Numcte2Field.Equals(value) <> true) Then
+                    Me.Numcte2Field = value
+                    Me.RaisePropertyChanged("Numcte2")
                 End If
             End Set
         End Property

@@ -61,10 +61,11 @@ Public Class BusquedaClientesSup
             .NSS = tb_NSS.Text
             .IdCliente = tb_IdCliente.Text
             .Numcte = tb_NumeroCliente.Text
+            .Numcte2 = tb_NumeroCliente2.Text
         End With
 
         Dim DT As New DataTable
-        DT = GE_Funciones.BuscarClientes(Cliente)
+        DT = GE_Funciones.BuscarClientesEK2(Cliente)
         ViewState("ListaClientes") = DT
 
         With grdView_BusquedaCliente

@@ -1138,12 +1138,14 @@
       <xs:element minOccurs="0" name="FechaCancelacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaCierre" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaEscritura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_Recuperacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id_Campaña" type="xs:int" />
       <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Numcte" type="xs:int" />
+      <xs:element minOccurs="0" name="Numcte2" type="xs:int" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />

@@ -12,7 +12,7 @@ Public Class ClienteSupervisor
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
+        lbl_mensaje.Text = ""
         idCliente = Request.QueryString("idCliente")
         If idCliente = 0 Then
             Response.Redirect("/")
@@ -60,7 +60,26 @@ Public Class ClienteSupervisor
         Else
             tb_numcte.Text = Datos(0).Numcte
             'CAMBIOS
-            tb_numcte.Enabled = True
+            tb_numcte.Enabled = False
+        End If
+
+        If Datos(0).Numcte2 = 0 Then
+            tb_numcte2.Text = Datos(0).Numcte2
+            tb_numcte2.Enabled = True
+        Else
+            tb_numcte2.Text = Datos(0).Numcte2
+            'CAMBIOS
+            tb_numcte2.Enabled = False
+        End If
+
+
+        If Datos(0).Fecha_Recuperacion = "1900-01-01" Then
+            dtp_FechaRecuperacion.Text = ""
+            dtp_FechaRecuperacion.Enabled = True
+        Else
+            dtp_FechaRecuperacion.Text = Datos(0).Fecha_Recuperacion
+            'CAMBIOS
+            dtp_FechaRecuperacion.Enabled = False
         End If
 
         If Datos(0).FechaCierre = "1900-01-01" Then
@@ -69,7 +88,7 @@ Public Class ClienteSupervisor
         Else
             dtp_FechaCierre.Text = Datos(0).FechaCierre
             'CAMBIOS
-            dtp_FechaCierre.Enabled = True
+            dtp_FechaCierre.Enabled = False
         End If
 
         If Datos(0).FechaEscritura = "1900-01-01" Then
@@ -78,7 +97,7 @@ Public Class ClienteSupervisor
         Else
             dtp_FechaEscrituracion.Text = Datos(0).FechaEscritura
             'CAMBIOS
-            dtp_FechaEscrituracion.Enabled = True
+            dtp_FechaEscrituracion.Enabled = False
         End If
 
         If Datos(0).FechaCancelacion = "1900-01-01" Then
@@ -87,7 +106,7 @@ Public Class ClienteSupervisor
         Else
             dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
             'CAMBIOS
-            dtp_FechaCancelacion.Enabled = True
+            dtp_FechaCancelacion.Enabled = False
         End If
 
         Alimentar_TablaVisitas(idCliente)
@@ -187,6 +206,7 @@ Public Class ClienteSupervisor
         Dim FechaCierre As Date
         Dim FechaEscrituracion As Date
         Dim FechaCancelacion As Date
+        Dim FechaRecuperacion As Date
 
         Dim NumeroClienteEK As Integer = tb_numcte.Text
 
@@ -197,6 +217,7 @@ Public Class ClienteSupervisor
         cmd.Parameters.AddWithValue("@usuario", Usuario.id_usuario)
         cmd.Parameters.AddWithValue("@cliente", idCliente)
         cmd.Parameters.AddWithValue("@Numcte", tb_numcte.Text)
+        cmd.Parameters.AddWithValue("@Numcte2", tb_numcte2.Text)
 
         If dtp_FechaCierre.Text = "" Then
             cmd.Parameters.AddWithValue("@FechaCierre", "")
@@ -218,6 +239,14 @@ Public Class ClienteSupervisor
             FechaCancelacion = dtp_FechaCancelacion.Text
             cmd.Parameters.AddWithValue("@FechaCancelacion", FechaCancelacion)
         End If
+
+        If dtp_FechaRecuperacion.Text = "" Then
+            cmd.Parameters.AddWithValue("@FechaRecuperacion", "")
+        Else
+            FechaRecuperacion = dtp_FechaRecuperacion.Text
+            cmd.Parameters.AddWithValue("@FechaRecuperacion", FechaRecuperacion)
+        End If
+
 
         cmd.Parameters.AddWithValue("@EmpresaEK", cmBoxEmpresa.SelectedItem.Value)
 
@@ -427,24 +456,38 @@ Public Class ClienteSupervisor
 
     Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
         Dim NumeroCliente As Integer
+        Dim NumeroClienteEk2 As Integer
 
-        Try
+        If IsNumeric(tb_numcte.Text) Then
             NumeroCliente = Convert.ToInt32(tb_numcte.Text)
-        Catch ex As Exception
-            tb_numcte.Focus()
-            ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "err_msg", "alert('¡El campo solamente puede aceptar números!')", True)
-
-            Exit Sub
-        End Try
-
-        If NumeroCliente <> 0 Then
-            If Guarda_numcte() Then
-                lbl_numcte.ForeColor = Drawing.Color.Green
-                lbl_numcte.Text = "¡Los datos se guardaron exitosamente!."
-            Else
-                lbl_numcte.ForeColor = Drawing.Color.Red
-                lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente'"
+            If NumeroCliente <> 0 Then
+                If tb_numcte2.Text <> "0" Then
+                    If IsNumeric(tb_numcte2.Text) Then
+                        NumeroClienteEk2 = Convert.ToInt32(tb_numcte2.Text)
+                        If dtp_FechaRecuperacion.Text = "" Then
+                            dtp_FechaRecuperacion.Focus()
+                            lbl_mensaje.Text = MostrarError("¡El campo fecha de recueparción no debe ir vacio!")
+                            Exit Sub
+                        End If
+                    Else
+                        tb_numcte2.Focus()
+                        lbl_mensaje.Text = MostrarError("¡El campo solamente puede aceptar números!")
+                        Exit Sub
+                    End If
+                End If
+                If Guarda_numcte() Then
+                    lbl_numcte.ForeColor = Drawing.Color.Green
+                    lbl_numcte.Text = "¡Los datos se guardaron exitosamente!."
+                Else
+                    lbl_numcte.ForeColor = Drawing.Color.Red
+                    lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente'"
+                    Exit Sub
+                End If
             End If
+        Else
+            tb_numcte.Focus()
+            lbl_mensaje.Text = MostrarError("¡El campo solamente puede aceptar números!")
+            Exit Sub
         End If
     End Sub
 

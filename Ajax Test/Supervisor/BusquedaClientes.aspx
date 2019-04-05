@@ -50,6 +50,12 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-2">
+                        <label><b><i>Numcte EK2:</i></b></label>
+                        <asp:TextBox ID="tb_NumeroCliente2" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
                         <label><b><i>RFC:</i></b></label>
                         <asp:TextBox ID="tb_RFC" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>

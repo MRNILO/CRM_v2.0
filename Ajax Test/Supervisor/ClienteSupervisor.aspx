@@ -34,33 +34,46 @@
             </div>
         </div>
         <div class="portlet-body">
-            <div class="row">
-                <div class="col-lg-2">
-                    <label>Cliente EK</label>
-                    <asp:TextBox ID="tb_numcte" runat="server" CssClass="form-control"></asp:TextBox>
+            <div class="portlet box purple">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label>Cliente EK</label>
+                            <asp:TextBox ID="tb_numcte" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Cliente EK2</label>
+                            <asp:TextBox ID="tb_numcte2" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Cierre EK</label>
+                            <dx:ASPxDateEdit ID="dtp_FechaCierre" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Escrituracion EK</label>
+                            <dx:ASPxDateEdit ID="dtp_FechaEscrituracion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Fecha Cancelación</label>
+                            <dx:ASPxDateEdit ID="dtp_FechaCancelacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Fecha Recuperación</label>
+                            <dx:ASPxDateEdit ID="dtp_FechaRecuperacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-lg-4">
+                            <label>Empresa</label>
+                            <dx:ASPxComboBox ID="cmBoxEmpresa" runat="server" AutoPostBack="true" Theme="MaterialCompact" TextField="Empresa" ValueField="idEmpresa" Font-Size="9pt" Width="100%" ValueType="System.Int32"></dx:ASPxComboBox>
+                        </div>
+                        <div class="col-lg-2 col-lg-offset-6" style="margin-top: 25px">
+                            <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-2">
-                    <label>Cierre EK</label>
-                    <dx:ASPxDateEdit ID="dtp_FechaCierre" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
-                </div>
-                <div class="col-lg-2">
-                    <label>Escrituracion EK</label>
-                    <dx:ASPxDateEdit ID="dtp_FechaEscrituracion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
-                </div>
-                <div class="col-lg-2">
-                    <label>Fecha Cancelación</label>
-                    <dx:ASPxDateEdit ID="dtp_FechaCancelacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
-                </div>
-                <div class="col-lg-2">
-                    <label>Empresa</label>
-                    <dx:ASPxComboBox ID="cmBoxEmpresa" runat="server" AutoPostBack="true" Theme="MaterialCompact" TextField="Empresa" ValueField="idEmpresa" Font-Size="9pt" Width="100%" ValueType="System.Int32"></dx:ASPxComboBox>
-                </div>
-                <div class="col-lg-2" style="margin-top: 25px">
-                    <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
-                </div>
-                <br />
             </div>
-
             <div class="row" style="margin-top: 10px">
                 <div class="col-lg-6">
                     <label><b><i>Asesor Asignado:</i></b> </label>
