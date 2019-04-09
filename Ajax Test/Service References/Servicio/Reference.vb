@@ -9100,10 +9100,16 @@ Namespace Servicio
         Private FechaEscrituraField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Fecha_OperacionEKField As Date
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private Fecha_RecuperacionField As Date
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private Id_CampañaField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ModeloEkField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private NSSField As String
@@ -9316,6 +9322,19 @@ Namespace Servicio
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Fecha_OperacionEK() As Date
+            Get
+                Return Me.Fecha_OperacionEKField
+            End Get
+            Set
+                If (Me.Fecha_OperacionEKField.Equals(value) <> true) Then
+                    Me.Fecha_OperacionEKField = value
+                    Me.RaisePropertyChanged("Fecha_OperacionEK")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Fecha_Recuperacion() As Date
             Get
                 Return Me.Fecha_RecuperacionField
@@ -9337,6 +9356,19 @@ Namespace Servicio
                 If (Me.Id_CampañaField.Equals(value) <> true) Then
                     Me.Id_CampañaField = value
                     Me.RaisePropertyChanged("Id_Campaña")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ModeloEk() As String
+            Get
+                Return Me.ModeloEkField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ModeloEkField, value) <> true) Then
+                    Me.ModeloEkField = value
+                    Me.RaisePropertyChanged("ModeloEk")
                 End If
             End Set
         End Property

@@ -68,7 +68,15 @@
                             <label>Empresa</label>
                             <dx:ASPxComboBox ID="cmBoxEmpresa" runat="server" AutoPostBack="true" Theme="MaterialCompact" TextField="Empresa" ValueField="idEmpresa" Font-Size="9pt" Width="100%" ValueType="System.Int32"></dx:ASPxComboBox>
                         </div>
-                        <div class="col-lg-2 col-lg-offset-6" style="margin-top: 25px">
+                        <div class="col-lg-2">
+                            <label>Modelo</label>
+                            <asp:TextBox ID="tb_Modelo" runat="server" CssClass="form-control uppercase"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Fecha Operación</label>
+                            <dx:ASPxDateEdit ID="dtp_FechaOperacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
+                        </div>
+                        <div class="col-lg-2 col-lg-offset-2" style="margin-top: 25px">
                             <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
                         </div>
                     </div>

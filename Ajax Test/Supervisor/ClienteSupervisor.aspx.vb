@@ -20,8 +20,6 @@ Public Class ClienteSupervisor
             lbl_generales.Text = Crea_generalesCliente()
             lbl_telefonos.Text = Crea_telefonos()
 
-
-
             If Not Page.IsPostBack Then
                 UI()
             Else
@@ -72,6 +70,14 @@ Public Class ClienteSupervisor
             tb_numcte2.Enabled = False
         End If
 
+        If Datos(0).ModeloEk = "-" Then
+            tb_Modelo.Text = Datos(0).ModeloEk
+            tb_Modelo.Enabled = True
+        Else
+            tb_Modelo.Text = Datos(0).ModeloEk
+            'CAMBIOS
+            tb_Modelo.Enabled = False
+        End If
 
         If Datos(0).Fecha_Recuperacion = "1900-01-01" Then
             dtp_FechaRecuperacion.Text = ""
@@ -107,6 +113,15 @@ Public Class ClienteSupervisor
             dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
             'CAMBIOS
             dtp_FechaCancelacion.Enabled = False
+        End If
+
+        If Datos(0).Fecha_OperacionEK = "1900-01-01" Then
+            dtp_FechaOperacion.Text = ""
+            dtp_FechaOperacion.Enabled = True
+        Else
+            dtp_FechaOperacion.Text = Datos(0).Fecha_OperacionEK
+            'CAMBIOS
+            dtp_FechaOperacion.Enabled = False
         End If
 
         Alimentar_TablaVisitas(idCliente)
@@ -207,6 +222,7 @@ Public Class ClienteSupervisor
         Dim FechaEscrituracion As Date
         Dim FechaCancelacion As Date
         Dim FechaRecuperacion As Date
+        Dim FechaOperacion As Date
 
         Dim NumeroClienteEK As Integer = tb_numcte.Text
 
@@ -218,6 +234,7 @@ Public Class ClienteSupervisor
         cmd.Parameters.AddWithValue("@cliente", idCliente)
         cmd.Parameters.AddWithValue("@Numcte", tb_numcte.Text)
         cmd.Parameters.AddWithValue("@Numcte2", tb_numcte2.Text)
+        cmd.Parameters.AddWithValue("@ModeloEk", tb_Modelo.Text)
 
         If dtp_FechaCierre.Text = "" Then
             cmd.Parameters.AddWithValue("@FechaCierre", "")
@@ -247,6 +264,12 @@ Public Class ClienteSupervisor
             cmd.Parameters.AddWithValue("@FechaRecuperacion", FechaRecuperacion)
         End If
 
+        If dtp_FechaOperacion.Text = "" Then
+            cmd.Parameters.AddWithValue("@FechaOperacion", "")
+        Else
+            FechaOperacion = dtp_FechaOperacion.Text
+            cmd.Parameters.AddWithValue("@FechaOperacion", FechaOperacion)
+        End If
 
         cmd.Parameters.AddWithValue("@EmpresaEK", cmBoxEmpresa.SelectedItem.Value)
 

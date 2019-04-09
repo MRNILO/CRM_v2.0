@@ -86,6 +86,24 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents cmBoxEmpresa As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
+    '''Control tb_Modelo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_Modelo As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control dtp_FechaOperacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dtp_FechaOperacion As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
     '''Control btn_guardaNumcte.
     '''</summary>
     '''<remarks>
