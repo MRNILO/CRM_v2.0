@@ -332,8 +332,18 @@ Public Class NuevoCliente
                     tb_nss.Text = "-"
                 End If
 
-                IdCliente = BL.Inserta_clientes(tb_NombreCliente.Text, tb_ApellidoPaterno.Text, tb_ApellidoMaterno.Text, tb_email.Text, cb_productos.SelectedValue, cb_nivelInteres.SelectedValue, cb_empresas.SelectedValue _
-                          , 1, cb_campañas.SelectedValue, Usuario.id_usuario, tb_observaciones.Text, "-", "-", Trim(tb_nss.Text), Trim(tb_curp.Text), dtp_fechaNacimiento.Date, cb_fracc.SelectedValue)
+                If (ValidaNSS(tb_nss.Text.ToUpper.Trim) = "si") Then
+                    If (ValidaCURP(tb_curp.Text.ToUpper.Trim) = "si") Then
+                        IdCliente = BL.Inserta_clientes(tb_NombreCliente.Text, tb_ApellidoPaterno.Text, tb_ApellidoMaterno.Text, tb_email.Text, cb_productos.SelectedValue, cb_nivelInteres.SelectedValue, cb_empresas.SelectedValue _
+                      , 1, cb_campañas.SelectedValue, Usuario.id_usuario, tb_observaciones.Text, "-", "-", Trim(tb_nss.Text), Trim(tb_curp.Text), dtp_fechaNacimiento.Date, cb_fracc.SelectedValue)
+                        lbl_mensaje.Text = MostrarExito("Cliente " & tb_NombreCliente.Text & " " & tb_ApellidoPaterno.Text & " " & tb_ApellidoMaterno.Text & " resgistrado satisfactoriamente")
+                    Else
+                        lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el CURP")
+                    End If
+                Else
+                    lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el NSS")
+                End If
+
             Catch ex As Exception
                 lbl_mensaje.Text += MostrarError("Existe un error en la información ingresada, por favor verifique e intente nuevamente")
                 Exit Sub

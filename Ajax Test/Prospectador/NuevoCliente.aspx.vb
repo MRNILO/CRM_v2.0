@@ -92,14 +92,26 @@ Public Class NuevoCliente_Prospectador
                 tb_lada.Text = 0
             End If
 
-            IDCliente = BL.Inserta_clientes(tb_nombre.Text, tb_paterno.Text, tb_materno.Text, tb_email.Text, cb_producto.SelectedValue, 1, 5340 _
+            If (ValidaCliente(tb_nombre.Text.ToUpper, tb_paterno.Text.ToUpper.Trim, tb_materno.Text.ToUpper.Trim) = "si") Then
+                If (ValidaNSS(tb_nss.Text.ToUpper.Trim) = "si") Then
+                    If (ValidaCURP(tb_curp.Text.ToUpper.Trim) = "si") Then
+                        IDCliente = BL.Inserta_clientes(tb_nombre.Text, tb_paterno.Text, tb_materno.Text, tb_email.Text, cb_producto.SelectedValue, 1, 5340 _
                         , 1, cb_campañas.SelectedValue, Usuario.id_usuario, "Tipo CREDITO: " + CB_TIPOcREDITO.SelectedValue, "-", "-", Trim(tb_nss.Text), Trim(tb_curp.Text), dtp_fecnac.Date, cb_fracc.SelectedValue)
-
-            If IDCliente > 0 Then
-                BL.Inserta_telefonoCliente(1, IDCliente, (tb_lada.Text + "-" + tb_tel.Text).ToString)
-
-                BL.CompletaCliente(IDCliente, 0, "-", tb_rfc.Text, tb_nHijos.Text, tb_ingresosPersonales.Text, cb_edoCivil.SelectedValue)
+                        If IDCliente > 0 Then
+                            BL.Inserta_telefonoCliente(1, IDCliente, (tb_lada.Text + "-" + tb_tel.Text).ToString)
+                            BL.CompletaCliente(IDCliente, 0, "-", tb_rfc.Text, tb_nHijos.Text, tb_ingresosPersonales.Text, cb_edoCivil.SelectedValue)
+                        End If
+                        lbl_mensaje.Text = MostrarExito("Cliente " & tb_nombre.Text & " " & tb_paterno.Text & " " & tb_materno.Text & " resgistrado satisfactoriamente")
+                    Else
+                        lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el CURP")
+                    End If
+                Else
+                    lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el NSS")
+                End If
+            Else
+                lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el Nombre")
             End If
+
         Catch ex As Exception
             lbl_mensaje.Text += "<strong style='color:red'>Por favor complete todos los campos </strong>"
         End Try
