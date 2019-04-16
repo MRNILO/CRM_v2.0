@@ -26,14 +26,11 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-
     <div id="divNuevo" class="row" style="margin-bottom: 15px">
         <div class="col-lg-2">
             <asp:Button ID="cmdNuevo" Text="Nuevo Tipo campaña" runat="server" class="btn btn-sm btn-block purple" OnClientClick="MuestraNuevo()" />
         </div>
     </div>
-
-
     <div id="NuevoTipo_Campana" class="portlet box purple" style="margin-top: 20px" hidden="hidden">
         <div class="portlet-title">
             <div class="caption">
@@ -65,7 +62,6 @@
             <div class="tools">
             </div>
         </div>
-
         <div class="portlet-body">
             <div class="table-responsive">
                 <dx:ASPxGridView ID="GV_TipoCampaña" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_tipoCampaña" Font-Size="9pt" EnableTheming="True">
@@ -86,8 +82,6 @@
             </div>
         </div>
     </div>
-
-
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script type="text/javascript">
