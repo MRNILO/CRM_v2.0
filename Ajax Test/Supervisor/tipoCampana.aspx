@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label>Tipo de campaña:</label>
-                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control" required="required"></asp:TextBox>
+                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control uppercase" required="required"></asp:TextBox>
                 </div>
                 <div class="col-lg-2" style="margin-top: 20px">
                     <asp:Button ID="btn_guardar" runat="server" Text="Guardar" CssClass="btn btn-sm btn-block blue" OnClientClick="OcultaDiv()" />
