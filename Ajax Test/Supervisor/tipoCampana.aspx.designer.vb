@@ -23,6 +23,42 @@ Partial Public Class tipoCampana
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Control cmdNuevo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmdNuevo As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control tb_TipoCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tb_TipoCampana As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btn_guardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_guardar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control btn_cancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_cancelar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control GV_TipoCampaña.
     '''</summary>
     '''<remarks>
@@ -30,4 +66,13 @@ Partial Public Class tipoCampana
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_TipoCampaña As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control lbl_mensaje.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Literal
 End Class

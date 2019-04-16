@@ -18,7 +18,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                    <a href="/Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -26,30 +26,79 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="portlet box purple">
+
+    <div id="divNuevo" class="row" style="margin-bottom: 15px">
+        <div class="col-lg-2">
+            <asp:Button ID="cmdNuevo" Text="Nuevo Tipo campaña" runat="server" class="btn btn-sm btn-block purple" OnClientClick="MuestraNuevo()" />
+        </div>
+    </div>
+
+
+    <div id="NuevoTipo_Campana" class="portlet box purple" style="margin-top: 20px" hidden="hidden">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-file"></i>Tipo campaña
+                <i class="fa fa-check-circle"></i>Nuevo tipo campaña 
             </div>
             <div class="tools">
             </div>
         </div>
         <div class="portlet-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Tipo de campaña:</label>
+                    <asp:TextBox ID="tb_TipoCampana" runat="server" CssClass="form-control" required="required"></asp:TextBox>
+                </div>
+                <div class="col-lg-2" style="margin-top: 20px">
+                    <asp:Button ID="btn_guardar" runat="server" Text="Guardar" CssClass="btn btn-sm btn-block blue" OnClientClick="OcultaDiv()" />
+                </div>
+                <div class="col-lg-2" style="margin-top: 20px">
+                    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-sm yellow-casablanca" OnClientClick="OcultaDiv()" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box green" style="margin-top: 20px">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-check-circle"></i>Tipo campaña 
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+
+        <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="GV_TipoCampaña" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" KeyFieldName="id_tipoCampaña">
+                <dx:ASPxGridView ID="GV_TipoCampaña" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_tipoCampaña" Font-Size="9pt" EnableTheming="True">
                     <Columns>
-                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+                        <dx:GridViewCommandColumn ShowDeleteButton="false" ShowEditButton="True" VisibleIndex="0">
                         </dx:GridViewCommandColumn>
                         <dx:GridViewDataTextColumn Caption="ID" FieldName="id_tipoCampaña" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="tipo Campaña" FieldName="TipoCampaña" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="Tipo Campaña" FieldName="TipoCampaña" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>
         </div>
     </div>
+
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <script type="text/javascript">
+        function OcultaDiv() {
+            $('#NuevoTipo_Campana').hide();
+            $('#divNuevo').show();
+        }
+        function MuestraNuevo() {
+            $('#NuevoTipo_Campana').show();
+            $('#divNuevo').hide();
+        }
+    </script>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

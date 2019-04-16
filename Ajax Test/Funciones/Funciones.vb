@@ -402,8 +402,6 @@ Public Class Funciones
         ObtenerCampanasTipoCampana = GE_SQL.SQLGetTable(Query)
     End Function
 
-
-
     Public Function ObtenerCampanasId(ByVal Id_Campana As Integer) As DataTable
         Dim Query As String = "SELECT  id_campaña, campañaNombre,id_tipoCampaña, fechaCreacion,
                                        Observaciones, Activa, FechaInic, FechaFin, Id_Medio 
@@ -411,7 +409,6 @@ Public Class Funciones
 
         ObtenerCampanasId = GE_SQL.SQLGetTable(Query)
     End Function
-
 
     Public Function Actualiza_Campanas(ByVal id_campaña As Integer, ByVal campañaNombre As String, ByVal id_tipoCampaña As Integer, ByVal id_MedioCampaña As Integer, ByVal Activa As Integer,
                                        ByVal fechaInicio As Date, ByVal fechaFinal As Date, ByVal Observaciones As String) As Boolean
@@ -938,6 +935,18 @@ Inicio:
         Dim Query As String = " EXEC [dbo].[Inserta_Asignacion_supervisorUsuario]
                                    @Pid_usuario = N'" & idUsuario & "',
                                    @Pid_supervisor = N'" & idSupervisor & "'"
+
+        If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+#End Region
+#Region "´Campañas"
+    Public Function Inserta_TipoCampaña(ByVal TipoCampaña As String) As Boolean
+        Dim Query As String = " EXEC [dbo].[Inserta_TipoCampaña]
+                                   @PTipoCampaña = N'" & TipoCampaña & "'"
 
         If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
             Return False
