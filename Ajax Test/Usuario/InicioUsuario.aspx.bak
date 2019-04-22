@@ -1,17 +1,13 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="InicioUsuario.aspx.vb" Inherits="Ajax_Test.InicioUsuario" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server">
     <link href="/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
-
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -23,29 +19,12 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -67,9 +46,7 @@
                     <a class="btn green" href="llamadas.aspx">Conocer</a>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
     Bienvenido Usuario
     <br />
@@ -99,15 +76,10 @@
                     <div class="number">
                         <span class="counter">
                             <asp:Literal ID="lbl_ClientesActivos" runat="server"></asp:Literal>
-
                         </span>
-
                     </div>
                     <div class="desc">Clientes Activos </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -119,15 +91,10 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_ProspectosSemana" runat="server"></asp:Literal>
-
                         </span>
-
                     </div>
                     <div class="desc">Prospectos por semana </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -139,14 +106,10 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_ClientesCancelados" runat="server"></asp:Literal>
-
                         </span>
                     </div>
                     <div class="desc">Clientes Cancelados </div>
                 </div>
-                <%--   <a class="more" href="/Reportes/VisitasEntreFechas.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -158,14 +121,10 @@
                     <div class="number">
                         <span data-counter="counterup">
                             <asp:Literal ID="lbl_clientesTotal" runat="server"></asp:Literal>
-
                         </span>
                     </div>
                     <div class="desc">Clientes totales </div>
                 </div>
-                <%--  <a class="more" href="/Reportes/Incidencias.aspx"> Ver más
-                                    <i class="m-icon-swapright m-icon-white"></i>
-                                </a>--%>
             </div>
         </div>
     </div>
@@ -184,7 +143,6 @@
 
         <div class="portlet-body">
             <div class="table-responsive">
-
                 <dx:ASPxGridView ID="GV_TareasPendientes" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsSearchPanel Visible="True" />
@@ -258,11 +216,8 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            // Handler for .ready() called.
-            //$('#basic').modal('show');
+
         });
-
-
 
         function cambiarTarea(idLlamada) {
             $.ajax({

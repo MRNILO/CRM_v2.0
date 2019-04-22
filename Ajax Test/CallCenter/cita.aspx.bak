@@ -1,9 +1,30 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/CallCenter/CallCenter.Master" CodeBehind="cita.aspx.vb" Inherits="Ajax_Test.cita" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
+    <ul class="nav navbar-nav pull-right">
+        <li class="dropdown dropdown-user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <span class="username username-hide-on-mobile">
+                    <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
+                </span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-default">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i>Mis Datos </a>
+                </li>
+                <li>
+                    <a href="/Account/Logoff.aspx">
+                        <i class="icon-key"></i>Salir </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
@@ -66,7 +87,7 @@
             <div class="row" style="margin-top: 5px">
                 <div class="col-lg-2">
                     <label><strong>Origen:</strong></label><br />
-                    <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control" Enabled="false">CALL CENTER</asp:TextBox>
+                    <asp:TextBox ID="tb_origen" runat="server" CssClass="form-control">CALL CENTER</asp:TextBox>
                 </div>
                 <div class="col-lg-2">
                     <label><strong>Lugar Contacto:</strong></label><br />
@@ -86,7 +107,7 @@
                     <asp:SqlDataSource ID="productosDs" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT * FROM [productos]"></asp:SqlDataSource>
                 </div>
             </div>
-            <div class="row" style="margin-top: 5px">
+            <div class="row" style="margin-top: 10px">
                 <div class="col-lg-4">
                     <label><strong>Asesor Asignado:</strong></label><br />
                     <asp:DropDownList ID="cb_usuarios" runat="server" DataSourceID="UsuariosDS" DataTextField="nombre" DataValueField="id_usuario" CssClass="form-control"></asp:DropDownList>
@@ -110,9 +131,9 @@
                     <dx:ASPxDateEdit ID="dtp_fechaCita" runat="server" Width="100%" Theme="Mulberry"></dx:ASPxDateEdit>
                 </div>
             </div>
-            <div class="row" style="margin-top: 15px">
-                <div class="col-lg-2">
-                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="MaterialCompact">
+            <div class="row" style="margin-top: 20px">
+                <div class="col-lg-2 pull-right">
+                    <dx:ASPxButton ID="btn_asignaCita" runat="server" Text="Asigna Cita" Theme="Moderno" Width="100%">
                         <Image IconID="actions_right_16x16">
                         </Image>
                     </dx:ASPxButton>

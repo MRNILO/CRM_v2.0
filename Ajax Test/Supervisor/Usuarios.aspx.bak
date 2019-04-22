@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="Usuarios.aspx.vb" Inherits="Ajax_Test.Usuarios" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MenuDeActividades" runat="server">
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -10,14 +10,13 @@
                 </span>
                 <i class="fa fa-angle-down"></i>
             </a>
-
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="#">
+                    <a href="/Supervisor/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                    <a href="/Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -42,13 +41,13 @@
 
         <div class="portlet-body">
             <div class="table-responsive">
-                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" Font-Size="9pt">
+                <dx:ASPxGridViewExporter ID="GV_exporter" runat="server" GridViewID="GV_Usuarios">
+                </dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="GV_Usuarios" runat="server" Width="100%" Theme="MaterialCompact" AutoGenerateColumns="False" KeyFieldName="id_usuario" EnableCallBacks="False" Font-Size="9pt" EnableTheming="True">
                     <SettingsAdaptivity>
                         <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
                     </SettingsAdaptivity>
 
-                    <SettingsEditing Mode="Batch">
-                    </SettingsEditing>
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsBehavior AutoFilterRowInputDelay="600" />
                     <SettingsSearchPanel Visible="True" Delay="600" />
@@ -64,42 +63,91 @@
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Nombre" FieldName="nombre" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="Nombre" FieldName="Nombre" VisibleIndex="2">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="apellidoPaterno" VisibleIndex="3">
+                        <dx:GridViewDataTextColumn Caption="Apellido Paterno" FieldName="ApellidoPaterno" VisibleIndex="3">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="apellidoMaterno" VisibleIndex="4">
+                        <dx:GridViewDataTextColumn Caption="Apellido Materno" FieldName="ApellidoMaterno" VisibleIndex="4">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="e-mail" FieldName="Email" VisibleIndex="5">
                             <HeaderStyle HorizontalAlign="Center" />
-                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="usuario" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn Caption="Usuario" FieldName="Usuario" VisibleIndex="6">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
-                            <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="fechaCreacion" VisibleIndex="7">
+                        <dx:GridViewDataTextColumn Caption="Contraseña" FieldName="Contrasena" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                            <PropertiesTextEdit Password="True">
+                                <MaskSettings PromptChar="*" />
+                            </PropertiesTextEdit>
+                            <EditFormSettings Visible="True" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn Caption="Registrado" FieldName="Registrado" VisibleIndex="8">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="8">
+                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="9">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataCheckColumn>
+                        <dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="11">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                            <EditFormSettings Visible="False" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataComboBoxColumn Caption="Perfil" FieldName="Perfil" Name="Perfil" VisibleIndex="10" Visible="false">
+                            <PropertiesComboBox TextField="Tipo" ValueField="id_tipoUsuario" ValueType="System.Int32">
+                            </PropertiesComboBox>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center">
+                            </CellStyle>
+                            <EditFormSettings Visible="true" />
+                        </dx:GridViewDataComboBoxColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>
         </div>
     </div>
 </asp:Content>
-<asp:Content ContentPlaceHolderID="JSContent" runat="server"></asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
+    <script type="text/javascript">
+
+        function cambiarLlamada(idLlamada) {
+            $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("/Usuario/cliente.aspx/PruebaAjax")%>",
+                data: '{valor: "' + idLlamada + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        function OnSuccess(response) {
+            if (response.d == 'Exito') {
+                location.reload();
+            } else {
+                alert('No se cambio el estatus');
+            }
+        }
+    </script>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+</asp:Content>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
 

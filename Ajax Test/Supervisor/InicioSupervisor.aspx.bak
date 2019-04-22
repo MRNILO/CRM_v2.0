@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="InicioSupervisor.aspx.vb" Inherits="Ajax_Test.InicioSupervisor" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-user">
@@ -41,8 +41,38 @@
                         <label>Tipo de Cliente:</label>
                         <asp:DropDownList ID="cb_tipoCliente" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
+
+                    <div class="col-lg-3 form-control-static" style="margin-top: 25px">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <dx:ASPxRadioButton ID="rdbFechas" runat="server" Text="Por fechas" GroupName="Filtros" Theme="Office365" AutoPostBack="true"></dx:ASPxRadioButton>
+                            </div>
+                            <div class="col-lg-6">
+                                <dx:ASPxRadioButton ID="rdbDias" runat="server" Text="Por días" GroupName="Filtros" Theme="Office365" AutoPostBack="true"></dx:ASPxRadioButton>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-2" style="margin-top: 25px">
-                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar Clientes" CssClass="btn btn-ms btn-block green" />
+                        <asp:Button ID="btn_MostrarClientes" runat="server" Text="Consultar" CssClass="btn btn-ms btn-block green" />
+                    </div>
+                    <div class="col-lg-2" style="margin-top: 25px">
+                        <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-ms btn-block yellow" />
+                    </div>
+                </div>
+                <div class="row" id="rangoFechas" runat="server" style="margin-top: 20px">
+                    <div class="col-lg-2  col-lg-offset-3">
+                        <label>Fecha Inicio:</label>
+                        <dx:ASPxDateEdit ID="dtp_inicio" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
+                    </div>
+                    <div class="col-lg-2">
+                        <label>Fecha Final:</label>
+                        <dx:ASPxDateEdit ID="dtp_Fin" runat="server" Theme="Mulberry" Width="100%" required="required"></dx:ASPxDateEdit>
+                    </div>
+                </div>
+                <div class="row" id="rangoDias" runat="server" style="margin-top: 20px">
+                    <div class="col-lg-3 col-lg-offset-3">
+                        <label>Rango de Días</label>
+                        <asp:DropDownList ID="cb_Dias" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
             </div>

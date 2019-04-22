@@ -1,115 +1,93 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Supervisor/Supervisor.Master" CodeBehind="MisDatos.aspx.vb" Inherits="Ajax_Test.MisDatos1" %>
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
-     <ul class="nav navbar-nav pull-right">				
-				<!-- BEGIN USER LOGIN DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-user">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
-					<span class="username username-hide-on-mobile">
-					<asp:Literal ID="lbl_nombre" runat="server"></asp:Literal> </span>
-					<i class="fa fa-angle-down"></i>
-					</a>
-                    
-					<ul class="dropdown-menu dropdown-menu-default">
-						<li>
-							<a href="/Usuario/MisDatos.aspx">
-							<i class="icon-user"></i> Mis Datos </a>
-						</li>
-					<%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>	
-						<li>
-							<a href="/Account/Logoff.aspx">
-							<i class="icon-key"></i> Salir </a>
-						</li>
-					</ul>
-				</li>
-				<!-- END USER LOGIN DROPDOWN -->
-				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->				
-				<!-- END QUICK SIDEBAR TOGGLER -->
-			</ul>
+<asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
+    <ul class="nav navbar-nav pull-right">
+        <li class="dropdown dropdown-user">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <span class="username username-hide-on-mobile">
+                    <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
+                </span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-default">
+                <li>
+                    <a href="/Supervisor/MisDatos.aspx">
+                        <i class="icon-user"></i>Mis Datos </a>
+                </li>
+                <li>
+                    <a href="/Account/Logoff.aspx">
+                        <i class="icon-key"></i>Salir </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-
-   
-
-       <%-- Comienza modal --%>
+    <%-- Comienza modal --%>
     <div class="modal fade" id="NuevaEmpresa" tabindex="-1" role="basic" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-											<h4 class="modal-title">Modificar</h4>
-										</div>
-										<div class="modal-body">
-											 Nombre:
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Modificar</h4>
+                </div>
+                <div class="modal-body">
+                    Nombre:
                                             <br />
-                                            <asp:TextBox ID="tb_Nombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="tb_Nombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    Apellido Paterno:
                                             <br />
-                                            Apellido Paterno:
+                    <asp:TextBox ID="tb_apellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    Apellido Materno:
                                             <br />
-                                            <asp:TextBox ID="tb_apellidoPaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="tb_apellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    Email:
                                             <br />
-   	                                        Apellido Materno:
+                    <asp:TextBox ID="tb_email" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    Contraseña Nueva:
                                             <br />
-                                            <asp:TextBox ID="tb_apellidoMaterno" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="tb_contraseña" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    Repita contraeña:
                                             <br />
-                                            Email:
-                                            <br />
-                                            <asp:TextBox ID="tb_email" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <br />
-                                            Contraseña Nueva:
-                                            <br />
-                                            <asp:TextBox ID="tb_contraseña" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <br />
-                                            Repita contraeña:
-                                            <br />
-                                            <asp:TextBox ID="tb_contraseñaRepite" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <br />
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
-										 <asp:Button ID="btn_guardarDatos" runat="server" Text="Guardar Datos" CssClass="btn btn-lg blue" />
-										</div>
-									</div>
-									<!-- /.modal-content -->
-								</div>
-								<!-- /.modal-dialog -->
-							</div>
+                    <asp:TextBox ID="tb_contraseñaRepite" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn default" data-dismiss="modal">Cerrar</button>
+                    <asp:Button ID="btn_guardarDatos" runat="server" Text="Guardar Datos" CssClass="btn btn-lg blue" />
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
     <%-- Termina Modal --%>
 
 
 
 
 
-       <div class="portlet box red">
+    <div class="portlet box red">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Mis datos generales
             </div>
-            	
+
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
             <a data-toggle="modal" href="#NuevaEmpresa" class="btn btn-sm blue">Modificar datos</a>
-            </div>
         </div>
-   <%--  <div class="portlet box green">
+    </div>
+    <%--  <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-file"></i>Mis teléfonos
@@ -136,5 +114,5 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
 
-     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

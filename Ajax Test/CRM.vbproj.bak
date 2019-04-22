@@ -48,31 +48,36 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClosedXML">
-      <HintPath>..\..\..\..\..\Users\Agustin Nilo\Documents\Visual Studio 2010\Projects\Edificahoy\Edificahoy\Dlls\ClosedXML.dll</HintPath>
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.SpellChecker.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Bootstrap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.1.Web, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -222,8 +227,9 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Logoff.aspx" />
     <Content Include="Account\LogOn.aspx" />
+    <Content Include="Account\Logoff.aspx" />
+    <Content Include="Account\LogOn_old.aspx" />
     <Content Include="Administrativo\AcumuladoAdm.aspx" />
     <Content Include="Administrativo\AsignaOportunidad.aspx" />
     <Content Include="Administrativo\Configuraciones.aspx" />
@@ -7153,7 +7159,9 @@
     <Content Include="assets\wts\icon.png" />
     <Content Include="assets\wts\wts.css" />
     <Content Include="CallCenter\Asesores.aspx" />
+    <Content Include="CallCenter\BusquedaClientes.aspx" />
     <Content Include="CallCenter\cita.aspx" />
+    <Content Include="CallCenter\CitaCte.aspx" />
     <Content Include="CallCenter\Citas.aspx" />
     <Content Include="CallCenter\Clientes.aspx" />
     <Content Include="CallCenter\DetalleAsesor.aspx" />
@@ -7161,6 +7169,18 @@
     <Content Include="CallCenter\InicioCCenter.aspx" />
     <Content Include="CallCenter\ModificaCliente.aspx" />
     <Content Include="CallCenter\NuevoCliente.aspx" />
+    <Content Include="Caseta\Asesores.aspx" />
+    <Content Include="Caseta\BusquedaClientes.aspx" />
+    <Content Include="Caseta\CitaCte.aspx" />
+    <Content Include="Caseta\Citas.aspx" />
+    <Content Include="Caseta\Clientes.aspx" />
+    <Content Include="Caseta\DetalleAsesor.aspx" />
+    <Content Include="Caseta\DetalleObservaciones.aspx" />
+    <Content Include="Caseta\InicioCaseta.aspx" />
+    <Content Include="Caseta\ModificaCliente.aspx" />
+    <Content Include="Caseta\NuevaVisitaCte.aspx" />
+    <Content Include="Caseta\NuevoCliente.aspx" />
+    <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
@@ -7422,6 +7442,15 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Prospectador\BusquedaClientes.aspx" />
+    <Content Include="Prospectador\CitaCte.aspx" />
+    <Content Include="Prospectador\Citas.aspx" />
+    <Content Include="Prospectador\Clientes.aspx" />
+    <Content Include="Prospectador\DetalleAsesor.aspx" />
+    <Content Include="Prospectador\DetalleObservaciones.aspx" />
+    <Content Include="Prospectador\InicioProspectador.aspx" />
+    <Content Include="Prospectador\ModificaCliente.aspx" />
+    <Content Include="Prospectador\NuevoCliente.aspx" />
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CUsuarios.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -7638,6 +7667,7 @@
     <Content Include="Ayuda\Como capturar una cita.pdf" />
     <Content Include="Ayuda\Cambiar etapa de un cliente.pdf" />
     <Content Include="CallCenter\CallCenter.Master" />
+    <Content Include="Caseta\Caseta.Master" />
     <None Include="My Project\PublishProfiles\Desktop.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\Publicaciones.pubxml" />
@@ -7887,6 +7917,10 @@
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.DetallesCumplimiento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.VigenciaCitas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Prospectador\Prospectador.Master" />
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -7894,19 +7928,35 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Service References\Servicio\Service1.disco" />
+    <Content Include="SupervisorMty\BusquedaClientes.aspx" />
+    <Content Include="SupervisorMty\CambiaUsuario.aspx" />
+    <Content Include="SupervisorMty\cita.aspx" />
+    <Content Include="SupervisorMty\CitaCte.aspx" />
+    <Content Include="SupervisorMty\ClienteSupervisor.aspx" />
+    <Content Include="SupervisorMty\ClientesUsuarios.aspx" />
+    <Content Include="SupervisorMty\Consultas.aspx" />
+    <Content Include="SupervisorMty\DetalleObservaciones.aspx" />
+    <Content Include="SupervisorMty\InicioSupervisor.aspx" />
+    <Content Include="SupervisorMty\ModificaCliente.aspx" />
+    <Content Include="SupervisorMty\Oportunidades.aspx" />
+    <Content Include="SupervisorMty\ReporteCumplimiento.aspx" />
     <Content Include="Supervisor\AcumuladosClientes.aspx" />
     <Content Include="Supervisor\agenda.aspx" />
     <Content Include="Supervisor\BIAdmin.aspx" />
+    <Content Include="Supervisor\BusquedaClientes.aspx" />
     <Content Include="Supervisor\cambiaProducto.aspx" />
     <Content Include="Supervisor\CambiaUsuario.aspx" />
+    <Content Include="Supervisor\CampanaModifica.aspx" />
     <Content Include="Supervisor\campanas.aspx" />
     <Content Include="Supervisor\categoriasProductos.aspx" />
     <Content Include="Supervisor\ClienteSupervisor.aspx" />
     <Content Include="Supervisor\ClientesUsuarios.aspx" />
+    <Content Include="Supervisor\Consultas.aspx" />
     <Content Include="Supervisor\etapas.aspx" />
     <Content Include="Supervisor\GrupoTrabajo.aspx" />
     <Content Include="Supervisor\InicioSupervisor.aspx" />
     <Content Include="Supervisor\MisDatos.aspx" />
+    <Content Include="Supervisor\ModificaCliente.aspx" />
     <Content Include="Supervisor\NuevaCampana.aspx" />
     <Content Include="Supervisor\NuevoProducto.aspx" />
     <Content Include="Supervisor\NuevoUsuario.aspx" />
@@ -7922,10 +7972,12 @@
     <Content Include="Supervisor\tipoCampana.aspx" />
     <Content Include="Supervisor\Usuario.aspx" />
     <Content Include="Supervisor\Usuarios.aspx" />
+    <Content Include="Supervisor\UsuarioSupervisor.aspx" />
     <Content Include="Todos\calificaLlamada.aspx" />
     <Content Include="Usuario\Ayuda.aspx" />
     <Content Include="Usuario\Bandeja.aspx" />
     <Content Include="Usuario\BuscarCliente.aspx" />
+    <Content Include="Usuario\BusquedaClientes.aspx" />
     <Content Include="Usuario\CambiaUsuarioCC.aspx" />
     <Content Include="Usuario\cliente.aspx" />
     <Content Include="Usuario\clientes.aspx" />
@@ -7937,8 +7989,10 @@
     <Content Include="Usuario\MisDatos.aspx" />
     <Content Include="Usuario\ModificaCliente.aspx" />
     <Content Include="Usuario\NuevaCita.aspx" />
+    <Content Include="Usuario\NuevaCitaCte.aspx" />
     <Content Include="Usuario\nuevaEmpresa.aspx" />
     <Content Include="Usuario\NuevaLlamada.aspx" />
+    <Content Include="Usuario\NuevaVisitaCte.aspx" />
     <Content Include="Usuario\NuevoCliente.aspx" />
     <Content Include="Supervisor\Supervisor.Master" />
     <Content Include="Usuario\NuevoEmail.aspx" />
@@ -7950,6 +8004,7 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="SupervisorMty\SupervisorMty.master" />
     <None Include="Service References\Servicio\Service1.wsdl" />
     <None Include="Service References\Servicio\Service1.xsd">
       <SubType>Designer</SubType>
@@ -7968,6 +8023,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\LogOn.aspx.designer.vb">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LogOn.aspx.vb">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Account\Logoff.aspx.designer.vb">
       <DependentUpon>Logoff.aspx</DependentUpon>
     </Compile>
@@ -7975,11 +8037,11 @@
       <DependentUpon>Logoff.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Account\LogOn.aspx.designer.vb">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="Account\LogOn_old.aspx.designer.vb">
+      <DependentUpon>LogOn_old.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\LogOn.aspx.vb">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="Account\LogOn_old.aspx.vb">
+      <DependentUpon>LogOn_old.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Administrativo\AcumuladoAdm.aspx.designer.vb">
@@ -8048,6 +8110,13 @@
       <DependentUpon>Asesores.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CallCenter\CallCenter.Master.designer.vb">
       <DependentUpon>CallCenter.Master</DependentUpon>
     </Compile>
@@ -8060,6 +8129,13 @@
     </Compile>
     <Compile Include="CallCenter\cita.aspx.vb">
       <DependentUpon>cita.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CallCenter\Citas.aspx.designer.vb">
@@ -8111,6 +8187,97 @@
       <DependentUpon>NuevoCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Caseta\Asesores.aspx.designer.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Asesores.aspx.vb">
+      <DependentUpon>Asesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\Caseta.Master.designer.vb">
+      <DependentUpon>Caseta.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Caseta.Master.vb">
+      <DependentUpon>Caseta.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\Citas.aspx.designer.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Citas.aspx.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\DetalleAsesor.aspx.designer.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\DetalleAsesor.aspx.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.designer.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\InicioCaseta.aspx.vb">
+      <DependentUpon>InicioCaseta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\NuevaVisitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\NuevaVisitaCte.aspx.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\NuevoCliente.aspx.designer.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\NuevoCliente.aspx.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Caseta\VisitaCte.aspx.designer.vb">
+      <DependentUpon>VisitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caseta\VisitaCte.aspx.vb">
+      <DependentUpon>VisitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -8118,6 +8285,8 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Funciones\Funciones.vb" />
+    <Compile Include="Funciones\SQL_Functions.vb" />
     <Compile Include="Generales.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -8148,6 +8317,76 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Prospectador\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Citas.aspx.designer.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Citas.aspx.vb">
+      <DependentUpon>Citas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\DetalleAsesor.aspx.designer.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\DetalleAsesor.aspx.vb">
+      <DependentUpon>DetalleAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.designer.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\InicioProspectador.aspx.vb">
+      <DependentUpon>InicioProspectador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\NuevoCliente.aspx.designer.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\NuevoCliente.aspx.vb">
+      <DependentUpon>NuevoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Prospectador\Prospectador.Master.designer.vb">
+      <DependentUpon>Prospectador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Prospectador\Prospectador.Master.vb">
+      <DependentUpon>Prospectador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Service References\Servicio\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -8161,6 +8400,97 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Startup.vb" />
+    <Compile Include="SupervisorMty\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\CambiaUsuario.aspx.designer.vb">
+      <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\CambiaUsuario.aspx.vb">
+      <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\cita.aspx.designer.vb">
+      <DependentUpon>cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\cita.aspx.vb">
+      <DependentUpon>cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\CitaCte.aspx.designer.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\CitaCte.aspx.vb">
+      <DependentUpon>CitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ClienteSupervisor.aspx.designer.vb">
+      <DependentUpon>ClienteSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ClienteSupervisor.aspx.vb">
+      <DependentUpon>ClienteSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ClientesUsuarios.aspx.designer.vb">
+      <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ClientesUsuarios.aspx.vb">
+      <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\Consultas.aspx.designer.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\Consultas.aspx.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\DetalleObservaciones.aspx.designer.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\DetalleObservaciones.aspx.vb">
+      <DependentUpon>DetalleObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\InicioSupervisor.aspx.designer.vb">
+      <DependentUpon>InicioSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\InicioSupervisor.aspx.vb">
+      <DependentUpon>InicioSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\Oportunidades.aspx.designer.vb">
+      <DependentUpon>Oportunidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\Oportunidades.aspx.vb">
+      <DependentUpon>Oportunidades.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\ReporteCumplimiento.aspx.designer.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\ReporteCumplimiento.aspx.vb">
+      <DependentUpon>ReporteCumplimiento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMty\SupervisorMty.master.designer.vb">
+      <DependentUpon>SupervisorMty.master</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorMty\SupervisorMty.master.vb">
+      <DependentUpon>SupervisorMty.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Supervisor\AcumuladosClientes.aspx.designer.vb">
       <DependentUpon>AcumuladosClientes.aspx</DependentUpon>
     </Compile>
@@ -8182,6 +8512,13 @@
       <DependentUpon>BIAdmin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Supervisor\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Supervisor\cambiaProducto.aspx.designer.vb">
       <DependentUpon>cambiaProducto.aspx</DependentUpon>
     </Compile>
@@ -8194,6 +8531,13 @@
     </Compile>
     <Compile Include="Supervisor\CambiaUsuario.aspx.vb">
       <DependentUpon>CambiaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\CampanaModifica.aspx.designer.vb">
+      <DependentUpon>CampanaModifica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\CampanaModifica.aspx.vb">
+      <DependentUpon>CampanaModifica.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\campanas.aspx.designer.vb">
@@ -8224,6 +8568,13 @@
       <DependentUpon>ClientesUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.designer.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\Consultas.aspx.vb">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Supervisor\etapas.aspx.designer.vb">
       <DependentUpon>etapas.aspx</DependentUpon>
     </Compile>
@@ -8250,6 +8601,13 @@
     </Compile>
     <Compile Include="Supervisor\MisDatos.aspx.vb">
       <DependentUpon>MisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor\ModificaCliente.aspx.designer.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\ModificaCliente.aspx.vb">
+      <DependentUpon>ModificaCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Supervisor\NuevaCampana.aspx.designer.vb">
@@ -8364,6 +8722,13 @@
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Supervisor\UsuarioSupervisor.aspx.designer.vb">
+      <DependentUpon>UsuarioSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor\UsuarioSupervisor.aspx.vb">
+      <DependentUpon>UsuarioSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Todos\calificaLlamada.aspx.designer.vb">
       <DependentUpon>calificaLlamada.aspx</DependentUpon>
     </Compile>
@@ -8390,6 +8755,13 @@
     </Compile>
     <Compile Include="Usuario\BuscarCliente.aspx.vb">
       <DependentUpon>BuscarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\BusquedaClientes.aspx.designer.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\BusquedaClientes.aspx.vb">
+      <DependentUpon>BusquedaClientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Usuario\CambiaUsuarioCC.aspx.designer.vb">
@@ -8470,6 +8842,13 @@
       <DependentUpon>NuevaCita.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Usuario\NuevaCitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaCitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\NuevaCitaCte.aspx.vb">
+      <DependentUpon>NuevaCitaCte.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Usuario\nuevaEmpresa.aspx.designer.vb">
       <DependentUpon>nuevaEmpresa.aspx</DependentUpon>
     </Compile>
@@ -8482,6 +8861,13 @@
     </Compile>
     <Compile Include="Usuario\NuevaLlamada.aspx.vb">
       <DependentUpon>NuevaLlamada.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\NuevaVisitaCte.aspx.designer.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\NuevaVisitaCte.aspx.vb">
+      <DependentUpon>NuevaVisitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Usuario\NuevoCliente.aspx.designer.vb">
@@ -8561,7 +8947,6 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="assets\global\plugins\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="Prospectadores\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -1,15 +1,12 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="cliente.aspx.vb" Inherits="Ajax_Test.Cliente" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
-        <!-- BEGIN USER LOGIN DROPDOWN -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
         <li class="dropdown dropdown-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <%--<img alt="" class="img-circle" src="/assets/admin/layout/img/avatar3_small.jpg"/>--%>
                 <span class="username username-hide-on-mobile">
                     <asp:Literal ID="lbl_nombre" runat="server"></asp:Literal>
                 </span>
@@ -21,29 +18,12 @@
                     <a href="/Usuario/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
-                <%--	<li>
-							<a href="page_calendar.html">
-							<i class="icon-calendar"></i> Mi Calendario </a>
-						</li>
-						<li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> Mis Mensajes <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li>
-						
-						<li class="divider">
-						</li>				--%>
                 <li>
                     <a href="/Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
         </li>
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-        <!-- END QUICK SIDEBAR TOGGLER -->
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
@@ -59,12 +39,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Aceptar</button>
-                        <%-- <div  class="btn green" onclick="agregarProductos()">Agregar a mi pedido</div>--%>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
     </div>
 
@@ -75,11 +52,13 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Datos generales cliente
             </div>
+            <div class="tools">
+                <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
+            </div>
 
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
-            <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
         </div>
     </div>
 
@@ -184,7 +163,6 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Operaciones
             </div>
-
         </div>
         <div class="portlet-body">
             <div class="table-responsive">
@@ -207,37 +185,117 @@
         </div>
 
         <div class="portlet-body">
-
             <asp:Literal ID="lbl_botonCitas" runat="server"></asp:Literal>
             <div class="table-scrollable">
                 <dx:ASPxGridViewExporter ID="GV_exporterCitas" runat="server" GridViewID="GV_citas"></dx:ASPxGridViewExporter>
-                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False">
+                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
                     <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                     <SettingsSearchPanel Visible="True" />
                     <Columns>
-                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_cita" VisibleIndex="0">
+                        <dx:GridViewDataTextColumn Caption="Opciones" FieldName="Id_Cita" VisibleIndex="0">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                             <PropertiesTextEdit DisplayFormatString="&lt;a href=&quot;/Usuario/ObservacionesCita.aspx?idCita={0}&quot; class=&quot;btn btn-sm green&quot; &gt;Observaciones&lt;/a&gt;" EncodeHtml="False">
                             </PropertiesTextEdit>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataDateColumn Caption="Fecha Creación" FieldName="fechaCreacion" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Lugar Contacto" FieldName="LugarContacto" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Fraccionamiento" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataDateColumn Caption="Fecha Programada" FieldName="FechaProgramada" VisibleIndex="2">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="8">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataTextColumn Caption="Hora Programada" FieldName="HoraProgramacion" VisibleIndex="3">
+                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Cita" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="10">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Hora Termino" FieldName="HoraTermino" VisibleIndex="4">
+                        <dx:GridViewCommandColumn VisibleIndex="1" ShowEditButton="False" ShowNewButton="False" ShowDeleteButton="False" Caption="Visita">
+                            <CustomButtons>
+                                <dx:GridViewCommandColumnCustomButton ID="btnVisita" Text="Visita">
+                                </dx:GridViewCommandColumnCustomButton>
+                            </CustomButtons>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewCommandColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Visitas
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-responsive">
+                <dx:ASPxGridView ID="grdViewVisitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt">
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="Id_Visita" VisibleIndex="0" Visible="false">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Lugar" FieldName="Lugar" VisibleIndex="5">
+                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="1">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Aviso Cliente" FieldName="AvisoCliente" VisibleIndex="6" Visible="False">
+                        <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="2">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="AvisoUsuario" VisibleIndex="7" Caption="Aviso">
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="3">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="4">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn FieldName="FechaVisita" Caption="Visita" VisibleIndex="5">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="6">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Calificación" FieldName="Calificacion" VisibleIndex="9">
+                        <dx:GridViewDataTextColumn FieldName="AgenteAsignado" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Realizada" FieldName="realizada" VisibleIndex="8">
+                        <dx:GridViewDataTextColumn FieldName="AgenteVisita" VisibleIndex="8">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Observaciones" FieldName="Observaciones" VisibleIndex="10">
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
@@ -252,36 +310,6 @@
             <div class="tools">
             </div>
         </div>
-
-        <!--  <div class="portlet-body">
-            <div class="table-responsive">
-                <%--<asp:Literal ID="lbl_BtnNuevoCorreo" runat="server"></asp:Literal>--%>
-                <a href="/Usuario/Bandeja.aspx" class="btn btn-lg blue" target="_blank">Nuevo Correo</a>
-                <br />
-            <dx:ASPxGridView ID="GV_Emails" runat="server" Theme="MetropolisBlue" Width="100%" AutoGenerateColumns="False" EnableTheming="True">
-                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
-                <Columns>
-                    <dx:GridViewDataTextColumn Caption="ID Email" FieldName="id_email" VisibleIndex="0" SortIndex="0" SortOrder="Descending">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="DE:" FieldName="emailFrom" VisibleIndex="1">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="PARA:" FieldName="emailTo" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="Asunto" FieldName="subjet" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn Caption="Recibido:" FieldName="fechaRecepcion" VisibleIndex="4" >
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn Caption="Estatus" FieldName="Desc_estatus" VisibleIndex="5">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="Opciones" FieldName="id_email" VisibleIndex="6">
-                        <PropertiesTextEdit DisplayFormatString="&lt;a href='javascript:void(0)'  class='btn btn-sm green' onclick='revisarEmail({0})'&gt;Ver correo&lt;/a&gt;" EncodeHtml="False">
-                        </PropertiesTextEdit>
-                    </dx:GridViewDataTextColumn>
-                </Columns>
-                </dx:ASPxGridView>
-                </div>
-        </div>-->
-
     </div>
     <div class="portlet box green">
         <div class="portlet-title">
@@ -292,9 +320,7 @@
                 <asp:Button ID="btn_LlamadasAExcel" runat="server" Text="A Excel" CssClass="btn btn-sm green-haze" />
             </div>
         </div>
-
         <div class="portlet-body">
-
             <asp:Literal ID="lbl_botonPrograma" runat="server"></asp:Literal>
             <div class="table-scrollable">
                 <dx:ASPxGridViewExporter ID="GV_exporterLlamadas" runat="server" GridViewID="GV_Llamadas"></dx:ASPxGridViewExporter>
@@ -342,7 +368,6 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
     <script type="text/javascript">
 
         function cambiarLlamada(idLlamada) {
@@ -393,10 +418,7 @@
             document.getElementById('CorreoBody').innerHTML = response.d;
 
         }
-
     </script>
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
-
     <script src="/assets/usuario_cliente.js"></script>
 </asp:Content>
