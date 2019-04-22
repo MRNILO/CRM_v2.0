@@ -8,13 +8,13 @@ Public Class Cliente
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 1
     Dim idCliente As Integer = 0
-
+    Private DatosCliente() As Servicio.CClientesDetalles
     Private GE_Funciones As New Funciones
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         idCliente = Request.QueryString("idCliente")
-
+        lbl_mensaje.Text = ""
         If Not IsPostBack Then
             GE_Funciones.Verificar_VigenciaCitas(idCliente)
         End If
@@ -42,13 +42,13 @@ Public Class Cliente
 
             If Page.IsPostBack Then
             Else
-                Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+                DatosCliente = BL.Obtener_Clientes_detalles_idCliente(idCliente)
                 GridLlamadas()
-                ComboEtapas(Datos)
-                comboProductos(Datos)
-                BindGVEmails(Datos(0).Email, Datos(0).Email)
-                Ranking(Datos(0))
-                lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
+                ComboEtapas(DatosCliente)
+                comboProductos(DatosCliente)
+                BindGVEmails(DatosCliente(0).Email, DatosCliente(0).Email)
+                Ranking(DatosCliente(0))
+                lbl_mensajeRanking.Text = If(DatosCliente(0).ranking = "P", "Pendiente", DatosCliente(0).ranking) : Session("Ranking_Org") = DatosCliente(0).ranking
                 BotonCambiaUsuario()
             End If
             GV_Llamadas.DataSource = Session("GridLlamadas")
@@ -302,8 +302,8 @@ Public Class Cliente
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
+            DatosCliente = BL.Obtener_Clientes_detalles_idCliente(idCliente)
             If cb_etapas.SelectedValue = 5 Then
-
                 Dim DatosCita As CitaVigente = GE_Funciones.Citas_Vigentes(idCliente)
                 If DatosCita.ExisteCitaVigente Then
 
@@ -328,12 +328,15 @@ Public Class Cliente
                     Exit Sub
                 End If
             End If
-
-            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                GV_operaciones.DataBind()
-                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+            If DatosCliente(0).id_etapaActual = cb_etapas.SelectedValue Then
+                lbl_mensaje.Text = MostrarError("Debe de seleccionar una etapa difente a la etapa actual del cliente.")
             Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                    GV_operaciones.DataBind()
+                    lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+                Else
+                    lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                End If
             End If
         Catch ex As Exception
             lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)

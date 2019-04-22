@@ -9,7 +9,7 @@ Public Class CitaCteCaseta
 
     Dim Id_Cliente As Integer = 0
     Dim Id_Cita As Integer = 0
-
+    Private DatosCliente() As Servicio.CClientesDetalles
     Private GE_Funciones As New Funciones
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -19,9 +19,9 @@ Public Class CitaCteCaseta
             lbl_generales.Text = Crea_generalesCliente()
             If Page.IsPostBack Then
             Else
-                Dim Datos = BL.Obtener_Clientes_detalles_idCliente(Id_Cliente)
-                ComboEtapas(Datos)
-                comboProductos(Datos)
+                DatosCliente = BL.Obtener_Clientes_detalles_idCliente(Id_Cliente)
+                ComboEtapas(DatosCliente)
+                comboProductos(DatosCliente)
             End If
         Catch ex As Exception
 
@@ -496,8 +496,8 @@ Public Class CitaCteCaseta
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
+            DatosCliente = BL.Obtener_Clientes_detalles_idCliente(Id_Cliente)
             If cb_etapas.SelectedValue = 5 Then
-
                 Dim DatosCita As CitaVigente = GE_Funciones.Citas_Vigentes(Id_Cliente)
                 If DatosCita.ExisteCitaVigente Then
 
@@ -522,11 +522,14 @@ Public Class CitaCteCaseta
                     Exit Sub
                 End If
             End If
-
-            If BL.Avanza_EtapaCliente(Id_Cliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+            If DatosCliente(0).id_etapaActual = cb_etapas.SelectedValue Then
+                lbl_mensaje.Text = MostrarError("Debe de seleccionar una etapa difente a la etapa actual del cliente.")
             Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                If BL.Avanza_EtapaCliente(Id_Cliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                    lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+                Else
+                    lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                End If
             End If
         Catch ex As Exception
             lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)

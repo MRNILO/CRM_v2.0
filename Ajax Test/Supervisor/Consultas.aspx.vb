@@ -6,6 +6,8 @@ Public Class Consultas
     Const Excel_Extencion As String = ".xlsx"
     Const GESQL As String = ".gesql"
 
+    Private Const DATE_MASK = "yyyy-MM-dd"
+
     Private GE_Funciones As New Funciones
     Private Ruta As String = ConfigurationManager.ConnectionStrings("RutaXLS").ConnectionString
     Dim Usuario As New Servicio.CUsuarios
@@ -124,6 +126,8 @@ Public Class Consultas
 
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim Consulta As String = ViewState("Consulta")
+        Dim FechaInicio As Date
+        Dim FechaFinal As Date
 
         If Consulta <> "" Then
             If (String.IsNullOrEmpty(dtp_inicio.Text) Or String.IsNullOrEmpty(dtp_Fin.Text)) Then
@@ -137,8 +141,9 @@ Public Class Consultas
                 lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "La fecha de inicio no puede ser posterior a la fecha de fin")
                 dtp_inicio.Focus()
             Else
-                Consulta = Consulta.Replace("$FecInicio", Convert.ToString(dtp_inicio.Date.Year & "-" & dtp_inicio.Date.Month.ToString("00") & "-" & dtp_inicio.Date.Day.ToString("00")))
-                Consulta = Consulta.Replace("$FecFin", Convert.ToString(dtp_Fin.Date.Year & "-" & dtp_Fin.Date.Month.ToString("00") & "-" & dtp_Fin.Date.Day.ToString("00")))
+                FechaInicio = dtp_inicio.Text : FechaFinal = dtp_Fin.Text
+
+                Consulta = Consulta.Replace("$FecInicio", dtp_inicio.Text).Replace("$FecFin", FechaFinal)
 
                 If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
                     Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
