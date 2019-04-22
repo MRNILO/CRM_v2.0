@@ -16,7 +16,7 @@
                     
 					<ul class="dropdown-menu dropdown-menu-default">
 						<li>
-							<a href="/Usuario/MisDatos.aspx">
+							<a href="../Usuario/MisDatos.aspx">
 							<i class="icon-user"></i> Mis Datos </a>
 						</li>
 					<%--	<li>
@@ -33,7 +33,7 @@
 						<li class="divider">
 						</li>				--%>	
 						<li>
-							<a href="/Account/Logoff.aspx">
+							<a href="../Account/Logoff.aspx">
 							<i class="icon-key"></i> Salir </a>
 						</li>
 					</ul>

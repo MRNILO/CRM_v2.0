@@ -20,7 +20,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                    <a href="/Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
