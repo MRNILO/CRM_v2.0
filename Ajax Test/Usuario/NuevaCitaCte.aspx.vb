@@ -250,24 +250,20 @@
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         If Validar_Campos() Then
-            If GE_Funciones.Valida_PrimerCita(Usuario.Nivel, IDCliente) Then
-                Try
-                    If BL.Insertar_Cita(IDCliente, Usuario.id_usuario, Usuario.id_usuario, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, tb_origen.Text,
-                                cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Text, dtp_ffinal.Text,
-                                dtp_fechaCita.Text, GE_Funciones.ObtenerRankingCliente(IDCliente), 1) Then
+            Try
+                If BL.Insertar_Cita(IDCliente, Usuario.id_usuario, Usuario.id_usuario, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text, tb_origen.Text,
+                            cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue, dtp_finicio.Text, dtp_ffinal.Text,
+                            dtp_fechaCita.Text, GE_Funciones.ObtenerRankingCliente(IDCliente), 1) Then
 
-                        UI()
-                        AlimentarTablaCitas(IDCliente)
-                        lbl_mensaje.Text = MostrarExito("¡La cita se registro correctamente!")
-                    Else
-                        lbl_mensaje.Text = MostrarError("¡No se pudo guardar la cita!")
-                    End If
-                Catch ex As Exception
-                    lbl_mensaje.Text = MostrarError("No se pudo guardar la cita Error: " + ex.Message)
-                End Try
-            Else
-                lbl_mensaje.Text = MostrarAviso("La primer cita debe ser registrada por un usuario de Call Center")
-            End If
+                    UI()
+                    AlimentarTablaCitas(IDCliente)
+                    lbl_mensaje.Text = MostrarExito("¡La cita se registro correctamente!")
+                Else
+                    lbl_mensaje.Text = MostrarError("¡No se pudo guardar la cita!")
+                End If
+            Catch ex As Exception
+                lbl_mensaje.Text = MostrarError("No se pudo guardar la cita Error: " + ex.Message)
+            End Try
         Else
             lbl_mensaje.Text = MostrarAviso("¡Te falta capturar información para la cita, revisa los datos capturados!")
         End If

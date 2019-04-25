@@ -359,19 +359,15 @@
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         If Validar_Campos() Then
-            If GE_Funciones.Valida_PrimerCita(Usuario.Nivel, Id_Cliente) Then
-                Try
-                    If BL.Insertar_CitasProspectador(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
-                                               tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
-                                               dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
-                        Response.Redirect("../Prospectador/Citas.aspx", False)
-                    End If
-                Catch ex As Exception
-                    lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
-                End Try
-            Else
-                lbl_mensaje.Text = MostrarAviso("La primer cita debe ser registrada por un usuario de Call Center")
-            End If
+            Try
+                If BL.Insertar_CitasProspectador(Request.QueryString("id"), Usuario.id_usuario, cb_usuarios.SelectedValue, cmBoxCampana.SelectedItem.Value, tb_TipoCampana.Text,
+                                           tb_origen.Text, cmBoxCampana.SelectedItem.Text, cb_fraccinamientos.SelectedValue, cb_modelos.SelectedValue,
+                                           dtp_finicio.Date, dtp_ffinal.Date, dtp_fechaCita.Date, GE_Funciones.ObtenerRankingCliente(Request.QueryString("id")), 1) Then
+                    Response.Redirect("../Prospectador/Citas.aspx", False)
+                End If
+            Catch ex As Exception
+                lbl_mensaje.Text = "<strong>No se pudo guardar la cita Error: " + ex.Message + "</strong>"
+            End Try
         Else
             lbl_mensaje.Text = MostrarAviso("¡Te falta capturar información para la cita, revisa los datos capturados!")
         End If
