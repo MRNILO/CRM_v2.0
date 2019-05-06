@@ -92,7 +92,7 @@
                             <div class="col-xs-5 bs-reset">
                                 <ul class="login-social">
                                     <li>
-                                        <a href="http://facebook.com/altairsoft">
+                                        <a href="http://facebook.com">
                                             <i class="icon-social-facebook"></i>
                                         </a>
                                     </li>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-xs-7 bs-reset">
                             <div class="login-copyright text-right">
-                                <p>Copyright &copy; Kunde By: AltairSoft</p>
+                                <p>Copyright &copy; Grupo Edificasa</p>
                             </div>
                         </div>
                     </div>
