@@ -101,6 +101,11 @@ Public Class Consultas
         End If
     End Sub
 
+    Public Function ValidarCampos() As Boolean
+        If dtp_inicio.Text = "" Then Return False
+        If dtp_Fin.Text = "" Then Return False Else Return True
+    End Function
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -118,6 +123,7 @@ Public Class Consultas
     Protected Sub grdViewConsulta_DataBinding(sender As Object, e As EventArgs) Handles grdViewConsulta.DataBinding
         grdViewConsulta.DataSource = ViewState("ConjuntoDatos")
     End Sub
+
     Protected Sub btnAbrirArchivo_Click(sender As Object, e As EventArgs) Handles btnAbrirArchivo.Click
         LimpiaGrid()
         ObtenerDatos(cmBoxArchivos.SelectedItem.Value)
@@ -132,45 +138,42 @@ Public Class Consultas
         Dim FechaFinal As Date
 
         If Consulta <> "" Then
-            If Consulta.Contains("$FecInicio") Then
-                FechaInicio = dtp_inicio.Text : FechaFinal = dtp_Fin.Text
-                If (String.IsNullOrEmpty(dtp_inicio.Text) Or String.IsNullOrEmpty(dtp_Fin.Text)) Then
-                    lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "Los datos de fecha Inicio y fecha fin no pueden ir vacíos")
-                    If (String.IsNullOrEmpty(dtp_inicio.Text)) Then
-                        dtp_inicio.Focus()
-                    Else
-                        dtp_Fin.Focus()
+            If ValidarCampos() Then
+                If Consulta.Contains("$FecInicio") Then
+                    FechaInicio = dtp_inicio.Text : FechaFinal = dtp_Fin.Text
+
+                    If (dtp_inicio.Date > dtp_Fin.Date) Then
+                        FechaInicio = FechaFinal
+                        FechaFinal = FechaInicio
                     End If
-                ElseIf (dtp_inicio.Date > dtp_Fin.Date) Then
-                    FechaInicio = FechaFinal
-                    FechaFinal = FechaInicio
+
+                    Consulta = Consulta.Replace("$FecInicio", FechaInicio.ToString(DATE_MASK)).Replace("$FecFin", FechaFinal.ToString(DATE_MASK))
                 End If
-                Consulta = Consulta.Replace("$FecInicio", FechaInicio).Replace("$FecFin", FechaInicio)
-            End If
 
-            If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
-                Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
+                If Not GE_Funciones.Comprobar_OperacionConsulta(Consulta) Then
+                    Dim Datos = GE_Funciones.ObtenerDatosConsulta(Consulta)
 
-                LimpiaGrid()
-
-                If IsNothing(Datos(0).DT) = False Then
-                    ViewState("ConjuntoDatos") = Datos(0).DT
-                    If Datos(0).Resultado = "Success" Then
-                        With grdViewConsulta
-                            .AutoGenerateColumns = True
-                            .DataSource = ViewState("ConjuntoDatos")
-                            .DataBind()
-                        End With
-                        lbl_mensaje.Text = ""
-                        lbl_Total.Text = "Total registros: " & Datos(0).DT.Rows.Count
-                    Else
-                        lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio! \n" & Datos(0).Resultado)
+                    LimpiaGrid()
+                    If IsNothing(Datos(0).DT) = False Then
+                        ViewState("ConjuntoDatos") = Datos(0).DT
+                        If Datos(0).Resultado = "Success" Then
+                            With grdViewConsulta
+                                .AutoGenerateColumns = True
+                                .DataSource = ViewState("ConjuntoDatos")
+                                .DataBind()
+                            End With
+                            lbl_mensaje.Text = ""
+                            lbl_Total.Text = "Total registros: " & Datos(0).DT.Rows.Count
+                        Else
+                            lbl_mensaje.Text = MostrarError("¡Conjunto de datos vacio! \n" & Datos(0).Resultado)
+                        End If
                     End If
+                Else
+                    lbl_mensaje.Text = MostrarAviso("Cuidado . . . Consulta de datos no valida")
                 End If
             Else
-                lbl_mensaje.Text = MostrarAviso("Cuidado . . . Consulta de datos no valida")
+                lbl_mensaje.Text = MostrarAviso("UPS . . . \n ¡Los campos de fecha no pueden estar vacios!")
             End If
-
         Else
             lbl_mensaje.Text = MostrarAviso("¡Te faltan datos para trabajar! \n" & "No existen consultas para ejecutar")
         End If
