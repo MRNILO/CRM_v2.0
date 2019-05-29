@@ -28,6 +28,9 @@
         <div class="col-lg-2">
             <a href="/Supervisor/NuevoUsuario.aspx" class="btn btn-sm btn-block purple">Nuevo Usuario</a>
         </div>
+        <div class="col-lg-2">
+            <asp:Button ID="btnSincronizar" runat="server" Text="Sincronizar" CssClass="btn btn-sm btn-block blue" />
+        </div>
     </div>
 
     <div class="portlet box green">

@@ -789,6 +789,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Actualizar_Coordinador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NumEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="NumCordinador" type="xs:int" />
+        <xs:element minOccurs="0" name="Nombre_Cordinador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CoordinadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualizar_CoordinadorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_notificaciones">
     <xs:complexType>
       <xs:sequence>

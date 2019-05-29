@@ -12504,6 +12504,12 @@ Namespace Servicio
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_TipoUsuario", ReplyAction:="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse")>  _
         Function Obtener_TipoUsuarioAsync() As System.Threading.Tasks.Task(Of Servicio.TipoUsuario())
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Coordinador", ReplyAction:="http://tempuri.org/IService1/Actualizar_CoordinadorResponse")>  _
+        Function Actualizar_Coordinador(ByVal NumEmpleado As Integer, ByVal NumCordinador As Integer, ByVal Nombre_Cordinador As String) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Actualizar_Coordinador", ReplyAction:="http://tempuri.org/IService1/Actualizar_CoordinadorResponse")>  _
+        Function Actualizar_CoordinadorAsync(ByVal NumEmpleado As Integer, ByVal NumCordinador As Integer, ByVal Nombre_Cordinador As String) As System.Threading.Tasks.Task(Of Boolean)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/Obtener_notificaciones", ReplyAction:="http://tempuri.org/IService1/Obtener_notificacionesResponse")>  _
         Function Obtener_notificaciones(ByVal idCliente As Integer) As Servicio.CNotifica()
         
@@ -14046,6 +14052,14 @@ Namespace Servicio
         
         Public Function Obtener_TipoUsuarioAsync() As System.Threading.Tasks.Task(Of Servicio.TipoUsuario()) Implements Servicio.IService1.Obtener_TipoUsuarioAsync
             Return MyBase.Channel.Obtener_TipoUsuarioAsync
+        End Function
+        
+        Public Function Actualizar_Coordinador(ByVal NumEmpleado As Integer, ByVal NumCordinador As Integer, ByVal Nombre_Cordinador As String) As Boolean Implements Servicio.IService1.Actualizar_Coordinador
+            Return MyBase.Channel.Actualizar_Coordinador(NumEmpleado, NumCordinador, Nombre_Cordinador)
+        End Function
+        
+        Public Function Actualizar_CoordinadorAsync(ByVal NumEmpleado As Integer, ByVal NumCordinador As Integer, ByVal Nombre_Cordinador As String) As System.Threading.Tasks.Task(Of Boolean) Implements Servicio.IService1.Actualizar_CoordinadorAsync
+            Return MyBase.Channel.Actualizar_CoordinadorAsync(NumEmpleado, NumCordinador, Nombre_Cordinador)
         End Function
         
         Public Function Obtener_notificaciones(ByVal idCliente As Integer) As Servicio.CNotifica() Implements Servicio.IService1.Obtener_notificaciones
