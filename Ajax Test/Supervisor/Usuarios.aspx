@@ -33,7 +33,7 @@
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-check-circle"></i>Usuarios 
+                <i class="fa fa-check-circle"></i>Usuarios sssss
             </div>
             <div class="tools">
             </div>
