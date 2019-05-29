@@ -1,5 +1,6 @@
 ﻿Module Generales
     Public BL As New Servicio.Service1Client
+    Public EK_REST As New EKREST.Iwcf_enkontrolClient
 
     Function MostrarError(ByVal TextoError As String) As String
         Dim HTML As String = ""

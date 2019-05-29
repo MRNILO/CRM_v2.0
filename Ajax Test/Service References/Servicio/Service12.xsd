@@ -108,6 +108,8 @@
         <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
         <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Usuario_Coordinador" type="xs:int" />
+        <xs:element minOccurs="0" name="Coordinador" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
