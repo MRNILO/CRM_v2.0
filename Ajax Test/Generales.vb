@@ -11,6 +11,7 @@
                 </script>"
         Return HTML
     End Function
+
     Function MostrarAviso(ByVal Aviso As String) As String
         Dim HTML As String = ""
 
@@ -21,6 +22,7 @@
 
         Return HTML
     End Function
+
     Function MostrarExito(ByVal Aviso As String) As String
         Dim HTML As String = ""
 
