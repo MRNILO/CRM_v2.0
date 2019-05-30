@@ -6,9 +6,6 @@ Public Class Usuarios
     Dim NivelSeccion As Integer = 2
     Dim Usuario As New Servicio.CUsuarios
     Dim DTA As New DataTable
-
-    Private GE_Funciones As New Funciones
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         If Not IsPostBack() Then
@@ -155,16 +152,6 @@ Public Class Usuarios
         Next
         Return sb.ToString()
     End Function
-
-    Protected Sub btnSincronizar_Click(sender As Object, e As EventArgs) Handles btnSincronizar.Click
-        Dim SyncResult As Actualizacion = GE_Funciones.Sincronizar_UsuarioCoordinador()
-
-        If SyncResult.Correctos <> -1 Then
-            MostrarExito(SyncResult.Mensaje & "\n" & "Correctos: " & SyncResult.Correctos & "\n" & "Erroneos: " & SyncResult.Erroneos)
-        Else
-            MostrarError(SyncResult.Mensaje)
-        End If
-    End Sub
 
     Protected Sub GV_Usuarios_CellEditorInitialize1(sender As Object, e As ASPxGridViewEditorEventArgs) Handles GV_Usuarios.CellEditorInitialize
         If (e.Column.FieldName = "Perfil") Then

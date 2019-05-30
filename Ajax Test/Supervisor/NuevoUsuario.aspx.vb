@@ -1,4 +1,5 @@
 ﻿Imports System.Web.Services
+Imports Newtonsoft.Json
 
 Public Class NuevoUsuario
     Inherits System.Web.UI.Page
@@ -27,6 +28,7 @@ Public Class NuevoUsuario
         End If
         Return "NO"
     End Function
+
     Protected Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
         Dim NuevoIDUsuario As Integer = 0
 
@@ -40,8 +42,17 @@ Public Class NuevoUsuario
 
                     Response.Redirect("../Supervisor/Supervisores.aspx", False)
                 Else
-                    NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
-                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-")
+                    Try
+                        Convert.ToInt32(tb_NombreUsuario.Text)
+                        ' Dim Data As String = EK_REST.ObtenerDetalle_Agente(tb_NombreUsuario.Text)
+                        'Dim JSONObj = JsonConvert.DeserializeObject(Of Agente)(Data)
+
+                        NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
+                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", "", "")
+                    Catch ex As Exception
+                        NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
+                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", "", "")
+                    End Try
 
                     If NuevoIDUsuario > 0 Then
                         If BL.Inserta_supervisorUsuario(NuevoIDUsuario, Usuario.id_usuario) Then
@@ -56,6 +67,7 @@ Public Class NuevoUsuario
             End Try
         End If
     End Sub
+
     Public Function CalculateMD5Hash(input As String) As String
         Dim md5 = System.Security.Cryptography.MD5.Create()
         Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
@@ -93,6 +105,7 @@ Public Class NuevoUsuario
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1

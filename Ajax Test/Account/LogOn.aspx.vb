@@ -33,10 +33,9 @@
 
         Catch ex As Exception
             'No valido
-            lbl_error.Text = MostrarError("Hubo un error ;( " + ex.Message + ")")
+            lbl_error.Text = MostrarError("Hubo un error ;( " + ex.Message)
         End Try
     End Sub
-
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -55,17 +54,21 @@
                 Response.Redirect("~/SupervisorMty/InicioSupervisor.aspx", False)
         End Select
     End Sub
-
     Public Function CalculateMD5Hash(input As String) As String
+
+
         Dim md5 = System.Security.Cryptography.MD5.Create()
         Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
         Dim hash = md5.ComputeHash(inputBytes)
+
 
         Dim sb = New StringBuilder()
 
         For I = 0 To hash.Length - 1
             sb.Append(hash(I).ToString("X2"))
         Next
+
+
 
         Return sb.ToString()
     End Function

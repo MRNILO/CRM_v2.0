@@ -1,5 +1,6 @@
 ﻿Module Generales
     Public BL As New Servicio.Service1Client
+    Public EK_REST As New EKREST.Iwcf_enkontrolClient
 
     Function MostrarError(ByVal TextoError As String) As String
         Dim HTML As String = ""
@@ -10,7 +11,6 @@
                 </script>"
         Return HTML
     End Function
-
     Function MostrarAviso(ByVal Aviso As String) As String
         Dim HTML As String = ""
 
@@ -21,7 +21,6 @@
 
         Return HTML
     End Function
-
     Function MostrarExito(ByVal Aviso As String) As String
         Dim HTML As String = ""
 

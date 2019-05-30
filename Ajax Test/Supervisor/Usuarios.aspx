@@ -28,15 +28,12 @@
         <div class="col-lg-2">
             <a href="/Supervisor/NuevoUsuario.aspx" class="btn btn-sm btn-block purple">Nuevo Usuario</a>
         </div>
-        <div class="col-lg-2">
-            <asp:Button ID="btnSincronizar" runat="server" Text="Sincronizar" CssClass="btn btn-sm btn-block blue" />
-        </div>
     </div>
 
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-check-circle"></i>Usuarios
+                <i class="fa fa-check-circle"></i>Usuarios sssss
             </div>
             <div class="tools">
             </div>
@@ -121,7 +118,6 @@
             </div>
         </div>
     </div>
-    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
@@ -151,6 +147,7 @@
             }
         }
     </script>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
 

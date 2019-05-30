@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports Newtonsoft.Json
 Imports Ajax_Test.SQL_Functions
 
 Public Class Funciones
@@ -145,7 +144,6 @@ Public Class Funciones
         Public DT As DataTable
         Public Resultado As String
     End Class
-
     Public Function BuscarClientes(ByVal Cliente As BusquedaCliente) As DataTable
         Dim Query As String = "EXEC [dbo].[BuscarClientes]
 		                            @Nombre = N'" & Cliente.nombreCliente & "',
@@ -248,6 +246,7 @@ Public Class Funciones
 
         BuscarClientesEK2 = DTB
     End Function
+
 
     Public Function BuscarClientesXAsesor(ByVal Cliente As BusquedaClienteAsesor)
         Dim Query As String = "EXEC [dbo].[BuscarClientesXAsesor]
@@ -932,38 +931,6 @@ Inicio:
 #End Region
 
 #Region "Usuarios"
-    Public Function Sincronizar_UsuarioCoordinador() As Actualizacion
-        Dim Resultado As New Actualizacion
-
-        Try
-            Dim DT As New DataTable
-            Dim Query As String = "SELECT Id_Usuario, usuario FROM usuarios"
-
-            Resultado.Correctos = 0
-            Resultado.Erroneos = 0
-
-            DT = GE_SQL.SQLGetTable(Query)
-            For Each Row As DataRow In DT.Rows
-                Dim Data As String = EK_REST.ObtenerDetalle_Agente(Row("usuario"))
-                Dim OBJA = JsonConvert.DeserializeObject(Of Agente)(Data)
-
-                If BL.Actualizar_Coordinador(Row("Id_Usuario"), OBJA.Usuario_Coordinador, OBJA.Coordinador) Then
-                    Resultado.Correctos += 1
-                Else
-                    Resultado.Erroneos += 1
-                End If
-            Next
-
-            Resultado.Mensaje = "Actualización completada, verificar total de resultados correctos e incorrectos"
-        Catch ex As Exception
-            Resultado.Correctos = -1
-            Resultado.Erroneos = -1
-            Resultado.Mensaje = "Ocurrio un error al intentar sincronizar a los coordinadores, intentalo nuevamente"
-        End Try
-
-        Return Resultado
-    End Function
-
     Public Function Asignar_Supervisor(ByVal idUsuario As Integer, ByVal idSupervisor As Integer) As Boolean
         Dim Query As String = " EXEC [dbo].[Inserta_Asignacion_supervisorUsuario]
                                    @Pid_usuario = N'" & idUsuario & "',
@@ -976,7 +943,6 @@ Inicio:
         End If
     End Function
 #End Region
-
 #Region "´Campañas"
     Public Function Inserta_TipoCampaña(ByVal TipoCampaña As String) As Boolean
         Dim Query As String = " EXEC [dbo].[Inserta_TipoCampaña]
