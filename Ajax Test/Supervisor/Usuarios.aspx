@@ -121,6 +121,7 @@
             </div>
         </div>
     </div>
+    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
@@ -150,7 +151,6 @@
             }
         }
     </script>
-    <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server"></asp:Content>
 

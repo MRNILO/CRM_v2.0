@@ -12,8 +12,8 @@ Public Class Agente
     Public Property Tipo_Agente As String
     Public Property Asesor_Credito As String
     Public Property Nivel_Usuario As Integer
-    Public Property Usuario_Coordinador As String
-    Public Property Nombre_Coordinador As String
+    Public Property Usuario_Coordinador As Integer
+    Public Property Coordinador As String
     Public Property Resultado As String
     Public Property Mensaje As String
 End Class

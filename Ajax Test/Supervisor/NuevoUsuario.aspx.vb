@@ -48,7 +48,7 @@ Public Class NuevoUsuario
                         Dim JSONObj = JsonConvert.DeserializeObject(Of Agente)(Data)
 
                         NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
-                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", JSONObj.Usuario_Coordinador, JSONObj.Nombre_Coordinador)
+                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", JSONObj.Usuario_Coordinador, JSONObj.Coordinador)
                     Catch ex As Exception
                         NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
                                      CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", "", "")

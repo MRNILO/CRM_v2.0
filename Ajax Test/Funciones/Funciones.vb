@@ -947,7 +947,7 @@ Inicio:
                 Dim Data As String = EK_REST.ObtenerDetalle_Agente(Row("usuario"))
                 Dim OBJA = JsonConvert.DeserializeObject(Of Agente)(Data)
 
-                If BL.Actualizar_Coordinador(Row("Id_Usuario"), OBJA.Usuario_Coordinador, OBJA.Nombre_Coordinador) Then
+                If BL.Actualizar_Coordinador(Row("Id_Usuario"), OBJA.Usuario_Coordinador, OBJA.Coordinador) Then
                     Resultado.Correctos += 1
                 Else
                     Resultado.Erroneos += 1

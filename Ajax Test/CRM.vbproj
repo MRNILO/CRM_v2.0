@@ -8291,6 +8291,7 @@
       <DependentUpon>VisitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Clases\clsActualizacion.vb" />
     <Compile Include="Clases\clsAgente.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
