@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
+Imports Ajax_Test.Funciones
 
 Public Class ClienteSupervisor
     Inherits System.Web.UI.Page
@@ -9,6 +10,7 @@ Public Class ClienteSupervisor
     Dim Conexion As New SqlConnection("Data Source=192.168.1.13\CRM;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=Sistemas1245")
     Dim Conexion1 As New SqlConnection("Data Source=altaircloud.mx\SQLSERVER,5696;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=octy#1992.A")
     Private GE_Funciones As New Funciones
+    Private DatosCliente() As Servicio.CClientesDetalles
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
@@ -50,76 +52,76 @@ Public Class ClienteSupervisor
 
     Public Sub UI()
         BuscaCitasActivas()
-        Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+        DatosCliente = BL.Obtener_Clientes_detalles_idCliente(idCliente)
 
-        If Datos(0).Numcte = 0 Then
-            tb_numcte.Text = Datos(0).Numcte
+        If DatosCliente(0).Numcte = 0 Then
+            tb_numcte.Text = DatosCliente(0).Numcte
             tb_numcte.Enabled = True
         Else
-            tb_numcte.Text = Datos(0).Numcte
+            tb_numcte.Text = DatosCliente(0).Numcte
             'CAMBIOS
             tb_numcte.Enabled = False
         End If
 
-        If Datos(0).Numcte2 = 0 Then
-            tb_numcte2.Text = Datos(0).Numcte2
+        If DatosCliente(0).Numcte2 = 0 Then
+            tb_numcte2.Text = DatosCliente(0).Numcte2
             tb_numcte2.Enabled = True
         Else
-            tb_numcte2.Text = Datos(0).Numcte2
+            tb_numcte2.Text = DatosCliente(0).Numcte2
             'CAMBIOS
             tb_numcte2.Enabled = False
         End If
 
-        If Datos(0).ModeloEk = "-" Then
-            tb_Modelo.Text = Datos(0).ModeloEk
+        If DatosCliente(0).ModeloEk = "-" Then
+            tb_Modelo.Text = DatosCliente(0).ModeloEk
             tb_Modelo.Enabled = True
         Else
-            tb_Modelo.Text = Datos(0).ModeloEk
+            tb_Modelo.Text = DatosCliente(0).ModeloEk
             'CAMBIOS
             tb_Modelo.Enabled = False
         End If
 
-        If Datos(0).Fecha_Recuperacion = "1900-01-01" Then
+        If DatosCliente(0).Fecha_Recuperacion = "1900-01-01" Then
             dtp_FechaRecuperacion.Text = ""
             dtp_FechaRecuperacion.Enabled = True
         Else
-            dtp_FechaRecuperacion.Text = Datos(0).Fecha_Recuperacion
+            dtp_FechaRecuperacion.Text = DatosCliente(0).Fecha_Recuperacion
             'CAMBIOS
             dtp_FechaRecuperacion.Enabled = False
         End If
 
-        If Datos(0).FechaCierre = "1900-01-01" Then
+        If DatosCliente(0).FechaCierre = "1900-01-01" Then
             dtp_FechaCierre.Text = ""
             dtp_FechaCierre.Enabled = True
         Else
-            dtp_FechaCierre.Text = Datos(0).FechaCierre
+            dtp_FechaCierre.Text = DatosCliente(0).FechaCierre
             'CAMBIOS
             dtp_FechaCierre.Enabled = False
         End If
 
-        If Datos(0).FechaEscritura = "1900-01-01" Then
+        If DatosCliente(0).FechaEscritura = "1900-01-01" Then
             dtp_FechaEscrituracion.Text = ""
             dtp_FechaEscrituracion.Enabled = True
         Else
-            dtp_FechaEscrituracion.Text = Datos(0).FechaEscritura
+            dtp_FechaEscrituracion.Text = DatosCliente(0).FechaEscritura
             'CAMBIOS
             dtp_FechaEscrituracion.Enabled = False
         End If
 
-        If Datos(0).FechaCancelacion = "1900-01-01" Then
+        If DatosCliente(0).FechaCancelacion = "1900-01-01" Then
             dtp_FechaCancelacion.Text = ""
             dtp_FechaCancelacion.Enabled = True
         Else
-            dtp_FechaCancelacion.Text = Datos(0).FechaCancelacion
+            dtp_FechaCancelacion.Text = DatosCliente(0).FechaCancelacion
             'CAMBIOS
             dtp_FechaCancelacion.Enabled = False
         End If
 
-        If Datos(0).Fecha_OperacionEK = "1900-01-01" Then
+        If DatosCliente(0).Fecha_OperacionEK = "1900-01-01" Then
             dtp_FechaOperacion.Text = ""
             dtp_FechaOperacion.Enabled = True
         Else
-            dtp_FechaOperacion.Text = Datos(0).Fecha_OperacionEK
+            dtp_FechaOperacion.Text = DatosCliente(0).Fecha_OperacionEK
             'CAMBIOS
             dtp_FechaOperacion.Enabled = False
         End If
@@ -130,16 +132,16 @@ Public Class ClienteSupervisor
         Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
 
         GridLlamadas()
-        ComboEtapas(Datos)
+        ComboEtapas(DatosCliente)
         ComboEmpresas()
-        comboProductos(Datos)
-        ComboUsuarios(Datos)
-        cmBoxUsuarios.Value = Datos(0).id_Usuario
-        cmBoxUsuarios.Text = String.Format("({0}) {1}", Datos(0).id_Usuario, Datos(0).NombreAsesor + " " + Datos(0).ApellidoAsesor)
-        cmBoxEmpresa.Value = Datos(0).EmpresaEK
+        comboProductos(DatosCliente)
+        ComboUsuarios(DatosCliente)
+        cmBoxUsuarios.Value = DatosCliente(0).id_Usuario
+        cmBoxUsuarios.Text = String.Format("({0}) {1}", DatosCliente(0).id_Usuario, DatosCliente(0).NombreAsesor + " " + DatosCliente(0).ApellidoAsesor)
+        cmBoxEmpresa.Value = DatosCliente(0).EmpresaEK
 
-        Ranking(Datos(0))
-        lbl_mensajeRanking.Text = If(Datos(0).ranking = "P", "Pendiente", Datos(0).ranking) : Session("Ranking_Org") = Datos(0).ranking
+        Ranking(DatosCliente(0))
+        lbl_mensajeRanking.Text = If(DatosCliente(0).ranking = "P", "Pendiente", DatosCliente(0).ranking) : Session("Ranking_Org") = DatosCliente(0).ranking
         tb_numcte.Text = Obtener_numcte().ToString
     End Sub
 
@@ -361,12 +363,14 @@ Public Class ClienteSupervisor
     End Sub
 
     Sub ComboEtapas(ByRef Datos As Servicio.CClientesDetalles())
+        Dim DT = BL.Obtener_etapasCliente
 
-        cb_etapas.DataSource = BL.Obtener_etapasCliente
+        cb_etapas.DataSource = DT
         cb_etapas.DataTextField = "Descripcion"
         cb_etapas.DataValueField = "id_etapa"
         cb_etapas.DataBind()
 
+        ViewState("EtapasCliente") = DT
         cb_etapas.SelectedValue = Datos(0).id_etapaActual
     End Sub
 
@@ -450,11 +454,64 @@ Public Class ClienteSupervisor
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
-            If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
-                GV_operaciones.DataBind()
-                lbl_mensaje.Text = MostrarAviso("Etapa actualizada")
+            Dim DT_Etapas As New DataTable
+            Dim ROWA As DataRow
+            Dim DT = ViewState("EtapasCliente")
+            Dim EtapaActaual As Integer
+            Dim EtapaNueva As Integer
+
+            DT_Etapas.Columns.AddRange({New DataColumn("Descripcion", GetType(String)), New DataColumn("id_etapa", GetType(Integer)), New DataColumn("nEtapa", GetType(Integer))})
+            For i = 0 To DT.length - 1
+                ROWA = DT_Etapas.NewRow
+                ROWA("Descripcion") = DT(i).Descripcion
+                ROWA("id_etapa") = DT(i).id_etapa
+                ROWA("nEtapa") = DT(i).nEtapa
+                DT_Etapas.Rows.Add(ROWA)
+            Next
+            DatosCliente = BL.Obtener_Clientes_detalles_idCliente(idCliente)
+            If cb_etapas.SelectedValue = 5 Then
+                Dim DatosCita As CitaVigente = GE_Funciones.Citas_Vigentes(idCliente)
+                If DatosCita.ExisteCitaVigente Then
+
+                    Dim DatosVisita As VisitaVigente = GE_Funciones.Visitas_Vigentes(idCliente)
+                    If DatosVisita.ExisteVisitaVigente Then
+
+                        If GE_Funciones.Cierre_Valida(idCliente) Then
+                            If Not GE_Funciones.Cierre_CitasVisitas(idCliente) Then
+                                lbl_mensaje.Text = MostrarError("¡Error al completar las citas y visitas del cliente!")
+                                Exit Sub
+                            End If
+                        Else
+                            lbl_mensaje.Text = MostrarError("¡Existe una operacion de cierre previa!")
+                            Exit Sub
+                        End If
+                    Else
+                        lbl_mensaje.Text = MostrarError("Falta registrar visita")
+                        Exit Sub
+                    End If
+                Else
+                    lbl_mensaje.Text = MostrarError("Falta registrar cita.")
+                    Exit Sub
+                End If
+            End If
+            For Each row In DT_Etapas.Rows
+                If row("id_etapa") = DatosCliente(0).id_etapaActual Then
+                    EtapaActaual = row("nEtapa")
+                End If
+                If row("id_etapa") = cb_etapas.SelectedValue Then
+                    EtapaNueva = row("nEtapa")
+                End If
+            Next
+            If EtapaNueva = EtapaActaual Then
+                lbl_mensaje.Text = MostrarError("Debe de seleccionar una etapa difente a la etapa actual del cliente.")
+            ElseIf EtapaNueva < EtapaActaual Then
+                lbl_mensaje.Text = MostrarError("No puede regresar etapa.")
             Else
-                lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                If BL.Avanza_EtapaCliente(idCliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
+                    lbl_mensaje.Text = MostrarExito("Etapa actualizada")
+                Else
+                    lbl_mensaje.Text = MostrarError("Error al cambiar etapa")
+                End If
             End If
         Catch ex As Exception
             lbl_mensaje.Text = MostrarAviso("Error al cambiar etapa : " + ex.Message)

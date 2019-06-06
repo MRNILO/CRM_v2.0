@@ -298,24 +298,26 @@
         HTML += "<strong>Fecha Escrituración Enkontrol: </strong>" + Datos(0).FechaEscritura
         HTML += "<br />"
 
-        Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
+        If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) = 0) Then
+            Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
+            If Vigencias.Length > 0 Then
+                If Vigencias(0).CitasVigentes > 0 Then
+                    HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
+                    HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
-        If Vigencias.Length > 0 Then
-            If Vigencias(0).CitasVigentes > 0 Then
-                HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
-                HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
-
-                lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
-                btn_asignaCita.Visible = False
+                    lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
+                    btn_asignaCita.Visible = False
+                Else
+                    lbl_usuario.Text = "-"
+                    btn_asignaCita.Visible = True
+                End If
             Else
                 lbl_usuario.Text = "-"
                 btn_asignaCita.Visible = True
             End If
         Else
-            lbl_usuario.Text = "-"
-            btn_asignaCita.Visible = True
+            btn_asignaCita.Visible = False
         End If
-
         Return HTML
     End Function
 

@@ -9,6 +9,7 @@ Public Class Usuarios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         If Not IsPostBack() Then
+
             ObtenerDatosUsuarios()
         End If
         lbl_mensaje.Text = ""
@@ -29,7 +30,7 @@ Public Class Usuarios
         Dim DTA As New DataTable
 
         DTA.Columns.AddRange({New DataColumn("id_usuario"), New DataColumn("Nombre"), New DataColumn("ApellidoPaterno"), New DataColumn("ApellidoMaterno"), New DataColumn("Email"),
-                              New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean)), New DataColumn("Perfil"), New DataColumn("PerfilDes")})
+                              New DataColumn("Usuario"), New DataColumn("Contrasena"), New DataColumn("Registrado"), New DataColumn("activo", GetType(Boolean)), New DataColumn("Perfil"), New DataColumn("PerfilDes"), New DataColumn("idsupervisor"), New DataColumn("SupervisorDes")})
 
         For i As Integer = 0 To ClientesSupervisor.Length - 1
             ROWA = DTA.NewRow()
@@ -44,6 +45,8 @@ Public Class Usuarios
             ROWA("Contrasena") = ClientesSupervisor(i).contraseña
             ROWA("Perfil") = ClientesSupervisor(i).id_TipoUsuario
             ROWA("PerfilDes") = ClientesSupervisor(i).TipousuarioDes
+            ROWA("idsupervisor") = ClientesSupervisor(i).id_supervisor
+            ROWA("SupervisorDes") = ClientesSupervisor(i).SupervisorDes
             DTA.Rows.Add(ROWA)
         Next
 
@@ -99,7 +102,7 @@ Public Class Usuarios
 
             If (String.IsNullOrEmpty(e.NewValues("Contrasena"))) Then Contrasena = "" Else Contrasena = CalculateMD5Hash(e.NewValues("Contrasena"))
 
-            If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo, e.NewValues("Perfil")) Then
+            If BL.Actualiza_usuariosPass(e.Keys(0), e.NewValues("Nombre"), e.NewValues("ApellidoPaterno"), e.NewValues("ApellidoMaterno"), e.NewValues("Email"), e.NewValues("Usuario"), Contrasena, Activo, e.NewValues("Perfil"), e.NewValues("idsupervisor")) Then
                 e.Cancel = True
                 DTA = ViewState("ClienteUsuarios")
                 RowResult = DTA.Select("id_usuario = " & e.Keys(0))
@@ -115,7 +118,8 @@ Public Class Usuarios
                     DTA.Rows(Index).Item("Usuario") = e.NewValues("Usuario")
                     DTA.Rows(Index).Item("Perfil") = e.NewValues("Perfil")
                     DTA.Rows(Index).Item("PerfilDes") = BuscarDesPerfil(e.NewValues("Perfil"))
-
+                    DTA.Rows(Index).Item("idsupervisor") = e.NewValues("idsupervisor")
+                    DTA.Rows(Index).Item("SupervisorDes") = BuscarDesSupervisor(e.NewValues("idsupervisor"))
                 Next
 
                 ViewState("ClienteUsuarios") = DTA
@@ -140,6 +144,19 @@ Public Class Usuarios
         Return PerfilDes
     End Function
 
+    Private Function BuscarDesSupervisor(ByVal idsupervisor As Integer) As String
+        Dim SupervisorDes As String = ""
+
+        For Each Supervisor In ViewState("SUpervisores")
+            If (DirectCast(Supervisor, Ajax_Test.Servicio.CSupervisores).id_supervisor = idsupervisor) Then
+                SupervisorDes = DirectCast(Supervisor, Ajax_Test.Servicio.CSupervisores).NombreCompleto
+            End If
+        Next
+
+        Return SupervisorDes
+    End Function
+
+
     Public Function CalculateMD5Hash(input As String) As String
         Dim md5 = System.Security.Cryptography.MD5.Create()
         Dim inputBytes = System.Text.Encoding.ASCII.GetBytes(input)
@@ -163,6 +180,16 @@ Public Class Usuarios
                 .DataBindItems()
             End With
             ViewState("TiposUsuarios") = cb_Perfiles.DataSource
+        End If
+        If (e.Column.FieldName = "idsupervisor") Then
+            Dim DT As New DataTable
+            Dim cb_Supervisor As ASPxComboBox = TryCast(e.Editor, ASPxComboBox)
+            With cb_Supervisor
+
+                .DataSource = BL.Obtener_supervisores()
+                .DataBindItems()
+            End With
+            ViewState("SUpervisores") = cb_Supervisor.DataSource
         End If
     End Sub
 #End Region

@@ -33,7 +33,7 @@
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-check-circle"></i>Usuarios sssss
+                <i class="fa fa-check-circle"></i>Usuarios 
             </div>
             <div class="tools">
             </div>
@@ -96,16 +96,12 @@
                             <CellStyle HorizontalAlign="Center"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataDateColumn>
-                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="9">
-                            <HeaderStyle HorizontalAlign="Center" />
-                            <CellStyle HorizontalAlign="Center"></CellStyle>
-                        </dx:GridViewDataCheckColumn>
-                        <dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="11">
+                        <dx:GridViewDataTextColumn Caption="Perfil" FieldName="PerfilDes" VisibleIndex="10">
                             <HeaderStyle HorizontalAlign="Center" />
                             <CellStyle HorizontalAlign="Left"></CellStyle>
                             <EditFormSettings Visible="False" />
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataComboBoxColumn Caption="Perfil" FieldName="Perfil" Name="Perfil" VisibleIndex="10" Visible="false">
+                        <dx:GridViewDataComboBoxColumn Caption="Perfil" FieldName="Perfil" Name="Perfil" VisibleIndex="9" Visible="false">
                             <PropertiesComboBox TextField="Tipo" ValueField="id_tipoUsuario" ValueType="System.Int32">
                             </PropertiesComboBox>
                             <HeaderStyle HorizontalAlign="Center" />
@@ -113,6 +109,23 @@
                             </CellStyle>
                             <EditFormSettings Visible="true" />
                         </dx:GridViewDataComboBoxColumn>
+                        <dx:GridViewDataTextColumn Caption="Supervisor" FieldName="SupervisorDes" VisibleIndex="12">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Left"></CellStyle>
+                            <EditFormSettings Visible="False" />
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataComboBoxColumn Caption="Supervisor" FieldName="idsupervisor" Name="supervisor" VisibleIndex="11" Visible="false">
+                            <PropertiesComboBox TextField="NombreCompleto" ValueField="id_supervisor" ValueType="System.Int32" DropDownStyle="DropDownList">
+                            </PropertiesComboBox>
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center">
+                            </CellStyle>
+                            <EditFormSettings Visible="true" />
+                        </dx:GridViewDataComboBoxColumn>
+                        <dx:GridViewDataCheckColumn Caption="Activo" FieldName="activo" VisibleIndex="13">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataCheckColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </div>
@@ -120,7 +133,6 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
-    <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
     <script type="text/javascript">
 
         function cambiarLlamada(idLlamada) {

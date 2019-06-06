@@ -5,7 +5,7 @@
 
     Dim Id_Cliente As Integer = 0
     Dim id_Cita As Integer = 0
-
+    Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
 
@@ -86,7 +86,11 @@
         Else
             lbl_usuario.Text = AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
         End If
-
+        If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) > 0) Then
+            btn_asignaCita.Visible = False
+        Else
+            btn_asignaCita.Visible = True
+        End If
         Return HTML
     End Function
 

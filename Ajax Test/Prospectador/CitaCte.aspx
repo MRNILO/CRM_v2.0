@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="portlet box blue-hoki">
+    <div class="portlet box blue-hoki" id="PanelVisitas" >
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-globe"></i>Registrar Nueva Cita

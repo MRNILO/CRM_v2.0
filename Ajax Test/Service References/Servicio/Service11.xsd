@@ -751,6 +751,7 @@
   <xs:complexType name="CUsuariosDetalleSup">
     <xs:sequence>
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorDes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipousuarioDes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="activo" type="xs:int" />
       <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
@@ -758,6 +759,7 @@
       <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="id_TipoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
       <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
@@ -792,6 +794,7 @@
   <xs:element name="ArrayOfCSupervisores" nillable="true" type="tns:ArrayOfCSupervisores" />
   <xs:complexType name="CSupervisores">
     <xs:sequence>
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />

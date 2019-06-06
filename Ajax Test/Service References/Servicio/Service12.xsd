@@ -165,6 +165,7 @@
         <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="activo" type="xs:int" />
         <xs:element minOccurs="0" name="TipoUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="id_Supervisor" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -786,6 +787,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WCF_CRM" minOccurs="0" name="Obtener_TipoUsuarioResult" nillable="true" type="q29:ArrayOfTipoUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_Coordinador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NumEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="NumCordinador" type="xs:int" />
+        <xs:element minOccurs="0" name="Nombre_Cordinador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actualizar_CoordinadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Actualizar_CoordinadorResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

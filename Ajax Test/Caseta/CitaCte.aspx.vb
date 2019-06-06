@@ -268,6 +268,7 @@ Public Class CitaCteCaseta
             End If
         Next
 
+        ViewState("EtapasCliente") = DT
         cb_etapas.DataSource = Dt_Etapas
         cb_etapas.DataTextField = "Descripcion"
         cb_etapas.DataValueField = "id_etapa"
@@ -345,24 +346,26 @@ Public Class CitaCteCaseta
         HTML += "<strong>Fecha Escrituración Enkontrol: </strong>" + Datos(0).FechaEscritura
         HTML += "<br />"
 
-        Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
+        If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) = 0) Then
+            Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
+            If Vigencias.Length > 0 Then
+                If Vigencias(0).CitasVigentes > 0 Then
+                    HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
+                    HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
-        If Vigencias.Length > 0 Then
-            If Vigencias(0).CitasVigentes > 0 Then
-                HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
-                HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
-
-                lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
-                btn_asignaCita.Visible = False
+                    lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
+                    btn_asignaCita.Visible = False
+                Else
+                    lbl_usuario.Text = "-"
+                    btn_asignaCita.Visible = True
+                End If
             Else
                 lbl_usuario.Text = "-"
                 btn_asignaCita.Visible = True
             End If
         Else
-            lbl_usuario.Text = "-"
-            btn_asignaCita.Visible = True
+            btn_asignaCita.Visible = False
         End If
-
         Return HTML
     End Function
 
@@ -492,6 +495,20 @@ Public Class CitaCteCaseta
 
     Protected Sub btn_cambiaEtapa_Click(sender As Object, e As EventArgs) Handles btn_cambiaEtapa.Click
         Try
+            Dim DT_Etapas As New DataTable
+            Dim ROWA As DataRow
+            Dim DT = ViewState("EtapasCliente")
+            Dim EtapaActaual As Integer
+            Dim EtapaNueva As Integer
+
+            DT_Etapas.Columns.AddRange({New DataColumn("Descripcion", GetType(String)), New DataColumn("id_etapa", GetType(Integer)), New DataColumn("nEtapa", GetType(Integer))})
+            For i = 0 To DT.length - 1
+                ROWA = DT_Etapas.NewRow
+                ROWA("Descripcion") = DT(i).Descripcion
+                ROWA("id_etapa") = DT(i).id_etapa
+                ROWA("nEtapa") = DT(i).nEtapa
+                DT_Etapas.Rows.Add(ROWA)
+            Next
             DatosCliente = BL.Obtener_Clientes_detalles_idCliente(Id_Cliente)
             If cb_etapas.SelectedValue = 5 Then
                 Dim DatosCita As CitaVigente = GE_Funciones.Citas_Vigentes(Id_Cliente)
@@ -518,8 +535,18 @@ Public Class CitaCteCaseta
                     Exit Sub
                 End If
             End If
-            If DatosCliente(0).id_etapaActual = cb_etapas.SelectedValue Then
+            For Each row In DT_Etapas.Rows
+                If row("id_etapa") = DatosCliente(0).id_etapaActual Then
+                    EtapaActaual = row("nEtapa")
+                End If
+                If row("id_etapa") = cb_etapas.SelectedValue Then
+                    EtapaNueva = row("nEtapa")
+                End If
+            Next
+            If EtapaNueva = EtapaActaual Then
                 lbl_mensaje.Text = MostrarError("Debe de seleccionar una etapa difente a la etapa actual del cliente.")
+            ElseIf EtapaNueva < EtapaActaual Then
+                lbl_mensaje.Text = MostrarError("No puede regresar etapa.")
             Else
                 If BL.Avanza_EtapaCliente(Id_Cliente, Usuario.id_usuario, cb_etapas.SelectedValue, tb_observacionesEtapa.Text, cb_productos.SelectedValue) Then
                     lbl_mensaje.Text = MostrarExito("Etapa actualizada")

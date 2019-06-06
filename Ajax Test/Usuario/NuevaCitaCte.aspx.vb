@@ -13,6 +13,11 @@
 
         Try
             IDCliente = Request.QueryString("idCliente")
+            If (GE_Funciones.Obtener_OperacionesCierre(IDCliente) > 0) Then
+                btn_asignaCita.Visible = False
+            Else
+                btn_asignaCita.Visible = True
+            End If
         Catch ex As Exception
             IDCliente = 0
         End Try
