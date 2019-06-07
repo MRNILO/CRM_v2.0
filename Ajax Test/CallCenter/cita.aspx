@@ -151,66 +151,59 @@
             </div>
         </div>
         <div class="portlet-body">
-            <dx:ASPxGridView ID="GV_Citas" runat="server" Width="100%" AutoGenerateColumns="False" DataSourceID="CitasCallDS" KeyFieldName="id_cita" Theme="MaterialCompact">
-                <Columns>
-                    <dx:GridViewDataTextColumn FieldName="id_cita" Caption="ID Cita" ReadOnly="True" VisibleIndex="0">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                        <EditFormSettings Visible="False" />
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="AgenteCallCenter" Caption="Call Center" VisibleIndex="1">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Left"></CellStyle>
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="nom_fracc" Caption="Fraccionamiento" VisibleIndex="2">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Left"></CellStyle>
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Lugar_Contacto" Caption="Medio" VisibleIndex="3">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="4">
-                        <HeaderStyle HorizontalAlign="Center" />
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn FieldName="VigenciaInicio" VisibleIndex="5">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataDateColumn FieldName="VigenciaFinal" VisibleIndex="6">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataDateColumn FieldName="FechaCita" VisibleIndex="7">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="Ranking" VisibleIndex="8">
-                        <HeaderStyle HorizontalAlign="Center" />
-                        <CellStyle HorizontalAlign="Center"></CellStyle>
-                    </dx:GridViewDataTextColumn>
-                </Columns>
-            </dx:ASPxGridView>
-            <asp:SqlDataSource ID="CitasCallDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT
-                                                                                                                                                        dbo.CitasCall.id_cita,
-                                                                                                                                                        dbo.usuarios.nombre + ' ' + dbo.usuarios.apellidoPaterno + ' ' + dbo.usuarios.apellidoMaterno 'AgenteCallCenter',  
-                                                                                                                                                        dbo.sm_fraccionamiento.nom_fracc,
-                                                                                                                                                        dbo.CitasCall.Lugar_Contacto,
-                                                                                                                                                        dbo.productos.NombreCorto AS Modelo,
-                                                                                                                                                        dbo.CitasCall.VigenciaInicio,
-                                                                                                                                                        dbo.CitasCall.VigenciaFinal,
-                                                                                                                                                        dbo.CitasCall.FechaCita,
-                                                                                                                                                        dbo.CitasCall.Ranking
-                                                                                                                                                     FROM
-                                                                                                                                                        dbo.CitasCall
-                                                                                                                                                     INNER JOIN dbo.sm_fraccionamiento ON dbo.CitasCall.ProyectoVisita = dbo.sm_fraccionamiento.id_cve_fracc
-                                                                                                                                                     INNER JOIN dbo.productos ON dbo.CitasCall.Modelo = dbo.productos.id_producto
-                                                                                                                                                     INNER JOIN dbo.usuarios ON dbo.CitasCall.id_usuarioCC = dbo.usuarios.id_usuario
-                                                                                                                                                     WHERE id_cliente=@id_cliente">
-                <SelectParameters>
-                    <asp:QueryStringParameter DefaultValue="0" Name="id_cliente" QueryStringField="id" />
-                </SelectParameters>
-            </asp:SqlDataSource>
+            <div class="table-scrollable">
+                <dx:ASPxGridViewExporter ID="GV_exporterCitas" runat="server" GridViewID="GV_citas"></dx:ASPxGridViewExporter>
+                <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt" HorizontalScrollBarMode="Visible">
+                    <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+                    <SettingsSearchPanel Visible="True" />
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="0" Width="100px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Status" Caption="Estatus" VisibleIndex="1" Width="100px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Origen" VisibleIndex="2" Width="150px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Asesor" Caption="Asesor Cita" VisibleIndex="3" Width="300px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="AsesorAsignado" Caption="Asesor Asignado" VisibleIndex="4" Width="300px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="LugarContacto" Caption="Lugar Contacto" VisibleIndex="5" Width="200px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="TipoCampana" Caption="Medio" VisibleIndex="6" Width="200px">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Proyecto" VisibleIndex="7">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn FieldName="VigenciaInicial" Caption="Fecha Inicial" VisibleIndex="8">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn FieldName="VigenciaFinal" Caption="Fecha Final" VisibleIndex="9">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                        <dx:GridViewDataDateColumn FieldName="FechaCita" Caption="Fecha Cita" VisibleIndex="10">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <CellStyle HorizontalAlign="Center"></CellStyle>
+                        </dx:GridViewDataDateColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+            </div>
         </div>
     </div>
 </asp:Content>

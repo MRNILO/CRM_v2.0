@@ -19,7 +19,12 @@
         If Not Page.IsPostBack Then
             dtp_finicio.Date = Now
             dtp_ffinal.Date = Now.AddDays(30)
+            Cargar_Citas()
         End If
+    End Sub
+    Private Sub Cargar_Citas()
+        GV_citas.DataSource = GE_Funciones.Obtener_CitasCliente(Id_Cliente)
+        GV_citas.DataBind()
     End Sub
 
     Function Crea_generalesCliente() As String
@@ -86,8 +91,24 @@
         Else
             lbl_usuario.Text = AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
         End If
+        If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) = 0) Then
+            Dim Vigencias = BL.Verificar_VigenciaCitas(Id_Cliente)
+            If Vigencias.Length > 0 Then
+                If Vigencias(0).CitasVigentes > 0 Then
+                    HTML += "<br /><h5><strong>Usuario en Vigencia:</strong></h5>"
+                    HTML += "<label>(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente + "</label>"
 
-        If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) > 0) Then
+                    lbl_usuario.Text = "(" + Vigencias(0).TipoUsuario + " - " + Vigencias(0).Id_Usuario.ToString + ") " + Vigencias(0).UsuarioVigente
+                    btn_asignaCita.Visible = False
+                Else
+                    lbl_usuario.Text = "-"
+                    btn_asignaCita.Visible = True
+                End If
+            Else
+                lbl_usuario.Text = "-"
+                btn_asignaCita.Visible = True
+            End If
+        Else
             btn_asignaCita.Visible = False
         End If
         Return HTML
@@ -144,6 +165,23 @@
 
     Protected Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
         Response.Redirect("../CallCenter/ModificaCliente.aspx?idCliente=" + Id_Cliente.ToString + "&idCita=" + id_Cita.ToString, False)
+    End Sub
+    Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared
+        If e.DataColumn.Caption = "Estatus" Then
+            Select Case e.CellValue
+                Case 0
+                    e.Cell.BackColor = Drawing.Color.OrangeRed
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "VENCIDA"
+                Case 1
+                    e.Cell.BackColor = Drawing.Color.LightSkyBlue
+                    e.Cell.Text = "VIGENTE"
+                Case 2
+                    e.Cell.BackColor = Drawing.Color.Green
+                    e.Cell.ForeColor = Drawing.Color.White
+                    e.Cell.Text = "COMPLETADA"
+            End Select
+        End If
     End Sub
 #End Region
 End Class
