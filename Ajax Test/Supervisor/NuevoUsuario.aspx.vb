@@ -48,10 +48,10 @@ Public Class NuevoUsuario
                         'Dim JSONObj = JsonConvert.DeserializeObject(Of Agente)(Data)
 
                         NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
-                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", "", "")
+                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", 0, "")
                     Catch ex As Exception
                         NuevoIDUsuario = BL.Inserta_usuarios(tb_NombreUsuario.Text, tb_ap1Usuario.Text, tb_ap2Usuario.Text, tb_email.Text, tb_usuarioSistema.Text,
-                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", "", "")
+                                     CalculateMD5Hash(tb_contrasenia2.Text), cb_tipoUsuario.SelectedValue, "-", 0, "")
                     End Try
 
                     If NuevoIDUsuario > 0 Then
