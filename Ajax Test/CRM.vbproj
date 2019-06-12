@@ -7182,6 +7182,7 @@
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
+    <Content Include="Mantenimiento\InicioMantenimiento.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
     <Content Include="assets\global\plugins\angularjs\angular-cookies.min.js.map" />
@@ -7668,6 +7669,7 @@
     <Content Include="Ayuda\Cambiar etapa de un cliente.pdf" />
     <Content Include="CallCenter\CallCenter.Master" />
     <Content Include="Caseta\Caseta.Master" />
+    <Content Include="Mantenimiento\Mantenimiento.Master" />
     <None Include="My Project\PublishProfiles\Desktop.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\Publicaciones.pubxml" />
@@ -8298,6 +8300,20 @@
     <Compile Include="Herramientas\Notificaciones.aspx.vb">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\InicioMantenimiento.aspx.designer.vb">
+      <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\InicioMantenimiento.aspx.vb">
+      <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Mantenimiento.Master.designer.vb">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Mantenimiento.Master.vb">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

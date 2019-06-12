@@ -477,11 +477,12 @@ Public Class Funciones
 
     Public Function Obtener_CitasActivasCliente(ByVal IdCliente As Integer) As DataTable
         Dim Query As String = "SELECT CCL.Id_Cita, CONCAT(CL.Nombre, ' ', CL.ApellidoPaterno, ' ', CL.ApellidoMaterno) Cliente, CCL.Origen, CCL.LugarContacto, CCL.TipoCampana, CCL.Proyecto, 
-	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CCL.Status
+	                                  PR.Fraccionamiento, CCl.VigenciaInicial, CCl.VigenciaFinal, CCL.FechaCita, CONCAT(US.Nombre, ' ', US.ApellidoPaterno, ' ', US.ApellidoMaterno) Usuario_Asignado,CCL.Status
                                FROM Clientes CL
                                INNER JOIN CitasClientes CCL ON CCL.Id_Cliente = CL.id_cliente
                                INNER JOIN campañas CP ON CP.id_campaña =  CCL.Id_Campana
                                INNER JOIN productos PR ON PR.id_producto =  CCL.Modelo
+                               LEFT JOIN usuarios US ON CCL.Id_UsuarioAsignado=US.id_usuario
                                WHERE CCL.Id_Cliente = " & IdCliente & " AND CCL.Status = 1"
 
         Obtener_CitasActivasCliente = GE_SQL.SQLGetTable(Query)
