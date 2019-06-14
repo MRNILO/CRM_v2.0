@@ -430,6 +430,32 @@ Public Class Funciones
         End If
 
     End Function
+    Public Function Actualiza_UsuarioAsignado(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE CitasClientes "
+        Query = Query + " SET Id_UsuarioAsignado=" & Id_Usuario & ", Id_Supervisor_UsuarioAsignado= (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
+        Query = Query + " WHERE Id_Cita =" & Id_Cita
+
+        Actualiza_UsuarioAsignado = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+    Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE CitasClientes "
+        Query = Query + " SET Id_Campana=" & IdCampana & ", LugarContacto='" & Campana & "', TipoCampana='" & TipoCampana & "' WHERE Id_Cita= " & Id_Cita
+
+        Actualiza_Campana = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+    Public Function Actualiza_FechaCita(ByVal fechaCita As Date, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+        fechaCita.ToString("yyyy-MM-dd")
+
+        Query = "  UPDATE CitasClientes  "
+        Query = Query + " SET FechaCita='" & fechaCita.ToString("yyyy-MM-dd") & "', VigenciaInicial= '" & fechaCita.ToString("yyyy-MM-dd") & "', VigenciaFinal='" & fechaCita.AddDays(30).ToString("yyyy-MM-dd") & "' WHERE Id_Cita= " & Id_Cita
+
+        Actualiza_FechaCita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
 
     Public Function Obtener_Proyectos() As DataTable
         Dim Query As String = "SELECT DISTINCT(abrev_fracc) Proyecto, Fraccionamiento

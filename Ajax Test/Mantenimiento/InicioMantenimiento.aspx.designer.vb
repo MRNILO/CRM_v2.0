@@ -149,6 +149,15 @@ Partial Public Class InicioMantenimiento
     Protected WithEvents cbPanelCampana As Global.DevExpress.Web.ASPxCallbackPanel
     
     '''<summary>
+    '''Control cmBoxMedio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxMedio As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
     '''Control cmBoxCampana.
     '''</summary>
     '''<remarks>
@@ -158,22 +167,22 @@ Partial Public Class InicioMantenimiento
     Protected WithEvents cmBoxCampana As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
-    '''Control lblCampana.
+    '''Control txtTipoCampana.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblCampana As Global.DevExpress.Web.ASPxLabel
+    Protected WithEvents txtTipoCampana As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
-    '''Control btn_ActaulizaCampana.
+    '''Control btn_ActualizaCampana.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ActaulizaCampana As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_ActualizaCampana As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control dateFechaCita.
