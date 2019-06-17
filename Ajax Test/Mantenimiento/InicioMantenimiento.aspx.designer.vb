@@ -131,13 +131,13 @@ Partial Public Class InicioMantenimiento
     Protected WithEvents lblUsuario As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
-    '''Control btn_ActaulizaAsigando.
+    '''Control btn_ActualizaAsigando.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ActaulizaAsigando As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_ActualizaAsigando As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control cbPanelCampana.
@@ -194,13 +194,13 @@ Partial Public Class InicioMantenimiento
     Protected WithEvents dateFechaCita As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control btn_ActaulizaFechaCita.
+    '''Control btn_ActualizaFechaCita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ActaulizaFechaCita As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_ActualizaFechaCita As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control Visitas.
@@ -210,6 +210,168 @@ Partial Public Class InicioMantenimiento
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Visitas As Global.DevExpress.Web.ContentControl
+    
+    '''<summary>
+    '''Control txtNumClienteVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtNumClienteVisitas As Global.DevExpress.Web.ASPxTextBox
+    
+    '''<summary>
+    '''Control btnBuscarVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBuscarVisitas As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control lblNombreClienteVisitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblNombreClienteVisitas As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control GV_Visitas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_Visitas As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control tabUsuarioVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabUsuarioVisita As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control tabCampanaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabCampanaVisita As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control tabFechaVista.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabFechaVista As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control cbPanelUsuarioAsignadoVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cbPanelUsuarioAsignadoVisita As Global.DevExpress.Web.ASPxCallbackPanel
+    
+    '''<summary>
+    '''Control cmBoxUsuariosVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxUsuariosVisita As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control lblUsuarioVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblUsuarioVisita As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control btn_ActualizaAsigandoVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ActualizaAsigandoVisita As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control cbPanelCampanaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cbPanelCampanaVisita As Global.DevExpress.Web.ASPxCallbackPanel
+    
+    '''<summary>
+    '''Control cmBoxMedioVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxMedioVisita As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control cmBoxCampanaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxCampanaVisita As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control txtTipoCampanaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtTipoCampanaVisita As Global.DevExpress.Web.ASPxTextBox
+    
+    '''<summary>
+    '''Control btn_ActualizaCampanaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ActualizaCampanaVisita As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control dateFechaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dateFechaVisita As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control btn_ActualizaFechaVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ActualizaFechaVisita As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control lbl_mensaje.

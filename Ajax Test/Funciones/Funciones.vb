@@ -430,6 +430,7 @@ Public Class Funciones
         End If
 
     End Function
+
     Public Function Actualiza_UsuarioAsignado(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
 
@@ -439,6 +440,7 @@ Public Class Funciones
 
         Actualiza_UsuarioAsignado = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
 
@@ -447,6 +449,7 @@ Public Class Funciones
 
         Actualiza_Campana = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
     Public Function Actualiza_FechaCita(ByVal fechaCita As Date, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
         fechaCita.ToString("yyyy-MM-dd")
@@ -627,7 +630,6 @@ Public Class Funciones
 
     End Function
 
-
 #End Region
 
 #Region "Visitas"
@@ -646,6 +648,7 @@ Public Class Funciones
         End If
         Return VisitaVigente
     End Function
+
     Public Function Obtener_DatosCita(ByVal Id_Cita As Integer) As DatosCita
         Dim Query As String = String.Format("EXEC [dbo].[Obtener_DetallesCitas]
                                                    @pIdCita = {0}", Id_Cita)
@@ -727,7 +730,7 @@ Public Class Funciones
         Obtener_VisitasCliente = GE_SQL.SQLGetTable(Query)
     End Function
 
-    Private Function Obtener_VisitasActivasCliente(ByVal IdCliente As Integer) As DataTable
+    Public Function Obtener_VisitasActivasCliente(ByVal IdCliente As Integer) As DataTable
         Dim Query As String = String.Format("EXEC [dbo].[Obtener_VisitasActivasClientes]
                                                 @PidCliente = {0}", IdCliente)
 
@@ -750,6 +753,36 @@ Public Class Funciones
 
         Obtener_Submotivos = GE_SQL.SQLGetTable(Query)
     End Function
+
+    Public Function Actualiza_UsuarioAsignado_Visita(ByVal Id_Usuario As Integer, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = "  UPDATE VisitasClientes "
+        Query = Query + " SET Id_UsuarioVisita=" & Id_Usuario & ", Id_Supervisor_UsuarioVisita = (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
+        Query = Query + " WHERE Id_Visita =" & Id_Visita
+
+        Actualiza_UsuarioAsignado_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
+    Public Function Actualiza_FechaVisita(ByVal fechaVisita As Date, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+        fechaVisita.ToString("yyyy-MM-dd")
+
+        Query = "  UPDATE VisitasClientes  "
+        Query = Query + " SET FechaVisita='" & fechaVisita.ToString("yyyy-MM-dd") & "', VigenciaInicial= '" & fechaVisita.ToString("yyyy-MM-dd") & "', VigenciaFinal='" & fechaVisita.AddDays(30).ToString("yyyy-MM-dd") & "' WHERE Id_Visita= " & Id_Visita
+
+        Actualiza_FechaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
+    Public Function Actualiza_CampanaVisita(ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = "  UPDATE VisitasClientes  "
+        Query = Query + " SET Id_Campana=" & IdCampana & ",  TipoCampana='" & TipoCampana & "' WHERE Id_Visita= " & Id_Visita
+
+        Actualiza_CampanaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 #End Region
 
 #Region "Cierre"
