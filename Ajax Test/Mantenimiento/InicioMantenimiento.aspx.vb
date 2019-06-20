@@ -216,7 +216,6 @@ Public Class InicioMantenimiento
     Private Sub UI()
         AlimentarComboUsuarios()
         AlimentarComboMedios()
-        ''AlimentarComboCampanas()
     End Sub
     Private Sub AlimentarComboUsuarios()
         Dim Aux As Integer = 0

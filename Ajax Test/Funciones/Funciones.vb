@@ -778,10 +778,6 @@ Public Class Funciones
 
     Public Function Actualiza_CampanaVisita(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Visita As Integer) As Boolean
         Dim Query As String = ""
-        'Query = "  UPDATE VisitasClientes  "
-        'Query = Query + " SET Id_Campana=" & IdCampana & ",  TipoCampana='" & TipoCampana & "' WHERE Id_Visita= " & Id_Visita
-        'Actualiza_CampanaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
-
         Query = " EXEC [dbo].[Actualiza_Campana_VisitasClientes]
                                    @IdCampana = N'" & IdCampana & "',
                                    @Campana = N'" & Campana & "',
