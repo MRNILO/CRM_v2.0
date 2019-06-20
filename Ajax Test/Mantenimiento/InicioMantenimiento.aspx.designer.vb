@@ -176,13 +176,13 @@ Partial Public Class InicioMantenimiento
     Protected WithEvents txtTipoCampana As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
-    '''Control btn_ActualizaCampana.
+    '''Control btn_ActualizaCampanaCita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ActualizaCampana As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_ActualizaCampanaCita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control dateFechaCita.
@@ -353,7 +353,7 @@ Partial Public Class InicioMantenimiento
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_ActualizaCampanaVisita As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_ActualizaCampanaVisita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control dateFechaVisita.

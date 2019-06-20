@@ -444,9 +444,11 @@ Public Class Funciones
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
 
-        Query = " UPDATE CitasClientes "
-        Query = Query + " SET Id_Campana=" & IdCampana & ", LugarContacto='" & Campana & "', TipoCampana='" & TipoCampana & "' WHERE Id_Cita= " & Id_Cita
-
+        Query = " EXEC [dbo].[Actualiza_Campana_CitasClientes]
+                                   @IdCampana = N'" & IdCampana & "',
+                                   @Campana = N'" & Campana & "',
+                                   @TCampana = N'" & TipoCampana & "',
+                                   @cita = N'" & Id_Cita & "'"
         Actualiza_Campana = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
@@ -774,12 +776,17 @@ Public Class Funciones
         Actualiza_FechaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
-    Public Function Actualiza_CampanaVisita(ByVal IdCampana As Integer, ByVal TipoCampana As String, ByVal Id_Visita As Integer) As Boolean
+    Public Function Actualiza_CampanaVisita(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Visita As Integer) As Boolean
         Dim Query As String = ""
+        'Query = "  UPDATE VisitasClientes  "
+        'Query = Query + " SET Id_Campana=" & IdCampana & ",  TipoCampana='" & TipoCampana & "' WHERE Id_Visita= " & Id_Visita
+        'Actualiza_CampanaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
 
-        Query = "  UPDATE VisitasClientes  "
-        Query = Query + " SET Id_Campana=" & IdCampana & ",  TipoCampana='" & TipoCampana & "' WHERE Id_Visita= " & Id_Visita
-
+        Query = " EXEC [dbo].[Actualiza_Campana_VisitasClientes]
+                                   @IdCampana = N'" & IdCampana & "',
+                                   @Campana = N'" & Campana & "',
+                                   @TCampana = N'" & TipoCampana & "',
+                                   @idVisita = N'" & Id_Visita & "'"
         Actualiza_CampanaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 

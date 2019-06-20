@@ -53,20 +53,33 @@ Public Class InicioMantenimiento
         lblUsuarioVisita.Text = cmBoxUsuariosVisita.SelectedItem.Text
     End Sub
     Protected Sub PanelCampana_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelCampana.Callback
-        If (e.Parameter = "cmBoxMedio") Then
-            If (cmBoxMedio.SelectedItem.Value > 0) Then
-                AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value, "cmBoxCampanaCita")
-                cmBoxCampana.Enabled = True
-            Else
-                cmBoxCampana.Enabled = False
+        Try
+            If (e.Parameter = "cmBoxMedio") Then
+                If (cmBoxMedio.SelectedItem.Value > 0) Then
+                    AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value, "cmBoxCampanaCita")
+                    cmBoxCampana.Enabled = True
+                Else
+                    cmBoxCampana.Enabled = False
+                End If
+                cbPanelCampana.JSProperties("cpResult") = ""
+            ElseIf (e.Parameter.Contains("cmBoxCampana")) Then
+                Dim ParametrosLista() As String = e.Parameter.Split(",")
+                Dim id As Integer = ParametrosLista(1)
+                If (cmBoxCampana.SelectedIndex <> 0) Then
+                    txtTipoCampana.Text = ObtTipoCampana(id)
+                End If
+                cbPanelCampana.JSProperties("cpResult") = ""
+            ElseIf (e.Parameter.Contains("ActualizaCampana")) Then
+                Dim ParametrosLista() As String = e.Parameter.Split(",")
+                Dim idCampana As Integer = ParametrosLista(1)
+                If (idCampana > 0) Then
+                    ActualizaCampanaCita(idCampana)
+                End If
             End If
-        ElseIf (e.Parameter.Contains("cmBoxCampana")) Then
-            Dim ParametrosLista() As String = e.Parameter.Split(",")
-            Dim id As Integer = ParametrosLista(1)
-            If (cmBoxCampana.SelectedIndex <> 0) Then
-                ObtenerTipoCampana(id, "txtTipoCampana")
-            End If
-        End If
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+
     End Sub
     Protected Sub PanelCampanaVisita_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelCampanaVisita.Callback
         If (e.Parameter = "cmBoxMedioVisita") Then
@@ -76,11 +89,19 @@ Public Class InicioMantenimiento
             Else
                 cmBoxCampanaVisita.Enabled = False
             End If
+            cbPanelCampanaVisita.JSProperties("cpResult") = ""
         ElseIf (e.Parameter.Contains("cmBoxCampanaVisita")) Then
             Dim ParametrosLista() As String = e.Parameter.Split(",")
             Dim id As Integer = ParametrosLista(1)
             If (cmBoxCampanaVisita.SelectedIndex <> 0) Then
-                ObtenerTipoCampana(id, "txtTipoCampanaVisita")
+                txtTipoCampanaVisita.Text = ObtTipoCampana(id)
+            End If
+            cbPanelCampanaVisita.JSProperties("cpResult") = ""
+        ElseIf (e.Parameter.Contains("ActualizaCampana")) Then
+            Dim ParametrosLista() As String = e.Parameter.Split(",")
+            Dim idCampana As Integer = ParametrosLista(1)
+            If (idCampana > 0) Then
+                ActualizaCampanaVisita(idCampana)
             End If
         End If
     End Sub
@@ -89,42 +110,6 @@ Public Class InicioMantenimiento
         If (idCita.Count > 0) Then
             For Each cita In idCita
                 If (GE_Funciones.Actualiza_UsuarioAsignado(cmBoxUsuarios.SelectedItem.Value, cita)) Then
-                    cargarCitas()
-                    UI()
-                    lbl_mensaje.Text += MostrarExito("Cita Actualizada.")
-                Else
-                    lbl_mensaje.Text += MostrarError("No se puede actualizar la cita seleccionada.")
-                End If
-            Next
-        Else
-            lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
-        End If
-    End Sub
-    Protected Sub btn_ActualizaCampana_Click(sender As Object, e As EventArgs) Handles btn_ActualizaCampana.Click
-        Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
-        If (txtTipoCampana.Text <> "") Then
-            If (idCita.Count > 0) Then
-                For Each cita In idCita
-                    If (GE_Funciones.Actualiza_Campana(cmBoxCampana.SelectedItem.Value, cmBoxCampana.SelectedItem.Text, txtTipoCampana.Text, cita)) Then
-                        cargarCitas()
-                        UI()
-                        lbl_mensaje.Text += MostrarExito("Usuario actualizado")
-                    Else
-                        lbl_mensaje.Text += MostrarError("No se puede actualizar el usuario asignado.")
-                    End If
-                Next
-            Else
-                lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
-            End If
-        Else
-            lbl_mensaje.Text += MostrarError("Capture la información necesaria.")
-        End If
-    End Sub
-    Protected Sub btn_ActualizaFechaCita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaFechaCita.Click
-        Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
-        If (idCita.Count > 0) Then
-            For Each cita In idCita
-                If (GE_Funciones.Actualiza_FechaCita(dateFechaCita.Date, cita)) Then
                     cargarCitas()
                     UI()
                     lbl_mensaje.Text += MostrarExito("Cita Actualizada.")
@@ -152,6 +137,64 @@ Public Class InicioMantenimiento
             lbl_mensaje.Text += MostrarError("Seleccione la visita que desea modificar.")
         End If
     End Sub
+    Protected Sub ActualizaCampanaCita(IdCampana As Integer)
+        Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
+        Dim CampanaDescripcion = GE_Funciones.ObtenerCampanasId(IdCampana)
+        If (CampanaDescripcion.Rows.Count > 0) Then
+            If (idCita.Count > 0) Then
+                For Each cita In idCita
+                    If (GE_Funciones.Actualiza_Campana(IdCampana, CampanaDescripcion.Rows(0).Item("campañaNombre").ToString(), ObtTipoCampana(IdCampana), cita)) Then
+                        cargarCitas()
+                        UI()
+                        cbPanelCampana.JSProperties("cpResult") = "OK"
+                    Else
+                        cbPanelCampana.JSProperties("cpResult") = "ERR"
+                    End If
+                Next
+            Else
+                cbPanelCampana.JSProperties("cpResult") = "SELCITA"
+            End If
+        Else
+            cbPanelCampana.JSProperties("cpResult") = "FINFO"
+        End If
+    End Sub
+    Protected Sub ActualizaCampanaVisita(IdCampana As Integer)
+        Dim idVisita = GV_Visitas.GetSelectedFieldValues("Id_Visita")
+        Dim CampanaDescripcion = GE_Funciones.ObtenerCampanasId(IdCampana)
+        If (CampanaDescripcion.Rows.Count > 0) Then
+            If (idVisita.Count > 0) Then
+                For Each Visita In idVisita
+                    If (GE_Funciones.Actualiza_CampanaVisita(IdCampana, CampanaDescripcion.Rows(0).Item("campañaNombre").ToString(), ObtTipoCampana(IdCampana), Visita)) Then
+                        cargarVisitas()
+                        UI()
+                        cbPanelCampanaVisita.JSProperties("cpResult") = "OK"
+                    Else
+                        cbPanelCampanaVisita.JSProperties("cpResult") = "ERR"
+                    End If
+                Next
+            Else
+                cbPanelCampanaVisita.JSProperties("cpResult") = "SELCITA"
+            End If
+        Else
+            cbPanelCampanaVisita.JSProperties("cpResult") = "FINFO"
+        End If
+    End Sub
+    Protected Sub btn_ActualizaFechaCita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaFechaCita.Click
+        Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
+        If (idCita.Count > 0) Then
+            For Each cita In idCita
+                If (GE_Funciones.Actualiza_FechaCita(dateFechaCita.Date, cita)) Then
+                    cargarCitas()
+                    UI()
+                    lbl_mensaje.Text += MostrarExito("Cita Actualizada.")
+                Else
+                    lbl_mensaje.Text += MostrarError("No se puede actualizar la cita seleccionada.")
+                End If
+            Next
+        Else
+            lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
+        End If
+    End Sub
     Protected Sub btn_ActualizaFechaVisita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaFechaVisita.Click
         Dim idVisita = GV_Visitas.GetSelectedFieldValues("Id_Visita")
         If (idVisita.Count > 0) Then
@@ -168,27 +211,6 @@ Public Class InicioMantenimiento
             lbl_mensaje.Text += MostrarError("Seleccione la visita que desea modificar.")
         End If
     End Sub
-    Protected Sub btn_ActualizaCampanaVisita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaCampanaVisita.Click
-        Dim idVisita = GV_Visitas.GetSelectedFieldValues("Id_Visita")
-        If (txtTipoCampanaVisita.Text <> "") Then
-            If (idVisita.Count > 0) Then
-                For Each Visita In idVisita
-                    If (GE_Funciones.Actualiza_CampanaVisita(cmBoxCampanaVisita.SelectedItem.Value, txtTipoCampanaVisita.Text, Visita)) Then
-                        cargarVisitas()
-                        UI()
-                        lbl_mensaje.Text += MostrarExito("Usuario actualizado")
-                    Else
-                        lbl_mensaje.Text += MostrarError("No se puede actualizar la visita seleccionada.")
-                    End If
-                Next
-            Else
-                lbl_mensaje.Text += MostrarError("Seleccione la visita que desea modificar.")
-            End If
-        Else
-            lbl_mensaje.Text += MostrarError("Capture la información necesaria.")
-        End If
-    End Sub
-
 #End Region
 #Region "Metodos"
     Private Sub UI()
@@ -260,9 +282,6 @@ Public Class InicioMantenimiento
                 Next
             End If
         End If
-
-
-
     End Function
     Private Sub cargarCitas()
         GV_citas.DataSource = GE_Funciones.Obtener_CitasActivasCliente(Id_Cliente)
@@ -358,17 +377,10 @@ Public Class InicioMantenimiento
                 .SelectedIndex = 0
             End With
         End If
-
-
     End Sub
-    Public Sub ObtenerTipoCampana(ByVal IdCampana As Integer, ByVal Control As String)
-        If Control = "txtTipoCampana" Then
-            txtTipoCampana.Text = GE_Funciones.Obtener_TipoCampana(IdCampana)
+    Public Function ObtTipoCampana(ByVal IdCampana As Integer) As String
+        Return GE_Funciones.Obtener_TipoCampana(IdCampana)
+    End Function
 
-        ElseIf Control = "txtTipoCampanaVisita" Then
-            txtTipoCampanaVisita.Text = GE_Funciones.Obtener_TipoCampana(IdCampana)
-        End If
-
-    End Sub
 #End Region
 End Class

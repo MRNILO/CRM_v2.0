@@ -164,6 +164,24 @@
                                             </div>
                                             <div class="tab-pane fade" id="Campana" role="tabpanel" aria-labelledby="tab_Campana">
                                                 <dx:ASPxCallbackPanel ID="cbPanelCampana" runat="server" Width="100%" ClientInstanceName="PanelCampana">
+                                                    <ClientSideEvents EndCallback="function (s, e){ 
+                                                                        if (s.cpResult == 'OK')
+			                                                                { 
+                                                                                              sweetAlert('¡CORRECTO!', 'La actualización se completo correctamente', 'success');                            
+			                                                                }
+	                                                                    else if(s.cpResult == 'ERR')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Ocurrio un error al actualizar', 'error');
+                                                                                                                        }
+                                                                        else if(s.cpResult == 'SELCITA')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Seleccione la cita que desea modificar.', 'error');
+                                                                            }
+                                                                        else if(s.cpResult == 'FINFO')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Capture la información necesaria.', 'error');
+			                                                                }
+                                                                               }" />
                                                     <PanelCollection>
                                                         <dx:PanelContent>
                                                             <div class="row" style="height: 200px">
@@ -194,7 +212,11 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 25px">
-                                                                    <asp:Button ID="btn_ActualizaCampana" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
+                                                                    <dx:ASPxButton ID="btn_ActualizaCampanaCita" runat="server" Text="Actualizar" Theme="Moderno" Width="100%" ClientInstanceName="btnActualiza_CampanaCita" AutoPostBack="false">
+                                                                        <ClientSideEvents Click="function(s, e) {
+	                                                                                                                PanelCampana.PerformCallback('ActualizaCampana,' + cBoxCampana.GetValue());
+                                                                                                                }" />
+                                                                    </dx:ASPxButton>
                                                                 </div>
                                                             </div>
                                                         </dx:PanelContent>
@@ -349,6 +371,24 @@
                                             </div>
                                             <div class="tab-pane fade" id="CampanaVisita" role="tabpanel" aria-labelledby="tab_Campana_Visita">
                                                 <dx:ASPxCallbackPanel ID="cbPanelCampanaVisita" runat="server" Width="100%" ClientInstanceName="PanelCampanaVisita">
+                                                    <ClientSideEvents EndCallback="function (s, e){ 
+                                                                        if (s.cpResult == 'OK')
+			                                                                { 
+                                                                                              sweetAlert('¡CORRECTO!', 'La actualización se completo correctamente', 'success');                            
+			                                                                }
+	                                                                    else if(s.cpResult == 'ERR')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Ocurrio un error al actualizar', 'error');
+                                                                                                                        }
+                                                                        else if(s.cpResult == 'SELCITA')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Seleccione la cita que desea modificar.', 'error');
+                                                                            }
+                                                                        else if(s.cpResult == 'FINFO')
+			                                                                {
+                                                                                              sweetAlert('¡ERROR!', 'Capture la información necesaria.', 'error');
+			                                                                }
+                                                                               }" />
                                                     <PanelCollection>
                                                         <dx:PanelContent>
                                                             <div class="row" style="height: 200px">
@@ -379,7 +419,11 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 25px">
-                                                                    <asp:Button ID="btn_ActualizaCampanaVisita" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
+                                                                    <dx:ASPxButton ID="btn_ActualizaCampanaVisita" runat="server" Text="Actualizar" Theme="Moderno" Width="100%" ClientInstanceName="btnActualiza_CampanaVisita" AutoPostBack="false">
+                                                                        <ClientSideEvents Click="function(s, e) {
+	                                                                                                                PanelCampanaVisita.PerformCallback('ActualizaCampana,' + cBoxCampanaVisita.GetValue());
+                                                                                                                }"></ClientSideEvents>
+                                                                    </dx:ASPxButton>
                                                                 </div>
                                                             </div>
                                                         </dx:PanelContent>
