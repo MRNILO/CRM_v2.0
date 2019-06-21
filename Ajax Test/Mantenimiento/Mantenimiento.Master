@@ -64,7 +64,41 @@
                             <span class="title">Inicio</span>
                         </a>
                     </li>
-
+                    <li class="heading">
+                        <h3 class="uppercase">Mantenimiento</h3>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
+                            <span class="title">Citas/Visitas</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/Mantenimiento/VisitasCitas.aspx">
+                                    <i class="fa fa-user"></i>Actualiza Citas/Visitas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
+                            <span class="title">Impedimentos</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/Mantenimiento/Impedimentos.aspx">
+                                    <i class="fa fa-user"></i>Actualiza Impedimentos
+                                </a>
+                                <li>
+                                    <a href="/Mantenimiento/TipoImpedimentos.aspx">
+                                        <i class="fa fa-user"></i>Tipo Impedimentos
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -129,7 +163,7 @@
             // notificaciones();
         });
     </script>
-  
+
 
     <script type="text/javascript">
         window.smartlook || (function (d) {

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class InicioMantenimiento
+Partial Public Class Rankings
     
     '''<summary>
     '''Control lbl_nombre.
@@ -21,6 +21,33 @@ Partial Public Class InicioMantenimiento
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Control txtTipoImpedimento.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtTipoImpedimento As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btnAgregar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control GV_TImpedimento.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GV_TImpedimento As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
     '''Control lbl_mensaje.

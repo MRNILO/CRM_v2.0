@@ -1006,6 +1006,7 @@ Inicio:
         End If
     End Function
 #End Region
+
 #Region "´Campañas"
     Public Function Inserta_TipoCampaña(ByVal TipoCampaña As String) As Boolean
         Dim Query As String = " EXEC [dbo].[Inserta_TipoCampaña]
@@ -1016,6 +1017,81 @@ Inicio:
         Else
             Return True
         End If
+    End Function
+#End Region
+
+#Region "Impedimentos"
+    Public Function Obtener_TipoImpedimentos() As DataTable
+        Dim Query As String = "SELECT id_tipoImpedimento, 
+                                TipoImpedimento
+                        FROM TipoImpedimento"
+
+        Obtener_TipoImpedimentos = GE_SQL.SQLGetTable(Query)
+    End Function
+    Public Function Existe_TipoImpedimento(ByVal TipoImpedimento As String) As Boolean
+        Dim idTipoImpedimento As Integer = 0
+
+        Dim Query As String = "SELECT id_tipoImpedimento FROM TipoImpedimento WHERE TipoImpedimento = UPPER(LTRIM(RTRIM('" + TipoImpedimento + "')))"
+
+        idTipoImpedimento = GE_SQL.SQLGetDataDbl(Query)
+
+        If (idTipoImpedimento = 0) Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
+    Public Function Inserta_TipoImpedimento(ByVal TipoImpedimento As String) As Boolean
+        Dim Query As String = " EXEC [dbo].[Inserta_TipoImpedimento]
+                                   @PTipoImpedimento = N'" & TipoImpedimento & "'"
+
+        If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+    Public Function Obtener_Impedimentos() As DataTable
+        Dim Query As String = "SELECT impedimentos.id_impedimento, 
+                                       impedimentos.impedimento, 
+                                       impedimentos.ranking, 
+                                       TipoImpedimento.TipoImpedimento
+                                FROM impedimentos
+                                INNER JOIN TipoImpedimento ON impedimentos.id_tipoImpedimento= TipoImpedimento.id_tipoImpedimento"
+
+        Obtener_Impedimentos = GE_SQL.SQLGetTable(Query)
+    End Function
+    Public Function Obtener_Impedimento_Id(ByVal idimpedimento As Integer) As DataTable
+        Dim Query As String = "SELECT impedimentos.id_impedimento, 
+                                       impedimentos.impedimento, 
+                                       impedimentos.ranking, 
+                                       TipoImpedimento.id_tipoImpedimento
+                                FROM impedimentos
+                                INNER JOIN TipoImpedimento ON impedimentos.id_tipoImpedimento= TipoImpedimento.id_tipoImpedimento
+                                WHERE impedimentos.id_impedimento= " & idimpedimento
+
+        Obtener_Impedimento_Id = GE_SQL.SQLGetTable(Query)
+    End Function
+    Public Function Inserta_Impedimento(ByVal Impedimento As String, ByVal Ranking As String, ByVal IdTipoImpedimento As Integer) As Boolean
+        Dim Query As String = " EXEC [dbo].[Inserta_Impedimento]
+                                   @PImpedimento = N'" & Impedimento & "',
+                                   @PRnaking = N'" & Ranking & "',
+                                   @PIdTipoImpedimento = N'" & IdTipoImpedimento & "'"
+        If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+    Public Function Actualiza_Impedimento(ByVal Impedimento As String, ByVal Ranking As String, ByVal IdTipoImpedimento As Integer, ByVal IdImpedimento As Integer) As Boolean
+        Dim Query As String = " EXEC [dbo].[Actualiza_Impedimento]
+                                   @PImpedimento = N'" & Impedimento & "',
+                                   @PRnaking = N'" & Ranking & "',
+                                   @PIdTipoImpedimento = N'" & IdTipoImpedimento & "',
+                                   @PIdImpedimento = N'" & IdImpedimento & "'"
+
+        Actualiza_Impedimento = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 #End Region
 End Class

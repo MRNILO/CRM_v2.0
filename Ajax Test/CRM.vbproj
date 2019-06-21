@@ -7182,7 +7182,11 @@
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
+    <Content Include="Mantenimiento\Impedimento.aspx" />
+    <Content Include="Mantenimiento\Impedimentos.aspx" />
     <Content Include="Mantenimiento\InicioMantenimiento.aspx" />
+    <Content Include="Mantenimiento\TipoImpedimentos.aspx" />
+    <Content Include="Mantenimiento\VisitasCitas.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
     <Content Include="assets\global\plugins\angularjs\angular-cookies.min.js.map" />
@@ -8301,18 +8305,46 @@
       <DependentUpon>Notificaciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Mantenimiento\Impedimento.aspx.designer.vb">
+      <DependentUpon>Impedimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimento.aspx.vb">
+      <DependentUpon>Impedimento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimentos.aspx.designer.vb">
+      <DependentUpon>Impedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimentos.aspx.vb">
+      <DependentUpon>Impedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Mantenimiento\InicioMantenimiento.aspx.designer.vb">
       <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\InicioMantenimiento.aspx.vb">
       <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Mantenimiento.Master.designer.vb">
       <DependentUpon>Mantenimiento.Master</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Mantenimiento.Master.vb">
       <DependentUpon>Mantenimiento.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoImpedimentos.aspx.designer.vb">
+      <DependentUpon>TipoImpedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoImpedimentos.aspx.vb">
+      <DependentUpon>TipoImpedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\VisitasCitas.aspx.designer.vb">
+      <DependentUpon>VisitasCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\VisitasCitas.aspx.vb">
+      <DependentUpon>VisitasCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
