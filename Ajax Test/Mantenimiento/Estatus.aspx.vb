@@ -60,7 +60,7 @@
     End Sub
     Private Sub btn_ActualizarVisitas_Click(sender As Object, e As EventArgs) Handles btn_ActualizarVisitas.Click
         If GE_Funciones.Actualiza_Estatus_Visitas Then
-            lbl_mensaje.Text = MostrarError("Se actualizo el estatus de las visitas.")
+            lbl_mensaje.Text = MostrarExito("Se actualizo el estatus de las visitas.")
         Else
             lbl_mensaje.Text = MostrarError("No se pudo actualizar el estatus de las visitas.")
         End If
