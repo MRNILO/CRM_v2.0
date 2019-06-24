@@ -631,7 +631,12 @@ Public Class Funciones
         Obtener_TipoUsuarioRegCliente = GE_SQL.SQLGetDataDbl(Query)
 
     End Function
+    Public Function Actualiza_Estatus_Citas() As Boolean
+        Dim Query As String = ""
+        Query = " EXECUTE  [dbo].[sp_MToolVigenciaCitas]"
 
+        Actualiza_Estatus_Citas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
 #End Region
 
 #Region "Visitas"
@@ -785,6 +790,14 @@ Public Class Funciones
                                    @idVisita = N'" & Id_Visita & "'"
         Actualiza_CampanaVisita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
+    Public Function Actualiza_Estatus_Visitas() As Boolean
+        Dim Query As String = ""
+        Query = " EXECUTE  [dbo].[sp_MToolVigenciaVisitas]"
+
+        Actualiza_Estatus_Visitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 
 #End Region
 

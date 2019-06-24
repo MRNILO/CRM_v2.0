@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Mantenimiento/Mantenimiento.Master" CodeBehind="Impedimento.aspx.vb" Inherits="Ajax_Test.Impedimento" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Mantenimiento/Mantenimiento.Master" CodeBehind="Estatus.aspx.vb" Inherits="Ajax_Test.Estatus" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuDeActividades" runat="server">
@@ -26,10 +27,10 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="portlet box purple">
+    <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-file"></i>Impedimento
+                <i class="fa fa-file"></i>Citas
             </div>
             <div class="tools">
             </div>
@@ -38,25 +39,39 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-lg-4">
-                        <label>Impedimento</label>
-                        <asp:TextBox ID="txt_Impedimento" runat="server" CssClass="form-control uppercase"></asp:TextBox>
-                    </div>
-                    <div class="col-lg-4">
-                        <label>Ranking</label>
-                        <br />
-                        <asp:DropDownList ID="cb_Ranking" runat="server" CssClass="form-control"></asp:DropDownList>
-                    </div>
-                    <div class="col-lg-4">
-                        <label>Tipo de Impedimento</label>
-                        <br />
-                        <asp:DropDownList ID="cb_TipoImpedimento" runat="server" CssClass="form-control"></asp:DropDownList>
+                        <label>Actualiza El estatus de las citas</label>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="col-lg-2">
-                        <asp:Button ID="btn_guardar" runat="server" Text="Guardar" CssClass="btn btn-sm btn-block blue" />
+                        <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box purple-plum">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-file"></i>Visitas
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Actualiza el estatus de las visitas</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
                     </div>
                 </div>
             </div>

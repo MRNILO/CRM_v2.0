@@ -34,8 +34,8 @@
     <div class="page-header navbar navbar-fixed-top">
         <div class="page-header-inner">
             <div class="page-logo">
-                <a href="/">
-                    <img src="/assets/imagenes/logo-mini.png" alt="logo" class="logo-default" width="50" />
+                <a>
+                    <img src="/assets/imagenes/logo.png" alt="logo" class="logo-default" width="50" />
                 </a>
                 <div class="menu-toggler sidebar-toggler hide">
                 </div>
@@ -79,6 +79,11 @@
                                     <i class="fa fa-user"></i>Actualiza Citas/Visitas
                                 </a>
                             </li>
+                            <li>
+                                <a href="/Mantenimiento/Estatus.aspx">
+                                    <i class="fa fa-user"></i>Actualiza Estatus
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -92,11 +97,12 @@
                                 <a href="/Mantenimiento/Impedimentos.aspx">
                                     <i class="fa fa-user"></i>Actualiza Impedimentos
                                 </a>
-                                <li>
-                                    <a href="/Mantenimiento/TipoImpedimentos.aspx">
-                                        <i class="fa fa-user"></i>Tipo Impedimentos
-                                    </a>
-                                </li>
+                            </li>
+                            <li>
+                                <a href="/Mantenimiento/TipoImpedimentos.aspx">
+                                    <i class="fa fa-user"></i>Tipo Impedimentos
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
