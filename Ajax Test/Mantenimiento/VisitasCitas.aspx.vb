@@ -56,6 +56,12 @@ Public Class VisitasCitas
     Protected Sub cbPanelUsuarioAsignadoVisita_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelUsuarioAsignadoVisita.Callback
         lblUsuarioVisita.Text = cmBoxUsuariosVisita.SelectedItem.Text
     End Sub
+    Protected Sub cbPanelUsuarioRegistroCita_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelUsuarioRegistroCita.Callback
+        lblUsuarioResgitroCita.Text = cmBoxUsuarioRegistro_Cita.SelectedItem.Text
+    End Sub
+    Protected Sub cbPanelUsuarioRegVisita_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelUsuarioRegVisita.Callback
+        lblUsuarioRegVisita.Text = cmBoxUsuariosRegistro_Visita.SelectedItem.Text
+    End Sub
     Protected Sub PanelCampana_Callback(sender As Object, e As DevExpress.Web.CallbackEventArgsBase) Handles cbPanelCampana.Callback
         Try
             If (e.Parameter = "cmBoxMedio") Then
@@ -130,6 +136,38 @@ Public Class VisitasCitas
         If (idVisita.Count > 0) Then
             For Each Visita In idVisita
                 If (GE_Funciones.Actualiza_UsuarioAsignado_Visita(cmBoxUsuariosVisita.SelectedItem.Value, Visita)) Then
+                    cargarVisitas()
+                    UI()
+                    lbl_mensaje.Text += MostrarExito("Visita Actualizada.")
+                Else
+                    lbl_mensaje.Text += MostrarError("No se puede actualizar la visita seleccionada.")
+                End If
+            Next
+        Else
+            lbl_mensaje.Text += MostrarError("Seleccione la visita que desea modificar.")
+        End If
+    End Sub
+    Protected Sub btn_ActualizaRegistroCita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaRegistroCita.Click
+        Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
+        If (idCita.Count > 0) Then
+            For Each cita In idCita
+                If (GE_Funciones.Actualiza_UsuarioRegistro_Cita(cmBoxUsuarioRegistro_Cita.SelectedItem.Value, cita)) Then
+                    cargarCitas()
+                    UI()
+                    lbl_mensaje.Text += MostrarExito("Cita Actualizada.")
+                Else
+                    lbl_mensaje.Text += MostrarError("No se puede actualizar la cita seleccionada.")
+                End If
+            Next
+        Else
+            lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
+        End If
+    End Sub
+    Protected Sub btn_ActualizaRegVisita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaRegVisita.Click
+        Dim idVisita = GV_Visitas.GetSelectedFieldValues("Id_Visita")
+        If (idVisita.Count > 0) Then
+            For Each Visita In idVisita
+                If (GE_Funciones.Actualiza_UsuarioRegistro_Visita(cmBoxUsuariosRegistro_Visita.SelectedItem.Value, Visita)) Then
                     cargarVisitas()
                     UI()
                     lbl_mensaje.Text += MostrarExito("Visita Actualizada.")
@@ -260,6 +298,22 @@ Public Class VisitasCitas
 
             .SelectedIndex = 0
         End With
+        With cmBoxUsuarioRegistro_Cita
+            .DataSource = DTB
+            .ValueField = "id_usuario"
+            .TextField = "nombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
+        With cmBoxUsuariosRegistro_Visita
+            .DataSource = DTB
+            .ValueField = "id_usuario"
+            .TextField = "nombre"
+            .DataBind()
+
+            .SelectedIndex = 0
+        End With
     End Sub
     Public Function BuscarClientes(ByVal NumCliente As Integer) As String
         Dim Cliente As New BusquedaCliente
@@ -332,7 +386,6 @@ Public Class VisitasCitas
 
             .SelectedIndex = 0
         End With
-
     End Sub
     Private Sub AlimentarComboCampanas(ByVal Id_Medio As Integer, ByVal Control As String)
         Dim Aux As Integer = 0

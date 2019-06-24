@@ -441,6 +441,16 @@ Public Class Funciones
         Actualiza_UsuarioAsignado = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
+    Public Function Actualiza_UsuarioRegistro_Cita(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE CitasClientes "
+        Query = Query + " SET  Id_Usuario=" & Id_Usuario & ",  Id_Supervisor_Usuario= (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
+        Query = Query + " WHERE Id_Cita =" & Id_Cita
+
+        Actualiza_UsuarioRegistro_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
 
@@ -631,6 +641,7 @@ Public Class Funciones
         Obtener_TipoUsuarioRegCliente = GE_SQL.SQLGetDataDbl(Query)
 
     End Function
+
     Public Function Actualiza_Estatus_Citas() As Boolean
         Dim Query As String = ""
         Query = " EXECUTE  [dbo].[sp_MToolVigenciaCitas]"
@@ -769,6 +780,16 @@ Public Class Funciones
         Query = Query + " WHERE Id_Visita =" & Id_Visita
 
         Actualiza_UsuarioAsignado_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
+    Public Function Actualiza_UsuarioRegistro_Visita(ByVal Id_Usuario As Integer, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = "  UPDATE VisitasClientes "
+        Query = Query + " SET  Id_Usuario=" & Id_Usuario & ",  Id_Supervisor_Usuario= (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
+        Query = Query + " WHERE Id_Visita =" & Id_Visita
+
+        Actualiza_UsuarioRegistro_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
     Public Function Actualiza_FechaVisita(ByVal fechaVisita As Date, ByVal Id_Visita As Integer) As Boolean

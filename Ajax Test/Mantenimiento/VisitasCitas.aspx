@@ -129,6 +129,9 @@
                                             <li id="tab_CambiaUsuarioAsignado" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Usuario" data-toggle="tab" href="#Usuario_Asignado" role="tab" aria-controls="home" aria-selected="true">Usuario Asignado</a>
                                             </li>
+                                            <li id="tab_CambiaUsuarioRegistro" class="nav-item" style="border-color: chartreuse" runat="server">
+                                                <a class="nav-link" id="tab_UsuarioRegistro" data-toggle="tab" href="#Usuario_RegistroCita" role="tab" aria-controls="home" aria-selected="true">Usuario Registro</a>
+                                            </li>
                                             <li id="tab_CambiaCampana" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Campana" data-toggle="tab" href="#Campana" role="tab" aria-controls="profile" aria-selected="true">Campaña</a>
                                             </li>
@@ -155,6 +158,30 @@
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 25px">
                                                                     <asp:Button ID="btn_ActualizaAsigando" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
+                                                                </div>
+                                                            </div>
+                                                        </dx:PanelContent>
+                                                    </PanelCollection>
+                                                </dx:ASPxCallbackPanel>
+                                            </div>
+                                            <div class="tab-pane fade" id="Usuario_RegistroCita" role="tabpanel" aria-labelledby="tab_Usuario">
+                                                <dx:ASPxCallbackPanel ID="cbPanelUsuarioRegistroCita" runat="server" Width="100%" ClientInstanceName="PanelActualizaUsuarioRegistroCita">
+                                                    <PanelCollection>
+                                                        <dx:PanelContent>
+                                                            <div class="row" style="height: 200px">
+                                                                <div class="col-lg-3">
+                                                                    <label><i>Usuario Registro:</i></label><br />
+                                                                    <dx:ASPxComboBox ID="cmBoxUsuarioRegistro_Cita" runat="server" Width="100%" Theme="MaterialCompact" DropDownRows="5">
+                                                                        <ClientSideEvents SelectedIndexChanged="function(s, e) {
+                                                                                            PanelActualizaUsuarioRegistroCita.PerformCallback();
+                                                                            }" />
+                                                                    </dx:ASPxComboBox>
+                                                                </div>
+                                                                <div class="col-lg-7" style="margin-top: 25px">
+                                                                    <dx:ASPxLabel ID="lblUsuarioResgitroCita" runat="server" Text="" Theme="MaterialCompact"></dx:ASPxLabel>
+                                                                </div>
+                                                                <div class="col-lg-2" style="margin-top: 25px">
+                                                                    <asp:Button ID="btn_ActualizaRegistroCita" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
                                                                 </div>
                                                             </div>
                                                         </dx:PanelContent>
@@ -327,13 +354,15 @@
                                                             </Columns>
                                                         </dx:ASPxGridView>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
                                         <ul class="nav nav-tabs" id="tabVisita" role="tablist" style="border-color: cadetblue; background-color: powderblue;">
                                             <li id="tabUsuarioVisita" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_UsuarioVisita" data-toggle="tab" href="#Usuario_Visita" role="tab" aria-controls="home" aria-selected="true">Usuario Visita</a>
+                                            </li>
+                                            <li id="tabUsuarioRegVisita" class="nav-item" style="border-color: chartreuse" runat="server">
+                                                <a class="nav-link" id="tab_UsuarioRegistroVisita" data-toggle="tab" href="#Usuario_RegistroVisita" role="tab" aria-controls="home" aria-selected="true">Usuario Registro</a>
                                             </li>
                                             <li id="tabCampanaVisita" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Campana_Visita" data-toggle="tab" href="#CampanaVisita" role="tab" aria-controls="profile" aria-selected="true">Campaña</a>
@@ -362,6 +391,30 @@
                                                                 </div>
                                                                 <div class="col-lg-2" style="margin-top: 25px">
                                                                     <asp:Button ID="btn_ActualizaAsigandoVisita" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
+                                                                </div>
+                                                            </div>
+                                                        </dx:PanelContent>
+                                                    </PanelCollection>
+                                                </dx:ASPxCallbackPanel>
+                                            </div>
+                                            <div class="tab-pane fade" id="Usuario_RegistroVisita" role="tabpanel" aria-labelledby="tab_UsuarioRegVisita">
+                                                <dx:ASPxCallbackPanel ID="cbPanelUsuarioRegVisita" runat="server" Width="100%" ClientInstanceName="PanelActualizaUsuarioRegistroVisita">
+                                                    <PanelCollection>
+                                                        <dx:PanelContent>
+                                                            <div class="row" style="height: 200px">
+                                                                <div class="col-lg-3">
+                                                                    <label><i>Usuario Registro:</i></label><br />
+                                                                    <dx:ASPxComboBox ID="cmBoxUsuariosRegistro_Visita" runat="server" Width="100%" Theme="MaterialCompact" DropDownRows="5">
+                                                                        <ClientSideEvents SelectedIndexChanged="function(s, e) {
+                                                                                            PanelActualizaUsuarioRegistroVisita.PerformCallback();
+                                                                            }" />
+                                                                    </dx:ASPxComboBox>
+                                                                </div>
+                                                                <div class="col-lg-7" style="margin-top: 25px">
+                                                                    <dx:ASPxLabel ID="lblUsuarioRegVisita" runat="server" Text="" Theme="MaterialCompact"></dx:ASPxLabel>
+                                                                </div>
+                                                                <div class="col-lg-2" style="margin-top: 25px">
+                                                                    <asp:Button ID="btn_ActualizaRegVisita" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
                                                                 </div>
                                                             </div>
                                                         </dx:PanelContent>
