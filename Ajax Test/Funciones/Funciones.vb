@@ -884,6 +884,32 @@ Inicio:
         Dim Query As String = String.Format("SELECT Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
         ObtenerRankingCliente = GE_SQL.SQLGetDataStr(Query)
     End Function
+
+    Public Function Actualiza_NKontrol(ByVal Cliente_EK As Boolean, ByVal Cliente_EK2 As Boolean, ByVal Cierre_Ek As Boolean, ByVal Escrituracion_Ek As Boolean, ByVal Cancelacion_EK As Boolean, ByVal Recuperacion_EK As Boolean, ByVal Empresa_EK As Boolean, ByVal Modelo_EK As Boolean, ByVal Operacion_EK As Boolean, ByVal idCliente As Integer, ByVal idUsuario As Integer, ByVal ComentarioEK As String) As Boolean
+        Dim Query As String = " EXEC [dbo].[Actauliza_Cliente_NKontrol]
+                                   @PCliente_Ek = " & Cliente_EK & ",
+                                   @PCliente_Ek2 = " & Cliente_EK2 & ",
+                                   @PCierre_EK = " & Cierre_Ek & ",
+                                   @PEscrituracion_Ek = " & Escrituracion_Ek & ",
+                                   @PCancelacion = " & Cancelacion_EK & ",
+                                   @PRecuperacion = " & Recuperacion_EK & ",
+                                   @PEmpresa = " & Empresa_EK & ",
+                                   @PModelo = " & Modelo_EK & ",
+                                   @POperacion = " & Operacion_EK & ",
+                                   @PClienteID = " & idCliente & ",
+                                   @PUsuarioID = " & idUsuario & ",
+                                   @PComentario = N'" & ComentarioEK & "'"
+
+        Actualiza_NKontrol = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+#End Region
+
+#Region "Supervisor"
+    Public Function Actualiza_SupervisorBorraEk(ByVal id_supervisor As Integer, ByVal activo As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "UPDATE supervisores SET BorraEK = " & activo & " WHERE id_supervisor = " & id_supervisor
+        Actualiza_SupervisorBorraEk = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
 #End Region
 
 #Region "Reportes"
@@ -1041,7 +1067,7 @@ Inicio:
     End Function
 #End Region
 
-#Region "´Campañas"
+#Region "Campañas"
     Public Function Inserta_TipoCampaña(ByVal TipoCampaña As String) As Boolean
         Dim Query As String = " EXEC [dbo].[Inserta_TipoCampaña]
                                    @PTipoCampaña = N'" & TipoCampaña & "'"

@@ -18,7 +18,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                  <a href="../Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -26,6 +26,40 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="modal fade" id="DatosEK" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Resetear campos EnKontrol...</h4>
+                </div>
+                <div class="modal-body">
+                    <asp:CheckBox ID="chkCliente_Ek" Text="Número EK" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkCliente_Ek2" Text="Número EK2" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkCierre_EK" Text="Fecha Cierre " runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkEscrituracion_Ek" Text="Fecha Escrituración" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkCancelacion" Text="Fecha Cancelación" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkRecuperacion" Text="Fecha Operación" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkEmpresa" Text="Empresa" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkModelo" Text="Modelo" runat="server" />
+                    <br />
+                    <asp:CheckBox ID="chkOperacion" Text="Fecha Operacion" runat="server" />
+                    <br />
+                    <asp:TextBox ID="txtComentario_EK" Text="" runat="server" Width="100%" TextMode="MultiLine" Style="resize: none;"></asp:TextBox>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btn_Resetear" runat="server" Text="Resetear" CssClass="btn btn-sm btn-block yellow-casablanca" />
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="portlet box purple">
         <div class="portlet-title">
@@ -76,7 +110,10 @@
                             <label>Fecha Operación</label>
                             <dx:ASPxDateEdit ID="dtp_FechaOperacion" runat="server" Theme="Mulberry" Width="100%"></dx:ASPxDateEdit>
                         </div>
-                        <div class="col-lg-2 col-lg-offset-2" style="margin-top: 25px">
+                        <div class="col-lg-2" style="margin-top: 25px">
+                            <asp:Button ID="btn_LimpiarNumcte" runat="server" Text="Limpia Valor" CssClass="btn btn-sm btn-block green" OnClientClick="ResetCampos(); return false;" />
+                        </div>
+                        <div class="col-lg-2" style="margin-top: 25px">
                             <asp:Button ID="btn_guardaNumcte" runat="server" Text="Actualizar Datos" CssClass="btn btn-sm btn-block red" />
                         </div>
                     </div>
@@ -417,7 +454,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <%--<script type="text/javascript" src="/assets/global/plugins/select2/select2.min.js"></script>--%>
     <script type="text/javascript">
-
         function cambiarLlamada(idLlamada) {
             $.ajax({
                 type: "POST",
@@ -442,5 +478,12 @@
             }
         }
     </script>
+
+    <script type="text/javascript">
+        function ResetCampos() {
+            $('#DatosEK').modal('show');
+        }
+    </script>
+
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

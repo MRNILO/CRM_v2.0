@@ -154,6 +154,9 @@ Namespace Servicio
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BorraEkField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EmailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -190,6 +193,19 @@ Namespace Servicio
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BorraEk() As Integer
+            Get
+                Return Me.BorraEkField
+            End Get
+            Set
+                If (Me.BorraEkField.Equals(value) <> true) Then
+                    Me.BorraEkField = value
+                    Me.RaisePropertyChanged("BorraEk")
+                End If
             End Set
         End Property
         
@@ -6272,6 +6288,9 @@ Namespace Servicio
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private BorraEKField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EmailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -6305,6 +6324,19 @@ Namespace Servicio
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property BorraEK() As Integer
+            Get
+                Return Me.BorraEKField
+            End Get
+            Set
+                If (Me.BorraEKField.Equals(value) <> true) Then
+                    Me.BorraEKField = value
+                    Me.RaisePropertyChanged("BorraEK")
+                End If
             End Set
         End Property
         

@@ -143,8 +143,12 @@ Public Class ClienteSupervisor
         Ranking(DatosCliente(0))
         lbl_mensajeRanking.Text = If(DatosCliente(0).ranking = "P", "Pendiente", DatosCliente(0).ranking) : Session("Ranking_Org") = DatosCliente(0).ranking
         tb_numcte.Text = Obtener_numcte().ToString
+        If Usuario.BorraEk = 1 Then
+            btn_LimpiarNumcte.Style.Add("display", "always")
+        Else
+            btn_LimpiarNumcte.Style.Add("display", "none")
+        End If
     End Sub
-
 
     Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
         If Cliente.ranking = "P" Then
@@ -631,6 +635,35 @@ Public Class ClienteSupervisor
                     e.Cell.ForeColor = Drawing.Color.White
                     e.Cell.Text = "COMPLETADA"
             End Select
+        End If
+    End Sub
+    Protected Sub btn_Resetear_Click(sender As Object, e As EventArgs) Handles btn_Resetear.Click
+        Dim Cliente_EK As Boolean = chkCliente_Ek.Checked
+        Dim Cliente_EK2 As Boolean = chkCliente_Ek2.Checked
+        Dim Cierre_Ek As Boolean = chkCierre_EK.Checked
+        Dim Escrituracion_Ek As Boolean = chkEscrituracion_Ek.Checked
+        Dim Cancelacion_EK As Boolean = chkCancelacion.Checked
+        Dim Recuperacion_EK As Boolean = chkRecuperacion.Checked
+        Dim Empresa_EK As Boolean = chkEmpresa.Checked
+        Dim Modelo_EK As Boolean = chkModelo.Checked
+        Dim Operacion_EK As Boolean = chkOperacion.Checked
+        Dim Comentario_EK As String = txtComentario_EK.Text
+
+        If GE_Funciones.Actualiza_NKontrol(Cliente_EK, Cliente_EK2, Cierre_Ek, Escrituracion_Ek, Cancelacion_EK, Recuperacion_EK, Empresa_EK, Modelo_EK, Operacion_EK, idCliente, Usuario.id_usuario, Comentario_EK) Then
+            chkCliente_Ek.Checked = False
+            chkCliente_Ek2.Checked = False
+            chkCierre_EK.Checked = False
+            chkEscrituracion_Ek.Checked = False
+            chkCancelacion.Checked = False
+            chkRecuperacion.Checked = False
+            chkEmpresa.Checked = False
+            chkModelo.Checked = False
+            chkOperacion.Checked = False
+            txtComentario_EK.Text = ""
+            UI()
+            lbl_mensaje.Text += MostrarExito("¡Cliente actualizado!")
+        Else
+            lbl_mensaje.Text += MostrarError("¡Nose pudo actualizar!")
         End If
     End Sub
 #End Region

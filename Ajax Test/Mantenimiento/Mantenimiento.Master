@@ -105,6 +105,21 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
+                            <span class="title">Supervisores</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../Mantenimiento/Supervisorpermiso.aspx">
+                                    <i class="fa fa-user"></i>Permiso especial
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>

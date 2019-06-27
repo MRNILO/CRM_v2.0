@@ -7187,6 +7187,7 @@
     <Content Include="Mantenimiento\Impedimentos.aspx" />
     <Content Include="Mantenimiento\InicioMantenimiento.aspx" />
     <Content Include="Mantenimiento\TipoImpedimentos.aspx" />
+    <Content Include="Mantenimiento\Supervisorpermiso.aspx" />
     <Content Include="Mantenimiento\VisitasCitas.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
@@ -8346,6 +8347,13 @@
     </Compile>
     <Compile Include="Mantenimiento\TipoImpedimentos.aspx.vb">
       <DependentUpon>TipoImpedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Supervisorpermiso.aspx.designer.vb">
+      <DependentUpon>Supervisorpermiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Supervisorpermiso.aspx.vb">
+      <DependentUpon>Supervisorpermiso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Mantenimiento\VisitasCitas.aspx.designer.vb">

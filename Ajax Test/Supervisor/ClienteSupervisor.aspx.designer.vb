@@ -23,6 +23,105 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Control chkCliente_Ek.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkCliente_Ek As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkCliente_Ek2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkCliente_Ek2 As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkCierre_EK.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkCierre_EK As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkEscrituracion_Ek.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkEscrituracion_Ek As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkCancelacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkCancelacion As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkRecuperacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkRecuperacion As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkEmpresa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkEmpresa As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkModelo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkModelo As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkOperacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkOperacion As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control txtComentario_EK.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtComentario_EK As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btn_Resetear.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Resetear As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control tb_numcte.
     '''</summary>
     '''<remarks>
@@ -102,6 +201,15 @@ Partial Public Class ClienteSupervisor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dtp_FechaOperacion As Global.DevExpress.Web.ASPxDateEdit
+    
+    '''<summary>
+    '''Control btn_LimpiarNumcte.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_LimpiarNumcte As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control btn_guardaNumcte.

@@ -35,6 +35,7 @@
   <xs:element name="ArrayOfCUsuarios" nillable="true" type="tns:ArrayOfCUsuarios" />
   <xs:complexType name="CUsuarios">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BorraEk" type="xs:int" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nivel" type="xs:int" />
       <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
@@ -774,6 +775,7 @@
   <xs:element name="ArrayOfCDetalleSupervisor" nillable="true" type="tns:ArrayOfCDetalleSupervisor" />
   <xs:complexType name="CDetalleSupervisor">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BorraEK" type="xs:int" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="activo" type="xs:int" />
       <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
