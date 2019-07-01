@@ -104,7 +104,7 @@ Public Class NuevoCliente1
                             BL.Inserta_ClientesCC(IDCliente, Usuario.id_usuario, CB_TIPOcREDITO.SelectedValue)
                         Catch ex As Exception
                         End Try
-                        Response.Redirect("cita.aspx?id=" + IDCliente.ToString, False)
+                        Response.Redirect("CitaCte.aspx?id=" + IDCliente.ToString, False)
                         lbl_mensaje.Text = MostrarExito("Cliente " & tb_nombre.Text & " " & tb_paterno.Text & " " & tb_materno.Text & " resgistrado satisfactoriamente")
                     Else
                         lbl_mensaje.Text = MostrarError("Cliente duplicado, verifique el CURP")

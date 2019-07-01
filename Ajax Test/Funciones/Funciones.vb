@@ -1056,8 +1056,8 @@ Inicio:
 #Region "Usuarios"
     Public Function Asignar_Supervisor(ByVal idUsuario As Integer, ByVal idSupervisor As Integer) As Boolean
         Dim Query As String = " EXEC [dbo].[Inserta_Asignacion_supervisorUsuario]
-                                   @Pid_usuario = N'" & idUsuario & "',
-                                   @Pid_supervisor = N'" & idSupervisor & "'"
+                                   @Pid_usuario = " & idUsuario & ",
+                                   @Pid_supervisor = " & idSupervisor
 
         If (GE_SQL.SQLGetDataDbl(Query) = 0) Then
             Return False

@@ -27,55 +27,70 @@
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="portlet box green">
-        <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-file"></i>Citas
-            </div>
-            <div class="tools">
-            </div>
-        </div>
-        <div class="portlet-body">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <label>Actualiza El estatus de las citas</label>
+    <div>
+        <dx:ASPxCallbackPanel ID="cbPanelUsuarioAsignado" runat="server" Width="100%" ClientInstanceName="PanelActualizaUsuario">
+            <PanelCollection>
+                <dx:PanelContent>
+                   <%-- <dx:ASPxProgressBar ID="ASPxProgressBar1" runat="server" Height="21px" Width="200px"
+                        EnableClientSideAPI="True" ShowPosition="False"
+                        Theme="BlackGlass">
+                    </dx:ASPxProgressBar>--%>
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-file"></i>Citas
+                            </div>
+                            <div class="tools">
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label>Actualiza El estatus de las citas</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
+                    <div class="portlet box purple-plum">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-file"></i>Visitas
+                            </div>
+                            <div class="tools">
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label>Actualiza el estatus de las visitas</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portlet box purple-plum">
-        <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-file"></i>Visitas
-            </div>
-            <div class="tools">
-            </div>
-        </div>
-        <div class="portlet-body">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <label>Actualiza el estatus de las visitas</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
-                    </div>
-                </div>
-            </div>
-        </div>
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxCallbackPanel>
+
+
+
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">

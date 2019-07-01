@@ -3,7 +3,7 @@
 <%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CSSContent" runat="server">
-    <link href="/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="ActivityContent" ContentPlaceHolderID="MenuDeActividades" runat="server">
     <ul class="nav navbar-nav pull-right">
@@ -16,7 +16,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-default">
                 <li>
-                    <a href="/Supervisor/MisDatos.aspx">
+                    <a href="../Supervisor/MisDatos.aspx">
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>

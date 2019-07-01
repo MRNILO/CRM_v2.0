@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.13/wcf_crm/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="af82c367-5cac-4329-9aa7-ec15b0dea38a" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?wsdl" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="b1a009b6-94ea-4c67-8f69-b201e5ec05fb" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="94528c88-ad17-4dec-9db4-824293657891" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="4d35b6a9-1cde-4fd8-9bbc-1215f64d610c" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="cf28c91a-4742-4cf4-a907-dd55c552ae1e" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?disco" />
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="c1acf9c3-cabe-4fc5-a46d-0fe5dd3b717c" SourceId="1" SourceUrl="http://localhost/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="c6a61a2e-8827-49b4-98e7-c81408a15b99" SourceId="1" SourceUrl="http://localhost/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service131.xsd" MetadataType="Schema" ID="411c866a-490f-4943-ac3f-c34b0b60988b" SourceId="1" SourceUrl="http://localhost/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service132.xsd" MetadataType="Schema" ID="2daae261-d870-4c2f-ab11-dc7581248eba" SourceId="1" SourceUrl="http://localhost/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service11.disco" MetadataType="Disco" ID="3b8ec1e7-45c3-41bf-b7ed-b9cc0091c7af" SourceId="1" SourceUrl="http://localhost/Service1.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
