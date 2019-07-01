@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_CRM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_CRM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCTipoCampaña">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTipoCampaña" nillable="true" type="tns:CTipoCampaña" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTipoCampaña" nillable="true" type="tns:ArrayOfCTipoCampaña" />
+  <xs:complexType name="CTipoCampaña">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoCampaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_tipoCampaña" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTipoCampaña" nillable="true" type="tns:CTipoCampaña" />
+  <xs:complexType name="ArrayOfCTipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTipoReferencia" nillable="true" type="tns:ArrayOfCTipoReferencia" />
+  <xs:complexType name="CTipoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_tiporeferencia" type="xs:int" />
+      <xs:element minOccurs="0" name="tiporeferencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTipoReferencia" nillable="true" type="tns:CTipoReferencia" />
+  <xs:complexType name="ArrayOfCUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CUsuarios" nillable="true" type="tns:CUsuarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCUsuarios" nillable="true" type="tns:ArrayOfCUsuarios" />
+  <xs:complexType name="CUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BorraEk" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CUsuarios" nillable="true" type="tns:CUsuarios" />
+  <xs:complexType name="ArrayOfCEstados">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEstados" nillable="true" type="tns:CEstados" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEstados" nillable="true" type="tns:ArrayOfCEstados" />
+  <xs:complexType name="CEstados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEstados" nillable="true" type="tns:CEstados" />
+  <xs:complexType name="ArrayOfCCiudades">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCiudades" nillable="true" type="tns:CCiudades" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCiudades" nillable="true" type="tns:ArrayOfCCiudades" />
+  <xs:complexType name="CCiudades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCiudades" nillable="true" type="tns:CCiudades" />
+  <xs:complexType name="ArrayOfCEtapasDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEtapasDetalles" nillable="true" type="tns:CEtapasDetalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEtapasDetalles" nillable="true" type="tns:ArrayOfCEtapasDetalles" />
+  <xs:complexType name="CEtapasDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_operacion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEtapasDetalles" nillable="true" type="tns:CEtapasDetalles" />
+  <xs:complexType name="ArrayOfCTareasPrioridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTareasPrioridad" nillable="true" type="tns:CTareasPrioridad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTareasPrioridad" nillable="true" type="tns:ArrayOfCTareasPrioridad" />
+  <xs:complexType name="CTareasPrioridad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_prioridad" type="xs:int" />
+      <xs:element minOccurs="0" name="prioridad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTareasPrioridad" nillable="true" type="tns:CTareasPrioridad" />
+  <xs:complexType name="ArrayOfCTareasPendientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTareasPendientes" nillable="true" type="tns:CTareasPendientes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTareasPendientes" nillable="true" type="tns:ArrayOfCTareasPendientes" />
+  <xs:complexType name="CTareasPendientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Avisado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoraProgramada" type="ser:duration" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaProgramada" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_tarea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTareasPendientes" nillable="true" type="tns:CTareasPendientes" />
+  <xs:complexType name="CDetallesEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetallesEmail" nillable="true" type="tns:CDetallesEmail" />
+  <xs:complexType name="CDetallesEmailCita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetallesEmailCita" nillable="true" type="tns:CDetallesEmailCita" />
+  <xs:complexType name="ArrayOfCCorreosCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCorreosCliente" nillable="true" type="tns:CCorreosCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCorreosCliente" nillable="true" type="tns:ArrayOfCCorreosCliente" />
+  <xs:complexType name="CCorreosCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_email" type="xs:int" />
+      <xs:element minOccurs="0" name="emailFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="htmlMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subjet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaRecepcion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Desc_estatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCorreosCliente" nillable="true" type="tns:CCorreosCliente" />
+  <xs:complexType name="ArrayOfCEmailsUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEmailsUsuario" nillable="true" type="tns:CEmailsUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEmailsUsuario" nillable="true" type="tns:ArrayOfCEmailsUsuario" />
+  <xs:complexType name="CEmailsUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_email" type="xs:int" />
+      <xs:element minOccurs="0" name="emailFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="htmlMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subjet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaRecepcion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Nadjuntos" type="xs:int" />
+      <xs:element minOccurs="0" name="Desc_estatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEmailsUsuario" nillable="true" type="tns:CEmailsUsuario" />
+  <xs:complexType name="CConfiguracionEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="popServer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailPort" type="xs:int" />
+      <xs:element minOccurs="0" name="useSSL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CConfiguracionEmail" nillable="true" type="tns:CConfiguracionEmail" />
+  <xs:complexType name="ArrayOfCancelacionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CancelacionesEnkontrol" nillable="true" type="tns:CancelacionesEnkontrol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCancelacionesEnkontrol" nillable="true" type="tns:ArrayOfCancelacionesEnkontrol" />
+  <xs:complexType name="CancelacionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCancelacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="nombreAgente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreLider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroAgente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroLider" type="xs:int" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelacionesEnkontrol" nillable="true" type="tns:CancelacionesEnkontrol" />
+  <xs:complexType name="ArrayOfSeparacionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeparacionesEnkontrol" nillable="true" type="tns:SeparacionesEnkontrol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeparacionesEnkontrol" nillable="true" type="tns:ArrayOfSeparacionesEnkontrol" />
+  <xs:complexType name="SeparacionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreLider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroAgente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroLider" type="xs:int" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeparacionesEnkontrol" nillable="true" type="tns:SeparacionesEnkontrol" />
+  <xs:complexType name="ArrayOfProspeccionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProspeccionesEnkontrol" nillable="true" type="tns:ProspeccionesEnkontrol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProspeccionesEnkontrol" nillable="true" type="tns:ArrayOfProspeccionesEnkontrol" />
+  <xs:complexType name="ProspeccionesEnkontrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreLider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroAgente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroLider" type="xs:int" />
+      <xs:element minOccurs="0" name="zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProspeccionesEnkontrol" nillable="true" type="tns:ProspeccionesEnkontrol" />
+  <xs:complexType name="ArrayOfProspeccionesCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProspeccionesCRM" nillable="true" type="tns:ProspeccionesCRM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProspeccionesCRM" nillable="true" type="tns:ArrayOfProspeccionesCRM" />
+  <xs:complexType name="ProspeccionesCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="idSupervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProspeccionesCRM" nillable="true" type="tns:ProspeccionesCRM" />
+  <xs:complexType name="ArrayOfVisitasCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisitasCRM" nillable="true" type="tns:VisitasCRM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisitasCRM" nillable="true" type="tns:ArrayOfVisitasCRM" />
+  <xs:complexType name="VisitasCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaUltimaVisita" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="idSupervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitasCRM" nillable="true" type="tns:VisitasCRM" />
+  <xs:complexType name="ArrayOfSeparacionesCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeparacionesCRM" nillable="true" type="tns:SeparacionesCRM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeparacionesCRM" nillable="true" type="tns:ArrayOfSeparacionesCRM" />
+  <xs:complexType name="SeparacionesCRM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaCierre" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaUltimaVisita" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="idSupervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeparacionesCRM" nillable="true" type="tns:SeparacionesCRM" />
+  <xs:complexType name="ArrayOfReporteArpa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReporteArpa" nillable="true" type="tns:ReporteArpa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReporteArpa" nillable="true" type="tns:ArrayOfReporteArpa" />
+  <xs:complexType name="ReporteArpa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Prospectos" type="xs:int" />
+      <xs:element minOccurs="0" name="Separaciones" type="xs:int" />
+      <xs:element minOccurs="0" name="Visitas" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReporteArpa" nillable="true" type="tns:ReporteArpa" />
+  <xs:complexType name="ArrayOfReporteCalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReporteCalidad" nillable="true" type="tns:ReporteCalidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReporteCalidad" nillable="true" type="tns:ArrayOfReporteCalidad" />
+  <xs:complexType name="ReporteCalidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClienteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClienteIDCRM" type="xs:int" />
+      <xs:element minOccurs="0" name="Contrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Conyuge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsqFraccionamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaEntrega" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fraccionamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Integrador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numcte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plaza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ranqueo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Responsable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFraccionamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visita" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReporteCalidad" nillable="true" type="tns:ReporteCalidad" />
+  <xs:complexType name="ArrayOfDetallesCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetallesCumplimiento" nillable="true" type="tns:DetallesCumplimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetallesCumplimiento" nillable="true" type="tns:ArrayOfDetallesCumplimiento" />
+  <xs:complexType name="DetallesCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ranking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="asesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fraccionamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCampaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prototipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="semana" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetallesCumplimiento" nillable="true" type="tns:DetallesCumplimiento" />
+  <xs:complexType name="ArrayOfDatosCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatosCumplimiento" nillable="true" type="tns:DatosCumplimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatosCumplimiento" nillable="true" type="tns:ArrayOfDatosCumplimiento" />
+  <xs:complexType name="DatosCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fraccionamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCampaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prototipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="semana" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatosCumplimiento" nillable="true" type="tns:DatosCumplimiento" />
+  <xs:complexType name="ArrayOfTotalesCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TotalesCumplimiento" nillable="true" type="tns:TotalesCumplimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTotalesCumplimiento" nillable="true" type="tns:ArrayOfTotalesCumplimiento" />
+  <xs:complexType name="TotalesCumplimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campana" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoCampana" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TotalesCumplimiento" nillable="true" type="tns:TotalesCumplimiento" />
+  <xs:complexType name="ArrayOfProyectos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proyectos" nillable="true" type="tns:Proyectos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProyectos" nillable="true" type="tns:ArrayOfProyectos" />
+  <xs:complexType name="Proyectos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Proyecto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proyectos" nillable="true" type="tns:Proyectos" />
+  <xs:complexType name="ArrayOfTipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoUsuario" nillable="true" type="tns:TipoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoUsuario" nillable="true" type="tns:ArrayOfTipoUsuario" />
+  <xs:complexType name="TipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_tipoUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoUsuario" nillable="true" type="tns:TipoUsuario" />
+  <xs:complexType name="ArrayOfCNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CNotifica" nillable="true" type="tns:CNotifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCNotifica" nillable="true" type="tns:ArrayOfCNotifica" />
+  <xs:complexType name="CNotifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescripcionNotificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TituloNotificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CNotifica" nillable="true" type="tns:CNotifica" />
+  <xs:complexType name="ArrayOfCOperacionesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOperacionesCliente" nillable="true" type="tns:ArrayOfCOperacionesCliente" />
+  <xs:complexType name="COperacionesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
+  <xs:complexType name="ArrayOfCEtapasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEtapasCliente" nillable="true" type="tns:CEtapasCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEtapasCliente" nillable="true" type="tns:ArrayOfCEtapasCliente" />
+  <xs:complexType name="CEtapasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
+      <xs:element minOccurs="0" name="nEtapa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEtapasCliente" nillable="true" type="tns:CEtapasCliente" />
+  <xs:complexType name="ArrayOfCLlamadasPendientesHoyUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLlamadasPendientesHoyUsuario" nillable="true" type="tns:ArrayOfCLlamadasPendientesHoyUsuario" />
+  <xs:complexType name="CLlamadasPendientesHoyUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORA" type="ser:duration" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLlamadasPendientesHoyUsuario" nillable="true" type="tns:CLlamadasPendientesHoyUsuario" />
+  <xs:complexType name="ArrayOfCLlamadas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadas" nillable="true" type="tns:CLlamadas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLlamadas" nillable="true" type="tns:ArrayOfCLlamadas" />
+  <xs:complexType name="CLlamadas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLlamadas" nillable="true" type="tns:CLlamadas" />
+  <xs:complexType name="ArrayOfCLlamadasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadasCliente" nillable="true" type="tns:CLlamadasCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLlamadasCliente" nillable="true" type="tns:ArrayOfCLlamadasCliente" />
+  <xs:complexType name="CLlamadasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Calificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" type="ser:duration" />
+      <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLlamadasCliente" nillable="true" type="tns:CLlamadasCliente" />
+  <xs:complexType name="ArrayOfCLlamadasFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CLlamadasFechas" nillable="true" type="tns:CLlamadasFechas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCLlamadasFechas" nillable="true" type="tns:ArrayOfCLlamadasFechas" />
+  <xs:complexType name="CLlamadasFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" type="ser:duration" />
+      <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_llamada" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLlamadasFechas" nillable="true" type="tns:CLlamadasFechas" />
+  <xs:complexType name="ArrayOfCNivelInteres">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CNivelInteres" nillable="true" type="tns:CNivelInteres" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCNivelInteres" nillable="true" type="tns:ArrayOfCNivelInteres" />
+  <xs:complexType name="CNivelInteres">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_nivelInteres" type="xs:int" />
+      <xs:element minOccurs="0" name="nivelinteres" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CNivelInteres" nillable="true" type="tns:CNivelInteres" />
+  <xs:complexType name="ArrayOfCComboProductos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CComboProductos" nillable="true" type="tns:CComboProductos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCComboProductos" nillable="true" type="tns:ArrayOfCComboProductos" />
+  <xs:complexType name="CComboProductos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CComboProductos" nillable="true" type="tns:CComboProductos" />
+  <xs:complexType name="ArrayOfCProductos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CProductos" nillable="true" type="tns:CProductos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCProductos" nillable="true" type="tns:ArrayOfCProductos" />
+  <xs:complexType name="CProductos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioNormal" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CProductos" nillable="true" type="tns:CProductos" />
+  <xs:complexType name="ArrayOfCProductosDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CProductosDetalles" nillable="true" type="tns:CProductosDetalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCProductosDetalles" nillable="true" type="tns:ArrayOfCProductosDetalles" />
+  <xs:complexType name="CProductosDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioNormal" type="xs:int" />
+      <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CProductosDetalles" nillable="true" type="tns:CProductosDetalles" />
+  <xs:complexType name="CDetallesProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioNormal" type="xs:int" />
+      <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetallesProducto" nillable="true" type="tns:CDetallesProducto" />
+  <xs:complexType name="ArrayOfCReferenciasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CReferenciasCliente" nillable="true" type="tns:CReferenciasCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCReferenciasCliente" nillable="true" type="tns:ArrayOfCReferenciasCliente" />
+  <xs:complexType name="CReferenciasCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoTPresentacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_referencia" type="xs:int" />
+      <xs:element minOccurs="0" name="tiporeferencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CReferenciasCliente" nillable="true" type="tns:CReferenciasCliente" />
+  <xs:complexType name="ArrayOfCRubros">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CRubros" nillable="true" type="tns:CRubros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCRubros" nillable="true" type="tns:ArrayOfCRubros" />
+  <xs:complexType name="CRubros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_rubro" type="xs:int" />
+      <xs:element minOccurs="0" name="rubro" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRubros" nillable="true" type="tns:CRubros" />
+  <xs:complexType name="ArrayOfCOportunidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COportunidades" nillable="true" type="tns:COportunidades" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOportunidades" nillable="true" type="tns:ArrayOfCOportunidades" />
+  <xs:complexType name="COportunidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nivelinteres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COportunidades" nillable="true" type="tns:COportunidades" />
+  <xs:complexType name="ArrayOfObtener_reporte_clientesFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Obtener_reporte_clientesFechas" nillable="true" type="tns:Obtener_reporte_clientesFechas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObtener_reporte_clientesFechas" nillable="true" type="tns:ArrayOfObtener_reporte_clientesFechas" />
+  <xs:complexType name="Obtener_reporte_clientesFechas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nivelinteres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaDe" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="monto" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UltimoMovimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaObservacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Obtener_reporte_clientesFechas" nillable="true" type="tns:Obtener_reporte_clientesFechas" />
+  <xs:complexType name="ArrayOfCCLientesSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCLientesSupervisor" nillable="true" type="tns:CCLientesSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCLientesSupervisor" nillable="true" type="tns:ArrayOfCCLientesSupervisor" />
+  <xs:complexType name="CCLientesSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCLientesSupervisor" nillable="true" type="tns:CCLientesSupervisor" />
+  <xs:complexType name="ArrayOfCUsuariosDetalleSup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CUsuariosDetalleSup" nillable="true" type="tns:CUsuariosDetalleSup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCUsuariosDetalleSup" nillable="true" type="tns:ArrayOfCUsuariosDetalleSup" />
+  <xs:complexType name="CUsuariosDetalleSup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorDes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipousuarioDes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_TipoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CUsuariosDetalleSup" nillable="true" type="tns:CUsuariosDetalleSup" />
+  <xs:complexType name="ArrayOfCDetalleSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDetalleSupervisor" nillable="true" type="tns:CDetalleSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDetalleSupervisor" nillable="true" type="tns:ArrayOfCDetalleSupervisor" />
+  <xs:complexType name="CDetalleSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BorraEK" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetalleSupervisor" nillable="true" type="tns:CDetalleSupervisor" />
+  <xs:complexType name="ArrayOfCSupervisores">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSupervisores" nillable="true" type="tns:CSupervisores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCSupervisores" nillable="true" type="tns:ArrayOfCSupervisores" />
+  <xs:complexType name="CSupervisores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSupervisores" nillable="true" type="tns:CSupervisores" />
+  <xs:complexType name="ArrayOfClientesSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientesSupervisor" nillable="true" type="tns:ClientesSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientesSupervisor" nillable="true" type="tns:ArrayOfClientesSupervisor" />
+  <xs:complexType name="ClientesSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientesSupervisor" nillable="true" type="tns:ClientesSupervisor" />
+  <xs:complexType name="ArrayOfCUsuariosSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CUsuariosSupervisor" nillable="true" type="tns:CUsuariosSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCUsuariosSupervisor" nillable="true" type="tns:ArrayOfCUsuariosSupervisor" />
+  <xs:complexType name="CUsuariosSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CUsuariosSupervisor" nillable="true" type="tns:CUsuariosSupervisor" />
+  <xs:complexType name="ArrayOfCAcumuladosSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CAcumuladosSupervisor" nillable="true" type="tns:CAcumuladosSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCAcumuladosSupervisor" nillable="true" type="tns:ArrayOfCAcumuladosSupervisor" />
+  <xs:complexType name="CAcumuladosSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CAcumuladosSupervisor" nillable="true" type="tns:CAcumuladosSupervisor" />
+  <xs:complexType name="ArrayOfCSupervisorUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSupervisorUsuarios" nillable="true" type="tns:CSupervisorUsuarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCSupervisorUsuarios" nillable="true" type="tns:ArrayOfCSupervisorUsuarios" />
+  <xs:complexType name="CSupervisorUsuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSupervisorUsuarios" nillable="true" type="tns:CSupervisorUsuarios" />
+  <xs:complexType name="ArrayOfDiasSinTrabajar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiasSinTrabajar" nillable="true" type="tns:DiasSinTrabajar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiasSinTrabajar" nillable="true" type="tns:ArrayOfDiasSinTrabajar" />
+  <xs:complexType name="DiasSinTrabajar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dias" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Ultima" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiasSinTrabajar" nillable="true" type="tns:DiasSinTrabajar" />
+  <xs:complexType name="CDetallesSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="is_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetallesSupervisor" nillable="true" type="tns:CDetallesSupervisor" />
+  <xs:complexType name="ArrayOfCRelacionSupervisorUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CRelacionSupervisorUsuario" nillable="true" type="tns:CRelacionSupervisorUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCRelacionSupervisorUsuario" nillable="true" type="tns:ArrayOfCRelacionSupervisorUsuario" />
+  <xs:complexType name="CRelacionSupervisorUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoMaterno1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="id_supervisorusuario" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRelacionSupervisorUsuario" nillable="true" type="tns:CRelacionSupervisorUsuario" />
+  <xs:complexType name="ArrayOfCTelefonosmodifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonosmodifica" nillable="true" type="tns:CTelefonosmodifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonosmodifica" nillable="true" type="tns:ArrayOfCTelefonosmodifica" />
+  <xs:complexType name="CTelefonosmodifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_telefonoCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonosmodifica" nillable="true" type="tns:CTelefonosmodifica" />
+  <xs:complexType name="ArrayOfCTelefonoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoCliente" nillable="true" type="tns:CTelefonoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoCliente" nillable="true" type="tns:ArrayOfCTelefonoCliente" />
+  <xs:complexType name="CTelefonoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_telefonoCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoCliente" nillable="true" type="tns:CTelefonoCliente" />
+  <xs:complexType name="ArrayOfCTelefonoContactoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoContactoEmpresa" nillable="true" type="tns:CTelefonoContactoEmpresa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoContactoEmpresa" nillable="true" type="tns:ArrayOfCTelefonoContactoEmpresa" />
+  <xs:complexType name="CTelefonoContactoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_contactoEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_telefonoContacto" type="xs:int" />
+      <xs:element minOccurs="0" name="principal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoContactoEmpresa" nillable="true" type="tns:CTelefonoContactoEmpresa" />
+  <xs:complexType name="ArrayOfCTelefonoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoEmpresa" nillable="true" type="tns:CTelefonoEmpresa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoEmpresa" nillable="true" type="tns:ArrayOfCTelefonoEmpresa" />
+  <xs:complexType name="CTelefonoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_telefonoEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoEmpresa" nillable="true" type="tns:CTelefonoEmpresa" />
+  <xs:complexType name="ArrayOfCTelefonoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoReferencia" nillable="true" type="tns:CTelefonoReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoReferencia" nillable="true" type="tns:ArrayOfCTelefonoReferencia" />
+  <xs:complexType name="CTelefonoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_referencia" type="xs:int" />
+      <xs:element minOccurs="0" name="id_telefonoReferencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoReferencia" nillable="true" type="tns:CTelefonoReferencia" />
+  <xs:complexType name="ArrayOfCTelefonoSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoSupervisor" nillable="true" type="tns:CTelefonoSupervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoSupervisor" nillable="true" type="tns:ArrayOfCTelefonoSupervisor" />
+  <xs:complexType name="CTelefonoSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_supervisor" type="xs:int" />
+      <xs:element minOccurs="0" name="id_telefonoSupervisor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoSupervisor" nillable="true" type="tns:CTelefonoSupervisor" />
+  <xs:complexType name="ArrayOfCTelefonoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTelefonoUsuario" nillable="true" type="tns:CTelefonoUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCTelefonoUsuario" nillable="true" type="tns:ArrayOfCTelefonoUsuario" />
+  <xs:complexType name="CTelefonoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Principal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_telefonoUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTelefonoUsuario" nillable="true" type="tns:CTelefonoUsuario" />
+  <xs:complexType name="CTotalesUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientesActivos" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientesCancelados" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientesTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="ProspectosPorsemana" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTotalesUsuario" nillable="true" type="tns:CTotalesUsuario" />
+  <xs:complexType name="ArrayOfCidCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CidCliente" nillable="true" type="tns:CidCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCidCliente" nillable="true" type="tns:ArrayOfCidCliente" />
+  <xs:complexType name="CidCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaUltimaVisita" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_campaña" type="xs:int" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_etapaActual" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nivel" type="xs:int" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuarioOriginal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CidCliente" nillable="true" type="tns:CidCliente" />
+  <xs:complexType name="ArrayOfCNombresCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CNombresCliente" nillable="true" type="tns:CNombresCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCNombresCliente" nillable="true" type="tns:ArrayOfCNombresCliente" />
+  <xs:complexType name="CNombresCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CNombresCliente" nillable="true" type="tns:CNombresCliente" />
+  <xs:complexType name="ArrayOfCClienteObservaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CClienteObservaciones" nillable="true" type="tns:CClienteObservaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCClienteObservaciones" nillable="true" type="tns:ArrayOfCClienteObservaciones" />
+  <xs:complexType name="CClienteObservaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha_Registro" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CClienteObservaciones" nillable="true" type="tns:CClienteObservaciones" />
+  <xs:complexType name="ArrayOfCClientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CClientes" nillable="true" type="tns:CClientes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCClientes" nillable="true" type="tns:ArrayOfCClientes" />
+  <xs:complexType name="CClientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_campaña" type="xs:int" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_etapaActual" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nivel" type="xs:int" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuarioOriginal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CClientes" nillable="true" type="tns:CClientes" />
+  <xs:complexType name="ArrayOfCClientesDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CClientesDetalles" nillable="true" type="tns:CClientesDetalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCClientesDetalles" nillable="true" type="tns:ArrayOfCClientesDetalles" />
+  <xs:complexType name="CClientesDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpresaEK" type="xs:int" />
+      <xs:element minOccurs="0" name="Etapa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCancelacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaCierre" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaEscritura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_OperacionEK" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_Recuperacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id_Campaña" type="xs:int" />
+      <xs:element minOccurs="0" name="ModeloEk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCorto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numcte" type="xs:int" />
+      <xs:element minOccurs="0" name="Numcte2" type="xs:int" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_Usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_etapaActual" type="xs:int" />
+      <xs:element minOccurs="0" name="id_producto" type="xs:int" />
+      <xs:element minOccurs="0" name="nivelinteres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ranking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoCampana" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CClientesDetalles" nillable="true" type="tns:CClientesDetalles" />
+  <xs:complexType name="ArrayOfCClienteTelefonos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CClienteTelefonos" nillable="true" type="tns:CClienteTelefonos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCClienteTelefonos" nillable="true" type="tns:ArrayOfCClienteTelefonos" />
+  <xs:complexType name="CClienteTelefonos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CClienteTelefonos" nillable="true" type="tns:CClienteTelefonos" />
+  <xs:complexType name="ArrayOfAsesorCallCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AsesorCallCenter" nillable="true" type="tns:AsesorCallCenter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAsesorCallCenter" nillable="true" type="tns:ArrayOfAsesorCallCenter" />
+  <xs:complexType name="AsesorCallCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AsesorCallCenter" nillable="true" type="tns:AsesorCallCenter" />
+  <xs:complexType name="ArrayOfCClientesTipoCredito">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CClientesTipoCredito" nillable="true" type="tns:CClientesTipoCredito" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCClientesTipoCredito" nillable="true" type="tns:ArrayOfCClientesTipoCredito" />
+  <xs:complexType name="CClientesTipoCredito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoCredito" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CClientesTipoCredito" nillable="true" type="tns:CClientesTipoCredito" />
+  <xs:complexType name="ArrayOfCComboCampañas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CComboCampañas" nillable="true" type="tns:CComboCampañas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCComboCampañas" nillable="true" type="tns:ArrayOfCComboCampañas" />
+  <xs:complexType name="CComboCampañas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_campaña" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CComboCampañas" nillable="true" type="tns:CComboCampañas" />
+  <xs:complexType name="ArrayOfCCampaña">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCampaña" nillable="true" type="tns:CCampaña" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCampaña" nillable="true" type="tns:ArrayOfCCampaña" />
+  <xs:complexType name="CCampaña">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_campaña" type="xs:int" />
+      <xs:element minOccurs="0" name="id_tipoCampaña" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCampaña" nillable="true" type="tns:CCampaña" />
+  <xs:complexType name="ArrayOfCCampañaDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCampañaDetalles" nillable="true" type="tns:CCampañaDetalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCampañaDetalles" nillable="true" type="tns:ArrayOfCCampañaDetalles" />
+  <xs:complexType name="CCampañaDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campañaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_campaña" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoCampaña" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCampañaDetalles" nillable="true" type="tns:CCampañaDetalles" />
+  <xs:complexType name="ArrayOfCCategoriasProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCategoriasProducto" nillable="true" type="tns:CCategoriasProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCategoriasProducto" nillable="true" type="tns:ArrayOfCCategoriasProducto" />
+  <xs:complexType name="CCategoriasProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_categoria" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCategoriasProducto" nillable="true" type="tns:CCategoriasProducto" />
+  <xs:complexType name="ArrayOfVigenciaCitas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VigenciaCitas" nillable="true" type="tns:VigenciaCitas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVigenciaCitas" nillable="true" type="tns:ArrayOfVigenciaCitas" />
+  <xs:complexType name="VigenciaCitas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CitasVigentes" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalCitas" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioVigente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VigenciaCitas" nillable="true" type="tns:VigenciaCitas" />
+  <xs:complexType name="ArrayOfCDetallesCitaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CDetallesCitaUsuario" nillable="true" type="tns:CDetallesCitaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCDetallesCitaUsuario" nillable="true" type="tns:ArrayOfCDetallesCitaUsuario" />
+  <xs:complexType name="CDetallesCitaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfimacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" type="ser:duration" />
+      <xs:element minOccurs="0" name="HoraTermino" type="ser:duration" />
+      <xs:element minOccurs="0" name="Lugar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_cita" type="xs:int" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CDetallesCitaUsuario" nillable="true" type="tns:CDetallesCitaUsuario" />
+  <xs:complexType name="ArrayOfCCitas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCitas" nillable="true" type="tns:CCitas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCitas" nillable="true" type="tns:ArrayOfCCitas" />
+  <xs:complexType name="CCitas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfimacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraTermino" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Lugar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_cita" type="xs:int" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCitas" nillable="true" type="tns:CCitas" />
+  <xs:complexType name="CObservacionesCita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Realizada" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CObservacionesCita" nillable="true" type="tns:CObservacionesCita" />
+  <xs:complexType name="ArrayOfCCitasDetallesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CCitasDetallesCliente" nillable="true" type="tns:CCitasDetallesCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCCitasDetallesCliente" nillable="true" type="tns:ArrayOfCCitasDetallesCliente" />
+  <xs:complexType name="CCitasDetallesCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvisoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvisoUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Calificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaProgramada" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraProgramacion" type="ser:duration" />
+      <xs:element minOccurs="0" name="HoraTermino" type="ser:duration" />
+      <xs:element minOccurs="0" name="Lugar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_cita" type="xs:int" />
+      <xs:element minOccurs="0" name="realizada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CCitasDetallesCliente" nillable="true" type="tns:CCitasDetallesCliente" />
+  <xs:complexType name="CConfiguraciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnviarEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SSL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseñaEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diasDeGracias" type="xs:int" />
+      <xs:element minOccurs="0" name="emailSistema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_configuracion" type="xs:int" />
+      <xs:element minOccurs="0" name="puertoEmail" type="xs:int" />
+      <xs:element minOccurs="0" name="smtpServer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CConfiguraciones" nillable="true" type="tns:CConfiguraciones" />
+  <xs:complexType name="ArrayOfCContactoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CContactoEmpresa" nillable="true" type="tns:CContactoEmpresa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCContactoEmpresa" nillable="true" type="tns:ArrayOfCContactoEmpresa" />
+  <xs:complexType name="CContactoEmpresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_contactoEmpresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CContactoEmpresa" nillable="true" type="tns:CContactoEmpresa" />
+  <xs:complexType name="ArrayOfCComboEmpresas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CComboEmpresas" nillable="true" type="tns:CComboEmpresas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCComboEmpresas" nillable="true" type="tns:ArrayOfCComboEmpresas" />
+  <xs:complexType name="CComboEmpresas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CComboEmpresas" nillable="true" type="tns:CComboEmpresas" />
+  <xs:complexType name="ArrayOfCEmpresas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEmpresas" nillable="true" type="tns:CEmpresas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEmpresas" nillable="true" type="tns:ArrayOfCEmpresas" />
+  <xs:complexType name="CEmpresas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Horario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaginaWEb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon_Social" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_ciudad" type="xs:int" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_rubro" type="xs:int" />
+      <xs:element minOccurs="0" name="logotipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEmpresas" nillable="true" type="tns:CEmpresas" />
+  <xs:complexType name="ArrayOfCEmpresasDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEmpresasDetalles" nillable="true" type="tns:CEmpresasDetalles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEmpresasDetalles" nillable="true" type="tns:ArrayOfCEmpresasDetalles" />
+  <xs:complexType name="CEmpresasDetalles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Horario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaginaWEb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon_Social" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_empresa" type="xs:int" />
+      <xs:element minOccurs="0" name="logotipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rubro" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEmpresasDetalles" nillable="true" type="tns:CEmpresasDetalles" />
+  <xs:complexType name="ArrayOfCOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperaciones" nillable="true" type="tns:COperaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOperaciones" nillable="true" type="tns:ArrayOfCOperaciones" />
+  <xs:complexType name="COperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_operacion" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COperaciones" nillable="true" type="tns:COperaciones" />
+</xs:schema>
