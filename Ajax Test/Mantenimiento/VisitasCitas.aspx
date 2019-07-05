@@ -70,10 +70,10 @@
                                                         <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt" HorizontalScrollBarMode="Visible"
                                                             KeyFieldName="Id_Cita">
                                                             <SettingsBehavior AllowSelectSingleRowOnly="True" AllowFocusedRow="True" AllowSelectByRowClick="True" />
-
                                                             <SettingsAdaptivity AdaptivityMode="HideDataCells">
                                                             </SettingsAdaptivity>
                                                             <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                            <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
                                                             <Columns>
                                                                 <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="0" Width="80px">
                                                                     <HeaderStyle HorizontalAlign="Center" />
