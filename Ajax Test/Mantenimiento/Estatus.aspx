@@ -28,69 +28,68 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <dx:ASPxCallbackPanel ID="cbPanelUsuarioAsignado" runat="server" Width="100%" ClientInstanceName="PanelActualizaUsuario">
-            <PanelCollection>
-                <dx:PanelContent>
-                   <%-- <dx:ASPxProgressBar ID="ASPxProgressBar1" runat="server" Height="21px" Width="200px"
-                        EnableClientSideAPI="True" ShowPosition="False"
-                        Theme="BlackGlass">
-                    </dx:ASPxProgressBar>--%>
-                    <div class="portlet box green">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-file"></i>Citas
-                            </div>
-                            <div class="tools">
-                            </div>
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="True" runat="server" />
+        <asp:UpdatePanel ID="UpdatePanel0" runat="server">
+            <ContentTemplate>
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file"></i>Citas
                         </div>
-                        <div class="portlet-body">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <label>Actualiza El estatus de las citas</label>
-                                    </div>
+                        <div class="tools">
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Actualiza El estatus de las citas</label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
-                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="portlet box purple-plum">
-                        <div class="portlet-title">
-                            <div class="caption">
-                                <i class="fa fa-file"></i>Visitas
-                            </div>
-                            <div class="tools">
-                            </div>
+                </div>
+                <div class="portlet box purple-plum">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file"></i>Visitas
                         </div>
-                        <div class="portlet-body">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <label>Actualiza el estatus de las visitas</label>
-                                    </div>
+                        <div class="tools">
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label>Actualiza el estatus de las visitas</label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
-                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </dx:PanelContent>
-            </PanelCollection>
-        </dx:ASPxCallbackPanel>
-
-
-
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdateProgress ID="updateProgress" runat="server">
+            <ProgressTemplate>
+                <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.7;">
+                    <asp:Image ID="imgUpdateProgress" runat="server" ImageUrl="../assets/imagenes/load.gif" AlternateText="Loading ..." ToolTip="Loading ..." Style="padding: 10px; position: fixed; top: 45%; left: 50%;" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">

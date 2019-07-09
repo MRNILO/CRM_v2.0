@@ -253,11 +253,52 @@ Public Class VisitasCitas
             lbl_mensaje.Text += MostrarError("Seleccione la visita que desea modificar.")
         End If
     End Sub
+    Protected Sub btn_ActualizaOrigen_Click(sender As Object, e As EventArgs) Handles btn_ActualizaOrigen.Click
+        Try
+            Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
+            If (idCita.Count > 0) Then
+                For Each cita In idCita
+                    If (GE_Funciones.Actualiza_Origen_Cita(cmBoxOrigen.SelectedItem.Text, cita)) Then
+                        cargarCitas()
+                        UI()
+                        lbl_mensaje.Text += MostrarExito("Cita Actualizada.")
+                    Else
+                        lbl_mensaje.Text += MostrarError("No se pudo actualizar la cita.")
+                    End If
+                Next
+            Else
+                lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text += MostrarError("Seleccione la cita que desea modificar.")
+        End Try
+    End Sub
+    Protected Sub btn_ActualizaOrigenVisita_Click(sender As Object, e As EventArgs) Handles btn_ActualizaOrigenVisita.Click
+        Try
+            Dim idVisita = GV_Visitas.GetSelectedFieldValues("Id_Visita")
+            If (idVisita.Count > 0) Then
+                For Each Visita In idVisita
+                    If (GE_Funciones.Actualiza_Origen_Visita(cmBoxOrigenVisita.SelectedItem.Text, Visita)) Then
+                        cargarVisitas()
+                        UI()
+                        lbl_mensaje.Text += MostrarExito("Visita Actualizada.")
+                    Else
+                        lbl_mensaje.Text += MostrarError("No se pudo actualizar la Visita.")
+                    End If
+                Next
+            Else
+                lbl_mensaje.Text += MostrarError("Seleccione la Visita que desea modificar.")
+            End If
+        Catch ex As Exception
+            lbl_mensaje.Text += MostrarError("Seleccione la Visita que desea modificar.")
+        End Try
+    End Sub
 #End Region
 #Region "Funciones Usuario"
     Private Sub UI()
         AlimentarComboUsuarios()
         AlimentarComboMedios()
+        AlimentarComboOrigen()
     End Sub
     Private Sub AlimentarComboUsuarios()
         Dim Aux As Integer = 0
@@ -347,6 +388,44 @@ Public Class VisitasCitas
     Private Sub cargarVisitas()
         GV_Visitas.DataSource = GE_Funciones.Obtener_VisitasActivasCliente(Id_Cliente)
         GV_Visitas.DataBind()
+    End Sub
+    Private Sub AlimentarComboOrigen()
+        Dim Aux As Integer = 0
+        Dim DTA As New DataTable
+        Dim DTB As New DataTable
+        Dim RowB As DataRow
+
+        DTA = GE_Funciones.ObtenerOrigenCitas()
+        DTB.Columns.AddRange({New DataColumn("Id"), New DataColumn("Origen")})
+
+        For Each Row As DataRow In DTA.Rows
+            If Aux = 0 Then
+                RowB = DTB.NewRow
+                RowB("Id") = 0
+                RowB("Origen") = "SELECCIONA"
+                DTB.Rows.Add(RowB)
+            End If
+            RowB = DTB.NewRow
+            RowB("Id") = Aux
+            RowB("Origen") = Row("Origen")
+            DTB.Rows.Add(RowB)
+            Aux += 1
+        Next
+        With cmBoxOrigen
+            .DataSource = DTB
+            .ValueField = "Id"
+            .TextField = "Origen"
+            .DataBind()
+            .SelectedIndex = 0
+        End With
+        With cmBoxOrigenVisita
+            .DataSource = DTB
+            .ValueField = "Id"
+            .TextField = "Origen"
+            .DataBind()
+            .SelectedIndex = 0
+        End With
+
     End Sub
     Private Sub AlimentarComboMedios()
         Dim Aux As Integer = 0

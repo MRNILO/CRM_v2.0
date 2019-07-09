@@ -379,6 +379,12 @@ Public Class Funciones
         ObtenerMedios = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Public Function ObtenerOrigenCitas() As DataTable
+        Dim Query As String = "SELECT  DISTINCT(Origen) FROM CitasClientes"
+
+        ObtenerOrigenCitas = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function ObtenerCampanas(Optional ByVal Id_Medio As Integer = 0) As DataTable
         Dim Query As String = "SELECT id_campaña, campañaNombre
                                FROM campañas
@@ -450,6 +456,17 @@ Public Class Funciones
 
         Actualiza_UsuarioRegistro_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
+    Public Function Actualiza_Origen_Cita(ByVal Origen As String, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE CitasClientes "
+        Query = Query + " SET  Origen='" & Origen & "'"
+        Query = Query + " WHERE Id_Cita =" & Id_Cita
+
+        Actualiza_Origen_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
@@ -818,6 +835,16 @@ Public Class Funciones
 
         Actualiza_Estatus_Visitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+    Public Function Actualiza_Origen_Visita(ByVal Origen As String, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE VisitasClientes "
+        Query = Query + " SET  Origen='" & Origen & "'"
+        Query = Query + " WHERE Id_Visita =" & Id_Visita
+
+        Actualiza_Origen_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 
 
 #End Region

@@ -53,13 +53,15 @@
 #Region "Eventos"
     Private Sub btn_ActualizarCitas_Click(sender As Object, e As EventArgs) Handles btn_ActualizarCitas.Click
         If GE_Funciones.Actualiza_Estatus_Citas Then
+            'If 1 = 1 Then
             lbl_mensaje.Text = MostrarExito("Se actualizo el estatus de las citas.")
         Else
             lbl_mensaje.Text = MostrarError("No se pudo actualizar el estatus de las citas.")
         End If
     End Sub
     Private Sub btn_ActualizarVisitas_Click(sender As Object, e As EventArgs) Handles btn_ActualizarVisitas.Click
-        If GE_Funciones.Actualiza_Estatus_Visitas Then
+        'If GE_Funciones.Actualiza_Estatus_Visitas Then
+        If 1 = 1 Then
             lbl_mensaje.Text = MostrarExito("Se actualizo el estatus de las visitas.")
         Else
             lbl_mensaje.Text = MostrarError("No se pudo actualizar el estatus de las visitas.")

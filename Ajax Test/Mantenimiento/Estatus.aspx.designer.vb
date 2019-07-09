@@ -23,13 +23,22 @@ Partial Public Class Estatus
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Control cbPanelUsuarioAsignado.
+    '''Control ScriptManager1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cbPanelUsuarioAsignado As Global.DevExpress.Web.ASPxCallbackPanel
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    
+    '''<summary>
+    '''Control UpdatePanel0.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdatePanel0 As Global.System.Web.UI.UpdatePanel
     
     '''<summary>
     '''Control btn_ActualizarCitas.
@@ -48,6 +57,15 @@ Partial Public Class Estatus
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_ActualizarVisitas As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control updateProgress.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents updateProgress As Global.System.Web.UI.UpdateProgress
     
     '''<summary>
     '''Control lbl_mensaje.
