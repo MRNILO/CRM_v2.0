@@ -120,6 +120,9 @@ Public Class NuevoCliente1
             lbl_mensaje.Text += "<strong style='color:red'>Por favor complete todos los campos </strong>"
         End Try
     End Sub
+    Protected Sub cb_fracc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fracc.SelectedIndexChanged
+        cb_producto.Focus()
+    End Sub
 
 #Region "FuncionesUsuario"
     <WebMethod()>

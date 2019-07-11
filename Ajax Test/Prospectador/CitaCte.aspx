@@ -20,7 +20,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                  <a href="../Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -41,9 +41,14 @@
             <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
 
             <h2>Asesor: </h2>
-            <dx:ASPxGridView ID="GV_usuario" runat="server" AutoGenerateColumns="False" DataSourceID="AsesorDS" Theme="MaterialCompact">
+            <h2>Asesor: </h2>
+            <dx:ASPxGridView ID="GV_usuario" runat="server" Width="100%" AutoGenerateColumns="False" DataSourceID="AsesorDS" EnableTheming="True" Theme="MaterialCompact" Font-Size="9pt">
                 <SettingsPager Visible="False">
                 </SettingsPager>
+                <SettingsAdaptivity AdaptivityMode="HideDataCells">
+                </SettingsAdaptivity>
+                <Settings HorizontalScrollBarMode="Visible" />
+                <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
                 <Columns>
                     <dx:GridViewDataTextColumn FieldName="usuario" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
@@ -68,7 +73,7 @@
         </div>
     </div>
 
-    <div class="portlet box blue-hoki" id="PanelVisitas" >
+    <div class="portlet box blue-hoki" id="PanelVisitas">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-globe"></i>Registrar Nueva Cita

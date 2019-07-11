@@ -203,6 +203,7 @@
 #Region "Eventos"
     Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
         ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+        cb_fraccinamientos.Focus()
     End Sub
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
@@ -220,6 +221,7 @@
 
     Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
+        cb_modelos.Focus()
     End Sub
 
     Protected Sub GV_citas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles GV_citas.HtmlDataCellPrepared

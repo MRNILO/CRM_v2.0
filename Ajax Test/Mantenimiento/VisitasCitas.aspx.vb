@@ -151,7 +151,7 @@ Public Class VisitasCitas
         Dim idCita = GV_citas.GetSelectedFieldValues("Id_Cita")
         If (idCita.Count > 0) Then
             For Each cita In idCita
-                If (GE_Funciones.Actualiza_UsuarioRegistro_Cita(cmBoxUsuarioRegistro_Cita.SelectedItem.Value, cita)) Then
+                If (GE_Funciones.Actualiza_UsuarioRegistro_Cita(cmBoxUsuarioRegistro_Cita.SelectedItem.Value, cita, txtNumCliente.Text)) Then
                     cargarCitas()
                     UI()
                     lbl_mensaje.Text += MostrarExito("Cita Actualizada.")

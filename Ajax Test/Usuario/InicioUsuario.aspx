@@ -20,7 +20,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                  <a href="../Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -58,12 +58,14 @@
             <div class="tools">
             </div>
         </div>
-
         <div class="portlet-body">
-            Seleccione un cliente:
-            <br />
-            <asp:DropDownList ID="cb_clientes" runat="server" CssClass="form-control select2me" AutoPostBack="True"></asp:DropDownList>
-            <br />
+            <div class="row">
+                <div class="col-lg-12">
+                    Seleccione un cliente:<br />
+                    <asp:DropDownList ID="cb_clientes" runat="server" CssClass="form-control select2me" AutoPostBack="True"></asp:DropDownList>
+                    <br />
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">

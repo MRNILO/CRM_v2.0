@@ -416,10 +416,12 @@ Public Class CitaCteCaseta
 #Region "Eventos"
     Protected Sub cmBoxCampana_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxCampana.SelectedIndexChanged
         ObtenerTipoCampana(cmBoxCampana.SelectedItem.Value)
+        cb_fraccinamientos.Focus()
     End Sub
 
     Protected Sub cmBoxMedio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMedio.SelectedIndexChanged
         AlimentarComboCampanas(cmBoxMedio.SelectedItem.Value)
+        cmBoxCampana.Focus()
     End Sub
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
@@ -440,6 +442,7 @@ Public Class CitaCteCaseta
 
     Protected Sub cb_fraccinamientos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fraccinamientos.SelectedIndexChanged
         AlimentarComboModelos(cb_fraccinamientos.SelectedValue)
+        cb_modelos.Focus()
     End Sub
 
     Protected Sub GV_citas_CustomButtonInitialize(sender As Object, e As DevExpress.Web.ASPxGridViewCustomButtonEventArgs) Handles GV_citas.CustomButtonInitialize

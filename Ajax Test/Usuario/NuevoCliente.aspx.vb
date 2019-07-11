@@ -303,6 +303,10 @@ Public Class NuevoCliente
     End Sub
 #End Region
 
+    Protected Sub cb_fracc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_fracc.SelectedIndexChanged
+        cb_productos.Focus()
+    End Sub
+
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Dim listaTel As New List(Of CTelefonos)
         Dim IdCliente As Integer = 0

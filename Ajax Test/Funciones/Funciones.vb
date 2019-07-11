@@ -447,12 +447,17 @@ Public Class Funciones
         Actualiza_UsuarioAsignado = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
-    Public Function Actualiza_UsuarioRegistro_Cita(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer) As Boolean
+    Public Function Actualiza_UsuarioRegistro_Cita(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer, ByVal Id_Cliente As Integer) As Boolean
         Dim Query As String = ""
 
         Query = " UPDATE CitasClientes "
         Query = Query + " SET  Id_Usuario=" & Id_Usuario & ",  Id_Supervisor_Usuario= (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
-        Query = Query + " WHERE Id_Cita =" & Id_Cita
+        Query = Query + " WHERE Id_Cita =" & Id_Cita & ";"
+
+        Query = Query + " UPDATE clientes "
+        Query = Query + " SET  id_usuarioOriginal=" & Id_Usuario
+        Query = Query + " WHERE Id_Cliente =" & Id_Cliente
+
 
         Actualiza_UsuarioRegistro_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
@@ -461,7 +466,7 @@ Public Class Funciones
         Dim Query As String = ""
 
         Query = " UPDATE CitasClientes "
-        Query = Query + " SET  Origen='" & Origen & "'"
+        Query = Query + " Set  Origen='" & Origen & "'"
         Query = Query + " WHERE Id_Cita =" & Id_Cita
 
         Actualiza_Origen_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)

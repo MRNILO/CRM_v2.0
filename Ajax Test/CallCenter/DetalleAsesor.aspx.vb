@@ -41,9 +41,9 @@
         HTML += "        </tr>
                        </tbody>
                      </table>
-                   </div>"
+                   </div></div>"
 
-        HTML += "  <div class=""col-lg-8"">"
+        HTML += " <div class=""row""> <div class=""col-lg-8 col-lg-offset-1"" style=""overflow-x:auto;"">"
         HTML += "    <table class=""table table-hover"">
                        <thead>
                          <tr>

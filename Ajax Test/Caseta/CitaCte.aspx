@@ -37,33 +37,40 @@
             </div>
         </div>
         <div class="portlet-body">
-            <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
-
-            <h2>Asesor: </h2>
-            <dx:ASPxGridView ID="GV_usuario" runat="server" AutoGenerateColumns="False" DataSourceID="AsesorDS" Theme="MaterialCompact">
-                <SettingsPager Visible="False">
-                </SettingsPager>
-                <Columns>
-                    <dx:GridViewDataTextColumn FieldName="usuario" VisibleIndex="0">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="nombre" VisibleIndex="1">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="apellidoPaterno" VisibleIndex="2">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="apellidoMaterno" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>
-                </Columns>
-            </dx:ASPxGridView>
-            <asp:SqlDataSource ID="AsesorDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.usuario, dbo.usuarios.nombre,
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
+                    <h2>Asesor: </h2>
+                    <dx:ASPxGridView ID="GV_usuario" runat="server" Width="100%" AutoGenerateColumns="False" DataSourceID="AsesorDS" EnableTheming="True" Theme="MaterialCompact" Font-Size="9pt">
+                        <SettingsPager Visible="False">
+                        </SettingsPager>
+                        <SettingsAdaptivity AdaptivityMode="HideDataCells">
+                        </SettingsAdaptivity>
+                        <Settings HorizontalScrollBarMode="Visible" />
+                        <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+                        <Columns>
+                            <dx:GridViewDataTextColumn FieldName="usuario" VisibleIndex="0">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="nombre" VisibleIndex="1">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="apellidoPaterno" VisibleIndex="2">
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="apellidoMaterno" VisibleIndex="3">
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                    </dx:ASPxGridView>
+                    <asp:SqlDataSource ID="AsesorDS" runat="server" ConnectionString="<%$ ConnectionStrings:crm_roest3ConnectionString %>" SelectCommand="SELECT dbo.usuarios.usuario, dbo.usuarios.nombre,
                                dbo.usuarios.apellidoPaterno, dbo.usuarios.apellidoMaterno
                                FROM
                                dbo.clientes
                                INNER JOIN dbo.usuarios ON dbo.clientes.id_usuarioOriginal = dbo.usuarios.id_usuario
                                WHERE id_cliente=@idCliente">
-                <SelectParameters>
-                    <asp:QueryStringParameter DefaultValue="0" Name="idCliente" QueryStringField="id" />
-                </SelectParameters>
-            </asp:SqlDataSource>
+                        <SelectParameters>
+                            <asp:QueryStringParameter DefaultValue="0" Name="idCliente" QueryStringField="id" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
+            </div>
         </div>
     </div>
     <div class="portlet box yellow">
