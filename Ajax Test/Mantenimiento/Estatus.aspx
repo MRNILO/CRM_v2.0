@@ -28,70 +28,146 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="True" runat="server" />
-        <asp:UpdatePanel ID="UpdatePanel0" runat="server">
-            <ContentTemplate>
-                <div class="portlet box green">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-file"></i>Citas
-                        </div>
-                        <div class="tools">
+
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-file"></i>Citas
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label>Actualiza El estatus de las citas</label>
                         </div>
                     </div>
-                    <div class="portlet-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label>Actualiza El estatus de las citas</label>
-                                </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <dx:ASPxButton ID="btn_ActualizarCitas" runat="server" Text="Actualizar" Width="100%" Height="32px" Font-Size="8pt"
+                                AutoPostBack="false" Theme="Material">
+                                <ClientSideEvents Click="function(s, e) {
+                                                                                actualizarCitas();                                                                            
+                                                                         }" />
+                            </dx:ASPxButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet box purple-plum">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-file"></i>Visitas
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label>Actualiza el estatus de las visitas</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <dx:ASPxButton ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" Width="100%" Height="32px" Font-Size="8pt"
+                                AutoPostBack="false" Theme="Material">
+                                <ClientSideEvents Click="function(s, e) {
+                                                                                actualizarVisitas();                                                                            
+                                                                         }" />
+                            </dx:ASPxButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ModalProcesando" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row text-center">
+                            <div class="col-lg-12">
+                                <img src="../assets/imagenes/load.gif" alt="Procesando" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <asp:Button ID="btn_ActualizarCitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
-                                </div>
+                        <div class="row text-center">
+                            <div class="col-lg-12">
+                                <h4 class="modal-info">Procesando información . . .</h4>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="portlet box purple-plum">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-file"></i>Visitas
-                        </div>
-                        <div class="tools">
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label>Actualiza el estatus de las visitas</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <asp:Button ID="btn_ActualizarVisitas" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block blue" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-        <asp:UpdateProgress ID="updateProgress" runat="server">
-            <ProgressTemplate>
-                <div style="position: fixed; text-align: center; height: 100%; width: 100%; top: 0; right: 0; left: 0; z-index: 9999999; background-color: #000000; opacity: 0.7;">
-                    <asp:Image ID="imgUpdateProgress" runat="server" ImageUrl="../assets/imagenes/load.gif" AlternateText="Loading ..." ToolTip="Loading ..." Style="padding: 10px; position: fixed; top: 45%; left: 50%;" />
-                </div>
-            </ProgressTemplate>
-        </asp:UpdateProgress>
+            </div>
+        </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
+    <script>
+        function actualizarCitas() {
+            $("#ModalProcesando").modal('show');
+            $.ajax({
+                type: "POST",
+                url: "<%=ResolveUrl("Estatus.aspx/ActualizarCitas")%>",
+                data: '',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.d == 'OK') {
+                        $("#ModalProcesando").modal('hide');
+                        sweetAlert('¡CORRECTO!', '¡La programación se registro correctamente!', 'success');
+                    } else {
+                        $("#ModalProcesando").modal('hide');
+                        sweetAlert('¡UPS!', response.d, 'warning');
+                    }
+                },
+                failure: function (response) {
+                    $("#ModalProcesando").modal('hide');
+                    sweetAlert('¡ERROR!', response.d, 'error');
+                },
+                error: function (response) {
+                    $("#ModalProcesando").modal('hide');
+                    sweetAlert('¡ERROR!', response.d, 'error');
+                }
+            });
+        }
+
+        function actualizarVisitas() {
+            $("#ModalProcesando").modal('show');
+            $.ajax({
+                type: "POST",
+                url: "<%=ResolveUrl("Estatus.aspx/ActualizarVisitas")%>",
+                data: '',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.d == 'OK') {
+                        $("#ModalProcesando").modal('hide');
+                        sweetAlert('¡CORRECTO!', '¡La programación se registro correctamente!', 'success');
+                    } else {
+                        $("#ModalProcesando").modal('hide');
+                        sweetAlert('¡UPS!', response.d, 'warning');
+                    }
+                },
+                failure: function (response) {
+                    $("#ModalProcesando").modal('hide');
+                    sweetAlert('¡ERROR!', response.d, 'error');
+                },
+                error: function (response) {
+                    $("#ModalProcesando").modal('hide');
+                    sweetAlert('¡ERROR!', response.d, 'error');
+                }
+            });
+        }
+    </script>
+
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
