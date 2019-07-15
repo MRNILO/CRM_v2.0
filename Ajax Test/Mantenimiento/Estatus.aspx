@@ -28,7 +28,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -113,7 +112,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <script>
         function actualizarCitas() {
-            $("#ModalProcesando").modal('show');
+            $("#ModalProcesando").modal({ backdrop: 'static', keyboard: false });
             $.ajax({
                 type: "POST",
                 url: "<%=ResolveUrl("Estatus.aspx/ActualizarCitas")%>",
@@ -141,7 +140,7 @@
         }
 
         function actualizarVisitas() {
-            $("#ModalProcesando").modal('show');
+            $("#ModalProcesando").modal({ backdrop: 'static', keyboard: false });
             $.ajax({
                 type: "POST",
                 url: "<%=ResolveUrl("Estatus.aspx/ActualizarVisitas")%>",
@@ -168,6 +167,5 @@
             });
         }
     </script>
-
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>
