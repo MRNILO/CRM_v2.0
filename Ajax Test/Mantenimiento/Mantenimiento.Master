@@ -89,6 +89,20 @@
                     <li>
                         <a href="javascript:;">
                             <i class="icon-folder"></i>
+                            <span class="title">Clientes</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="../Mantenimiento/DatosCliente.aspx">
+                                    <i class="fa fa-user"></i>Datos Cliente
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-folder"></i>
                             <span class="title">Impedimentos</span>
                             <span class="arrow "></span>
                         </a>
@@ -119,7 +133,6 @@
                             </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </div>

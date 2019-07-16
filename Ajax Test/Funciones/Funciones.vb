@@ -890,6 +890,36 @@ Public Class Funciones
 #End Region
 
 #Region "Clientes"
+    Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (nombre='" & nombre & "'AND ApellidoPaterno='" & app1 & "'AND ApellidoMaterno ='" & app2 & "'AND  id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Function ValidaNSS(ByVal nss As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (NSS='" & nss & "'AND id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Function ValidaCURP(ByVal curp As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (CURP='" & curp & "'AND id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Function Generar_NSSAleatorio() As String
         Dim RND As New Random()
         Dim Digito As Integer
@@ -913,12 +943,12 @@ Inicio:
     End Function
 
     Public Function ObtenerRankingCliente(ByVal IdCliente As Integer) As String
-        Dim Query As String = String.Format("SELECT Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
+        Dim Query As String = String.Format("Select Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
         ObtenerRankingCliente = GE_SQL.SQLGetDataStr(Query)
     End Function
 
     Public Function Actualiza_NKontrol(ByVal Cliente_EK As Boolean, ByVal Cliente_EK2 As Boolean, ByVal Cierre_Ek As Boolean, ByVal Escrituracion_Ek As Boolean, ByVal Cancelacion_EK As Boolean, ByVal Recuperacion_EK As Boolean, ByVal Empresa_EK As Boolean, ByVal Modelo_EK As Boolean, ByVal Operacion_EK As Boolean, ByVal idCliente As Integer, ByVal idUsuario As Integer, ByVal ComentarioEK As String) As Boolean
-        Dim Query As String = " EXEC [dbo].[Actauliza_Cliente_NKontrol]
+        Dim Query As String = " EXEC [dbo].[Actualiza_Cliente_NKontrol]
                                    @PCliente_Ek = " & Cliente_EK & ",
                                    @PCliente_Ek2 = " & Cliente_EK2 & ",
                                    @PCierre_EK = " & Cierre_Ek & ",
@@ -933,6 +963,26 @@ Inicio:
                                    @PComentario = N'" & ComentarioEK & "'"
 
         Actualiza_NKontrol = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+    Public Function Actualiza_Cliente(ByVal idCliente As Integer, ByVal ApPaterno As String, ByVal ApMaterno As String, ByVal Nombre As String, ByVal CURP As String, ByVal NSS As String, ByVal EMAIL As String, ByVal RFC As String,
+            ByVal EdoCivil As String, ByVal Observaciones As String, ByVal Empresa As Integer, ByVal Nacimiento As Date) As Boolean
+
+        Dim Query As String = " EXEC [dbo].[Actualiza_Cliente_Datos]
+                @PClienteID = " & idCliente & ",
+                @PNombre = '" & Nombre & "',
+                @PApPaterno = '" & ApPaterno & "',
+                @PApMaterno = '" & ApMaterno & "',
+                @PCURP = '" & CURP & "',
+                @PNSS = '" & NSS & "',
+                @PEMAIL  = '" & EMAIL & "',
+                @PRFC = '" & RFC & "',
+                @PEdoCivil = '" & EdoCivil & "',
+                @PObservaciones = '" & Observaciones & "',
+                @PEmpresa = " & Empresa & ",
+                @PFechaNacimiento = N'" & Nacimiento & "'"
+
+        Actualiza_Cliente = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+
     End Function
 #End Region
 

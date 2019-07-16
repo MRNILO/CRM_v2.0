@@ -8440,6 +8440,9 @@ Namespace Servicio
         Private CURPField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EdoCivilField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EmailField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -8450,6 +8453,9 @@ Namespace Servicio
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ObservacionesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private RFCField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private fechaCreacionField As Date
@@ -8534,6 +8540,19 @@ Namespace Servicio
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property EdoCivil() As String
+            Get
+                Return Me.EdoCivilField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EdoCivilField, value) <> true) Then
+                    Me.EdoCivilField = value
+                    Me.RaisePropertyChanged("EdoCivil")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property Email() As String
             Get
                 Return Me.EmailField
@@ -8581,6 +8600,19 @@ Namespace Servicio
                 If (Object.ReferenceEquals(Me.ObservacionesField, value) <> true) Then
                     Me.ObservacionesField = value
                     Me.RaisePropertyChanged("Observaciones")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property RFC() As String
+            Get
+                Return Me.RFCField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.RFCField, value) <> true) Then
+                    Me.RFCField = value
+                    Me.RaisePropertyChanged("RFC")
                 End If
             End Set
         End Property
