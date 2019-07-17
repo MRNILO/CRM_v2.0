@@ -8,10 +8,8 @@
     Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
-
         Try
-            'lbl_usuario.Text = Usuario.nombre + " " + Usuario.apellidoPaterno + " " + Usuario.apellidoMaterno
-            lbl_generales.Text = Crea_generalesCliente()
+            Crea_generalesCliente()
         Catch ex As Exception
 
         End Try
@@ -22,7 +20,7 @@
         End If
     End Sub
 
-    Function Crea_generalesCliente() As String
+    Public Sub Crea_generalesCliente()
         Dim HTML As String = ""
 
         id_Cita = Request.QueryString("id")
@@ -32,67 +30,42 @@
         Dim TipoCredito = BL.Obtener_Clientes_TipoCredito_idCliente(Id_Cliente)
         Dim AsesorCallCenter = BL.Obtener_Clientes_AsesorCallCenter(Id_Cliente)
 
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Apellido Materno: </strong>" + Datos(0).ApellidoMaterno
-        HTML += "<br />"
-        HTML += "<strong>Apellido Paterno: </strong>" + Datos(0).ApellidoPaterno
-        HTML += "<br />"
-        HTML += "<strong>Nombre(s): </strong>" + Datos(0).Nombre
-        HTML += "<br />"
-        HTML += "<strong>CURP: </strong>" + Datos(0).CURP
-        HTML += "<br />"
-        HTML += "<strong>NSS: </strong>" + Datos(0).NSS
-        HTML += "<br />"
-        HTML += "<strong>Fecha Nacimiento: </strong>" + If(Datos(0).fechaNacimiento = New Date, "-Sin fecha registrada-", Datos(0).fechaNacimiento.ToLongDateString)
-        HTML += "<br />"
-        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
-        HTML += "<br />"
-
+        lblIdUnico.Text = Datos(0).id_cliente.ToString
+        lblAPaterno.Text = Datos(0).ApellidoPaterno
+        lblAMaterno.Text = Datos(0).ApellidoMaterno
+        lblnombre.Text = Datos(0).Nombre
+        lblFechaNacimiento.Text = If(Datos(0).fechaNacimiento = New Date, "-Sin fecha registrada-", Datos(0).fechaNacimiento.ToLongDateString)
+        lblCURP.Text = Datos(0).CURP
+        lblNSS.Text = Datos(0).NSS
+        lblEmail.Text = Datos(0).Email
         For i As Integer = 0 To Telefonos.Length - 1
-            HTML += "<strong>Telefono: </strong>" + Telefonos(i).Telefono + "<br />"
+            lblTelefono.Text = lblTelefono.Text + Telefonos(i).Telefono + vbCrLf
         Next
-
         If TipoCredito.Length = 0 Then
-            HTML += "<strong> Tipo de Credito: </strong> - <br />"
+            lblTipoCredito.Text = "-"
         Else
-            HTML += "<strong> Tipo de Credito: </strong>" + TipoCredito(0).TipoCredito + "<br />"
+            lblTipoCredito.Text = TipoCredito(0).TipoCredito
         End If
-
-        HTML += "<strong>Empresa: </strong>" + Datos(0).Empresa
-        HTML += "<br />"
-        HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
-        HTML += "<br />"
-        HTML += "<strong>Tarjeta de Presentación: </strong>"
-        HTML += "<br />"
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Observaciones: </strong>" + Datos(0).Observaciones + "<br />"
-
-        HTML += "<strong>Número Cliente Enkontrol: </strong>" + Datos(0).Numcte.ToString
-        HTML += "<br />"
-        HTML += "<strong>Fecha Cierre Enkontrol: </strong>" + Datos(0).FechaCierre
-        HTML += "<br />"
-        HTML += "<strong>Fecha Escrituración Enkontrol: </strong>" + Datos(0).FechaEscritura
-        HTML += "<br />"
-
+        lblEmpresa.Text = Datos(0).Empresa
+        lblObservaciones.Text = Datos(0).Observaciones
+        lblNumeroEnKontrol.Text = Datos(0).Numcte.ToString
+        lblFechaCierreEnKontrol.Text = Datos(0).FechaCierre
+        lblEscrituracionEnkontrol.Text = Datos(0).FechaEscritura
         If AsesorCallCenter.Length > 0 Then
-            HTML += "<br /><h5><strong>Asesor Call Center</strong></h5>"
-            HTML += "<label>" + AsesorCallCenter(0).id_usuario.ToString + " - " + AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno + "</label>"
+            lblAsesorCC.Text = AsesorCallCenter(0).id_usuario.ToString + " - " + AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
         End If
-
         If AsesorCallCenter.Length = 0 Then
             lbl_usuario.Text = "-"
         Else
             lbl_usuario.Text = AsesorCallCenter(0).nombre + " " + AsesorCallCenter(0).apellidoPaterno + " " + AsesorCallCenter(0).apellidoMaterno
         End If
+
         If (GE_Funciones.Obtener_OperacionesCierre(Id_Cliente) > 0) Then
             btn_asignaCita.Visible = False
         Else
             btn_asignaCita.Visible = True
         End If
-        Return HTML
-    End Function
+    End Sub
 
     Protected Sub btn_asignaCita_Click(sender As Object, e As EventArgs) Handles btn_asignaCita.Click
         Try
