@@ -121,7 +121,7 @@
                 success: function (response) {
                     if (response.d == 'OK') {
                         $("#ModalProcesando").modal('hide');
-                        sweetAlert('¡CORRECTO!', '¡La programación se registro correctamente!', 'success');
+                        sweetAlert('¡CORRECTO!', '¡El estatus de las visitas se actualizo  de forma correcta!', 'success');
                     } else {
                         $("#ModalProcesando").modal('hide');
                         sweetAlert('¡UPS!', response.d, 'warning');
@@ -149,7 +149,7 @@
                 success: function (response) {
                     if (response.d == 'OK') {
                         $("#ModalProcesando").modal('hide');
-                        sweetAlert('¡CORRECTO!', '¡La programación se registro correctamente!', 'success');
+                        sweetAlert('¡CORRECTO!', '¡El estatus de las visitas se actualizo  de forma correcta!', 'success');
                     } else {
                         $("#ModalProcesando").modal('hide');
                         sweetAlert('¡UPS!', response.d, 'warning');
