@@ -121,7 +121,7 @@
                 success: function (response) {
                     if (response.d == 'OK') {
                         $("#ModalProcesando").modal('hide');
-                        sweetAlert('¡CORRECTO!', '¡El estatus de las visitas se actualizo  de forma correcta!', 'success');
+                        sweetAlert('¡CORRECTO!', '¡El estatus de las citas se actualizo  de forma correcta!', 'success');
                     } else {
                         $("#ModalProcesando").modal('hide');
                         sweetAlert('¡UPS!', response.d, 'warning');
