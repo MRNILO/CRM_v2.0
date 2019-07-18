@@ -6349,6 +6349,7 @@
     <Content Include="assets\imagenes\logo-mini.png" />
     <Content Include="assets\imagenes\logo.png" />
     <Content Include="assets\imagenes\LogoKunde.png" />
+    <Content Include="assets\imagenes\Spinner.gif" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.min.js" />
     <Content Include="assets\layouts\global\scripts\hor-timeline.js" />
