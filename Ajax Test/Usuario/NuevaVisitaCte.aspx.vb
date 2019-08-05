@@ -300,10 +300,12 @@ Public Class NuevaVisitaCte
 #Region "Eventos"
     Protected Sub cmBoxClasificacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxClasificacion.SelectedIndexChanged
         Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
+        cmBoxMotivo.Focus()
     End Sub
 
     Protected Sub cmBoxMotivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxMotivo.SelectedIndexChanged
         Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
+        cmBoxSubMotivo.Focus()
     End Sub
 
     Protected Sub btnAsignaVisita_Click(sender As Object, e As EventArgs) Handles btnAsignaVisita.Click
@@ -331,6 +333,7 @@ Public Class NuevaVisitaCte
 
     Protected Sub cmBoxProyecto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxProyecto.SelectedIndexChanged
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
+        cmBoxModelo.Focus()
     End Sub
 
     Protected Sub grdViewVisitas_HtmlDataCellPrepared(sender As Object, e As DevExpress.Web.ASPxGridViewTableDataCellEventArgs) Handles grdViewVisitas.HtmlDataCellPrepared

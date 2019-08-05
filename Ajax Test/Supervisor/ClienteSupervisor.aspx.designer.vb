@@ -257,13 +257,166 @@ Partial Public Class ClienteSupervisor
     Protected WithEvents lbl_numcte As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_generales.
+    '''Control lblTIdUnico.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_generales As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lblTIdUnico As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblIdUnico.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblIdUnico As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTPaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTPaterno As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblAPaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblAPaterno As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTMaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTMaterno As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblAMaterno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblAMaterno As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTNombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTNombre As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblnombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblnombre As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTEmpresa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTEmpresa As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblEmpresa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEmpresa As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTEmail.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTEmail As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblEmail.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEmail As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTRanking.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTRanking As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblRanking.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblRanking As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTCampana As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblCampana As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control lblTTipoCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTTipoCampana As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblTipoCampana.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTipoCampana As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
     '''Control btn_modificar.

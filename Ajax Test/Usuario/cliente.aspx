@@ -19,7 +19,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                  <a href="../Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -44,7 +44,6 @@
             </div>
         </div>
     </div>
-
     <asp:Literal ID="lbl_butonCambia" runat="server"></asp:Literal>
     <br />
     <div class="portlet box red">
@@ -55,10 +54,77 @@
             <div class="tools">
                 <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
             </div>
-
         </div>
         <div class="portlet-body">
-            <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
+            <div class="row">
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTIdUnico" runat="server" Text="ID unico cliente" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblIdUnico" runat="server" Width="100%" Text="" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTPaterno" runat="server" Text="Apellido Paterno" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblAPaterno" runat="server" Width="100%" Text="" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTMaterno" runat="server" Text="Apellido Materno" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblAMaterno" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"
+                        Text="">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTNombre" runat="server" Text="Nombre(s)" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblnombre" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTFechaNacimiento" runat="server" Text="Fecha de nacimiento" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblFechaNacimiento" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTCurp" runat="server" Text="CURP" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblCURP" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTNSS" runat="server" Text="NSS" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblNSS" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTEmail" runat="server" Text="Email" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblEmail" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTRanking" runat="server" Text="Ranking" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblRanking" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTEmpresa" runat="server" Text="Empresa" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblEmpresa" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTCampana" runat="server" Text="Campaña" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblCampana" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTTipoCampana" runat="server" Text="Tipo Campaña" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblTipoCampana" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-4">
+                    <asp:Label ID="lblTObservaciones" runat="server" Text="Observaciones" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblObservaciones" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -67,11 +133,9 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Datos empresa
             </div>
-
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_datosEmpresa" runat="server"></asp:Literal>
-
         </div>
     </div>
     <div class="portlet box blue">
@@ -79,7 +143,6 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Teléfonos
             </div>
-
         </div>
         <div class="portlet-body">
             <asp:Literal ID="lbl_telefonos" runat="server"></asp:Literal>
@@ -91,10 +154,8 @@
             <div class="caption">
                 <i class="fa fa-file"></i>Etapa
             </div>
-
         </div>
         <div class="portlet-body">
-
             <br />
             Nueva Etapa:<asp:DropDownList ID="cb_etapas" runat="server" CssClass="form-control">
             </asp:DropDownList>
@@ -106,9 +167,7 @@
             <asp:DropDownList ID="cb_productos" runat="server" CssClass="form-control">
             </asp:DropDownList>
             <br />
-
             <asp:Button ID="btn_cambiaEtapa" runat="server" CssClass="btn green" Text="Cambiar etapa" />
-
         </div>
     </div>
     <div class="portlet box green">

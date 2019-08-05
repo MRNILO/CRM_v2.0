@@ -176,6 +176,15 @@ Partial Public Class ModificaCliente3
     Protected WithEvents btn_Guardar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Control btn_Regresar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Regresar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control lbl_mensaje.
     '''</summary>
     '''<remarks>

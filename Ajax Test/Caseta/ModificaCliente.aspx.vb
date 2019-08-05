@@ -162,13 +162,15 @@ Public Class ModificaCliente2
 
             ' Existe al menos un telefono
             If BL.Actualiza_clientes_callcenter(idCliente, tb_NombreCliente.Text, tb_ApellidoPaterno.Text, tb_ApellidoMaterno.Text, tb_email.Text, cb_productos.SelectedValue, cb_nivelInteres.SelectedValue, tb_empresas.Text, cb_campañas.SelectedValue, tb_observaciones.Text, Fotos.Cliente, Fotos.TarjetaP, 0, tb_NSS.Text, tb_FechaNacimiento.Text) Then
-                Response.Redirect("../Caseta/Citas.aspx?id=" + idCita.ToString, False)
+                lbl_mensaje.Text += MostrarExito("Cliente guardado satisfactoriamente.")
             Else
                 lbl_mensaje.Text += MostrarError("Error al insertar cliente, verifique los datos e intente de nuevo")
             End If
         End If
     End Sub
-
+    Protected Sub btn_Regresar_Click(sender As Object, e As EventArgs) Handles btn_Regresar.Click
+        Response.Redirect("../Caseta/CitaCte.aspx?id=" + idCita.ToString, False)
+    End Sub
     Protected Sub btn_verobservacion_Click(sender As Object, e As EventArgs) Handles btn_verobservacion.Click
         Response.Redirect("../Caseta/DetalleObservaciones.aspx?idCliente=" + idCliente.ToString, False)
     End Sub

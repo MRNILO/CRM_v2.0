@@ -379,6 +379,12 @@ Public Class Funciones
         ObtenerMedios = GE_SQL.SQLGetTable(Query)
     End Function
 
+    Public Function ObtenerOrigenCitas() As DataTable
+        Dim Query As String = "SELECT  DISTINCT(Origen) FROM CitasClientes"
+
+        ObtenerOrigenCitas = GE_SQL.SQLGetTable(Query)
+    End Function
+
     Public Function ObtenerCampanas(Optional ByVal Id_Medio As Integer = 0) As DataTable
         Dim Query As String = "SELECT id_campaña, campañaNombre
                                FROM campañas
@@ -441,15 +447,31 @@ Public Class Funciones
         Actualiza_UsuarioAsignado = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
-    Public Function Actualiza_UsuarioRegistro_Cita(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer) As Boolean
+    Public Function Actualiza_UsuarioRegistro_Cita(ByVal Id_Usuario As Integer, ByVal Id_Cita As Integer, ByVal Id_Cliente As Integer) As Boolean
         Dim Query As String = ""
 
         Query = " UPDATE CitasClientes "
         Query = Query + " SET  Id_Usuario=" & Id_Usuario & ",  Id_Supervisor_Usuario= (SELECT id_supervisor FROM usuarios WHERE id_usuario= " & Id_Usuario & ")"
-        Query = Query + " WHERE Id_Cita =" & Id_Cita
+        Query = Query + " WHERE Id_Cita =" & Id_Cita & ";"
+
+        Query = Query + " UPDATE clientes "
+        Query = Query + " SET  id_usuarioOriginal=" & Id_Usuario
+        Query = Query + " WHERE Id_Cliente =" & Id_Cliente
+
 
         Actualiza_UsuarioRegistro_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
+    Public Function Actualiza_Origen_Cita(ByVal Origen As String, ByVal Id_Cita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE CitasClientes "
+        Query = Query + " Set  Origen='" & Origen & "'"
+        Query = Query + " WHERE Id_Cita =" & Id_Cita
+
+        Actualiza_Origen_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
@@ -818,6 +840,16 @@ Public Class Funciones
 
         Actualiza_Estatus_Visitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+    Public Function Actualiza_Origen_Visita(ByVal Origen As String, ByVal Id_Visita As Integer) As Boolean
+        Dim Query As String = ""
+
+        Query = " UPDATE VisitasClientes "
+        Query = Query + " SET  Origen='" & Origen & "'"
+        Query = Query + " WHERE Id_Visita =" & Id_Visita
+
+        Actualiza_Origen_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+
 
 
 #End Region
@@ -858,6 +890,36 @@ Public Class Funciones
 #End Region
 
 #Region "Clientes"
+    Function ValidaCliente(ByVal nombre As String, ByVal app1 As String, ByVal app2 As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (nombre='" & nombre & "'AND ApellidoPaterno='" & app1 & "'AND ApellidoMaterno ='" & app2 & "'AND  id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Function ValidaNSS(ByVal nss As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (NSS='" & nss & "'AND id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Function ValidaCURP(ByVal curp As String, ByVal idCliente As Integer) As Boolean
+        Dim Query As String = ""
+        Query = "SELECT id_cliente FROM clientes WHERE (CURP='" & curp & "'AND id_cliente =" & idCliente & ")"
+
+        If (GE_SQL.SQLGetTable(Query).Rows.Count > 1) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Function Generar_NSSAleatorio() As String
         Dim RND As New Random()
         Dim Digito As Integer
@@ -881,12 +943,12 @@ Inicio:
     End Function
 
     Public Function ObtenerRankingCliente(ByVal IdCliente As Integer) As String
-        Dim Query As String = String.Format("SELECT Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
+        Dim Query As String = String.Format("Select Ranking FROM clientes WHERE id_cliente = {0}", IdCliente)
         ObtenerRankingCliente = GE_SQL.SQLGetDataStr(Query)
     End Function
 
     Public Function Actualiza_NKontrol(ByVal Cliente_EK As Boolean, ByVal Cliente_EK2 As Boolean, ByVal Cierre_Ek As Boolean, ByVal Escrituracion_Ek As Boolean, ByVal Cancelacion_EK As Boolean, ByVal Recuperacion_EK As Boolean, ByVal Empresa_EK As Boolean, ByVal Modelo_EK As Boolean, ByVal Operacion_EK As Boolean, ByVal idCliente As Integer, ByVal idUsuario As Integer, ByVal ComentarioEK As String) As Boolean
-        Dim Query As String = " EXEC [dbo].[Actauliza_Cliente_NKontrol]
+        Dim Query As String = " EXEC [dbo].[Actualiza_Cliente_NKontrol]
                                    @PCliente_Ek = " & Cliente_EK & ",
                                    @PCliente_Ek2 = " & Cliente_EK2 & ",
                                    @PCierre_EK = " & Cierre_Ek & ",
@@ -901,6 +963,26 @@ Inicio:
                                    @PComentario = N'" & ComentarioEK & "'"
 
         Actualiza_NKontrol = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+    End Function
+    Public Function Actualiza_Cliente(ByVal idCliente As Integer, ByVal ApPaterno As String, ByVal ApMaterno As String, ByVal Nombre As String, ByVal CURP As String, ByVal NSS As String, ByVal EMAIL As String, ByVal RFC As String,
+            ByVal EdoCivil As String, ByVal Observaciones As String, ByVal Empresa As Integer, ByVal Nacimiento As Date) As Boolean
+
+        Dim Query As String = " EXEC [dbo].[Actualiza_Cliente_Datos]
+                @PClienteID = " & idCliente & ",
+                @PNombre = '" & Nombre & "',
+                @PApPaterno = '" & ApPaterno & "',
+                @PApMaterno = '" & ApMaterno & "',
+                @PCURP = '" & CURP & "',
+                @PNSS = '" & NSS & "',
+                @PEMAIL  = '" & EMAIL & "',
+                @PRFC = '" & RFC & "',
+                @PEdoCivil = '" & EdoCivil & "',
+                @PObservaciones = '" & Observaciones & "',
+                @PEmpresa = " & Empresa & ",
+                @PFechaNacimiento = N'" & Nacimiento & "'"
+
+        Actualiza_Cliente = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
+
     End Function
 #End Region
 

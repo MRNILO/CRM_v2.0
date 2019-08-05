@@ -18,11 +18,10 @@ Public Class ClienteSupervisorMty
         If idCliente = 0 Then
             Response.Redirect("/")
         Else
-            lbl_generales.Text = Crea_generalesCliente()
+            Crea_generalesCliente()
             lbl_telefonos.Text = Crea_telefonos()
 
             If Page.IsPostBack Then
-
             Else
                 BuscaCitasActivas()
                 DatosCliente = BL.Obtener_Clientes_detalles_idCliente(idCliente)
@@ -262,36 +261,20 @@ Public Class ClienteSupervisorMty
         Return HTML
     End Function
 
-    Function Crea_generalesCliente() As String
-        Dim HTML As String = ""
-
+    Public Sub Crea_generalesCliente()
         Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Apellido Materno </strong>" + Datos(0).ApellidoMaterno
-        HTML += "<br />"
-        HTML += "<strong>Apellido Paterno </strong>" + Datos(0).ApellidoPaterno
-        HTML += "<br />"
-        HTML += "<strong>Nombre(s) </strong>" + Datos(0).Nombre
-        HTML += "<br />"
-        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
-        HTML += "<br />"
-        HTML += "<strong>Empresa </strong>" + Datos(0).Empresa
-        HTML += "<br />"
-        HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
-        HTML += "<br />"
-        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString + "<br />"
-        HTML += "<br />"
-        HTML += "<strong>Tarjeta de Presentación</strong>"
-        HTML += "<br />"
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
 
-        Return HTML
-    End Function
+        lblIdUnico.Text = Datos(0).id_cliente.ToString
+        lblAPaterno.Text = Datos(0).ApellidoPaterno
+        lblAMaterno.Text = Datos(0).ApellidoMaterno
+        lblnombre.Text = Datos(0).Nombre
+        lblEmail.Text = Datos(0).Email
+        lblEmpresa.Text = Datos(0).Empresa
+        lblRanking.Text = Datos(0).ranking.ToString()
+        lblCampana.Text = Datos(0).campañaNombre.ToString()
+        lblTipoCampana.Text = Datos(0).tipoCampana.ToString()
+
+    End Sub
 
     Protected Sub btn_LlamadasAExcel_Click(sender As Object, e As EventArgs) Handles btn_LlamadasAExcel.Click
         GV_exporterLlamadas.WriteXlsxToResponse()

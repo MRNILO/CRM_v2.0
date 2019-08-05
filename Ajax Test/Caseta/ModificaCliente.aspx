@@ -177,6 +177,7 @@
         </div>
     </div>
     <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" CssClass="btn btn-lg green" />
+    <asp:Button ID="btn_Regresar" runat="server" Text="Regresar" CssClass="btn btn-lg yellow-casablanca" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="JSContent" runat="server">
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>

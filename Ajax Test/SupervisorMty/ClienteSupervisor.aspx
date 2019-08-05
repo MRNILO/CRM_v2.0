@@ -18,7 +18,7 @@
                         <i class="icon-user"></i>Mis Datos </a>
                 </li>
                 <li>
-                  <a href="../Account/Logoff.aspx">
+                    <a href="../Account/Logoff.aspx">
                         <i class="icon-key"></i>Salir </a>
                 </li>
             </ul>
@@ -105,7 +105,53 @@
             </div>
         </div>
         <div class="portlet-body">
-            <asp:Literal ID="lbl_generales" runat="server"></asp:Literal>
+            <div class="row">
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTIdUnico" runat="server" Text="ID unico cliente" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblIdUnico" runat="server" Width="100%" Text="" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTPaterno" runat="server" Text="Apellido Paterno" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblAPaterno" runat="server" Width="100%" Text="" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTMaterno" runat="server" Text="Apellido Materno" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblAMaterno" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"
+                        Text="">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTNombre" runat="server" Text="Nombre(s)" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblnombre" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTEmpresa" runat="server" Text="Empresa" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblEmpresa" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
+                    </dx:ASPxLabel>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTEmail" runat="server" Text="Email" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblEmail" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-2">
+                    <asp:Label ID="lblTRanking" runat="server" Text="Ranking" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblRanking" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-3">
+                    <asp:Label ID="lblTCampana" runat="server" Text="Campaña" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblCampana" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+                <div class="col-lg-4">
+                    <asp:Label ID="lblTTipoCampana" runat="server" Text="Tipo Campaña" Font-Bold="true"></asp:Label><br />
+                    <dx:ASPxLabel ID="lblTipoCampana" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
+                </div>
+            </div>
             <asp:Button ID="btn_modificar" runat="server" Text="Modificar Datos" CssClass="btn btn-sm blue" />
         </div>
     </div>

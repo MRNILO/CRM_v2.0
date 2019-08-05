@@ -1,9 +1,10 @@
-﻿Public Class Estatus
+﻿Imports System.Web.Services
+
+Public Class Estatus
     Inherits System.Web.UI.Page
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 8
 
-    Private GE_Funciones As New Funciones
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         If Not IsPostBack Then
@@ -51,19 +52,39 @@
     End Sub
 #End Region
 #Region "Eventos"
-    Private Sub btn_ActualizarCitas_Click(sender As Object, e As EventArgs) Handles btn_ActualizarCitas.Click
-        If GE_Funciones.Actualiza_Estatus_Citas Then
-            lbl_mensaje.Text = MostrarExito("Se actualizo el estatus de las citas.")
-        Else
-            lbl_mensaje.Text = MostrarError("No se pudo actualizar el estatus de las citas.")
-        End If
-    End Sub
-    Private Sub btn_ActualizarVisitas_Click(sender As Object, e As EventArgs) Handles btn_ActualizarVisitas.Click
-        If GE_Funciones.Actualiza_Estatus_Visitas Then
-            lbl_mensaje.Text = MostrarExito("Se actualizo el estatus de las visitas.")
-        Else
-            lbl_mensaje.Text = MostrarError("No se pudo actualizar el estatus de las visitas.")
-        End If
-    End Sub
+    <WebMethod>
+    Public Shared Function ActualizarCitas() As String
+        Try
+            Dim Mensaje As String = ""
+            Dim GE_Funciones As New Funciones
+
+            If GE_Funciones.Actualiza_Estatus_Citas Then
+                Mensaje = "OK"
+            Else
+                Mensaje = "No fue posible registrar la programacion, intentalo nuevamente"
+                Throw New Exception(Mensaje)
+            End If
+            Return Mensaje
+        Catch ex As Exception
+            Return ex.Message.ToString()
+        End Try
+    End Function
+    <WebMethod>
+    Public Shared Function ActualizarVisitas() As String
+        Try
+            Dim Mensaje As String = ""
+            Dim GE_Funciones As New Funciones
+
+            If GE_Funciones.Actualiza_Estatus_Visitas Then
+                Mensaje = "OK"
+            Else
+                Mensaje = "No fue posible registrar la programacion, intentalo nuevamente"
+                Throw New Exception(Mensaje)
+            End If
+            Return Mensaje
+        Catch ex As Exception
+            Return ex.Message.ToString()
+        End Try
+    End Function
 #End Region
 End Class

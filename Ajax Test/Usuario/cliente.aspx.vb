@@ -32,7 +32,7 @@ Public Class Cliente
 
             Alimentar_TablaVisitas(idCliente)
 
-            lbl_generales.Text = Crea_generalesCliente()
+            Crea_generalesCliente()
             lbl_telefonos.Text = Crea_telefonos()
 
             'Crea boton para programar llamada
@@ -123,46 +123,26 @@ Public Class Cliente
         Return HTML
     End Function
 
-    Function Crea_generalesCliente() As String
+    Public Sub Crea_generalesCliente()
         Dim HTML As String = ""
-
         Dim Datos = BL.Obtener_Clientes_detalles_idCliente(idCliente)
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotografia + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Apellido Materno </strong>" + Datos(0).ApellidoMaterno
-        HTML += "<br />"
-        HTML += "<strong>Apellido Paterno </strong>" + Datos(0).ApellidoPaterno
-        HTML += "<br />"
-        HTML += "<strong>Nombre(s) </strong>" + Datos(0).Nombre
-        HTML += "<br />"
-        HTML += "<strong>CURP </strong>" + Datos(0).CURP
-        HTML += "<br />"
-        HTML += "<strong>NSS:</strong>" + Datos(0).NSS
-        HTML += "<br />"
-        HTML += "<strong>Fecha nacimiento:</strong>" + If(Datos(0).fechaNacimiento = New Date, "-Sin fecha registrada-", Datos(0).fechaNacimiento.ToLongDateString)
-        HTML += "<br />"
-        HTML += "<strong>Email: </strong><a href=""mailto:" + Datos(0).Email + """>" + Datos(0).Email + "</a>"
-        HTML += "<br />"
-        HTML += "<strong>Empresa </strong>" + Datos(0).Empresa
-        HTML += "<br />"
-        HTML += "<strong>ID unico cliente: </strong>" + Datos(0).id_cliente.ToString
-        HTML += "<br />"
-        HTML += "<strong>Ranking: </strong>" + Datos(0).ranking.ToString()
-        HTML += "<br />"
-        HTML += "<strong>ID Campaña: </strong>" + Datos(0).Id_Campaña.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Campaña: </strong>" + Datos(0).campañaNombre.ToString()
-        HTML += "<br />"
-        HTML += "<strong>Tipo Campaña: </strong>" + Datos(0).tipoCampana.ToString
-        HTML += "<br />"
-        HTML += "<strong>Tarjeta de Presentación</strong>"
-        HTML += "<br />"
-        HTML += "<img src=""data:image/jpg;base64," + Datos(0).fotoTpresentacion + """ class=""img-responsive"" />"
-        HTML += "<br />"
-        HTML += "<strong>Observaciones:</strong>" + Datos(0).Observaciones
 
-        Return HTML
-    End Function
+        lblIdUnico.Text = Datos(0).id_cliente.ToString
+        lblAPaterno.Text = Datos(0).ApellidoPaterno
+        lblAMaterno.Text = Datos(0).ApellidoMaterno
+        lblnombre.Text = Datos(0).Nombre
+        lblFechaNacimiento.Text = If(Datos(0).fechaNacimiento = New Date, "-Sin fecha registrada-", Datos(0).fechaNacimiento.ToLongDateString)
+
+        lblCURP.Text = Datos(0).CURP
+        lblNSS.Text = Datos(0).NSS
+        lblEmail.Text = Datos(0).Email
+        lblRanking.Text = Datos(0).ranking.ToString()
+
+        lblEmpresa.Text = Datos(0).Empresa
+        lblCampana.Text = Datos(0).Id_Campaña.ToString() + "-" + Datos(0).campañaNombre.ToString()
+        lblTipoCampana.Text = Datos(0).tipoCampana.ToString()
+        lblObservaciones.Text = Datos(0).Observaciones
+    End Sub
 
     Sub Ranking(ByVal Cliente As Servicio.CClientesDetalles)
         If Cliente.ranking = "P" Then

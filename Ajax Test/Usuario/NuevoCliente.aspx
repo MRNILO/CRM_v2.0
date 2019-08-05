@@ -274,7 +274,6 @@ empresas"></asp:SqlDataSource>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="JSContent" runat="server">
     <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
-
     <script>
         $(function () {
             function log(message) {
@@ -283,7 +282,6 @@ empresas"></asp:SqlDataSource>
             }
         });
     </script>
-
     <script type="text/javascript">
         function validaNSS() {
             var NSS = $("#<%:tb_nss.ClientID%>").val();
@@ -396,5 +394,11 @@ empresas"></asp:SqlDataSource>
             $("#Ciudades").html("Seleccione una ciudad:<br />" + response.d);
         }
     </script>
+    <%--    <script type="text/javascript">
+        function ScrollMov() {
+            window.scrollTo(0, 100);
+            //$("html, body").animate({ scrollTop: 0 }, 800);
+        }
+    </script>--%>
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

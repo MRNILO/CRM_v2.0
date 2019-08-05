@@ -104,6 +104,15 @@ Partial Public Class VisitasCitas
     Protected WithEvents tab_CambiaCampana As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''Control tab_CambiaOrigen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tab_CambiaOrigen As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control tab_CambiaFechaCita.
     '''</summary>
     '''<remarks>
@@ -230,6 +239,33 @@ Partial Public Class VisitasCitas
     Protected WithEvents btn_ActualizaCampanaCita As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
+    '''Control cbPanelOrigen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cbPanelOrigen As Global.DevExpress.Web.ASPxCallbackPanel
+    
+    '''<summary>
+    '''Control cmBoxOrigen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxOrigen As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control btn_ActualizaOrigen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ActualizaOrigen As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control dateFechaCita.
     '''</summary>
     '''<remarks>
@@ -318,6 +354,15 @@ Partial Public Class VisitasCitas
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents tabCampanaVisita As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control tabOrigenVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabOrigenVisita As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control tabFechaVista.
@@ -444,6 +489,33 @@ Partial Public Class VisitasCitas
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_ActualizaCampanaVisita As Global.DevExpress.Web.ASPxButton
+    
+    '''<summary>
+    '''Control cbPanelOrigenVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cbPanelOrigenVisita As Global.DevExpress.Web.ASPxCallbackPanel
+    
+    '''<summary>
+    '''Control cmBoxOrigenVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cmBoxOrigenVisita As Global.DevExpress.Web.ASPxComboBox
+    
+    '''<summary>
+    '''Control btn_ActualizaOrigenVisita.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_ActualizaOrigenVisita As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control dateFechaVisita.

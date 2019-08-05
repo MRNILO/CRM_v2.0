@@ -97,6 +97,7 @@ Public Class UsuarioSupervisor
         lblId_Usuario.Text = Id_Usuario.ToString()
         lblNombre_usuario.Text = Nombre.ToString()
         cmBoxSupervisores.SelectedIndex = 0
+        cmBoxSupervisores.Focus()
     End Sub
 
     Protected Sub cmBoxSupervisores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmBoxSupervisores.SelectedIndexChanged

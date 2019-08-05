@@ -7182,6 +7182,7 @@
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
+    <Content Include="Mantenimiento\DatosCliente.aspx" />
     <Content Include="Mantenimiento\Estatus.aspx" />
     <Content Include="Mantenimiento\Impedimento.aspx" />
     <Content Include="Mantenimiento\Impedimentos.aspx" />
@@ -8305,6 +8306,13 @@
     </Compile>
     <Compile Include="Herramientas\Notificaciones.aspx.vb">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\DatosCliente.aspx.designer.vb">
+      <DependentUpon>DatosCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\DatosCliente.aspx.vb">
+      <DependentUpon>DatosCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Estatus.aspx.designer.vb">

@@ -70,10 +70,10 @@
                                                         <dx:ASPxGridView ID="GV_citas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt" HorizontalScrollBarMode="Visible"
                                                             KeyFieldName="Id_Cita">
                                                             <SettingsBehavior AllowSelectSingleRowOnly="True" AllowFocusedRow="True" AllowSelectByRowClick="True" />
-
                                                             <SettingsAdaptivity AdaptivityMode="HideDataCells">
                                                             </SettingsAdaptivity>
                                                             <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                            <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
                                                             <Columns>
                                                                 <dx:GridViewDataTextColumn FieldName="Id_Cita" Caption="Cita" VisibleIndex="0" Width="80px">
                                                                     <HeaderStyle HorizontalAlign="Center" />
@@ -134,6 +134,9 @@
                                             </li>
                                             <li id="tab_CambiaCampana" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Campana" data-toggle="tab" href="#Campana" role="tab" aria-controls="profile" aria-selected="true">Campaña</a>
+                                            </li>
+                                            <li id="tab_CambiaOrigen" class="nav-item" style="border-color: chartreuse" runat="server">
+                                                <a class="nav-link" id="tab_Origen" data-toggle="tab" href="#Origen" role="tab" aria-controls="profile" aria-selected="true">Origen</a>
                                             </li>
                                             <li id="tab_CambiaFechaCita" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Fecha" data-toggle="tab" href="#fechaCita" role="tab" aria-controls="contact" aria-selected="true">Fecha</a>
@@ -249,6 +252,29 @@
                                                     </PanelCollection>
                                                 </dx:ASPxCallbackPanel>
                                             </div>
+                                            <div class="tab-pane fade" id="Origen" role="tabpanel" aria-labelledby="tab_Origen">
+                                                <dx:ASPxCallbackPanel ID="cbPanelOrigen" runat="server" Width="100%" ClientInstanceName="PanelActualizaOrigen">
+                                                    <PanelCollection>
+                                                        <dx:PanelContent>
+                                                            <div class="row" style="height: 200px">
+                                                                <div class="col-lg-3">
+                                                                    <label><i>Asignar Origen:</i></label><br />
+                                                                    <dx:ASPxComboBox ID="cmBoxOrigen" runat="server" Width="100%" Theme="MaterialCompact" DropDownRows="5">
+                                                                        <ClientSideEvents SelectedIndexChanged="function(s, e) {
+                                                                                            PanelActualizaOrigen.PerformCallback();
+                                                                            }" />
+                                                                    </dx:ASPxComboBox>
+                                                                </div>
+                                                                <div class="col-lg-7">
+                                                                </div>
+                                                                <div class="col-lg-2" style="margin-top: 25px">
+                                                                    <asp:Button ID="btn_ActualizaOrigen" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
+                                                                </div>
+                                                            </div>
+                                                        </dx:PanelContent>
+                                                    </PanelCollection>
+                                                </dx:ASPxCallbackPanel>
+                                            </div>
                                             <div class="tab-pane fade" id="fechaCita" role="tabpanel" aria-labelledby="tab_Fecha">
                                                 <div class="row" style="height: 250px">
                                                     <div class="col-lg-3">
@@ -306,7 +332,7 @@
                                                         <dx:ASPxGridView ID="GV_Visitas" runat="server" Width="100%" Theme="MetropolisBlue" AutoGenerateColumns="False" Font-Size="9pt" HorizontalScrollBarMode="Visible"
                                                             KeyFieldName="Id_Cita">
                                                             <SettingsBehavior AllowSelectSingleRowOnly="True" AllowFocusedRow="True" AllowSelectByRowClick="True" />
-
+                                                            <Settings VerticalScrollableHeight="400" VerticalScrollBarMode="Visible" HorizontalScrollBarMode="Visible" />
                                                             <SettingsAdaptivity AdaptivityMode="HideDataCells">
                                                             </SettingsAdaptivity>
                                                             <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
@@ -366,6 +392,9 @@
                                             </li>
                                             <li id="tabCampanaVisita" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Campana_Visita" data-toggle="tab" href="#CampanaVisita" role="tab" aria-controls="profile" aria-selected="true">Campaña</a>
+                                            </li>
+                                            <li id="tabOrigenVisita" class="nav-item" style="border-color: chartreuse" runat="server">
+                                                <a class="nav-link" id="tab_OrigenVisita" data-toggle="tab" href="#Origen_Visita" role="tab" aria-controls="profile" aria-selected="true">Origen</a>
                                             </li>
                                             <li id="tabFechaVista" class="nav-item" style="border-color: chartreuse" runat="server">
                                                 <a class="nav-link" id="tab_Fecha_Visita" data-toggle="tab" href="#fechaVisita" role="tab" aria-controls="contact" aria-selected="true">Fecha Visita</a>
@@ -476,6 +505,29 @@
 	                                                                                                                PanelCampanaVisita.PerformCallback('ActualizaCampana,' + cBoxCampanaVisita.GetValue());
                                                                                                                 }"></ClientSideEvents>
                                                                     </dx:ASPxButton>
+                                                                </div>
+                                                            </div>
+                                                        </dx:PanelContent>
+                                                    </PanelCollection>
+                                                </dx:ASPxCallbackPanel>
+                                            </div>
+                                            <div class="tab-pane fade" id="Origen_Visita" role="tabpanel" aria-labelledby="tab_OrigenVisita">
+                                                <dx:ASPxCallbackPanel ID="cbPanelOrigenVisita" runat="server" Width="100%" ClientInstanceName="PanelActualizaOrigenVisita">
+                                                    <PanelCollection>
+                                                        <dx:PanelContent>
+                                                            <div class="row" style="height: 200px">
+                                                                <div class="col-lg-3">
+                                                                    <label><i>Asignar Origen:</i></label><br />
+                                                                    <dx:ASPxComboBox ID="cmBoxOrigenVisita" runat="server" Width="100%" Theme="MaterialCompact" DropDownRows="5">
+                                                                        <ClientSideEvents SelectedIndexChanged="function(s, e) {
+                                                                                            PanelActualizaOrigenVisita.PerformCallback();
+                                                                            }" />
+                                                                    </dx:ASPxComboBox>
+                                                                </div>
+                                                                <div class="col-lg-7">
+                                                                </div>
+                                                                <div class="col-lg-2" style="margin-top: 25px">
+                                                                    <asp:Button ID="btn_ActualizaOrigenVisita" runat="server" Text="Actualizar" CssClass="btn btn-sm btn-block green" />
                                                                 </div>
                                                             </div>
                                                         </dx:PanelContent>
