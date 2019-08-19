@@ -366,7 +366,8 @@ Public Class Funciones
                                              dbo.usuarios.apellidoPaterno,' ',
                                              dbo.usuarios.apellidoMaterno,' (',usuarios.usuario,')') AS nombre
                                FROM dbo.usuarios
-                               WHERE activo = 1
+                              INNER JOIN  TipoUsuarios tu ON  usuarios.id_tipoUsuario= tu.id_tipoUsuario
+                               WHERE activo = 1 AND tu.TipoUsuario <>'CallCenter'
                                ORDER BY nombre ASC"
 
         Obtener_Usuarios = GE_SQL.SQLGetTable(Query)
