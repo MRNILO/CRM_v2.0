@@ -94,7 +94,7 @@
                     <div class="modal-body">
                         <div class="row text-center">
                             <div class="col-lg-12">
-                                <img src="../assets/imagenes/load.gif" alt="Procesando" />
+                                <img src="../assets/imagenes/Spinner.gif" alt="Procesando" />
                             </div>
                         </div>
                         <div class="row text-center">

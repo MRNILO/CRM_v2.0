@@ -76,11 +76,11 @@
                     <dx:ASPxLabel ID="lblNSS" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
                     </dx:ASPxLabel>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                     <asp:Label ID="lblTEmail" runat="server" Text="Email" Font-Bold="true"></asp:Label><br />
                     <dx:ASPxLabel ID="lblEmail" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <asp:Label ID="lblTTelefono" runat="server" Text="Teléfono" Font-Bold="true"></asp:Label><br />
                     <dx:ASPxLabel ID="lblTelefono" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
                 </div>
@@ -100,7 +100,7 @@
                     <dx:ASPxLabel ID="lblEmpresa" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static">
                     </dx:ASPxLabel>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-4">
                     <asp:Label ID="lblTCampana" runat="server" Text="Campaña" Font-Bold="true"></asp:Label><br />
                     <dx:ASPxLabel ID="lblCampana" runat="server" Width="100%" Font-Size="Medium" CssClass="form-control-static"></dx:ASPxLabel>
                 </div>
