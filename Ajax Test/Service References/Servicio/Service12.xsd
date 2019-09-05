@@ -806,6 +806,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Obtener_IndicadoresComisiones_Prospectador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListadoUsuarios" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Obtener_IndicadoresComisiones_ProspectadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Obtener_IndicadoresComisiones_ProspectadorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Obtener_notificaciones">
     <xs:complexType>
       <xs:sequence>
@@ -2456,6 +2472,7 @@
         <xs:element minOccurs="0" name="fotografia" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="fotoTpresentacion" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Id_Usr" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2484,6 +2501,7 @@
         <xs:element minOccurs="0" name="Monto" type="xs:decimal" />
         <xs:element minOccurs="0" name="NSS" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Id_Cte" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

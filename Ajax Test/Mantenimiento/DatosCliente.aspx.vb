@@ -16,6 +16,7 @@ Public Class DatosCliente
             lbl_mensaje.Text = ""
         End If
     End Sub
+
 #Region "Eventos"
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
@@ -27,12 +28,13 @@ Public Class DatosCliente
             lbl_mensaje.Text += MostrarError("Cliente no existe, verifique los datos e intente de nuevo")
         End Try
     End Sub
+
     Protected Sub btn_ActualizarDatos_Click(sender As Object, e As EventArgs) Handles btn_ActualizarDatos.Click
         Try
             If (ValidaCliente(txtnombre.Text.ToUpper, txtAPaterno.Text.ToUpper.Trim, txtAMaterno.Text.ToUpper.Trim, Convert.ToInt32(txtNumCliente.Text)) = "si") Then
                 If (ValidaNSS(txtNSS.Text.ToUpper.Trim, Convert.ToInt32(txtNumCliente.Text)) = "si") Then
                     If (ValidaCURP(txtCURP.Text.ToUpper.Trim, Convert.ToInt32(txtNumCliente.Text)) = "si") Then
-                        If (GE_Funciones.Actualiza_Cliente(txtNumCliente.Text, txtAPaterno.Text.ToUpper, txtAMaterno.Text.ToUpper, txtnombre.Text.ToUpper, txtCURP.Text.ToUpper, txtNSS.Text.ToUpper, txtEmail.Text, txtRFC.Text.ToUpper, cb_edoCivil.Text.ToUpper, txtObservaciones.Text.ToUpper, cbEmpresa.Text, dtFechaNacimiento.Date)) Then
+                        If (GE_Funciones.Actualiza_Cliente(txtNumCliente.Text, txtAPaterno.Text.ToUpper, txtAMaterno.Text.ToUpper, txtnombre.Text.ToUpper, txtCURP.Text.ToUpper, txtNSS.Text.ToUpper, txtEmail.Text, txtRFC.Text.ToUpper, cb_edoCivil.Text.ToUpper, txtObservaciones.Text.ToUpper, cbEmpresa.Text, dtFechaNacimiento.Date, Usuario.id_usuario)) Then
                             lbl_mensaje.Text = MostrarExito("Cliente actualizado.")
                             txtAPaterno.Text = ""
                             txtAMaterno.Text = ""
@@ -63,6 +65,7 @@ Public Class DatosCliente
         End Try
     End Sub
 #End Region
+
 #Region "Funciones de usuario"
     Private Sub UI()
     End Sub
@@ -167,5 +170,4 @@ Public Class DatosCliente
         End Select
     End Sub
 #End Region
-
 End Class

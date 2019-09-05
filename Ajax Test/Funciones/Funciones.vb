@@ -970,7 +970,7 @@ Inicio:
     End Function
 
     Public Function Actualiza_Cliente(ByVal idCliente As Integer, ByVal ApPaterno As String, ByVal ApMaterno As String, ByVal Nombre As String, ByVal CURP As String, ByVal NSS As String, ByVal EMAIL As String, ByVal RFC As String,
-            ByVal EdoCivil As String, ByVal Observaciones As String, ByVal Empresa As Integer, ByVal Nacimiento As Date) As Boolean
+            ByVal EdoCivil As String, ByVal Observaciones As String, ByVal Empresa As Integer, ByVal Nacimiento As Date, ByVal Id_Usuario As Integer) As Boolean
 
         Dim Query As String = " EXEC [dbo].[Actualiza_Cliente_Datos]
                 @PClienteID = " & idCliente & ",
@@ -984,7 +984,8 @@ Inicio:
                 @PEdoCivil = '" & EdoCivil & "',
                 @PObservaciones = '" & Observaciones & "',
                 @PEmpresa = " & Empresa & ",
-                @PFechaNacimiento = N'" & Nacimiento & "'"
+                @PFechaNacimiento = N'" & Nacimiento & "',
+                @IdUsr = " & Id_Usuario & ""
 
         Actualiza_Cliente = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
 
