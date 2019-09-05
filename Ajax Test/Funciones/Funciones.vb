@@ -900,6 +900,7 @@ Public Class Funciones
             Return False
         End If
     End Function
+
     Function ValidaNSS(ByVal nss As String, ByVal idCliente As Integer) As Boolean
         Dim Query As String = ""
         Query = "SELECT id_cliente FROM clientes WHERE (NSS='" & nss & "'AND id_cliente =" & idCliente & ")"
@@ -910,6 +911,7 @@ Public Class Funciones
             Return False
         End If
     End Function
+
     Function ValidaCURP(ByVal curp As String, ByVal idCliente As Integer) As Boolean
         Dim Query As String = ""
         Query = "SELECT id_cliente FROM clientes WHERE (CURP='" & curp & "'AND id_cliente =" & idCliente & ")"
@@ -920,6 +922,7 @@ Public Class Funciones
             Return False
         End If
     End Function
+
     Public Function Generar_NSSAleatorio() As String
         Dim RND As New Random()
         Dim Digito As Integer
@@ -964,6 +967,7 @@ Inicio:
 
         Actualiza_NKontrol = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
     Public Function Actualiza_Cliente(ByVal idCliente As Integer, ByVal ApPaterno As String, ByVal ApMaterno As String, ByVal Nombre As String, ByVal CURP As String, ByVal NSS As String, ByVal EMAIL As String, ByVal RFC As String,
             ByVal EdoCivil As String, ByVal Observaciones As String, ByVal Empresa As Integer, ByVal Nacimiento As Date) As Boolean
 

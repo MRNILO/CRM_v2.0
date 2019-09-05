@@ -48,7 +48,6 @@ Public Class NuevaVisitaCteCaseta
 
         Alimentar_ComboClasificacion()
         Alimentar_ComboMotivos(cmBoxClasificacion.SelectedItem.Value)
-        'Alimentar_ComboSubmotivos(cmBoxClasificacion.SelectedItem.Value, cmBoxMotivo.SelectedItem.Value)
     End Sub
 
     Private Sub Alimentar_ComboClasificacion()
