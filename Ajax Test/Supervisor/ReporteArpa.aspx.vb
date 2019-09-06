@@ -84,7 +84,7 @@ Public Class ReporteArpa
                                   New DataColumn("cancelacion", GetType(Date)), New DataColumn("cc", GetType(String)), New DataColumn("empresa", GetType(Integer)),
                                   New DataColumn("zona", GetType(String))})
 
-            Dim CancelacionesEnkontrol = BL.Obtener_CancelacionesEnkontrol(FechaInicial, FechaFinal)
+            Dim CancelacionesEnkontrol = EK_REST.Obtener_Cancelaciones(FechaInicial, FechaFinal)
 
             If CancelacionesEnkontrol.Length > 0 Then
                 For i As Integer = 0 To CancelacionesEnkontrol.Length - 1
@@ -111,7 +111,7 @@ Public Class ReporteArpa
                                   New DataColumn("agente", GetType(String)), New DataColumn("empleadoLider", GetType(Integer)), New DataColumn("lider", GetType(String)),
                                   New DataColumn("cc", GetType(String)), New DataColumn("empresa", GetType(Integer)), New DataColumn("zona", GetType(String))})
 
-            Dim SeparacionesEnkontrol = BL.Obtener_SeparacionesEnkontrol(FechaInicial, FechaFinal)
+            Dim SeparacionesEnkontrol = EK_REST.Obtener_Separaciones(FechaInicial, FechaFinal)
 
             If SeparacionesEnkontrol.Length > 0 Then
                 For i As Integer = 0 To SeparacionesEnkontrol.Length - 1
@@ -137,7 +137,7 @@ Public Class ReporteArpa
                                   New DataColumn("agente", GetType(String)), New DataColumn("empleadoLider", GetType(Integer)), New DataColumn("lider", GetType(String)),
                                   New DataColumn("cc", GetType(String)), New DataColumn("empresa", GetType(Integer)), New DataColumn("zona", GetType(String))})
 
-            Dim ProspeccionesEnkontrol = BL.Obtener_ProspeccionesEnkontrol(FechaInicial, FechaFinal)
+            Dim ProspeccionesEnkontrol = EK_REST.Obtener_Prospecciones(FechaInicial, FechaFinal)
 
             If ProspeccionesEnkontrol.Length > 0 Then
                 For i As Integer = 0 To ProspeccionesEnkontrol.Length - 1

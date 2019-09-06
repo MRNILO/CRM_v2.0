@@ -7460,6 +7460,25 @@
     <Content Include="Prospectador\InicioProspectador.aspx" />
     <Content Include="Prospectador\ModificaCliente.aspx" />
     <Content Include="Prospectador\NuevoCliente.aspx" />
+    <Content Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Cancelacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.OrigenAgente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Prospeccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Separacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\EKREST\configuration91.svcinfo" />
+    <None Include="Service References\EKREST\configuration.svcinfo" />
+    <None Include="Service References\EKREST\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CUsuarios.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -7931,6 +7950,19 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Prospectador\Prospectador.Master" />
+    <None Include="Service References\EKREST\wcf_enkontrol.wsdl" />
+    <None Include="Service References\EKREST\wcf_enkontrol.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -8460,6 +8492,11 @@
     <Compile Include="Prospectador\Prospectador.Master.vb">
       <DependentUpon>Prospectador.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service References\EKREST\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Servicio\Reference.vb">
       <AutoGen>True</AutoGen>
@@ -9026,6 +9063,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EKREST\" />
     <WCFMetadataStorage Include="Service References\Servicio\" />
   </ItemGroup>
   <PropertyGroup>

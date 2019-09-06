@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="wcf_enkontrol" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCF_ENKONTROL" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Iwcf_enkontrol_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerConsultas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultas" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerConsultas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerConsultasResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_OrigenAgente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_OrigenAgente" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_OrigenAgente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_OrigenAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Prospectadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_Prospectadores" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Prospectadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_ProspectadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Cerradores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_Cerradores" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Cerradores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_CerradoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Moviles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_Moviles" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerAgentes_Moviles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_MovilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerDetalle_Agente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalle_Agente" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerDetalle_Agente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalle_AgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Actualizar_Agente_Estatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_Agente_Estatus" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Actualizar_Agente_Estatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Actualizar_Agente_EstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Datos_Cliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Datos_Cliente" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Datos_Cliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Datos_ClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Datos_Cliente_X_LoteId_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Datos_Cliente_X_LoteId" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Datos_Cliente_X_LoteId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Datos_Cliente_X_LoteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_ClientesXEscriturar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_ClientesXEscriturar" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_ClientesXEscriturar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_ClientesXEscriturarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerDatos_Empresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatos_Empresa" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerDatos_Empresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDatos_EmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerFraccionamientos_Empresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFraccionamientos_Empresa" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerFraccionamientos_Empresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFraccionamientos_EmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Lotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Lotes" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Lotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_LotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Apartar_Lote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Apartar_Lote" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Apartar_Lote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Apartar_LoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Desapartar_Lote_InputMessage">
+    <wsdl:part name="parameters" element="tns:Desapartar_Lote" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Desapartar_Lote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Desapartar_LoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerSManzanas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSManzanas" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerSManzanas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSManzanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_TipoCasa_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoCasa" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_TipoCasa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoCasaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_IdLoteXCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IdLoteXCliente" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_IdLoteXCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IdLoteXClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerUbicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerUbicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerContratos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContratos" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_ObtenerContratos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerContratosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Prototipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Prototipo" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Prototipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_PrototipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_EntregaVivienda_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_EntregaVivienda" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_EntregaVivienda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_EntregaViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Prospecciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Prospecciones" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Prospecciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_ProspeccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Cancelaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Cancelaciones" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Cancelaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_CancelacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Separaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_Separaciones" />
+  </wsdl:message>
+  <wsdl:message name="Iwcf_enkontrol_Obtener_Separaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_SeparacionesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Iwcf_enkontrol">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/DoWork" message="tns:Iwcf_enkontrol_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/DoWorkResponse" message="tns:Iwcf_enkontrol_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultas">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerConsultas" message="tns:Iwcf_enkontrol_ObtenerConsultas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerConsultasResponse" message="tns:Iwcf_enkontrol_ObtenerConsultas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_OrigenAgente">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_OrigenAgente" message="tns:Iwcf_enkontrol_Obtener_OrigenAgente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_OrigenAgenteResponse" message="tns:Iwcf_enkontrol_Obtener_OrigenAgente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes" message="tns:Iwcf_enkontrol_ObtenerAgentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentesResponse" message="tns:Iwcf_enkontrol_ObtenerAgentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Prospectadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Prospectadores" message="tns:Iwcf_enkontrol_ObtenerAgentes_Prospectadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_ProspectadoresResponse" message="tns:Iwcf_enkontrol_ObtenerAgentes_Prospectadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Cerradores">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Cerradores" message="tns:Iwcf_enkontrol_ObtenerAgentes_Cerradores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_CerradoresResponse" message="tns:Iwcf_enkontrol_ObtenerAgentes_Cerradores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Moviles">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Moviles" message="tns:Iwcf_enkontrol_ObtenerAgentes_Moviles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_MovilesResponse" message="tns:Iwcf_enkontrol_ObtenerAgentes_Moviles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalle_Agente">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerDetalle_Agente" message="tns:Iwcf_enkontrol_ObtenerDetalle_Agente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerDetalle_AgenteResponse" message="tns:Iwcf_enkontrol_ObtenerDetalle_Agente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Agente_Estatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Actualizar_Agente_Estatus" message="tns:Iwcf_enkontrol_Actualizar_Agente_Estatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Actualizar_Agente_EstatusResponse" message="tns:Iwcf_enkontrol_Actualizar_Agente_Estatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Datos_Cliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_Cliente" message="tns:Iwcf_enkontrol_Obtener_Datos_Cliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_ClienteResponse" message="tns:Iwcf_enkontrol_Obtener_Datos_Cliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Datos_Cliente_X_LoteId">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_Cliente_X_LoteId" message="tns:Iwcf_enkontrol_Obtener_Datos_Cliente_X_LoteId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_Cliente_X_LoteIdResponse" message="tns:Iwcf_enkontrol_Obtener_Datos_Cliente_X_LoteId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ClientesXEscriturar">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_ClientesXEscriturar" message="tns:Iwcf_enkontrol_Obtener_ClientesXEscriturar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_ClientesXEscriturarResponse" message="tns:Iwcf_enkontrol_Obtener_ClientesXEscriturar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatos_Empresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerDatos_Empresa" message="tns:Iwcf_enkontrol_ObtenerDatos_Empresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerDatos_EmpresaResponse" message="tns:Iwcf_enkontrol_ObtenerDatos_Empresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFraccionamientos_Empresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerFraccionamientos_Empresa" message="tns:Iwcf_enkontrol_ObtenerFraccionamientos_Empresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerFraccionamientos_EmpresaResponse" message="tns:Iwcf_enkontrol_ObtenerFraccionamientos_Empresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Lotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Lotes" message="tns:Iwcf_enkontrol_Obtener_Lotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_LotesResponse" message="tns:Iwcf_enkontrol_Obtener_Lotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Apartar_Lote">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Apartar_Lote" message="tns:Iwcf_enkontrol_Apartar_Lote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Apartar_LoteResponse" message="tns:Iwcf_enkontrol_Apartar_Lote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Desapartar_Lote">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Desapartar_Lote" message="tns:Iwcf_enkontrol_Desapartar_Lote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Desapartar_LoteResponse" message="tns:Iwcf_enkontrol_Desapartar_Lote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSManzanas">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerSManzanas" message="tns:Iwcf_enkontrol_ObtenerSManzanas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerSManzanasResponse" message="tns:Iwcf_enkontrol_ObtenerSManzanas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoCasa">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_TipoCasa" message="tns:Iwcf_enkontrol_Obtener_TipoCasa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_TipoCasaResponse" message="tns:Iwcf_enkontrol_Obtener_TipoCasa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IdLoteXCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_IdLoteXCliente" message="tns:Iwcf_enkontrol_Obtener_IdLoteXCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_IdLoteXClienteResponse" message="tns:Iwcf_enkontrol_Obtener_IdLoteXCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUbicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerUbicaciones" message="tns:Iwcf_enkontrol_ObtenerUbicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerUbicacionesResponse" message="tns:Iwcf_enkontrol_ObtenerUbicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContratos">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerContratos" message="tns:Iwcf_enkontrol_ObtenerContratos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/ObtenerContratosResponse" message="tns:Iwcf_enkontrol_ObtenerContratos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Prototipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Prototipo" message="tns:Iwcf_enkontrol_Obtener_Prototipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_PrototipoResponse" message="tns:Iwcf_enkontrol_Obtener_Prototipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_EntregaVivienda">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_EntregaVivienda" message="tns:Iwcf_enkontrol_Obtener_EntregaVivienda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_EntregaViviendaResponse" message="tns:Iwcf_enkontrol_Obtener_EntregaVivienda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Prospecciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Prospecciones" message="tns:Iwcf_enkontrol_Obtener_Prospecciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_ProspeccionesResponse" message="tns:Iwcf_enkontrol_Obtener_Prospecciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cancelaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Cancelaciones" message="tns:Iwcf_enkontrol_Obtener_Cancelaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_CancelacionesResponse" message="tns:Iwcf_enkontrol_Obtener_Cancelaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Separaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_Separaciones" message="tns:Iwcf_enkontrol_Obtener_Separaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iwcf_enkontrol/Obtener_SeparacionesResponse" message="tns:Iwcf_enkontrol_Obtener_Separaciones_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Iwcf_enkontrol" type="tns:Iwcf_enkontrol">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConsultas">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerConsultas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_OrigenAgente">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_OrigenAgente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Prospectadores">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Prospectadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Cerradores">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Cerradores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_Moviles">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerAgentes_Moviles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalle_Agente">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerDetalle_Agente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Agente_Estatus">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Actualizar_Agente_Estatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Datos_Cliente">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_Cliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Datos_Cliente_X_LoteId">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Datos_Cliente_X_LoteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ClientesXEscriturar">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_ClientesXEscriturar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatos_Empresa">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerDatos_Empresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFraccionamientos_Empresa">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerFraccionamientos_Empresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Lotes">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Lotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Apartar_Lote">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Apartar_Lote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Desapartar_Lote">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Desapartar_Lote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSManzanas">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerSManzanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoCasa">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_TipoCasa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IdLoteXCliente">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_IdLoteXCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerContratos">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/ObtenerContratos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Prototipo">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Prototipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_EntregaVivienda">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_EntregaVivienda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Prospecciones">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Prospecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cancelaciones">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Cancelaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Separaciones">
+      <soap:operation soapAction="http://tempuri.org/Iwcf_enkontrol/Obtener_Separaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wcf_enkontrol">
+    <wsdl:port name="BasicHttpBinding_Iwcf_enkontrol" binding="tns:BasicHttpBinding_Iwcf_enkontrol">
+      <soap:address location="http://192.168.1.14/EK_REST/wcf_enkontrol.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

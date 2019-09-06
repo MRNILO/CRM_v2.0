@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88bb9cc5-2472-479f-bc8d-ecd9418f8a72" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wcf_enkontrol.xsd" MetadataType="Schema" ID="d5a4eed2-e313-4310-a852-27efdba2df21" SourceId="1" SourceUrl="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd2" />
+    <MetadataFile FileName="wcf_enkontrol1.xsd" MetadataType="Schema" ID="cd6b730d-2b48-4d51-8518-28ccf641c785" SourceId="1" SourceUrl="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd3" />
+    <MetadataFile FileName="wcf_enkontrol2.xsd" MetadataType="Schema" ID="4cdcc748-7f40-47ac-99e0-90afa0bead65" SourceId="1" SourceUrl="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd0" />
+    <MetadataFile FileName="wcf_enkontrol3.xsd" MetadataType="Schema" ID="93d2e651-ea15-4b60-afc7-bda0a513c88c" SourceId="1" SourceUrl="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?xsd=xsd1" />
+    <MetadataFile FileName="wcf_enkontrol.wsdl" MetadataType="Wsdl" ID="8fcd71e0-5272-4939-9c7d-bc0ac457f655" SourceId="1" SourceUrl="http://192.168.1.14/EK_REST/wcf_enkontrol.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
