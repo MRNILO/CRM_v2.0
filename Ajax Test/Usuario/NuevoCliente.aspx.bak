@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Usuario/Usuario.Master" CodeBehind="NuevoCliente.aspx.vb" Inherits="Ajax_Test.NuevoCliente" %>
 
-<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ContentPlaceHolderID="CSSContent" runat="server">
     <link href="/assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <style>
@@ -274,7 +274,6 @@ empresas"></asp:SqlDataSource>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="JSContent" runat="server">
     <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
-
     <script>
         $(function () {
             function log(message) {
@@ -283,7 +282,6 @@ empresas"></asp:SqlDataSource>
             }
         });
     </script>
-
     <script type="text/javascript">
         function validaNSS() {
             var NSS = $("#<%:tb_nss.ClientID%>").val();
@@ -396,5 +394,11 @@ empresas"></asp:SqlDataSource>
             $("#Ciudades").html("Seleccione una ciudad:<br />" + response.d);
         }
     </script>
+    <%--    <script type="text/javascript">
+        function ScrollMov() {
+            window.scrollTo(0, 100);
+            //$("html, body").animate({ scrollTop: 0 }, 800);
+        }
+    </script>--%>
     <asp:Literal ID="lbl_mensaje" runat="server"></asp:Literal>
 </asp:Content>

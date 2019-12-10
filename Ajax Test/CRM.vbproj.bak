@@ -52,28 +52,28 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\ClosedXML.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.SpellChecker.v18.2.Core, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Bootstrap.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
@@ -6349,6 +6349,7 @@
     <Content Include="assets\imagenes\logo-mini.png" />
     <Content Include="assets\imagenes\logo.png" />
     <Content Include="assets\imagenes\LogoKunde.png" />
+    <Content Include="assets\imagenes\Spinner.gif" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.min.js" />
     <Content Include="assets\layouts\global\scripts\hor-timeline.js" />
@@ -7182,6 +7183,14 @@
     <Content Include="Caseta\NuevoCliente.aspx" />
     <Content Include="Caseta\VisitaCte.aspx" />
     <Content Include="Herramientas\Notificaciones.aspx" />
+    <Content Include="Mantenimiento\DatosCliente.aspx" />
+    <Content Include="Mantenimiento\Estatus.aspx" />
+    <Content Include="Mantenimiento\Impedimento.aspx" />
+    <Content Include="Mantenimiento\Impedimentos.aspx" />
+    <Content Include="Mantenimiento\InicioMantenimiento.aspx" />
+    <Content Include="Mantenimiento\TipoImpedimentos.aspx" />
+    <Content Include="Mantenimiento\Supervisorpermiso.aspx" />
+    <Content Include="Mantenimiento\VisitasCitas.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
     <Content Include="assets\global\plugins\angularjs\angular-cookies.min.js.map" />
@@ -7451,6 +7460,25 @@
     <Content Include="Prospectador\InicioProspectador.aspx" />
     <Content Include="Prospectador\ModificaCliente.aspx" />
     <Content Include="Prospectador\NuevoCliente.aspx" />
+    <Content Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Cancelacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.OrigenAgente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Prospeccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\EKREST\Ajax_Test.EKREST.Separacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\EKREST\configuration91.svcinfo" />
+    <None Include="Service References\EKREST\configuration.svcinfo" />
+    <None Include="Service References\EKREST\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Service References\Servicio\Ajax_Test.Servicio.CUsuarios.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -7668,6 +7696,7 @@
     <Content Include="Ayuda\Cambiar etapa de un cliente.pdf" />
     <Content Include="CallCenter\CallCenter.Master" />
     <Content Include="Caseta\Caseta.Master" />
+    <Content Include="Mantenimiento\Mantenimiento.Master" />
     <None Include="My Project\PublishProfiles\Desktop.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="My Project\PublishProfiles\Publicaciones.pubxml" />
@@ -7921,6 +7950,19 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Prospectador\Prospectador.Master" />
+    <None Include="Service References\EKREST\wcf_enkontrol.wsdl" />
+    <None Include="Service References\EKREST\wcf_enkontrol.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EKREST\wcf_enkontrol3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -8278,6 +8320,7 @@
       <DependentUpon>VisitaCte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Clases\clsAgente.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -8297,6 +8340,69 @@
     <Compile Include="Herramientas\Notificaciones.aspx.vb">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\DatosCliente.aspx.designer.vb">
+      <DependentUpon>DatosCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\DatosCliente.aspx.vb">
+      <DependentUpon>DatosCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Estatus.aspx.designer.vb">
+      <DependentUpon>Estatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Estatus.aspx.vb">
+      <DependentUpon>Estatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimento.aspx.designer.vb">
+      <DependentUpon>Impedimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimento.aspx.vb">
+      <DependentUpon>Impedimento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimentos.aspx.designer.vb">
+      <DependentUpon>Impedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Impedimentos.aspx.vb">
+      <DependentUpon>Impedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\InicioMantenimiento.aspx.designer.vb">
+      <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\InicioMantenimiento.aspx.vb">
+      <DependentUpon>InicioMantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Mantenimiento.Master.designer.vb">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Mantenimiento.Master.vb">
+      <DependentUpon>Mantenimiento.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoImpedimentos.aspx.designer.vb">
+      <DependentUpon>TipoImpedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\TipoImpedimentos.aspx.vb">
+      <DependentUpon>TipoImpedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Supervisorpermiso.aspx.designer.vb">
+      <DependentUpon>Supervisorpermiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Supervisorpermiso.aspx.vb">
+      <DependentUpon>Supervisorpermiso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\VisitasCitas.aspx.designer.vb">
+      <DependentUpon>VisitasCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\VisitasCitas.aspx.vb">
+      <DependentUpon>VisitasCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -8386,6 +8492,11 @@
     <Compile Include="Prospectador\Prospectador.Master.vb">
       <DependentUpon>Prospectador.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service References\EKREST\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Servicio\Reference.vb">
       <AutoGen>True</AutoGen>
@@ -8952,6 +9063,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EKREST\" />
     <WCFMetadataStorage Include="Service References\Servicio\" />
   </ItemGroup>
   <PropertyGroup>
