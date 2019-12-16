@@ -498,6 +498,7 @@ Public Class Funciones
     Public Function Obtener_Proyectos() As DataTable
         Dim Query As String = "SELECT DISTINCT(abrev_fracc) Proyecto, Fraccionamiento
                                FROM productos
+                               WHERE Estatus=1
                                ORDER BY Proyecto"
 
         Obtener_Proyectos = GE_SQL.SQLGetTable(Query)
