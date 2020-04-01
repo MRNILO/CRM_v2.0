@@ -9,7 +9,7 @@ Public Class Consultas
     Private Const DATE_MASK = "yyyy-MM-dd"
 
     Private GE_Funciones As New Funciones
-    Private Ruta As String = ConfigurationManager.ConnectionStrings("RutaXLS").ConnectionString
+    Private Ruta As String = ""
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 2
     Dim idUsuario As Integer = 0
@@ -50,6 +50,7 @@ Public Class Consultas
 
         LimpiaGrid()
     End Sub
+
     Sub LimpiaGrid()
         lbl_Total.Text = ""
         With grdViewConsulta
@@ -119,7 +120,6 @@ Public Class Consultas
 #End Region
 
 #Region "Eventos"
-
     Protected Sub grdViewConsulta_DataBinding(sender As Object, e As EventArgs) Handles grdViewConsulta.DataBinding
         grdViewConsulta.DataSource = ViewState("ConjuntoDatos")
     End Sub

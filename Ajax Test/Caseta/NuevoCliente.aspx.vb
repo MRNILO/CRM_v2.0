@@ -13,12 +13,14 @@ Public Class NuevoCliente2
             AlimentarComboCampanas()
         End If
     End Sub
+
 #Region "Metodos"
     Public Sub UI()
         Dim NSSAleatorio As String = GE_Funciones.Generar_NSSAleatorio()
         tb_email.Text = "corrigeme@micliente" & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
         tb_nss.Text = NSSAleatorio & NSSAleatorio
     End Sub
+
     Private Sub AlimentarComboCampanas()
         Dim Aux As Integer = 0
 

@@ -144,6 +144,7 @@ Public Class Funciones
         Public DT As DataTable
         Public Resultado As String
     End Class
+
     Public Function BuscarClientes(ByVal Cliente As BusquedaCliente) As DataTable
         Dim Query As String = "EXEC [dbo].[BuscarClientes]
 		                            @Nombre = N'" & Cliente.nombreCliente & "',
@@ -246,7 +247,6 @@ Public Class Funciones
 
         BuscarClientesEK2 = DTB
     End Function
-
 
     Public Function BuscarClientesXAsesor(ByVal Cliente As BusquedaClienteAsesor)
         Dim Query As String = "EXEC [dbo].[BuscarClientesXAsesor]
