@@ -5,8 +5,15 @@
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRM" />
+      <xsd:import schemaLocation="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd3" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Inserta_tipocampaña_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_tipocampaña" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Inserta_tipocampaña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Inserta_tipocampañaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Elimina_tipocampaña_InputMessage">
     <wsdl:part name="parameters" element="tns:Elimina_tipocampaña" />
   </wsdl:message>
@@ -241,6 +248,42 @@
   <wsdl:message name="IService1_Obtener_configuracionEmailUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_configuracionEmailUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Obtener_DatosConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_DatosConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_DatosConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_DatosConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_MediosCampanas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_MediosCampanas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_MediosCampanas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_MediosCampanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasByProyectoModeloSemana_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasByProyectoModeloSemana" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasByProyectoModeloSemana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasByProyectoModeloSemanaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasByProyectoMedioSemana_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasByProyectoMedioSemana" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasByProyectoMedioSemana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasByProyectoMedioSemanaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBMedio_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBMedio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBMedio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBMedioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXAgente_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXAgente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXAgente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXAgenteResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_CancelacionesEnkontrol_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_CancelacionesEnkontrol" />
   </wsdl:message>
@@ -313,6 +356,36 @@
   <wsdl:message name="IService1_Obtener_Proyectos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_ProyectosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXFraccionamiento_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXFraccionamiento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXFraccionamiento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXFraccionamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXModelo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXModelo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXModelo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXModeloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXMedio_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXMedio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAyBXMedio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAyBXMedioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAgenteXSemana_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAgenteXSemana" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_VisitasAgenteXSemana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_VisitasAgenteXSemanaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_ARPAVisitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_ARPAVisitas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_ARPAVisitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_ARPAVisitasResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_TipoUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_TipoUsuario" />
   </wsdl:message>
@@ -325,17 +398,53 @@
   <wsdl:message name="IService1_Actualizar_Coordinador_OutputMessage">
     <wsdl:part name="parameters" element="tns:Actualizar_CoordinadorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ObtenerAgentes_CallCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_CallCenter" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerAgentes_CallCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAgentes_CallCenterResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Prospectador_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_Prospectador" />
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Prospectador_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_ProspectadorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Prospectador_Complemento_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_Prospectador_Complemento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Prospectador_Complemento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_Prospectador_ComplementoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_CallCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_CallCenter" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_CallCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_CallCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Cerradores_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_Cerradores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Cerradores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_CerradoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Moviles_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_Moviles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_IndicadoresComisiones_Moviles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_IndicadoresComisiones_MovilesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Obtener_notificaciones_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_notificaciones" />
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_notificaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_notificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_operaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_operaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_operaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_operacionesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Obtener_operacionesIdCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_operacionesIdCliente" />
@@ -841,12 +950,6 @@
   <wsdl:message name="IService1_Obtener_telefonoUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_telefonoUsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Inserta_tipocampaña_InputMessage">
-    <wsdl:part name="parameters" element="tns:Inserta_tipocampaña" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Inserta_tipocampaña_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Inserta_tipocampañaResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_Obtener_nombreClientesAdm_InputMessage">
     <wsdl:part name="parameters" element="tns:Obtener_nombreClientesAdm" />
   </wsdl:message>
@@ -1237,6 +1340,12 @@
   <wsdl:message name="IService1_Insertar_VisitasClientes_OutputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_VisitasClientesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Obtener_TipoVisita_InputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoVisita" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Obtener_TipoVisita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Obtener_TipoVisitaResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Actualiza_configuraciones_InputMessage">
     <wsdl:part name="parameters" element="tns:Actualiza_configuraciones" />
   </wsdl:message>
@@ -1351,13 +1460,11 @@
   <wsdl:message name="IService1_Actualiza_operaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:Actualiza_operacionesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Obtener_operaciones_InputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_operaciones" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Obtener_operaciones_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Obtener_operacionesResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Inserta_tipocampaña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampaña" message="tns:IService1_Inserta_tipocampaña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampañaResponse" message="tns:IService1_Inserta_tipocampaña_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Elimina_tipocampaña">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampaña" message="tns:IService1_Elimina_tipocampaña_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Elimina_tipocampañaResponse" message="tns:IService1_Elimina_tipocampaña_OutputMessage" />
@@ -1514,6 +1621,30 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_configuracionEmailUsuario" message="tns:IService1_Obtener_configuracionEmailUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_configuracionEmailUsuarioResponse" message="tns:IService1_Obtener_configuracionEmailUsuario_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Obtener_DatosConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_DatosConsulta" message="tns:IService1_Obtener_DatosConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_DatosConsultaResponse" message="tns:IService1_Obtener_DatosConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_MediosCampanas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_MediosCampanas" message="tns:IService1_Obtener_MediosCampanas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_MediosCampanasResponse" message="tns:IService1_Obtener_MediosCampanas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasByProyectoModeloSemana">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasByProyectoModeloSemana" message="tns:IService1_Obtener_VisitasByProyectoModeloSemana_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasByProyectoModeloSemanaResponse" message="tns:IService1_Obtener_VisitasByProyectoModeloSemana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasByProyectoMedioSemana">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasByProyectoMedioSemana" message="tns:IService1_Obtener_VisitasByProyectoMedioSemana_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasByProyectoMedioSemanaResponse" message="tns:IService1_Obtener_VisitasByProyectoMedioSemana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBMedio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBMedio" message="tns:IService1_Obtener_VisitasAyBMedio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBMedioResponse" message="tns:IService1_Obtener_VisitasAyBMedio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXAgente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXAgente" message="tns:IService1_Obtener_VisitasAyBXAgente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXAgenteResponse" message="tns:IService1_Obtener_VisitasAyBXAgente_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_CancelacionesEnkontrol">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol" message="tns:IService1_Obtener_CancelacionesEnkontrol_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrolResponse" message="tns:IService1_Obtener_CancelacionesEnkontrol_OutputMessage" />
@@ -1562,6 +1693,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_Proyectos" message="tns:IService1_Obtener_Proyectos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_ProyectosResponse" message="tns:IService1_Obtener_Proyectos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXFraccionamiento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXFraccionamiento" message="tns:IService1_Obtener_VisitasAyBXFraccionamiento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXFraccionamientoResponse" message="tns:IService1_Obtener_VisitasAyBXFraccionamiento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXModelo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXModelo" message="tns:IService1_Obtener_VisitasAyBXModelo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXModeloResponse" message="tns:IService1_Obtener_VisitasAyBXModelo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXMedio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXMedio" message="tns:IService1_Obtener_VisitasAyBXMedio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAyBXMedioResponse" message="tns:IService1_Obtener_VisitasAyBXMedio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAgenteXSemana">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAgenteXSemana" message="tns:IService1_Obtener_VisitasAgenteXSemana_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_VisitasAgenteXSemanaResponse" message="tns:IService1_Obtener_VisitasAgenteXSemana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ARPAVisitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_ARPAVisitas" message="tns:IService1_Obtener_ARPAVisitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_ARPAVisitasResponse" message="tns:IService1_Obtener_ARPAVisitas_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_TipoUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_TipoUsuario" message="tns:IService1_Obtener_TipoUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_TipoUsuarioResponse" message="tns:IService1_Obtener_TipoUsuario_OutputMessage" />
@@ -1570,13 +1721,37 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualizar_Coordinador" message="tns:IService1_Actualizar_Coordinador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualizar_CoordinadorResponse" message="tns:IService1_Actualizar_Coordinador_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_CallCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerAgentes_CallCenter" message="tns:IService1_ObtenerAgentes_CallCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerAgentes_CallCenterResponse" message="tns:IService1_ObtenerAgentes_CallCenter_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_IndicadoresComisiones_Prospectador">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Prospectador" message="tns:IService1_Obtener_IndicadoresComisiones_Prospectador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_ProspectadorResponse" message="tns:IService1_Obtener_IndicadoresComisiones_Prospectador_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Prospectador_Complemento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Prospectador_Complemento" message="tns:IService1_Obtener_IndicadoresComisiones_Prospectador_Complemento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Prospectador_ComplementoResponse" message="tns:IService1_Obtener_IndicadoresComisiones_Prospectador_Complemento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_CallCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_CallCenter" message="tns:IService1_Obtener_IndicadoresComisiones_CallCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_CallCenterResponse" message="tns:IService1_Obtener_IndicadoresComisiones_CallCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Cerradores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Cerradores" message="tns:IService1_Obtener_IndicadoresComisiones_Cerradores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_CerradoresResponse" message="tns:IService1_Obtener_IndicadoresComisiones_Cerradores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Moviles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Moviles" message="tns:IService1_Obtener_IndicadoresComisiones_Moviles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_MovilesResponse" message="tns:IService1_Obtener_IndicadoresComisiones_Moviles_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Obtener_notificaciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_notificaciones" message="tns:IService1_Obtener_notificaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_notificacionesResponse" message="tns:IService1_Obtener_notificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_operaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operaciones" message="tns:IService1_Obtener_operaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesResponse" message="tns:IService1_Obtener_operaciones_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Obtener_operacionesIdCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesIdCliente" message="tns:IService1_Obtener_operacionesIdCliente_InputMessage" />
@@ -1914,10 +2089,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_telefonoUsuario" message="tns:IService1_Obtener_telefonoUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_telefonoUsuarioResponse" message="tns:IService1_Obtener_telefonoUsuario_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Inserta_tipocampaña">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampaña" message="tns:IService1_Inserta_tipocampaña_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Inserta_tipocampañaResponse" message="tns:IService1_Inserta_tipocampaña_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdm" message="tns:IService1_Obtener_nombreClientesAdm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_nombreClientesAdmResponse" message="tns:IService1_Obtener_nombreClientesAdm_OutputMessage" />
@@ -2178,6 +2349,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insertar_VisitasClientes" message="tns:IService1_Insertar_VisitasClientes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Insertar_VisitasClientesResponse" message="tns:IService1_Insertar_VisitasClientes_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoVisita">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_TipoVisita" message="tns:IService1_Obtener_TipoVisita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_TipoVisitaResponse" message="tns:IService1_Obtener_TipoVisita_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_configuraciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_configuraciones" message="tns:IService1_Actualiza_configuraciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_configuracionesResponse" message="tns:IService1_Actualiza_configuraciones_OutputMessage" />
@@ -2254,13 +2429,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Actualiza_operaciones" message="tns:IService1_Actualiza_operaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Actualiza_operacionesResponse" message="tns:IService1_Actualiza_operaciones_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Obtener_operaciones">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Obtener_operaciones" message="tns:IService1_Obtener_operaciones_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Obtener_operacionesResponse" message="tns:IService1_Obtener_operaciones_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Inserta_tipocampaña">
+      <soap:operation soapAction="http://tempuri.org/IService1/Inserta_tipocampaña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Elimina_tipocampaña">
       <soap:operation soapAction="http://tempuri.org/IService1/Elimina_tipocampaña" style="document" />
       <wsdl:input>
@@ -2612,6 +2792,60 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Obtener_DatosConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_DatosConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_MediosCampanas">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_MediosCampanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasByProyectoModeloSemana">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasByProyectoModeloSemana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasByProyectoMedioSemana">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasByProyectoMedioSemana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBMedio">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAyBMedio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXAgente">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAyBXAgente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_CancelacionesEnkontrol">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_CancelacionesEnkontrol" style="document" />
       <wsdl:input>
@@ -2720,6 +2954,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXFraccionamiento">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAyBXFraccionamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXModelo">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAyBXModelo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAyBXMedio">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAyBXMedio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_VisitasAgenteXSemana">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_VisitasAgenteXSemana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_ARPAVisitas">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_ARPAVisitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_TipoUsuario">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_TipoUsuario" style="document" />
       <wsdl:input>
@@ -2738,6 +3017,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerAgentes_CallCenter">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerAgentes_CallCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_IndicadoresComisiones_Prospectador">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Prospectador" style="document" />
       <wsdl:input>
@@ -2747,8 +3035,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Prospectador_Complemento">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Prospectador_Complemento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_CallCenter">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_CallCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Cerradores">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Cerradores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IndicadoresComisiones_Moviles">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_IndicadoresComisiones_Moviles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Obtener_notificaciones">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_notificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_operaciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_operaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3512,15 +3845,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Inserta_tipocampaña">
-      <soap:operation soapAction="http://tempuri.org/IService1/Inserta_tipocampaña" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Obtener_nombreClientesAdm">
       <soap:operation soapAction="http://tempuri.org/IService1/Obtener_nombreClientesAdm" style="document" />
       <wsdl:input>
@@ -4106,6 +4430,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Obtener_TipoVisita">
+      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_TipoVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Actualiza_configuraciones">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_configuraciones" style="document" />
       <wsdl:input>
@@ -4270,15 +4603,6 @@
     </wsdl:operation>
     <wsdl:operation name="Actualiza_operaciones">
       <soap:operation soapAction="http://tempuri.org/IService1/Actualiza_operaciones" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Obtener_operaciones">
-      <soap:operation soapAction="http://tempuri.org/IService1/Obtener_operaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

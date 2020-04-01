@@ -43,6 +43,7 @@ Public Class NuevaVisitaCte
         With dtp_ffinal : .Enabled = False : .Date = Now.AddDays(30) : End With
 
         Alimentar_ComboProyectos()
+        Alimentar_ComboTipoVisita()
         Alimentar_TablaVisitas(IDCliente)
         Alimentar_ComboModelos(cmBoxProyecto.SelectedItem.Value)
 
@@ -244,6 +245,18 @@ Public Class NuevaVisitaCte
         End With
     End Sub
 
+    Private Sub Alimentar_ComboTipoVisita()
+        Dim DT As DataTable = GE_Funciones.Obtener_TipoVisitas
+
+        With cmBoxTipoVisita
+            .DataSource = DT
+            .ValueField = "Id_TipoVisita"
+            .TextField = "Nombre"
+            .SelectedIndex = 0
+            .DataBind()
+        End With
+    End Sub
+
     Public Function Validar_Campos()
         If cmBoxClasificacion.SelectedIndex = 0 Then Return False
 
@@ -314,7 +327,7 @@ Public Class NuevaVisitaCte
 
             With DatosCitas
                 If GE_Funciones.Insertar_VisitasClientes(.IdCita, .IdCliente, .IdUsuario, .IdUsuarioAsignado, Usuario.id_usuario, .IdCampana, cmBoxSubMotivo.SelectedItem.Value, .TipoCredito,
-                        0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
+                        cmBoxTipoVisita.SelectedItem.Value, 0, cmBoxClasificacion.SelectedItem.Value, .Origen, cmBoxProyecto.SelectedItem.Value, cmBoxModelo.SelectedItem.Value,
                         .TipoCampana, dtp_finicio.Text, dtp_ffinal.Text, dtFechaVisita.Text, 1) Then
 
                     Session("DatosCitas") = Nothing

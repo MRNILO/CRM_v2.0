@@ -473,7 +473,6 @@ Public Class Funciones
         Actualiza_Origen_Cita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
-
     Public Function Actualiza_Campana(ByVal IdCampana As Integer, ByVal Campana As String, ByVal TipoCampana As String, ByVal Id_Cita As Integer) As Boolean
         Dim Query As String = ""
 
@@ -731,7 +730,7 @@ Public Class Funciones
     End Function
 
     Public Function Insertar_VisitasClientes(ByVal IdCita As Integer, ByVal IdCliente As Integer, ByVal IdUsuario As Integer, ByVal IdUsuarioAsignado As Integer, ByVal IdUsuarioVisita As Integer,
-                                      ByVal IdCampana As Integer, ByVal IdImpedimento As Integer, ByVal TipoCredito As String, ByVal Monto As Double, ByVal Ranking As String,
+                                      ByVal IdCampana As Integer, ByVal IdImpedimento As Integer, ByVal TipoCredito As String, ByVal TipoVisita As Integer, ByVal Monto As Double, ByVal Ranking As String,
                                       ByVal Origen As String, ByVal Proyecto As String, ByVal Modelo As Integer, ByVal TipoCampana As String, ByVal VigenciaIncial As Date,
                                       ByVal VigenciaFinal As Date, ByVal FechaVisita As Date, ByVal Status As Integer) As Boolean
 
@@ -744,16 +743,17 @@ Public Class Funciones
                                                    @pIdCampana = {5},
                                                    @pIdImpedimento = {6},
                                                    @pTipoCredito = N'{7}',
-                                                   @pMonto = {8},
-                                                   @pRanking = N'{9}',
-                                                   @pOrigen = N'{10}',
-                                                   @pProyecto = N'{11}',
-                                                   @pModelo = {12},
-                                                   @pTipoCampana = N'{13}',
-                                                   @pVigenciaInicial = '{14}',
-                                                   @pVigenciaFinal = '{15}',
-                                                   @pFechaVisita = '{16}',
-                                                   @pStatus = {17}", IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdUsuarioVisita, IdCampana, IdImpedimento, TipoCredito, Monto,
+                                                   @pTipoVisita = {8}
+                                                   @pMonto = {9},
+                                                   @pRanking = N'{10}',
+                                                   @pOrigen = N'{11}',
+                                                   @pProyecto = N'{12}',
+                                                   @pModelo = {13},
+                                                   @pTipoCampana = N'{14}',
+                                                   @pVigenciaInicial = '{15}',
+                                                   @pVigenciaFinal = '{16}',
+                                                   @pFechaVisita = '{17}',
+                                                   @pStatus = {18}", IdCita, IdCliente, IdUsuario, IdUsuarioAsignado, IdUsuarioVisita, IdCampana, IdImpedimento, TipoCredito, TipoVisita, Monto,
                                                                      Ranking, Origen, Proyecto, Modelo, TipoCampana, VigenciaIncial.ToString("yyyy-MM-dd"),
                                                                      VigenciaFinal.ToString("yyyy-MM-dd"), FechaVisita.ToString("yyyy-MM-dd"), Status)
 
@@ -842,6 +842,7 @@ Public Class Funciones
 
         Actualiza_Estatus_Visitas = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
+
     Public Function Actualiza_Origen_Visita(ByVal Origen As String, ByVal Id_Visita As Integer) As Boolean
         Dim Query As String = ""
 
@@ -852,8 +853,10 @@ Public Class Funciones
         Actualiza_Origen_Visita = GE_SQL.SQLExecSQL(Query, TipoTransaccion.UniqueTransaction)
     End Function
 
-
-
+    Public Function Obtener_TipoVisitas() As DataTable
+        Dim Query As String = "EXEC [dbo].[spObtener_TipoVisita]"
+        Return GE_SQL.SQLGetTable(Query)
+    End Function
 #End Region
 
 #Region "Cierre"

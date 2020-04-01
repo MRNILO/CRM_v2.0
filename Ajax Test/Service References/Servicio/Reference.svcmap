@@ -22,11 +22,12 @@
     <MetadataSource Address="http://192.168.1.13/wcf_crm/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fab21a51-352a-4cf6-bb79-01b29036c9ae" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="4f889efb-df29-4254-b951-ed07ad7240d9" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd0" />
     <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="bcb75fa7-08e1-4cb6-a4b0-84d1e79baf73" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" />
     <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="f80c76e1-2751-4203-8d38-cebe56e6160d" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="4f889efb-df29-4254-b951-ed07ad7240d9" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd0" />
     <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="e6abe160-8608-47f0-88ce-5ddc3cdc8786" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fab21a51-352a-4cf6-bb79-01b29036c9ae" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="79661e08-336e-4f26-88d9-16e11513fd8b" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

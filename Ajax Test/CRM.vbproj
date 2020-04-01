@@ -7473,6 +7473,7 @@
     <Content Include="Service References\EKREST\Ajax_Test.EKREST.Separacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="My Project\DataSources\System.Data.DataSet.datasource" />
     <None Include="Service References\EKREST\configuration91.svcinfo" />
     <None Include="Service References\EKREST\configuration.svcinfo" />
     <None Include="Service References\EKREST\Reference.svcmap">
@@ -7963,6 +7964,624 @@
     <None Include="Service References\EKREST\wcf_enkontrol3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualizar_CoordinadorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualizar_RankingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualizar_Ranking_VisitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_campañasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_categoriasProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_citasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_clientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_clientes_callcenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_configuracionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_ContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_contraseaSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_contraseaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_contraseña_AdminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_empresasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_etapasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_llamadasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_nivelinteresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_operacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_productosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_rankingClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_referenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_rubrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_supervisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_tareasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_telefonoClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_telefonoContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_TelefonoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_telefonoReferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_telefonoSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_telefonoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_tipocampañaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_tiporeferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_usuariosPassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Actualiza_usuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Avanza_EtapaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.CompletaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ComprobarCURPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ComprobarNSSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DiasSinTrabajarEtapaFiltroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DiasSinTrabajarEtapaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DiasSinTrabajarFiltroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.DiasSinTrabajarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.EnviarEmailSendGridResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_CitaCallCenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_CitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_CitasCallCenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_CitasCasetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_CitasProspectadorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_ObservacionesCitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Insertar_VisitasClientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_campañasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_categoriasProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_CitasCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_citasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_ClientesCCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_clientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_ContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_emailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_email_adjuntosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_empresasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_errorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_etapasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_llamadasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_nivelinteresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_operacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_productosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_referenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_rubrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_supervisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_tareasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_telefonoClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_telefonoContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_TelefonoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_telefonoReferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_telefonoSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_telefonoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_tipocampañaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_tiporeferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Inserta_usuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.LogINResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.MediosCampana.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ObservacionesCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ObtenerAgentes_CallCenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ObtenerDetallesCitaEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_AcumuladosAdmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_AcumuladosSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ARPAVisitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_campañasDetallesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_campañasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_campañas_idCampañaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_CancelacionesEnkontrolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_categoriasProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_citasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_citas_detalles_idClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_citas_detalles_idusuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_citas_id_usuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ciudadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ClienteObservacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_clientesAdmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_clientesSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_Clientes_AsesorCallCenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_Clientes_detalles_idClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_clientes_detalles_idUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_clientes_detalles_todosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_Clientes_Telefonos_idClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_Clientes_TipoCredito_idClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_clientes_TodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_combo_campañasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_combo_empresasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_configuracionEmailUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_configuracionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_correosDelClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DatosARPAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DatosCalidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DatosConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DatosCumplimientoProyectoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_datos_comboProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DetallesCumplimientoProyectoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detallesEmailLlamadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detallesEmpresa_idClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detallesProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_DetalleSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detalles_empresasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detalles_empresas_idEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_detalles_empresa_idEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_emailsUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_empresasComboBusquedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_empresasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_enviadosUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_estadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_etapasClienteDetallesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_etapasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ids_clienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_IndicadoresComisiones_CallCenterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_IndicadoresComisiones_CerradoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_IndicadoresComisiones_MovilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_IndicadoresComisiones_ProspectadorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_IndicadoresComisiones_Prospectador_ComplementoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_llamadasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_llamadasFechaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_llamadasPendientesHoyUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_llamadas_clienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_llamadas_usuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_MediosCampanasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_mensajeEmailIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nivelinteresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nombreClientesAdmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nombresClientesidSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nombresClientesidUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nombresUsuariosAdmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_nombresUsuariosSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_notificacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_observacionesCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_operacionesIdClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_operacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_oportunidadesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_productosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_Productos_DetallesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ProspeccionesCRMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ProspeccionesEnkontrolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_ProyectosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_referencias_clienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_relacion_supervisorUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_reporte_clientesFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_rubrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_SeparacionesCRMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_SeparacionesEnkontrolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_supervisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_supervisor_AdmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_supervisor_DetallesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_tareasPendientesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_tareasTerminadasUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_tareas_prioridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonoClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonoContactoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_TelefonoEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonoReferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonosModificaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonoSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_telefonoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_tipocampañaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_tiporeferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_TipoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_TipoVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_TotalesCumplimientoProyectoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_totalesUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_UsuarioDetalleSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_usuariosSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_usuarios_detallesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_usuarios_todosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAgenteXSemanaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAyBMedioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAyBXAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAyBXFraccionamientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAyBXMedioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasAyBXModeloResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasByProyectoMedioSemanaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasByProyectoModeloSemanaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Obtener_VisitasCRMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ValidaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.ValidaEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Verificar_VigenciaCitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.Verificar_VigenciaCitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.VerificaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Servicio\Ajax_Test.Servicio.VisitasMedio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\Servicio\configuration91.svcinfo" />
     <None Include="Service References\Servicio\configuration.svcinfo" />
     <None Include="Service References\Servicio\Reference.svcmap">
@@ -8055,6 +8674,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Servicio\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Servicio\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="web.Debug.config">

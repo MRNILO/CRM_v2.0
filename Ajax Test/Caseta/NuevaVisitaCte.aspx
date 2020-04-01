@@ -121,9 +121,13 @@
             </div>
             <div class="row" style="margin-top: 5px">
                 <div class="form-group" style="margin-top: 15px">
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                         <label><strong>SubMotivo:</strong></label>
                         <dx:ASPxComboBox ID="cmBoxSubMotivo" runat="server" Width="100%" Height="35px" Theme="MaterialCompact"></dx:ASPxComboBox>
+                    </div>
+                    <div class="col-lg-3">
+                        <label><strong>Tipo de Visita:</strong></label>
+                        <dx:ASPxComboBox ID="cmBoxTipoVisita" runat="server" Width="100%" Height="35px" Theme="MaterialCompact"></dx:ASPxComboBox>
                     </div>
                 </div>
             </div>

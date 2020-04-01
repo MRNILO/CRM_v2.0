@@ -196,6 +196,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CConfiguracionEmail" nillable="true" type="tns:CConfiguracionEmail" />
+  <xs:complexType name="ArrayOfMediosCampana">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediosCampana" nillable="true" type="tns:MediosCampana" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediosCampana" nillable="true" type="tns:ArrayOfMediosCampana" />
+  <xs:complexType name="MediosCampana">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MedioId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreMedio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediosCampana" nillable="true" type="tns:MediosCampana" />
+  <xs:complexType name="ArrayOfVisitasMedio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisitasMedio" nillable="true" type="tns:VisitasMedio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisitasMedio" nillable="true" type="tns:ArrayOfVisitasMedio" />
+  <xs:complexType name="VisitasMedio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id_Medio" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Visita" type="xs:int" />
+      <xs:element minOccurs="0" name="Numcte" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitasMedio" nillable="true" type="tns:VisitasMedio" />
   <xs:complexType name="ArrayOfCancelacionesEnkontrol">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CancelacionesEnkontrol" nillable="true" type="tns:CancelacionesEnkontrol" />
@@ -455,6 +482,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CNotifica" nillable="true" type="tns:CNotifica" />
+  <xs:complexType name="ArrayOfCOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperaciones" nillable="true" type="tns:COperaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOperaciones" nillable="true" type="tns:ArrayOfCOperaciones" />
+  <xs:complexType name="COperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
+      <xs:element minOccurs="0" name="id_operacion" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COperaciones" nillable="true" type="tns:COperaciones" />
   <xs:complexType name="ArrayOfCOperacionesCliente">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="COperacionesCliente" nillable="true" type="tns:COperacionesCliente" />
@@ -1464,22 +1509,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CEmpresasDetalles" nillable="true" type="tns:CEmpresasDetalles" />
-  <xs:complexType name="ArrayOfCOperaciones">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="COperaciones" nillable="true" type="tns:COperaciones" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCOperaciones" nillable="true" type="tns:ArrayOfCOperaciones" />
-  <xs:complexType name="COperaciones">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id_cliente" type="xs:int" />
-      <xs:element minOccurs="0" name="id_etapa" type="xs:int" />
-      <xs:element minOccurs="0" name="id_operacion" type="xs:int" />
-      <xs:element minOccurs="0" name="id_usuario" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="COperaciones" nillable="true" type="tns:COperaciones" />
 </xs:schema>
