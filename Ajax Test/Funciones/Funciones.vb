@@ -743,7 +743,7 @@ Public Class Funciones
                                                    @pIdCampana = {5},
                                                    @pIdImpedimento = {6},
                                                    @pTipoCredito = N'{7}',
-                                                   @pTipoVisita = {8}
+                                                   @pTipoVisita = {8},
                                                    @pMonto = {9},
                                                    @pRanking = N'{10}',
                                                    @pOrigen = N'{11}',
