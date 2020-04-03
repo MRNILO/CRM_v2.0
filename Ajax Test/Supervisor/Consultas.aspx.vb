@@ -9,7 +9,7 @@ Public Class Consultas
     Private Const DATE_MASK = "yyyy-MM-dd"
 
     Private GE_Funciones As New Funciones
-    Private Ruta As String = ""
+    Private Ruta As String = ConfigurationManager.ConnectionStrings("RutaXLS").ConnectionString
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 2
     Dim idUsuario As Integer = 0
