@@ -742,7 +742,7 @@ Public Class Funciones
                                                    @pIdUsuarioVisita = {4},
                                                    @pIdCampana = {5},
                                                    @pIdImpedimento = {6},
-                                                   @pIdTipoVisita = {8}
+                                                   @pIdTipoVisita = {8},
                                                    @pTipoCredito = N'{7}',
                                                    @pMonto = {9},
                                                    @pRanking = N'{10}',
