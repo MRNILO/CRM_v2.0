@@ -12,6 +12,7 @@ Public Class ClienteSupervisorMty
     Private GE_Funciones As New Funciones
     Private DatosCliente() As Servicio.CClientesDetalles
 
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         idCliente = Request.QueryString("idCliente")
