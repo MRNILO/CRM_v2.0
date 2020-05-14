@@ -8,6 +8,7 @@ Public Class CambiaUsuario
     Dim idUsuario As Integer = 0
     Dim idCliente As Integer = 0
     Private GE_Funciones As New Funciones
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ValidaUsuario()
         If Not IsPostBack() Then
@@ -36,6 +37,7 @@ Public Class CambiaUsuario
             Response.Redirect("../Account/LogOn.aspx")
         End If
     End Sub
+
     Sub RedirigirSegunNivel(ByVal Nivel As Integer)
         Select Case Nivel
             Case 1
@@ -46,6 +48,7 @@ Public Class CambiaUsuario
                 Response.Redirect("~/Administrativo/InicioAdmin.aspx", False)
         End Select
     End Sub
+
     Public Sub BuscarClientes()
         Dim Cliente As New BusquedaCliente
 
@@ -66,10 +69,12 @@ Public Class CambiaUsuario
         End With
     End Sub
 #End Region
+
 #Region "Eventos"
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarClientes()
     End Sub
+
     Protected Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         tb_NombreCliente.Text = ""
         tb_ApellidoPaterno.Text = ""
@@ -79,6 +84,7 @@ Public Class CambiaUsuario
         grdView_BusquedaCliente.DataSource = Nothing
         grdView_BusquedaCliente.DataBind()
     End Sub
+
     Protected Sub grdView_BusquedaCliente_DataBinding(sender As Object, e As EventArgs) Handles grdView_BusquedaCliente.DataBinding
         grdView_BusquedaCliente.DataSource = ViewState("ListaClientes")
     End Sub
@@ -87,6 +93,5 @@ Public Class CambiaUsuario
         Dim IdCliente As Integer = grdView_BusquedaCliente.GetRowValues(e.VisibleIndex, "ID")
         ASPxWebControl.RedirectOnCallback("../Supervisor/ClienteSupervisor.aspx?idCliente=" + IdCliente.ToString)
     End Sub
-
 #End Region
 End Class

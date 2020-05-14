@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Web
 Imports Ajax_Test.Funciones
+
 Public Class BusquedaClientesSup
     Inherits System.Web.UI.Page
 

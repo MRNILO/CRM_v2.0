@@ -7,7 +7,8 @@ Public Class ClienteSupervisorMty
     Dim Usuario As New Servicio.CUsuarios
     Dim NivelSeccion As Integer = 7
     Dim idCliente As Integer = 0
-    Dim Conexion As New SqlConnection("Data Source=192.168.1.13\CRM;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=Sistemas1245")
+    Dim StringConnection As String = ConfigurationManager.ConnectionStrings("crm_roest3ConnectionString").ConnectionString
+    Dim Conexion As New SqlConnection(StringConnection)
     Dim Conexion1 As New SqlConnection("Data Source=altaircloud.mx\SQLSERVER,5696;Initial Catalog=crm_edificasa;Persist Security Info=True;User ID=sa;Password=octy#1992.A")
     Private GE_Funciones As New Funciones
     Private DatosCliente() As Servicio.CClientesDetalles
