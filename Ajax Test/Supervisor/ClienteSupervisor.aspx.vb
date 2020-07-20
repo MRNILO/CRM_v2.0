@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Services
 Imports Ajax_Test.Funciones
+Imports Newtonsoft.Json
 
 Public Class ClienteSupervisor
     Inherits System.Web.UI.Page
@@ -524,32 +525,55 @@ Public Class ClienteSupervisor
     End Sub
 
     Protected Sub btn_guardaNumcte_Click(sender As Object, e As EventArgs) Handles btn_guardaNumcte.Click
-        Dim NumeroCliente As Integer
-        Dim NumeroClienteEk2 As Integer
-
+        Dim JSONObj As Object
+        Dim Data As String
         If IsNumeric(tb_numcte.Text) Then
-            NumeroCliente = Convert.ToInt32(tb_numcte.Text)
-            If NumeroCliente <> 0 Then
-                If tb_numcte2.Text <> "0" Then
-                    If IsNumeric(tb_numcte2.Text) Then
-                        NumeroClienteEk2 = Convert.ToInt32(tb_numcte2.Text)
-                        If dtp_FechaRecuperacion.Text = "" Then
-                            dtp_FechaRecuperacion.Focus()
-                            lbl_mensaje.Text = MostrarError("¡El campo fecha de recuperación no debe ir vacio!")
+            If cmBoxEmpresa.SelectedItem.Value = 0 Then
+                cmBoxEmpresa.Focus()
+                lbl_mensaje.Text = MostrarError("¡Es indispensable seleccionar la empresa.!")
+                Exit Sub
+            Else
+                Dim NumeroCliente As Integer = Convert.ToInt32(tb_numcte.Text)
+                If NumeroCliente <> 0 Then
+                    If tb_numcte2.Text <> "0" Then
+                        If IsNumeric(tb_numcte2.Text) Then
+                            Dim NumeroClienteEk2 As Integer = Convert.ToInt32(tb_numcte2.Text)
+                            Data = EK_REST.Obtener_Datos_Cliente(cmBoxEmpresa.SelectedItem.Value, NumeroClienteEk2)
+                            JSONObj = JsonConvert.DeserializeObject(Of Object)(Data)
+                            If JSONObj("Numero_Cliente") <> 0 Then
+                                If dtp_FechaRecuperacion.Text = "" Then
+                                    dtp_FechaRecuperacion.Focus()
+                                    lbl_mensaje.Text = MostrarError("¡El campo fecha de recuperación no debe ir vacio!")
+                                    Exit Sub
+                                End If
+                            Else
+                                lbl_mensaje.Text = MostrarError(String.Format("¡El cliente {0} no existe en la empresa {1}!", NumeroClienteEk2, cmBoxEmpresa.SelectedItem.Text))
+                                Exit Sub
+                            End If
+                        Else
+                            tb_numcte2.Focus()
+                            lbl_mensaje.Text = MostrarError("¡El campo solamente puede aceptar números!")
+                            Exit Sub
+                        End If
+                    End If
+                    Data = EK_REST.Obtener_Datos_Cliente(cmBoxEmpresa.SelectedItem.Value, NumeroCliente)
+                    JSONObj = JsonConvert.DeserializeObject(Of Object)(Data)
+                    If JSONObj("Numero_Cliente") <> 0 Then
+                        If Guarda_numcte() Then
+                            lbl_mensaje.Text = MostrarExito(String.Format("¡Datos guardados correctamente.!"))
+                            tb_numcte.Enabled = False
+                        Else
+                            lbl_numcte.ForeColor = Drawing.Color.Red
+                            lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente!"
                             Exit Sub
                         End If
                     Else
-                        tb_numcte2.Focus()
-                        lbl_mensaje.Text = MostrarError("¡El campo solamente puede aceptar números!")
+                        lbl_mensaje.Text = MostrarError(String.Format("¡El cliente {0} no existe en la empresa {1}!", NumeroCliente, cmBoxEmpresa.SelectedItem.Text))
                         Exit Sub
                     End If
-                End If
-                If Guarda_numcte() Then
-                    lbl_numcte.ForeColor = Drawing.Color.Green
-                    lbl_numcte.Text = "¡Los datos se guardaron exitosamente!."
                 Else
-                    lbl_numcte.ForeColor = Drawing.Color.Red
-                    lbl_numcte.Text = "¡Ocurrió un error al guardar la información, intentalo nuevamente'"
+                    tb_numcte.Focus()
+                    lbl_mensaje.Text = MostrarError("¡El número de cliente no puede ser 0.")
                     Exit Sub
                 End If
             End If
