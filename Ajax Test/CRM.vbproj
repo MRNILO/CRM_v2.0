@@ -8588,7 +8588,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
-    <None Include="Service References\Servicio\Service1.disco" />
+    <None Include="Service References\Servicio\Service11.disco" />
     <Content Include="SupervisorMty\BusquedaClientes.aspx" />
     <Content Include="SupervisorMty\CambiaUsuario.aspx" />
     <Content Include="SupervisorMty\cita.aspx" />
@@ -8666,17 +8666,17 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="SupervisorMty\SupervisorMty.master" />
-    <None Include="Service References\Servicio\Service1.wsdl" />
-    <None Include="Service References\Servicio\Service1.xsd">
+    <None Include="Service References\Servicio\Service11.wsdl" />
+    <None Include="Service References\Servicio\Service14.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servicio\Service11.xsd">
+    <None Include="Service References\Servicio\Service141.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servicio\Service12.xsd">
+    <None Include="Service References\Servicio\Service142.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Servicio\Service13.xsd">
+    <None Include="Service References\Servicio\Service143.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="web.Debug.config">

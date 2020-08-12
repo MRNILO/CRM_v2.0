@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.13/wcf_crm/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.64.13/wcf_crm/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="4f889efb-df29-4254-b951-ed07ad7240d9" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="bcb75fa7-08e1-4cb6-a4b0-84d1e79baf73" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="f80c76e1-2751-4203-8d38-cebe56e6160d" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="e6abe160-8608-47f0-88ce-5ddc3cdc8786" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?disco" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fab21a51-352a-4cf6-bb79-01b29036c9ae" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?wsdl" />
-    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="79661e08-336e-4f26-88d9-16e11513fd8b" SourceId="1" SourceUrl="http://192.168.1.13/wcf_crm/Service1.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service14.xsd" MetadataType="Schema" ID="aeb44668-8c47-4eee-a421-414cc9cc370d" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service141.xsd" MetadataType="Schema" ID="b011f650-2f3a-4a00-8bd3-700746a07784" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service142.xsd" MetadataType="Schema" ID="c3178768-a08c-46f7-94ab-78d77e47172b" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service143.xsd" MetadataType="Schema" ID="8ff72534-8d2d-4f8e-9f5d-cab0013b55dc" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="e6140efe-68cd-43a7-8aac-84439a3314b0" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service11.disco" MetadataType="Disco" ID="da26d6d6-a4ab-4817-b61c-75d690436b9d" SourceId="1" SourceUrl="http://192.168.64.13/wcf_crm/Service1.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
